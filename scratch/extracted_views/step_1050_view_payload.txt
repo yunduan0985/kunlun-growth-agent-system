@@ -1,0 +1,48 @@
+ *
+"
+#toolu_vrtx_01S5FwHpm2NaUZs1LmfwxMXb	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":2135,"StartLine":2097,"toolAction":"Viewing token usage route","toolSummary":"View token route"}J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2Ջ:΋BXb$9043cfd8-2487-4216-819c-4b1fef5a6e3cjR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bdȹ,6
+ȭ
+
+View token routeViewing token usage router
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js"
+app.get('/api/system/token/usage', (req, res) => {
+  const usage = loadTokenUsage();
+
+  // 统计各个 Provider 的分布
+  const byProvider = {};
+  usage.records.forEach(r => {
+    if (!byProvider[r.provider]) byProvider[r.provider] = { input: 0, output: 0, calls: 0 };
+    byProvider[r.provider].input += r.input_tokens;
+    byProvider[r.provider].output += r.output_tokens;
+    byProvider[r.provider].calls++;
+  });
+
+  // 今日消费
+  const today = new Date().toISOString().slice(0, 10);
+  const todayRecords = usage.records.filter(r => r.ts.startsWith(today));
+  const todayInput = todayRecords.reduce((s, r) => s + r.input_tokens, 0);
+  const todayOutput = todayRecords.reduce((s, r) => s + r.output_tokens, 0);
+
+  res.json({
+    success: true,
+    total_input: usage.total_input,
+    total_output: usage.total_output,
+    total_calls: usage.records.length,
+    today_input: todayInput,
+    today_output: todayOutput,
+    today_calls: todayRecords.length,
+    by_provider: byProvider,
+    recent_records: usage.records.slice(-20).reverse() // 最近 20 条
+  });
+});
+
+app.post('/api/system/token/reset', (req, res) => {
+  const { user_role } = req.body;
+  if (user_role !== 'admin') return res.status(403).json({ error: 'Only Admin can reset.' });
+  saveTokenUsage({ total_input: 0, total_output: 0, records: [] });
+  res.json({ success: true, message: 'Token 消费记录已清零！' });
+});
+
+X`

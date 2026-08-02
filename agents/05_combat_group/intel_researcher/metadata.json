@@ -1,0 +1,16 @@
+{
+  "id": "intel_researcher",
+  "name": "情报研究者",
+  "group": "实战组",
+  "description": "对收集上来的零散情报进行归类、交叉校验和深度挖掘，提炼商业洞察并撰写情报周报。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=intel_researcher",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

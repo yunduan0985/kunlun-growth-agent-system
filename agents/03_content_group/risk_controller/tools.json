@@ -1,0 +1,162 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "内容法律合规与发布风控插件",
+    "version": "1.3.0",
+    "description": "提供给风控官 Agent 进行文章法律红线审计（虚假宣传承诺、商誉贬损诋毁）及隐私泄露排查的 API 规范。"
+  },
+  "paths": {
+    "/api/content/risk/scan": {
+      "post": {
+        "summary": "静态扫描文章草稿，识别敏感词、广告极限禁用词及公域引流卡点",
+        "operationId": "scanContentRisk",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": { "type": "string" },
+                  "platform": { "type": "string", "default": "xiaohongshu" }
+                },
+                "required": ["text"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/content/risk/legal-audit": {
+      "post": {
+        "summary": "专门审计文案中的法律红线（如虚假承诺、绝对化ROI保证、竞品贬损与诋毁）",
+        "operationId": "auditLegalRisk",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": { "type": "string", "description": "文章或海报文案内容" }
+                },
+                "required": ["text"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "法律审计完毕",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "is_legal": { "type": "boolean" },
+                    "warnings": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "segment": { "type": "string", "description": "涉嫌违法违规的文字段落" },
+                          "risk_description": { "type": "string" },
+                          "law_reference": { "type": "string", "description": "触犯的法律条款参考" },
+                          "suggestion": { "type": "string", "description": "改写改写建议" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/content/risk/ip-check": {
+      "post": {
+        "summary": "商标与知识产权侵权检查",
+        "operationId": "checkIpInfringement",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "brands": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                },
+                "required": ["brands"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string" },
+                  "content": { "type": "string" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

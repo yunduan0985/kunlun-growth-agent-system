@@ -1,0 +1,46 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/content/risk/anti-ai-scan 
+=====================
+","EndLine":694,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/content/risk/anti-ai-scan', (req, res) =\u003e {\n  const { text } = req.body;\n  if (!text) return res.status(400).json({ error: \"Missing parameter: text\" });\n\n  console.log(`[Anti-AI Scanner] Running tone audit on content draft...`);\n\n  // AI 
+=====================
+\n  const aiKeywords = [\n    \"
+=====================
+\"\n  ];\n\n  const matchedKeywords = [];\n  let scorePenalty = 0;\n\n  aiKeywords.forEach(word =\u003e {\n    const count = (text.split(word).length - 1);\n    if (count \u003e 0) {\n      matchedKeywords.push({ word, count });\n      scorePenalty += count * 15; // 
+=====================
+\n    }\n  });\n\n  const aiScore = Math.max(0, 100 - scorePenalty);\n  const aiIndex = 100 - aiScore; // AI 
+=====================
+)\n  const isTooMachinery = aiIndex \u003e 30; // 
+=====================
+\n\n  res.json({\n    success: true,\n    ai_index: aiIndex,\n    is_too_machinery: isTooMachinery,\n    score: aiScore,\n    matched_words: matchedKeywords,\n    message: isTooMachinery \n      ? `
+=====================
+`\n  });\n});\n\n// 
+=====================
+","StartLine":694,"TargetContent":"// 
+=====================
+","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding anti-AI scan routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$37c8b243-ac97-4fca-a49e-d4ff38d3681ej
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+%Adding anti-AI scan routes to Gateway

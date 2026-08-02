@@ -1,0 +1,40 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/system/agents/status 
+=====================
+ /api/system/agents/status/save 
+=====================
+","EndLine":1224,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+)\napp.get('/api/system/agents/status', (req, res) =\u003e {\n  const statusPath = path.join(__dirname, '../data/agent_status.json');\n  console.log(`[Agent Hot-Swap] Loading agent lifecycle switches from: ${statusPath}`);\n\n  if (!fs.existsSync(statusPath)) {\n    const defaultStatus = {\n      ai_sales_champion: true,\n      risk_controller: true,\n      manual_editor: true,\n      claude_code: true,\n      meeting_minutes_specialist: true\n    };\n    try {\n      const dataDir = path.dirname(statusPath);\n      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });\n      fs.writeFileSync(statusPath, JSON.stringify(defaultStatus, null, 2), 'utf-8');\n    } catch (e) {\n      console.error(e);\n    }\n    return res.json({ success: true, status_matrix: defaultStatus });\n  }\n\n  try {\n    const rawData = fs.readFileSync(statusPath, 'utf-8');\n    res.json({ success: true, status_matrix: JSON.parse(rawData) });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to read agent status file.\" });\n  }\n});\n\n// 
+=====================
+\napp.post('/api/system/agents/status/save', (req, res) =\u003e {\n  const { status_matrix, user_role } = req.body;\n  if (!status_matrix) return res.status(400).json({ error: \"Missing status_matrix payload.\" });\n\n  if (user_role !== 'admin') {\n    return res.status(403).json({ success: false, error: \"Access Denied: Only Admin can update Agent lifecycle switches.\" });\n  }\n\n  const statusPath = path.join(__dirname, '../data/agent_status.json');\n  console.log(`[Agent Hot-Swap] Saving new agent status configuration to: ${statusPath}`);\n\n  try {\n    fs.writeFileSync(statusPath, JSON.stringify(status_matrix, null, 2), 'utf-8');\n    res.json({ success: true, message: \"Agent 
+=====================
+\" });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to save agent status file.\" });\n  }\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":1224,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding agent lifecycle routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$378270d7-c4af-40f3-ae66-78c1c8d7165ej
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+(Adding agent lifecycle routes to Gateway

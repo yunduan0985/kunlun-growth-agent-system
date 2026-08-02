@@ -1,0 +1,38 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":256,"Instruction":"
+=====================
+","ReplacementContent":"// 
+=====================
+)\napp.post('/api/terminal/execute', (req, res) =\u003e {\n  const { command, cwd, agent_id } = req.body;\n  if (!command) return res.status(400).json({ error: \"Missing parameter: command\" });\n\n  // 1. 
+=====================
+)\n  const privilegedAgents = ['agent_ops', 'agent_architect', 'claude_code', 'tech_specialist', 'privileged'];\n  if (!agent_id || !privilegedAgents.includes(agent_id)) {\n    console.warn(`
+=====================
+ [Security Alert] Unauthorized command execution attempt by Agent: \"${agent_id || 'unknown'}\"`);\n    return res.status(403).json({\n      success: false,\n      error: `Access Denied: Agent \"${agent_id || 'unknown'}\" is not authorized to run local terminal commands.`\n    });\n  }\n\n  // 2. 
+=====================
+\n  const forbiddenKeywords = ['rm -rf /', 'mkfs', 'dd if', 'shutdown', 'reboot', 'sudo'];\n  if (forbiddenKeywords.some(kw =\u003e command.includes(kw))) {\n    return res.status(403).json({ success: false, error: \"Forbidden: high risk command blocked.\" });\n  }\n\n  console.log(`
+=====================
+ [Terminal Security Check] Agent \"${agent_id}\" authorized. Running: \"${command}\"`);\n  \n  const execOptions = {\n    cwd: cwd || undefined,\n    env: { ...process.env }\n  };\n\n  exec(command, execOptions, (error, stdout, stderr) =\u003e {\n    res.json({\n      success: !error,\n      stdout: stdout || \"\",\n      stderr: stderr || \"\",\n      exitCode: error ? error.code : 0\n    });\n  });\n});\n","StartLine":230,"TargetContent":"// 
+=====================
+ lark-cli / claude-cli)\napp.post('/api/terminal/execute', (req, res) =\u003e {\n  const { command, cwd } = req.body;\n  if (!command) return res.status(400).json({ error: \"Missing parameter: command\" });\n\n  const forbiddenKeywords = ['rm -rf /', 'mkfs', 'dd if', 'shutdown', 'reboot'];\n  if (forbiddenKeywords.some(kw =\u003e command.includes(kw))) {\n    return res.status(403).json({ error: \"Forbidden: high risk command blocked.\" });\n  }\n\n  console.log(`[Terminal] Run: \"${command}\"`);\n  \n  const execOptions = {\n    cwd: cwd || undefined,\n    env: { ...process.env }\n  };\n\n  exec(command, execOptions, (error, stdout, stderr) =\u003e {\n    res.json({\n      success: !error,\n      stdout: stdout || \"\",\n      stderr: stderr || \"\",\n      exitCode: error ? error.code : 0\n    });\n  });\n});","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Applying terminal route privilege verification","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$37c8b243-ac97-4fca-a49e-d4ff38d3681ej
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+.Applying terminal route privilege verification

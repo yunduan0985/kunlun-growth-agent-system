@@ -1,0 +1,237 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Claude Code 软件开发工具集",
+    "version": "1.2.0",
+    "description": "提供给 SWE-Agent 进行文件读写、全局代码检索、以及安全终端指令执行的 API 端点。"
+  },
+  "paths": {
+    "/api/fs/read": {
+      "post": {
+        "summary": "读取指定文件的内容",
+        "operationId": "readFileContent",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "filepath": {
+                    "type": "string",
+                    "description": "目标文件的绝对路径"
+                  },
+                  "startLine": {
+                    "type": "integer",
+                    "description": "起始行号 (1-indexed)"
+                  },
+                  "endLine": {
+                    "type": "integer",
+                    "description": "结束行号"
+                  }
+                },
+                "required": [
+                  "filepath"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功返回文件内容",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "string"
+                    },
+                    "linesCount": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/fs/write": {
+      "post": {
+        "summary": "创建或完全覆盖文件内容",
+        "operationId": "writeFileContent",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "filepath": {
+                    "type": "string",
+                    "description": "文件绝对路径"
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "写入的代码或文本内容"
+                  }
+                },
+                "required": [
+                  "filepath",
+                  "content"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "文件写入成功"
+          }
+        }
+      }
+    },
+    "/api/fs/search": {
+      "post": {
+        "summary": "使用 ripgrep 正则在项目代码库中搜索指定模式",
+        "operationId": "searchCodePattern",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "检索的关键字或正则表达式"
+                  },
+                  "dir": {
+                    "type": "string",
+                    "description": "检索的根目录路径"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "返回匹配的代码行和文件列表"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": {
+                    "type": "string",
+                    "description": "完整的终端命令"
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "运行路径"
+                  }
+                },
+                "required": [
+                  "command"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "stdout": {
+                      "type": "string"
+                    },
+                    "stderr": {
+                      "type": "string"
+                    },
+                    "exitCode": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": {
+                    "type": "string",
+                    "description": "微信群聊ID或联系人微信号/备注"
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "发送的文本内容"
+                  }
+                },
+                "required": [
+                  "to_username",
+                  "content"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "msgId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

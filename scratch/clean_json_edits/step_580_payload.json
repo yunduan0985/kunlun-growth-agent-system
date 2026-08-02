@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "将 index.html 中的本地网关通信端口从 8000 变更为 8888。",
+  "EndLine": 390,
+  "Instruction": "修改GATEWAY_URL的本地端口值。",
+  "ReplacementContent": "    const GATEWAY_URL = 'http://localhost:8888';",
+  "StartLine": 388,
+  "TargetContent": "    const GATEWAY_URL = 'http://localhost:8000';",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Changing index.html connection port to 8888",
+  "toolSummary": "Modify file"
+}

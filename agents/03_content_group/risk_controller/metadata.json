@@ -1,0 +1,16 @@
+{
+  "id": "risk_controller",
+  "name": "风控官",
+  "group": "内容组",
+  "description": "审查文案、脚本及推文的政策风险、版权风险及平台敏感词，确保发布合规。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=risk_controller",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

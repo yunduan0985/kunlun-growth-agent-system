@@ -1,0 +1,146 @@
+ *
+ؾ"
+
+iv3k61tmreplace_file_content{"AllowMultiple":false,"Description":"修复 install.js 中的行号语法残留，确保 Node.js 能正常跨机自愈配置环境。","EndLine":8,"Instruction":"删除2:和3:的前缀，修补为合法的JavaScript代码。","ReplacementContent":"console.log('==================================================');\nconsole.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');\nconsole.log('==================================================\\n');","StartLine":5,"TargetContent":"console.log('==================================================');\n2: console.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');\n3: console.log('==================================================\\n');","TargetFile":"/Volumes/MOVESPEED/下载/AIcode/Agent/scripts/install.js","toolAction":"Removing stray line numbers from install script","toolSummary":"Modify file"}:
+M2אhD)3kW@{,q~hݱIg]ז~4F|@4&6x,_A#k:_\.頫*6-6c@4wdv޷<]3޲tŘyJC	:UF3y7WUcߺBCvFl:9𞗝pa%:r@-!	nU{iP[%QgIC|āvn/m|r$8 *SVL'o׺:iVR˰E#y]MָiT棪Y^	u1[uz LgzDXuџWQDCYK#>VUnCycלuR0,nȎ)]hϞS3g-?qJ9SyQJreplace_file_content*AllowMultiple*Description*EndLine*Instruction*ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*toolSummary2:BXb$072f2138-4904-4a81-b165-a86c0a2e5395jR
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd6
+
+Ė
+Modify file/Removing stray line numbers from install scriptR:
+
+
+>删除2:和3:的前缀，修补为合法的JavaScript代码。@J
+console.log('==================================================');
+2: console.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');
+3: console.log('==================================================\n');console.log('==================================================');
+console.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');
+console.log('==================================================\n');08"*Lfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scripts/install.js2O
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agentscripts/install.js0
+0?
+const fs = require('fs');!
+const path = require('path');2
+.const { execSync } = require('child_process');F
+Bconsole.log('==================================================');a
+]2: console.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');K
+G3: console.log('==================================================\n');^
+Zconsole.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');H
+Dconsole.log('==================================================\n');1
+-// 1. 自动计算本地工作区相关路径8
+4const WORKSPACE_DIR = path.resolve(__dirname, '..');;
+7const ENV_FILE_PATH = path.join(WORKSPACE_DIR, '.env');;
+7const DATA_DIR_PATH = path.join(WORKSPACE_DIR, 'data');A
+=const DEFAULT_DB_PATH = path.join(DATA_DIR_PATH, 'wx_db.db');F
+Bconsole.log(`📂 本地工作区解析路径: ${WORKSPACE_DIR}`);4
+0// 2. 检查并确保本地 data 文件夹存在(
+$if (!fs.existsSync(DATA_DIR_PATH)) {
+  try {9
+5    fs.mkdirSync(DATA_DIR_PATH, { recursive: true });Y
+U    console.log('✨ 自动创建本地存放数据库的 data/ 文件夹成功。');
+  } catch (err) {G
+C    console.error('❌ 创建 data 文件夹失败:', err.message);
+  }
+}g
+c// 3. 检查并自愈生成 .env 环境变量文件 (动态绑定当前电脑的相对物理路径)(
+$if (!fs.existsSync(ENV_FILE_PATH)) {c
+_  console.log('📖 未检测到 .env 配置文件，正在动态生成本地绿色配置...');S
+O  const defaultEnvContent = `# 昆仑增长多智能体系统本地配置文件
+	PORT=88886
+2CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx9
+5TIANYANCHA_TOKEN=tyc_token_xxxxxxxxxxxxxxxxxxxxxxxxxxp
+l# 动态绑定的本地解密微信数据库路径 (解密导出后改名为 wx_db.db 放入 data 下即可)%
+!WECHAT_DB_PATH=${DEFAULT_DB_PATH}+
+'OPENCLAW_API_URL=http://localhost:18000
+`;
+  try {D
+@    fs.writeFileSync(ENV_FILE_PATH, defaultEnvContent, 'utf-8');s
+o    console.log('✅ 自愈生成 .env 配置文件成功，微信数据库已绑定至当前解压目录。');
+  } catch (err) {>
+:    console.error('❌ 写入 .env 失败:', err.message);
+  }
+} else {h
+d  console.log('📖 已检测到 .env 配置文件，跳过覆盖以保留您先前的 API Key。');
+}9
+5// 4. 调用 setup_claude_desktop.js 一键挂载 MCP[
+Wconst setupScriptPath = path.join(WORKSPACE_DIR, 'scripts', 'setup_claude_desktop.js');N
+Jconsole.log('🤖 正在调度挂载本地 Claude Desktop MCP 服务...');	
+try {R
+N  const output = execSync(`node "${setupScriptPath}"`, { encoding: 'utf-8' });
+  console.log(output);
+} catch (err) {j
+f  console.error('❌ 注册 MCP 失败，请检查写入权限或 Claude 是否安装:', err.message);
+}=
+9console.log('🎉 所有本地自愈部署已完成！');j
+fconsole.log('1. 请把解密导出的微信 wx_db.db 放入当前目录下的 data/ 文件夹中；');I
+Econsole.log('2. 运行 npm start 启动本地 8888 专属网关；');K
+Gconsole.log('3. 重启 Claude Desktop 客户端即可无缝使用。');F
+Bconsole.log('==================================================');BLfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scripts/install.jsRconst fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+console.log('==================================================');
+2: console.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');
+3: console.log('==================================================\n');
+
+// 1. 自动计算本地工作区相关路径
+const WORKSPACE_DIR = path.resolve(__dirname, '..');
+const ENV_FILE_PATH = path.join(WORKSPACE_DIR, '.env');
+const DATA_DIR_PATH = path.join(WORKSPACE_DIR, 'data');
+const DEFAULT_DB_PATH = path.join(DATA_DIR_PATH, 'wx_db.db');
+
+console.log(`📂 本地工作区解析路径: ${WORKSPACE_DIR}`);
+
+// 2. 检查并确保本地 data 文件夹存在
+if (!fs.existsSync(DATA_DIR_PATH)) {
+  try {
+    fs.mkdirSync(DATA_DIR_PATH, { recursive: true });
+    console.log('✨ 自动创建本地存放数据库的 data/ 文件夹成功。');
+  } catch (err) {
+    console.error('❌ 创建 data 文件夹失败:', err.message);
+  }
+}
+
+// 3. 检查并自愈生成 .env 环境变量文件 (动态绑定当前电脑的相对物理路径)
+if (!fs.existsSync(ENV_FILE_PATH)) {
+  console.log('📖 未检测到 .env 配置文件，正在动态生成本地绿色配置...');
+  const defaultEnvContent = `# 昆仑增长多智能体系统本地配置文件
+PORT=8888
+CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TIANYANCHA_TOKEN=tyc_token_xxxxxxxxxxxxxxxxxxxxxxxxxx
+# 动态绑定的本地解密微信数据库路径 (解密导出后改名为 wx_db.db 放入 data 下即可)
+WECHAT_DB_PATH=${DEFAULT_DB_PATH}
+OPENCLAW_API_URL=http://localhost:18000
+`;
+  try {
+    fs.writeFileSync(ENV_FILE_PATH, defaultEnvContent, 'utf-8');
+    console.log('✅ 自愈生成 .env 配置文件成功，微信数据库已绑定至当前解压目录。');
+  } catch (err) {
+    console.error('❌ 写入 .env 失败:', err.message);
+  }
+} else {
+  console.log('📖 已检测到 .env 配置文件，跳过覆盖以保留您先前的 API Key。');
+}
+
+// 4. 调用 setup_claude_desktop.js 一键挂载 MCP
+const setupScriptPath = path.join(WORKSPACE_DIR, 'scripts', 'setup_claude_desktop.js');
+console.log('🤖 正在调度挂载本地 Claude Desktop MCP 服务...');
+try {
+  const output = execSync(`node "${setupScriptPath}"`, { encoding: 'utf-8' });
+  console.log(output);
+} catch (err) {
+  console.error('❌ 注册 MCP 失败，请检查写入权限或 Claude 是否安装:', err.message);
+}
+
+console.log('🎉 所有本地自愈部署已完成！');
+console.log('1. 请把解密导出的微信 wx_db.db 放入当前目录下的 data/ 文件夹中；');
+console.log('2. 运行 npm start 启动本地 8888 专属网关；');
+console.log('3. 重启 Claude Desktop 客户端即可无缝使用。');
+console.log('==================================================');
+ j
+
+console.log('==================================================');
+2: console.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');
+3: console.log('==================================================\n');console.log('==================================================');
+console.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');
+console.log('==================================================\n');08(`修复 install.js 中的行号语法残留，确保 Node.js 能正常跨机自愈配置环境。

@@ -1,0 +1,5381 @@
+"	
+#toolu_vrtx_013zqD8sQXqaScmg8uqhB6ib
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":153,"Instruction":"
+=====================
+","ReplacementContent":"    .agent-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));\n      gap: 24px;\n      margin-bottom: 30px;\n    }\n\n    /* 
+=====================
+ */\n    .panel-card {\n      background: var(--card-bg);\n      border-radius: 18px;\n      padding: 32px 36px;\n      width: 100%;\n      min-height: 200px;\n      overflow: visible;\n    }\n","StartLine":148,"TargetContent":"    .agent-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));\n      gap: 24px;\n      margin-bottom: 30px;\n    }\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Adding panel-card CSS class","toolSummary":"Fix panel-card CSS"}J
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$8688c2dc-2c28-4eee-b193-c94b5f5f4a59j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Adding panel-card CSS class
+=====================
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+=====================
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    /* 
+=====================
+ */
+    .panel-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 32px 36px;
+      width: 100%;
+      min-height: 200px;
+      overflow: visible;
+    }
+0
+=====================
+*Dfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/index.html2G
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+  <meta charset="UTF-8">
+=====================
+L
+H  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=====================
+ (Kunlun Growth Console)</title>
+=====================
+=
+9      --bg-color: #f5f5f7; /* 
+=====================
+      --sidebar-bg: #ffffff; 
+=====================
+      --card-bg: #ffffff; 
+=====================
+      --border-light: #e8e8ed; 
+=====================
+      --border-color: #d2d2d7; 
+=====================
+      --text-main: #1d1d1f; 
+=====================
+      --text-muted: #86868b; 
+=====================
+      --accent-color: #0071e3; 
+=====================
+      --accent-hover: #0077ed;
+=====================
+$
+       --success-color: #34c759; 
+=====================
+$
+       --warning-color: #ff9500; 
+=====================
+      --danger-color: #ff3b30; 
+=====================
+      --input-bg: #f5f5f7;
+=====================
+      box-sizing: border-box;
+=====================
+
+{      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+=====================
+      letter-spacing: -0.015em;
+=====================
+,
+(      background-color: var(--bg-color);
+=====================
+      color: var(--text-main);
+=====================
+      display: flex;
+=====================
+      height: 100vh;
+=====================
+      overflow: hidden;
+=====================
+.
+*      -webkit-font-smoothing: antialiased;
+=====================
+(
+$      background: var(--sidebar-bg);
+=====================
+6
+2      border-right: 1px solid var(--border-light);
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+      padding: 35px 20px;
+=====================
+      overflow-y: auto;
+=====================
+    .logo-container {
+=====================
+      display: flex;
+=====================
+      align-items: center;
+=====================
+      margin-bottom: 35px;
+=====================
+      padding-left: 8px;
+=====================
+'
+#      background: var(--text-main);
+=====================
+      border-radius: 6px;
+=====================
+      font-size: 16px;
+=====================
+      font-weight: 600;
+=====================
+      color: var(--text-main);
+=====================
+      font-size: 11px;
+=====================
+      color: var(--text-muted);
+=====================
+$
+       text-transform: uppercase;
+=====================
+      letter-spacing: 0.05em;
+=====================
+      margin: 22px 0 10px 8px;
+=====================
+      font-weight: 600;
+=====================
+      padding: 10px 14px;
+=====================
+      border-radius: 10px;
+=====================
+      color: var(--text-main);
+=====================
+      cursor: pointer;
+=====================
+%
+!      transition: all 0.15s ease;
+=====================
+      margin-bottom: 4px;
+=====================
+      font-size: 13.5px;
+=====================
+      display: flex;
+=====================
+      align-items: center;
+=====================
+)
+%      justify-content: space-between;
+=====================
+      font-weight: 500;
+=====================
+    .menu-item:hover {
+=====================
+&
+"      background: var(--bg-color);
+=====================
+    .menu-item.active {
+=====================
+&
+"      background: var(--bg-color);
+=====================
+      font-weight: 600;
+=====================
+%
+!      color: var(--accent-color);
+=====================
+      font-size: 10px;
+=====================
+*
+&      background: var(--border-light);
+=====================
+      padding: 2px 6px;
+=====================
+      border-radius: 10px;
+=====================
+      color: var(--text-muted);
+=====================
+      font-weight: bold;
+=====================
+(
+$    .menu-item.active .badge-count {
+=====================
+-
+)      background: rgba(0, 113, 227, 0.1);
+=====================
+%
+!      color: var(--accent-color);
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+      padding: 45px 50px;
+=====================
+      overflow-y: auto;
+=====================
+      display: flex;
+=====================
+)
+%      justify-content: space-between;
+=====================
+      align-items: center;
+=====================
+      margin-bottom: 35px;
+=====================
+7
+3      border-bottom: 1px solid var(--border-light);
+=====================
+      padding-bottom: 25px;
+=====================
+-
+)      background: rgba(52, 199, 89, 0.1);
+=====================
+&
+"      color: var(--success-color);
+=====================
+      padding: 6px 12px;
+=====================
+      border-radius: 20px;
+=====================
+      font-size: 12px;
+=====================
+      font-weight: 500;
+=====================
+      display: grid;
+=====================
+G
+C      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+=====================
+      margin-bottom: 30px;
+=====================
+%
+!      background: var(--card-bg);
+=====================
+      border-radius: 18px;
+=====================
+      padding: 32px 36px;
+=====================
+      min-height: 200px;
+=====================
+      overflow: visible;
+=====================
+%
+!      background: var(--card-bg);
+=====================
+0
+,      border: 1px solid var(--border-light);
+=====================
+      border-radius: 18px;
+=====================
+      padding: 24px;
+=====================
+6
+2      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
+=====================
+A
+=      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+=====================
+      position: relative;
+=====================
+    .agent-card:hover {
+=====================
+&
+"      transform: translateY(-2px);
+=====================
+6
+2      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+=====================
+,
+(      border-color: var(--border-color);
+=====================
+    .agent-card.disabled {
+=====================
+      opacity: 0.35;
+=====================
+      display: flex;
+=====================
+)
+%      justify-content: space-between;
+=====================
+      align-items: center;
+=====================
+      margin-bottom: 12px;
+=====================
+7
+3      border-bottom: 1px solid var(--border-light);
+=====================
+      padding-bottom: 10px;
+=====================
+      font-size: 15.5px;
+=====================
+      font-weight: 600;
+=====================
+    .switch-container {
+=====================
+      display: inline-block;
+=====================
+      position: relative;
+=====================
+    .switch-container input {
+=====================
+      position: absolute;
+=====================
+      cursor: pointer;
+=====================
+/
++      top: 0; left: 0; right: 0; bottom: 0;
+=====================
+0
+,      background-color: var(--border-light);
+=====================
+      transition: .25s ease;
+=====================
+      border-radius: 22px;
+=====================
+    .slider:before {
+=====================
+      position: absolute;
+=====================
+      background-color: #fff;
+=====================
+      transition: .25s ease;
+=====================
+      border-radius: 50%;
+=====================
+1
+-      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+=====================
+    input:checked + .slider {
+=====================
+1
+-      background-color: var(--success-color);
+=====================
+(
+$    input:checked + .slider:before {
+=====================
+&
+"      transform: translateX(20px);
+=====================
+      font-size: 13px;
+=====================
+      color: var(--text-muted);
+=====================
+      line-height: 1.5;
+=====================
+      min-height: 40px;
+=====================
+      margin-bottom: 18px;
+=====================
+      margin-bottom: 16px;
+=====================
+      display: block;
+=====================
+      font-size: 11px;
+=====================
+      color: var(--text-muted);
+=====================
+      margin-bottom: 6px;
+=====================
+      font-weight: 600;
+=====================
+$
+       text-transform: uppercase;
+=====================
+      letter-spacing: 0.02em;
+=====================
+&
+"      background: var(--input-bg);
+=====================
+0
+,      border: 1px solid var(--border-light);
+=====================
+      color: var(--text-main);
+=====================
+      padding: 10px 14px;
+=====================
+      border-radius: 10px;
+=====================
+      font-size: 13px;
+=====================
+      outline: none;
+=====================
+$
+       transition: all 0.2s ease;
+=====================
+      font-weight: 500;
+=====================
+    .form-input:focus {
+=====================
+      background: #ffffff;
+=====================
+,
+(      border-color: var(--accent-color);
+=====================
+8
+4      box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+=====================
+*
+&      background: var(--accent-color);
+=====================
+      padding: 10px 20px;
+=====================
+      border-radius: 10px;
+=====================
+      font-weight: 600;
+=====================
+      cursor: pointer;
+=====================
+$
+       transition: all 0.2s ease;
+=====================
+      margin-top: 10px;
+=====================
+      font-size: 13px;
+=====================
+    .btn-action:hover {
+=====================
+      background: #0077ed;
+=====================
+8
+4      box-shadow: 0 2px 8px rgba(0, 113, 227, 0.25);
+=====================
+    .terminal-output {
+=====================
+      background: #1d1d1f; 
+=====================
+0
+,      border: 1px solid var(--border-light);
+=====================
+      border-radius: 10px;
+=====================
+      padding: 15px;
+=====================
+B
+>      font-family: SFMono-Regular, Consolas, Menlo, monospace;
+=====================
+      font-size: 12px;
+=====================
+      color: #30d158; 
+=====================
+      min-height: 105px;
+=====================
+      max-height: 180px;
+=====================
+      overflow-y: auto;
+=====================
+      margin-top: 15px;
+=====================
+      white-space: pre-wrap;
+=====================
+$
+       border-collapse: collapse;
+=====================
+      margin-top: 15px;
+=====================
+      font-size: 13px;
+=====================
+      background: #ffffff;
+=====================
+(
+$    .perm-table th, .perm-table td {
+=====================
+0
+,      border: 1px solid var(--border-light);
+=====================
+      padding: 12px;
+=====================
+      text-align: center;
+=====================
+    .perm-table th {
+=====================
+&
+"      background: var(--bg-color);
+=====================
+      font-weight: 600;
+=====================
+      color: var(--text-main);
+=====================
+      display: flex;
+=====================
+&
+"      height: calc(100vh - 190px);
+=====================
+      background: #ffffff;
+=====================
+0
+,      border: 1px solid var(--border-light);
+=====================
+      border-radius: 20px;
+=====================
+      overflow: hidden;
+=====================
+2
+.      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+=====================
+    .im-agent-list {
+=====================
+6
+2      border-right: 1px solid var(--border-light);
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+      background: #ffffff;
+=====================
+      padding: 14px 18px;
+=====================
+7
+3      border-bottom: 1px solid var(--border-light);
+=====================
+      cursor: pointer;
+=====================
+,
+(      transition: background 0.15s ease;
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+    .im-list-item:hover {
+=====================
+&
+"      background: var(--bg-color);
+=====================
+    .im-list-item.active {
+=====================
+.
+*      background: rgba(0, 113, 227, 0.05);
+=====================
+5
+1      border-left: 4px solid var(--accent-color);
+=====================
+      padding-left: 14px;
+=====================
+      font-size: 13.5px;
+=====================
+      font-weight: 600;
+=====================
+      color: var(--text-main);
+=====================
+      font-size: 11px;
+=====================
+      color: var(--text-muted);
+=====================
+      white-space: nowrap;
+=====================
+      overflow: hidden;
+=====================
+      text-overflow: ellipsis;
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+      background: #f5f5f7; 
+=====================
+    .im-chat-header {
+=====================
+      padding: 15px 25px;
+=====================
+      background: #ffffff;
+=====================
+7
+3      border-bottom: 1px solid var(--border-light);
+=====================
+      display: flex;
+=====================
+)
+%      justify-content: space-between;
+=====================
+      align-items: center;
+=====================
+    .im-chat-header-title {
+=====================
+      font-size: 14.5px;
+=====================
+      font-weight: 600;
+=====================
+      padding: 25px;
+=====================
+      overflow-y: auto;
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+    .chat-bubble-container {
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+      max-width: 75%;
+=====================
+      padding: 12px 18px;
+=====================
+      border-radius: 16px;
+=====================
+      font-size: 13.5px;
+=====================
+      line-height: 1.5;
+=====================
+      align-self: flex-end;
+=====================
+*
+&      background: var(--accent-color);
+=====================
+      color: #ffffff;
+=====================
+*
+&      border-bottom-right-radius: 4px;
+=====================
+      align-self: flex-start;
+=====================
+      background: #ffffff;
+=====================
+      color: var(--text-main);
+=====================
+)
+%      border-bottom-left-radius: 4px;
+=====================
+0
+,      border: 1px solid var(--border-light);
+=====================
+1
+-      box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+=====================
+    .im-chat-input-bar {
+=====================
+      padding: 20px 25px;
+=====================
+      background: #ffffff;
+=====================
+4
+0      border-top: 1px solid var(--border-light);
+=====================
+      display: flex;
+=====================
+      align-items: center;
+=====================
+    .im-profile-pane {
+=====================
+5
+1      border-left: 1px solid var(--border-light);
+=====================
+      background: #ffffff;
+=====================
+      padding: 25px;
+=====================
+      overflow-y: auto;
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+    .knowledge-card {
+=====================
+&
+"      background: var(--bg-color);
+=====================
+0
+,      border: 1px solid var(--border-light);
+=====================
+      padding: 14px;
+=====================
+      border-radius: 10px;
+=====================
+      margin-bottom: 10px;
+=====================
+      font-size: 12.5px;
+=====================
+    .knowledge-card-title {
+=====================
+      font-weight: 600;
+=====================
+      color: var(--text-main);
+=====================
+      margin-bottom: 4px;
+=====================
+    .knowledge-card-preview {
+=====================
+      color: var(--text-muted);
+=====================
+      font-size: 11.5px;
+=====================
+      line-height: 1.4;
+=====================
+  <div class="sidebar">
+=====================
+$
+     <div class="logo-container">
+=====================
+'
+#      <div class="logo-icon"></div>
+=====================
+J
+F      <div class="logo-title" id="logo-title-text">KUNLUN GROWTH</div>
+=====================
+R
+N    <div class="menu-header" id="menu-header-dept">
+=====================
+\
+X    <div class="menu-item active" onclick="switchDepartment('org', this)" id="menu-org">
+=====================
+,
+(      <span class="badge-count">5</span>
+=====================
+W
+S    <div class="menu-item" onclick="switchDepartment('data', this)" id="menu-data">
+=====================
+-
+)      <span class="badge-count">10</span>
+=====================
+]
+Y    <div class="menu-item" onclick="switchDepartment('content', this)" id="menu-content">
+=====================
+,
+(      <span class="badge-count">6</span>
+=====================
+c
+_    <div class="menu-item" onclick="switchDepartment('management', this)" id="menu-management">
+=====================
+,
+(      <span class="badge-count">5</span>
+=====================
+[
+W    <div class="menu-item" onclick="switchDepartment('combat', this)" id="menu-combat">
+=====================
+,
+(      <span class="badge-count">3</span>
+=====================
+a
+]    <div class="menu-item" onclick="switchDepartment('operation', this)" id="menu-operation">
+=====================
+,
+(      <span class="badge-count">3</span>
+=====================
+O
+K    <div class="menu-header" id="menu-header-chat">AI 
+=====================
+W
+S    <div class="menu-item" onclick="switchDepartment('chat', this)" id="menu-chat">
+=====================
+H
+D    <div class="menu-header" id="menu-header-sys">
+=====================
+[
+W    <div class="menu-item" onclick="switchDepartment('config', this)" id="menu-config">
+=====================
+  <div class="main-content">
+=====================
+    <div class="header-bar">
+=====================
+        <h1 id="dept-title" style="font-size: 26px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">agent
+=====================
+        <p id="dept-desc" style="color: var(--text-muted); font-size: 13.5px; font-weight: 400;">
+=====================
+F
+B      <div style="display: flex; align-items: center; gap: 20px;">
+=====================
+          <div class="form-label" style="margin-bottom: 3px; text-align: right;" id="lang-label">
+=====================
+          <select class="form-input" id="lang-select" onchange="toggleLanguage()" style="padding: 6px 12px; font-size: 12px; background: #ffffff; border-color: var(--border-color); font-weight: 600; width: 130px; border-radius: 8px;">
+=====================
+8
+4            <option value="zh">
+=====================
+3
+/            <option value="en">English</option>
+=====================
+~
+z          <div class="form-label" style="margin-bottom: 3px;" id="role-label">
+=====================
+          <select class="form-input" id="user-role-select" onchange="loadPermissionMatrix()" style="padding: 6px 12px; font-size: 12px; background: #ffffff; border-color: var(--border-color); font-weight: 600; width: 190px; border-radius: 8px;">
+=====================
+F
+B            <option value="admin">
+=====================
+H
+D            <option value="editor">
+=====================
+C
+?            <option value="sales">
+=====================
+^
+Z        <div class="net-badge" id="net-badge">
+=====================
+5
+1    <div class="agent-grid" id="agent-container">
+=====================
+5
+1    // ==========================================
+=====================
+5
+1    // ==========================================
+=====================
+    let _gatewayPort = 8888;
+=====================
+G
+C    const _urlParams = new URLSearchParams(window.location.search);
+=====================
+-
+)    if (_urlParams.get('gateway_port')) {
+=====================
+B
+>      _gatewayPort = parseInt(_urlParams.get('gateway_port'));
+=====================
+    if (window.electronAPI) {
+=====================
+<
+8      window.electronAPI.getGatewayPort().then(port => {
+=====================
+        _gatewayPort = port;
+=====================
+C
+?        console.log('[Electron] Gateway port from IPC:', port);
+=====================
+    function getGatewayUrl() {
+=====================
+4
+0      return `http://localhost:${_gatewayPort}`;
+=====================
+=
+9    let GATEWAY_URL = `http://localhost:${_gatewayPort}`;
+=====================
+0
+,    window.initGatewayUrl = function(port) {
+=====================
+      _gatewayPort = port;
+=====================
+3
+/      GATEWAY_URL = `http://localhost:${port}`;
+=====================
+H
+D      console.log('[Console] GATEWAY_URL updated to:', GATEWAY_URL);
+=====================
+    let currentDept = 'org';
+=====================
+$
+     let globalAgentStatus = {}; 
+=====================
+    let globalPermMatrix = {}; 
+=====================
+%
+!    let globalLlmProviders = {}; 
+=====================
+    let currentLang = 'zh'; 
+=====================
+5
+1    let selectedChatAgent = 'ai_sales_champion'; 
+=====================
+D
+@    let globalKnowledgeDocs = []; // 
+=====================
+J
+F    let lastScannedLeads = []; // 
+=====================
+A
+=    window.addEventListener('DOMContentLoaded', async () => {
+=====================
+      await loadSystemConfig();
+=====================
+'
+#      await loadPermissionMatrix();
+=====================
+      await loadAgentStatus();
+=====================
+    function toggleLanguage() {
+=====================
+E
+A      currentLang = document.getElementById('lang-select').value;
+=====================
+1
+-      const dict = TRANSLATIONS[currentLang];
+=====================
+M
+I      document.getElementById('logo-title-text').textContent = dict.logo;
+=====================
+U
+Q      document.getElementById('menu-header-dept').textContent = dict.dept_header;
+=====================
+S
+O      document.getElementById('menu-header-sys').textContent = dict.sys_header;
+=====================
+N
+J      document.getElementById('lang-label').textContent = dict.lang_label;
+=====================
+N
+J      document.getElementById('role-label').textContent = dict.role_label;
+=====================
+l
+h      document.getElementById('menu-org').querySelector('span:first-child').textContent = dict.menu_org;
+=====================
+n
+j      document.getElementById('menu-data').querySelector('span:first-child').textContent = dict.menu_data;
+=====================
+t
+p      document.getElementById('menu-content').querySelector('span:first-child').textContent = dict.menu_content;
+=====================
+z
+v      document.getElementById('menu-management').querySelector('span:first-child').textContent = dict.menu_management;
+=====================
+r
+n      document.getElementById('menu-combat').querySelector('span:first-child').textContent = dict.menu_combat;
+=====================
+x
+t      document.getElementById('menu-operation').querySelector('span:first-child').textContent = dict.menu_operation;
+=====================
+r
+n      document.getElementById('menu-config').querySelector('span:first-child').textContent = dict.menu_config;
+=====================
+@
+<      const netBadge = document.getElementById('net-badge');
+=====================
+?
+;      if (netBadge.style.color === 'var(--danger-color)') {
+=====================
+3
+/        netBadge.textContent = dict.net_failed;
+=====================
+6
+2        netBadge.textContent = dict.net_connected;
+=====================
+I
+E      const roleSelect = document.getElementById('user-role-select');
+=====================
+'
+#      const val = roleSelect.value;
+=====================
+7
+3      roleSelect.options[0].text = dict.role_admin;
+=====================
+8
+4      roleSelect.options[1].text = dict.role_editor;
+=====================
+7
+3      roleSelect.options[2].text = dict.role_sales;
+=====================
+      roleSelect.value = val;
+=====================
+T
+P      switchDepartment(currentDept, document.querySelector(`.sidebar .active`));
+=====================
+4
+0    function switchDepartment(deptId, element) {
+=====================
+      currentDept = deptId;
+=====================
+1
+-      const dict = TRANSLATIONS[currentLang];
+=====================
+_
+[      document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+=====================
+7
+3      if (element) element.classList.add('active');
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+      container.innerHTML = '';
+=====================
+$
+       if (deptId === 'config') {
+=====================
+R
+N        document.getElementById('dept-title').textContent = dict.config_title;
+=====================
+P
+L        document.getElementById('dept-desc').textContent = dict.config_desc;
+=====================
+        renderConfigCenter();
+=====================
+)
+%      } else if (deptId === 'chat') {
+=====================
+g
+c        document.getElementById('dept-title').textContent = "
+=====================
+        document.getElementById('dept-desc').textContent = "
+=====================
+&
+"        renderChatRoomWorkspace();
+=====================
+B
+>        const deptData = AGENTS_DATABASE[deptId][currentLang];
+=====================
+O
+K        document.getElementById('dept-title').textContent = deptData.title;
+=====================
+M
+I        document.getElementById('dept-desc').textContent = deptData.desc;
+=====================
+.
+*        renderAgentCards(deptData.agents);
+=====================
++
+'    function renderAgentCards(agents) {
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+1
+-      const dict = TRANSLATIONS[currentLang];
+=====================
+      agents.forEach(agent => {
+=====================
+E
+A        const isEnabled = globalAgentStatus[agent.id] !== false; 
+=====================
+O
+K        const cardClass = isEnabled ? 'agent-card' : 'agent-card disabled';
+=====================
+:
+6        const checkedStr = isEnabled ? 'checked' : '';
+=====================
+7
+3        const card = document.createElement('div');
+=====================
+'
+#        card.className = cardClass;
+=====================
+)
+%        card.id = `card-${agent.id}`;
+=====================
+        let actionUI = '';
+=====================
+.
+*        if (agent.id === 'wechat_audit') {
+=====================
+          actionUI = `
+=====================
+`
+\            <button class="btn-action" onclick="fetchWechatData()">${dict.btn_scan}</button>
+=====================
+            <button class="btn-action" id="lark-sync-btn" style="background-color: var(--success-color); margin-top: 8px; display: none;" onclick="syncToLarkBitable()">${dict.btn_sync_lark}</button>
+=====================
+R
+N            <div class="terminal-output" id="wechat-out">Wait trigger...</div>
+=====================
+8
+4        } else if (agent.id === 'risk_controller') {
+=====================
+          actionUI = `
+=====================
+            <button class="btn-action" style="background-color: var(--warning-color);" onclick="scanAiTone()">${dict.btn_anti_ai}</button>
+=====================
+t
+p            <div class="terminal-output" id="risk-out" style="color: var(--danger-color);">Wait trigger...</div>
+=====================
+          actionUI = `
+=====================
+            <button class="btn-action" style="background-color: #86868b;" onclick="runGenericAgent('${agent.name}')">${dict.btn_start_tools}</button>
+=====================
+S
+O            <div class="terminal-output" id="log-${agent.id}">Sleeping...</div>
+=====================
+        card.innerHTML = `
+=====================
+(
+$          <div class="agent-header">
+=====================
+=
+9            <span class="agent-name">${agent.name}</span>
+=====================
+0
+,            <label class="switch-container">
+=====================
+w
+s              <input type="checkbox" id="sw-${agent.id}" ${checkedStr} onchange="toggleAgentSwitch('${agent.id}')">
+=====================
+.
+*              <span class="slider"></span>
+=====================
+            </label>
+=====================
+9
+5          <div class="agent-desc">${agent.desc}</div>
+=====================
+          ${actionUI}
+=====================
+(
+$        container.appendChild(card);
+=====================
+3
+/    async function toggleAgentSwitch(agentId) {
+=====================
+>
+:      const cb = document.getElementById(`sw-${agentId}`);
+=====================
+B
+>      const card = document.getElementById(`card-${agentId}`);
+=====================
+      if (cb.checked) {
+=====================
+.
+*        card.classList.remove('disabled');
+=====================
+.
+*        globalAgentStatus[agentId] = true;
+=====================
++
+'        card.classList.add('disabled');
+=====================
+/
++        globalAgentStatus[agentId] = false;
+=====================
+M
+I      const userRole = document.getElementById('user-role-select').value;
+=====================
+I
+E        await fetch(`${GATEWAY_URL}/api/system/agents/status/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+]
+Y          body: JSON.stringify({ status_matrix: globalAgentStatus, user_role: userRole })
+=====================
+        console.error(e);
+=====================
+(
+$    function runGenericAgent(name) {
+=====================
+s
+o      const tips = currentLang === 'zh' ? '
+=====================
+' : 'Successfully spawned on your Mac';
+=====================
+5
+1    // ==========================================
+=====================
+5
+1    // ==========================================
+=====================
+,
+(    function renderChatRoomWorkspace() {
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+<
+8      const chatWrapper = document.createElement('div');
+=====================
+1
+-      chatWrapper.className = 'im-container';
+=====================
+2
+.      chatWrapper.style.gridColumn = '1 / -1';
+=====================
+      let itemsHTML = '';
+=====================
+Y
+U      const groups = ['org', 'data', 'content', 'management', 'combat', 'operation'];
+=====================
+      groups.forEach(g => {
+=====================
+@
+<        const list = AGENTS_DATABASE[g][currentLang].agents;
+=====================
+        list.forEach(a => {
+=====================
+J
+F          const isActive = a.id === selectedChatAgent ? 'active' : '';
+=====================
+          itemsHTML += `
+=====================
+p
+l            <div class="im-list-item ${isActive}" id="im-item-${a.id}" onclick="selectChatAgent('${a.id}')">
+=====================
+;
+7              <div class="im-item-name">${a.name}</div>
+=====================
+;
+7              <div class="im-item-desc">${a.desc}</div>
+=====================
+      chatWrapper.innerHTML = `
+=====================
+@
+<        <div class="im-agent-list" style="overflow-y:auto;">
+=====================
+          ${itemsHTML}
+=====================
+&
+"        <div class="im-chat-pane">
+=====================
+*
+&          <div class="im-chat-header">
+=====================
+i
+e            <div class="im-chat-header-title" id="chat-title-text">AI
+=====================
+ (AI Sales Champion)</div>
+=====================
+H
+D            <div style="display:flex; align-items:center; gap:8px;">
+=====================
+h
+d              <span class="form-label" style="margin-bottom:0; font-size:10px;">
+=====================
+              <select class="form-input" id="chat-provider-select" style="padding:4px 8px; font-size:11px; width:120px; border-radius:6px; background:#ffffff;">
+=====================
+>
+:                <option value="claude">Claude 3.5</option>
+=====================
+A
+=                <option value="deepseek">DeepSeek-V3</option>
+=====================
+J
+F                <option value="aggregator">
+=====================
+              </select>
+=====================
+B
+>          <div class="im-history" id="chat-history-container">
+=====================
+3
+/            <div class="chat-bubble-container">
+=====================
+,
+(              <div class="bubble agent">
+=====================
+              </div>
+=====================
+-
+)          <div class="im-chat-input-bar">
+=====================
+            <input type="text" class="form-input" id="chat-user-input" placeholder="
+=====================
+ RAG" style="background:#f5f5f7;" onkeydown="handleChatInputKey(event)">
+=====================
+            <button class="btn-action" style="margin-top:0; width:100px; height:38px;" onclick="sendChatMessage()">
+=====================
+)
+%        <div class="im-profile-pane">
+=====================
+            <h4 style="font-size:13px; font-weight:600; margin-bottom:8px; color:var(--text-main);">
+=====================
+            <div id="chat-profile-prompt" style="font-size:11.5px; line-height:1.4; color:var(--text-muted); background:var(--bg-color); padding:12px; border-radius:8px; white-space:pre-wrap; border:1px solid var(--border-light); max-height: 250px; overflow-y:auto;">
+=====================
+            <h4 style="font-size:13px; font-weight:600; margin-bottom:8px; color:var(--text-main);">
+=====================
+            <div id="chat-profile-tools" style="font-size:11px; font-family:monospace; color:#0071e3; background:rgba(0,113,227,0.03); padding:10px; border-radius:8px; border:1px dashed rgba(0,113,227,0.2);">
+=====================
+-
+)      container.appendChild(chatWrapper);
+=====================
+      updateAgentChatProfile();
+=====================
++
+'    function selectChatAgent(agentId) {
+=====================
+&
+"      selectedChatAgent = agentId;
+=====================
+b
+^      document.querySelectorAll('.im-list-item').forEach(el => el.classList.remove('active'));
+=====================
+P
+L      document.getElementById(`im-item-${agentId}`).classList.add('active');
+=====================
+      let agentName = agentId;
+=====================
+Y
+U      const groups = ['org', 'data', 'content', 'management', 'combat', 'operation'];
+=====================
+      groups.forEach(g => {
+=====================
+]
+Y        const found = AGENTS_DATABASE[g][currentLang].agents.find(a => a.id === agentId);
+=====================
+.
+*        if (found) agentName = found.name;
+=====================
+M
+I      document.getElementById('chat-title-text').textContent = agentName;
+=====================
+L
+H      const history = document.getElementById('chat-history-container');
+=====================
+2
+.      const welcomeMsg = currentLang === 'zh' 
+=====================
+z
+v        : `Hello! I am 
+=====================
+ from the Agent workspace. I am fully loaded and ready to process commands.`;
+=====================
+      history.innerHTML = `
+=====================
+/
++        <div class="chat-bubble-container">
+=====================
+(
+$          <div class="bubble agent">
+=====================
+            ${welcomeMsg}
+=====================
+      updateAgentChatProfile();
+=====================
++
+'    function updateAgentChatProfile() {
+=====================
+K
+G      const promptDiv = document.getElementById('chat-profile-prompt');
+=====================
+I
+E      const toolsDiv = document.getElementById('chat-profile-tools');
+=====================
+:
+6      if (selectedChatAgent === 'ai_sales_champion') {
+=====================
+        promptDiv.textContent = `# Role: AI
+=====================
+ (WeChat Private Sales Expert)\n- 
+=====================
+v
+r        toolsDiv.textContent = `- /api/operation/sales/qualify\n- /api/lark/bitable/sync\n- /api/wechat/db/query`;
+=====================
+?
+;      } else if (selectedChatAgent === 'risk_controller') {
+=====================
+        promptDiv.textContent = `# Role: 
+=====================
+ (Advertising Compliance Officer)\n- 
+=====================
+_
+[        toolsDiv.textContent = `- /api/content/risk/anti-ai-scan\n- /api/terminal/execute`;
+=====================
+;
+7      } else if (selectedChatAgent === 'claude_code') {
+=====================
+        promptDiv.textContent = `# Role: Claude Code (Super Architect)\n- 
+=====================
+X
+T        toolsDiv.textContent = `- /api/terminal/execute\n- /api/system/config/save`;
+=====================
+        promptDiv.textContent = `# Role: ${selectedChatAgent}\n- 
+=====================
+S
+O        toolsDiv.textContent = `- /api/terminal/execute\n- /api/system/config`;
+=====================
+,
+(    function handleChatInputKey(event) {
+=====================
+7
+3      if (event.key === 'Enter') sendChatMessage();
+=====================
+*
+&    async function sendChatMessage() {
+=====================
+C
+?      const input = document.getElementById('chat-user-input');
+=====================
+-
+)      const message = input.value.trim();
+=====================
+      if (!message) return;
+=====================
+      input.value = ''; 
+=====================
+L
+H      const history = document.getElementById('chat-history-container');
+=====================
+>
+:      const userContainer = document.createElement('div');
+=====================
+<
+8      userContainer.className = 'chat-bubble-container';
+=====================
+P
+L      userContainer.innerHTML = `<div class="bubble user">${message}</div>`;
+=====================
+-
+)      history.appendChild(userContainer);
+=====================
+3
+/      history.scrollTop = history.scrollHeight;
+=====================
+B
+>      const thinkingContainer = document.createElement('div');
+=====================
+@
+<      thinkingContainer.className = 'chat-bubble-container';
+=====================
+8
+4      thinkingContainer.id = 'thinking-bubble-temp';
+=====================
+~
+z      thinkingContainer.innerHTML = `<div class="bubble agent" style="color:var(--text-muted);">
+=====================
+ Thinking...</div>`;
+=====================
+1
+-      history.appendChild(thinkingContainer);
+=====================
+3
+/      history.scrollTop = history.scrollHeight;
+=====================
+U
+Q      const providerType = document.getElementById('chat-provider-select').value;
+=====================
+M
+I        const res = await fetch(`${GATEWAY_URL}/api/system/chat/agent`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+$
+           body: JSON.stringify({
+=====================
+,
+(            agent_id: selectedChatAgent,
+=====================
+            message: message,
+=====================
++
+'            provider_type: providerType
+=====================
+*
+&        const data = await res.json();
+=====================
+I
+E        const temp = document.getElementById('thinking-bubble-temp');
+=====================
+$
+         if (temp) temp.remove();
+=====================
+A
+=        const agentContainer = document.createElement('div');
+=====================
+?
+;        agentContainer.className = 'chat-bubble-container';
+=====================
+        let metaInfo = `<div style="font-size:10px; color:var(--text-muted); margin-bottom:4px; align-self:flex-start;">[Base Router: ${data.provider.toUpperCase()} / Model: ${data.model}]</div>`;
+=====================
+y
+u        agentContainer.innerHTML = `${metaInfo}<div class="bubble agent">${data.reply.replace(/\n/g, '<br>')}</div>`;
+=====================
+0
+,        history.appendChild(agentContainer);
+=====================
+5
+1        history.scrollTop = history.scrollHeight;
+=====================
+      } catch (err) {
+=====================
+I
+E        const temp = document.getElementById('thinking-bubble-temp');
+=====================
+$
+         if (temp) temp.remove();
+=====================
+?
+;        const errContainer = document.createElement('div');
+=====================
+=
+9        errContainer.className = 'chat-bubble-container';
+=====================
+        errContainer.innerHTML = `<div class="bubble agent" style="color:var(--danger-color);">
+=====================
+ Gateway connection failed: ${err.message}</div>`;
+=====================
+.
+*        history.appendChild(errContainer);
+=====================
+5
+1        history.scrollTop = history.scrollHeight;
+=====================
+5
+1    // ==========================================
+=====================
+5
+1    // ==========================================
+=====================
+'
+#    function renderConfigCenter() {
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+6
+2      const panel = document.createElement('div');
+=====================
+)
+%      panel.className = 'panel-card';
+=====================
+-
+)      panel.style.gridColumn = '1 / -1'; 
+=====================
+1
+-      const dict = TRANSLATIONS[currentLang];
+=====================
+      panel.innerHTML = `
+=====================
+S
+O        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+=====================
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">
+=====================
+            <div style="background: var(--bg-color); border: 1px solid var(--border-light); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+=====================
+t
+p              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+=====================
+v
+r                <strong style="font-size:13px; color:var(--text-main); font-weight:600;">Anthropic Claude</strong>
+=====================
+                <button class="btn-action" style="margin-top:0; width:auto; padding:4px 10px; font-size:11px; background:#1d1d1f;" onclick="pingLlmConnection('https://api.anthropic.com', 'ping-claude')">
+=====================
+\
+X                <span id="ping-claude" style="font-size:11px; font-weight:bold;"></span>
+=====================
+              </div>
+=====================
+W
+S              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+=====================
+e
+a                <input type="text" class="form-input" id="llm-claude-url" placeholder="Base URL">
+=====================
+i
+e                <input type="text" class="form-input" id="llm-claude-model" placeholder="Model Name">
+=====================
+                <input type="password" class="form-input" id="llm-claude-key" placeholder="API Key" style="grid-column: 1 / -1;">
+=====================
+              </div>
+=====================
+            <div style="background: var(--bg-color); border: 1px solid var(--border-light); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+=====================
+t
+p              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+=====================
+r
+n                <strong style="font-size:13px; color:var(--text-main); font-weight:600;">DeepSeek API</strong>
+=====================
+                <button class="btn-action" style="margin-top:0; width:auto; padding:4px 10px; font-size:11px; background:#1d1d1f;" onclick="pingLlmConnection('https://api.deepseek.com/v1', 'ping-deepseek')">
+=====================
+^
+Z                <span id="ping-deepseek" style="font-size:11px; font-weight:bold;"></span>
+=====================
+              </div>
+=====================
+W
+S              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+=====================
+g
+c                <input type="text" class="form-input" id="llm-deepseek-url" placeholder="Base URL">
+=====================
+k
+g                <input type="text" class="form-input" id="llm-deepseek-model" placeholder="Model Name">
+=====================
+                <input type="password" class="form-input" id="llm-deepseek-key" placeholder="API Key" style="grid-column: 1 / -1;">
+=====================
+              </div>
+=====================
+            <div style="background: var(--bg-color); border: 1px solid var(--border-light); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+=====================
+t
+p              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+=====================
+                <strong style="font-size:13px; color:var(--text-main); font-weight:600;">
+=====================
+ (OpenAI Compatible)</strong>
+=====================
+                <button class="btn-action" style="margin-top:0; width:auto; padding:4px 10px; font-size:11px; background:#1d1d1f;" onclick="pingLlmConnection(document.getElementById('llm-agg-url').value, 'ping-agg')">
+=====================
+Y
+U                <span id="ping-agg" style="font-size:11px; font-weight:bold;"></span>
+=====================
+              </div>
+=====================
+W
+S              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+=====================
+b
+^                <input type="text" class="form-input" id="llm-agg-url" placeholder="Base URL">
+=====================
+f
+b                <input type="text" class="form-input" id="llm-agg-model" placeholder="Model Name">
+=====================
+
+~                <input type="password" class="form-input" id="llm-agg-key" placeholder="API Key" style="grid-column: 1 / -1;">
+=====================
+              </div>
+=====================
+o
+k            <button class="btn-action" onclick="saveLlmProviders()">
+=====================
+9
+5            <!-- 
+=====================
+            <h3 style="font-size: 14.5px; margin-top: 35px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">
+=====================
+3
+/            <div id="knowledge-list-container">
+=====================
+'
+#              <!-- 
+=====================
+H
+D            <!-- 
+=====================
+ (PDF/Word/TXT/MD) -->
+=====================
+            <div id="rag-drop-zone" style="background:var(--bg-color); border:2px dashed var(--border-color); padding:20px; border-radius:12px; margin-top:15px; text-align:center; cursor:pointer; transition: all 0.2s;" ondragover="event.preventDefault(); this.style.borderColor='var(--accent-color)'; this.style.background='rgba(0,113,227,0.04)';" ondragleave="this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-color)';" ondrop="handleKnowledgeDrop(event)" onclick="document.getElementById('rag-file-input').click()">
+=====================
+L
+H              <div style="font-size:28px; margin-bottom:8px;">
+=====================
+              <div style="font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:4px;">
+=====================
+              <div style="font-size:11px; color:var(--text-muted);">
+=====================
+              <input type="file" id="rag-file-input" accept=".pdf,.docx,.doc,.txt,.md" style="display:none;" onchange="handleKnowledgeFileInput(this.files[0])">
+=====================
+              <div id="rag-upload-progress" style="margin-top:10px; font-size:12px; color:var(--accent-color); display:none;">
+=====================
++
+'            <!-- 
+=====================
+2
+.            <details style="margin-top:12px;">
+=====================
+              <summary style="font-size:12px; color:var(--text-muted); cursor:pointer; padding:6px 0;">
+=====================
+0
+,              <div style="margin-top:10px;">
+=====================
+,
+(                <div class="form-group">
+=====================
+b
+^                  <label class="form-label">
+=====================
+: price_policy.txt)</label>
+=====================
+s
+o                  <input type="text" class="form-input" id="rag-new-filename" placeholder="
+=====================
+                </div>
+=====================
+E
+A                <div class="form-group" style="margin-bottom:0;">
+=====================
+J
+F                  <label class="form-label">
+=====================
+                  <textarea class="form-input" id="rag-new-content" rows="4" placeholder="
+=====================
+..." style="resize:none; font-family:inherit;"></textarea>
+=====================
+                </div>
+=====================
+                <button class="btn-action" style="background:#1d1d1f; margin-top:10px;" onclick="saveNewKnowledgeDoc()">
+=====================
+              </div>
+=====================
+            </details>
+=====================
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">2. 
+=====================
+l
+h            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+=====================
+*
+&              <div class="form-group">
+=====================
+C
+?                <label class="form-label">
+=====================
+b
+^                <input type="text" class="form-input" id="lark-id" placeholder="cli_xxxxxxxx">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+G
+C                <label class="form-label">
+=====================
+O
+K                <input type="password" class="form-input" id="lark-secret">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+G
+C                <label class="form-label">WhatsApp Hook URL</label>
+=====================
+q
+m                <input type="text" class="form-input" id="whatsapp-url" placeholder="http://localhost:19000">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+G
+C                <label class="form-label">X Developer Token</label>
+=====================
+M
+I                <input type="text" class="form-input" id="twitter-token">
+=====================
+              </div>
+=====================
+Y
+U              <div class="form-group" style="grid-column: 1 / -1; margin-bottom: 0;">
+=====================
+_
+[                <label class="form-label">
+=====================
+L
+H                <div style="display:flex; gap:8px; align-items:center;">
+=====================
+                  <input type="text" class="form-input" id="db-path" placeholder="/Users/username/.../wx_db.db" style="flex:1;">
+=====================
+                  <button class="btn-action" style="margin-top:0; width:auto; padding:6px 12px; font-size:11px; white-space:nowrap; background:#86868b;" onclick="autoDetectWechatPath()">
+=====================
+                </div>
+=====================
+              </div>
+=====================
+0
+,              <!-- 
+=====================
+h
+d              <div class="form-group" style="grid-column: 1 / -1; margin-bottom:0; margin-top:8px;">
+=====================
+y
+u                <label class="form-label">
+=====================
+}
+y                <input type="text" class="form-input" id="lark-table-id" placeholder="
+=====================
+              </div>
+=====================
+F
+B            <div style="display:flex; gap:10px; margin-top:12px;">
+=====================
+              <button class="btn-action" style="background:#1d1d1f; flex:1;" onclick="saveEnvConfig()">${dict.btn_save_env}</button>
+=====================
+              <button class="btn-action" style="background:var(--success-color); flex:1;" onclick="syncToLarkBitableReal()">
+=====================
+%
+!            <!-- 
+=====================
+            <h3 style="font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">3. 
+=====================
+*
+&            <table class="perm-table">
+=====================
+              <thead>
+=====================
+                <tr>
+=====================
+3
+/                  <th>${dict.tbl_col_role}</th>
+=====================
+1
+-                  <th>${dict.tbl_col_wx}</th>
+=====================
+3
+/                  <th>${dict.tbl_col_risk}</th>
+=====================
+5
+1                  <th>${dict.tbl_col_config}</th>
+=====================
+                </tr>
+=====================
+              </thead>
+=====================
+7
+3              <tbody id="permission-tbody"></tbody>
+=====================
+            </table>
+=====================
+I
+E            <div style="display: flex; gap: 10px; margin-top: 15px;">
+=====================
+q
+m              <input type="text" class="form-input" id="new-role-input" placeholder="${dict.input_new_role}">
+=====================
+              <button class="btn-action" style="margin-top:0; width: auto; white-space: nowrap; background: #86868b;" onclick="addNewRoleRow()">${dict.btn_add_role}</button>
+=====================
+            <button class="btn-action" style="background: var(--success-color);" onclick="savePermissionMatrix()">${dict.btn_save_perm}</button>
+=====================
+6
+2            <!-- 
+=====================
+            <h3 style="font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">5. Token 
+=====================
+ (Cost Control)</h3>
+=====================
+E
+A            <div id="token-usage-panel" style="min-height:40px;">
+=====================
+d
+`              <div style="color:var(--text-muted); font-size:12px;">
+=====================
+'
+#      container.appendChild(panel);
+=====================
+      loadSystemConfigInputs();
+=====================
+      loadLlmProviderInputs();
+=====================
+      renderPermissionTable();
+=====================
+?
+;      loadKnowledgeList(); // 
+=====================
+7
+3      loadTokenUsagePanel(); // 
+=====================
+5
+1    // ==========================================
+=====================
+5
+1    // ==========================================
+=====================
+3
+/    async function handleKnowledgeDrop(event) {
+=====================
+      event.preventDefault();
+=====================
+D
+@      const dropZone = document.getElementById('rag-drop-zone');
+=====================
+=
+9      dropZone.style.borderColor = 'var(--border-color)';
+=====================
+8
+4      dropZone.style.background = 'var(--bg-color)';
+=====================
+3
+/      const file = event.dataTransfer.files[0];
+=====================
+4
+0      if (file) await uploadKnowledgeFile(file);
+=====================
+7
+3    async function handleKnowledgeFileInput(file) {
+=====================
+4
+0      if (file) await uploadKnowledgeFile(file);
+=====================
+2
+.    async function uploadKnowledgeFile(file) {
+=====================
+I
+E      const role = document.getElementById('user-role-select').value;
+=====================
+M
+I      const progressDiv = document.getElementById('rag-upload-progress');
+=====================
+.
+*      progressDiv.style.display = 'block';
+=====================
+L
+H      progressDiv.textContent = `
+=====================
+*
+&      const formData = new FormData();
+=====================
+(
+$      formData.append('file', file);
+=====================
+-
+)      formData.append('user_role', role);
+=====================
+S
+O        const res = await fetch(`${GATEWAY_URL}/api/system/knowledge/upload`, {
+=====================
+          method: 'POST',
+=====================
+          body: formData
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+x
+t          progressDiv.textContent = `
+=====================
+ ${data.message} (${(data.char_count / 1000).toFixed(1)}K 
+=====================
+?
+;          progressDiv.style.color = 'var(--success-color)';
+=====================
+          setTimeout(() => {
+=====================
+3
+/            progressDiv.style.display = 'none';
+=====================
+@
+<            progressDiv.style.color = 'var(--accent-color)';
+=====================
+          loadKnowledgeList();
+=====================
+J
+F          progressDiv.textContent = `
+=====================
+>
+:          progressDiv.style.color = 'var(--danger-color)';
+=====================
+      } catch (err) {
+=====================
+I
+E        progressDiv.textContent = `
+=====================
+<
+8        progressDiv.style.color = 'var(--danger-color)';
+=====================
+/
++    async function autoDetectWechatPath() {
+=====================
+      const btn = event.target;
+=====================
+/
++      btn.textContent = '
+=====================
+      btn.disabled = true;
+=====================
+M
+I        const res = await fetch(`${GATEWAY_URL}/api/wechat/detect-path`);
+=====================
+*
+&        const data = await res.json();
+=====================
+8
+4        if (data.success && data.paths.length > 0) {
+=====================
+O
+K          document.getElementById('db-path').value = data.paths[0].db_path;
+=====================
+w
+s          alert(`
+=====================
+${data.paths[0].account_hash}
+=====================
+.
+*          alert(`
+=====================
+2
+.        btn.textContent = '
+=====================
+        btn.disabled = false;
+=====================
+0
+,    async function syncToLarkBitableReal() {
+=====================
+)
+%      const leads = lastScannedLeads;
+=====================
+-
+)      if (!leads || leads.length === 0) {
+=====================
+R
+N        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/real-sync`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+-
+)          body: JSON.stringify({ leads })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+ ${data.message}${data.is_mock ? '\n
+=====================
+)
+%          alert(`
+=====================
+      } catch (err) {
+=====================
+.
+*    async function loadTokenUsagePanel() {
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+J
+F      const tokenPanel = document.getElementById('token-usage-panel');
+=====================
+D
+@      if (!tokenPanel) return; // 
+=====================
+M
+I        const res = await fetch(`${GATEWAY_URL}/api/system/token/usage`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+9
+5          const fmt = n => n.toLocaleString('zh-CN');
+=====================
+&
+"          tokenPanel.innerHTML = `
+=====================
+o
+k            <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:16px;">
+=====================
+              <div style="background:var(--bg-color); padding:12px; border-radius:10px; border:1px solid var(--border-light);">
+=====================
+o
+k                <div style="font-size:10px; color:var(--text-muted); margin-bottom:4px;">
+=====================
+{
+w                <div style="font-size:22px; font-weight:700; color:var(--accent-color);">${fmt(data.today_calls)}</div>
+=====================
+Y
+U                <div style="font-size:10px; color:var(--text-muted);">
+=====================
+              </div>
+=====================
+              <div style="background:var(--bg-color); padding:12px; border-radius:10px; border:1px solid var(--border-light);">
+=====================
+u
+q                <div style="font-size:10px; color:var(--text-muted); margin-bottom:4px;">
+=====================
+                <div style="font-size:22px; font-weight:700; color:var(--text-main);">${fmt(data.today_input + data.today_output)}</div>
+=====================
+                <div style="font-size:10px; color:var(--text-muted);">
+=====================
+ ${fmt(data.today_input)} + 
+=====================
+ ${fmt(data.today_output)}</div>
+=====================
+              </div>
+=====================
+              <div style="background:var(--bg-color); padding:12px; border-radius:10px; border:1px solid var(--border-light);">
+=====================
+r
+n                <div style="font-size:10px; color:var(--text-muted); margin-bottom:4px;">
+=====================
+                <div style="font-size:22px; font-weight:700; color:var(--text-main);">${fmt(data.total_input + data.total_output)}</div>
+=====================
+p
+l                <div style="font-size:10px; color:var(--text-muted);">
+=====================
+ ${fmt(data.total_calls)} 
+=====================
+              </div>
+=====================
+n
+j            <div style="font-size:11px; color:var(--text-muted); margin-bottom:6px;">
+=====================
+D
+@            ${Object.entries(data.by_provider).map(([p, v]) => `
+=====================
+              <div style="display:flex; justify-content:space-between; font-size:12px; padding:5px 0; border-bottom:1px solid var(--border-light);">
+=====================
+>
+:                <span style="font-weight:600;">${p}</span>
+=====================
+|
+x                <span style="color:var(--text-muted);">
+=====================
+ ${fmt(v.input + v.output)} tokens</span>
+=====================
+              </div>
+=====================
+            `).join('') || '<div style="font-size:12px; color:var(--text-muted);">
+=====================
+            <button class="btn-action" style="margin-top:12px; background:var(--danger-color); font-size:11px; padding:6px 14px; width:auto;" onclick="resetTokenUsage()">
+=====================
+        if (tokenPanel) tokenPanel.innerHTML = '<div style="color:var(--text-muted); font-size:12px;">Token 
+=====================
+*
+&    async function resetTokenUsage() {
+=====================
+I
+E      const role = document.getElementById('user-role-select').value;
+=====================
+K
+G      if (!confirm('
+=====================
+B
+>        await fetch(`${GATEWAY_URL}/api/system/token/reset`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+7
+3          body: JSON.stringify({ user_role: role })
+=====================
+        loadTokenUsagePanel();
+=====================
+4
+0      } catch (e) { alert('
+=====================
+,
+(    async function loadKnowledgeList() {
+=====================
+T
+P      const listContainer = document.getElementById('knowledge-list-container');
+=====================
+%
+!      if (!listContainer) return;
+=====================
+?
+;      listContainer.innerHTML = '
+=====================
+ Loading documents...';
+=====================
+P
+L        const res = await fetch(`${GATEWAY_URL}/api/system/knowledge/list`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+3
+/          globalKnowledgeDocs = data.documents;
+=====================
+5
+1          if (globalKnowledgeDocs.length === 0) {
+=====================
+            listContainer.innerHTML = '<div style="color:var(--text-muted); font-size:12px;">
+=====================
+H
+D          listContainer.innerHTML = globalKnowledgeDocs.map(doc => `
+=====================
+,
+(            <div class="knowledge-card">
+=====================
+`
+\              <div style="display:flex; justify-content:space-between; align-items:center;">
+=====================
+P
+L                <div class="knowledge-card-title">
+=====================
+ ${doc.filename}</div>
+=====================
+x
+t                <div style="font-size:10px; color:var(--text-muted);">${(doc.size_bytes / 1024).toFixed(2)} KB</div>
+=====================
+              </div>
+=====================
+J
+F              <div class="knowledge-card-preview">${doc.preview}</div>
+=====================
+          `).join('');
+=====================
+F
+B        listContainer.innerHTML = '
+=====================
+ Failed to load RAG files.';
+=====================
+.
+*    async function saveNewKnowledgeDoc() {
+=====================
+I
+E      const role = document.getElementById('user-role-select').value;
+=====================
+T
+P      const filename = document.getElementById('rag-new-filename').value.trim();
+=====================
+R
+N      const content = document.getElementById('rag-new-content').value.trim();
+=====================
+W
+S      if (!filename || !content) return alert('
+=====================
+Q
+M        const res = await fetch(`${GATEWAY_URL}/api/system/knowledge/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+J
+F          body: JSON.stringify({ filename, content, user_role: role })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+          alert(data.message);
+=====================
+E
+A          document.getElementById('rag-new-filename').value = '';
+=====================
+D
+@          document.getElementById('rag-new-content').value = '';
+=====================
+8
+4          loadKnowledgeList(); // 
+=====================
+7
+3          alert(`
+=====================
+*
+&    async function fetchWechatData() {
+=====================
+<
+8      const out = document.getElementById('wechat-out');
+=====================
+      out.textContent = currentLang === 'zh' ? '
+=====================
+ [Queue Active] Scanning local database...';
+=====================
+K
+G      document.getElementById('lark-sync-btn').style.display = 'none'; 
+=====================
+e
+a        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+=====================
+8
+4        const triggerData = await triggerRes.json();
+=====================
+?
+;        if (!triggerData.success || !triggerData.task_id) {
+=====================
+>
+:          out.textContent = '
+=====================
+ Failed to trigger task.';
+=====================
+/
++        const taskId = triggerData.task_id;
+=====================
+2
+.        out.textContent += ` ID: ${taskId}\n`;
+=====================
+:
+6        const pollInterval = setInterval(async () => {
+=====================
+i
+e            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+=====================
+:
+6            const statusData = await statusRes.json();
+=====================
+)
+%            if (statusData.success) {
+=====================
+9
+5              out.textContent = currentLang === 'zh' 
+=====================
+y
+u                ? `
+=====================
+]: ${statusData.progress}%\n`
+=====================
+v
+r                : `
+=====================
+ Decrypting local SQLite and matching BANT leads...\n[Progress]: ${statusData.progress}%\n`;
+=====================
+:
+6              if (statusData.status === 'completed') {
+=====================
+0
+,                clearInterval(pollInterval);
+=====================
+3
+/                const data = statusData.result;
+=====================
+,
+(                lastScannedLeads = data;
+=====================
+V
+R                document.getElementById('lark-sync-btn').style.display = 'block'; 
+=====================
+                out.innerHTML = `<span style="color: var(--success-color);">
+=====================
+                  data.map((m, i) => `${i+1}. <strong>${m.from_user}</strong>: "${m.content.substring(0,25)}..."`).join('<br>');
+=====================
+          } catch (pollErr) {
+=====================
+,
+(            clearInterval(pollInterval);
+=====================
+K
+G            out.textContent += `\n
+=====================
+ Poll failed: ${pollErr.message}`;
+=====================
+      } catch (err) {
+=====================
+7
+3        out.textContent = `[Error] ${err.message}`;
+=====================
+,
+(    async function syncToLarkBitable() {
+=====================
+<
+8      const out = document.getElementById('wechat-out');
+=====================
+{
+w      const waitTips = currentLang === 'zh' ? '
+=====================
+...' : 'Pushing leads to Lark Base...';
+=====================
+Z
+V      out.innerHTML += `<br><br><span style="color: #38bdf8;">
+=====================
+ ${waitTips}</span>`;
+=====================
+M
+I        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/sync`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+?
+;          body: JSON.stringify({ leads: lastScannedLeads })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+Y
+U          const successTips = currentLang === 'zh' ? '
+=====================
+          const linkTips = currentLang === 'zh' ? '[
+=====================
+]' : '[Click here to open Lark Bitable]';
+=====================
+          out.innerHTML += `<br><br><span style="color: var(--success-color);">
+=====================
+ [${successTips}] ${data.message}</span><br>` +
+=====================
+ <a href="${data.bitable_url}" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;">${linkTips}</a>`;
+=====================
+p
+l          out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+ Failed: ${data.error}</span>`;
+=====================
+      } catch (err) {
+=====================
+y
+u        out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+ Connection error: ${err.message}</span>`;
+=====================
+%
+!    async function scanAiTone() {
+=====================
+:
+6      const out = document.getElementById('risk-out');
+=====================
+;
+7      out.textContent = 'Parsing draft paragraph...\n';
+=====================
+        const testText = "
+=====================
+U
+Q        const res = await fetch(`${GATEWAY_URL}/api/content/risk/anti-ai-scan`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+6
+2          body: JSON.stringify({ text: testText })
+=====================
+*
+&        const data = await res.json();
+=====================
+X
+T        const scoreLabel = currentLang === 'zh' ? '
+=====================
+' : 'Score Complete';
+=====================
+5
+1        const blockLabel = data.is_too_machinery 
+=====================
+j
+f          ? (currentLang === 'zh' ? '
+=====================
+ Too Robotic, Rejected!')
+=====================
+]
+Y          : (currentLang === 'zh' ? '
+=====================
+ Natural Copywriting');
+=====================
+a
+]        out.textContent = `[${scoreLabel}] AI-Index: ${data.ai_index} (Lower is better)\n` + 
+=====================
+(
+$          `Audit: ${blockLabel}\n` +
+=====================
+\
+X          `Hits: ` + data.matched_words.map(w => `"${w.word}"(${w.count}x)`).join(', ');
+=====================
+      } catch (err) {
+=====================
+7
+3        out.textContent = `[Error] ${err.message}`;
+=====================
+;
+7    async function pingLlmConnection(baseUrl, spanId) {
+=====================
+7
+3      const span = document.getElementById(spanId);
+=====================
++
+'      span.textContent = "
+=====================
+1
+-      span.style.color = "var(--text-muted)";
+=====================
+      if (!baseUrl) {
+=====================
++
+'        span.textContent = "URL Empty";
+=====================
+5
+1        span.style.color = "var(--danger-color)";
+=====================
+P
+L        const res = await fetch(`${GATEWAY_URL}/api/system/llm/test-ping`, {
+=====================
+          method: "POST",
+=====================
+>
+:          headers: { "Content-Type": "application/json" },
+=====================
+9
+5          body: JSON.stringify({ base_url: baseUrl })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+=
+9          span.textContent = `
+=====================
+ ${data.latency_ms}ms`;
+=====================
+8
+4          span.style.color = "var(--success-color)";
+=====================
+6
+2          span.textContent = `
+=====================
+7
+3          span.style.color = "var(--danger-color)";
+=====================
+-
+)        span.textContent = `
+=====================
+5
+1        span.style.color = "var(--danger-color)";
+=====================
+    let currentConfigData = {};
+=====================
++
+'    async function loadSystemConfig() {
+=====================
+H
+D        const res = await fetch(`${GATEWAY_URL}/api/system/config`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
++
+'          currentConfigData = data.env;
+=====================
+      } catch (err) {
+=====================
+3
+/        const dict = TRANSLATIONS[currentLang];
+=====================
+O
+K        document.getElementById('net-badge').textContent = dict.net_failed;
+=====================
+U
+Q        document.getElementById('net-badge').style.color = 'var(--danger-color)';
+=====================
+]
+Y        document.getElementById('net-badge').style.background = 'rgba(255, 59, 48, 0.1)';
+=====================
++
+'    function loadSystemConfigInputs() {
+=====================
+1
+-      if (currentConfigData.CLAUDE_API_KEY) {
+=====================
+[
+W        document.getElementById('lark-id').value = currentConfigData.LARK_APP_ID || '';
+=====================
+c
+_        document.getElementById('lark-secret').value = currentConfigData.LARK_APP_SECRET || '';
+=====================
+e
+a        document.getElementById('whatsapp-url').value = currentConfigData.WHATSAPP_API_URL || '';
+=====================
+g
+c        document.getElementById('twitter-token').value = currentConfigData.TWITTER_API_TOKEN || '';
+=====================
+^
+Z        document.getElementById('db-path').value = currentConfigData.WECHAT_DB_PATH || '';
+=====================
+0
+,    async function loadLlmProviderInputs() {
+=====================
+O
+K        const res = await fetch(`${GATEWAY_URL}/api/system/llm/providers`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+2
+.          globalLlmProviders = data.providers;
+=====================
+c
+_          document.getElementById('llm-claude-url').value = globalLlmProviders.claude.base_url;
+=====================
+g
+c          document.getElementById('llm-claude-model').value = globalLlmProviders.claude.model_name;
+=====================
+b
+^          document.getElementById('llm-claude-key').value = globalLlmProviders.claude.api_key;
+=====================
+g
+c          document.getElementById('llm-deepseek-url').value = globalLlmProviders.deepseek.base_url;
+=====================
+k
+g          document.getElementById('llm-deepseek-model').value = globalLlmProviders.deepseek.model_name;
+=====================
+f
+b          document.getElementById('llm-deepseek-key').value = globalLlmProviders.deepseek.api_key;
+=====================
+d
+`          document.getElementById('llm-agg-url').value = globalLlmProviders.aggregator.base_url;
+=====================
+h
+d          document.getElementById('llm-agg-model').value = globalLlmProviders.aggregator.model_name;
+=====================
+c
+_          document.getElementById('llm-agg-key').value = globalLlmProviders.aggregator.api_key;
+=====================
+        console.error(e);
+=====================
++
+'    async function saveLlmProviders() {
+=====================
+I
+E      const role = document.getElementById('user-role-select').value;
+=====================
+      const providers = {
+=====================
+'
+#          name: "Anthropic Claude",
+=====================
+H
+D          base_url: document.getElementById('llm-claude-url').value,
+=====================
+L
+H          model_name: document.getElementById('llm-claude-model').value,
+=====================
+F
+B          api_key: document.getElementById('llm-claude-key').value
+=====================
+          name: "DeepSeek API",
+=====================
+J
+F          base_url: document.getElementById('llm-deepseek-url').value,
+=====================
+N
+J          model_name: document.getElementById('llm-deepseek-model').value,
+=====================
+H
+D          api_key: document.getElementById('llm-deepseek-key').value
+=====================
+        aggregator: {
+=====================
+)
+%          name: "
+=====================
+E
+A          base_url: document.getElementById('llm-agg-url').value,
+=====================
+I
+E          model_name: document.getElementById('llm-agg-model').value,
+=====================
+C
+?          api_key: document.getElementById('llm-agg-key').value
+=====================
+U
+Q        const res = await fetch(`${GATEWAY_URL}/api/system/llm/providers/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+B
+>          body: JSON.stringify({ providers, user_role: role })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+r
+n          alert('
+=====================
+ llm_providers.json 
+=====================
+-
+)          globalLlmProviders = providers;
+=====================
+7
+3          alert(`
+=====================
+(
+$    async function saveEnvConfig() {
+=====================
+I
+E      const role = document.getElementById('user-role-select').value;
+=====================
+      const config = {
+=====================
+        CLAUDE_API_KEY: document.getElementById('llm-claude-key') ? document.getElementById('llm-claude-key').value : (currentConfigData.CLAUDE_API_KEY || ''),
+=====================
+E
+A        WECHAT_DB_PATH: document.getElementById('db-path').value,
+=====================
+B
+>        LARK_APP_ID: document.getElementById('lark-id').value,
+=====================
+J
+F        LARK_APP_SECRET: document.getElementById('lark-secret').value,
+=====================
+        LARK_CLI_PATH: 'lark',
+=====================
+]
+Y        OPENCLAW_API_URL: currentConfigData.OPENCLAW_API_URL || 'http://localhost:18000',
+=====================
+Q
+M        OPENCLAW_TOKEN: currentConfigData.OPENCLAW_TOKEN || 'mock_token_123',
+=====================
+L
+H        WHATSAPP_API_URL: document.getElementById('whatsapp-url').value,
+=====================
+M
+I        TWITTER_API_TOKEN: document.getElementById('twitter-token').value
+=====================
+N
+J        const res = await fetch(`${GATEWAY_URL}/api/system/config/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+?
+;          body: JSON.stringify({ config, user_role: role })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+d
+`          alert('
+=====================
+)
+%          currentConfigData = config;
+=====================
+8
+4          alert(`
+=====================
+      } catch (err) {
+=====================
+/
++    async function loadPermissionMatrix() {
+=====================
+M
+I        const res = await fetch(`${GATEWAY_URL}/api/system/permissions`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+-
+)          globalPermMatrix = data.matrix;
+=====================
+          applyRBACRules(); 
+=====================
+      } catch (err) {
+=====================
+<
+8        console.error("
+=====================
+*
+&    function renderPermissionTable() {
+=====================
+D
+@      const tbody = document.getElementById('permission-tbody');
+=====================
+      tbody.innerHTML = '';
+=====================
+0
+,      for (const role in globalPermMatrix) {
+=====================
+4
+0        const tr = document.createElement('tr');
+=====================
+_
+[        const hasWechat = globalPermMatrix[role].includes('wechat_audit') ? 'checked' : '';
+=====================
+]
+Y        const hasRisk = globalPermMatrix[role].includes('content_risk') ? 'checked' : '';
+=====================
+`
+\        const hasConfig = globalPermMatrix[role].includes('system_config') ? 'checked' : '';
+=====================
+B
+>        const isDisabled = role === 'admin' ? 'disabled' : '';
+=====================
+        tr.innerHTML = `
+=====================
+K
+G          <td style="font-weight: bold; text-align: left;">${role}</td>
+=====================
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="wechat_audit" ${hasWechat} ${isDisabled}></td>
+=====================
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="content_risk" ${hasRisk} ${isDisabled}></td>
+=====================
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="system_config" ${hasConfig} ${isDisabled}></td>
+=====================
+        tbody.appendChild(tr);
+=====================
+    function addNewRoleRow() {
+=====================
+c
+_      const newRoleName = document.getElementById('new-role-input').value.trim().toLowerCase();
+=====================
+=
+9      if (!newRoleName) return alert('Role name empty!');
+=====================
+J
+F      if (globalPermMatrix[newRoleName]) return alert('Role exists!');
+=====================
+-
+)      globalPermMatrix[newRoleName] = [];
+=====================
+      renderPermissionTable();
+=====================
+?
+;      document.getElementById('new-role-input').value = '';
+=====================
+/
++    async function savePermissionMatrix() {
+=====================
+U
+Q      const currentAdminRole = document.getElementById('user-role-select').value;
+=====================
+C
+?      const checkboxes = document.querySelectorAll('.perm-cb');
+=====================
+Y
+U      const newMatrix = { admin: ["wechat_audit", "content_risk", "system_config"] };
+=====================
+$
+       checkboxes.forEach(cb => {
+=====================
+6
+2        const role = cb.getAttribute('data-role');
+=====================
+6
+2        const perm = cb.getAttribute('data-perm');
+=====================
+)
+%        if (role === 'admin') return;
+=====================
+7
+3        if (!newMatrix[role]) newMatrix[role] = [];
+=====================
+        if (cb.checked) {
+=====================
+)
+%          newMatrix[role].push(perm);
+=====================
+S
+O        const res = await fetch(`${GATEWAY_URL}/api/system/permissions/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+V
+R          body: JSON.stringify({ matrix: newMatrix, user_role: currentAdminRole })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
++
+'          alert('Saved successfully!');
+=====================
++
+'          globalPermMatrix = newMatrix;
+=====================
+,
+(          alert(`Error: ${data.error}`);
+=====================
+      } catch (err) {
+=====================
+        alert('Failed');
+=====================
+    function applyRBACRules() {
+=====================
+P
+L      const currentRole = document.getElementById('user-role-select').value;
+=====================
+C
+?      const currentPerms = globalPermMatrix[currentRole] || [];
+=====================
+M
+I      console.log(`
+=====================
+ RBAC applied for: ${currentRole}`, currentPerms);
+=====================
+*
+&    async function loadAgentStatus() {
+=====================
+O
+K        const res = await fetch(`${GATEWAY_URL}/api/system/agents/status`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+5
+1          globalAgentStatus = data.status_matrix;
+=====================
+U
+Q          switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+=====================
+      } catch (err) {
+=====================
+S
+O        switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+=====================
+    const TRANSLATIONS = {
+=====================
+        logo: "KUNLUN GROWTH",
+=====================
+1
+-        dept_header: "
+=====================
+'
+#        sys_header: "
+=====================
+,
+(        menu_org: "
+=====================
+(
+$        menu_data: "
+=====================
++
+'        menu_content: "
+=====================
+.
+*        menu_management: "
+=====================
+,
+(        menu_combat: "
+=====================
+-
+)        menu_operation: "
+=====================
+5
+1        menu_config: "
+=====================
+=
+9        lang_label: "
+=====================
+A
+=        role_label: "
+=====================
+D
+@        net_connected: "
+=====================
+G
+C        net_failed: "
+=====================
+2
+.        role_admin: "
+=====================
+4
+0        role_editor: "
+=====================
+/
++        role_sales: "
+=====================
+8
+4        btn_scan: "
+=====================
+H
+D        btn_sync_lark: "
+=====================
+6
+2        btn_anti_ai: "
+=====================
+9
+5        btn_start_tools: "
+=====================
+D
+@        btn_save_env: "
+=====================
+0
+,        btn_save_perm: "
+=====================
+)
+%        btn_add_role: "
+=====================
+A
+=        input_new_role: "
+=====================
+        tbl_col_role: "
+=====================
+'
+#        tbl_col_wx: "
+=====================
+)
+%        tbl_col_risk: "
+=====================
++
+'        tbl_col_config: "
+=====================
+5
+1        config_title: "
+=====================
+
+}        config_desc: "
+=====================
+%
+!        logo: "KUNLUN GLOBAL AI",
+=====================
+-
+)        dept_header: "AGENT DEPARTMENTS",
+=====================
+)
+%        sys_header: "SYSTEM CONTROL",
+=====================
++
+'        menu_org: "
+=====================
+0
+,        menu_data: "
+=====================
+ Data Intelligence",
+=====================
+1
+-        menu_content: "
+=====================
+5
+1        menu_management: "
+=====================
+4
+0        menu_combat: "
+=====================
+ Combat Operations",
+=====================
+6
+2        menu_operation: "
+=====================
+ Private-Domain Ops",
+=====================
+0
+,        menu_config: "
+=====================
+-
+)        lang_label: "
+=====================
+8
+4        role_label: "Current Workspace Role (RBAC)",
+=====================
+?
+;        net_connected: "
+=====================
+ Local Gateway :8888 Connected",
+=====================
+=
+9        net_failed: "
+=====================
+ Connect failed (Run npm start)",
+=====================
+.
+*        role_admin: "Admin (Full Access)",
+=====================
+,
+(        role_editor: "Editor (Content)",
+=====================
+1
+-        role_sales: "Sales (Private WeChat)",
+=====================
+8
+4        btn_scan: "Scan WeChat Message Logs (BANT)",
+=====================
+2
+.        btn_sync_lark: "Sync to Lark Bitable",
+=====================
+/
++        btn_anti_ai: "Run Anti-AI Scanner",
+=====================
+9
+5        btn_start_tools: "Start Agent & Mount Tools",
+=====================
+7
+3        btn_save_env: "Save Settings to .env file",
+=====================
+<
+8        btn_save_perm: "Save RBAC Authorization Matrix",
+=====================
+)
+%        btn_add_role: "Add New Role",
+=====================
+;
+7        input_new_role: "Enter new role (e.g. intern)",
+=====================
+        tbl_col_role: "Role",
+=====================
+$
+         tbl_col_wx: "WeChat DB",
+=====================
+)
+%        tbl_col_risk: "Anti-AI Wind",
+=====================
++
+'        tbl_col_config: "Sys Settings",
+=====================
+7
+3        config_title: "Global Configuration Tower",
+=====================
+{
+w        config_desc: "Read/Write local .env properties, RAG files, and customize multi-user RBAC authorization matrix."
+=====================
+BDfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/index.htmlR
+=====================
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+=====================
+ (Kunlun Growth Console)</title>
+  <style>
+    :root {
+      --bg-color: #f5f5f7; /* 
+=====================
+ */
+      --sidebar-bg: #ffffff; 
+      --card-bg: #ffffff; 
+      --border-light: #e8e8ed; 
+      --border-color: #d2d2d7; 
+      --text-main: #1d1d1f; 
+      --text-muted: #86868b; 
+      --accent-color: #0071e3; 
+      --accent-hover: #0077ed;
+      --success-color: #34c759; 
+      --warning-color: #ff9500; 
+      --danger-color: #ff3b30; 
+      --input-bg: #f5f5f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      letter-spacing: -0.015em;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 
+=====================
+ */
+    .sidebar {
+      width: 290px;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      padding: 35px 20px;
+      overflow-y: auto;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 35px;
+      padding-left: 8px;
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--text-main);
+      border-radius: 6px;
+    }
+
+    .logo-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .menu-header {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 22px 0 10px 8px;
+      font-weight: 600;
+    }
+
+    .menu-item {
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      margin-bottom: 4px;
+      font-size: 13.5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 500;
+    }
+
+    .menu-item:hover {
+      background: var(--bg-color);
+    }
+
+    .menu-item.active {
+      background: var(--bg-color);
+      font-weight: 600;
+      color: var(--accent-color);
+    }
+
+    .badge-count {
+      font-size: 10px;
+      background: var(--border-light);
+      padding: 2px 6px;
+      border-radius: 10px;
+      color: var(--text-muted);
+      font-weight: bold;
+    }
+
+    .menu-item.active .badge-count {
+      background: rgba(0, 113, 227, 0.1);
+      color: var(--accent-color);
+    }
+
+    /* 
+=====================
+ */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 45px 50px;
+      overflow-y: auto;
+    }
+
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 35px;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 25px;
+    }
+
+    .net-badge {
+      background: rgba(52, 199, 89, 0.1);
+      color: var(--success-color);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Agent 
+=====================
+ */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .agent-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+    }
+
+    .agent-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+      border-color: var(--border-color);
+    }
+
+    .agent-card.disabled {
+      opacity: 0.35;
+    }
+
+    .agent-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 10px;
+    }
+
+    .agent-name {
+      font-size: 15.5px;
+      font-weight: 600;
+    }
+
+    /* Switch 
+=====================
+ */
+    .switch-container {
+      display: inline-block;
+      position: relative;
+      width: 42px;
+      height: 22px;
+    }
+
+    .switch-container input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--border-light);
+      transition: .25s ease;
+      border-radius: 22px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 2px;
+      bottom: 2px;
+      background-color: #fff;
+      transition: .25s ease;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+    input:checked + .slider {
+      background-color: var(--success-color);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .agent-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      min-height: 40px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      outline: none;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+
+    .form-input:focus {
+      background: #ffffff;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+    }
+
+    .btn-action {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .btn-action:hover {
+      background: #0077ed;
+      box-shadow: 0 2px 8px rgba(0, 113, 227, 0.25);
+    }
+
+    .terminal-output {
+      background: #1d1d1f; 
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 15px;
+      font-family: SFMono-Regular, Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #30d158; 
+      min-height: 105px;
+      max-height: 180px;
+      overflow-y: auto;
+      margin-top: 15px;
+      white-space: pre-wrap;
+    }
+
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    .perm-table th, .perm-table td {
+      border: 1px solid var(--border-light);
+      padding: 12px;
+      text-align: center;
+    }
+
+    .perm-table th {
+      background: var(--bg-color);
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* IM 
+=====================
+ */
+    .im-container {
+      display: flex;
+      height: calc(100vh - 190px);
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+    }
+
+    .im-agent-list {
+      width: 250px;
+      border-right: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+    }
+
+    .im-list-item {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-light);
+      cursor: pointer;
+      transition: background 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .im-list-item:hover {
+      background: var(--bg-color);
+    }
+
+    .im-list-item.active {
+      background: rgba(0, 113, 227, 0.05);
+      border-left: 4px solid var(--accent-color);
+      padding-left: 14px;
+    }
+
+    .im-item-name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .im-item-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .im-chat-pane {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #f5f5f7; 
+    }
+
+    .im-chat-header {
+      padding: 15px 25px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .im-chat-header-title {
+      font-size: 14.5px;
+      font-weight: 600;
+    }
+
+    .im-history {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .chat-bubble-container {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .bubble {
+      max-width: 75%;
+      padding: 12px 18px;
+      border-radius: 16px;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .bubble.user {
+      align-self: flex-end;
+      background: var(--accent-color);
+      color: #ffffff;
+      border-bottom-right-radius: 4px;
+    }
+
+    .bubble.agent {
+      align-self: flex-start;
+      background: #ffffff;
+      color: var(--text-main);
+      border-bottom-left-radius: 4px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+    }
+
+    .im-chat-input-bar {
+      padding: 20px 25px;
+      background: #ffffff;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .im-profile-pane {
+      width: 280px;
+      border-left: 1px solid var(--border-light);
+      background: #ffffff;
+      padding: 25px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* 
+=====================
+ */
+    .knowledge-card {
+      background: var(--bg-color);
+      border: 1px solid var(--border-light);
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 12.5px;
+    }
+
+    .knowledge-card-title {
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .knowledge-card-preview {
+      color: var(--text-muted);
+      font-size: 11.5px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+=====================
+ -->
+  <div class="sidebar">
+    <div class="logo-container">
+      <div class="logo-icon"></div>
+      <div class="logo-title" id="logo-title-text">KUNLUN GROWTH</div>
+    </div>
+    
+    <div class="menu-header" id="menu-header-dept">
+=====================
+</div>
+    <div class="menu-item active" onclick="switchDepartment('org', this)" id="menu-org">
+      <span>
+=====================
+</span>
+      <span class="badge-count">5</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('data', this)" id="menu-data">
+      <span>
+=====================
+</span>
+      <span class="badge-count">10</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('content', this)" id="menu-content">
+      <span>
+=====================
+</span>
+      <span class="badge-count">6</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('management', this)" id="menu-management">
+      <span>
+=====================
+</span>
+      <span class="badge-count">5</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('combat', this)" id="menu-combat">
+      <span>
+=====================
+</span>
+      <span class="badge-count">3</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('operation', this)" id="menu-operation">
+      <span>
+=====================
+</span>
+      <span class="badge-count">3</span>
+    </div>
+
+    <!-- AI 
+=====================
+ -->
+    <div class="menu-header" id="menu-header-chat">AI 
+=====================
+</div>
+    <div class="menu-item" onclick="switchDepartment('chat', this)" id="menu-chat">
+      <span>
+=====================
+</span>
+    </div>
+
+    <div class="menu-header" id="menu-header-sys">
+=====================
+</div>
+    <div class="menu-item" onclick="switchDepartment('config', this)" id="menu-config">
+      <span>
+=====================
+</span>
+    </div>
+  </div>
+
+  <!-- 
+=====================
+ -->
+  <div class="main-content">
+    <div class="header-bar">
+      <div>
+        <h1 id="dept-title" style="font-size: 26px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">agent
+=====================
+</h1>
+        <p id="dept-desc" style="color: var(--text-muted); font-size: 13.5px; font-weight: 400;">
+=====================
+</p>
+      </div>
+      
+      <!-- 
+=====================
+ -->
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <!-- 
+=====================
+ -->
+        <div>
+          <div class="form-label" style="margin-bottom: 3px; text-align: right;" id="lang-label">
+=====================
+ (Language)</div>
+          <select class="form-input" id="lang-select" onchange="toggleLanguage()" style="padding: 6px 12px; font-size: 12px; background: #ffffff; border-color: var(--border-color); font-weight: 600; width: 130px; border-radius: 8px;">
+            <option value="zh">
+=====================
+</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+
+        <div>
+          <div class="form-label" style="margin-bottom: 3px;" id="role-label">
+=====================
+ RBAC)</div>
+          <select class="form-input" id="user-role-select" onchange="loadPermissionMatrix()" style="padding: 6px 12px; font-size: 12px; background: #ffffff; border-color: var(--border-color); font-weight: 600; width: 190px; border-radius: 8px;">
+            <option value="admin">
+=====================
+ (Admin)</option>
+            <option value="editor">
+=====================
+ (Editor)</option>
+            <option value="sales">
+=====================
+ (Sales)</option>
+          </select>
+        </div>
+        <div class="net-badge" id="net-badge">
+=====================
+</div>
+      </div>
+    </div>
+
+    <!-- 
+=====================
+ -->
+    <div class="agent-grid" id="agent-container">
+      <!-- 
+=====================
+ -->
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // 
+=====================
+
+    // ==========================================
+    let _gatewayPort = 8888;
+
+    // 
+=====================
+
+    const _urlParams = new URLSearchParams(window.location.search);
+    if (_urlParams.get('gateway_port')) {
+      _gatewayPort = parseInt(_urlParams.get('gateway_port'));
+    }
+
+    // 
+=====================
+
+    if (window.electronAPI) {
+      window.electronAPI.getGatewayPort().then(port => {
+        _gatewayPort = port;
+        console.log('[Electron] Gateway port from IPC:', port);
+      });
+    }
+
+    // 
+=====================
+
+    function getGatewayUrl() {
+      return `http://localhost:${_gatewayPort}`;
+    }
+    // 
+=====================
+ GATEWAY_URL
+    let GATEWAY_URL = `http://localhost:${_gatewayPort}`;
+
+    // 
+=====================
+
+    window.initGatewayUrl = function(port) {
+      _gatewayPort = port;
+      GATEWAY_URL = `http://localhost:${port}`;
+      console.log('[Console] GATEWAY_URL updated to:', GATEWAY_URL);
+    };
+
+    let currentDept = 'org';
+    let globalAgentStatus = {}; 
+    let globalPermMatrix = {}; 
+    let globalLlmProviders = {}; 
+    let currentLang = 'zh'; 
+    let selectedChatAgent = 'ai_sales_champion'; 
+    let globalKnowledgeDocs = []; // 
+=====================
+
+    let lastScannedLeads = []; // 
+=====================
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      await loadSystemConfig();
+      await loadPermissionMatrix();
+      await loadAgentStatus();
+    });
+
+    // 
+=====================
+
+    function toggleLanguage() {
+      currentLang = document.getElementById('lang-select').value;
+      const dict = TRANSLATIONS[currentLang];
+
+      document.getElementById('logo-title-text').textContent = dict.logo;
+      document.getElementById('menu-header-dept').textContent = dict.dept_header;
+      document.getElementById('menu-header-sys').textContent = dict.sys_header;
+      document.getElementById('lang-label').textContent = dict.lang_label;
+      document.getElementById('role-label').textContent = dict.role_label;
+
+      document.getElementById('menu-org').querySelector('span:first-child').textContent = dict.menu_org;
+      document.getElementById('menu-data').querySelector('span:first-child').textContent = dict.menu_data;
+      document.getElementById('menu-content').querySelector('span:first-child').textContent = dict.menu_content;
+      document.getElementById('menu-management').querySelector('span:first-child').textContent = dict.menu_management;
+      document.getElementById('menu-combat').querySelector('span:first-child').textContent = dict.menu_combat;
+      document.getElementById('menu-operation').querySelector('span:first-child').textContent = dict.menu_operation;
+      document.getElementById('menu-config').querySelector('span:first-child').textContent = dict.menu_config;
+
+      const netBadge = document.getElementById('net-badge');
+      if (netBadge.style.color === 'var(--danger-color)') {
+        netBadge.textContent = dict.net_failed;
+      } else {
+        netBadge.textContent = dict.net_connected;
+      }
+
+      const roleSelect = document.getElementById('user-role-select');
+      const val = roleSelect.value;
+      roleSelect.options[0].text = dict.role_admin;
+      roleSelect.options[1].text = dict.role_editor;
+      roleSelect.options[2].text = dict.role_sales;
+      roleSelect.value = val;
+
+      switchDepartment(currentDept, document.querySelector(`.sidebar .active`));
+    }
+
+    // 
+=====================
+
+    function switchDepartment(deptId, element) {
+      currentDept = deptId;
+      const dict = TRANSLATIONS[currentLang];
+      
+      document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+      if (element) element.classList.add('active');
+
+      const container = document.getElementById('agent-container');
+      container.innerHTML = '';
+
+      if (deptId === 'config') {
+        document.getElementById('dept-title').textContent = dict.config_title;
+        document.getElementById('dept-desc').textContent = dict.config_desc;
+        renderConfigCenter();
+      } else if (deptId === 'chat') {
+        document.getElementById('dept-title').textContent = "
+=====================
+ (IM Workspace)";
+        document.getElementById('dept-desc').textContent = "
+=====================
+";
+        renderChatRoomWorkspace();
+      } else {
+        const deptData = AGENTS_DATABASE[deptId][currentLang];
+        document.getElementById('dept-title').textContent = deptData.title;
+        document.getElementById('dept-desc').textContent = deptData.desc;
+        renderAgentCards(deptData.agents);
+      }
+    }
+
+    // 
+=====================
+
+    function renderAgentCards(agents) {
+      const container = document.getElementById('agent-container');
+      const dict = TRANSLATIONS[currentLang];
+      
+      agents.forEach(agent => {
+        const isEnabled = globalAgentStatus[agent.id] !== false; 
+        const cardClass = isEnabled ? 'agent-card' : 'agent-card disabled';
+        const checkedStr = isEnabled ? 'checked' : '';
+
+        const card = document.createElement('div');
+        card.className = cardClass;
+        card.id = `card-${agent.id}`;
+
+        let actionUI = '';
+        if (agent.id === 'wechat_audit') {
+          actionUI = `
+            <button class="btn-action" onclick="fetchWechatData()">${dict.btn_scan}</button>
+            <button class="btn-action" id="lark-sync-btn" style="background-color: var(--success-color); margin-top: 8px; display: none;" onclick="syncToLarkBitable()">${dict.btn_sync_lark}</button>
+            <div class="terminal-output" id="wechat-out">Wait trigger...</div>
+          `;
+        } else if (agent.id === 'risk_controller') {
+          actionUI = `
+            <button class="btn-action" style="background-color: var(--warning-color);" onclick="scanAiTone()">${dict.btn_anti_ai}</button>
+            <div class="terminal-output" id="risk-out" style="color: var(--danger-color);">Wait trigger...</div>
+          `;
+        } else {
+          actionUI = `
+            <button class="btn-action" style="background-color: #86868b;" onclick="runGenericAgent('${agent.name}')">${dict.btn_start_tools}</button>
+            <div class="terminal-output" id="log-${agent.id}">Sleeping...</div>
+          `;
+        }
+
+        card.innerHTML = `
+          <div class="agent-header">
+            <span class="agent-name">${agent.name}</span>
+            <label class="switch-container">
+              <input type="checkbox" id="sw-${agent.id}" ${checkedStr} onchange="toggleAgentSwitch('${agent.id}')">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="agent-desc">${agent.desc}</div>
+          ${actionUI}
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // 
+=====================
+
+    async function toggleAgentSwitch(agentId) {
+      const cb = document.getElementById(`sw-${agentId}`);
+      const card = document.getElementById(`card-${agentId}`);
+      
+      if (cb.checked) {
+        card.classList.remove('disabled');
+        globalAgentStatus[agentId] = true;
+      } else {
+        card.classList.add('disabled');
+        globalAgentStatus[agentId] = false;
+      }
+
+      const userRole = document.getElementById('user-role-select').value;
+      try {
+        await fetch(`${GATEWAY_URL}/api/system/agents/status/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status_matrix: globalAgentStatus, user_role: userRole })
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // 
+=====================
+
+    function runGenericAgent(name) {
+      const tips = currentLang === 'zh' ? '
+=====================
+' : 'Successfully spawned on your Mac';
+      alert(`
+=====================
+`);
+    }
+
+    // ==========================================
+    // 
+=====================
+
+    // ==========================================
+    function renderChatRoomWorkspace() {
+      const container = document.getElementById('agent-container');
+      const chatWrapper = document.createElement('div');
+      chatWrapper.className = 'im-container';
+      chatWrapper.style.gridColumn = '1 / -1';
+
+      let itemsHTML = '';
+      const groups = ['org', 'data', 'content', 'management', 'combat', 'operation'];
+      
+      groups.forEach(g => {
+        const list = AGENTS_DATABASE[g][currentLang].agents;
+        list.forEach(a => {
+          const isActive = a.id === selectedChatAgent ? 'active' : '';
+          itemsHTML += `
+            <div class="im-list-item ${isActive}" id="im-item-${a.id}" onclick="selectChatAgent('${a.id}')">
+              <div class="im-item-name">${a.name}</div>
+              <div class="im-item-desc">${a.desc}</div>
+            </div>
+          `;
+        });
+      });
+
+      chatWrapper.innerHTML = `
+        <!-- 
+=====================
+ -->
+        <div class="im-agent-list" style="overflow-y:auto;">
+          ${itemsHTML}
+        </div>
+        
+        <!-- 
+=====================
+ -->
+        <div class="im-chat-pane">
+          <div class="im-chat-header">
+            <div class="im-chat-header-title" id="chat-title-text">AI
+=====================
+ (AI Sales Champion)</div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="form-label" style="margin-bottom:0; font-size:10px;">
+=====================
+:</span>
+              <select class="form-input" id="chat-provider-select" style="padding:4px 8px; font-size:11px; width:120px; border-radius:6px; background:#ffffff;">
+                <option value="claude">Claude 3.5</option>
+                <option value="deepseek">DeepSeek-V3</option>
+                <option value="aggregator">
+=====================
+</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="im-history" id="chat-history-container">
+            <div class="chat-bubble-container">
+              <div class="bubble agent">
+                
+=====================
+
+              </div>
+            </div>
+          </div>
+
+          <div class="im-chat-input-bar">
+            <input type="text" class="form-input" id="chat-user-input" placeholder="
+=====================
+ RAG" style="background:#f5f5f7;" onkeydown="handleChatInputKey(event)">
+            <button class="btn-action" style="margin-top:0; width:100px; height:38px;" onclick="sendChatMessage()">
+=====================
+</button>
+          </div>
+        </div>
+
+        <!-- 
+=====================
+ -->
+        <div class="im-profile-pane">
+          <div>
+            <h4 style="font-size:13px; font-weight:600; margin-bottom:8px; color:var(--text-main);">
+=====================
+ (Prompt)</h4>
+            <div id="chat-profile-prompt" style="font-size:11.5px; line-height:1.4; color:var(--text-muted); background:var(--bg-color); padding:12px; border-radius:8px; white-space:pre-wrap; border:1px solid var(--border-light); max-height: 250px; overflow-y:auto;">
+            </div>
+          </div>
+          
+          <div>
+            <h4 style="font-size:13px; font-weight:600; margin-bottom:8px; color:var(--text-main);">
+=====================
+ (Tools)</h4>
+            <div id="chat-profile-tools" style="font-size:11px; font-family:monospace; color:#0071e3; background:rgba(0,113,227,0.03); padding:10px; border-radius:8px; border:1px dashed rgba(0,113,227,0.2);">
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(chatWrapper);
+      updateAgentChatProfile();
+    }
+
+    function selectChatAgent(agentId) {
+      selectedChatAgent = agentId;
+      document.querySelectorAll('.im-list-item').forEach(el => el.classList.remove('active'));
+      document.getElementById(`im-item-${agentId}`).classList.add('active');
+
+      let agentName = agentId;
+      const groups = ['org', 'data', 'content', 'management', 'combat', 'operation'];
+      groups.forEach(g => {
+        const found = AGENTS_DATABASE[g][currentLang].agents.find(a => a.id === agentId);
+        if (found) agentName = found.name;
+      });
+
+      document.getElementById('chat-title-text').textContent = agentName;
+      
+      const history = document.getElementById('chat-history-container');
+      const welcomeMsg = currentLang === 'zh' 
+        ? `
+=====================
+`
+        : `Hello! I am 
+=====================
+ from the Agent workspace. I am fully loaded and ready to process commands.`;
+      
+      history.innerHTML = `
+        <div class="chat-bubble-container">
+          <div class="bubble agent">
+            ${welcomeMsg}
+          </div>
+        </div>
+      `;
+
+      updateAgentChatProfile();
+    }
+
+    function updateAgentChatProfile() {
+      const promptDiv = document.getElementById('chat-profile-prompt');
+      const toolsDiv = document.getElementById('chat-profile-tools');
+
+      if (selectedChatAgent === 'ai_sales_champion') {
+        promptDiv.textContent = `# Role: AI
+=====================
+ (WeChat Private Sales Expert)\n- 
+=====================
+`;
+        toolsDiv.textContent = `- /api/operation/sales/qualify\n- /api/lark/bitable/sync\n- /api/wechat/db/query`;
+      } else if (selectedChatAgent === 'risk_controller') {
+        promptDiv.textContent = `# Role: 
+=====================
+ (Advertising Compliance Officer)\n- 
+=====================
+`;
+        toolsDiv.textContent = `- /api/content/risk/anti-ai-scan\n- /api/terminal/execute`;
+      } else if (selectedChatAgent === 'claude_code') {
+        promptDiv.textContent = `# Role: Claude Code (Super Architect)\n- 
+=====================
+`;
+        toolsDiv.textContent = `- /api/terminal/execute\n- /api/system/config/save`;
+      } else {
+        promptDiv.textContent = `# Role: ${selectedChatAgent}\n- 
+=====================
+`;
+        toolsDiv.textContent = `- /api/terminal/execute\n- /api/system/config`;
+      }
+    }
+
+    function handleChatInputKey(event) {
+      if (event.key === 'Enter') sendChatMessage();
+    }
+
+    async function sendChatMessage() {
+      const input = document.getElementById('chat-user-input');
+      const message = input.value.trim();
+      if (!message) return;
+
+      input.value = ''; 
+
+      const history = document.getElementById('chat-history-container');
+      
+      const userContainer = document.createElement('div');
+      userContainer.className = 'chat-bubble-container';
+      userContainer.innerHTML = `<div class="bubble user">${message}</div>`;
+      history.appendChild(userContainer);
+      history.scrollTop = history.scrollHeight;
+
+      const thinkingContainer = document.createElement('div');
+      thinkingContainer.className = 'chat-bubble-container';
+      thinkingContainer.id = 'thinking-bubble-temp';
+      thinkingContainer.innerHTML = `<div class="bubble agent" style="color:var(--text-muted);">
+=====================
+ Thinking...</div>`;
+      history.appendChild(thinkingContainer);
+      history.scrollTop = history.scrollHeight;
+
+      const providerType = document.getElementById('chat-provider-select').value;
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/chat/agent`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            agent_id: selectedChatAgent,
+            message: message,
+            provider_type: providerType
+          })
+        });
+        const data = await res.json();
+        
+        const temp = document.getElementById('thinking-bubble-temp');
+        if (temp) temp.remove();
+
+        const agentContainer = document.createElement('div');
+        agentContainer.className = 'chat-bubble-container';
+        
+        let metaInfo = `<div style="font-size:10px; color:var(--text-muted); margin-bottom:4px; align-self:flex-start;">[Base Router: ${data.provider.toUpperCase()} / Model: ${data.model}]</div>`;
+        agentContainer.innerHTML = `${metaInfo}<div class="bubble agent">${data.reply.replace(/\n/g, '<br>')}</div>`;
+        
+        history.appendChild(agentContainer);
+        history.scrollTop = history.scrollHeight;
+
+      } catch (err) {
+        const temp = document.getElementById('thinking-bubble-temp');
+        if (temp) temp.remove();
+
+        const errContainer = document.createElement('div');
+        errContainer.className = 'chat-bubble-container';
+        errContainer.innerHTML = `<div class="bubble agent" style="color:var(--danger-color);">
+=====================
+ Gateway connection failed: ${err.message}</div>`;
+        history.appendChild(errContainer);
+        history.scrollTop = history.scrollHeight;
+      }
+    }
+
+    // ==========================================
+    // 
+=====================
+)
+    // ==========================================
+    function renderConfigCenter() {
+      const container = document.getElementById('agent-container');
+      const panel = document.createElement('div');
+      panel.className = 'panel-card';
+      panel.style.gridColumn = '1 / -1'; 
+      const dict = TRANSLATIONS[currentLang];
+
+      panel.innerHTML = `
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+          <!-- 
+=====================
+ -->
+          <div>
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">
+=====================
+</h3>
+            
+            <div style="background: var(--bg-color); border: 1px solid var(--border-light); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <strong style="font-size:13px; color:var(--text-main); font-weight:600;">Anthropic Claude</strong>
+                <button class="btn-action" style="margin-top:0; width:auto; padding:4px 10px; font-size:11px; background:#1d1d1f;" onclick="pingLlmConnection('https://api.anthropic.com', 'ping-claude')">
+=====================
+ Ping</button>
+                <span id="ping-claude" style="font-size:11px; font-weight:bold;"></span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <input type="text" class="form-input" id="llm-claude-url" placeholder="Base URL">
+                <input type="text" class="form-input" id="llm-claude-model" placeholder="Model Name">
+                <input type="password" class="form-input" id="llm-claude-key" placeholder="API Key" style="grid-column: 1 / -1;">
+              </div>
+            </div>
+
+            <div style="background: var(--bg-color); border: 1px solid var(--border-light); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <strong style="font-size:13px; color:var(--text-main); font-weight:600;">DeepSeek API</strong>
+                <button class="btn-action" style="margin-top:0; width:auto; padding:4px 10px; font-size:11px; background:#1d1d1f;" onclick="pingLlmConnection('https://api.deepseek.com/v1', 'ping-deepseek')">
+=====================
+ Ping</button>
+                <span id="ping-deepseek" style="font-size:11px; font-weight:bold;"></span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <input type="text" class="form-input" id="llm-deepseek-url" placeholder="Base URL">
+                <input type="text" class="form-input" id="llm-deepseek-model" placeholder="Model Name">
+                <input type="password" class="form-input" id="llm-deepseek-key" placeholder="API Key" style="grid-column: 1 / -1;">
+              </div>
+            </div>
+
+            <div style="background: var(--bg-color); border: 1px solid var(--border-light); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <strong style="font-size:13px; color:var(--text-main); font-weight:600;">
+=====================
+ (OpenAI Compatible)</strong>
+                <button class="btn-action" style="margin-top:0; width:auto; padding:4px 10px; font-size:11px; background:#1d1d1f;" onclick="pingLlmConnection(document.getElementById('llm-agg-url').value, 'ping-agg')">
+=====================
+ Ping</button>
+                <span id="ping-agg" style="font-size:11px; font-weight:bold;"></span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <input type="text" class="form-input" id="llm-agg-url" placeholder="Base URL">
+                <input type="text" class="form-input" id="llm-agg-model" placeholder="Model Name">
+                <input type="password" class="form-input" id="llm-agg-key" placeholder="API Key" style="grid-column: 1 / -1;">
+              </div>
+            </div>
+            <button class="btn-action" onclick="saveLlmProviders()">
+=====================
+</button>
+
+            <!-- 
+=====================
+ -->
+            <h3 style="font-size: 14.5px; margin-top: 35px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">
+=====================
+ (Local RAG)</h3>
+            <div id="knowledge-list-container">
+              <!-- 
+=====================
+ -->
+            </div>
+            
+            <!-- 
+=====================
+ (PDF/Word/TXT/MD) -->
+            <div id="rag-drop-zone" style="background:var(--bg-color); border:2px dashed var(--border-color); padding:20px; border-radius:12px; margin-top:15px; text-align:center; cursor:pointer; transition: all 0.2s;" ondragover="event.preventDefault(); this.style.borderColor='var(--accent-color)'; this.style.background='rgba(0,113,227,0.04)';" ondragleave="this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-color)';" ondrop="handleKnowledgeDrop(event)" onclick="document.getElementById('rag-file-input').click()">
+              <div style="font-size:28px; margin-bottom:8px;">
+=====================
+</div>
+              <div style="font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:4px;">
+=====================
+</div>
+              <div style="font-size:11px; color:var(--text-muted);">
+=====================
+ 20MB</div>
+              <input type="file" id="rag-file-input" accept=".pdf,.docx,.doc,.txt,.md" style="display:none;" onchange="handleKnowledgeFileInput(this.files[0])">
+              <div id="rag-upload-progress" style="margin-top:10px; font-size:12px; color:var(--accent-color); display:none;">
+=====================
+...</div>
+            </div>
+            <!-- 
+=====================
+ -->
+            <details style="margin-top:12px;">
+              <summary style="font-size:12px; color:var(--text-muted); cursor:pointer; padding:6px 0;">
+=====================
+</summary>
+              <div style="margin-top:10px;">
+                <div class="form-group">
+                  <label class="form-label">
+=====================
+: price_policy.txt)</label>
+                  <input type="text" class="form-input" id="rag-new-filename" placeholder="
+=====================
+">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label">
+=====================
+</label>
+                  <textarea class="form-input" id="rag-new-content" rows="4" placeholder="
+=====================
+..." style="resize:none; font-family:inherit;"></textarea>
+                </div>
+                <button class="btn-action" style="background:#1d1d1f; margin-top:10px;" onclick="saveNewKnowledgeDoc()">
+=====================
+ Agent</button>
+              </div>
+            </details>
+          </div>
+
+          <!-- 
+=====================
+ -->
+          <div>
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">2. 
+=====================
+</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ APP_ID</label>
+                <input type="text" class="form-input" id="lark-id" placeholder="cli_xxxxxxxx">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ APP_SECRET</label>
+                <input type="password" class="form-input" id="lark-secret">
+              </div>
+              <div class="form-group">
+                <label class="form-label">WhatsApp Hook URL</label>
+                <input type="text" class="form-input" id="whatsapp-url" placeholder="http://localhost:19000">
+              </div>
+              <div class="form-group">
+                <label class="form-label">X Developer Token</label>
+                <input type="text" class="form-input" id="twitter-token">
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1; margin-bottom: 0;">
+                <label class="form-label">
+=====================
+</label>
+                <div style="display:flex; gap:8px; align-items:center;">
+                  <input type="text" class="form-input" id="db-path" placeholder="/Users/username/.../wx_db.db" style="flex:1;">
+                  <button class="btn-action" style="margin-top:0; width:auto; padding:6px 12px; font-size:11px; white-space:nowrap; background:#86868b;" onclick="autoDetectWechatPath()">
+=====================
+</button>
+                </div>
+              </div>
+              <!-- 
+=====================
+ ID -->
+              <div class="form-group" style="grid-column: 1 / -1; margin-bottom:0; margin-top:8px;">
+                <label class="form-label">
+=====================
+)</label>
+                <input type="text" class="form-input" id="lark-table-id" placeholder="
+=====================
+ App Token">
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; margin-top:12px;">
+              <button class="btn-action" style="background:#1d1d1f; flex:1;" onclick="saveEnvConfig()">${dict.btn_save_env}</button>
+              <button class="btn-action" style="background:var(--success-color); flex:1;" onclick="syncToLarkBitableReal()">
+=====================
+</button>
+            </div>
+
+            <!-- 
+=====================
+ -->
+            <h3 style="font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">3. 
+=====================
+ (RBAC Matrix)</h3>
+            <table class="perm-table">
+              <thead>
+                <tr>
+                  <th>${dict.tbl_col_role}</th>
+                  <th>${dict.tbl_col_wx}</th>
+                  <th>${dict.tbl_col_risk}</th>
+                  <th>${dict.tbl_col_config}</th>
+                </tr>
+              </thead>
+              <tbody id="permission-tbody"></tbody>
+            </table>
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+              <input type="text" class="form-input" id="new-role-input" placeholder="${dict.input_new_role}">
+              <button class="btn-action" style="margin-top:0; width: auto; white-space: nowrap; background: #86868b;" onclick="addNewRoleRow()">${dict.btn_add_role}</button>
+            </div>
+            <button class="btn-action" style="background: var(--success-color);" onclick="savePermissionMatrix()">${dict.btn_save_perm}</button>
+
+            <!-- 
+=====================
+ -->
+            <h3 style="font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">5. Token 
+=====================
+ (Cost Control)</h3>
+            <div id="token-usage-panel" style="min-height:40px;">
+              <div style="color:var(--text-muted); font-size:12px;">
+=====================
+...</div>
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(panel);
+      
+      loadSystemConfigInputs();
+      loadLlmProviderInputs();
+      renderPermissionTable();
+      loadKnowledgeList(); // 
+=====================
+
+      loadTokenUsagePanel(); // 
+=====================
+
+    }
+
+    // ==========================================
+    // 
+=====================
+ Handler
+    // ==========================================
+    async function handleKnowledgeDrop(event) {
+      event.preventDefault();
+      const dropZone = document.getElementById('rag-drop-zone');
+      dropZone.style.borderColor = 'var(--border-color)';
+      dropZone.style.background = 'var(--bg-color)';
+      const file = event.dataTransfer.files[0];
+      if (file) await uploadKnowledgeFile(file);
+    }
+
+    async function handleKnowledgeFileInput(file) {
+      if (file) await uploadKnowledgeFile(file);
+    }
+
+    async function uploadKnowledgeFile(file) {
+      const role = document.getElementById('user-role-select').value;
+      const progressDiv = document.getElementById('rag-upload-progress');
+      progressDiv.style.display = 'block';
+      progressDiv.textContent = `
+=====================
+...`;
+
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('user_role', role);
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/knowledge/upload`, {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          progressDiv.textContent = `
+=====================
+ ${data.message} (${(data.char_count / 1000).toFixed(1)}K 
+=====================
+)`;
+          progressDiv.style.color = 'var(--success-color)';
+          setTimeout(() => {
+            progressDiv.style.display = 'none';
+            progressDiv.style.color = 'var(--accent-color)';
+          }, 4000);
+          loadKnowledgeList();
+        } else {
+          progressDiv.textContent = `
+=====================
+: ${data.error}`;
+          progressDiv.style.color = 'var(--danger-color)';
+        }
+      } catch (err) {
+        progressDiv.textContent = `
+=====================
+: ${err.message}`;
+        progressDiv.style.color = 'var(--danger-color)';
+      }
+    }
+
+    // 
+=====================
+
+    async function autoDetectWechatPath() {
+      const btn = event.target;
+      btn.textContent = '
+=====================
+...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/wechat/detect-path`);
+        const data = await res.json();
+        if (data.success && data.paths.length > 0) {
+          document.getElementById('db-path').value = data.paths[0].db_path;
+          alert(`
+=====================
+${data.paths[0].account_hash}
+=====================
+`);
+        } else {
+          alert(`
+=====================
+ ${data.message}`);
+        }
+      } catch (e) {
+        alert('
+=====================
+');
+      } finally {
+        btn.textContent = '
+=====================
+';
+        btn.disabled = false;
+      }
+    }
+
+    // 
+=====================
+
+    async function syncToLarkBitableReal() {
+      const leads = lastScannedLeads;
+      if (!leads || leads.length === 0) {
+        alert('
+=====================
+');
+        return;
+      }
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/real-sync`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ leads })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert(`
+=====================
+ ${data.message}${data.is_mock ? '\n
+=====================
+' : ''}`);
+        } else {
+          alert(`
+=====================
+ ${data.error}`);
+        }
+      } catch (err) {
+        alert(`
+=====================
+: ${err.message}`);
+      }
+    }
+
+    // Token 
+=====================
+
+    async function loadTokenUsagePanel() {
+      // 
+=====================
+
+      const container = document.getElementById('agent-container');
+      const tokenPanel = document.getElementById('token-usage-panel');
+      if (!tokenPanel) return; // 
+=====================
+
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/token/usage`);
+        const data = await res.json();
+        if (data.success) {
+          const fmt = n => n.toLocaleString('zh-CN');
+          tokenPanel.innerHTML = `
+            <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:16px;">
+              <div style="background:var(--bg-color); padding:12px; border-radius:10px; border:1px solid var(--border-light);">
+                <div style="font-size:10px; color:var(--text-muted); margin-bottom:4px;">
+=====================
+</div>
+                <div style="font-size:22px; font-weight:700; color:var(--accent-color);">${fmt(data.today_calls)}</div>
+                <div style="font-size:10px; color:var(--text-muted);">
+=====================
+</div>
+              </div>
+              <div style="background:var(--bg-color); padding:12px; border-radius:10px; border:1px solid var(--border-light);">
+                <div style="font-size:10px; color:var(--text-muted); margin-bottom:4px;">
+=====================
+ Token</div>
+                <div style="font-size:22px; font-weight:700; color:var(--text-main);">${fmt(data.today_input + data.today_output)}</div>
+                <div style="font-size:10px; color:var(--text-muted);">
+=====================
+ ${fmt(data.today_input)} + 
+=====================
+ ${fmt(data.today_output)}</div>
+              </div>
+              <div style="background:var(--bg-color); padding:12px; border-radius:10px; border:1px solid var(--border-light);">
+                <div style="font-size:10px; color:var(--text-muted); margin-bottom:4px;">
+=====================
+ Token</div>
+                <div style="font-size:22px; font-weight:700; color:var(--text-main);">${fmt(data.total_input + data.total_output)}</div>
+                <div style="font-size:10px; color:var(--text-muted);">
+=====================
+ ${fmt(data.total_calls)} 
+=====================
+</div>
+              </div>
+            </div>
+            <div style="font-size:11px; color:var(--text-muted); margin-bottom:6px;">
+=====================
+</div>
+            ${Object.entries(data.by_provider).map(([p, v]) => `
+              <div style="display:flex; justify-content:space-between; font-size:12px; padding:5px 0; border-bottom:1px solid var(--border-light);">
+                <span style="font-weight:600;">${p}</span>
+                <span style="color:var(--text-muted);">
+=====================
+ ${fmt(v.input + v.output)} tokens</span>
+              </div>
+            `).join('') || '<div style="font-size:12px; color:var(--text-muted);">
+=====================
+</div>'}
+            <button class="btn-action" style="margin-top:12px; background:var(--danger-color); font-size:11px; padding:6px 14px; width:auto;" onclick="resetTokenUsage()">
+=====================
+</button>
+          `;
+        }
+      } catch (e) {
+        if (tokenPanel) tokenPanel.innerHTML = '<div style="color:var(--text-muted); font-size:12px;">Token 
+=====================
+</div>';
+      }
+    }
+
+    async function resetTokenUsage() {
+      const role = document.getElementById('user-role-select').value;
+      if (!confirm('
+=====================
+')) return;
+      try {
+        await fetch(`${GATEWAY_URL}/api/system/token/reset`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_role: role })
+        });
+        alert('
+=====================
+');
+        loadTokenUsagePanel();
+      } catch (e) { alert('
+=====================
+'); }
+    }
+
+    // 
+=====================
+
+    async function loadKnowledgeList() {
+      const listContainer = document.getElementById('knowledge-list-container');
+      if (!listContainer) return;
+      listContainer.innerHTML = '
+=====================
+ Loading documents...';
+      
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/knowledge/list`);
+        const data = await res.json();
+        if (data.success) {
+          globalKnowledgeDocs = data.documents;
+          
+          if (globalKnowledgeDocs.length === 0) {
+            listContainer.innerHTML = '<div style="color:var(--text-muted); font-size:12px;">
+=====================
+</div>';
+            return;
+          }
+
+          listContainer.innerHTML = globalKnowledgeDocs.map(doc => `
+            <div class="knowledge-card">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div class="knowledge-card-title">
+=====================
+ ${doc.filename}</div>
+                <div style="font-size:10px; color:var(--text-muted);">${(doc.size_bytes / 1024).toFixed(2)} KB</div>
+              </div>
+              <div class="knowledge-card-preview">${doc.preview}</div>
+            </div>
+          `).join('');
+        }
+      } catch (e) {
+        listContainer.innerHTML = '
+=====================
+ Failed to load RAG files.';
+      }
+    }
+
+    // 
+=====================
+
+    async function saveNewKnowledgeDoc() {
+      const role = document.getElementById('user-role-select').value;
+      const filename = document.getElementById('rag-new-filename').value.trim();
+      const content = document.getElementById('rag-new-content').value.trim();
+
+      if (!filename || !content) return alert('
+=====================
+');
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/knowledge/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ filename, content, user_role: role })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert(data.message);
+          document.getElementById('rag-new-filename').value = '';
+          document.getElementById('rag-new-content').value = '';
+          loadKnowledgeList(); // 
+=====================
+
+        } else {
+          alert(`
+=====================
+: ${data.error}`);
+        }
+      } catch (e) {
+        alert('
+=====================
+');
+      }
+    }
+
+    // 
+=====================
+
+    async function fetchWechatData() {
+      const out = document.getElementById('wechat-out');
+      out.textContent = currentLang === 'zh' ? '
+=====================
+ [Queue Active] Scanning local database...';
+      document.getElementById('lark-sync-btn').style.display = 'none'; 
+      
+      try {
+        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+        const triggerData = await triggerRes.json();
+        if (!triggerData.success || !triggerData.task_id) {
+          out.textContent = '
+=====================
+ Failed to trigger task.';
+          return;
+        }
+
+        const taskId = triggerData.task_id;
+        out.textContent += ` ID: ${taskId}\n`;
+
+        const pollInterval = setInterval(async () => {
+          try {
+            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+            const statusData = await statusRes.json();
+            
+            if (statusData.success) {
+              out.textContent = currentLang === 'zh' 
+                ? `
+=====================
+]: ${statusData.progress}%\n`
+                : `
+=====================
+ Decrypting local SQLite and matching BANT leads...\n[Progress]: ${statusData.progress}%\n`;
+              
+              if (statusData.status === 'completed') {
+                clearInterval(pollInterval);
+                const data = statusData.result;
+                lastScannedLeads = data;
+                document.getElementById('lark-sync-btn').style.display = 'block'; 
+                
+                out.innerHTML = `<span style="color: var(--success-color);">
+=====================
+</span><br>` + 
+                  data.map((m, i) => `${i+1}. <strong>${m.from_user}</strong>: "${m.content.substring(0,25)}..."`).join('<br>');
+              }
+            }
+          } catch (pollErr) {
+            clearInterval(pollInterval);
+            out.textContent += `\n
+=====================
+ Poll failed: ${pollErr.message}`;
+          }
+        }, 500);
+
+      } catch (err) {
+        out.textContent = `[Error] ${err.message}`;
+      }
+    }
+
+    // 
+=====================
+
+    async function syncToLarkBitable() {
+      const out = document.getElementById('wechat-out');
+      const waitTips = currentLang === 'zh' ? '
+=====================
+...' : 'Pushing leads to Lark Base...';
+      out.innerHTML += `<br><br><span style="color: #38bdf8;">
+=====================
+ ${waitTips}</span>`;
+      
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/sync`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ leads: lastScannedLeads })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          const successTips = currentLang === 'zh' ? '
+=====================
+' : 'Sync Success';
+          const linkTips = currentLang === 'zh' ? '[
+=====================
+]' : '[Click here to open Lark Bitable]';
+          out.innerHTML += `<br><br><span style="color: var(--success-color);">
+=====================
+ [${successTips}] ${data.message}</span><br>` +
+            `
+=====================
+ <a href="${data.bitable_url}" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;">${linkTips}</a>`;
+        } else {
+          out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+ Failed: ${data.error}</span>`;
+        }
+      } catch (err) {
+        out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+ Connection error: ${err.message}</span>`;
+      }
+    }
+
+    // 
+=====================
+
+    async function scanAiTone() {
+      const out = document.getElementById('risk-out');
+      out.textContent = 'Parsing draft paragraph...\n';
+      try {
+        const testText = "
+=====================
+";
+        const res = await fetch(`${GATEWAY_URL}/api/content/risk/anti-ai-scan`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: testText })
+        });
+        const data = await res.json();
+        const scoreLabel = currentLang === 'zh' ? '
+=====================
+' : 'Score Complete';
+        const blockLabel = data.is_too_machinery 
+          ? (currentLang === 'zh' ? '
+=====================
+ Too Robotic, Rejected!')
+          : (currentLang === 'zh' ? '
+=====================
+ Natural Copywriting');
+        
+        out.textContent = `[${scoreLabel}] AI-Index: ${data.ai_index} (Lower is better)\n` + 
+          `Audit: ${blockLabel}\n` +
+          `Hits: ` + data.matched_words.map(w => `"${w.word}"(${w.count}x)`).join(', ');
+      } catch (err) {
+        out.textContent = `[Error] ${err.message}`;
+      }
+    }
+
+    // Ping 
+=====================
+
+    async function pingLlmConnection(baseUrl, spanId) {
+      const span = document.getElementById(spanId);
+      span.textContent = "
+=====================
+ Ping...";
+      span.style.color = "var(--text-muted)";
+
+      if (!baseUrl) {
+        span.textContent = "URL Empty";
+        span.style.color = "var(--danger-color)";
+        return;
+      }
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/llm/test-ping`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ base_url: baseUrl })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          span.textContent = `
+=====================
+ ${data.latency_ms}ms`;
+          span.style.color = "var(--success-color)";
+        } else {
+          span.textContent = `
+=====================
+`;
+          span.style.color = "var(--danger-color)";
+        }
+      } catch (e) {
+        span.textContent = `
+=====================
+`;
+        span.style.color = "var(--danger-color)";
+      }
+    }
+
+    // 
+=====================
+
+    let currentConfigData = {};
+    async function loadSystemConfig() {
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/config`);
+        const data = await res.json();
+        if (data.success) {
+          currentConfigData = data.env;
+        }
+      } catch (err) {
+        const dict = TRANSLATIONS[currentLang];
+        document.getElementById('net-badge').textContent = dict.net_failed;
+        document.getElementById('net-badge').style.color = 'var(--danger-color)';
+        document.getElementById('net-badge').style.background = 'rgba(255, 59, 48, 0.1)';
+      }
+    }
+
+    function loadSystemConfigInputs() {
+      if (currentConfigData.CLAUDE_API_KEY) {
+        document.getElementById('lark-id').value = currentConfigData.LARK_APP_ID || '';
+        document.getElementById('lark-secret').value = currentConfigData.LARK_APP_SECRET || '';
+        document.getElementById('whatsapp-url').value = currentConfigData.WHATSAPP_API_URL || '';
+        document.getElementById('twitter-token').value = currentConfigData.TWITTER_API_TOKEN || '';
+        document.getElementById('db-path').value = currentConfigData.WECHAT_DB_PATH || '';
+      }
+    }
+
+    // 
+=====================
+
+    async function loadLlmProviderInputs() {
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/llm/providers`);
+        const data = await res.json();
+        if (data.success) {
+          globalLlmProviders = data.providers;
+          
+          document.getElementById('llm-claude-url').value = globalLlmProviders.claude.base_url;
+          document.getElementById('llm-claude-model').value = globalLlmProviders.claude.model_name;
+          document.getElementById('llm-claude-key').value = globalLlmProviders.claude.api_key;
+
+          document.getElementById('llm-deepseek-url').value = globalLlmProviders.deepseek.base_url;
+          document.getElementById('llm-deepseek-model').value = globalLlmProviders.deepseek.model_name;
+          document.getElementById('llm-deepseek-key').value = globalLlmProviders.deepseek.api_key;
+
+          document.getElementById('llm-agg-url').value = globalLlmProviders.aggregator.base_url;
+          document.getElementById('llm-agg-model').value = globalLlmProviders.aggregator.model_name;
+          document.getElementById('llm-agg-key').value = globalLlmProviders.aggregator.api_key;
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function saveLlmProviders() {
+      const role = document.getElementById('user-role-select').value;
+      const providers = {
+        claude: {
+          name: "Anthropic Claude",
+          base_url: document.getElementById('llm-claude-url').value,
+          model_name: document.getElementById('llm-claude-model').value,
+          api_key: document.getElementById('llm-claude-key').value
+        },
+        deepseek: {
+          name: "DeepSeek API",
+          base_url: document.getElementById('llm-deepseek-url').value,
+          model_name: document.getElementById('llm-deepseek-model').value,
+          api_key: document.getElementById('llm-deepseek-key').value
+        },
+        aggregator: {
+          name: "
+=====================
+",
+          base_url: document.getElementById('llm-agg-url').value,
+          model_name: document.getElementById('llm-agg-model').value,
+          api_key: document.getElementById('llm-agg-key').value
+        }
+      };
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/llm/providers/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ providers, user_role: role })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('
+=====================
+ llm_providers.json 
+=====================
+');
+          globalLlmProviders = providers;
+        } else {
+          alert(`
+=====================
+: ${data.error}`);
+        }
+      } catch (e) {
+        alert('
+=====================
+');
+      }
+    }
+
+    async function saveEnvConfig() {
+      const role = document.getElementById('user-role-select').value;
+      const config = {
+        CLAUDE_API_KEY: document.getElementById('llm-claude-key') ? document.getElementById('llm-claude-key').value : (currentConfigData.CLAUDE_API_KEY || ''),
+        WECHAT_DB_PATH: document.getElementById('db-path').value,
+        LARK_APP_ID: document.getElementById('lark-id').value,
+        LARK_APP_SECRET: document.getElementById('lark-secret').value,
+        LARK_CLI_PATH: 'lark',
+        OPENCLAW_API_URL: currentConfigData.OPENCLAW_API_URL || 'http://localhost:18000',
+        OPENCLAW_TOKEN: currentConfigData.OPENCLAW_TOKEN || 'mock_token_123',
+        WHATSAPP_API_URL: document.getElementById('whatsapp-url').value,
+        TWITTER_API_TOKEN: document.getElementById('twitter-token').value
+      };
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/config/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ config, user_role: role })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('
+=====================
+');
+          currentConfigData = config;
+        } else {
+          alert(`
+=====================
+${data.error}`);
+        }
+      } catch (err) {
+        alert('
+=====================
+');
+      }
+    }
+
+    // 
+=====================
+
+    async function loadPermissionMatrix() {
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/permissions`);
+        const data = await res.json();
+        if (data.success) {
+          globalPermMatrix = data.matrix;
+          applyRBACRules(); 
+        }
+      } catch (err) {
+        console.error("
+=====================
+:", err);
+      }
+    }
+
+    function renderPermissionTable() {
+      const tbody = document.getElementById('permission-tbody');
+      tbody.innerHTML = '';
+      
+      for (const role in globalPermMatrix) {
+        const tr = document.createElement('tr');
+        const hasWechat = globalPermMatrix[role].includes('wechat_audit') ? 'checked' : '';
+        const hasRisk = globalPermMatrix[role].includes('content_risk') ? 'checked' : '';
+        const hasConfig = globalPermMatrix[role].includes('system_config') ? 'checked' : '';
+        const isDisabled = role === 'admin' ? 'disabled' : '';
+
+        tr.innerHTML = `
+          <td style="font-weight: bold; text-align: left;">${role}</td>
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="wechat_audit" ${hasWechat} ${isDisabled}></td>
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="content_risk" ${hasRisk} ${isDisabled}></td>
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="system_config" ${hasConfig} ${isDisabled}></td>
+        `;
+        tbody.appendChild(tr);
+      }
+    }
+
+    function addNewRoleRow() {
+      const newRoleName = document.getElementById('new-role-input').value.trim().toLowerCase();
+      if (!newRoleName) return alert('Role name empty!');
+      if (globalPermMatrix[newRoleName]) return alert('Role exists!');
+
+      globalPermMatrix[newRoleName] = [];
+      renderPermissionTable();
+      document.getElementById('new-role-input').value = '';
+    }
+
+    async function savePermissionMatrix() {
+      const currentAdminRole = document.getElementById('user-role-select').value;
+      const checkboxes = document.querySelectorAll('.perm-cb');
+      const newMatrix = { admin: ["wechat_audit", "content_risk", "system_config"] };
+
+      checkboxes.forEach(cb => {
+        const role = cb.getAttribute('data-role');
+        const perm = cb.getAttribute('data-perm');
+        if (role === 'admin') return;
+
+        if (!newMatrix[role]) newMatrix[role] = [];
+        if (cb.checked) {
+          newMatrix[role].push(perm);
+        }
+      });
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/permissions/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ matrix: newMatrix, user_role: currentAdminRole })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('Saved successfully!');
+          globalPermMatrix = newMatrix;
+        } else {
+          alert(`Error: ${data.error}`);
+        }
+      } catch (err) {
+        alert('Failed');
+      }
+    }
+
+    function applyRBACRules() {
+      const currentRole = document.getElementById('user-role-select').value;
+      const currentPerms = globalPermMatrix[currentRole] || [];
+      console.log(`
+=====================
+ RBAC applied for: ${currentRole}`, currentPerms);
+    }
+
+    // 
+=====================
+
+    async function loadAgentStatus() {
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/agents/status`);
+        const data = await res.json();
+        if (data.success) {
+          globalAgentStatus = data.status_matrix;
+          switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+        }
+      } catch (err) {
+        switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+      }
+    }
+
+    // 
+=====================
+
+    const TRANSLATIONS = {
+      zh: {
+        logo: "KUNLUN GROWTH",
+        dept_header: "
+=====================
+",
+        sys_header: "
+=====================
+",
+        menu_org: "
+=====================
+",
+        menu_data: "
+=====================
+",
+        menu_content: "
+=====================
+",
+        menu_management: "
+=====================
+",
+        menu_combat: "
+=====================
+",
+        menu_operation: "
+=====================
+",
+        menu_config: "
+=====================
+",
+        lang_label: "
+=====================
+ (Language)",
+        role_label: "
+=====================
+ RBAC)",
+        net_connected: "
+=====================
+",
+        net_failed: "
+=====================
+ npm start)",
+        role_admin: "
+=====================
+ (Admin)",
+        role_editor: "
+=====================
+ (Editor)",
+        role_sales: "
+=====================
+ (Sales)",
+        btn_scan: "
+=====================
+ (BANT)",
+        btn_sync_lark: "
+=====================
+ (Lark Base)",
+        btn_anti_ai: "
+=====================
+",
+        btn_start_tools: "
+=====================
+ Tools",
+        btn_save_env: "
+=====================
+",
+        btn_save_perm: "
+=====================
+",
+        btn_add_role: "
+=====================
+",
+        input_new_role: "
+=====================
+ intern)",
+        tbl_col_role: "
+=====================
+",
+        tbl_col_wx: "
+=====================
+",
+        tbl_col_risk: "
+=====================
+",
+        tbl_col_config: "
+=====================
+",
+        config_title: "
+=====================
+",
+        config_desc: "
+=====================
+"
+      },
+      en: {
+        logo: "KUNLUN GLOBAL AI",
+        dept_header: "AGENT DEPARTMENTS",
+        sys_header: "SYSTEM CONTROL",
+        menu_org: "
+=====================
+ Agent HR Dept",
+        menu_data: "
+=====================
+ Data Intelligence",
+        menu_content: "
+=====================
+ Content Factory",
+        menu_management: "
+=====================
+ Management Group",
+        menu_combat: "
+=====================
+ Combat Operations",
+        menu_operation: "
+=====================
+ Private-Domain Ops",
+        menu_config: "
+=====================
+ Global Config",
+        lang_label: "
+=====================
+ Lang Switcher",
+        role_label: "Current Workspace Role (RBAC)",
+        net_connected: "
+=====================
+ Local Gateway :8888 Connected",
+        net_failed: "
+=====================
+ Connect failed (Run npm start)",
+        role_admin: "Admin (Full Access)",
+        role_editor: "Editor (Content)",
+        role_sales: "Sales (Private WeChat)",
+        btn_scan: "Scan WeChat Message Logs (BANT)",
+        btn_sync_lark: "Sync to Lark Bitable",
+        btn_anti_ai: "Run Anti-AI Scanner",
+        btn_start_tools: "Start Agent & Mount Tools",
+        btn_save_env: "Save Settings to .env file",
+        btn_save_perm: "Save RBAC Authorization Matrix",
+        btn_add_role: "Add New Role",
+        input_new_role: "Enter new role (e.g. intern)",
+        tbl_col_role: "Role",
+        tbl_col_wx: "WeChat DB",
+        tbl_col_risk: "Anti-AI Wind",
+        tbl_col_config: "Sys Settings",
+        config_title: "Global Configuration Tower",
+        config_desc: "Read/Write local .env properties, RAG files, and customize multi-user RBAC authorization matrix."
+      }
+    };
+  </script>
+</body>
+</html>
+ 
+=====================
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+=====================
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    /* 
+=====================
+ */
+    .panel-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 32px 36px;
+      width: 100%;
+      min-height: 200px;
+      overflow: visible;
+    }
+0

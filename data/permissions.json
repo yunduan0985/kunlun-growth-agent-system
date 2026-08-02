@@ -1,0 +1,13 @@
+{
+  "admin": [
+    "wechat_audit",
+    "content_risk",
+    "system_config"
+  ],
+  "editor": [
+    "content_risk"
+  ],
+  "sales": [
+    "wechat_audit"
+  ]
+}

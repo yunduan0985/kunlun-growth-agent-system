@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/tech/code-review 与 /api/tech/perf-analyze 两个高并发与编码审计路由。",
+  "EndLine": 325,
+  "Instruction": "在服务器启动部分之前加入代码审查和性能诊断路由。",
+  "ReplacementContent": "\n// 代码静态审查接口\napp.post('/api/tech/code-review', (req, res) => {\n  const { code } = req.body;\n  if (!code) return res.status(400).json({ error: \"Missing parameter: code\" });\n\n  console.log(`[Tech Expert] Reviewing code quality...`);\n  \n  const hasSql = code.toLowerCase().includes(\"select * from\") && !code.toLowerCase().includes(\"parameterized\");\n  const hasSecret = code.toLowerCase().includes(\"api_key\") || code.toLowerCase().includes(\"password\");\n\n  const vulnerabilities = [];\n  if (hasSql) {\n    vulnerabilities.push({\n      severity: \"high\",\n      description: \"Potential SQL Injection detected. Un-parameterized raw SQL query in use.\",\n      suggested_fix: \"Use parameterized queries or ORM models instead of string concatenation.\"\n    });\n  }\n  if (hasSecret) {\n    vulnerabilities.push({\n      severity: \"high\",\n      description: \"Hardcoded credential detected. API key or password exposed in raw string.\",\n      suggested_fix: \"Store secrets in environment variables (.env) and load via process.env.\"\n    });\n  }\n\n  res.json({\n    success: true,\n    vulnerabilities,\n    dry_violations: code.includes(\"function\") && code.split(\"function\").length > 3\n  });\n});\n\n// 并发与性能瓶颈诊断接口\napp.post('/api/tech/perf-analyze', (req, res) => {\n  const { qps, bottleneck } = req.body;\n  if (!qps || !bottleneck) {\n    return res.status(400).json({ error: \"Missing parameters: qps or bottleneck\" });\n  }\n\n  console.log(`[Tech Expert] Analyzing bottleneck for QPS: ${qps}`);\n\n  res.json({\n    success: true,\n    recommendation: `根据您的并发目标 ${qps} QPS 以及当前瓶颈 ${bottleneck}，建议采取以下优化方案：\\n1. 在数据库前置 Redis 缓存层，采用 Token Bucket 算法进行请求限流削峰。\\n2. 对核心表建立符合复合索引优化规则的聚集索引，防止全表扫描。`\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 325,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding tech expert routes to Gateway",
+  "toolSummary": "Modify file"
+}

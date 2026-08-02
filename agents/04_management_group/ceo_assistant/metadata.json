@@ -1,0 +1,16 @@
+{
+  "id": "ceo_assistant",
+  "name": "CEO助理",
+  "group": "管理组",
+  "description": "协助 CEO 进行日程管理、任务拆解与跟进，自动提醒重要事项，提高管理效率。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=ceo_assistant",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

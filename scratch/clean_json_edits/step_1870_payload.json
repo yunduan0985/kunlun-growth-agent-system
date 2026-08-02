@@ -1,0 +1,7 @@
+{
+  "CommandLine": "python3 scratch/extract_code.py",
+  "Cwd": "/Volumes/MOVESPEED/下载/AIcode/Agent",
+  "WaitMsBeforeAsync": 3000,
+  "toolAction": "Running extract_code.py on the older session logs",
+  "toolSummary": "Run extract_code.py"
+}

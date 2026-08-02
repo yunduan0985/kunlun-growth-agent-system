@@ -1,0 +1,46 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/github/search/repositories
+=====================
+/api/github/repo/detail 
+=====================
+ /api/github/trending 
+=====================
+","EndLine":468,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/github/search/repositories', (req, res) =\u003e {\n  const { query, language } = req.body;\n  console.log(`[GitHub Search] Query: \"${query}\" (Language: ${language || 'any'})`);\n\n  res.json({\n    success: true,\n    items: [\n      { name: \"langchain-ai/langgraph\", description: \"Build resilient language agents as graphs.\", stars: 5800, language: \"python\" },\n      { name: \"dify-ai/dify\", description: \"An open-source LLM app development platform.\", stars: 32000, language: \"typescript\" }\n    ]\n  });\n});\n\n// 
+=====================
+\napp.get('/api/github/repo/detail', (req, res) =\u003e {\n  const { repo_name } = req.query;\n  if (!repo_name) return res.status(400).json({ error: \"Missing: repo_name\" });\n\n  console.log(`[GitHub API] Fetching details for: ${repo_name}`);\n\n  const isDify = repo_name.includes(\"dify\");\n\n  res.json({\n    success: true,\n    full_name: repo_name,\n    stars: isDify ? 32000 : 5800,\n    license: isDify ? \"Apache-2.0\" : \"MIT\",\n    last_commit_time: new Date(Date.now() - 3600000 * 2).toISOString(),\n    open_issues_count: isDify ? 412 : 54,\n    closed_issues_count: isDify ? 8900 : 1200\n  });\n});\n\n// 
+=====================
+\napp.get('/api/github/trending', (req, res) =\u003e {\n  const { language } = req.query;\n  console.log(`[GitHub Trending] Fetching trending for: ${language || 'all'}`);\n\n  res.json([\n    { rank: 1, name: \"modelcontextprotocol/servers\", description: \"Reference MCP server implementations.\", stars_today: 450, language: \"typescript\" },\n    { rank: 2, name: \"openai/whisper\", description: \"Robust Speech Recognition via Large-Scale Weak Supervision.\", stars_today: 230, language: \"python\" }\n  ]);\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":468,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding github search routes to Gateway","toolSummary":"Modify file"}:
+=====================
+@UD*D1\H_(?Vh-FM{f,C/*
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$ac0d2d05-e4ee-4dea-b067-95f813ee9867j
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+x"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+&Adding github search routes to Gateway

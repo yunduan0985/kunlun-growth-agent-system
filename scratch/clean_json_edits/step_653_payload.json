@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "修复 install.js 中的行号语法残留，确保 Node.js 能正常跨机自愈配置环境。",
+  "EndLine": 8,
+  "Instruction": "删除2:和3:的前缀，修补为合法的JavaScript代码。",
+  "ReplacementContent": "console.log('==================================================');\nconsole.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');\nconsole.log('==================================================\\n');",
+  "StartLine": 5,
+  "TargetContent": "console.log('==================================================');\n2: console.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');\n3: console.log('==================================================\\n');",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/scripts/install.js",
+  "toolAction": "Removing stray line numbers from install script",
+  "toolSummary": "Modify file"
+}

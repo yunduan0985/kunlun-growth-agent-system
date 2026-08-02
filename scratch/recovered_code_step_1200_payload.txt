@@ -1,0 +1,44 @@
+-3750763034362895579H
+=====================
+JXFYaveFG_De_uMP7o796AoX
+=====================
+b$a6bfeab9-daac-436e-9e1e-1d32eb8e015cj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-9e649435-d60b-41fe-8a0d-6dd365a1a2e9:
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":141,"Instruction":"
+=====================
+","ReplacementContent":"// 
+=====================
+\napp.get('/api/auth/machine-id', (req, res) =\u003e {\n  res.json({ machine_id: getMachineId() });\n});\n\n// 
+=====================
+\napp.get('/api/auth/license/status', (req, res) =\u003e {\n  res.json({ activated: isSystemActivated() });\n});\n\n// 
+=====================
+\napp.post('/api/auth/license/activate', (req, res) =\u003e {\n  const { license_key } = req.body;\n  if (!license_key) return res.status(400).json({ error: '
+=====================
+' });\n  \n  if (verifyLicense(license_key)) {\n    try {\n      fs.writeFileSync(LICENSE_FILE, JSON.stringify({ license_key, activated_at: new Date().toISOString() }, null, 2), 'utf-8');\n      res.json({ success: true, message: '
+=====================
+ KUNLUN GROWTH Agent OS
+=====================
+' });\n    } catch (e) {\n      res.status(500).json({ error: '
+=====================
+' });\n    }\n  } else {\n    res.status(400).json({ error: '
+=====================
+' });\n  }\n});\n\n// 
+=====================
+\napp.get('/api/auth/check-init', (req, res) =\u003e {","StartLine":140,"TargetContent":"// 
+=====================
+\napp.get('/api/auth/check-init', (req, res) =\u003e {","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding license endpoints","toolSummary":"Add license endpoints"}:
+=====================
+replace_file_content`

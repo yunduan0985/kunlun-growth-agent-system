@@ -1,0 +1,321 @@
+{"CommandLine":"python3 scratch/extract_code.py","Cwd":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent","WaitMsBeforeAsync":3000,"toolAction":"Running extract_code.py on the older session logs","toolSummary":"Run extract_code.py"}:
+=====================
+WaitMsBeforeAsync*
+toolAction*
+=====================
+b$fccc4b95-0c4b-411a-a677-c09bdfcb9ef0j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+1Running extract_code.py on the older session logs
+=====================
+&/Volumes/MOVESPEED/
+=====================
+?
+?<truncated 61 lines>
+
+=====================
+ Step 235: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_235_replace.js
+
+=====================
+ Step 237: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_237_replace.js
+
+=====================
+ Step 239: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_239_replace.js
+
+=====================
+ Step 241: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_241_replace.js
+
+=====================
+ Step 243: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_243_replace.js
+
+=====================
+ Step 245: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_245_replace.js
+
+=====================
+ Step 249: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_249_replace.js
+
+=====================
+ Step 253: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_253_replace.js
+
+=====================
+ Step 257: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_257_replace.js
+
+=====================
+ Step 263: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_263_replace.js
+
+=====================
+ Step 269: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_269_replace.js
+
+=====================
+ Step 279: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_279_replace.js
+
+=====================
+ Step 283: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_283_replace.js
+
+=====================
+ Step 285: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_285_replace.js
+
+=====================
+ Step 291: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_291_replace.js
+
+=====================
+ Step 293: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_293_replace.js
+
+=====================
+ Step 297: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_297_replace.js
+
+=====================
+ Step 301: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_301_replace.js
+
+=====================
+ Step 303: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_303_replace.js
+
+=====================
+ Step 315: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_315_replace.js
+
+=====================
+ Step 349: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_349_replace.js
+
+=====================
+ Step 351: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_351_replace.js
+
+=====================
+ Step 355: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_355_replace.js
+
+=====================
+ Step 357: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_357_replace.js
+
+=====================
+ Step 359: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_359_replace.js
+
+=====================
+ Step 361: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_361_replace.js
+
+=====================
+ Step 363: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_363_replace.js
+
+=====================
+ Step 376: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_376_replace.js
+
+=====================
+ Step 392: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_392_replace.js
+
+=====================
+ Step 396: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_396_replace.js
+
+=====================
+ Step 402: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_402_replace.js
+
+=====================
+ Step 482: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_482_replace.js
+
+=====================
+ Step 520: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_520_replace.js
+
+=====================
+ Step 522: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_522_replace.js
+
+=====================
+ Step 544: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_544_replace.js
+
+=====================
+ Step 548: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_548_replace.js
+
+=====================
+ Step 554: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_554_replace.js
+
+=====================
+ Step 586: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_586_replace.js
+
+=====================
+ Step 606: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_606_replace.js
+
+=====================
+ Step 654: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_654_replace.js
+
+=====================
+ Step 656: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_656_replace.js
+
+=====================
+ Step 658: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_658_replace.js
+
+=====================
+ Step 688: multi_replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_688_multi_0.js
+   Saved chunk to scratch/extracted_chunks_older/step_688_multi_1.js
+   Saved chunk to scratch/extracted_chunks_older/step_688_multi_2.js
+   Saved chunk to scratch/extracted_chunks_older/step_688_multi_3.js
+
+=====================
+ Step 700: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_700_replace.js
+
+=====================
+ Step 718: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_718_replace.js
+
+=====================
+ Step 724: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_724_replace.js
+
+=====================
+ Step 728: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_728_replace.js
+
+=====================
+ Step 740: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_740_replace.js
+
+=====================
+ Step 750: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_750_replace.js
+
+=====================
+ Step 796: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_796_replace.js
+
+=====================
+ Step 804: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_804_replace.js
+
+=====================
+ Step 844: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_844_replace.js
+
+=====================
+ Step 848: multi_replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_848_multi_0.js
+   Saved chunk to scratch/extracted_chunks_older/step_848_multi_1.js
+   Saved chunk to scratch/extracted_chunks_older/step_848_multi_2.js
+   Saved chunk to scratch/extracted_chunks_older/step_848_multi_3.js
+
+=====================
+ Step 850: multi_replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_850_multi_0.js
+   Saved chunk to scratch/extracted_chunks_older/step_850_multi_1.js
+
+=====================
+ Step 862: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_862_replace.js
+
+=====================
+ Step 868: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_868_replace.js
+
+=====================
+ Step 874: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_874_replace.js
+
+=====================
+ Step 880: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_880_replace.js
+
+=====================
+ Step 884: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_884_replace.js
+
+=====================
+ Step 892: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_892_replace.js
+
+=====================
+ Step 910: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_910_replace.js
+
+=====================
+ Step 914: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_914_replace.js
+
+=====================
+ Step 920: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_920_replace.js
+
+=====================
+ Step 935: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_935_replace.js
+
+=====================
+ Step 947: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_947_replace.js
+
+=====================
+ Step 977: multi_replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_977_multi_0.js
+   Saved chunk to scratch/extracted_chunks_older/step_977_multi_1.js
+
+=====================
+ Step 986: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_986_replace.js
+
+=====================
+ Step 1000: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_1000_replace.js
+
+=====================
+ Step 1004: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_1004_replace.js
+
+=====================
+ Step 1016: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_1016_replace.js
+
+=====================
+ Step 1030: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_1030_replace.js
+
+=====================
+ Step 1034: replace_file_content
+   Saved chunk to scratch/extracted_chunks_older/step_1034_replace.js
+
+=====================
+python3 scratch/extract_code.py
+=====================
+python3 scratch/extract_code.py

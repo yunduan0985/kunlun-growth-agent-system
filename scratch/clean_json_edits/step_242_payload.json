@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/notebook/weread/fetch 与 /api/notebook/notebooklm/sync 两个读书笔记同步端点。",
+  "EndLine": 431,
+  "Instruction": "在服务器启动部分之前加入微信读书获取和 NotebookLM 同步路由。",
+  "ReplacementContent": "\n// 模拟获取微信读书划线接口\napp.get('/api/notebook/weread/fetch', (req, res) => {\n  const { book_id } = req.query;\n  console.log(`[WeRead Exporter] Fetching highlights for book ID: ${book_id || 'latest'}`);\n\n  res.json([\n    {\n      book_name: \"第一性原理\",\n      author: \"埃隆·马斯克\",\n      highlight: \"不要盲从社会公认的常识，必须把事物剥离到最基础的真理，然后再从头开始推导。\",\n      thought: \"这正是多智能体拓扑设计的核心！不要根据别人的工作流来拼凑 Agent，而是要从最小节点开始反推架构。\"\n    },\n    {\n      book_name: \"引爆点\",\n      author: \"马尔科姆·格拉德威尔\",\n      highlight: \"信息传播有三个法则：个别人物法则、附着力因素法则、环境威力法则。\",\n      thought: \"冷启动起号，选题就是那个附着力因素，而微信社群就是爆破的环境威力！\"\n    }\n  ]);\n});\n\n// 模拟同步至 NotebookLM 挂载的 Google Drive 接口\napp.post('/api/notebook/notebooklm/sync', (req, res) => {\n  const { filename, markdown_content } = req.body;\n  if (!filename || !markdown_content) {\n    return res.status(400).json({ error: \"Missing parameters: filename or markdown_content\" });\n  }\n\n  console.log(`[NotebookLM Sync] Uploading ${filename} to Google Drive...`);\n\n  res.json({\n    success: true,\n    cloud_url: `https://drive.google.com/drive/folders/notebooklm_growth_sync/${encodeURIComponent(filename)}`\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 431,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding notebook sync routes to Gateway",
+  "toolSummary": "Modify file"
+}

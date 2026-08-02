@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "修改 DATA_DIR 定义，使其优先走 Electron 物理注入的 OS 安全可写目录，防止打包发布后在只读目录下写文件导致崩溃。",
+  "EndLine": 19,
+  "Instruction": "修改 DATA_DIR 定义，支持 KUNLUN_USER_DATA_PATH 环境变量。",
+  "ReplacementContent": "// ==========================================\n// 核心路径与本地数据配置 (提前至最前以防 TDZ 错误)\n// ==========================================\n// 优先使用由 Electron 物理注入的 OS 安全可写 UserData 目录，防打包后 EROFS 只读文件系统报错闪退\nconst DATA_DIR = process.env.KUNLUN_USER_DATA_PATH || path.join(__dirname, '../data');\nif (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });",
+  "StartLine": 14,
+  "TargetContent": "// ==========================================\n// 核心路径与本地数据配置 (提前至最前以防 TDZ 错误)\n// ==========================================\nconst DATA_DIR = path.join(__dirname, '../data');\nif (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Updating DATA_DIR definition in src/index.js",
+  "toolSummary": "Update DATA_DIR definition"
+}

@@ -1,0 +1,9 @@
+ *
+2ف:BJP(0B!
+	sessionID-3750763034362895579HUPZaIRXavDbKOaI_uMPhcKw6A4Xb$072f2138-4904-4a81-b165-a86c0a2e5395jR
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd$
+жہ
+ԍ2(bot-b01a3cd9-0871-43cd-9eb4-050036985a90:
+
+iv3k61tmreplace_file_content{"AllowMultiple":false,"Description":"修复 install.js 中的行号语法残留，确保 Node.js 能正常跨机自愈配置环境。","EndLine":8,"Instruction":"删除2:和3:的前缀，修补为合法的JavaScript代码。","ReplacementContent":"console.log('==================================================');\nconsole.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');\nconsole.log('==================================================\\n');","StartLine":5,"TargetContent":"console.log('==================================================');\n2: console.log('🛡️ 昆仑增长多智能体系统一键部署与配置自愈程序...');\n3: console.log('==================================================\\n');","TargetFile":"/Volumes/MOVESPEED/下载/AIcode/Agent/scripts/install.js","toolAction":"Removing stray line numbers from install script","toolSummary":"Modify file"}:
+M2אhD)3kW@{,q~hݱIg]ז~4F|@4&6x,_A#k:_\.頫*6-6c@4wdv޷<]3޲tŘyJC	:UF3y7WUcߺBCvFl:9𞗝pa%:r@-!	nU{iP[%QgIC|āvn/m|r$8 *SVL'o׺:iVR˰E#y]MָiT棪Y^	u1[uz LgzDXuџWQDCYK#>VUnCycלuR0,nȎ)]hϞS3g-?qJ9SyQJreplace_file_content`

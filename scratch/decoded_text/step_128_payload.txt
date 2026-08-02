@@ -1,0 +1,32 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":275,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.get('/api/ops/metrics', (req, res) =\u003e {\n  res.json({\n    llm_success_rate: 99.4,\n    average_latency_ms: 2450,\n    token_cost_today_usd: 14.85,\n    api_timeout_count: 2\n  });\n});\n\n// 
+=====================
+\napp.get('/api/ops/logs', (req, res) =\u003e {\n  const lines = parseInt(req.query.lines) || 50;\n  res.json({\n    logs: `[INFO] ${new Date().toISOString()} - [Gateway] Server initialized on port ${PORT}\\n[INFO] [MCP] Registered 4 tools\\n[INFO] [OpenClaw] Connection established at ${OPENCLAW_API_URL}\\n[DEBUG] [Terminal] lark-cli path configured as: ${LARK_CLI_PATH}\\n[INFO] [Gateway] Listening for remote trace events... (Truncated to past ${lines} lines)`\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":271,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding logs and metrics routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$b6ac39a0-a8d4-440f-8dbb-0294cb09aa52j
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+;"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+)Adding logs and metrics routes to Gateway

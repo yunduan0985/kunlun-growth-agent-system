@@ -1,0 +1,50 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":796,"Instruction":"
+=====================
+","ReplacementContent":"    // 
+=====================
+)\n    async function fetchWechatData() {\n      const out = document.getElementById('wechat-out');\n      out.textContent = '
+=====================
+...\\n';\n      \n      try {\n        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);\n        const triggerData = await triggerRes.json();\n        if (!triggerData.success || !triggerData.task_id) {\n          out.textContent = '
+=====================
+';\n          return;\n        }\n\n        const taskId = triggerData.task_id;\n        out.textContent += `
+=====================
+ID: ${taskId}\\n`;\n\n        const pollInterval = setInterval(async () =\u003e {\n          try {\n            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);\n            const statusData = await statusRes.json();\n            \n            if (statusData.success) {\n              out.textContent = `
+=====================
+...\\n` +\n                `[
+=====================
+]: ${statusData.progress}%\\n`;\n              \n              if (statusData.status === 'completed') {\n                clearInterval(pollInterval);\n                const data = statusData.result;\n                out.textContent = `
+=====================
+\\n` + \n                  data.map((m, i) =\u003e `${i+1}. ${m.from_user}: \"${m.content.substring(0,25)}...\"`).join('\\n');\n              }\n            }\n          } catch (pollErr) {\n            clearInterval(pollInterval);\n            out.textContent += `\\n
+=====================
+: ${pollErr.message}`;\n          }\n        }, 500);\n\n      } catch (err) {\n        out.textContent = `[
+=====================
+\\n${err.message}`;\n      }\n    }","StartLine":784,"TargetContent":"    // 
+=====================
+\n    async function fetchWechatData() {\n      const out = document.getElementById('wechat-out');\n      out.textContent = '
+=====================
+...\\n';\n      try {\n        const res = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages`);\n        const data = await res.json();\n        out.textContent = `[
+=====================
+\\n` + \n          data.map((m, i) =\u003e `${i+1}. ${m.from_user}: \"${m.content.substring(0,25)}...\"`).join('\\n');\n      } catch (err) {\n        out.textContent = `[
+=====================
+\\n${err.message}`;\n      }\n    }","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Upgrading HTML WeChat scanner to asynchronous polling","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$bc65084a-b018-4f15-968e-9ac2973168abj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+5Upgrading HTML WeChat scanner to asynchronous polling

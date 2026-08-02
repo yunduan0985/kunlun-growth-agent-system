@@ -1,0 +1,240 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "昆仑增长 MCP 网关工具集",
+    "version": "1.1.0",
+    "description": "基于 Model Context Protocol (MCP) 规范的统一网关，允许 Agent 调度微信数据、天眼查、视频转录和笔记同步等 API 动作。"
+  },
+  "paths": {
+    "/api/mcp/tools": {
+      "get": {
+        "summary": "获取当前注册的全部 MCP 工具列表",
+        "operationId": "listMcpTools",
+        "responses": {
+          "200": {
+            "description": "成功返回已注册的工具 Schema 列表",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "inputSchema": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mcp/tools/call": {
+      "post": {
+        "summary": "执行指定的 MCP 工具",
+        "operationId": "callMcpTool",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "要调用的工具名称 (例如 wechat_send_msg, fetch_tianyancha_info)"
+                  },
+                  "arguments": {
+                    "type": "object",
+                    "description": "工具所需的参数字典"
+                  }
+                },
+                "required": [
+                  "name",
+                  "arguments"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "工具执行成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "isError": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mcp/resources": {
+      "get": {
+        "summary": "列出当前可用的静态数据资源（如知识库导出的段落）",
+        "operationId": "listMcpResources",
+        "responses": {
+          "200": {
+            "description": "返回可用资源列表",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "uri": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "mimeType": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": {
+                    "type": "string",
+                    "description": "微信群聊ID或联系人微信号/备注"
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "发送的文本内容"
+                  }
+                },
+                "required": [
+                  "to_username",
+                  "content"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "msgId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": {
+                    "type": "string",
+                    "description": "完整的终端命令"
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "运行路径"
+                  }
+                },
+                "required": [
+                  "command"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "stdout": {
+                      "type": "string"
+                    },
+                    "stderr": {
+                      "type": "string"
+                    },
+                    "exitCode": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

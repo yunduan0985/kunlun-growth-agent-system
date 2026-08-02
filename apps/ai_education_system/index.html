@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Education Studio OS - 生财黑客松同款 AI 智能教务系统</title>
+  
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-logo">AI</div>
+      <div>
+        <div class="brand-text">AI Education OS</div>
+        <span class="brand-badge">生财黑客松亚军复刻版</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="dashboard">
+        📊 经营看板 & 预警
+      </button>
+      <button class="tab-btn" data-tab="students">
+        👥 学员档案与画像
+      </button>
+      <button class="tab-btn" data-tab="schedule">
+        📅 排课与自动消课
+      </button>
+      <button class="tab-btn" data-tab="assistant">
+        🤖 AI 助教与教研
+      </button>
+      <button class="tab-btn" data-tab="prompts">
+        💡 黑客松 Prompt 库
+      </button>
+    </div>
+
+    <div>
+      <span style="font-size:0.85rem; color:var(--text-muted); margin-right:12px;">已连接：【亦仁 × AI帅总】主控网关</span>
+      <button class="btn btn-primary" onclick="alert('已与飞书 36 Agent 集群打通，支持自动推送网关和续费告警！')">⚡ 网关状态: 正常</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Tab 1: Dashboard -->
+    <div id="dashboard" class="tab-content active">
+      
+      <!-- Metrics Grid -->
+      <div class="metrics-grid">
+        <div class="glass-panel metric-card">
+          <div class="metric-info">
+            <p>本月消课总金额</p>
+            <h3>¥ 55,700</h3>
+          </div>
+          <div class="metric-icon icon-purple">💰</div>
+        </div>
+
+        <div class="glass-panel metric-card">
+          <div class="metric-info">
+            <p>本月实收新学费</p>
+            <h3>¥ 138,600</h3>
+          </div>
+          <div class="metric-icon icon-emerald">📈</div>
+        </div>
+
+        <div class="glass-panel metric-card">
+          <div class="metric-info">
+            <p>活跃学员总数</p>
+            <h3>128 人</h3>
+          </div>
+          <div class="metric-icon icon-cyan">🎓</div>
+        </div>
+
+        <div class="glass-panel metric-card">
+          <div class="metric-info">
+            <p>低课时续费预警</p>
+            <h3 style="color:var(--accent-rose);">2 人需要续费</h3>
+          </div>
+          <div class="metric-icon icon-amber">⚠️</div>
+        </div>
+      </div>
+
+      <!-- Dashboard Grid -->
+      <div class="dashboard-grid">
+        <!-- Revenue & Consumption Chart -->
+        <div class="glass-panel chart-card">
+          <div class="card-header">
+            <div class="card-title">📉 本周消课与学费收入趋势分析</div>
+            <span class="badge badge-purple">实时数据更新</span>
+          </div>
+          <div style="height: 320px; position: relative;">
+            <canvas id="revenueChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Real-time Alerts -->
+        <div class="glass-panel chart-card">
+          <div class="card-header">
+            <div class="card-title">🔔 智能续费与考勤预警</div>
+          </div>
+          <div class="alert-list">
+            <div class="alert-item urgent">
+              <div class="alert-info">
+                <h4>张小明 (剩 2 节课)</h4>
+                <p>推荐策略：发【温情续费提示词】，附带写作成果</p>
+              </div>
+              <button class="btn btn-danger" onclick="alert('已自动调用 AI 生成家校微信续费文案！')">一键催费</button>
+            </div>
+
+            <div class="alert-item urgent">
+              <div class="alert-info">
+                <h4>王梓宣 (剩 1 节课)</h4>
+                <p>推荐策略：提示早鸟续费 88 折优惠</p>
+              </div>
+              <button class="btn btn-danger" onclick="alert('已自动发送续费微信通知！')">一键催费</button>
+            </div>
+
+            <div class="alert-item">
+              <div class="alert-info">
+                <h4>周一 14:00 班级已到齐</h4>
+                <p>AI 创意写作班（8人全到）</p>
+              </div>
+              <button class="btn btn-secondary" onclick="alert('已一键全班扣扣消课！')">自动消课</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tab 2: Students -->
+    <div id="students" class="tab-content">
+      <div class="dashboard-grid" style="grid-template-columns: 2fr 1fr;">
+        <!-- Student Table -->
+        <div class="glass-panel chart-card">
+          <div class="card-header">
+            <div class="card-title">📚 学员花名册与课时管理</div>
+            <button class="btn btn-primary" onclick="alert('支持 Excel 批量导入学员资料')">+ 新增学员</button>
+          </div>
+
+          <div class="data-table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>学员姓名</th>
+                  <th>报读课程</th>
+                  <th>家长联系</th>
+                  <th>总课时</th>
+                  <th>剩余课时</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody">
+                <!-- Loaded via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Student Radar Diagnosis -->
+        <div class="glass-panel chart-card">
+          <div class="card-header">
+            <div class="card-title" id="currentStudentName">🎯 五维学情诊断雷达</div>
+          </div>
+          <div style="height: 280px; position: relative;">
+            <canvas id="studentRadarChart"></canvas>
+          </div>
+          <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+            <p>💡 💡 <strong>诊断建议：</strong> 该学员逻辑思维与创新意识极佳，建议推荐参加更高阶的 Python AI 算法竞赛班。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Schedule -->
+    <div id="schedule" class="tab-content">
+      <div class="glass-panel chart-card">
+        <div class="card-header">
+          <div class="card-title">📅 可视化智能排课日历与消课中枢</div>
+          <button class="btn btn-primary" onclick="alert('已触发 AI 冲突检测算法，无冲突方案！')">⚡ AI 冲突自动检测</button>
+        </div>
+        
+        <div id="scheduleList" style="display:flex; flex-direction:column; gap:12px;">
+          <!-- Schedules loaded via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: AI Assistant -->
+    <div id="assistant" class="tab-content">
+      <div class="glass-panel chart-card">
+        <div class="card-header">
+          <div class="card-title">🤖 AI 极速教案生成与作业智能批改</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>课程主题 / 知识点：</label>
+              <input type="text" id="lessonTopic" class="form-control" value="AI 提示词工程与逻辑思维启蒙">
+            </div>
+
+            <div class="form-group">
+              <label>目标学生年龄段：</label>
+              <select id="studentAge" class="form-control">
+                <option>6-8 岁 (少儿启蒙)</option>
+                <option selected>8-10 岁 (小学中高年级)</option>
+                <option>11-14 岁 (初中高阶)</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateAILessonPlan()">🚀 1秒生成互动教案</button>
+          </div>
+
+          <div>
+            <div id="aiLessonOutput" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 5: Prompt Hub -->
+    <div id="prompts" class="tab-content">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size:1.4rem; font-weight:800; margin-bottom:4px;">💡 生财黑客松亚军精选 Prompt 库</h2>
+        <p style="color:var(--text-muted); font-size:0.9rem;">复刻叶贤弟 9 小时黑客松极速做课与教务管理 Prompt，可一键复制或直接调用系统 AI Agent。</p>
+      </div>
+
+      <div class="prompt-grid" id="promptGrid">
+        <!-- Loaded via JS -->
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

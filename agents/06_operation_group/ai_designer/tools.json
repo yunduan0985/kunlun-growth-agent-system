@@ -1,0 +1,98 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AI 设计师图像生成插件",
+    "version": "1.2.0",
+    "description": "提供给 AI 设计师 Agent 进行 Midjourney/Stable Diffusion 提示词执行及本地设计大图绘制生成的 API 规范。"
+  },
+  "paths": {
+    "/api/operation/designer/draw": {
+      "post": {
+        "summary": "向本地或云端绘图引擎发送详细的生图 Prompt 提示词与画幅比例，生成精美的设计大图并保存",
+        "operationId": "generateImage",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "prompt": { "type": "string", "description": "高质量英文生图提示词" },
+                  "aspect_ratio": { "type": "string", "default": "3:4", "description": "画幅宽高比 (如 3:4, 16:9)" }
+                },
+                "required": ["prompt"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "设计大图生成成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "image_url": { "type": "string", "description": "生成的图片本地或云端访问直链" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string" },
+                  "content": { "type": "string" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

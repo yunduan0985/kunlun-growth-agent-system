@@ -1,0 +1,62 @@
+-3750763034362895579H
+=====================
+NXJYarnMKe_G_uMPwOLlmA8X
+=====================
+b$f1792df7-40f2-4b66-9b3b-ab881af761a0j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Prioritizing Specialized Tools**
+
+I'm now focusing on using the most specialized tools available. I'm actively avoiding generic bash commands like `cat` for file creation or appending, or `grep` when I should use `grep_search`. I'm working to make sure my approach is as precise and efficient as possible.
+
+
+2(bot-bd8d8dbf-4290-41af-9455-dbf129b26307:,
+
+=====================
+replace_file_content
+=====================
+%{"AllowMultiple":false,"Description":"
+=====================
+ Electron utilityProcess 
+=====================
+ child_process.spawn
+=====================
+","EndLine":104,"Instruction":"
+=====================
+","ReplacementContent":"function startGateway(port) {\n  // 
+=====================
+ resources/app/src/ 
+=====================
+\n  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;\n  const gatewayPath = isDev\n    ? path.join(__dirname, '../src/index.js')\n    : path.join(process.resourcesPath, 'app/src/index.js');\n\n  console.log(`[Electron] Starting gateway using UtilityProcess on port ${port}, path: ${gatewayPath}`);\n\n  const env = Object.assign({}, process.env, {\n    PORT: String(port),\n    NODE_ENV: isDev ? 'development' : 'production',\n    KUNLUN_USER_DATA_PATH: app.getPath('userData') // 
+=====================
+ utilityProcess.fork 
+=====================
+\n  gatewayProcess = utilityProcess.fork(gatewayPath, [], {\n    env,\n    stdio: 'pipe'\n  });\n\n  gatewayProcess.stdout.on('data', (data) =\u003e {\n    console.log(`[Gateway STDOUT] ${data.toString().trim()}`);\n  });\n\n  if (gatewayProcess.stderr) {\n    gatewayProcess.stderr.on('data', (data) =\u003e {\n      console.error(`[Gateway STDERR] ${data.toString().trim()}`);\n    });\n  }\n\n  // 
+=====================
+\n  gatewayProcess.on('exit', (code) =\u003e {\n    console.warn(`[Gateway] UtilityProcess exited with code=${code}`);\n    if (restartCount \u003c MAX_RESTARTS \u0026\u0026 mainWindow \u0026\u0026 !mainWindow.isDestroyed()) {\n      restartCount++;\n      console.log(`[Guardian] Auto-restarting gateway (attempt ${restartCount}/${MAX_RESTARTS})...`);\n      setTimeout(() =\u003e startGateway(activePort), 1500);\n    } else if (restartCount \u003e= MAX_RESTARTS) {\n      console.error('[Guardian] Max restart attempts reached. Please restart the app.');\n    }\n  });\n}","StartLine":45,"TargetContent":"// 
+=====================
+\n// ==========================================\nfunction startGateway(port) {\n  // 
+=====================
+ resources/app/src/ 
+=====================
+\n  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;\n  const gatewayPath = isDev\n    ? path.join(__dirname, '../src/index.js')\n    : path.join(process.resourcesPath, 'app/src/index.js');\n\n  // 
+=====================
+\n  const fs = require('fs');\n  const CANDIDATE_NODE_PATHS = [\n    '/opt/homebrew/bin/node',   // macOS Apple Silicon (Homebrew)\n    '/usr/local/bin/node',      // macOS Intel (Homebrew / nvm)\n    '/usr/bin/node',            // Linux\n    process.env.NODE_BINARY,   // 
+=====================
+\n    'node',                    // PATH 
+=====================
+\n  ].filter(Boolean);\n\n  let nodeExecutable = 'node'; // 
+=====================
+\n  for (const p of CANDIDATE_NODE_PATHS) {\n    if (p === 'node') { nodeExecutable = p; break; } // PATH 
+=====================
+\n    if (fs.existsSync(p)) { nodeExecutable = p; break; }\n  }\n\n  console.log(`[Electron] Node binary: ${nodeExecutable}`);\n  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);\n\n  const env = Object.assign({}, process.env, {\n    PORT: String(port),\n    NODE_ENV: isDev ? 'development' : 'production'\n  });\n\n  gatewayProcess = spawn(nodeExecutable, [gatewayPath], {\n    env,\n    stdio: ['pipe', 'pipe', 'pipe']\n  });\n\n  gatewayProcess.stdout.on('data', (data) =\u003e {\n    console.log(`[Gateway STDOUT] ${data.toString().trim()}`);\n  });\n\n  gatewayProcess.stderr.on('data', (data) =\u003e {\n    console.error(`[Gateway STDERR] ${data.toString().trim()}`);\n  });\n\n  // 
+=====================
+\n  gatewayProcess.on('exit', (code, signal) =\u003e {\n    console.warn(`[Gateway] Process exited with code=${code}, signal=${signal}`);\n    if (restartCount \u003c MAX_RESTARTS \u0026\u0026 mainWindow \u0026\u0026 !mainWindow.isDestroyed()) {\n      restartCount++;\n      console.log(`[Guardian] Auto-restarting gateway (attempt ${restartCount}/${MAX_RESTARTS})...`);\n      setTimeout(() =\u003e startGateway(activePort), 1500);\n    } else if (restartCount \u003e= MAX_RESTARTS) {\n      console.error('[Guardian] Max restart attempts reached. Please restart the app.');\n    }\n  });\n}","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/electron/main.js","toolAction":"Refactoring electron main process to spawn gateway as utilityProcess","toolSummary":"Refactor main.js spawning"}:
+=====================
+replace_file_contentZ

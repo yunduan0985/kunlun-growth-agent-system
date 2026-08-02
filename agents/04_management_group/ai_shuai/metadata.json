@@ -1,0 +1,16 @@
+{
+  "id": "ai_shuai",
+  "name": "AI帅总",
+  "group": "管理组",
+  "description": "模拟公司创始人的思维模式，提供企业运营、商业模式、人才管理和业务增长方面的战略决策咨询。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=ai_shuai",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

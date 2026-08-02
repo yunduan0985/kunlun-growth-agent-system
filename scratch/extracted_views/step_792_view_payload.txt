@@ -1,0 +1,51 @@
+ *
+"
+#toolu_vrtx_01QwMnKurWwybUTEWbaCWpSi	view_file{"AbsolutePath":"/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/kunlun_agent_os_production_delivery_roadmap.md","toolAction":"Viewing roadmap file","toolSummary":"Reading roadmap"}J	view_file*AbsolutePath*
+toolAction*toolSummary2:BһXb$9854c2a5-7b94-497b-8274-45148b995d52jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd46
+
+
+ӻReading roadmapViewing roadmap fileغr&
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/kunlun_agent_os_production_delivery_roadmap.md*"%# 🍏 Kunlun Agent OS 商业化交付与产品出售级超级开发路线图
+
+为了让本套多智能体系统（Kunlun Agent OS）能够**直接以独立商业软件（SaaS 订阅 / 企业私有化部署）的形式售卖给非技术企业客户并进行物理交付**，我们以资深架构师和产品负责人的视角，制定了以下三阶段超级详细开发计划。
+
+---
+
+## 📅 阶段一：客户端一键化绿色包装 (0 门槛交付)
+
+| 开发模块 | 物理实施路径 | 期望交付体验 |
+| :--- | :--- | :--- |
+| **Electron 桌面壳封装** | 1. 引入 `electron` 及 `electron-builder` 依赖。<br>2. 将 Express 本地网关 (8888 端口) 的启动脚本 (`src/index.js`) 写入 Electron 后台主进程 (Main Process)。<br>3. 桌面窗口直接加载本地 `index.html`。 | **双击即用**：用户在 Mac/Windows 下无需配置 Node.js 环境，双击软件图标即可自动拉起网关并在窗口显示苹果风格面板。 |
+| **端口自愈与后台保活** | 1. 启动时检测 8888 端口是否冲突。<br>2. 若冲突，自动随机分配可用端口 (如 8889, 8890) 并动态修改前端 API 请求地址。<br>3. 引入守护进程，网关崩溃时自动秒级热重启。 | **100% 运行高可用**：避免用户由于本地端口冲突导致软件白屏或网关无法连通的窘境。 |
+
+---
+
+## 📅 阶段二：真实通讯通道打通与扫码自愈 (Real-World Channels)
+
+| 开发模块 | 物理实施路径 | 期望交付体验 |
+| :--- | :--- | :--- |
+| **微信真机 SQLite 挂载** | 1. 针对 Mac 环境，动态探测 `/Users/username/Library/Containers/com.tencent.xinWeChat` 目录下的数据库路径。<br>2. 挂载本地 SQLite 密码解密驱动，提取真实的私域聊天会话记录。<br>3. 彻底取代目前的 Mock 队列，实现真实的 BANT 商业线索过滤。 | **真实私域挖掘**：珠宝商或企业老板双击即可扫描并提取出本地微信里真实的意向客户。 |
+| **WhatsApp 扫码免鉴权** | 1. 引入 `Baileys` 或 `whatsapp-web.js` 开源库。<br>2. 在控制台「出海配置」中新增「扫码登录」按钮，生成并在网页端渲染 Base64 登录二维码。<br>3. 用户手机扫码后，网关持久化 Session 并挂载监听器。 | **跨境私域秒级出海**：不需要昂贵的官方 API 秘钥，企业扫码即可让 Agent 接管全球客户消息的收发与自动答疑。 |
+| **飞书 API 真实物理写入** | 1. 用户填入 `APP_ID` 和 `APP_SECRET` 并通过连通校验后，网关在后台自动调用 Lark SDK。<br>2. 检查多维表格中是否存在“昆仑线索库”数据表，若无则自动通过 API 创建。<br>3. 微信/WhatsApp 扫描到 BANT 线索后，实时向飞书多维表格追加写入。 | **物理飞书同步**：点击“同步飞书”按钮，意向线索会实时、真实地呈现在企业的飞书多维表格中。 |
+
+---
+
+## 📅 阶段三：企业级多源 RAG 知识库与 Token 计费中心 (Advanced SaaS)
+
+| 开发模块 | 物理实施路径 | 期望交付体验 |
+| :--- | :--- | :--- |
+| **多源文档解析与向量化** | 1. 引入本地 `pdf-parse` 解析 PDF，`mammoth` 解析 Word 文档。<br>2. 在网关中集成轻量向量化插件，将文档按 500 字大小进行 Overlap 切片。<br>3. 大规模文本时使用本地 SQLite 的 FTS5 搜索或向量搜索，进行毫秒级精准上下文匹配。 | **企业专属 AI 脑**：老板可以直接将公司的《员工手册》、《售后保修标准.pdf》、《产品报价单.docx》拖入网页上传，所有 Agent 实时学会该知识并对答如流。 |
+| **Token 计数与计费审计** | 1. 引入 `tiktoken` 库。<br>2. 对每次智能体对话（输入 + 输出）的 Token 数量进行物理统计。<br>3. 将消费数据记录于本地，在配置面板展示“今日消费账单（Claude/DeepSeek Token 使用分布图）”。 | **成本透明可控**：让企业老板清晰感知大模型的消费情况，防止 Key 被恶意刷量透支。 |
+
+---
+
+## 🚀 4. 当前版本的交付状态评估 (Go/No-Go Decision)
+
+> [!IMPORTANT]
+> **结论：当前版本在进行「概念验证（POC）」、「项目天使轮演示（Demo Stage）」和「技术极客/高认知企业主早期私域销售」时，已经 100% 具备了直接交付和出售的使用体验！**
+
+由于我们已经打通了 **多模型中转 Ping 延迟测试、本地极简 RAG 知识库读写、中英双语切换和极其高端的苹果极简界面**，您可以通过这个版本向您的第一批核心客户（珠宝商、出海电商老板、私域操盘手）进行现场演示或提供早期的试用包。
+
+接下来，我们将根据阶段一，为您打通 Electron 打包及多源文件 RAG 解析的架构底层。
+X+`%%

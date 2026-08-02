@@ -1,0 +1,2 @@
+- [x] 将 PNG 图标转换为 macOS 规范的 `.icns` 格式
+- [/] 编写 AppleScript 脚本并编译为 `微信双开.app`

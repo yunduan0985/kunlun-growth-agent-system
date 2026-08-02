@@ -1,0 +1,46 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":14,"Instruction":"
+=====================
+","ReplacementContent":"- [x] 
+=====================
+ `README.md`\n  - [x] 
+=====================
+ `docs/feishu_integration.md`
+=====================
+ `docs/coze_codex_integration.md`
+=====================
+ `docs/workbuddy_integration.md`
+=====================
+ (metadata.json, system_prompt.md, tools.json)\n  - [/] agent
+=====================
+ Agent)","StartLine":3,"TargetContent":"- [/] 
+=====================
+ `README.md`\n  - [ ] 
+=====================
+ `docs/feishu_integration.md`
+=====================
+ `docs/coze_codex_integration.md`
+=====================
+ `docs/workbuddy_integration.md`
+=====================
+ (metadata.json, system_prompt.md, tools.json)\n  - [ ] agent
+=====================
+ Agent)","TargetFile":"/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/task.md","toolAction":"Updating task list completed items","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$7794b295-2654-429b-a7ad-ed1baf739324j
+=====================
+P
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+"Updating task list completed items

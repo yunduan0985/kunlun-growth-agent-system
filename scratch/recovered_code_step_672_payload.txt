@@ -1,0 +1,70 @@
+-3750763034362895579H
+=====================
+vIVXauySFa2I1MkPpfOZoAYX
+=====================
+b$7b8af942-242e-4785-ad09-ad85c5bff8a3j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Refactoring System Configuration APIs**
+
+I'm currently overhauling the implementation of `/api/system/config` and `/api/system/config/save`. The plan is for `/api/system/config` to return all seven configuration items, specifically: `CLAUDE_API_KEY`, `TIANYANCHA_TOKEN`, `WECHAT_DB_PATH`, and `LARK_APP_ID`. This is the first step in the complete refactor.
+
+
+2(bot-f9bbf94f-26e1-44fe-a739-3fd6ce9f18c4:3
+
+=====================
+replace_file_content
+=====================
++{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":1225,"Instruction":"
+=====================
+ GET/POST /api/system/config 
+=====================
+","ReplacementContent":"// 
+=====================
+)\napp.get('/api/system/config', (req, res) =\u003e {\n  console.log(`[Config Service] Reading local system configurations...`);\n  res.json({\n    success: true,\n    env: {\n      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || \"sk-ant-xxxxxxxxxxxxxxxxxx\",\n      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || \"tyc_token_xxxxxxxxxxx\",\n      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),\n      LARK_APP_ID: process.env.LARK_APP_ID || \"cli_a1b2c3d4e5f6g7h8\",\n      LARK_APP_SECRET: process.env.LARK_APP_SECRET || \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n      LARK_CLI_PATH: process.env.LARK_CLI_PATH || \"lark\",\n      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || \"http://localhost:18000\",\n      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || \"mock_token_123\"\n    }\n  });\n});\n\n// 
+=====================
+)\napp.post('/api/system/config/save', (req, res) =\u003e {\n  const { config, user_role } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  // 
+=====================
+)\n  if (user_role !== 'admin') {\n    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: \"${user_role || 'unknown'}\"`);\n    return res.status(403).json({\n      success: false,\n      error: `Access Denied: Role \"${user_role || 'unknown'}\" is not authorized to edit system environment variables.`\n    });\n  }\n\n  const envPath = path.resolve(__dirname, '../.env');\n  console.log(`[Config Service] Writing new API keys and Lark config to local: ${envPath}`);\n\n  // 1. 
+=====================
+\n  const envContent = `# 
+=====================
+)\nPORT=8888\nCLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}\nTIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}\nWECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}\nLARK_APP_ID=${config.LARK_APP_ID || ''}\nLARK_APP_SECRET=${config.LARK_APP_SECRET || ''}\nLARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}\nOPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}\nOPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}\n`;\n\n  try {\n    // 2. 
+=====================
+\n    fs.writeFileSync(envPath, envContent, 'utf-8');\n    \n    // 3. 
+=====================
+\n    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;\n    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;\n    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;\n    process.env.LARK_APP_ID = config.LARK_APP_ID;\n    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;\n    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;\n    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;\n    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;\n\n    console.log(`
+=====================
+ [Config Service] Successfully hot-saved new environmental settings.`);\n    res.json({\n      success: true,\n      message: \"
+=====================
+\"\n    });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to write .env file: \" + err.message });\n  }\n});","StartLine":1188,"TargetContent":"// 
+=====================
+)\napp.get('/api/system/config', (req, res) =\u003e {\n  console.log(`[Config Service] Reading local system configurations...`);\n  res.json({\n    success: true,\n    env: {\n      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || \"sk-ant-xxxxxxxxxxxxxxxxxx\",\n      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || \"tyc_token_xxxxxxxxxxx\",\n      WECHAT_DB_PATH: \"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/data/wx_db.db\"\n    },\n    agents_list: [\n      { id: \"ai_sales_champion\", name: \"AI
+=====================
+\" },\n      { id: \"risk_controller\", name: \"
+=====================
+\" },\n      { id: \"manual_editor\", name: \"
+=====================
+\" }\n    ]\n  });\n});\n\n// 
+=====================
+)\napp.post('/api/system/config/save', (req, res) =\u003e {\n  const { config, user_role } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  // 
+=====================
+\n  if (user_role !== 'admin') {\n    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: \"${user_role || 'unknown'}\"`);\n    return res.status(403).json({\n      success: false,\n      error: `Access Denied: Role \"${user_role || 'unknown'}\" is not authorized to edit system environment variables.`\n    });\n  }\n\n  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);\n  res.json({\n    success: true,\n    message: \"
+=====================
+\"\n  });\n});","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Upgrading env configuration save to physical files","toolSummary":"Modify file"}:
+=====================
+replace_file_contentZ

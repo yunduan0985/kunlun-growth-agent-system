@@ -1,0 +1,36 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/operation/designer/draw 
+=====================
+","EndLine":1058,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/operation/designer/draw', (req, res) =\u003e {\n  const { prompt, aspect_ratio } = req.body;\n  if (!prompt) return res.status(400).json({ error: \"Missing parameter: prompt\" });\n\n  console.log(`[Graphic Engine] Drawing image for Prompt: \"${prompt}\" (Aspect Ratio: ${aspect_ratio || '3:4'})`);\n\n  res.json({\n    success: true,\n    image_url: \"file:///Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/docs/weread-placeholder\"\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":1058,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding designer routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$ca3da136-8f2c-4f21-983f-063cf2b4ae21j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+!Adding designer routes to Gateway

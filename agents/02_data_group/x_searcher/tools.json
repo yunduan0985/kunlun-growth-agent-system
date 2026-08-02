@@ -1,0 +1,119 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "X (Twitter) 开源舆情检索插件",
+    "version": "1.2.0",
+    "description": "提供给 X检索官 Agent 进行推文搜索、KOL 定向监听及热点趋势度量的 API 规范。"
+  },
+  "paths": {
+    "/api/x/search": {
+      "post": {
+        "summary": "根据关键词、Hashtag 检索 X 上的热门推文与高赞讨论",
+        "operationId": "searchTweets",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": { "type": "string", "description": "检索的关键字或 #标签" },
+                  "min_likes": { "type": "integer", "default": 50, "description": "过滤的最小点赞数" }
+                },
+                "required": ["query"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "检索成功"
+          }
+        }
+      }
+    },
+    "/api/x/kol/tweets": {
+      "get": {
+        "summary": "获取特定 KOL 账号列表最近 24 小时发布的所有推文列表",
+        "operationId": "getKolTweets",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "KOL 的 Twitter 用户名 (如 karpathy)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "获取KOL推文成功"
+          }
+        }
+      }
+    },
+    "/api/x/trending": {
+      "get": {
+        "summary": "获取今日科技与 AI 领域的 X 热门趋势话题列表",
+        "operationId": "getXTrending",
+        "responses": {
+          "200": {
+            "description": "获取趋势话题成功"
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

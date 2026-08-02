@@ -1,0 +1,30 @@
+-3750763034362895579H
+=====================
+WsxYaqjrKbWl1MkP1tq48QUX
+=====================
+b$ae00f435-5808-4fa7-9e2a-0f71c1a9251bj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Prioritizing Specialized Tools**
+
+I'm focused on the most effective tool use. I'm actively avoiding generic bash commands in favor of specialized tools. Specifically, I'm making sure that I use `grep_search` instead of `grep` and I'm being mindful to choose appropriate file handling tools, avoiding `cat` for file creation and appending.
+
+
+2(bot-d25a0e84-7576-4787-9df2-bbe6c23c6f35:
+=====================
+replace_file_content
+=====================
+
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":26,"Instruction":"
+=====================
+","ReplacementContent":"    patterns = {\n        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',\n        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',\n        'Lark App ID': r'cli_[a-z0-9]{16}',\n        'Lark App Secret': r'LARK_APP_SECRET\\s*=\\s*[\\'\"][a-zA-Z0-9]{32}[\\'\"]|app_secret\\s*:\\s*[\\'\"][a-zA-Z0-9]{32}[\\'\"]',\n        'JWT Secret Keyword': r'const JWT_SECRET\\s*=\\s*[\\'\"][a-zA-Z0-9_-]{16,}[\\'\"]'\n    }","StartLine":20,"TargetContent":"    patterns = {\n        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',\n        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',\n        'Lark App ID': r'cli_[a-z0-9]{16}',\n        'Lark App Secret': r'[a-zA-Z0-9]{32}',\n        'JWT Secret Keyword': r'const JWT_SECRET\\s*=\\s*[\\'\"][^\\'\"]+[\\'\"]'\n    }","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/.agents/skills/agent-security-audit/scripts/audit_scanner.py","toolAction":"Fixing regex false positives in security scanner patterns","toolSummary":"Refine regex patterns"}:
+=====================
+replace_file_contentZ

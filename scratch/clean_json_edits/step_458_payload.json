@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/operation/sales/qualify 微信私域 BANT 线索分析与异议处理话术端点。",
+  "EndLine": 1041,
+  "Instruction": "在服务器启动之前加入销售BANT资格核实和话术建议路由。",
+  "ReplacementContent": "\n// 模拟销售 BANT 线索清洗与跟进话术接口\napp.post('/api/operation/sales/qualify', (req, res) => {\n  const { chat_history } = req.body;\n  if (!chat_history) return res.status(400).json({ error: \"Missing parameter: chat_history\" });\n\n  console.log(`[Sales Agent] Running BANT analysis on WeChat chat logs...`);\n\n  res.json({\n    success: true,\n    budget_confirmed: true,\n    need_description: \"微信读书笔记无法自动上传到 NotebookLM 云端，冷启动起号严重受阻。\",\n    closing_rate: 0.80,\n    recommended_script: \"哥，非常理解咱们团队首期付这笔钱会有些顾虑。其实您可以这样算：我们这套系统是一次性买断本地部署的，相比去招一个技术，这套方案运行一两个月就能把成本收回来。而且，这期帅总特批的本地微信 SQL 解密服务包，目前就剩下最后 2 个挂载名额了，这周过完我们就要恢复原价了。您看咱们今天先把定金留存下，我让技术专家今晚就帮您远程把网关跑起来？\"\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 1041,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding sales qualify routes to Gateway",
+  "toolSummary": "Modify file"
+}

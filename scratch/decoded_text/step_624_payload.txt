@@ -1,0 +1,26 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":21,"Instruction":"
+=====================
+","ReplacementContent":"const WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');\n\n// 
+=====================
+)\nconst TASK_QUEUE = {};\n\n// ==========================================","StartLine":19,"TargetContent":"const WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');\n\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding TASK_QUEUE state variable to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$bc65084a-b018-4f15-968e-9ac2973168abj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
++Adding TASK_QUEUE state variable to Gateway

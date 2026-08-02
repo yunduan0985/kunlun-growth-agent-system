@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "重置任务清单为最新开发阶段。",
+  "EndLine": 5,
+  "Instruction": "覆盖任务列表第一行标题。",
+  "ReplacementContent": "# Kunlun Agent OS — 商业化交付任务清单\n\n## 阶段一：Electron 客户端一键绿色打包\n- [/] Electron 主进程文件 (electron/main.js)\n- [/] 端口自愈与冲突检测模块\n- [/] package.json：Electron + electron-builder 依赖与打包脚本\n- [/] electron-builder.yml 打包配置\n- [/] 守护进程热重启逻辑\n\n## 阶段二：真实通讯通道打通\n- [ ] 微信 SQLite 路径自动探测\n- [ ] WhatsApp Baileys 扫码登录网关接口\n- [ ] 飞书 API 真实写入（多维表格 CRUD）\n\n## 阶段三：多源 RAG + Token 计费中心\n- [/] pdf-parse PDF 解析接口\n- [/] mammoth Word 文档解析接口\n- [/] 拖拽上传前端 UI + multer 文件接收\n- [/] SQLite FTS5 精准分词检索\n- [/] Token 计数与消费记录\n- [/] 控制台 Token 消费账单面板",
+  "StartLine": 1,
+  "TargetContent": "- `[ ]` uncompleted tasks\n- `[/]` in progress tasks (custom notation)\n- `[x]` completed tasks\n- Use indented lists for sub-items",
+  "TargetFile": "/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/task.md",
+  "toolAction": "Updating task tracker",
+  "toolSummary": "Task tracker update"
+}

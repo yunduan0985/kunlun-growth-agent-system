@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "将 setup_claude_desktop.js 中的环境变量默认启动端口从 8000 更换为 8888。",
+  "EndLine": 55,
+  "Instruction": "修改MCP服务器启动的环境变量端口值。",
+  "ReplacementContent": "    PORT: '8888',",
+  "StartLine": 53,
+  "TargetContent": "    PORT: '8000',",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/scripts/setup_claude_desktop.js",
+  "toolAction": "Changing Claude setup port to 8888",
+  "toolSummary": "Modify file"
+}

@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 DOMContentLoaded 中先调用 initAuth()，认证成功的 enterApp() 回调后再加载系统配置，避免未登录时的 API 请求返回 401。",
+  "EndLine": 1322,
+  "Instruction": "修改 DOMContentLoaded：先检查 auth，再初始化页面数据。",
+  "ReplacementContent": "    window.addEventListener('DOMContentLoaded', async () => {\n      // auth-screen 默认隐藏（待 initAuth 决定是否显示）\n      document.getElementById('auth-screen').classList.add('hidden');\n\n      // 1. 先初始化认证（如果没有有效 Token 就弹登录框）\n      await initAuth();\n\n      // 2. initAuth 会调 enterApp()，enterApp 之后才初始化主界面数据\n      // 如果已经有 Token（enterApp 内部调用）则继续\n      if (_currentUser) {\n        await loadSystemConfig();\n        await loadPermissionMatrix();\n        await loadAgentStatus();\n      }\n    });\n",
+  "StartLine": 1318,
+  "TargetContent": "    window.addEventListener('DOMContentLoaded', async () => {\n      await loadSystemConfig();\n      await loadPermissionMatrix();\n      await loadAgentStatus();\n    });\n",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Updating DOMContentLoaded to call initAuth first",
+  "toolSummary": "Update init handler"
+}

@@ -1,0 +1,7 @@
+{
+  "MatchPerLine": true,
+  "Query": "/src/index.js",
+  "SearchPath": "/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/.system_generated/logs/transcript_full.jsonl",
+  "toolAction": "Searching for index.js file reads inside full transcript logs to recover source code",
+  "toolSummary": "Search index.js in transcript"
+}

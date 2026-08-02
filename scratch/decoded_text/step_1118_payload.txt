@@ -1,0 +1,156 @@
+-3750763034362895579H
+=====================
+E2pYategHZGjjrEPwPPgwAcX
+=====================
+b$49cbc5c5-3366-46c5-8fdd-acb4b9ec7dd8j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Prioritizing Specialized Tools**
+
+I'm focusing intently on using the most specialized tools available. I'm actively avoiding generic bash commands where more tailored alternatives are accessible. I'm actively reminding myself not to use 'cat' to manipulate files.
+
+
+**Refining Tool Usage**
+
+I'm now completely avoiding generic tools like `grep`, and instead I am prioritizing specialized tools like `grep_search`, I am meticulously thinking through the optimal set of tools before making any calls. I have specifically chosen `replace_file_content` to update the knowledge base UI. I am planning to replace lines 1751 to 1780 with a new tabbed interface, which will improve the user interface for our Local RAG block.
+
+
+2(bot-5ece6c9f-c625-4e4b-95b7-cd0d4af1c5d7:
+=====================
+multi_replace_file_content
+=====================
+w{"Description":"Reconstruct Knowledge Base UI into a multi-tab layout for Local, Lark, NotebookLM, and IMA.","Instruction":"Replace the existing Local RAG section with a multi-tab structure. Add the corresponding JavaScript to handle tab switching.","ReplacementChunks":[{"AllowMultiple":false,"EndLine":1780,"ReplacementContent":"            \u003c!-- 
+=====================
+ (Multi-Source RAG Hub) --\u003e\n            \u003ch3 style=\"font-size: 14.5px; margin-top: 35px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);\"\u003e
+=====================
+ (Multi-Source RAG Hub)\u003c/h3\u003e\n            \n            \u003c!-- Tabs Navigation --\u003e\n            \u003cdiv style=\"display: flex; gap: 8px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px;\"\u003e\n              \u003cbutton class=\"kb-tab-btn active\" onclick=\"switchKbTab('local', this)\" style=\"background: none; border: none; font-size: 13px; font-weight: 600; color: var(--text-main); cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.2s;\"\u003e
+=====================
+\u003c/button\u003e\n              \u003cbutton class=\"kb-tab-btn\" onclick=\"switchKbTab('lark', this)\" style=\"background: none; border: none; font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.2s;\"\u003e
+=====================
+\u003c/button\u003e\n              \u003cbutton class=\"kb-tab-btn\" onclick=\"switchKbTab('notebooklm', this)\" style=\"background: none; border: none; font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.2s;\"\u003e
+=====================
+ NotebookLM\u003c/button\u003e\n              \u003cbutton class=\"kb-tab-btn\" onclick=\"switchKbTab('ima', this)\" style=\"background: none; border: none; font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.2s;\"\u003e
+=====================
+ IMA\u003c/button\u003e\n            \u003c/div\u003e\n\n            \u003c!-- Tab Content: Local RAG (Existing) --\u003e\n            \u003cdiv id=\"kb-tab-local\" class=\"kb-tab-content\"\u003e\n              \u003cdiv id=\"knowledge-list-container\"\u003e\n                \u003c!-- 
+=====================
+ --\u003e\n              \u003c/div\u003e\n              \n              \u003c!-- 
+=====================
+ (PDF/Word/TXT/MD) --\u003e\n              \u003cdiv id=\"rag-drop-zone\" style=\"background:var(--bg-color); border:2px dashed var(--border-color); padding:20px; border-radius:12px; margin-top:15px; text-align:center; cursor:pointer; transition: all 0.2s;\" ondragover=\"event.preventDefault(); this.style.borderColor='var(--accent-color)'; this.style.background='rgba(0,113,227,0.04)';\" ondragleave=\"this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-color)';\" ondrop=\"handleKnowledgeDrop(event)\" onclick=\"document.getElementById('rag-file-input').click()\"\u003e\n                \u003cdiv style=\"font-size:28px; margin-bottom:8px;\"\u003e
+=====================
+\u003c/div\u003e\n                \u003cdiv style=\"font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:4px;\"\u003e
+=====================
+\u003c/div\u003e\n                \u003cdiv style=\"font-size:11px; color:var(--text-muted);\"\u003e
+=====================
+ 20MB\u003c/div\u003e\n                \u003cinput type=\"file\" id=\"rag-file-input\" accept=\".pdf,.docx,.doc,.txt,.md\" style=\"display:none;\" onchange=\"handleKnowledgeFileInput(this.files[0])\"\u003e\n                \u003cdiv id=\"rag-upload-progress\" style=\"margin-top:10px; font-size:12px; color:var(--accent-color); display:none;\"\u003e
+=====================
+...\u003c/div\u003e\n              \u003c/div\u003e\n              \u003c!-- 
+=====================
+ --\u003e\n              \u003cdetails style=\"margin-top:12px;\"\u003e\n                \u003csummary style=\"font-size:12px; color:var(--text-muted); cursor:pointer; padding:6px 0;\"\u003e
+=====================
+\u003c/summary\u003e\n                \u003cdiv style=\"margin-top:10px;\"\u003e\n                  \u003cdiv class=\"form-group\"\u003e\n                    \u003clabel class=\"form-label\"\u003e
+=====================
+: price_policy.txt)\u003c/label\u003e\n                    \u003cinput type=\"text\" class=\"form-input\" id=\"rag-new-filename\" placeholder=\"
+=====================
+\"\u003e\n                  \u003c/div\u003e\n                  \u003cdiv class=\"form-group\" style=\"margin-bottom:0;\"\u003e\n                    \u003clabel class=\"form-label\"\u003e
+=====================
+\u003c/label\u003e\n                    \u003ctextarea class=\"form-input\" id=\"rag-new-content\" rows=\"4\" placeholder=\"
+=====================
+...\" style=\"resize:none; font-family:inherit;\"\u003e\u003c/textarea\u003e\n                  \u003c/div\u003e\n                  \u003cbutton class=\"btn-action\" style=\"background:#1d1d1f; margin-top:10px;\" onclick=\"saveNewKnowledgeDoc()\"\u003e
+=====================
+ Agent\u003c/button\u003e\n                \u003c/div\u003e\n              \u003c/details\u003e\n            \u003c/div\u003e\n\n            \u003c!-- Tab Content: Lark Knowledge Base --\u003e\n            \u003cdiv id=\"kb-tab-lark\" class=\"kb-tab-content\" style=\"display:none;\"\u003e\n              \u003cdiv style=\"font-size:12px; color:var(--text-muted); margin-bottom:12px;\"\u003e
+=====================
+\u003c/div\u003e\n              \u003cdiv class=\"form-group\"\u003e\n                \u003clabel class=\"form-label\"\u003e
+=====================
+ Token (Wiki Token)\u003c/label\u003e\n                \u003cinput type=\"text\" class=\"form-input\" id=\"lark-wiki-token\" placeholder=\"
+=====================
+ Token\"\u003e\n              \u003c/div\u003e\n              \u003cdiv class=\"form-group\"\u003e\n                \u003clabel class=\"form-label\"\u003e
+=====================
+ Token (Folder Token)\u003c/label\u003e\n                \u003cinput type=\"text\" class=\"form-input\" id=\"lark-folder-token\" placeholder=\"
+=====================
+ Token\"\u003e\n              \u003c/div\u003e\n              \u003cbutton class=\"btn-action\" style=\"background:#1d1d1f; margin-top:10px;\" onclick=\"saveLarkKbConfig()\"\u003e
+=====================
+\u003c/button\u003e\n            \u003c/div\u003e\n\n            \u003c!-- Tab Content: NotebookLM --\u003e\n            \u003cdiv id=\"kb-tab-notebooklm\" class=\"kb-tab-content\" style=\"display:none;\"\u003e\n              \u003cdiv style=\"font-size:12px; color:var(--text-muted); margin-bottom:12px;\"\u003e
+=====================
+\u003c/div\u003e\n              \u003cdiv class=\"form-group\"\u003e\n                \u003clabel class=\"form-label\"\u003eNotebookLM Notebook ID\u003c/label\u003e\n                \u003cinput type=\"text\" class=\"form-input\" id=\"nlm-notebook-id\" placeholder=\"
+=====================
+: 1abc2def3ghi...\"\u003e\n              \u003c/div\u003e\n              \u003cdiv class=\"form-group\"\u003e\n                \u003clabel class=\"form-label\"\u003eNotebookLM 
+=====================
+)\u003c/label\u003e\n                \u003cinput type=\"password\" class=\"form-input\" id=\"nlm-cookie\" placeholder=\"SID=...; __Secure-1PSID=...\"\u003e\n              \u003c/div\u003e\n              \u003cbutton class=\"btn-action\" style=\"background:#1d1d1f; margin-top:10px;\" onclick=\"saveNotebookLmConfig()\"\u003e
+=====================
+\u003c/button\u003e\n            \u003c/div\u003e\n\n            \u003c!-- Tab Content: IMA.copilot --\u003e\n            \u003cdiv id=\"kb-tab-ima\" class=\"kb-tab-content\" style=\"display:none;\"\u003e\n              \u003cdiv style=\"font-size:12px; color:var(--text-muted); margin-bottom:12px;\"\u003e
+=====================
+\u003c/div\u003e\n              \u003cdiv class=\"form-group\"\u003e\n                \u003clabel class=\"form-label\"\u003eIMA Web API Endpoint / 
+=====================
+\u003c/label\u003e\n                \u003cinput type=\"text\" class=\"form-input\" id=\"ima-endpoint\" placeholder=\"http://localhost:11025 (
+=====================
+ Web Hook)\"\u003e\n              \u003c/div\u003e\n              \u003cdiv class=\"form-group\"\u003e\n                \u003clabel class=\"form-label\"\u003e
+=====================
+ Token\u003c/label\u003e\n                \u003cinput type=\"password\" class=\"form-input\" id=\"ima-token\" placeholder=\"
+=====================
+ Token\"\u003e\n              \u003c/div\u003e\n              \u003cbutton class=\"btn-action\" style=\"background:#1d1d1f; margin-top:10px;\" onclick=\"saveImaConfig()\"\u003e
+=====================
+\u003c/button\u003e\n            \u003c/div\u003e\n          \u003c/div\u003e","StartLine":1751,"TargetContent":"            \u003c!-- 
+=====================
+ --\u003e\n            \u003ch3 style=\"font-size: 14.5px; margin-top: 35px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);\"\u003e
+=====================
+ (Local RAG)\u003c/h3\u003e\n            \u003cdiv id=\"knowledge-list-container\"\u003e\n              \u003c!-- 
+=====================
+ --\u003e\n            \u003c/div\u003e\n            \n            \u003c!-- 
+=====================
+ (PDF/Word/TXT/MD) --\u003e\n            \u003cdiv id=\"rag-drop-zone\" style=\"background:var(--bg-color); border:2px dashed var(--border-color); padding:20px; border-radius:12px; margin-top:15px; text-align:center; cursor:pointer; transition: all 0.2s;\" ondragover=\"event.preventDefault(); this.style.borderColor='var(--accent-color)'; this.style.background='rgba(0,113,227,0.04)';\" ondragleave=\"this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-color)';\" ondrop=\"handleKnowledgeDrop(event)\" onclick=\"document.getElementById('rag-file-input').click()\"\u003e\n              \u003cdiv style=\"font-size:28px; margin-bottom:8px;\"\u003e
+=====================
+\u003c/div\u003e\n              \u003cdiv style=\"font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:4px;\"\u003e
+=====================
+\u003c/div\u003e\n              \u003cdiv style=\"font-size:11px; color:var(--text-muted);\"\u003e
+=====================
+ 20MB\u003c/div\u003e\n              \u003cinput type=\"file\" id=\"rag-file-input\" accept=\".pdf,.docx,.doc,.txt,.md\" style=\"display:none;\" onchange=\"handleKnowledgeFileInput(this.files[0])\"\u003e\n              \u003cdiv id=\"rag-upload-progress\" style=\"margin-top:10px; font-size:12px; color:var(--accent-color); display:none;\"\u003e
+=====================
+...\u003c/div\u003e\n            \u003c/div\u003e\n            \u003c!-- 
+=====================
+ --\u003e\n            \u003cdetails style=\"margin-top:12px;\"\u003e\n              \u003csummary style=\"font-size:12px; color:var(--text-muted); cursor:pointer; padding:6px 0;\"\u003e
+=====================
+\u003c/summary\u003e\n              \u003cdiv style=\"margin-top:10px;\"\u003e\n                \u003cdiv class=\"form-group\"\u003e\n                  \u003clabel class=\"form-label\"\u003e
+=====================
+: price_policy.txt)\u003c/label\u003e\n                  \u003cinput type=\"text\" class=\"form-input\" id=\"rag-new-filename\" placeholder=\"
+=====================
+\"\u003e\n                \u003c/div\u003e\n                \u003cdiv class=\"form-group\" style=\"margin-bottom:0;\"\u003e\n                  \u003clabel class=\"form-label\"\u003e
+=====================
+\u003c/label\u003e\n                  \u003ctextarea class=\"form-input\" id=\"rag-new-content\" rows=\"4\" placeholder=\"
+=====================
+...\" style=\"resize:none; font-family:inherit;\"\u003e\u003c/textarea\u003e\n                \u003c/div\u003e\n                \u003cbutton class=\"btn-action\" style=\"background:#1d1d1f; margin-top:10px;\" onclick=\"saveNewKnowledgeDoc()\"\u003e
+=====================
+ Agent\u003c/button\u003e\n              \u003c/div\u003e\n            \u003c/details\u003e\n          \u003c/div\u003e"},{"AllowMultiple":false,"EndLine":2422,"ReplacementContent":"    async function loadAgentStatus() {\n      // 
+=====================
+\n      try {\n        const res = await fetch(`${getGatewayUrl()}/api/system/agents/status`).then(r =\u003e r.json());\n        if (res.success) {\n          globalAgentStatus = res.status;\n          if (currentDept !== 'config' \u0026\u0026 currentDept !== 'chat') {\n            switchDepartment(currentDept, document.querySelector(`.sidebar .active`));\n          }\n        }\n      } catch (err) {\n        console.warn('[App] Load agent status failed', err);\n      }\n    }\n\n    // ==========================================\n    // 
+=====================
+\n    // ==========================================\n    function switchKbTab(tabId, btnElement) {\n      // 
+=====================
+\n      document.querySelectorAll('.kb-tab-btn').forEach(btn =\u003e {\n        btn.style.color = 'var(--text-muted)';\n        btn.style.background = 'none';\n        btn.classList.remove('active');\n      });\n      btnElement.style.color = 'var(--text-main)';\n      btnElement.style.background = 'rgba(0,0,0,0.05)';\n      btnElement.classList.add('active');\n\n      // 
+=====================
+\n      document.querySelectorAll('.kb-tab-content').forEach(content =\u003e {\n        content.style.display = 'none';\n      });\n      document.getElementById(`kb-tab-${tabId}`).style.display = 'block';\n    }\n\n    // 
+=====================
+\n    function saveLarkKbConfig() { alert(\"
+=====================
+ (Mock)\"); }\n    function saveNotebookLmConfig() { alert(\"NotebookLM 
+=====================
+ (Mock)\"); }\n    function saveImaConfig() { alert(\"IMA 
+=====================
+ (Mock)\"); }\n","StartLine":2412,"TargetContent":"    async function loadAgentStatus() {\n      // 
+=====================
+\n      try {\n        const res = await fetch(`${getGatewayUrl()}/api/system/agents/status`).then(r =\u003e r.json());\n        if (res.success) {\n          globalAgentStatus = res.status;\n          if (currentDept !== 'config' \u0026\u0026 currentDept !== 'chat') {\n            switchDepartment(currentDept, document.querySelector(`.sidebar .active`));\n          }\n        }\n      } catch (err) {\n        console.warn('[App] Load agent status failed', err);\n      }\n    }"}],"TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Updating HTML UI to add tabs for multi-source knowledge base","toolSummary":"Update HTML with Tabs"}:
+=====================
+KSf/9[.oEL2hFx/f.
+^/VD{~
+=====================
+c@(7W.t0)Np!c	YBB?~)GY
+S*v
+=====================
+|,tZB.DrP5qUE;D7a]fI
+=====================
+multi_replace_file_contentZ

@@ -1,0 +1,36 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+","EndLine":514,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/x/search', (req, res) =\u003e {\n  const { query, min_likes } = req.body;\n  console.log(`[X Search] Query: \"${query}\" (Min Likes: ${min_likes || 50})`);\n\n  res.json({\n    success: true,\n    tweets: [\n      { id: \"tweet_101\", author: \"karpathy\", content: \"Model Context Protocol (MCP) is a beautiful standard. It makes custom tooling for agents standard and clean.\", likes: 8500, replies: 120, time: \"2026-07-14T10:00:00Z\" },\n      { id: \"tweet_102\", author: \"swyx\", content: \"Agentic workflow is shifting from centralized code to decentralized MCP servers.\", likes: 1200, replies: 45, time: \"2026-07-14T14:30:00Z\" }\n    ]\n  });\n});\n\n// 
+=====================
+\napp.get('/api/x/kol/tweets', (req, res) =\u003e {\n  const { username } = req.query;\n  if (!username) return res.status(400).json({ error: \"Missing: username\" });\n\n  console.log(`[X API] Fetching tweets for KOL: @${username}`);\n\n  res.json([\n    { id: \"kol_tweet_01\", author: username, content: `Just launched our new open-source project. Check it out on GitHub.`, likes: 4500, time: \"3 hours ago\" },\n    { id: \"kol_tweet_02\", author: username, content: `AGI is closer than we think, but we need robust safety guardrails first.`, likes: 9800, time: \"8 hours ago\" }\n  ]);\n});\n\n// 
+=====================
+\napp.get('/api/x/trending', (req, res) =\u003e {\n  console.log(`[X Trending] Fetching tech trends...`);\n\n  res.json([\n    { topic: \"#ModelContextProtocol\", tweet_count: 45100, fever_level: \"high\" },\n    { topic: \"#LangGraph\", tweet_count: 12000, fever_level: \"medium\" },\n    { topic: \"#FeishuBitableAI\", tweet_count: 8900, fever_level: \"low\" }\n  ]);\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":514,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding X platform search routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$4175bb5d-4a41-4268-aa55-d4f7b757aff7j
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+}"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+*Adding X platform search routes to Gateway

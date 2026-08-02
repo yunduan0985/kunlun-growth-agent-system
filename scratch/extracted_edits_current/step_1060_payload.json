@@ -1,0 +1,101 @@
+ *
+"
+#toolu_vrtx_017Ux77VEjmnE6byhFEe95Mpreplace_file_content{"AllowMultiple":false,"Description":"在 .env 末尾加入 INVITE_CODE 配置项，供非首次注册的用户使用。","EndLine":1000,"Instruction":"追加 INVITE_CODE 到 .env","ReplacementContent":"TWITTER_API_TOKEN=\n\n# --------- 用户注册邀请码（非管理员注册时需要此码）---------\n# 修改后需重启服务生效\nINVITE_CODE=KUNLUN2025\n","StartLine":998,"TargetContent":"TWITTER_API_TOKEN=\n","TargetFile":"/Volumes/MOVESPEED/下载/AIcode/Agent/.env","toolAction":"Adding INVITE_CODE to .env","toolSummary":"Add INVITE_CODE"}Jreplace_file_content*AllowMultiple*Description*EndLine*Instruction*ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*toolSummary2:ٳBܸXb$9043cfd8-2487-4216-819c-4b1fef5a6e3cjR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd6
+ݷ
+Ƚ
+ðAdd INVITE_CODEAdding INVITE_CODE to .envеR
+
+
+追加 INVITE_CODE 到 .env@J
+TWITTER_API_TOKEN=
+TWITTER_API_TOKEN=
+
+# --------- 用户注册邀请码（非管理员注册时需要此码）---------
+# 修改后需重启服务生效
+INVITE_CODE=KUNLUN2025
+08"*>file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/.env2A
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent.env
+(B
+># ============================================================7
+3# 昆仑增长 Agent OS v2.0 — 完整配置文件M
+I# 说明：本文件包含所有敏感凭证，请勿上传至 Git 仓库*
+&# 已在 .gitignore 中排除本文件B
+># ============================================================&
+"# --------- 基础配置 ---------
+	PORT=8888b
+^# --------- 大模型密钥 (可在控制台「系统配置中心」可视化管理) ---------#
+# Anthropic Claude (官方 API)6
+2CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# DeepSeek API4
+0DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx3
+/# 聚合中转平台 (支持 OpenAI Compatible)6
+2AGGREGATOR_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx2
+.AGGREGATOR_BASE_URL=https://api.example.com/v1.
+*# --------- 飞书 (Lark) 配置 ---------$
+ LARK_APP_ID=cli_xxxxxxxxxxxxxxxx4
+0LARK_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx9
+5# 填写后即可启用飞书多维表格真实写入
+LARK_TABLE_ID=&
+"# --------- 微信集成 ---------g
+c# 说明: 动态绑定本地解密 SQLite 数据库路径（可在配置中心「自动探测」）X
+TWECHAT_DB_PATH=/Users/username/Library/Containers/com.tencent.xinWeChat/.../wx_db.dbG
+C# --------- WhatsApp 集成 (本地 Baileys 服务端口) ---------+
+'WHATSAPP_API_URL=http://localhost:19000%
+!# --------- X (Twitter) ---------
+TWITTER_API_TOKEN=U
+Q# --------- 用户注册邀请码（非管理员注册时需要此码）---------$
+ # 修改后需重启服务生效
+INVITE_CODE=KUNLUN2025&
+"# --------- 数据服务 ---------9
+5TIANYANCHA_TOKEN=tyc_token_xxxxxxxxxxxxxxxxxxxxxxxxxx+
+'OPENCLAW_API_URL=http://localhost:18000B>file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/.envR# ============================================================
+# 昆仑增长 Agent OS v2.0 — 完整配置文件
+# 说明：本文件包含所有敏感凭证，请勿上传至 Git 仓库
+# 已在 .gitignore 中排除本文件
+# ============================================================
+
+# --------- 基础配置 ---------
+PORT=8888
+
+# --------- 大模型密钥 (可在控制台「系统配置中心」可视化管理) ---------
+# Anthropic Claude (官方 API)
+CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# DeepSeek API
+DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# 聚合中转平台 (支持 OpenAI Compatible)
+AGGREGATOR_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+AGGREGATOR_BASE_URL=https://api.example.com/v1
+
+# --------- 飞书 (Lark) 配置 ---------
+LARK_APP_ID=cli_xxxxxxxxxxxxxxxx
+LARK_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# 填写后即可启用飞书多维表格真实写入
+LARK_TABLE_ID=
+
+# --------- 微信集成 ---------
+# 说明: 动态绑定本地解密 SQLite 数据库路径（可在配置中心「自动探测」）
+WECHAT_DB_PATH=/Users/username/Library/Containers/com.tencent.xinWeChat/.../wx_db.db
+
+# --------- WhatsApp 集成 (本地 Baileys 服务端口) ---------
+WHATSAPP_API_URL=http://localhost:19000
+
+# --------- X (Twitter) ---------
+TWITTER_API_TOKEN=
+
+# --------- 数据服务 ---------
+TIANYANCHA_TOKEN=tyc_token_xxxxxxxxxxxxxxxxxxxxxxxxxx
+OPENCLAW_API_URL=http://localhost:18000
+ j
+
+TWITTER_API_TOKEN=
+TWITTER_API_TOKEN=
+
+# --------- 用户注册邀请码（非管理员注册时需要此码）---------
+# 修改后需重启服务生效
+INVITE_CODE=KUNLUN2025
+08(R在 .env 末尾加入 INVITE_CODE 配置项，供非首次注册的用户使用。

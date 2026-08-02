@@ -1,0 +1,16 @@
+{
+  "id": "meeting_minutes_specialist",
+  "name": "会议纪要专员",
+  "group": "数据组",
+  "description": "分析音频/视频会议转录文本，生成包含参会人、决策项、待办任务（Action Items）的标准会议纪要。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=meeting_minutes_specialist",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

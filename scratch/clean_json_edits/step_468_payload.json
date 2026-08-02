@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/operation/designer/draw 会员海报与封面智能生图端点。",
+  "EndLine": 1058,
+  "Instruction": "在服务器启动之前加入AI绘图路由。",
+  "ReplacementContent": "\n// 模拟 AI 绘图生图接口\napp.post('/api/operation/designer/draw', (req, res) => {\n  const { prompt, aspect_ratio } = req.body;\n  if (!prompt) return res.status(400).json({ error: \"Missing parameter: prompt\" });\n\n  console.log(`[Graphic Engine] Drawing image for Prompt: \"${prompt}\" (Aspect Ratio: ${aspect_ratio || '3:4'})`);\n\n  res.json({\n    success: true,\n    image_url: \"file:///Volumes/MOVESPEED/下载/AIcode/Agent/docs/weread-placeholder\"\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 1058,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding designer routes to Gateway",
+  "toolSummary": "Modify file"
+}

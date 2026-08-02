@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/transcribe/status 音视频异步转录查询状态接口。",
+  "EndLine": 149,
+  "Instruction": "在视频转录接口后，会议纪要接口前，加入视频转录状态查询的路由。",
+  "ReplacementContent": "\n// 视频转录任务状态查询接口 (支持异步轮询)\napp.get('/api/transcribe/status', (req, res) => {\n  const { task_id } = req.query;\n  if (!task_id) return res.status(400).json({ error: \"Missing parameter: task_id\" });\n\n  console.log(`[Transcription Status] Checking progress for Task: ${task_id}`);\n\n  res.json({\n    task_id,\n    status: \"completed\",\n    progress: 100,\n    transcription: getMockTranscription(\"https://www.youtube.com/watch?v=english_mcp_video\")\n  });\n});\n",
+  "StartLine": 149,
+  "TargetContent": "",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding transcription status routes to Gateway",
+  "toolSummary": "Modify file"
+}

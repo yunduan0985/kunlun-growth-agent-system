@@ -1,0 +1,122 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CEO 助理日程与简报插件",
+    "version": "1.2.0",
+    "description": "提供给 CEO 助理 Agent 进行日报降噪提炼、飞书日程会议排期及总裁办简报推送的 API 规范。"
+  },
+  "paths": {
+    "/api/management/briefing/create": {
+      "post": {
+        "summary": "输入各部门 Agent 的多源执行日报，脱水提炼生成适合 CEO 决策的每日简报",
+        "operationId": "createExecutiveBriefing",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "raw_reports": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "跨部门原始工作报告列表"
+                  }
+                },
+                "required": ["raw_reports"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "简报生成成功"
+          }
+        }
+      }
+    },
+    "/api/management/schedule/event": {
+      "post": {
+        "summary": "在飞书日程或本地日历中为 CEO 自动新建或更改会议日程安排",
+        "operationId": "createScheduleEvent",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "summary": { "type": "string", "description": "会议主题" },
+                  "start_time": { "type": "string", "description": "ISO 时间格式" },
+                  "end_time": { "type": "string" },
+                  "attendees": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                },
+                "required": ["summary", "start_time"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "日程创建成功"
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

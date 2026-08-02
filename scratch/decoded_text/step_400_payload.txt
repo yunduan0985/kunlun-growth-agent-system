@@ -1,0 +1,44 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/project/wbs/create 
+=====================
+ /api/project/bitable/sync 
+=====================
+","EndLine":886,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/project/wbs/create', (req, res) =\u003e {\n  const { project_name, raw_requirements } = req.body;\n  if (!project_name || !raw_requirements) {\n    return res.status(400).json({ error: \"Missing parameter: project_name or raw_requirements\" });\n  }\n\n  console.log(`[WBS Decomposer] Creating breakdown stages for project: ${project_name}`);\n\n  res.json({\n    success: true,\n    stages: [\n      { id: \"1.1\", task: \"
+=====================
+\", hours: 8 },\n      { id: \"1.2\", task: \"
+=====================
+\", hours: 6, pre_id: \"1.1\" },\n      { id: \"2.1\", task: \"
+=====================
+\", hours: 12, pre_id: \"1.2\" }\n    ]\n  });\n});\n\n// 
+=====================
+\napp.post('/api/project/bitable/sync', (req, res) =\u003e {\n  const { project_name, tasks } = req.body;\n  if (!project_name || !tasks) return res.status(400).json({ error: \"Missing required parameters.\" });\n\n  console.log(`[Lark Bitable Sync] Uploading ${tasks.length} tasks for project: ${project_name} to Kanban board...`);\n\n  res.json({\n    success: true,\n    synced_records_count: tasks.length\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":886,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding PM routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$392a8547-fc27-4baf-9df8-955dcf52e30fj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Adding PM routes to Gateway

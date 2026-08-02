@@ -1,0 +1,50 @@
+ *
+"
+tkrk3ub6	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":1820,"StartLine":1780,"toolAction":"Viewing backend Lark credential check route","toolSummary":"View Lark route"}:(&
+$e24830a7-5cd6-42fe-998b-ee539e72b9c3J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2ڊ:ڊBXb$150d3650-a2a5-4882-83c3-c83a8c70e530jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bdي06
+ۊ
+
+View Lark route+Viewing backend Lark credential check routeӆr
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js"  const { status_matrix } = req.body;
+  const user_role = req.user?.role || 'sales';
+  if (!status_matrix) return res.status(400).json({ error: "Missing status_matrix payload." });
+
+  if (user_role !== 'admin') {
+    return res.status(403).json({ success: false, error: "Access Denied: Only Admin can update Agent lifecycle switches." });
+  }
+
+  const statusPath = path.join(__dirname, '../data/agent_status.json');
+  console.log(`[Agent Hot-Swap] Saving new agent status configuration to: ${statusPath}`);
+
+  try {
+    fs.writeFileSync(statusPath, JSON.stringify(status_matrix, null, 2), 'utf-8');
+    res.json({ success: true, message: "Agent 模块开关已物理更新，未启用模块已被 MCP/控制台隔离隐藏。" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to save agent status file." });
+  }
+});
+
+// 飞书多维表格 (Lark Bitable) 微信线索物理同步接口
+app.post('/api/lark/bitable/sync', async (req, res) => {
+  const { leads } = req.body;
+  if (!leads || !Array.isArray(leads)) {
+    return res.status(400).json({ error: "Missing parameter: leads list." });
+  }
+
+  const appId = process.env.LARK_APP_ID;
+  const appSecret = process.env.LARK_APP_SECRET;
+
+  console.log(`[Lark Sync] Syncing ${leads.length} WeChat leads to Lark Base...`);
+
+  // 判断飞书授权钥匙是否为 Mock 或者是空
+  if (!appId || appId.includes('xxxxxxxx') || !appSecret || appSecret.includes('xxxxxx')) {
+    console.log(`⚠️ 未检测到有效飞书 API 授权凭证，启动降级 Mock 飞书多维表格入库...`);
+    return res.json({
+      success: true,
+      is_mock: true,
+      sync_count: leads.length,
+      bitable_url: "https://kunlungrowth.feishu.cn/base/bascnMockLeadsTableToken",
+      message: "线索已模拟成功推送至飞书多维表格 [昆仑增长-私域意向线索池]！"
+    });X`

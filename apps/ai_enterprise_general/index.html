@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课程 F：AI 企服通识与数字员工普及营 - 企服中枢</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-logo">F</div>
+      <div>
+        <div style="font-size:1.2rem; font-weight:700;">AI 企服通识与数字员工普及营</div>
+        <span style="font-size:0.7rem; background:linear-gradient(135deg,#6366f1,#8b5cf6); padding:2px 8px; border-radius:20px;">课程 F 官方企服通识中枢</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="pii">
+        🛡️ 数据安全与 PII 脱敏
+      </button>
+      <button class="tab-btn" data-tab="semir">
+        🏢 森马 94 台数字员工拆解
+      </button>
+      <button class="tab-btn" data-tab="prompt">
+        💡 企业 Prompt 基础设施
+      </button>
+      <button class="tab-btn" data-tab="syllabus">
+        📚 课程大纲与认证
+      </button>
+    </div>
+
+    <div>
+      <button class="btn" onclick="alert('已连接昆仑 AI 企服安全与数字员工中枢！')">⚡ 系统状态: 正常</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Tab 1: PII -->
+    <div id="pii" class="tab-content active">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">🛡️ 企业数据安全与敏感 PII 自动脱敏加密</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>拟提交大模型的敏感业务文本 / 客户资料：</label>
+              <textarea id="piiInput" class="form-control" rows="4">客户张伟，手机号：13812345678，身份证：110101199003072345，微信：zhangwei_2026</textarea>
+            </div>
+
+            <button class="btn" style="width:100%;" onclick="desensitizePiiData()">🛡️ 1秒执行 PII 脱敏并保护敏感信息</button>
+          </div>
+
+          <div>
+            <div id="piiOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Semir Case -->
+    <div id="semir" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">🏢 拆解森马 94 台数字员工 400+ 场景落地</h3>
+        <p style="color:var(--text-muted); line-height:1.8;">
+          分析渊虹总监在直播、供应链与视觉设计的数字员工全流程闭环（降本 1000 万，增收 1 亿 GMV）。
+        </p>
+      </div>
+    </div>
+
+    <!-- Tab 3: Prompt -->
+    <div id="prompt" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">💡 构建企业标准化 Prompt 基础设施</h3>
+      </div>
+    </div>
+
+    <!-- Tab 4: Syllabus -->
+    <div id="syllabus" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📚 课程 F 教学大纲与通识认证</h3>
+        <div style="line-height:1.8; color:var(--text-muted);">
+          <p><strong style="color:var(--text-main);">Day 1：</strong> DeepSeek与ChatGPT大模型底层逻辑及Prompt基础设施</p>
+          <p><strong style="color:var(--text-main);">Day 2：</strong> 企业数据安全与敏感PII保护及合规防护规范</p>
+          <p><strong style="color:var(--text-main);">Day 3：</strong> 拆解森马94台数字员工400场景自动化落地闭环</p>
+          <p><strong style="color:var(--text-main);">Day 4：</strong> 人机协同组织重塑与企业全员AI通识认证交付</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

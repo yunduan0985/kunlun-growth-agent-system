@@ -1,0 +1,50 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/system/config 
+=====================
+ /api/system/config/save 
+=====================
+","EndLine":1125,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+)\napp.get('/api/system/config', (req, res) =\u003e {\n  console.log(`[Config Service] Reading local system configurations...`);\n  res.json({\n    success: true,\n    env: {\n      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || \"sk-ant-xxxxxxxxxxxxxxxxxx\",\n      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || \"tyc_token_xxxxxxxxxxx\",\n      WECHAT_DB_PATH: \"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/data/wx_db.db\"\n    },\n    agents_list: [\n      { id: \"ai_sales_champion\", name: \"AI
+=====================
+\" },\n      { id: \"risk_controller\", name: \"
+=====================
+\" },\n      { id: \"manual_editor\", name: \"
+=====================
+\" }\n    ]\n  });\n});\n\n// 
+=====================
+\napp.post('/api/system/config/save', (req, res) =\u003e {\n  const { config } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);\n  res.json({\n    success: true,\n    message: \"
+=====================
+\"\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":1125,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding config routes to Gateway","toolSummary":"Modify file"}:
+=====================
+.F(Xm\|WdbQFDti%ufeM3
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$ed4bc210-b87b-4f31-a60c-ed8a606f17bfj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Adding config routes to Gateway

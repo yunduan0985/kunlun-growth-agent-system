@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <!-- 允许读取用户家目录（探测微信数据库） -->
+    <key>com.apple.security.files.user-selected.read-only</key>
+    <true/>
+    <!-- 允许写入本地文件（知识库写入） -->
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+    <!-- 允许出站网络连接（调用 LLM API） -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+    <!-- 允许监听本地端口（Express 网关） -->
+    <key>com.apple.security.network.server</key>
+    <true/>
+    <!-- 关闭沙盒（私有化部署必须，否则无法访问微信数据目录） -->
+    <key>com.apple.security.app-sandbox</key>
+    <false/>
+  </dict>
+</plist>

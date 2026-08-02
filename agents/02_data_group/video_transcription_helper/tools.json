@@ -1,0 +1,149 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "视频转录与双语翻译工具集",
+    "version": "1.2.0",
+    "description": "提供给视频转录 Agent 进行音视频文件提取、Whisper 语音转录及任务进度查询的 API 规范。"
+  },
+  "paths": {
+    "/api/transcribe/video": {
+      "post": {
+        "summary": "提交视频链接（如 B站、YouTube）进行异步语音转录和英中对照翻译",
+        "operationId": "transcribeVideo",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": { "type": "string", "description": "视频的公开播放地址" }
+                },
+                "required": ["url"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "转录任务提交成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "task_id": { "type": "string", "description": "转录任务ID" },
+                    "status": { "type": "string", "description": "任务状态 (pending/processing/completed)" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transcribe/status": {
+      "get": {
+        "summary": "查询指定视频转录任务的最新处理进度与转录结果",
+        "operationId": "getTranscribeStatus",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "提交转录时返回的任务ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "返回最新任务状态",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task_id": { "type": "string" },
+                    "status": { "type": "string" },
+                    "progress": { "type": "integer", "description": "处理百分比 (0-100)" },
+                    "transcription": {
+                      "type": "object",
+                      "properties": {
+                        "video_url": { "type": "string" },
+                        "duration": { "type": "string" },
+                        "title": { "type": "string" },
+                        "segments": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "start": { "type": "string" },
+                              "end": { "type": "string" },
+                              "text": { "type": "string" }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

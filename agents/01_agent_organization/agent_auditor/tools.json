@@ -1,0 +1,136 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Agent 安全合规与输入审计工具链",
+    "version": "1.2.0",
+    "description": "用于智能体注入防御、越权 API 调用拦截及敏感词过滤的专用安全工具包。"
+  },
+  "paths": {
+    "/api/security/scan": {
+      "post": {
+        "summary": "扫描输入文本是否包含 Prompt 注入或违规违法词汇",
+        "operationId": "scanInputSafety",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": { "type": "string", "description": "要进行安全审计的原始输入内容" }
+                },
+                "required": ["text"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "扫描成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isSafe": { "type": "boolean", "description": "是否安全通过" },
+                    "riskType": { "type": "string", "description": "潜在的风险类型 (如 injection, sensitive_word, none)" },
+                    "details": { "type": "string", "description": "拦截的详细说明" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/security/policy": {
+      "post": {
+        "summary": "审计 Agent 是否有权限调用指定的 Tool",
+        "operationId": "auditToolCall",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "agent_id": { "type": "string", "description": "申请调用的 Agent ID" },
+                  "operation_id": { "type": "string", "description": "申请调用的 Tool 接口操作 ID (如 runLarkCli)" }
+                },
+                "required": ["agent_id", "operation_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "审计完毕",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "allowed": { "type": "boolean", "description": "是否授权通过" },
+                    "reason": { "type": "string", "description": "判定原因" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

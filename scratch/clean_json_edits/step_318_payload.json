@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/content/risk/legal-audit 法律条款合规风险审查端点。",
+  "EndLine": 694,
+  "Instruction": "在服务器启动之前加入法务风险审计路由。",
+  "ReplacementContent": "\n// 模拟内容法律合规审计接口 (专门把控法律起诉风险)\napp.post('/api/content/risk/legal-audit', (req, res) => {\n  const { text } = req.body;\n  if (!text) return res.status(400).json({ error: \"Missing parameter: text\" });\n\n  console.log(`[Legal Audit] Checking legislation red-lines...`);\n\n  const warnings = [];\n  let is_legal = true;\n\n  if (text.includes(\"100%\") || text.includes(\"保底\") || text.includes(\"绝对\")) {\n    is_legal = false;\n    warnings.push({\n      segment: text.substring(0, 30) + \"...\",\n      risk_description: \"对收益或商业效果做出绝对化保证，违反《广告法》虚假宣传条款。\",\n      law_reference: \"《中华人民共和国广告法》第四条/第二十四条\",\n      suggestion: \"删除绝对化承诺，改为‘有望实现业绩的稳健提升’或‘提供方法论参考’。\"\n    });\n  }\n\n  if (text.includes(\"垃圾\") || text.includes(\"骗子\") || text.includes(\"割韭菜\")) {\n    is_legal = false;\n    warnings.push({\n      segment: text.substring(0, 30) + \"...\",\n      risk_description: \"涉嫌诋毁竞争对手商业名誉，违反《反不正当竞争法》。\",\n      law_reference: \"《中华人民共和国反不正当竞争法》第十一条\",\n      suggestion: \"改为中立痛点陈述，例如：‘相较于市面常见方案的卡点...’\"\n    });\n  }\n\n  res.json({\n    success: true,\n    is_legal,\n    warnings\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 694,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding legal audit routes to Gateway",
+  "toolSummary": "Modify file"
+}

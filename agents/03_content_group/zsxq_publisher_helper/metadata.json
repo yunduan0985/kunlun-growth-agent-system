@@ -1,0 +1,16 @@
+{
+  "id": "zsxq_publisher_helper",
+  "name": "星球发布助手",
+  "group": "内容组",
+  "description": "将整理好的干货、日报、行业分析自动发布至知识星球，生成结构化帖子。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=zsxq_publisher_helper",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

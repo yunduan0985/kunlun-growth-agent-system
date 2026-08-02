@@ -1,0 +1,39 @@
+ *
+ؕ?"
+#toolu_vrtx_01SKPyM7mQdggAZu31VUp4vr	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/electron/main.js","EndLine":75,"StartLine":45,"toolAction":"Viewing gateway spawn section","toolSummary":"View spawn code"}J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2Q:QBRXb$8688c2dc-2c28-4eee-b193-c94b5f5f4a59jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bdнQ,3
+Q
+R
+RView spawn codeViewing gateway spawn sectionгQr
+Jfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/electron/main.js,J"// 启动 Express 网关子进程
+// ==========================================
+function startGateway(port) {
+  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）
+  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+  const gatewayPath = isDev
+    ? path.join(__dirname, '../src/index.js')
+    : path.join(process.resourcesPath, 'app/src/index.js');
+
+  const nodeExecutable = process.execPath; // 使用 Electron 内置的 Node 运行时
+
+  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);
+
+  const env = Object.assign({}, process.env, {
+    PORT: String(port),
+    NODE_ENV: isDev ? 'development' : 'production'
+  });
+
+  gatewayProcess = spawn(process.execPath, [gatewayPath], {
+    env,
+    stdio: ['pipe', 'pipe', 'pipe']
+  });
+
+  gatewayProcess.stdout.on('data', (data) => {
+    console.log(`[Gateway STDOUT] ${data.toString().trim()}`);
+  });
+
+  gatewayProcess.stderr.on('data', (data) => {
+    console.error(`[Gateway STDERR] ${data.toString().trim()}`);
+  });
+X`>

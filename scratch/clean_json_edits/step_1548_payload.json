@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 .gitignore 中添加更严苛的规则，以防微信解密数据库、知识库 PDF 原件和 JWT 内部秘钥被误提交上传至公共代码仓库。",
+  "EndLine": 25,
+  "Instruction": "扩充 .gitignore 的运行时数据/敏感文件排除清单。",
+  "ReplacementContent": "# 运行时数据 / 敏感\n.env\ndata/uploads_tmp/\ndata/token_usage.json\ndata/knowledge_providers.json\ndata/wx_decrypted.db\ndata/jwt_secret.txt\ndata/knowledge/\ndata/*.db\ndata/*.db-journal\ndata/*.db-wal\ndata/*.db-shm",
+  "StartLine": 21,
+  "TargetContent": "# 运行时数据 / 敏感\n.env\ndata/uploads_tmp/\ndata/token_usage.json",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/.gitignore",
+  "toolAction": "Updating ignore patterns in .gitignore for workspace databases and credentials",
+  "toolSummary": "Update .gitignore"
+}

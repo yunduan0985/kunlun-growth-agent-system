@@ -1,0 +1,16 @@
+{
+  "id": "ai_designer",
+  "name": "AI设计师",
+  "group": "运营组",
+  "description": "协助生成内容插图、微信朋友圈海报、Logo及视觉素材设计，自动调用 Stable Diffusion/Midjourney API。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=ai_designer",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

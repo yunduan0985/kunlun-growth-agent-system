@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "修改 Keychain 扫描脚本，增加类型调试打印，查明 result 内元素为何为 int 类型。",
+  "EndLine": 37,
+  "Instruction": "修改脚本，打印 result 和元素类型，修复迭代属性报错。",
+  "ReplacementContent": "if status == 0:\n    # 将返回的 C 指针重新包装成 PyObjC 数组对象\n    result = objc.objc_object(c_void_p=result_ptr.value)\n    print(\"Result type:\", type(result), \"Length:\", len(result))\n    if len(result) > 0:\n        print(\"First item type:\", type(result[0]), \"Value:\", result[0])\n    \n    found = False\n    for item in result:\n        # 如果 item 是 NSDictionary，照旧处理\n        if hasattr(item, 'get'):\n            service = item.get('svce')\n            account = item.get('acct')\n            label = item.get('labl')\n        else:\n            # 如果是其他类型（例如直接是证书或密钥的引用指针）\n            continue",
+  "StartLine": 29,
+  "TargetContent": "if status == 0:\n    # 将返回的 C 指针重新包装成 PyObjC 数组对象\n    result = objc.objc_object(c_void_p=result_ptr.value)\n    found = False\n    for item in result:\n        service = item.get('svce')\n        account = item.get('acct')\n        label = item.get('labl')",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/scratch/search_keychain.py",
+  "toolAction": "Adding debug logs to pyobjc keychain script",
+  "toolSummary": "Add debug logs"
+}

@@ -1,0 +1,41 @@
+-3750763034362895579P
+=====================
+Z!req_vrtx_011Cd591n14isfC868LutoZMX
+=====================
+b$9043cfd8-2487-4216-819c-4b1fef5a6e3cj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-3e9efd59-6edc-4c5a-a599-4bdb0d760035:
+=====================
+
+#toolu_vrtx_01FqzUkQmWJzsdxVjFxEuN5k
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":1098,"Instruction":"
+=====================
+","ReplacementContent":"      // 
+=====================
+\n      document.getElementById('auth-screen').classList.add('hidden');\n      // 
+=====================
+\n      if (_currentUser) {\n        const initials = (_currentUser.display_name || _currentUser.email).substring(0, 2).toUpperCase();\n        document.getElementById('user-avatar-initials').textContent = initials;\n        document.getElementById('user-display-name').textContent = _currentUser.display_name || _currentUser.email.split('@')[0];\n        document.getElementById('dropdown-name').textContent = _currentUser.display_name;\n        document.getElementById('dropdown-email').textContent = _currentUser.email;\n        document.getElementById('dropdown-role').textContent = ROLE_DISPLAY[_currentUser.role]?.text || _currentUser.role;\n        document.getElementById('user-avatar-btn').style.display = 'flex';\n        // 
+=====================
+\n        updateRoleBadge(_currentUser.role);\n      }\n","StartLine":1083,"TargetContent":"      // 
+=====================
+\n      document.getElementById('auth-screen').classList.add('hidden');\n      // 
+=====================
+\n      if (_currentUser) {\n        const initials = (_currentUser.display_name || _currentUser.email).substring(0, 2).toUpperCase();\n        document.getElementById('user-avatar-initials').textContent = initials;\n        document.getElementById('user-display-name').textContent = _currentUser.display_name || _currentUser.email.split('@')[0];\n        document.getElementById('dropdown-name').textContent = _currentUser.display_name;\n        document.getElementById('dropdown-email').textContent = _currentUser.email;\n        document.getElementById('dropdown-role').textContent = _currentUser.role === 'admin' ? '
+=====================
+' : _currentUser.role;\n        document.getElementById('user-avatar-btn').style.display = 'flex';\n        // 
+=====================
+\n        const roleMap = { admin: 'admin', editor: 'editor', sales: 'sales' };\n        const sel = document.getElementById('user-role-select');\n        if (sel \u0026\u0026 roleMap[_currentUser.role]) sel.value = roleMap[_currentUser.role];\n      }\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Fixing enterApp role badge update","toolSummary":"Fix enterApp role"}J
+=====================
+replace_file_content`

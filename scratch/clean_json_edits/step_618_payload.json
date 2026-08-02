@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "消除 setup_claude_desktop.js 中的硬编码绝对路径，采用 path.resolve 动态计算相对路径，实现跨机自愈配置。",
+  "EndLine": 49,
+  "Instruction": "修改GATEWAY_SCRIPT_PATH的定义，使其通过相对路径动态计算。",
+  "ReplacementContent": "const GATEWAY_SCRIPT_PATH = path.resolve(__dirname, '../src/index.js');",
+  "StartLine": 48,
+  "TargetContent": "const GATEWAY_SCRIPT_PATH = '/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js';",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/scripts/setup_claude_desktop.js",
+  "toolAction": "Resolving absolute paths to relative paths in setup script",
+  "toolSummary": "Modify file"
+}

@@ -1,0 +1,137 @@
+-3750763034362895579H
+=====================
+oXRYaoOoHOOk1MkP8Y62qQwX
+=====================
+b$150d3650-a2a5-4882-83c3-c83a8c70e530j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+	**Prioritizing Tool Specificity**
+
+I'm focusing intently on tool selection, always opting for the most specialized function available. The goal is to maximize efficiency and precision, especially when handling files or searching. I'm actively avoiding `cat` for file manipulation and using `grep_search` instead of plain `grep` in bash commands, so I can hone in on better workflows. I'm steering clear of the inefficient `ls` commands.
+
+
+**Refining Task Execution**
+
+I'm now prioritizing a strategic, multi-step approach. First, I need to ensure correct paths for specific files, updating them to `DATA_DIR` for write access. Next, I need to refactor `/api/wechat/detect-path`. This includes version folder traversal and handling database file location. Finally, I will integrate the Keychain extraction and decryption flow.
+
+
+**Implementing Database Decryption**
+
+I'm now zeroing in on integrating the decryption process for the WeChat database within `/api/wechat/db/query`, making the workflow seamless. I'll use the environment variable `WECHAT_DB_PATH`, check for an existing decrypted version, and if needed, extract the key, decrypt the database, and load it into a SQLite database. I'm keen to use `multi_replace_file_content` in `src/index.js` to get this done.
+
+
+2(bot-8482744a-72d1-4cce-a519-673939927de7:
+=====================
+multi_replace_file_content
+=====================
+ permissions.json/agent_status.json 
+=====================
+","ReplacementChunks":[{"AllowMultiple":true,"EndLine":1796,"ReplacementContent":"// 
+=====================
+\napp.get('/api/system/permissions', (req, res) =\u003e {\n  const permPath = path.join(DATA_DIR, 'permissions.json'); // 
+=====================
+\n  console.log(`[Permission Service] Loading role matrix from: ${permPath}`);\n\n  if (!fs.existsSync(permPath)) {\n    const defaultMatrix = {\n      admin: [\"wechat_audit\", \"content_risk\", \"system_config\"],\n      editor: [\"content_risk\"],\n      sales: [\"wechat_audit\"]\n    };\n    try {\n      const dataDir = path.dirname(permPath);\n      if (!fs.existsSync(dataDir)) {\n        fs.mkdirSync(dataDir, { recursive: true });\n      }\n      fs.writeFileSync(permPath, JSON.stringify(defaultMatrix, null, 2), 'utf-8');\n    } catch (e) {\n      console.error(`Failed to write default permissions file:`, e);\n    }\n    return res.json({ success: true, matrix: defaultMatrix });\n  }\n\n  try {\n    const rawData = fs.readFileSync(permPath, 'utf-8');\n    res.json({ success: true, matrix: JSON.parse(rawData) });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to read permission file: \" + err.message });\n  }\n});\n\n// 
+=====================
+\napp.post('/api/system/permissions/save', (req, res) =\u003e {\n  const { matrix } = req.body;\n  const user_role = req.user?.role || 'sales';\n  if (!matrix) return res.status(400).json({ error: \"Missing matrix payload.\" });\n\n  if (user_role !== 'admin') {\n    return res.status(403).json({\n      success: false,\n      error: \"Access Denied: Only Admin can update the system authorization matrix.\"\n    });\n  }\n\n  const permPath = path.join(DATA_DIR, 'permissions.json'); // 
+=====================
+\n  console.log(`[Permission Service] Overwriting local authorization matrix file...`);\n\n  try {\n    const dataDir = path.dirname(permPath);\n    if (!fs.existsSync(dataDir)) {\n      fs.mkdirSync(dataDir, { recursive: true });\n    }\n    fs.writeFileSync(permPath, JSON.stringify(matrix, null, 2), 'utf-8');\n    res.json({ success: true, message: \"
+=====================
+\" });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to save permission matrix: \" + err.message });\n  }\n});\n\n\n// 
+=====================
+)\napp.get('/api/system/agents/status', (req, res) =\u003e {\n  const statusPath = path.join(DATA_DIR, 'agent_status.json'); // 
+=====================
+\n  console.log(`[Agent Hot-Swap] Loading agent lifecycle switches from: ${statusPath}`);\n\n  if (!fs.existsSync(statusPath)) {\n    const defaultStatus = {\n      ai_sales_champion: true,\n      risk_controller: true,\n      manual_editor: true,\n      claude_code: true,\n      meeting_minutes_specialist: true\n    };\n    try {\n      const dataDir = path.dirname(statusPath);\n      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });\n      fs.writeFileSync(statusPath, JSON.stringify(defaultStatus, null, 2), 'utf-8');\n    } catch (e) {\n      console.error(e);\n    }\n    return res.json({ success: true, status_matrix: defaultStatus });\n  }\n\n  try {\n    const rawData = fs.readFileSync(statusPath, 'utf-8');\n    res.json({ success: true, status_matrix: JSON.parse(rawData) });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to read agent status file.\" });\n  }\n});\n\n// 
+=====================
+\napp.post('/api/system/agents/status/save', (req, res) =\u003e {\n  const { status_matrix } = req.body;\n  const user_role = req.user?.role || 'sales';\n  if (!status_matrix) return res.status(400).json({ error: \"Missing status_matrix payload.\" });\n\n  if (user_role !== 'admin') {\n    return res.status(403).json({ success: false, error: \"Access Denied: Only Admin can update Agent lifecycle switches.\" });\n  }\n\n  const statusPath = path.join(DATA_DIR, 'agent_status.json'); // 
+=====================
+\n  console.log(`[Agent Hot-Swap] Saving new agent status configuration to: ${statusPath}`);\n\n  try {\n    fs.writeFileSync(statusPath, JSON.stringify(status_matrix, null, 2), 'utf-8');\n    res.json({ success: true, message: \"Agent 
+=====================
+\" });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to save agent status file.\" });\n  }\n});","StartLine":1688,"TargetContent":"// 
+=====================
+\napp.get('/api/system/permissions', (req, res) =\u003e {\n  const permPath = path.join(__dirname, '../data/permissions.json');\n  console.log(`[Permission Service] Loading role matrix from: ${permPath}`);\n\n  if (!fs.existsSync(permPath)) {\n    const defaultMatrix = {\n      admin: [\"wechat_audit\", \"content_risk\", \"system_config\"],\n      editor: [\"content_risk\"],\n      sales: [\"wechat_audit\"]\n    };\n    try {\n      const dataDir = path.dirname(permPath);\n      if (!fs.existsSync(dataDir)) {\n        fs.mkdirSync(dataDir, { recursive: true });\n      }\n      fs.writeFileSync(permPath, JSON.stringify(defaultMatrix, null, 2), 'utf-8');\n    } catch (e) {\n      console.error(`Failed to write default permissions file:`, e);\n    }\n    return res.json({ success: true, matrix: defaultMatrix });\n  }\n\n  try {\n    const rawData = fs.readFileSync(permPath, 'utf-8');\n    res.json({ success: true, matrix: JSON.parse(rawData) });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to read permission file: \" + err.message });\n  }\n});\n\n// 
+=====================
+\napp.post('/api/system/permissions/save', (req, res) =\u003e {\n  const { matrix } = req.body;\n  const user_role = req.user?.role || 'sales';\n  if (!matrix) return res.status(400).json({ error: \"Missing matrix payload.\" });\n\n  if (user_role !== 'admin') {\n    return res.status(403).json({\n      success: false,\n      error: \"Access Denied: Only Admin can update the system authorization matrix.\"\n    });\n  }\n\n  const permPath = path.join(__dirname, '../data/permissions.json');\n  console.log(`[Permission Service] Overwriting local authorization matrix file...`);\n\n  try {\n    const dataDir = path.dirname(permPath);\n    if (!fs.existsSync(dataDir)) {\n      fs.mkdirSync(dataDir, { recursive: true });\n    }\n    fs.writeFileSync(permPath, JSON.stringify(matrix, null, 2), 'utf-8');\n    res.json({ success: true, message: \"
+=====================
+\" });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to save permission matrix: \" + err.message });\n  }\n});\n\n\n// 
+=====================
+)\napp.get('/api/system/agents/status', (req, res) =\u003e {\n  const statusPath = path.join(__dirname, '../data/agent_status.json');\n  console.log(`[Agent Hot-Swap] Loading agent lifecycle switches from: ${statusPath}`);\n\n  if (!fs.existsSync(statusPath)) {\n    const defaultStatus = {\n      ai_sales_champion: true,\n      risk_controller: true,\n      manual_editor: true,\n      claude_code: true,\n      meeting_minutes_specialist: true\n    };\n    try {\n      const dataDir = path.dirname(statusPath);\n      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });\n      fs.writeFileSync(statusPath, JSON.stringify(defaultStatus, null, 2), 'utf-8');\n    } catch (e) {\n      console.error(e);\n    }\n    return res.json({ success: true, status_matrix: defaultStatus });\n  }\n\n  try {\n    const rawData = fs.readFileSync(statusPath, 'utf-8');\n    res.json({ success: true, status_matrix: JSON.parse(rawData) });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to read agent status file.\" });\n  }\n});\n\n// 
+=====================
+\napp.post('/api/system/agents/status/save', (req, res) =\u003e {\n  const { status_matrix } = req.body;\n  const user_role = req.user?.role || 'sales';\n  if (!status_matrix) return res.status(400).json({ error: \"Missing status_matrix payload.\" });\n\n  if (user_role !== 'admin') {\n    return res.status(403).json({ success: false, error: \"Access Denied: Only Admin can update Agent lifecycle switches.\" });\n  }\n\n  const statusPath = path.join(__dirname, '../data/agent_status.json');\n  console.log(`[Agent Hot-Swap] Saving new agent status configuration to: ${statusPath}`);\n\n  try {\n    fs.writeFileSync(statusPath, JSON.stringify(status_matrix, null, 2), 'utf-8');\n    res.json({ success: true, message: \"Agent 
+=====================
+\" });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to save agent status file.\" });\n  }\n});"},{"AllowMultiple":false,"EndLine":2367,"ReplacementContent":"// ==========================================\n// 
+=====================
+ (macOS)\n// ==========================================\napp.get('/api/wechat/detect-path', (req, res) =\u003e {\n  const os = require('os');\n  const homeDir = os.homedir();\n\n  // macOS 
+=====================
+\n  const wxContainerBase = path.join(homeDir, 'Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat');\n  const detectedPaths = [];\n\n  if (fs.existsSync(wxContainerBase)) {\n    try {\n      // 1. 
+=====================
+ (e.g. 2.0b4.0.9)\n      const versions = fs.readdirSync(wxContainerBase);\n      versions.forEach(ver =\u003e {\n        if (ver.startsWith('.')) return;\n        const verPath = path.join(wxContainerBase, ver);\n        if (!fs.statSync(verPath).isDirectory()) return;\n\n        // 2. 
+=====================
+ Hash)\n        const accounts = fs.readdirSync(verPath);\n        accounts.forEach(acc =\u003e {\n          if (acc.startsWith('.') || acc.length !== 32) return;\n          const accPath = path.join(verPath, acc);\n          if (!fs.statSync(accPath).isDirectory()) return;\n\n          // 3. 
+=====================
+\n          const msgDir = path.join(accPath, 'Message');\n          if (fs.existsSync(msgDir)) {\n            const files = fs.readdirSync(msgDir);\n            files.forEach(f =\u003e {\n              if (f.endsWith('.db') \u0026\u0026 (f.startsWith('msg_') || f === 'Message.db')) {\n                detectedPaths.push({\n                  account_hash: acc.substring(0, 8) + '****',\n                  db_path: path.join(msgDir, f),\n                  type: f\n                });\n              }\n            });\n          }\n        });\n      });\n    } catch (e) {\n      console.error('[WeChat Detect] Error scanning:', e.message);\n    }\n  }\n\n  if (detectedPaths.length === 0) {\n    return res.json({\n      success: false,\n      message: '
+=====================
+',\n      paths: []\n    });\n  }\n\n  res.json({\n    success: true,\n    message: `
+=====================
+ ${detectedPaths.length} 
+=====================
+`,\n    paths: detectedPaths\n  });\n});","StartLine":2310,"TargetContent":"// ==========================================\n// 
+=====================
+ (macOS)\n// ==========================================\napp.get('/api/wechat/detect-path', (req, res) =\u003e {\n  const os = require('os');\n  const homeDir = os.homedir();\n\n  // macOS 
+=====================
+\n  const wxContainerBase = path.join(homeDir, 'Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat');\n\n  const detectedPaths = [];\n\n  if (fs.existsSync(wxContainerBase)) {\n    try {\n      const accounts = fs.readdirSync(wxContainerBase);\n      accounts.forEach(account =\u003e {\n        // 
+=====================
+\n        if (account.startsWith('.')) return;\n        const dbDir = path.join(wxContainerBase, account, 'Message/msg_0.db');\n        const dbDirAlt = path.join(wxContainerBase, account, 'Message');\n\n        if (fs.existsSync(dbDir)) {\n          detectedPaths.push({\n            account_hash: account.substring(0, 8) + '****',\n            db_path: dbDir,\n            type: 'msg_0.db'\n          });\n        } else if (fs.existsSync(dbDirAlt)) {\n          // 
+=====================
+\n          const dbs = fs.readdirSync(dbDirAlt).filter(f =\u003e f.endsWith('.db'));\n          dbs.forEach(db =\u003e {\n            detectedPaths.push({\n              account_hash: account.substring(0, 8) + '****',\n              db_path: path.join(dbDirAlt, db),\n              type: db\n            });\n          });\n        }\n      });\n    } catch (e) {\n      console.error('[WeChat Detect] Error scanning:', e.message);\n    }\n  }\n\n  if (detectedPaths.length === 0) {\n    return res.json({\n      success: false,\n      message: '
+=====================
+',\n      paths: []\n    });\n  }\n\n  res.json({\n    success: true,\n    message: `
+=====================
+ ${detectedPaths.length} 
+=====================
+`,\n    paths: detectedPaths\n  });\n});"},{"AllowMultiple":false,"EndLine":832,"ReplacementContent":"// 
+=====================
+\napp.post('/api/wechat/db/query', (req, res) =\u003e {\n  const { sql } = req.body;\n  if (!sql) return res.status(400).json({ error: \"Missing parameter: sql\" });\n\n  const customDbPath = process.env.WECHAT_DB_PATH || '';\n  console.log(`[WeChat DB Query] Configured WECHAT_DB_PATH: \"${customDbPath}\"`);\n\n  // 
+=====================
+\n  if (!customDbPath || !fs.existsSync(customDbPath)) {\n    console.log(`
+=====================
+`);\n    return res.json({\n      success: true,\n      rows: [\n        { msg_id: 101, talker: \"
+=====================
+\", create_time: \"2026-06-15 14:20:00\" },\n        { msg_id: 102, talker: \"
+=====================
+\", create_time: \"2026-06-16 09:15:00\" }\n      ]\n    });\n  }\n\n  // ------------------------------------------\n  // 
+=====================
+\n  // ------------------------------------------\n  const decryptedDbPath = path.join(DATA_DIR, 'wx_decrypted.db');\n  const extractorScript = path.join(__dirname, '../scripts/wechat_key_extractor.py');\n  const decryptorScript = path.join(__dirname, '../scripts/wechat_decryptor.py');\n  \n  const { execSync } = require('child_process');\n\n  try {\n    console.log('[WeChat DB Query] Extracting key from macOS Keychain...');\n    // 1. 
+=====================
+\n    const key = execSync(`python3 \"${extractorScript}\"`, { encoding: 'utf-8' }).trim();\n    \n    if (!key || key === 'NOT_FOUND' || key.startsWith('FAILED')) {\n      throw new Error(`
+=====================
+`);\n    }\n\n    console.log(`[WeChat DB Query] Successfully extracted master key. Running decryptor...`);\n    \n    // 2. 
+=====================
+ wechat_decryptor.py 
+=====================
+\n    execSync(`python3 \"${decryptorScript}\" \"${customDbPath}\" \"${key}\" \"${decryptedDbPath}\"`);\n\n    if (!fs.existsSync(decryptedDbPath)) {\n      throw new Error('
+=====================
+');\n    }\n\n    console.log(`[WeChat DB Query] Decryption successful! Opening decrypted database...`);\n    \n    // 3. 
+=====================
+\n    const db = new sqlite3.Database(decryptedDbPath, sqlite3.OPEN_READONLY, (err) =\u003e {\n      if (err) return res.status(500).json({ error: 'Failed to open decrypted DB: ' + err.message });\n    });\n\n    db.all(sql, [], (err, rows) =\u003e {\n      db.close();\n      if (err) return res.status(500).json({ error: err.message });\n      \n      // 
+=====================
+\n      res.json({ success: true, rows });\n    });\n\n  } catch (err) {\n    console.error('
+=====================
+ [WeChat DB Query] Real-machine decryption failed:', err.message);\n    res.status(500).json({\n      success: false,\n      error: `
+=====================
+`\n    });\n  }\n});","StartLine":806,"TargetContent":"// 
+=====================
+\napp.post('/api/wechat/db/query', (req, res) =\u003e {\n  const { sql } = req.body;\n  if (!sql) return res.status(400).json({ error: \"Missing parameter: sql\" });\n\n  console.log(`[WeChat DB Query] Executing: \"${sql}\"`);\n\n  if (!fs.existsSync(WX_DB_PATH)) {\n    console.log(`
+=====================
+`);\n    return res.json({\n      success: true,\n      rows: [\n        { msg_id: 101, talker: \"
+=====================
+\", create_time: \"2026-06-15 14:20:00\" },\n        { msg_id: 102, talker: \"
+=====================
+\", create_time: \"2026-06-16 09:15:00\" }\n      ]\n    });\n  }\n\n  const db = new sqlite3.Database(WX_DB_PATH, sqlite3.OPEN_READONLY, (err) =\u003e {\n    if (err) return res.status(500).json({ error: err.message });\n  });\n\n  db.all(sql, [], (err, rows) =\u003e {\n    db.close();\n    if (err) return res.status(500).json({ error: err.message });\n    res.json({ success: true, rows });\n  });\n});"}],"TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Refactoring permissions, detect-path, and wechat/db/query endpoints in src/index.js","toolSummary":"Refactor WeChat \u0026 path endpoints"}:"
+=====================
+multi_replace_file_contentZ

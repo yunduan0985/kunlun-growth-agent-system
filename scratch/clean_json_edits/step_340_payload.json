@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/content/producer/write 渠道特色文案高产撰写端点。",
+  "EndLine": 768,
+  "Instruction": "在服务器启动之前加入内容初稿快速生成路由。",
+  "ReplacementContent": "\n// 模拟自媒体文案/脚本初稿生成接口\napp.post('/api/content/producer/write', (req, res) => {\n  const { title, outline, platform } = req.body;\n  if (!title || !outline) return res.status(400).json({ error: \"Missing required parameters: title or outline\" });\n\n  console.log(`[Content Writer] Drafting text for platform: ${platform || 'wechat'}`);\n\n  if (platform === \"xiaohongshu\") {\n    return res.json({\n      success: true,\n      draft_content: `💡为什么99%的人做Agent都卡在本地部署上？\\n\\n说句实在话，大部分人把时间花在配置复杂的 Docker 和 Python 环境上，结果还没运行就放弃了。😅\\n\\n📌 昆仑增长团队今天教你一个 3 步落地法：\\n\\n1️⃣ 第一步：直接使用 Mac 本地 Claude Desktop MCP 网关；\\n2️⃣ 第二步：通过 Node.js 本地监听 API，实现数据直连；\\n3️⃣ 第三步：把 SQLite 微信数据库直接挂载在 data/ 目录下！\\n\\n整套 SOP 看板已经整理成 PDF 啦，想要获取这套SOP的，可以在评论区滴滴，我把 PDF 手册直接发你！👇`,\n      estimated_words: 240\n    });\n  }\n\n  if (platform === \"douyin\") {\n    return res.json({\n      success: true,\n      draft_content: `【画面：主播对着镜头，字幕特大：別瞎买AI课了！】\\n口播：别瞎买AI课了！我把昆仑增长的 6 大核心 Agent 架构图全部公开！\\n\\n【画面：切入网关 src/index.js 代码特写，配合敲击键盘声】\\n口播：真正的企业级智能体不是写几个 Prompt 玩玩，而是直接打通天眼查、微信 SQLite 数据库、甚至是你的本地终端命令行！\\n\\n【画面：切回主播，手持平板展示多维表格交付面板】\\n口播：关注我，在后台回复‘网关’，直接送你整套 Express 底座源码！`,\n      estimated_words: 180\n    });\n  }\n\n  res.json({\n    success: true,\n    draft_content: `在当今快节奏的社会中，多智能体（Multi-Agent）架构的商用化落地正逐渐成为企业的核心壁垒。\\n\\n值得注意的是，很多企业在部署 Agent 时，往往高估了 Prompt 的作用，而低估了‘底层数据直连’的门槛。这是一把双刃剑...\\n\\n首先，我们要明确痛点：大模型如果没有本地数据库和终端命令的执行能力，就是一个只会纸上谈兵的空壳。\\n其次，我们要建立统一的网关 API，把微信 OpenClaw 的实时监听与解密后的 SQLite 全量查询统一挂载...\\n最后，交付是口碑的保证。我们需要将流程结构化地推送至飞书任务多维表格看板。`,\n    estimated_words: 1200\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 768,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding content producer routes to Gateway",
+  "toolSummary": "Modify file"
+}

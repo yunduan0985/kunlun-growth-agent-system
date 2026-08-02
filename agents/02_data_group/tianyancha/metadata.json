@@ -1,0 +1,16 @@
+{
+  "id": "tianyancha",
+  "name": "天眼查",
+  "group": "数据组",
+  "description": "自动检索和提取目标企业资质、股权穿透、工商变更等数据的天眼查专用 Agent。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=tianyancha",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

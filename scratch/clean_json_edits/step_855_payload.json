@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在配置中心右侧权限矩阵下方插入 Token 消费账单面板 DOM 挂载点。",
+  "EndLine": 1097,
+  "Instruction": "在 RBAC 保存按钮后、模板字符串结束前插入 Token 账单面板。",
+  "ReplacementContent": "            <button class=\"btn-action\" style=\"background: var(--success-color);\" onclick=\"savePermissionMatrix()\">${dict.btn_save_perm}</button>\n\n            <!-- 📊 Token 消费账单面板 -->\n            <h3 style=\"font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);\">5. Token 消费账单 (Cost Control)</h3>\n            <div id=\"token-usage-panel\" style=\"min-height:40px;\">\n              <div style=\"color:var(--text-muted); font-size:12px;\">⏳ 加载账单中...</div>\n            </div>\n          </div>\n        </div>\n      `;\n      container.appendChild(panel);",
+  "StartLine": 1093,
+  "TargetContent": "            <button class=\"btn-action\" style=\"background: var(--success-color);\" onclick=\"savePermissionMatrix()\">${dict.btn_save_perm}</button>\n          </div>\n        </div>\n      `;\n      container.appendChild(panel);",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Adding token panel DOM node to config center",
+  "toolSummary": "Token panel DOM"
+}

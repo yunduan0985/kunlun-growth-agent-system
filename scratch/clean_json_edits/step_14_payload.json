@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "更新任务列表，将初始化阶段标为进行中。",
+  "EndLine": 14,
+  "Instruction": "将初始化目录结构与多平台集成文档标为进行中。",
+  "ReplacementContent": "- [/] 初始化目录结构与多平台集成文档\n  - [/] 创建基础目录结构\n  - [ ] 编写全局 `README.md`\n  - [ ] 编写 `docs/feishu_integration.md`（飞书集成与多维表格配置指南）\n  - [ ] 编写 `docs/coze_codex_integration.md`（Coze/Codex 导入指南）\n  - [ ] 编写 `docs/workbuddy_integration.md`（Workbuddy 导入指南）",
+  "StartLine": 3,
+  "TargetContent": "- [ ] 初始化目录结构与多平台集成文档\n  - [ ] 创建基础目录结构\n  - [ ] 编写全局 `README.md`\n  - [ ] 编写 `docs/feishu_integration.md`（飞书集成与多维表格配置指南）\n  - [ ] 编写 `docs/coze_codex_integration.md`（Coze/Codex 导入指南）\n  - [ ] 编写 `docs/workbuddy_integration.md`（Workbuddy 导入指南）",
+  "TargetFile": "/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/task.md",
+  "toolAction": "Updating task list progress",
+  "toolSummary": "Modify file"
+}

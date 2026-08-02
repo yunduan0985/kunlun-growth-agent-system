@@ -1,0 +1,686 @@
+replace_file_content
+=====================
+
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":26,"Instruction":"
+=====================
+","ReplacementContent":"    patterns = {\n        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',\n        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',\n        'Lark App ID': r'cli_[a-z0-9]{16}',\n        'Lark App Secret': r'LARK_APP_SECRET\\s*=\\s*[\\'\"][a-zA-Z0-9]{32}[\\'\"]|app_secret\\s*:\\s*[\\'\"][a-zA-Z0-9]{32}[\\'\"]',\n        'JWT Secret Keyword': r'const JWT_SECRET\\s*=\\s*[\\'\"][a-zA-Z0-9_-]{16,}[\\'\"]'\n    }","StartLine":20,"TargetContent":"    patterns = {\n        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',\n        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',\n        'Lark App ID': r'cli_[a-z0-9]{16}',\n        'Lark App Secret': r'[a-zA-Z0-9]{32}',\n        'JWT Secret Keyword': r'const JWT_SECRET\\s*=\\s*[\\'\"][^\\'\"]+[\\'\"]'\n    }","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/.agents/skills/agent-security-audit/scripts/audit_scanner.py","toolAction":"Fixing regex false positives in security scanner patterns","toolSummary":"Refine regex patterns"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$ae00f435-5808-4fa7-9e2a-0f71c1a9251bj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Refine regex patterns
+=====================
+9Fixing regex false positives in security scanner patterns
+=====================
+    patterns = {
+        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',
+        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',
+        'Lark App ID': r'cli_[a-z0-9]{16}',
+        'Lark App Secret': r'[a-zA-Z0-9]{32}',
+        'JWT Secret Keyword': r'const JWT_SECRET\s*=\s*[\'"][^\'"]+[\'"]'
+    }
+=====================
+    patterns = {
+        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',
+        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',
+        'Lark App ID': r'cli_[a-z0-9]{16}',
+        'Lark App Secret': r'LARK_APP_SECRET\s*=\s*[\'"][a-zA-Z0-9]{32}[\'"]|app_secret\s*:\s*[\'"][a-zA-Z0-9]{32}[\'"]',
+        'JWT Secret Keyword': r'const JWT_SECRET\s*=\s*[\'"][a-zA-Z0-9_-]{16,}[\'"]'
+    }0
+=====================
+*vfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/.agents/skills/agent-security-audit/scripts/audit_scanner.py2y
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+<.agents/skills/agent-security-audit/scripts/audit_scanner.py
+=====================
+def run_audit(project_root):
+=====================
+_
+[    report.append("# 
+=====================
+:
+6    report.append(f"
+=====================
+: `{project_root}`\n")
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+ (Hardcoded Secrets)
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+R
+N    report.append("## 1. 
+=====================
+ (Credential Leak Check)")
+=====================
+    secrets_found = []
+=====================
+j
+f    exclude_files = ['audit_scanner.py', 'SKILL.md', 'node_modules', 'dist', '.git', 'jwt_secret.txt']
+=====================
+>
+:        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',
+=====================
+4
+0        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',
+=====================
+/
++        'Lark App ID': r'cli_[a-z0-9]{16}',
+=====================
+2
+.        'Lark App Secret': r'[a-zA-Z0-9]{32}',
+=====================
+M
+I        'JWT Secret Keyword': r'const JWT_SECRET\s*=\s*[\'"][^\'"]+[\'"]'
+=====================
+}
+y        'Lark App Secret': r'LARK_APP_SECRET\s*=\s*[\'"][a-zA-Z0-9]{32}[\'"]|app_secret\s*:\s*[\'"][a-zA-Z0-9]{32}[\'"]',
+=====================
+X
+T        'JWT Secret Keyword': r'const JWT_SECRET\s*=\s*[\'"][a-zA-Z0-9_-]{16,}[\'"]'
+=====================
+7
+3    for root, dirs, files in os.walk(project_root):
+=====================
+A
+=        dirs[:] = [d for d in dirs if d not in exclude_files]
+=====================
+        for file in files:
+=====================
+
+~            if file in exclude_files or any(file.endswith(ext) for ext in ['.png', '.jpg', '.dmg', '.db', '.zip', '.tar.gz']):
+=====================
+                continue
+=====================
+3
+/            filepath = os.path.join(root, file)
+=====================
+U
+Q                with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+=====================
+*
+&                    content = f.read()
+=====================
+9
+5                    for key, val in patterns.items():
+=====================
+>
+:                        matches = re.findall(val, content)
+=====================
+'
+#                        if matches:
+=====================
+F
+B                            # 
+=====================
+
+~                            real_matches = [m for m in matches if 'xxx' not in str(m).lower() and 'abc' not in str(m).lower()]
+=====================
+0
+,                            if real_matches:
+=====================
+{
+w                                secrets_found.append((os.path.relpath(filepath, project_root), key, len(real_matches)))
+=====================
+            except Exception:
+=====================
+                pass
+=====================
+    if secrets_found:
+=====================
+)
+%        report.append("> [!CAUTION]")
+=====================
+        report.append("> 
+=====================
+)
+%        for f, k, c in secrets_found:
+=====================
+M
+I            report.append(f"- 
+=====================
+|
+x        report.append("> [!NOTE]\n> 
+=====================
++
+'    report.append("\n" + "-"*40 + "\n")
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+ (RBAC Access Check)
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+U
+Q    report.append("## 2. 
+=====================
+ (RBAC & JWT Check)")
+=====================
+B
+>    index_js_path = os.path.join(project_root, 'src/index.js')
+=====================
+)
+%    if os.path.exists(index_js_path):
+=====================
+E
+A            with open(index_js_path, 'r', encoding='utf-8') as f:
+=====================
+)
+%                lines = f.readlines()
+=====================
+            unsafe_routes = []
+=====================
+$
+             current_route = None
+=====================
+*
+&            is_admin_protected = False
+=====================
+2
+.            for idx, line in enumerate(lines):
+=====================
+,
+(                # 
+=====================
+m
+i                route_match = re.search(r'app\.(post|get|delete)\([\'"](/api/system/[^\'"]+)[\'"]', line)
+=====================
+                if route_match:
+=====================
+D
+@                    if current_route and not is_admin_protected:
+=====================
+?
+;                        unsafe_routes.append(current_route)
+=====================
+G
+C                    current_route = (idx + 1, route_match.group(2))
+=====================
+2
+.                    is_admin_protected = False
+=====================
+O
+K                # 
+=====================
+%
+!                if current_route:
+=====================
+W
+S                    if 'role' in line and ('admin' in line or 'user_role' in line):
+=====================
+5
+1                        is_admin_protected = True
+=====================
+<
+8            if current_route and not is_admin_protected:
+=====================
+7
+3                unsafe_routes.append(current_route)
+=====================
+            if unsafe_routes:
+=====================
+1
+-                report.append("> [!WARNING]")
+=====================
+                report.append("> 
+=====================
+ `req.user?.role !== 'admin'` 
+=====================
+9
+5                for line_num, route in unsafe_routes:
+=====================
+E
+A                    report.append(f"- 
+=====================
+ {line_num}: `{route}`")
+=====================
+                report.append("> [!NOTE]\n> 
+=====================
+        except Exception as e:
+=====================
+C
+?            report.append(f"
+=====================
+O
+K        report.append("
+=====================
++
+'    report.append("\n" + "-"*40 + "\n")
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+ (Anti-Decompilation Check)
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+U
+Q    report.append("## 3. 
+=====================
+ (Build Hardening)")
+=====================
+=
+9    pkg_path = os.path.join(project_root, 'package.json')
+=====================
+%
+!    obfuscator_configured = False
+=====================
+$
+     if os.path.exists(pkg_path):
+=====================
+@
+<            with open(pkg_path, 'r', encoding='utf-8') as f:
+=====================
++
+'                pkg_data = json.load(f)
+=====================
+5
+1            scripts = pkg_data.get('scripts', {})
+=====================
+]
+Y            release_cmd = scripts.get('release:mac', '') + scripts.get('release:win', '')
+=====================
+2
+.            if 'build-prod.js' in release_cmd:
+=====================
+0
+,                obfuscator_configured = True
+=====================
+)
+%            if obfuscator_configured:
+=====================
+-
+)                report.append("> [!TIP]")
+=====================
+                report.append("> 
+=====================
+ `scripts/build-prod.js` 
+=====================
+P
+L                report.append("> 
+=====================
+                report.append("- [x] Control Flow Flattening (
+=====================
+)\n- [x] Self Defending (
+=====================
+)\n- [x] Debug Protection (
+=====================
+)\n- [x] String Encryption (
+=====================
+                report.append("> [!CAUTION]\n> 
+=====================
+        except Exception as e:
+=====================
+E
+A            report.append(f"
+=====================
++
+'    report.append("\n" + "-"*40 + "\n")
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+ (Gitignore Leak Check)
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+[
+W    report.append("## 4. 
+=====================
+ (Leakage Prevention)")
+=====================
+A
+=    gitignore_path = os.path.join(project_root, '.gitignore')
+=====================
+    ignore_risks = []
+=====================
+i
+e    must_ignores = ['.env', 'data/', 'knowledge_providers.json', 'wx_decrypted.db', 'jwt_secret.txt']
+=====================
+*
+&    if os.path.exists(gitignore_path):
+=====================
+F
+B            with open(gitignore_path, 'r', encoding='utf-8') as f:
+=====================
+-
+)                ignore_content = f.read()
+=====================
+)
+%            for item in must_ignores:
+=====================
+2
+.                if item not in ignore_content:
+=====================
+1
+-                    ignore_risks.append(item)
+=====================
+                    
+=====================
+            if ignore_risks:
+=====================
+1
+-                report.append("> [!WARNING]")
+=====================
+                report.append("> 
+=====================
+*
+&                for r in ignore_risks:
+=====================
+X
+T                    report.append(f"- 
+=====================
+                report.append("> [!NOTE]\n> 
+=====================
+        except Exception as e:
+=====================
+C
+?            report.append(f"
+=====================
+i
+e        report.append("> [!CAUTION]\n> 
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+>
+:    # ----------------------------------------------------
+=====================
+    return "\n".join(report)
+=====================
+if __name__ == "__main__":
+=====================
+
+}    root_dir = sys.argv[1] if len(sys.argv) > 1 else os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../'))
+=====================
+    print(run_audit(root_dir))
+=====================
+Bvfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/.agents/skills/agent-security-audit/scripts/audit_scanner.pyRAimport os
+import re
+import sys
+import json
+
+def run_audit(project_root):
+    report = []
+    report.append("# 
+=====================
+\n")
+    report.append(f"
+=====================
+: `{project_root}`\n")
+    
+    # ----------------------------------------------------
+    # Check 1: 
+=====================
+ (Hardcoded Secrets)
+    # ----------------------------------------------------
+    report.append("## 1. 
+=====================
+ (Credential Leak Check)")
+    secrets_found = []
+    
+    # 
+=====================
+
+    exclude_files = ['audit_scanner.py', 'SKILL.md', 'node_modules', 'dist', '.git', 'jwt_secret.txt']
+    
+    patterns = {
+        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',
+        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',
+        'Lark App ID': r'cli_[a-z0-9]{16}',
+        'Lark App Secret': r'[a-zA-Z0-9]{32}',
+        'JWT Secret Keyword': r'const JWT_SECRET\s*=\s*[\'"][^\'"]+[\'"]'
+    }
+    
+    for root, dirs, files in os.walk(project_root):
+        # 
+=====================
+
+        dirs[:] = [d for d in dirs if d not in exclude_files]
+        for file in files:
+            if file in exclude_files or any(file.endswith(ext) for ext in ['.png', '.jpg', '.dmg', '.db', '.zip', '.tar.gz']):
+                continue
+            filepath = os.path.join(root, file)
+            try:
+                with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                    content = f.read()
+                    for key, val in patterns.items():
+                        matches = re.findall(val, content)
+                        if matches:
+                            # 
+=====================
+ xxxxx
+                            real_matches = [m for m in matches if 'xxx' not in str(m).lower() and 'abc' not in str(m).lower()]
+                            if real_matches:
+                                secrets_found.append((os.path.relpath(filepath, project_root), key, len(real_matches)))
+            except Exception:
+                pass
+                
+    if secrets_found:
+        report.append("> [!CAUTION]")
+        report.append("> 
+=====================
+\n")
+        for f, k, c in secrets_found:
+            report.append(f"- 
+=====================
+ **{k}**")
+    else:
+        report.append("> [!NOTE]\n> 
+=====================
+")
+        
+    report.append("\n" + "-"*40 + "\n")
+
+    # ----------------------------------------------------
+    # Check 2: 
+=====================
+ (RBAC Access Check)
+    # ----------------------------------------------------
+    report.append("## 2. 
+=====================
+ (RBAC & JWT Check)")
+    index_js_path = os.path.join(project_root, 'src/index.js')
+    
+    if os.path.exists(index_js_path):
+        try:
+            with open(index_js_path, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+                
+            unsafe_routes = []
+            current_route = None
+            is_admin_protected = False
+            
+            for idx, line in enumerate(lines):
+                # 
+=====================
+ API
+                route_match = re.search(r'app\.(post|get|delete)\([\'"](/api/system/[^\'"]+)[\'"]', line)
+                if route_match:
+                    if current_route and not is_admin_protected:
+                        unsafe_routes.append(current_route)
+                    current_route = (idx + 1, route_match.group(2))
+                    is_admin_protected = False
+                
+                # 
+=====================
+
+                if current_route:
+                    if 'role' in line and ('admin' in line or 'user_role' in line):
+                        is_admin_protected = True
+            
+            # 
+=====================
+
+            if current_route and not is_admin_protected:
+                unsafe_routes.append(current_route)
+                
+            if unsafe_routes:
+                report.append("> [!WARNING]")
+                report.append("> 
+=====================
+ `req.user?.role !== 'admin'` 
+=====================
+\n")
+                for line_num, route in unsafe_routes:
+                    report.append(f"- 
+=====================
+ {line_num}: `{route}`")
+            else:
+                report.append("> [!NOTE]\n> 
+=====================
+")
+        except Exception as e:
+            report.append(f"
+=====================
+: {e}")
+    else:
+        report.append("
+=====================
+")
+
+    report.append("\n" + "-"*40 + "\n")
+
+    # ----------------------------------------------------
+    # Check 3: 
+=====================
+ (Anti-Decompilation Check)
+    # ----------------------------------------------------
+    report.append("## 3. 
+=====================
+ (Build Hardening)")
+    pkg_path = os.path.join(project_root, 'package.json')
+    obfuscator_configured = False
+    
+    if os.path.exists(pkg_path):
+        try:
+            with open(pkg_path, 'r', encoding='utf-8') as f:
+                pkg_data = json.load(f)
+            scripts = pkg_data.get('scripts', {})
+            release_cmd = scripts.get('release:mac', '') + scripts.get('release:win', '')
+            
+            if 'build-prod.js' in release_cmd:
+                obfuscator_configured = True
+                
+            if obfuscator_configured:
+                report.append("> [!TIP]")
+                report.append("> 
+=====================
+ `scripts/build-prod.js` 
+=====================
+\n")
+                report.append("> 
+=====================
+\n")
+                report.append("- [x] Control Flow Flattening (
+=====================
+)\n- [x] Self Defending (
+=====================
+)\n- [x] Debug Protection (
+=====================
+)\n- [x] String Encryption (
+=====================
+)")
+            else:
+                report.append("> [!CAUTION]\n> 
+=====================
+")
+        except Exception as e:
+            report.append(f"
+=====================
+: {e}")
+            
+    report.append("\n" + "-"*40 + "\n")
+
+    # ----------------------------------------------------
+    # Check 4: 
+=====================
+ (Gitignore Leak Check)
+    # ----------------------------------------------------
+    report.append("## 4. 
+=====================
+ (Leakage Prevention)")
+    gitignore_path = os.path.join(project_root, '.gitignore')
+    ignore_risks = []
+    must_ignores = ['.env', 'data/', 'knowledge_providers.json', 'wx_decrypted.db', 'jwt_secret.txt']
+    
+    if os.path.exists(gitignore_path):
+        try:
+            with open(gitignore_path, 'r', encoding='utf-8') as f:
+                ignore_content = f.read()
+            for item in must_ignores:
+                if item not in ignore_content:
+                    ignore_risks.append(item)
+                    
+            if ignore_risks:
+                report.append("> [!WARNING]")
+                report.append("> 
+=====================
+\n")
+                for r in ignore_risks:
+                    report.append(f"- 
+=====================
+")
+            else:
+                report.append("> [!NOTE]\n> 
+=====================
+")
+        except Exception as e:
+            report.append(f"
+=====================
+: {e}")
+    else:
+        report.append("> [!CAUTION]\n> 
+=====================
+")
+
+    # ----------------------------------------------------
+    # 
+=====================
+
+    # ----------------------------------------------------
+    return "\n".join(report)
+
+if __name__ == "__main__":
+    root_dir = sys.argv[1] if len(sys.argv) > 1 else os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../'))
+    print(run_audit(root_dir))
+ 
+=====================
+    patterns = {
+        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',
+        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',
+        'Lark App ID': r'cli_[a-z0-9]{16}',
+        'Lark App Secret': r'[a-zA-Z0-9]{32}',
+        'JWT Secret Keyword': r'const JWT_SECRET\s*=\s*[\'"][^\'"]+[\'"]'
+    }
+=====================
+    patterns = {
+        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',
+        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',
+        'Lark App ID': r'cli_[a-z0-9]{16}',
+        'Lark App Secret': r'LARK_APP_SECRET\s*=\s*[\'"][a-zA-Z0-9]{32}[\'"]|app_secret\s*:\s*[\'"][a-zA-Z0-9]{32}[\'"]',
+        'JWT Secret Keyword': r'const JWT_SECRET\s*=\s*[\'"][a-zA-Z0-9_-]{16,}[\'"]'
+    }0

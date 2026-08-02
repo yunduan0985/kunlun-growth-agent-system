@@ -1,0 +1,44 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/tech/code-review 
+=====================
+ /api/tech/perf-analyze 
+=====================
+","EndLine":325,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/tech/code-review', (req, res) =\u003e {\n  const { code } = req.body;\n  if (!code) return res.status(400).json({ error: \"Missing parameter: code\" });\n\n  console.log(`[Tech Expert] Reviewing code quality...`);\n  \n  const hasSql = code.toLowerCase().includes(\"select * from\") \u0026\u0026 !code.toLowerCase().includes(\"parameterized\");\n  const hasSecret = code.toLowerCase().includes(\"api_key\") || code.toLowerCase().includes(\"password\");\n\n  const vulnerabilities = [];\n  if (hasSql) {\n    vulnerabilities.push({\n      severity: \"high\",\n      description: \"Potential SQL Injection detected. Un-parameterized raw SQL query in use.\",\n      suggested_fix: \"Use parameterized queries or ORM models instead of string concatenation.\"\n    });\n  }\n  if (hasSecret) {\n    vulnerabilities.push({\n      severity: \"high\",\n      description: \"Hardcoded credential detected. API key or password exposed in raw string.\",\n      suggested_fix: \"Store secrets in environment variables (.env) and load via process.env.\"\n    });\n  }\n\n  res.json({\n    success: true,\n    vulnerabilities,\n    dry_violations: code.includes(\"function\") \u0026\u0026 code.split(\"function\").length \u003e 3\n  });\n});\n\n// 
+=====================
+\napp.post('/api/tech/perf-analyze', (req, res) =\u003e {\n  const { qps, bottleneck } = req.body;\n  if (!qps || !bottleneck) {\n    return res.status(400).json({ error: \"Missing parameters: qps or bottleneck\" });\n  }\n\n  console.log(`[Tech Expert] Analyzing bottleneck for QPS: ${qps}`);\n\n  res.json({\n    success: true,\n    recommendation: `
+=====================
+`\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":325,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding tech expert routes to Gateway","toolSummary":"Modify file"}:
+=====================
+7o`l%	^c=udyB/[4UCIY
+=====================
+Xq/0<0}%SQ&A:HnfFl=/8xX
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$661d9e87-19d3-46ac-9c37-36f4cbed018ej
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+G"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+$Adding tech expert routes to Gateway

@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/github/search/repositories、/api/github/repo/detail 和 /api/github/trending 三个开源仓库检索端点。",
+  "EndLine": 468,
+  "Instruction": "在服务器启动部分之前加入 GitHub 检索、详情和趋势路由。",
+  "ReplacementContent": "\n// 模拟 GitHub 仓库搜索接口\napp.post('/api/github/search/repositories', (req, res) => {\n  const { query, language } = req.body;\n  console.log(`[GitHub Search] Query: \"${query}\" (Language: ${language || 'any'})`);\n\n  res.json({\n    success: true,\n    items: [\n      { name: \"langchain-ai/langgraph\", description: \"Build resilient language agents as graphs.\", stars: 5800, language: \"python\" },\n      { name: \"dify-ai/dify\", description: \"An open-source LLM app development platform.\", stars: 32000, language: \"typescript\" }\n    ]\n  });\n});\n\n// 模拟 GitHub 仓库详情查询接口\napp.get('/api/github/repo/detail', (req, res) => {\n  const { repo_name } = req.query;\n  if (!repo_name) return res.status(400).json({ error: \"Missing: repo_name\" });\n\n  console.log(`[GitHub API] Fetching details for: ${repo_name}`);\n\n  const isDify = repo_name.includes(\"dify\");\n\n  res.json({\n    success: true,\n    full_name: repo_name,\n    stars: isDify ? 32000 : 5800,\n    license: isDify ? \"Apache-2.0\" : \"MIT\",\n    last_commit_time: new Date(Date.now() - 3600000 * 2).toISOString(),\n    open_issues_count: isDify ? 412 : 54,\n    closed_issues_count: isDify ? 8900 : 1200\n  });\n});\n\n// 模拟 GitHub Trending 接口\napp.get('/api/github/trending', (req, res) => {\n  const { language } = req.query;\n  console.log(`[GitHub Trending] Fetching trending for: ${language || 'all'}`);\n\n  res.json([\n    { rank: 1, name: \"modelcontextprotocol/servers\", description: \"Reference MCP server implementations.\", stars_today: 450, language: \"typescript\" },\n    { rank: 2, name: \"openai/whisper\", description: \"Robust Speech Recognition via Large-Scale Weak Supervision.\", stars_today: 230, language: \"python\" }\n  ]);\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 468,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding github search routes to Gateway",
+  "toolSummary": "Modify file"
+}

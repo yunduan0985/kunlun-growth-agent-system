@@ -1,0 +1,222 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":10,"Instruction":"
+=====================
+","ReplacementContent":"import Security\nimport objc\nfrom Foundation import NSMutableDictionary, kCFBooleanTrue\nimport sys","StartLine":1,"TargetContent":"import objc\nfrom Foundation import NSMutableDictionary, kCFBooleanTrue\nimport sys\n\n# 
+=====================
+\ntry:\n    objc.loadBundle('Security', bundle_path='/System/Library/Frameworks/Security.framework', module_globals=globals())\nexcept Exception as e:\n    print(f\"
+=====================
+ Failed to load Security framework: {e}\")\n    sys.exit(1)","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/scratch/search_keychain.py","toolAction":"Importing Security module in Python script","toolSummary":"Import Security module"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$c22f97a1-99e6-43d3-a3e3-413f088356e9j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Import Security module
+=====================
+*Importing Security module in Python script
+=====================
+import objc
+from Foundation import NSMutableDictionary, kCFBooleanTrue
+import sys
+
+# 
+=====================
+
+try:
+    objc.loadBundle('Security', bundle_path='/System/Library/Frameworks/Security.framework', module_globals=globals())
+except Exception as e:
+    print(f"
+=====================
+ Failed to load Security framework: {e}")
+    sys.exit(1)
+=====================
+aimport Security
+import objc
+from Foundation import NSMutableDictionary, kCFBooleanTrue
+import sys0
+=====================
+*Tfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scratch/search_keychain.py2W
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+scratch/search_keychain.py
+=====================
+>
+:from Foundation import NSMutableDictionary, kCFBooleanTrue
+=====================
+z
+v    objc.loadBundle('Security', bundle_path='/System/Library/Frameworks/Security.framework', module_globals=globals())
+=====================
+except Exception as e:
+=====================
+ Failed to load Security framework: {e}")
+=====================
+,
+(query = NSMutableDictionary.dictionary()
+=====================
+6
+2query['class'] = 'genp' # kSecClassGenericPassword
+=====================
+3
+/query['r_Attr'] = True   # kSecReturnAttributes
+=====================
+-
+)query['r_Data'] = True   # kSecReturnData
+=====================
+0
+,query['m_Limit'] = 'all' # kSecMatchLimitAll
+=====================
+ SecItemCopyMatching
+=====================
+5
+1status, result = SecItemCopyMatching(query, None)
+=====================
+    for item in result:
+=====================
+&
+"        service = item.get('svce')
+=====================
+&
+"        account = item.get('acct')
+=====================
+$
+         label = item.get('labl')
+=====================
+b
+^        if (service and 'wechat' in service.lower()) or (label and 'wechat' in label.lower()):
+=====================
+            found = True
+=====================
+)
+%            data = item.get('v_Data')
+=====================
+            secret = ""
+=====================
+            if data:
+=====================
+}
+y                # 
+=====================
+                try:
+=====================
+f
+b                    # 
+=====================
+:
+6                    secret = bytes(data).hex().upper()
+=====================
+%
+!                except Exception:
+=====================
+M
+I                    secret = bytes(data).decode('utf-8', errors='ignore')
+=====================
+b
+^            print(f"Label: {label} | Service: {service} | Account: {account} | Key: {secret}")
+=====================
+ No WeChat related items found in Keychain.")
+=====================
+ SecItemCopyMatching failed with status: {status}")
+=====================
+BTfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scratch/search_keychain.pyR
+=====================
+import objc
+from Foundation import NSMutableDictionary, kCFBooleanTrue
+import sys
+
+# 
+=====================
+
+try:
+    objc.loadBundle('Security', bundle_path='/System/Library/Frameworks/Security.framework', module_globals=globals())
+except Exception as e:
+    print(f"
+=====================
+ Failed to load Security framework: {e}")
+    sys.exit(1)
+
+# 
+=====================
+
+query = NSMutableDictionary.dictionary()
+query['class'] = 'genp' # kSecClassGenericPassword
+query['r_Attr'] = True   # kSecReturnAttributes
+query['r_Data'] = True   # kSecReturnData
+query['m_Limit'] = 'all' # kSecMatchLimitAll
+
+# 
+=====================
+ SecItemCopyMatching
+status, result = SecItemCopyMatching(query, None)
+
+if status == 0:
+    found = False
+    for item in result:
+        # 
+=====================
+
+        service = item.get('svce')
+        account = item.get('acct')
+        label = item.get('labl')
+        
+        # 
+=====================
+
+        if (service and 'wechat' in service.lower()) or (label and 'wechat' in label.lower()):
+            found = True
+            data = item.get('v_Data')
+            secret = ""
+            if data:
+                # 
+=====================
+ utf-8
+                try:
+                    # 
+=====================
+
+                    secret = bytes(data).hex().upper()
+                except Exception:
+                    secret = bytes(data).decode('utf-8', errors='ignore')
+            print(f"Label: {label} | Service: {service} | Account: {account} | Key: {secret}")
+    if not found:
+        print("
+=====================
+ No WeChat related items found in Keychain.")
+else:
+    print(f"
+=====================
+ SecItemCopyMatching failed with status: {status}")
+ 
+=====================
+import objc
+from Foundation import NSMutableDictionary, kCFBooleanTrue
+import sys
+
+# 
+=====================
+
+try:
+    objc.loadBundle('Security', bundle_path='/System/Library/Frameworks/Security.framework', module_globals=globals())
+except Exception as e:
+    print(f"
+=====================
+ Failed to load Security framework: {e}")
+    sys.exit(1)
+=====================
+aimport Security
+import objc
+from Foundation import NSMutableDictionary, kCFBooleanTrue
+import sys0

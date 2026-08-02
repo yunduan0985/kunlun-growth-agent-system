@@ -1,0 +1,7 @@
+{
+  "CommandLine": "python3 scratch/recover.py",
+  "Cwd": "/Volumes/MOVESPEED/下载/AIcode/Agent",
+  "WaitMsBeforeAsync": 3000,
+  "toolAction": "Running recover.py to identify index.js trace indices",
+  "toolSummary": "Run recover.py"
+}

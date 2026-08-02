@@ -1,0 +1,120 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "微信数据专员多维控制插件",
+    "version": "1.2.0",
+    "description": "集成增量监听 API (场景一) 与全量解密微信数据库 SQL 检索审计 (场景二) 的综合性工具插件。"
+  },
+  "paths": {
+    "/api/wechat/openclaw/messages": {
+      "get": {
+        "summary": "场景一：从 OpenClaw/Wechaty 接口中拉取微信最新接收到的增量聊天对话流",
+        "operationId": "getWechatMessages",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 20 },
+            "description": "拉取的最近消息条数"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/wechat/db/query": {
+      "post": {
+        "summary": "场景二：向 WeChatMsg 导出的微信 SQLite 解密数据库中发送 SQL 查询语句，做全量历史分析",
+        "operationId": "queryWechatDatabase",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sql": { "type": "string", "description": "要运行的标准 SQLite SELECT 语句 (例如: SELECT * FROM message WHERE content LIKE '%痛点%' LIMIT 10)" }
+                },
+                "required": ["sql"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功返回数据库记录行",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "rows": {
+                      "type": "array",
+                      "items": { "type": "object" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信发送通知端点",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string" },
+                  "content": { "type": "string" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

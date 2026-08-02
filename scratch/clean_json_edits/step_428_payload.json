@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/combat/researcher/analyze 竞品 SWOT 战略研判端点。",
+  "EndLine": 968,
+  "Instruction": "在服务器启动之前加入战略研判矩阵分析路由。",
+  "ReplacementContent": "\n// 模拟竞品 SWOT 战略矩阵研判接口\napp.post('/api/combat/researcher/analyze', (req, res) => {\n  const { competitor_name, raw_intel_summary } = req.body;\n  if (!competitor_name || !raw_intel_summary) {\n    return res.status(400).json({ error: \"Missing required parameters.\" });\n  }\n\n  console.log(`[Intel Researcher] Performing SWOT Matrix calculations on competitor: ${competitor_name}`);\n\n  res.json({\n    success: true,\n    winning_rate: 0.85,\n    swot_results: {\n      strengths: \"竞品拥有完备的公域自媒体广告投放团队，品牌效应高。\",\n      weaknesses: \"竞品底层缺乏本地数据直连网关，且必须将微信敏感数据上传云端，触及数据隐私红线。\",\n      opportunities: \"多智能体商用化落地市场空间广阔，企业级痛点诊断需求强烈。\",\n      threats: \"昆仑增长主打本地网关与 SQLite 历史库真实查询，形成差异化打击。\"\n    }\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 968,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding researcher routes to Gateway",
+  "toolSummary": "Modify file"
+}

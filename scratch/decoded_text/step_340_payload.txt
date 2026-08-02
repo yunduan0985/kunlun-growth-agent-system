@@ -1,0 +1,44 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/content/producer/write 
+=====================
+","EndLine":768,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/content/producer/write', (req, res) =\u003e {\n  const { title, outline, platform } = req.body;\n  if (!title || !outline) return res.status(400).json({ error: \"Missing required parameters: title or outline\" });\n\n  console.log(`[Content Writer] Drafting text for platform: ${platform || 'wechat'}`);\n\n  if (platform === \"xiaohongshu\") {\n    return res.json({\n      success: true,\n      draft_content: `
+=====================
+ Claude Desktop MCP 
+=====================
+`,\n      estimated_words: 240\n    });\n  }\n\n  if (platform === \"douyin\") {\n    return res.json({\n      success: true,\n      draft_content: `
+=====================
+`,\n      estimated_words: 180\n    });\n  }\n\n  res.json({\n    success: true,\n    draft_content: `
+=====================
+`,\n    estimated_words: 1200\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":768,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding content producer routes to Gateway","toolSummary":"Modify file"}:
+=====================
+E{iTDfw,y>5PE8 ,+:l@
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$88e77468-f0e2-47f2-a313-6cd6404c368fj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+)Adding content producer routes to Gateway

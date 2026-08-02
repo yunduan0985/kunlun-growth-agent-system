@@ -1,0 +1,99 @@
+{
+  "name": "kunlun-agent-os",
+  "version": "2.0.0",
+  "description": "Kunlun Growth Multi-Agent OS — Commercial Delivery Edition",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "node scripts/setup.js && node src/index.js",
+    "dev": "nodemon src/index.js",
+    "feishu:sync": "node scripts/feishu_agent_sync.js",
+    "feishu:bot": "node services/feishu_bot_gateway.js",
+    "feishu:docs": "node scripts/feishu_wiki_sync.js",
+    "electron": "electron .",
+    "electron:dev": "NODE_ENV=development electron .",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "build:all": "electron-builder --mac --win",
+    "release:mac": "node scripts/build-prod.js --mac",
+    "release:win": "node scripts/build-prod.js --win",
+    "release:all": "node scripts/build-prod.js --mac --win",
+    "setup": "node scripts/setup.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.3",
+    "mammoth": "^1.7.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3",
+    "javascript-obfuscator": "^5.4.7",
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "build": {
+    "appId": "com.kunlun.agentOS",
+    "productName": "昆仑增长 Agent OS",
+    "copyright": "Copyright © 2025 Kunlun Growth",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron/**/*",
+      "src/**/*",
+      "index.html",
+      "data/**/*",
+      "!node_modules/.cache/**/*",
+      "!data/knowledge/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "data/",
+        "to": "data/",
+        "filter": [
+          "**/*",
+          "!knowledge/**"
+        ]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.business",
+      "icon": "assets/icon.icns",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "entitlements": "assets/entitlements.mac.plist",
+      "entitlementsInherit": "assets/entitlements.mac.plist"
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico"
+    }
+  }
+}

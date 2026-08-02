@@ -1,0 +1,403 @@
+ *
+̙"
+cpfxb6tmmulti_replace_file_contentZ{"Description":"在后台网关中引入 Coze/Codex 开放平台 V3 异步会话 API 桥接器与 Workbuddy Webhook 警报推送接口，打通多平台 AI 智能体跨系统调度链路。","Instruction":"在系统配置模块增加 COZE_API_KEY、COZE_BOT_ID、WORKBUDDY_WEBHOOK 的配置存取；在网关底部追加 Coze Chat 轮询和 Workbuddy Webhook 调用路由。","ReplacementChunks":[{"AllowMultiple":false,"EndLine":1624,"ReplacementContent":"      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || \"sk-ant-xxxxxxxxxxxxxxxxxx\",\n      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || \"tyc_token_xxxxxxxxxxx\",\n      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),\n      LARK_APP_ID: process.env.LARK_APP_ID || \"cli_a1b2c3d4e5f6g7h8\",\n      LARK_APP_SECRET: process.env.LARK_APP_SECRET || \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n      LARK_CLI_PATH: process.env.LARK_CLI_PATH || \"lark\",\n      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || \"http://localhost:18000\",\n      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || \"mock_token_123\",\n      WHATSAPP_API_URL: process.env.WHATSAPP_API_URL || \"http://localhost:19000\",\n      TWITTER_API_TOKEN: process.env.TWITTER_API_TOKEN || \"twitter_token_xxxxxxxxxxxxx\",\n      COZE_API_KEY: process.env.COZE_API_KEY || \"\",\n      COZE_BOT_ID: process.env.COZE_BOT_ID || \"\",\n      WORKBUDDY_WEBHOOK: process.env.WORKBUDDY_WEBHOOK || \"\"\n    }","StartLine":1613,"TargetContent":"      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || \"sk-ant-xxxxxxxxxxxxxxxxxx\",\n      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || \"tyc_token_xxxxxxxxxxx\",\n      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),\n      LARK_APP_ID: process.env.LARK_APP_ID || \"cli_a1b2c3d4e5f6g7h8\",\n      LARK_APP_SECRET: process.env.LARK_APP_SECRET || \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n      LARK_CLI_PATH: process.env.LARK_CLI_PATH || \"lark\",\n      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || \"http://localhost:18000\",\n      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || \"mock_token_123\",\n      WHATSAPP_API_URL: process.env.WHATSAPP_API_URL || \"http://localhost:19000\",\n      TWITTER_API_TOKEN: process.env.TWITTER_API_TOKEN || \"twitter_token_xxxxxxxxxxxxx\"\n    }"},{"AllowMultiple":false,"EndLine":1684,"ReplacementContent":"  // 1. 生成物理 .env 文件正文\n  const envContent = `# 昆仑增长多智能体系统本地配置文件 (通过控制台热更新)\nPORT=8888\nCLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}\nTIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}\nWECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}\nLARK_APP_ID=${config.LARK_APP_ID || ''}\nLARK_APP_SECRET=${config.LARK_APP_SECRET || ''}\nLARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}\nOPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}\nOPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}\nWHATSAPP_API_URL=${config.WHATSAPP_API_URL || 'http://localhost:19000'}\nTWITTER_API_TOKEN=${config.TWITTER_API_TOKEN || ''}\nCOZE_API_KEY=${config.COZE_API_KEY || ''}\nCOZE_BOT_ID=${config.COZE_BOT_ID || ''}\nWORKBUDDY_WEBHOOK=${config.WORKBUDDY_WEBHOOK || ''}\n`;\n\n  try {\n    // 2. 物理写入本地文件\n    fs.writeFileSync(envPath, envContent, 'utf-8');\n    \n    // 3. 热更新内存环境变量，使下次 API 连通直接生效，无需重启进程\n    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;\n    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;\n    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;\n    process.env.LARK_APP_ID = config.LARK_APP_ID;\n    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;\n    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;\n    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;\n    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;\n    process.env.WHATSAPP_API_URL = config.WHATSAPP_API_URL;\n    process.env.TWITTER_API_TOKEN = config.TWITTER_API_TOKEN;\n    process.env.COZE_API_KEY = config.COZE_API_KEY;\n    process.env.COZE_BOT_ID = config.COZE_BOT_ID;\n    process.env.WORKBUDDY_WEBHOOK = config.WORKBUDDY_WEBHOOK;\n\n    console.log(`✅ [Config Service] Successfully hot-saved new environmental settings.`);\n    res.json({\n      success: true,\n      message: \"本地环境变量配置已成功物理保存并热更新生效。\"\n    });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to write .env file: \" + err.message });\n  }\n});","StartLine":1645,"TargetContent":"  // 1. 生成物理 .env 文件正文\n  const envContent = `# 昆仑增长多智能体系统本地配置文件 (通过控制台热更新)\nPORT=8888\nCLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}\nTIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}\nWECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}\nLARK_APP_ID=${config.LARK_APP_ID || ''}\nLARK_APP_SECRET=${config.LARK_APP_SECRET || ''}\nLARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}\nOPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}\nOPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}\nWHATSAPP_API_URL=${config.WHATSAPP_API_URL || 'http://localhost:19000'}\nTWITTER_API_TOKEN=${config.TWITTER_API_TOKEN || ''}\n`;\n\n  try {\n    // 2. 物理写入本地文件\n    fs.writeFileSync(envPath, envContent, 'utf-8');\n    \n    // 3. 热更新内存环境变量，使下次 API 连通直接生效，无需重启进程\n    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;\n    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;\n    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;\n    process.env.LARK_APP_ID = config.LARK_APP_ID;\n    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;\n    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;\n    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;\n    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;\n    process.env.WHATSAPP_API_URL = config.WHATSAPP_API_URL;\n    process.env.TWITTER_API_TOKEN = config.TWITTER_API_TOKEN;\n\n    console.log(`✅ [Config Service] Successfully hot-saved new environmental settings.`);\n    res.json({\n      success: true,\n      message: \"本地环境变量配置已成功物理保存并热更新生效。\"\n    });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to write .env file: \" + err.message });\n  }\n});"},{"AllowMultiple":false,"EndLine":2637,"ReplacementContent":"// ==========================================\n// 🚀 Coze / Codex 开发者 API 连通路由器\n// ==========================================\napp.post('/api/bridge/coze/chat', async (req, res) =\u003e {\n  const { query, bot_id } = req.body;\n  const cozeApiKey = process.env.COZE_API_KEY || '';\n  const targetBotId = bot_id || process.env.COZE_BOT_ID || '';\n\n  if (!cozeApiKey) {\n    return res.status(400).json({ error: '请先在系统配置中填写 COZE_API_KEY 授权秘钥。' });\n  }\n  if (!targetBotId) {\n    return res.status(400).json({ error: '请提供有效的 Coze Bot ID。' });\n  }\n\n  try {\n    console.log(`[Coze Bridge] Starting chat for Bot: ${targetBotId} ...`);\n    \n    // 1. 创建会话与 Chat 执行任务 (字节 Coze V3 API)\n    const chatInitRes = await fetch('https://api.coze.cn/v3/chat', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${cozeApiKey}`,\n        'Content-Type': 'application/json'\n      },\n      body: JSON.stringify({\n        bot_id: targetBotId,\n        user_id: 'kunlun_agent_os',\n        additional_messages: [\n          {\n            role: 'user',\n            content: query,\n            content_type: 'text'\n          }\n        ]\n      })\n    });\n    \n    const initData = await chatInitRes.json();\n    if (initData.code !== 0 || !initData.data) {\n      throw new Error(initData.msg || 'Coze 会话启动失败');\n    }\n\n    const chatId = initData.data.id;\n    const conversationId = initData.data.conversation_id;\n    console.log(`[Coze Bridge] Chat created. ID: ${chatId}, Conversation: ${conversationId}`);\n\n    // 2. 轮询等待 Chat 完成 (Max 15 次，每次间隔 1 秒)\n    let status = initData.data.status;\n    let attempts = 0;\n    \n    while (status !== 'completed' \u0026\u0026 status !== 'failed' \u0026\u0026 attempts \u003c 15) {\n      await new Promise(resolve =\u003e setTimeout(resolve, 1000));\n      attempts++;\n      \n      const pollRes = await fetch(`https://api.coze.cn/v3/chat/retrieve?chat_id=${chatId}\u0026conversation_id=${conversationId}`, {\n        headers: { 'Authorization': `Bearer ${cozeApiKey}` }\n      });\n      const pollData = await pollRes.json();\n      if (pollData.code === 0 \u0026\u0026 pollData.data) {\n        status = pollData.data.status;\n        console.log(`[Coze Bridge] Polling status (Attempt ${attempts}): ${status}`);\n      }\n    }\n\n    if (status !== 'completed') {\n      throw new Error(`Coze 任务执行超时或失败。最终状态: ${status}`);\n    }\n\n    // 3. 获取消息列表并提取 Answer\n    const msgRes = await fetch(`https://api.coze.cn/v3/chat/message/list?chat_id=${chatId}\u0026conversation_id=${conversationId}`, {\n      headers: { 'Authorization': `Bearer ${cozeApiKey}` }\n    });\n    const msgData = await msgRes.json();\n\n    if (msgData.code === 0 \u0026\u0026 Array.isArray(msgData.data)) {\n      // 筛选 type === 'answer' 的回复消息\n      const answerMsg = msgData.data.find(m =\u003e m.type === 'answer');\n      if (answerMsg) {\n        return res.json({\n          success: true,\n          content: answerMsg.content,\n          bot_id: targetBotId\n        });\n      }\n    }\n    \n    throw new Error('未在 Coze 回复中检索到有效的 answer 消息内容。');\n\n  } catch (err) {\n    console.error('❌ [Coze Bridge] Chat failed:', err.message);\n    res.status(500).json({ error: 'Coze API 调用失败: ' + err.message });\n  }\n});\n\n// ==========================================\n// 🚀 Workbuddy 动态 Webhook 警报管道\n// ==========================================\napp.post('/api/bridge/workbuddy/notify', async (req, res) =\u003e {\n  const { text } = req.body;\n  const webhookUrl = process.env.WORKBUDDY_WEBHOOK || '';\n\n  if (!webhookUrl) {\n    return res.status(400).json({ error: '请先在配置中心填写 WORKBUDDY_WEBHOOK。' });\n  }\n\n  try {\n    console.log(`[Workbuddy Bridge] Pushing notification to Workbuddy Channel...`);\n    const wbRes = await fetch(webhookUrl, {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify({\n        msg_type: 'text',\n        content: { text: text || '昆仑增长 Agent OS 默认警报推送。' }\n      })\n    });\n\n    if (wbRes.ok) {\n      res.json({ success: true, message: '成功将数据推送至 Workbuddy 协同群组频道！' });\n    } else {\n      throw new Error(`HTTP ${wbRes.status}`);\n    }\n  } catch (err) {\n    console.error('❌ [Workbuddy Bridge] Notification failed:', err.message);\n    res.status(500).json({ error: 'Workbuddy Webhook 推送失败: ' + err.message });\n  }\n});\n\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================","StartLine":2634,"TargetContent":"// ==========================================\n// 5. 服务器启动\n// =========================================="}],"TargetFile":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","toolAction":"Implementing Coze and Workbuddy bridge routes in src/index.js","toolSummary":"Add Coze \u0026 Workbuddy bridges"}:==
+=M24޿ 48pJ_vRHWӽY}1O{0}$oXZgo%ZTKu
+Xq ȫ
+zW&e$fRTÝ43"mӁ3sCEM_xMP)g	)_Wv\Ɵ"`ļpe#P[BR*ѓֳTjA\O>1	r$ēIc,pK*IDhBzNsEkus6!E@[@ĳ]u	A(̉\r!5Y+; -.ZK.1#\X8^u[#2Io@>C?U"=lB_y38!68>V}-Aӱ);%]ؠ*X!7Q8*qϮ~θ@^%/e'TMV>4Tm<P-P9@o&7'lwr6$sZOO8Y7bﳣNYA`*'Okw "l}6W^!J7=Hg^~cʪaޓ  -F_	 IbЎ7lH3BWdpLCvrR=]?5}cR֡sB,B-n$MCjmc;Cvi6Pj5CF[^ H:i'tuTf.ѕw%CDި&<JU3UkcF0~R:b ILBIæJ Ruțٴ\|$+CκL'F+(QB{?s*umc8Yfh$oś$pJHN-qPDO֪/Cw­8ސ]m F,0ŧM"&w#>Of>~}RP-)U' y-JO ;J0m1RpJɾs-N$j!КY5*;De(pq;!|-	(Vh6*k80lnXl74yud0#@|éUAN'Uܥҹ'gjW݆W{p>/T<T32	Qb+zHR id&P#G8	O0ם}P%\Mv;Q%)}~<ըaהPb!%fruOSC#RW>sC쒸n){ѰUڑ[JT 7rU?`C<2g:\"P!7$83O1H"ec -0H;YD9*Yetwu߹ʅOћO[a5&څI5J|DŠچ0Y6HRSӔζDV|N8H&isAD[w1ЄnT۰~BWy,L}W[&$Zz@S:)
+$m,5gI_co#β?26K20n nDٍ
+f<N:Whpڞ60뛖m7Z\+h/!V~HD 50-Id[e KOhBTExWv*&x4yd=sʙ-9`܁W!2eZF+G&5)*GL|{Hcr<C췟?NoMkpKA?Q9r3xw6h8ze쬁,C̹6ue/rH7SiUw^)kvi@)bh%CYj&D+%uvxj[Mp5Bae!UlA񸜷s	H8	tGWNrp{r-D V3[sT%Fg%ڦ[:ʋiΜaivBw7{/6Ʊs{MpUitۡȶ2;Mv`e^
+XoU"qrťpNٽg037&%3*R^1d3QGE&iCb꺈م#`tPղcM<+,HcAeU+Zݐ1M(yvf޴M8iH&w0vSj	J&A3=1Ȳ+-0[FfgxGvbCM'N5v++'XMLU=y`dTmIv>C7WK@e"#YρeEa[k͉ Ɩ<ٝߧ O?m`]*H v8¹:UƉ<H"T#>Y\Paꊃ1ygCRO~'H^<!
+_0"j",,> hW<$? BKYʙ#AyAas %Ov: 7Cplu'3u<8ؙUcP^,n{.aܦ<j_YQLAy#tڶZpނ:\R7]N5$J7	V ʘx@ˉ'~KgOwL&91"MRE:賀ive*(#WO6rj~qeArU th|&ĉ* 9bݭ8B74/CwwɢrBDp 3u 5< ܹrCbdq+f lk7خU֭@fxj'tt6w% QTXfkB$۵m&˽H6rWу{lHyHAE9t,6^r1͂ az^%R[لmw.Q5)~,.\)c&0,Vo"; KtYtg$fW*Oj]
+|+x= ߨT8~A٨y>R
+?6MsB&rS/Dz0Ĝˢaz#Z6MKlC.҇xfU!,{	2J8eV[x%x G3 h{:ATc<EtEܶNI'C/щ<Z,K~Z/	7zR"V4dawa?CIf#lѪۗ =c(i0?éxSnU━鱒.ٳel&ŝ6쌢&UUGEIA>AÐ~1W.wt>U|[<VBQ$_uB9AWmwxyR0t ² ]4Ǟd_hhHgŏp/VϾph~QV]ںL9)a5twpAdSh`O"rI؍:DSz$u9.:%LJj)|a>t6IׂW
+qK#A_k6oOvUaS3YGFG3lٛaO9g:>O屭t5P1/&h)H{hޱb(`㝑*kiz"h?ZP[FK_1$oW]vcn#ɨ??qoWOeKAd~7)htf_pc"
+yK!Irwx,DĝY\cm{*qF
+wk!m1݅WMsr~>mPR˯~li,^/T]ͯ^#vo2lFXHHIaJ{D㩾ijT:^ 9٭|Al5<`RpW(s]әs5Sa7J@McMJe/Ԉ̓}U٠.[0ǠMxMcn2^N{IѼb[N3i0rM'VҢǠǳ)Oޱ6X3U#+Egd.];k3ޑ<Q"/7Oh80D/-kډ/ߵE9<BY6ě"ex%_>1uM\I>d(j<ߙVߊkkDKBA46LtK`9q\Q,l#KXU.|( =<Oٵ0ה&"11\ij_
+f%0=)IzЉ(.h94Q.v8Y <ӵS%n`Coc#;0ӭOۙi~jEKcb:tE[#	3b?[&(^͇3Xk9H6_ea!ذַE
+UB~'2sm:LWO+o٬g!  }5%g}=ɀ:yx[q-n(},hW-1|ls	^4n<PwkK\AμV<vׅK]QCfЬ\m%{tsc,T/X3kiPaleerm*#у)^UKtY̫2Hk@?~w}V&T@f?]-'?還/KJd<syWN"H`!0LZ`U36Äv:@̲FHX+vt-_1!}9}=6`?lgg`#orj@zKrWb.㝥!`pZA֖P!_;"!FҲyHbC{P=qMݵO;4MV {jV>mQl'4ʮf&M6bje.g)ȟʩ9>?~"Y!,jD#˞E+aX7\DyׅL bv(%tl+[a1./kg)<%8nOqr]b'$T%lV}"8;}TW.Fg9r̓(LZ颣zIJ*rⶽfivc굡g!lĬ(DjO_رZ	|2*twTzfC"ls	HEr]7VAl ҇!ٞx!OPΉśI9P)Ք^JOz=&N>=	߁C5<oup?UV	3\[`_$]xv_yq$~۹;w $N3?o>b
+(Gg:Ϡ>e<A ܬ d ¤ۆ!fHS7MwcDY"+a/:U "g\4kE[_-egi:JO4zP{VA23Vg-@-\,@f@c<Y6%Q!CڦnMoF/uߊdq*L%=VLFc+-o߶jOvjzn0[3 i-Pgazt>\yzb{*"j3O7qx7XUJ8ڛ|O'$<D@R+-nzR_ؼNRsyZTs#^nܗ6DR#=>*J	Aa;~א&n)*{W8`:Tsa"z2\쑱7ڥx(^^6RrCάuVeI%MOl(z̭ѭkk)	/ 5nHc,
+=n-O x5bh]ӹbx#]g v=	j0I1 b6e2lYUE>d_;*z&9jW}1t,r	h77n=9JY/ Dm4BO_6k\*Zh/@6ȬeXXGfs:CJuN5+bDS'6#|r^x{+LGK,BՊ{&ss.ё`x RKl((bmN/2N挏7ޓ:{O*]Dgn|=JW=^)vt^))ѝ}h}(XMF3ߎsWgPAď^ޠSORlw:gxV҆ZcB}pb7InpWϩks=z&l@903W\`%t~2^7Pc=nQ4n]-J<5ܵLx1e#4~D.5 ..hp.Ȋd-Wv	1Fύޗ3.	/q*+azQoKEڬ#ъNd`tzyޝ3j)kFɸj>a-bOKL':;ard.J^,ۂNʋj~ĭ@()z/xvY ѝ~gA>ω8,IpX"]z,!aWtL-tM(=Um+.Qp<\* :pSET|/ul*ҡir©ua<IIƖٳq6em|D(lhov	zvǦ:CRl0ս 3浕IV܂9زe/ im'ˬڷzTCx
+8 Ç˓p펨4~)4Wgur;앖^~K=YhB2n?\fMi0 w[Br'.Y[hԖ!ll57GM*i9l9x{r3A7NgtV,ΦefiY,i.>v& 1p뚼թJYL2̐kP}̴X?-9Ek>ɖ/V@laZ_;*-<QI{7ck	6~kf'CpEG~)Ns|k7vbROO&Q|CumnXv{#i2#$8܅2U!U3E01#-?VA";R۲f(͞B.P~TJ|eTL[DS\T;OڝcF<Dն{w1Hը߳IG[fvT?Y
+seSJ̈7.,Hp@`qlh2V8qj gOWm`RQw.]RM]"VbA`1y;]>JŰ
+
+t]~Nu`P|8_
+FA;|SX:=)WԁehZ' 
+Cku֦vx䑾1Re =
+6R&튂mIRoT፥V8_?U/тY[F7f.ϩp?:lJmulti_replace_file_content*Description*Instruction*ReplacementChunks*
+TargetFile*
+toolAction*toolSummary2̙:̙BѶXb$14a6880c-b6c1-48d2-b97c-de1645b38335jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd̙ȓ6
+̙
+̙
+ֶAdd Coze & Workbuddy bridges=Implementing Coze and Workbuddy bridge routes in src/index.js̙L
+CModel produced a malformed edit that the agent was unable to apply.fallback failed: This file is too large to be edited. Do not try again. Present the user with the change to make. Do not try to make the edit yourself.: Could not successfully apply any edits. Please review the file and try smaller edits that you are more confident about.: chunk 0: target content not found in file
+chunk 1: target content not found in file
+chunk 2: target content not found in fileHfallback failed: This file is too large to be edited. Do not try again. Present the user with the change to make. Do not try to make the edit yourself.: Could not successfully apply any edits. Please review the file and try smaller edits that you are more confident about.: chunk 0: target content not found in file
+(1) secondary error attachment
+  | This file is too large to be edited. Do not try again. Present the user with the change to make. Do not try to make the edit yourself.
+  | (1)
+  | Wraps: (2) attached stack trace
+  |   -- stack trace:
+  |   | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.HandleFastApply
+  |   | 	third_party/gemini_coder/framework/handlers/applyedit/fast_apply.go:117
+  |   | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.handleFastApplyFallback
+  |   | 	third_party/gemini_coder/framework/handlers/applyedit/fast_apply.go:247
+  |   | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.HandleReplaceFileContentWithFallback
+  |   | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:265
+  |   | google3/third_party/jetski/cortex/handlers/handlers.(*CodeActionHandler).Handle
+  |   | 	third_party/jetski/cortex/handlers/code_action_handler.go:421
+  |   | google3/third_party/gemini_coder/framework/executor/executor.(*Executor).handleStep
+  |   | 	third_party/gemini_coder/framework/executor/executor.go:265
+  |   | google3/third_party/jetski/cortex/permissions/permissions.NewHandlerDecorator.func2.1
+  |   | 	third_party/jetski/cortex/permissions/permission_manager.go:559
+  |   | google3/third_party/jetski/cortex/mixins/mixins.RunStateUpdateDecorator.func1.1
+  |   | 	third_party/jetski/cortex/mixins/run_state_update_decorator.go:25
+  |   | google3/third_party/gemini_coder/framework/executor/executor.(*ExecutionTrajectory).asyncHandleStep.func3
+  |   | 	third_party/gemini_coder/framework/executor/execution_trajectory.go:330
+  |   | google3/go/context/detach.Go.func1
+  |   | 	go/context/detach.go:250
+  |   | runtime.goexit
+  |   | 	third_party/go/gc/src/runtime/asm_arm64.s:1039
+  | Wraps: (3) This file is too large to be edited. Do not try again. Present the user with the change to make. Do not try to make the edit yourself.
+  | Error types: (1) *utils.UserFacingHandlerError (2) *withstack.withStack (3) *errutil.leafError
+Wraps: (2) fallback failed: This file is too large to be edited. Do not try again. Present the user with the change to make. Do not try to make the edit yourself.
+Wraps: (3) attached stack trace
+  -- stack trace:
+  | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.HandleReplaceFileContentWithFallback.func1
+  | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:183
+  | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.HandleReplaceFileContentWithFallback
+  | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:285
+  | google3/third_party/jetski/cortex/handlers/handlers.(*CodeActionHandler).Handle
+  | 	third_party/jetski/cortex/handlers/code_action_handler.go:421
+  | google3/third_party/gemini_coder/framework/executor/executor.(*Executor).handleStep
+  | 	third_party/gemini_coder/framework/executor/executor.go:265
+  | google3/third_party/jetski/cortex/permissions/permissions.NewHandlerDecorator.func2.1
+  | 	third_party/jetski/cortex/permissions/permission_manager.go:559
+  | google3/third_party/jetski/cortex/mixins/mixins.RunStateUpdateDecorator.func1.1
+  | 	third_party/jetski/cortex/mixins/run_state_update_decorator.go:25
+  | google3/third_party/gemini_coder/framework/executor/executor.(*ExecutionTrajectory).asyncHandleStep.func3
+  | 	third_party/gemini_coder/framework/executor/execution_trajectory.go:330
+  | google3/go/context/detach.Go.func1
+  | 	go/context/detach.go:250
+Wraps: (4) Could not successfully apply any edits. Please review the file and try smaller edits that you are more confident about.
+Wraps: (5) attached stack trace
+  -- stack trace:
+  | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.HandleReplaceFileContentWithFallback.func1
+  | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:184
+  | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.HandleReplaceFileContentWithFallback
+  | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:285
+  | google3/third_party/jetski/cortex/handlers/handlers.(*CodeActionHandler).Handle
+  | 	third_party/jetski/cortex/handlers/code_action_handler.go:421
+  | google3/third_party/gemini_coder/framework/executor/executor.(*Executor).handleStep
+  | 	third_party/gemini_coder/framework/executor/executor.go:265
+  | google3/third_party/jetski/cortex/permissions/permissions.NewHandlerDecorator.func2.1
+  | 	third_party/jetski/cortex/permissions/permission_manager.go:559
+  | google3/third_party/jetski/cortex/mixins/mixins.RunStateUpdateDecorator.func1.1
+  | 	third_party/jetski/cortex/mixins/run_state_update_decorator.go:25
+  | google3/third_party/gemini_coder/framework/executor/executor.(*ExecutionTrajectory).asyncHandleStep.func3
+  | 	third_party/gemini_coder/framework/executor/execution_trajectory.go:330
+  | google3/go/context/detach.Go.func1
+  | 	go/context/detach.go:250
+Wraps: (6) chunk 0: target content not found in file
+  | chunk 1: target content not found in file
+  | chunk 2: target content not found in file
+        └─ Wraps: (7) attached stack trace
+  -- stack trace:
+  | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.applyApplicableChunksToContent
+  | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:351
+  | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.HandleReplaceFileContentWithFallback
+  | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:118
+  | google3/third_party/jetski/cortex/handlers/handlers.(*CodeActionHandler).Handle
+  | 	third_party/jetski/cortex/handlers/code_action_handler.go:421
+  | google3/third_party/gemini_coder/framework/executor/executor.(*Executor).handleStep
+  | 	third_party/gemini_coder/framework/executor/executor.go:265
+  | google3/third_party/jetski/cortex/permissions/permissions.NewHandlerDecorator.func2.1
+  | 	third_party/jetski/cortex/permissions/permission_manager.go:559
+  | google3/third_party/jetski/cortex/mixins/mixins.RunStateUpdateDecorator.func1.1
+  | 	third_party/jetski/cortex/mixins/run_state_update_decorator.go:25
+  | google3/third_party/gemini_coder/framework/executor/executor.(*ExecutionTrajectory).asyncHandleStep.func3
+  | 	third_party/gemini_coder/framework/executor/execution_trajectory.go:330
+  | google3/go/context/detach.Go.func1
+  | 	go/context/detach.go:250
+          └─ Wraps: (8) chunk 2
+            └─ Wraps: (9)
+              └─ Wraps: (10) target content not found in file
+        └─ Wraps: (11) attached stack trace
+  -- stack trace:
+  | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.applyApplicableChunksToContent
+  | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:351
+  | [...repeated from below...]
+          └─ Wraps: (12) chunk 1
+            └─ Wraps: (13)
+              └─ Wraps: (14) target content not found in file
+        └─ Wraps: (15) attached stack trace
+  -- stack trace:
+  | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.applyApplicableChunksToContent
+  | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:351
+  | google3/third_party/gemini_coder/framework/handlers/applyedit/applyedit.HandleReplaceFileContentWithFallback
+  | 	third_party/gemini_coder/framework/handlers/applyedit/apply_edit.go:118
+  | google3/third_party/jetski/cortex/handlers/handlers.(*CodeActionHandler).Handle
+  | 	third_party/jetski/cortex/handlers/code_action_handler.go:421
+  | google3/third_party/gemini_coder/framework/executor/executor.(*Executor).handleStep
+  | 	third_party/gemini_coder/framework/executor/executor.go:265
+  | google3/third_party/jetski/cortex/permissions/permissions.NewHandlerDecorator.func2.1
+  | 	third_party/jetski/cortex/permissions/permission_manager.go:559
+  | google3/third_party/jetski/cortex/mixins/mixins.RunStateUpdateDecorator.func1.1
+  | 	third_party/jetski/cortex/mixins/run_state_update_decorator.go:25
+  | google3/third_party/gemini_coder/framework/executor/executor.(*ExecutionTrajectory).asyncHandleStep.func3
+  | 	third_party/gemini_coder/framework/executor/execution_trajectory.go:330
+  | google3/go/context/detach.Go.func1
+  | 	go/context/detach.go:250
+  | runtime.goexit
+  | 	third_party/go/gc/src/runtime/asm_arm64.s:1039
+          └─ Wraps: (16) chunk 0
+            └─ Wraps: (17)
+              └─ Wraps: (18) target content not found in file
+Error types: (1) *secondary.withSecondaryError (2) *errutil.withPrefix (3) *withstack.withStack (4) *errutil.withPrefix (5) *withstack.withStack (6) *join.joinError (7) *withstack.withStack (8) *errutil.withPrefix (9) *applyedit.repairFixableError (10) *applyedit.fastApplyFixableError (11) *withstack.withStack (12) *errutil.withPrefix (13) *applyedit.repairFixableError (14) *applyedit.fastApplyFixableError (15) *withstack.withStack (16) *errutil.withPrefix (17) *applyedit.repairFixableError (18) *applyedit.fastApplyFixableError 2 c8215ab0ac7d4624867ef57839a7fbf0RV
+S
+S
+在系统配置模块增加 COZE_API_KEY、COZE_BOT_ID、WORKBUDDY_WEBHOOK 的配置存取；在网关底部追加 Coze Chat 轮询和 Workbuddy Webhook 调用路由。@J
+      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "sk-ant-xxxxxxxxxxxxxxxxxx",
+      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || "tyc_token_xxxxxxxxxxx",
+      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),
+      LARK_APP_ID: process.env.LARK_APP_ID || "cli_a1b2c3d4e5f6g7h8",
+      LARK_APP_SECRET: process.env.LARK_APP_SECRET || "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      LARK_CLI_PATH: process.env.LARK_CLI_PATH || "lark",
+      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || "http://localhost:18000",
+      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || "mock_token_123",
+      WHATSAPP_API_URL: process.env.WHATSAPP_API_URL || "http://localhost:19000",
+      TWITTER_API_TOKEN: process.env.TWITTER_API_TOKEN || "twitter_token_xxxxxxxxxxxxx"
+    }      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "sk-ant-xxxxxxxxxxxxxxxxxx",
+      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || "tyc_token_xxxxxxxxxxx",
+      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),
+      LARK_APP_ID: process.env.LARK_APP_ID || "cli_a1b2c3d4e5f6g7h8",
+      LARK_APP_SECRET: process.env.LARK_APP_SECRET || "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      LARK_CLI_PATH: process.env.LARK_CLI_PATH || "lark",
+      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || "http://localhost:18000",
+      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || "mock_token_123",
+      WHATSAPP_API_URL: process.env.WHATSAPP_API_URL || "http://localhost:19000",
+      TWITTER_API_TOKEN: process.env.TWITTER_API_TOKEN || "twitter_token_xxxxxxxxxxxxx",
+      COZE_API_KEY: process.env.COZE_API_KEY || "",
+      COZE_BOT_ID: process.env.COZE_BOT_ID || "",
+      WORKBUDDY_WEBHOOK: process.env.WORKBUDDY_WEBHOOK || ""
+    }08J
+  // 1. 生成物理 .env 文件正文
+  const envContent = `# 昆仑增长多智能体系统本地配置文件 (通过控制台热更新)
+PORT=8888
+CLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}
+TIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}
+WECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}
+LARK_APP_ID=${config.LARK_APP_ID || ''}
+LARK_APP_SECRET=${config.LARK_APP_SECRET || ''}
+LARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}
+OPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}
+OPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}
+WHATSAPP_API_URL=${config.WHATSAPP_API_URL || 'http://localhost:19000'}
+TWITTER_API_TOKEN=${config.TWITTER_API_TOKEN || ''}
+`;
+
+  try {
+    // 2. 物理写入本地文件
+    fs.writeFileSync(envPath, envContent, 'utf-8');
+    
+    // 3. 热更新内存环境变量，使下次 API 连通直接生效，无需重启进程
+    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;
+    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;
+    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;
+    process.env.LARK_APP_ID = config.LARK_APP_ID;
+    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;
+    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;
+    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;
+    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;
+    process.env.WHATSAPP_API_URL = config.WHATSAPP_API_URL;
+    process.env.TWITTER_API_TOKEN = config.TWITTER_API_TOKEN;
+
+    console.log(`✅ [Config Service] Successfully hot-saved new environmental settings.`);
+    res.json({
+      success: true,
+      message: "本地环境变量配置已成功物理保存并热更新生效。"
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to write .env file: " + err.message });
+  }
+});  // 1. 生成物理 .env 文件正文
+  const envContent = `# 昆仑增长多智能体系统本地配置文件 (通过控制台热更新)
+PORT=8888
+CLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}
+TIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}
+WECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}
+LARK_APP_ID=${config.LARK_APP_ID || ''}
+LARK_APP_SECRET=${config.LARK_APP_SECRET || ''}
+LARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}
+OPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}
+OPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}
+WHATSAPP_API_URL=${config.WHATSAPP_API_URL || 'http://localhost:19000'}
+TWITTER_API_TOKEN=${config.TWITTER_API_TOKEN || ''}
+COZE_API_KEY=${config.COZE_API_KEY || ''}
+COZE_BOT_ID=${config.COZE_BOT_ID || ''}
+WORKBUDDY_WEBHOOK=${config.WORKBUDDY_WEBHOOK || ''}
+`;
+
+  try {
+    // 2. 物理写入本地文件
+    fs.writeFileSync(envPath, envContent, 'utf-8');
+    
+    // 3. 热更新内存环境变量，使下次 API 连通直接生效，无需重启进程
+    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;
+    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;
+    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;
+    process.env.LARK_APP_ID = config.LARK_APP_ID;
+    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;
+    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;
+    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;
+    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;
+    process.env.WHATSAPP_API_URL = config.WHATSAPP_API_URL;
+    process.env.TWITTER_API_TOKEN = config.TWITTER_API_TOKEN;
+    process.env.COZE_API_KEY = config.COZE_API_KEY;
+    process.env.COZE_BOT_ID = config.COZE_BOT_ID;
+    process.env.WORKBUDDY_WEBHOOK = config.WORKBUDDY_WEBHOOK;
+
+    console.log(`✅ [Config Service] Successfully hot-saved new environmental settings.`);
+    res.json({
+      success: true,
+      message: "本地环境变量配置已成功物理保存并热更新生效。"
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to write .env file: " + err.message });
+  }
+});08J%
+q// ==========================================
+// 5. 服务器启动
+// ==========================================$// ==========================================
+// 🚀 Coze / Codex 开发者 API 连通路由器
+// ==========================================
+app.post('/api/bridge/coze/chat', async (req, res) => {
+  const { query, bot_id } = req.body;
+  const cozeApiKey = process.env.COZE_API_KEY || '';
+  const targetBotId = bot_id || process.env.COZE_BOT_ID || '';
+
+  if (!cozeApiKey) {
+    return res.status(400).json({ error: '请先在系统配置中填写 COZE_API_KEY 授权秘钥。' });
+  }
+  if (!targetBotId) {
+    return res.status(400).json({ error: '请提供有效的 Coze Bot ID。' });
+  }
+
+  try {
+    console.log(`[Coze Bridge] Starting chat for Bot: ${targetBotId} ...`);
+    
+    // 1. 创建会话与 Chat 执行任务 (字节 Coze V3 API)
+    const chatInitRes = await fetch('https://api.coze.cn/v3/chat', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${cozeApiKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        bot_id: targetBotId,
+        user_id: 'kunlun_agent_os',
+        additional_messages: [
+          {
+            role: 'user',
+            content: query,
+            content_type: 'text'
+          }
+        ]
+      })
+    });
+    
+    const initData = await chatInitRes.json();
+    if (initData.code !== 0 || !initData.data) {
+      throw new Error(initData.msg || 'Coze 会话启动失败');
+    }
+
+    const chatId = initData.data.id;
+    const conversationId = initData.data.conversation_id;
+    console.log(`[Coze Bridge] Chat created. ID: ${chatId}, Conversation: ${conversationId}`);
+
+    // 2. 轮询等待 Chat 完成 (Max 15 次，每次间隔 1 秒)
+    let status = initData.data.status;
+    let attempts = 0;
+    
+    while (status !== 'completed' && status !== 'failed' && attempts < 15) {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      attempts++;
+      
+      const pollRes = await fetch(`https://api.coze.cn/v3/chat/retrieve?chat_id=${chatId}&conversation_id=${conversationId}`, {
+        headers: { 'Authorization': `Bearer ${cozeApiKey}` }
+      });
+      const pollData = await pollRes.json();
+      if (pollData.code === 0 && pollData.data) {
+        status = pollData.data.status;
+        console.log(`[Coze Bridge] Polling status (Attempt ${attempts}): ${status}`);
+      }
+    }
+
+    if (status !== 'completed') {
+      throw new Error(`Coze 任务执行超时或失败。最终状态: ${status}`);
+    }
+
+    // 3. 获取消息列表并提取 Answer
+    const msgRes = await fetch(`https://api.coze.cn/v3/chat/message/list?chat_id=${chatId}&conversation_id=${conversationId}`, {
+      headers: { 'Authorization': `Bearer ${cozeApiKey}` }
+    });
+    const msgData = await msgRes.json();
+
+    if (msgData.code === 0 && Array.isArray(msgData.data)) {
+      // 筛选 type === 'answer' 的回复消息
+      const answerMsg = msgData.data.find(m => m.type === 'answer');
+      if (answerMsg) {
+        return res.json({
+          success: true,
+          content: answerMsg.content,
+          bot_id: targetBotId
+        });
+      }
+    }
+    
+    throw new Error('未在 Coze 回复中检索到有效的 answer 消息内容。');
+
+  } catch (err) {
+    console.error('❌ [Coze Bridge] Chat failed:', err.message);
+    res.status(500).json({ error: 'Coze API 调用失败: ' + err.message });
+  }
+});
+
+// ==========================================
+// 🚀 Workbuddy 动态 Webhook 警报管道
+// ==========================================
+app.post('/api/bridge/workbuddy/notify', async (req, res) => {
+  const { text } = req.body;
+  const webhookUrl = process.env.WORKBUDDY_WEBHOOK || '';
+
+  if (!webhookUrl) {
+    return res.status(400).json({ error: '请先在配置中心填写 WORKBUDDY_WEBHOOK。' });
+  }
+
+  try {
+    console.log(`[Workbuddy Bridge] Pushing notification to Workbuddy Channel...`);
+    const wbRes = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        msg_type: 'text',
+        content: { text: text || '昆仑增长 Agent OS 默认警报推送。' }
+      })
+    });
+
+    if (wbRes.ok) {
+      res.json({ success: true, message: '成功将数据推送至 Workbuddy 协同群组频道！' });
+    } else {
+      throw new Error(`HTTP ${wbRes.status}`);
+    }
+  } catch (err) {
+    console.error('❌ [Workbuddy Bridge] Notification failed:', err.message);
+    res.status(500).json({ error: 'Workbuddy Webhook 推送失败: ' + err.message });
+  }
+});
+
+
+// ==========================================
+// 5. 服务器启动
+// ==========================================08"*Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js2I
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agentsrc/index.js  zThis file is too large to be edited. Do not try again. Present the user with the change to make. Do not try to make the edit yourself.在后台网关中引入 Coze/Codex 开放平台 V3 异步会话 API 桥接器与 Workbuddy Webhook 警报推送接口，打通多平台 AI 智能体跨系统调度链路。

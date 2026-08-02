@@ -1,0 +1,55 @@
+ *
+"
+1gab0h95	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":60,"StartLine":15,"toolAction":"Viewing path declarations at the top of src/index.js","toolSummary":"View top path declarations"}:(&
+$e24830a7-5cd6-42fe-998b-ee539e72b9c3J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2눺:눺BXb$150d3650-a2a5-4882-83c3-c83a8c70e530jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bdЍ46
+𦊺
+ں
+View top path declarations4Viewing path declarations at the top of src/index.jsr
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js;"// 核心路径与本地数据配置 (提前至最前以防 TDZ 错误)
+// ==========================================
+// 优先使用由 Electron 物理注入的 OS 安全可写 UserData 目录，防打包后 EROFS 只读文件系统报错闪退
+const DATA_DIR = process.env.KUNLUN_USER_DATA_PATH || path.join(__dirname, '../data');
+if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+
+const DB_PATH = path.join(DATA_DIR, 'kunlun_agent.db');
+const WX_DB_PATH = path.join(DATA_DIR, 'wx_mock.db');
+const KNOWLEDGE_DIR = path.join(DATA_DIR, 'knowledge');
+if (!fs.existsSync(KNOWLEDGE_DIR)) fs.mkdirSync(KNOWLEDGE_DIR, { recursive: true });
+
+// 📚 初始化 RAG SQLite FTS5 本地向量/全文检索库
+const RAG_DB_PATH = path.join(DATA_DIR, 'rag_knowledge.db');
+const ragDb = new sqlite3.Database(RAG_DB_PATH, (err) => {
+  if (err) console.error('[RAG Engine] Failed to open rag_knowledge.db', err);
+  else {
+    // 开启 WAL (Write-Ahead Logging) 模式防高并发锁库 (EADDRINUSE/SQLITE_BUSY)
+    ragDb.run("PRAGMA journal_mode=WAL");
+    ragDb.run(`
+      CREATE VIRTUAL TABLE IF NOT EXISTS knowledge_chunks USING fts5(
+        filename, 
+        chunk_index, 
+        content,
+        tokenize='porter'
+      )
+    `);
+    console.log('[RAG Engine] FTS5 Knowledge Base Database initialized with WAL mode.');
+  }
+});
+
+// 分块函数 (Chunking) 供 RAG 入库使用
+function chunkText(text, chunkSize = 500, overlap = 100) {
+  const chunks = [];
+  let i = 0;
+  while (i < text.length) {
+    chunks.push(text.slice(i, i + chunkSize));
+    i += (chunkSize - overlap);
+  }
+  return chunks;
+}
+
+// ==========================================
+// 🔐 Auth 配置
+// ==========================================
+// JWT 密钥：优先读 .env，其次用随机生成并持久化（确保重启后 Token 仍有效）
+const JWT_SECRET_PATH = path.join(DATA_DIR, 'jwt_secret.txt');X`

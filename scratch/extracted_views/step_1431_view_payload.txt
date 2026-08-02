@@ -1,0 +1,42 @@
+ *
+J"
+bgazaovo	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":2372,"StartLine":2340,"toolAction":"Viewing remaining WeChat scan backend logic","toolSummary":"View WeChat scan logic"}:(&
+$e24830a7-5cd6-42fe-998b-ee539e72b9c3J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2[:[Bʛ]Xb$150d3650-a2a5-4882-83c3-c83a8c70e530jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd[23
+[
+\
+֜]View WeChat scan logic+Viewing remaining WeChat scan backend logic\r
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js"          dbs.forEach(db => {
+            detectedPaths.push({
+              account_hash: account.substring(0, 8) + '****',
+              db_path: path.join(dbDirAlt, db),
+              type: db
+            });
+          });
+        }
+      });
+    } catch (e) {
+      console.error('[WeChat Detect] Error scanning:', e.message);
+    }
+  }
+
+  if (detectedPaths.length === 0) {
+    return res.json({
+      success: false,
+      message: '未检测到微信数据目录。请确认微信已在此 Mac 上登录过，或手动填写数据库路径。',
+      paths: []
+    });
+  }
+
+  res.json({
+    success: true,
+    message: `成功探测到 ${detectedPaths.length} 个微信数据库文件！`,
+    paths: detectedPaths
+  });
+});
+
+
+// ==========================================
+// 🗺️ 飞书多维表格真实写入 (Lark Bitable Real API)
+// ==========================================X`

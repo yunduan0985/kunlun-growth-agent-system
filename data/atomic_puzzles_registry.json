@@ -1,0 +1,164 @@
+[
+  {
+    "id": "HOOK-01",
+    "category": "公域引流",
+    "name": "痛点反转开场钩子",
+    "description": "通过颠覆认知引发好奇与强打开率",
+    "content": "劝所有做[行业: 企业运营/做课/跨境]的朋友，千万别再盲目买 AI 工具了！(除非你懂这个逻辑)",
+    "input": "目标行业",
+    "output": "高打开率公域标题或视频首句"
+  },
+  {
+    "id": "HOOK-02",
+    "category": "公域引流",
+    "name": "数字强烈对比钩子",
+    "description": "用震撼的具体财务/工时数字建立信任",
+    "content": "从月入 3000 到 3 天搞定 5 万，我只做对了一件事：拿数字员工做闭环！",
+    "input": "收入或效率增长对比数值",
+    "output": "爆款朋友圈或小红书首句"
+  },
+  {
+    "id": "HOOK-03",
+    "category": "公域引流",
+    "name": "免费试用工具勾子",
+    "description": "赠送真实可运行的 Web/AI 工具试用权",
+    "content": "提供[生财黑客松亚军 AI 智能教务 OS]或[AI 跨境卖家工作站]免费试用链接，扫码即用。",
+    "input": "Web 应用 URL",
+    "output": "私域加好友裂变锁客"
+  },
+  {
+    "id": "TAG-01",
+    "category": "私域清洗",
+    "name": "进群自动化欢迎语与痛点调研",
+    "description": "用户加好友/进群后第一时间提取场景与意向",
+    "content": "🎉 欢迎加入【4天 AI 场景降本增效体验营】！请直接回复你的：【行业 + 目前业务中最耗工时的痛点】，领取专属 AI 资料包。",
+    "input": "用户回复文本",
+    "output": "用户行业标签 + 场景痛点"
+  },
+  {
+    "id": "TAG-02",
+    "category": "私域清洗",
+    "name": "意向评分与合伙人标签划分 (0-100分)",
+    "description": "自动化打分并分类黄金客户",
+    "content": "评分规则：基础进群分(+50) + 场景明确(+20) + 预算能力(+15) + 打卡完成(+15)。≥85分自动打上『👑 核心共创合伙人意向 (19,800)』。",
+    "input": "用户行为数据",
+    "output": "意向等级与导师分配指令"
+  },
+  {
+    "id": "MOMENTS-01",
+    "category": "去AI味朋友圈",
+    "name": "破折叠首句模板 (15字内)",
+    "description": "带强烈情绪与冲突，保证朋友圈不被折叠",
+    "content": "刚才看了一个学员发的朋友圈，我差点没气晕过去。",
+    "input": "今日发生真实冲突事件",
+    "output": "破折叠吸引力首句"
+  },
+  {
+    "id": "MOMENTS-02",
+    "category": "去AI味朋友圈",
+    "name": "评论区第 1 条引流避风控模板",
+    "description": "将敏感引流词放在评论区，规避微信封禁",
+    "content": "💬 [评论区第 1 条]: 觉得自己的朋友圈文案太生硬的，把我写的发我，我抽空免费帮你改一条。",
+    "input": "引流福利/联系动作",
+    "output": "安全零风控评论区跟帖"
+  },
+  {
+    "id": "CAMP-DAY1",
+    "category": "4天体验营",
+    "name": "Day 1 破冰与认知颠覆",
+    "description": "颠覆学员认知，树立卖结果不卖工具的观念",
+    "content": "拆解森马 1 亿 AI 落地案（94台数字员工干完545人的活）。告诫学员：AI时代技术会被追平，场景与结果才是护城河！",
+    "input": "森马案例数据",
+    "output": "体验营 Day 1 讲义与打卡作业"
+  },
+  {
+    "id": "CAMP-DAY2",
+    "category": "4天体验营",
+    "name": "Day 2 实操带练与手感拿取",
+    "description": "带学员现场操作真实工具，产生极致体感",
+    "content": "带领学员现场使用【教师 AI 错题本】或【卖家 AI 智能工作站】，一键生成自己的业务方案并截图打卡。",
+    "input": "实操 Web 应用",
+    "output": "学员打卡截图与好评反馈"
+  },
+  {
+    "id": "CAMP-DAY3",
+    "category": "4天体验营",
+    "name": "Day 3 独家场景 1V1 诊断",
+    "description": "评估学员业务场景商业化指数，发布白皮书",
+    "content": "1对1 评估学员场景商业化指数（0-100分），发布《5:5 场景共创合伙人计划》白皮书，锁定高意向合伙人。",
+    "input": "学员场景诊断表",
+    "output": "场景共创合伙人意向名单"
+  },
+  {
+    "id": "CAMP-DAY4",
+    "category": "4天体验营",
+    "name": "Day 4 闭营发售与 5:5 签约",
+    "description": "直播发售 19,800 共创营，限时早鸟与分润签约",
+    "content": "闭营直播发售 + 前 3 名早鸟优惠（加送价值 10,000 元 API 部署） + 签署 5:5 利润分成协议。",
+    "input": "发售政策与早鸟名额",
+    "output": "高客单成交与 5:5 合同签署"
+  },
+  {
+    "id": "SELL-SELF-01",
+    "category": "出售自用Agent",
+    "name": "当面或直播展示真实运行后台",
+    "description": "直接展示我们每天在用的飞书 36 Agent 集群",
+    "content": "现场演示【双星联合主 Agent】在飞书中响应自然语言、调用 30 万字 RAG 向量库秒级回答规章，并自动生成去 AI 味朋友圈。",
+    "input": "飞书机器人后台",
+    "output": "客户信任度拉满与视觉震撼"
+  },
+  {
+    "id": "SELL-SELF-02",
+    "category": "出售自用Agent",
+    "name": "现场导入客户真实业务数据测试",
+    "description": "用客户的数据现场秒出解决方案",
+    "content": "请客户提供一条他们公司的规章或产品资料，现场写入 SQLite RAG 库，1 秒后由 AI 给出专业应答与流程闭环。",
+    "input": "客户真实文件",
+    "output": "客户当场认同并询问价格"
+  },
+  {
+    "id": "SELL-SELF-03",
+    "category": "出售自用Agent",
+    "name": "Docker 一键私有化部署交钥匙",
+    "description": "提供极速一键部署，实现开箱即用",
+    "content": "提供 start_production.sh 生产脚本与预置 DeepSeek Key，协助客户 5 分钟在自己服务器上跑通私有化 Agent 节点。",
+    "input": "Docker 脚本与 Key",
+    "output": "交付完成与尾款结算"
+  },
+  {
+    "id": "COURSE-A-PUZZLE",
+    "category": "课程拼图",
+    "name": "跨境客服尺码引导换码降退货率原子块",
+    "description": "一键拦截尺码不合退货并引导免费补发",
+    "content": "提示词：买家称服装偏小要退货。客服表达诚挚歉意，并提供【免费补发大一码/免寄回】方案，降低 30% 退货损失。",
+    "input": "买家退货留言",
+    "output": "阻截成功与换码安排"
+  },
+  {
+    "id": "COURSE-B-PUZZLE",
+    "category": "课程拼图",
+    "name": "Midjourney 商业模特换装 Prompt 原子块",
+    "description": "3 秒生成商业摄影人像与虚拟换装",
+    "content": "Prompt: High-end commercial fashion photography, gorgeous female model wearing [产品描述], Hasselblad 85mm, f/1.8 --ar 3:4 --v 6.0",
+    "input": "服装描述",
+    "output": "商业级人像海报"
+  },
+  {
+    "id": "COURSE-D-PUZZLE",
+    "category": "课程拼图",
+    "name": "GEO Perplexity与ChatGPT 排名优化 Schema 原子块",
+    "description": "输出 JSON-LD 结构使生成式 AI 优先推荐",
+    "content": "JSON-LD: {@context: 'https://schema.org', @type: 'Product', name: '[品牌]-[产品]', aggregateRating: { ratingValue: '4.9' }}",
+    "input": "品牌与产品名",
+    "output": "GEO 权威推荐结构代码"
+  },
+  {
+    "id": "COURSE-H-PUZZLE",
+    "category": "课程拼图",
+    "name": "生财黑客松亚军 AI 智能排课消课原子块",
+    "description": "可视化日历排课与全班一键考勤消课",
+    "content": "冲突检测算法自动校验讲师与教室，一键扣减学员 1 课时并生成微信家校打卡卡片。",
+    "input": "考勤人员名单",
+    "output": "扣减课时与家校通知"
+  }
+]

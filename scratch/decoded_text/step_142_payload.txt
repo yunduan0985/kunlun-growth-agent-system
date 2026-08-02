@@ -1,0 +1,46 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/security/scan 
+=====================
+ /api/security/policy 
+=====================
+","EndLine":291,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/security/scan', (req, res) =\u003e {\n  const { text } = req.body;\n  if (!text) return res.status(400).json({ error: \"Missing parameter: text\" });\n\n  const isInjection = text.toLowerCase().includes(\"ignore previous\") || text.includes(\"
+=====================
+\");\n  const isSensitive = text.includes(\"
+=====================
+\") || text.includes(\"
+=====================
+\");\n\n  res.json({\n    isSafe: !isInjection \u0026\u0026 !isSensitive,\n    riskType: isInjection ? \"injection\" : (isSensitive ? \"sensitive_word\" : \"none\"),\n    details: isInjection ? \"Detected high-risk Prompt Injection attempt.\" : (isSensitive ? \"Detected forbidden terms.\" : \"Clear.\")\n  });\n});\n\n// API 
+=====================
+\napp.post('/api/security/policy', (req, res) =\u003e {\n  const { agent_id, operation_id } = req.body;\n  if (!agent_id || !operation_id) {\n    return res.status(400).json({ error: \"Missing parameters: agent_id or operation_id\" });\n  }\n\n  const sensitiveTools = ['runLarkCli', 'executeTerminalCommand', 'execute_local_command'];\n  const privilegedAgents = ['agent_ops', 'agent_architect', 'claude_code'];\n\n  const allowed = !sensitiveTools.includes(operation_id) || privilegedAgents.includes(agent_id);\n\n  res.json({\n    allowed,\n    reason: allowed ? \"Authorized.\" : `Access denied: Agent ${agent_id} is not privileged to call ${operation_id}.`\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":290,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding security and policy routes to Gateway","toolSummary":"Modify file"}:
+=====================
+wC&]e\%p.{~S,*('iOrJ2
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$2b55b43e-c8b0-4bb3-9ee3-bd989e2d0e39j
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+B"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+,Adding security and policy routes to Gateway

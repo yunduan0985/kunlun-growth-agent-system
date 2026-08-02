@@ -1,0 +1,30 @@
+-3750763034362895579H
+=====================
+OXNYasm-EZuc1MkPm4jj8QsX
+=====================
+b$c22f97a1-99e6-43d3-a3e3-413f088356e9j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-798bc82e-10df-4180-ab37-9ab588a3e1d4:
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ SecItemCopyMatching 
+=====================
+","EndLine":15,"Instruction":"
+=====================
+","ReplacementContent":"# 
+=====================
+ SecItemCopyMatching\nstatus, result = Security.SecItemCopyMatching(query, None)","StartLine":13,"TargetContent":"# 
+=====================
+ SecItemCopyMatching\nstatus, result = SecItemCopyMatching(query, None)","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/scratch/search_keychain.py","toolAction":"Adding Security prefix to SecItemCopyMatching","toolSummary":"Add namespace prefix"}:
+=====================
+replace_file_content`

@@ -1,0 +1,32 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/transcribe/status 
+=====================
+","EndLine":149,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+)\napp.get('/api/transcribe/status', (req, res) =\u003e {\n  const { task_id } = req.query;\n  if (!task_id) return res.status(400).json({ error: \"Missing parameter: task_id\" });\n\n  console.log(`[Transcription Status] Checking progress for Task: ${task_id}`);\n\n  res.json({\n    task_id,\n    status: \"completed\",\n    progress: 100,\n    transcription: getMockTranscription(\"https://www.youtube.com/watch?v=english_mcp_video\")\n  });\n});\n","StartLine":149,"TargetContent":"","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding transcription status routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$8bee06ec-0acd-4c68-aecb-45a6e9d2e0f8j
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+j"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+-Adding transcription status routes to Gateway

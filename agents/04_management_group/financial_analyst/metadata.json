@@ -1,0 +1,16 @@
+{
+  "id": "financial_analyst",
+  "name": "财务分析师",
+  "group": "管理组",
+  "description": "对公司财务报表、现金流、获客成本 (CAC) 和生命周期价值 (LTV) 进行专业数据分析与预测。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=financial_analyst",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/content/zsxq/publish 知识星球置顶发帖端点。",
+  "EndLine": 841,
+  "Instruction": "在服务器启动之前加入知识星球推送路由。",
+  "ReplacementContent": "\n// 模拟知识星球干货主题自动发布接口\napp.post('/api/content/zsxq/publish', (req, res) => {\n  const { title, content, group_name, is_sticky } = req.body;\n  if (!title || !content) return res.status(400).json({ error: \"Missing required parameters: title or content\" });\n\n  console.log(`[ZSXQ API] Publishing post: \"${title}\" on Planet: ${group_name || '昆仑增长主星球'}. Sticky: ${is_sticky}`);\n\n  res.json({\n    success: true,\n    topic_id: \"zsxq_topic_\" + Math.random().toString(36).substring(2, 9)\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 841,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding ZSXQ routes to Gateway",
+  "toolSummary": "Modify file"
+}

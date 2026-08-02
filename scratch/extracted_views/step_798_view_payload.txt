@@ -1,0 +1,7 @@
+ *
+2Цf:BJX(	0B!
+	sessionID-3750763034362895579PZ!req_vrtx_011Cd3usVD2XbRn8HLYQou9pXb$9854c2a5-7b94-497b-8274-45148b995d52jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd#
+f
+2(bot-19511d9e-2058-4905-b011-7a7f536211e0:
+#toolu_vrtx_01LduAGrvaiAR24bKVitr4CE	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":30,"StartLine":1,"toolAction":"Viewing gateway entry point","toolSummary":"View gateway top"}J	view_file`

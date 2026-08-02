@@ -1,0 +1,126 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "项目经理任务拆解与看板同步插件",
+    "version": "1.2.0",
+    "description": "提供给项目经理 Agent 进行大任务 WBS 阶段拆解、前置依赖配置及飞书多维表格敏捷看板同步的 API 规范。"
+  },
+  "paths": {
+    "/api/project/wbs/create": {
+      "post": {
+        "summary": "输入一个长周期的项目大目标，自动进行 WBS 阶段分解与关键路径前置依赖计算",
+        "operationId": "createWBSStructure",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "project_name": { "type": "string", "description": "项目大目标名称" },
+                  "raw_requirements": { "type": "string", "description": "项目核心需求说明" }
+                },
+                "required": ["project_name", "raw_requirements"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "WBS 拆解成功"
+          }
+        }
+      }
+    },
+    "/api/project/bitable/sync": {
+      "post": {
+        "summary": "将拆解好的 WBS 子任务列表批量同步推送写入飞书多维表格项目看板中",
+        "operationId": "syncToBitableTaskboard",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "project_name": { "type": "string" },
+                  "tasks": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "task_id": { "type": "string" },
+                        "description": { "type": "string" },
+                        "owner": { "type": "string", "description": "任务责任人" },
+                        "duration_hours": { "type": "integer" },
+                        "pre_dependencies": { "type": "array", "items": { "type": "string" } }
+                      },
+                      "required": ["task_id", "description", "owner", "duration_hours"]
+                    }
+                  }
+                },
+                "required": ["project_name", "tasks"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "看板同步成功"
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+ *
+2:	B	JQ#(	0B!
+	sessionID-3750763034362895579HPZUXJYaoDsK7ib_uMPyY-W4AkXb$f1792df7-40f2-4b66-9b3b-ab881af761a0jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd#
+؋
+		!**Prioritizing Specialized Tools**
+
+I'm focused on the instruction to prioritize specific tools. Avoiding generic bash tools like `cat` feels crucial. It seems using `grep_search` instead of `grep` is also a priority. I aim to adhere strictly to the principle of using the best-suited tool for each task.
+
+
+**Investigating Process Failure**
+
+I'm now investigating a process exit with code 11 within the `utilityProcess`. The `gatewayProcess.stdout` from `utilityProcess.fork` in Electron's `main.js` didn't provide any useful debug information in the console, but the Electron log in `/tmp/electron_kunlun.log` only contained the gateway port selection. It seems I need to figure out why the process crashed and whether logging is directed to the right place.
+
+
+**Diagnosing Native Module Issue**
+
+I've homed in on the core problem: a native module compilation mismatch, specifically with `sqlite3`. The `utilityProcess` crash, exit code 11, is a SIGSEGV, indicating a crash due to incompatible ABIs. This is because Electron's built-in V8 differs from standard Node.js. Running the same module in a system Node.js environment works fine, confirming the ABI incompatibility when used within Electron's helper process. This appears to be a classic Electron native module issue.
+
+
+**Analyzing Native Module Strategy**
+
+I'm now grappling with the implications of native modules in our Electron context. Initially, I thought that `child_process.spawn` with system Node.js was a solution, but the "zero-dependency" requirement complicates things. I've realized the core issue is the conflict between rebuilding for Electron and the need for a system Node.js environment. I'm weighing whether to rebuild for Electron and use `utilityProcess` or find a workaround to avoid native modules altogether, given `sqlite3`'s presence in `package.json`.
+
+
+**Investigating `sqlite3` Alternatives**
+
+I'm now exploring alternatives to the native `sqlite3` module. I'm considering if a pure-JS alternative exists, like `sql.js`, although its in-memory-only nature is a limitation. I am considering `better-sqlite3`. I'm also thinking we could either bundle a portable Node.js binary or provide fallback instructions if the system Node.js is not present when using `child_process.spawn`. Further, I plan to verify if the code 11 crash is specifically due to `sqlite3` by temporarily disabling it and capturing the `stderr` of `utilityProcess` in `electron/main.js` with `'pipe'`. I will check if the stream logs everything.
+
+
+**Confirming Native Crash Cause**
+
+I've confirmed the reason for the lack of `stderr` output: immediate process termination due to a C++ segfault caused by the native module. With `ELECTRON_RUN_AS_NODE=1`, I'm able to leverage the Electron executable as a Node.js interpreter via `child_process.spawn`. This approach seems like a solid path for testing and potentially resolving the native module issue.
+
+
+**Refining Implementation Strategy**
+
+I've hit upon a game-changer: leveraging `ELECTRON_RUN_AS_NODE=1` with `process.execPath`. This elegant solution allows us to spawn Electron itself as a Node.js process. The user doesn't need Node.js installed, and rebuilt native modules work seamlessly because of the matching Electron ABI, addressing the native module incompatibility issue. It's a clean, zero-dependency, out-of-the-box solution, no `utilityProcess` restrictions. It is better than my previous approaches!
+
+
+**Verifying `sqlite3` Compatibility**
+
+I'm now investigating `sqlite3`'s behavior within Electron's context. I'm focusing on whether it loads correctly in the Electron app when launched via `npm run electron`, specifically in dev mode. It did load previously, which suggests the module might be compatible. I need to confirm if it crashes when spawned via `process.execPath` (Electron) instead of system Node.js.
+
+
+**Clarifying Module Dependencies**
+
+I'm now clarifying native module dependencies within Electron. It has become clear `electron-builder`'s `install-app-deps` rebuilds modules like `sqlite3` for Electron's ABI during packaging. This makes spawning with the system Node.js in a packaged app a guaranteed crash. Thus, spawning with Electron's runtime (`process.execPath` or `utilityProcess`) is mandatory for native modules. The recent crash in development was due to an ABI mismatch.
+
+
+2(bot-ae8e2f3b-e20e-46ef-a343-a2ff5118fee5:
+3ax85040replace_file_content+{"AllowMultiple":false,"Description":"实现开发模式（系统 Node）与生产发布模式（内置 utilityProcess）的混合网关启动机制，防范开发阶段原生模块 ABI 冲突。","EndLine":104,"Instruction":"重构 startGateway，在开发阶段走 spawn('node')，在打包生产阶段走 utilityProcess.fork 以使用内置 Node 运行时并对接 Electron ABI。","ReplacementContent":"function startGateway(port) {\n  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;\n  const gatewayPath = isDev\n    ? path.join(__dirname, '../src/index.js')\n    : path.join(process.resourcesPath, 'app/src/index.js');\n\n  const env = Object.assign({}, process.env, {\n    PORT: String(port),\n    NODE_ENV: isDev ? 'development' : 'production',\n    KUNLUN_USER_DATA_PATH: app.getPath('userData') // ✅ 物理注入 OS 提供的安全可写目录\n  });\n\n  if (isDev) {\n    // ------------------------------------------\n    // 🛠️ 开发模式：使用系统 Node.js 启动网关\n    // 原因：开发环境下本地 sqlite3 等原生模块是针对系统 Node 编译的，防止 ABI 报错崩溃。\n    // ------------------------------------------\n    const { spawn } = require('child_process');\n    console.log(`[Electron] [Dev Mode] Starting gateway with system node on port ${port}`);\n    gatewayProcess = spawn('node', [gatewayPath], {\n      env,\n      stdio: ['pipe', 'pipe', 'pipe']\n    });\n\n    gatewayProcess.stdout.on('data', (data) =\u003e {\n      console.log(`[Gateway STDOUT] ${data.toString().trim()}`);\n    });\n\n    gatewayProcess.stderr.on('data', (data) =\u003e {\n      console.error(`[Gateway STDERR] ${data.toString().trim()}`);\n    });\n\n    gatewayProcess.on('exit', (code, signal) =\u003e {\n      console.warn(`[Gateway] Dev Process exited with code=${code}, signal=${signal}`);\n      handleGatewayExit(port);\n    });\n  } else {\n    // ------------------------------------------\n    // 📦 生产打包模式：使用内置 utilityProcess 启动网关\n    // 原因：打包后，electron-builder 会自动将 sqlite3 原生模块重新编译为 Electron ABI。\n    // 这样不仅免除了客户安装 Node.js 的技术依赖，且完美契合 Electron 原生模块签名，实现零依赖绿色运行。\n    // ------------------------------------------\n    console.log(`[Electron] [Prod Mode] Starting gateway with utilityProcess on port ${port}`);\n    gatewayProcess = utilityProcess.fork(gatewayPath, [], {\n      env,\n      stdio: 'pipe'\n    });\n\n    gatewayProcess.stdout.on('data', (data) =\u003e {\n      console.log(`[Gateway STDOUT] ${data.toString().trim()}`);\n    });\n\n    if (gatewayProcess.stderr) {\n      gatewayProcess.stderr.on('data', (data) =\u003e {\n        console.error(`[Gateway STDERR] ${data.toString().trim()}`);\n      });\n    }\n\n    gatewayProcess.on('exit', (code) =\u003e {\n      console.warn(`[Gateway] Prod UtilityProcess exited with code=${code}`);\n      handleGatewayExit(port);\n    });\n  }\n}\n\nfunction handleGatewayExit(port) {\n  if (restartCount \u003c MAX_RESTARTS \u0026\u0026 mainWindow \u0026\u0026 !mainWindow.isDestroyed()) {\n    restartCount++;\n    console.log(`[Guardian] Auto-restarting gateway (attempt ${restartCount}/${MAX_RESTARTS})...`);\n    setTimeout(() =\u003e startGateway(activePort), 1500);\n  } else if (restartCount \u003e= MAX_RESTARTS) {\n    console.error('[Guardian] Max restart attempts reached. Please restart the app.');\n  }\n}","StartLine":45,"TargetContent":"function startGateway(port) {\n  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）\n  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;\n  const gatewayPath = isDev\n    ? path.join(__dirname, '../src/index.js')\n    : path.join(process.resourcesPath, 'app/src/index.js');\n\n  console.log(`[Electron] Starting gateway using UtilityProcess on port ${port}, path: ${gatewayPath}`);\n\n  const env = Object.assign({}, process.env, {\n    PORT: String(port),\n    NODE_ENV: isDev ? 'development' : 'production',\n    KUNLUN_USER_DATA_PATH: app.getPath('userData') // ✅ 物理注入 OS 提供的安全可写目录\n  });\n\n  // 使用 Electron 内置的 utilityProcess.fork 消除本地 Node 强依赖\n  gatewayProcess = utilityProcess.fork(gatewayPath, [], {\n    env,\n    stdio: 'pipe'\n  });\n\n  gatewayProcess.stdout.on('data', (data) =\u003e {\n    console.log(`[Gateway STDOUT] ${data.toString().trim()}`);\n  });\n\n  if (gatewayProcess.stderr) {\n    gatewayProcess.stderr.on('data', (data) =\u003e {\n      console.error(`[Gateway STDERR] ${data.toString().trim()}`);\n    });\n  }\n\n  // 守护进程：网关异常退出时自动重启\n  gatewayProcess.on('exit', (code) =\u003e {\n    console.warn(`[Gateway] UtilityProcess exited with code=${code}`);\n    if (restartCount \u003c MAX_RESTARTS \u0026\u0026 mainWindow \u0026\u0026 !mainWindow.isDestroyed()) {\n      restartCount++;\n      console.log(`[Guardian] Auto-restarting gateway (attempt ${restartCount}/${MAX_RESTARTS})...`);\n      setTimeout(() =\u003e startGateway(activePort), 1500);\n    } else if (restartCount \u003e= MAX_RESTARTS) {\n      console.error('[Guardian] Max restart attempts reached. Please restart the app.');\n    }\n  });\n}","TargetFile":"/Volumes/MOVESPEED/下载/AIcode/Agent/electron/main.js","toolAction":"Implementing hybrid spawning for dev and prod modes in main.js","toolSummary":"Implement hybrid spawning"}:kk
+kM2hȢenpz/y!R;fq
+p5ku,au-|#א	 jٜ^$NKc҆L'QYJZ9'/97@O@dfZ#HO{y;AЪL2Y~͆UЬztn؜bW&1mzKfakh0v;a:W}奃XƢlQx7/Cm|dC={(^B䂑S^7xv$qV6pN	xZmUMb x7ℶq/Z\eA^ûQ#~/EȈ}c=UHBp/9j%A!}[V1Qp&M-i|oJa˘qR/I;X"|ʸHRU̒
+Nr]!?WEbK"F
+@߈jեtyMޤYCD,ZS1Gb6$\E-ȞqʛuÀ`]f~]PaG6㿐V	Pܡ}J8oQOHzbsn\xZ񤱇@R9L,D,]iz~LJ`E_=E]fN}M|F;R,BzfY0i}[׍P4gچP?xh&\ήKc)/Tc)F9eozcĕ0_To><ϖ=	S(: 8~"QoplW-.$OL}U0]Kɰ&;ŃC*hvjsnxsn_o5 V$Vl?8'ØD<!K*q
+4q됪[~S@VW~?2(TdsZ;bx=<bi=<QFz=_fŔQ:xS(5pUԋQ6)kcr_:\q]]u+e>xm!-b0"˧>45H$ Ӄs)(Cʑ9,R@+Z4]7lLOsޅ5_ru[*9e$%r5KǓW/q*kjֆ|
+p7"	Xǹ&fc
+?UҏV=Ze#o|MX]`Ծhl=ί{PBY.5v/aLQxlx%$Eɠ-tX/e迶e[|h5KtiK0NO&XÑ:k?aoYýUV嵳;A`
+z\nB>&!=31^9c@S("]{m0Og!5x,{@P"6~dqs}&pFk ĀzAB͆Sp&Vx#Dջ>7ލRkb<iQ,xR8jGQBxL.Pf$Qj[JׁZ̳[ǫ&3ەGPD/ ~*<01+tm>u4vBg0FU+6'2Kb@M
+	`ߪb3VIpWc^eB80vK0)Z?ˡpΒI5e[;~|]QP?o_r>K	t	/V-	ڳ{aI~kwݬh"8LbqZ4Ћ
+04.A	+O
+䫖0:>pGh-f8&o񵝷?:$̍dWXzA2N=)_1k/ePC\w]	ܬ9!%.NJWLN~Nn(`4tN 1jqiuz x̭A:sƴ>ZF=pZ+rmOHww1Ť11XPMЪis!$`MJO"`hm@9 7H5Īa(54b2:lcf3(R;<!F8굸+\_}:%]+Ҝrn>t9ɥN¿ExӫF7l1EKR[)ѾG<lfj⇊3z֙;f^BkPk*#*c<4y'u.l*@.J=~,Ο6pk Ҿ@\
+ U7F93&(.rgL>X7y=虚pP4:Wp'Zſ
+tvz}iD$^Qkڹse4֥: ͠'=l`S=,fy6?yҿ v IZWD[kbZYqmQfByNg˟$(֖VwTF";>}6(dJ#mzoߘLOVR
+hayڇ5B<j܂94D؇.u4?UŁ
+QvwWJ0o	kX|lm-niTW	V1&A	OFxpΞ-WH\pEG3Q`*<cR\cn,pJH"8S+AlUۑ~JjuRKxw۹MFIk$Tx)FE7x,*&}'sn4p|zn+fVzUؕya}ŔbMT#y'l8Ou}5,6I?fa'߃B6;$o vmR1QdȒYڬ")F<VX-w	VaKP.4 C{ɨ?n럐ERo[GsodڂDuslaRy,'3Y:<=@*vcԝ|rT0<լ0[.F<dz{d g_4O=i:oBzxoZIs՟jɗގxUro\S2lbӤ
+4HmӪb5Hڎ71UILYE5mut%ɦ[8_e+Rz$L@<t,a)WĳƉ)`@3wZ#.aivC"Lxg%l[sLA*K@3}Wt[j	z0y(ˮi3fKd-V{̂X1x8ҺvH5
+.5*,3d0K%nBIk}ױI&*A7K!rƹHyt?(oIމ瀜ٝ@Bsy;w~8ҷ#*21Z746PJzZl|XT]OTyɺXhZ$k2L?0Ɯkٽ 1Z$"h]Z1ͽhl&3)`e_,C:+423z'(h2V"G\'X?7gu%,IpnOwiZ	"y:PfؖD~y%L8j|
++F»މap!u$`nЁD(lG(ajÐJr}aYtMҙD[KΉ fvlƥՎU{߫Ow8+h>K`U7 a
+Qt䳪v]zmuΐnL^F;l
+,WȂ@ w	q=҉-xi#"J>ѳ-e{?|g(cvuӬHvc*uř[\6Q@˕l !QݷoB|C7ƦMZXGc'- 5(DZYެ:
+hNo7KRnx-ʵkf[P!vIq5ݞȊe+珩Gc4{Jͻtzd?m|nj<;K:zqbKKY'=d0'ֳr94dS}yX:Aorc8)?<m5
+Yk*qָ-T"-,5sAٵ9r"2)wIPU:D_g]ѫ%qѣGюPͭDH|DX[q[Jr97w<G<Fy2V⥭H5zAbZ{E7,CjrFXPW(7rQ|ˌuC*³ukRT+^Hj\`]ٜVT@<Ta`oUkx0^q硏ؑz4*o7U>6(QZsT8C8Ґ)8`_7BǰNhaC6pS>y?@AOvIw!7uǃUS qwk5}i9p:6HM):iϨïLt;OTA=W@Ddω}[_5_TAQIgsjqݚ	S%|6ZsŉosؙZِzC6HZe~w­Q{)Q +=K,v1fN1ݓ{B
+ #6Л'#H{/`7r<'G!$
+EgQW7
+zڣ9<Y;DgOE{V}HRȫHi]nMX )>̀lbW;&
+=Mb#<ľ?IwF@X'+ԹaM#4[rZ
+9 ^3~ӐI"iOѢ+};l~yu tt<Zb S2`Y3rsոHޟ֋䩭^u剧'OJQjTA)<D:Z/g%x|yіٟܽ=7
+E~O3G8(FP*J#ݦR@\ooU9ewrh,ʼ(H?<VǼRt|[Mͺ,$-{GoU*~x'N )^p$ÿ;aEKײ(9lٻ9
+TJ}UxKc*?])c
+0rLvULU%V]4ݷΏv;bnٳ
+a =EX|[X*)¦.crՅ<:liEpZ|{2^J 7Au+6 8!ʝm2t녓4Z7P\\25|^+[FObR} `=XŔD8,Б1t=?,\"7Яjm2Xf+ZAW?A[ml g0bzœw=o|=4:Pim n3i:!J1|:7]єbLN!L	=wȩF(J?OJq~e
+#ڽ¯2[cTk0aИ/`o=1j1B:氾ը*S5T1!柶|Lۥ1RUm}3X-xo+YyI47F%&gS:"gf̙evsҠ~[&}k PNE]̥ق<j^Lי6o&`E"*а{_PJ>MQԐ#զ5kݍD'51lG#	:TtKga8)9"8ȼ\lBmN^YH]@{lVkChԃ6e	O1my+cqa_<R˘.隌}/9eĞ
+,<3B6@;O,SnOfQ&m<2.Ĥ,m@Z!z`]pR]]WLgi1TUT*2@dn>۔&UDWY%
+ t6RVbXξ|mܙNNRP^dv[=iΥg%^,Õ{GT~3 +)pg8d3 x&ԺyfB3uEMtzy$b>
+ct<Q^O<w8;ߛ4$×tn*]KKv,zBև'0c|d>`*_rLve
+>۳d=v<څgyO_~X]{up04Y͙ξ+Gpm/_z̿]8­y`=Jo>ZeON}tbSup~GZAF'Q`=H3?WoB&u*?8M*AJ'I@Єan%Ep)c5D@ikˇwW|5$뢵#j?[;H/+X^:ӯK5Y."Nٸ4ױp=oXM5UTB׋bn5]00(''~d2o\~m@qE:i~yȐ?qlM)xat_gZB2ܐ14bZ׬NwkeD 'TQ"`~^8DV@l@8 S:1.L̍.5QS!cꫪJ
+9-ESpA9?S:seKX>/ޮ2k?]_6!z)&gҴw{^"d0E~>]d̨'`O!VrF7Pcoy !0S(+|܀8vt֊րT8IP7{뺡v] Oj<κ#
+c+ͳ
+\x<WFѯΉ997$"pv0j}_ _d@Ȏj`/92ڬkŸg?Үw!b0@%vVjAD56veP>/	`	6ts-*
+!3)]=F/KIF'֓?! +x4֝vp~Y\!RQ:gA÷UiZR5_!I;d~B}w15ʦg61%￤Gn[\%z46ω:DyǊʮaT@ẻ	H%$<LOcӦ!t5DTI" ƧxoCdZAzDOFD.FsۣeΤ߸cbpna~ۈ;L]F%dM&!jI.Lˍ\hq$v1Q˳\̺s7H#Ӆzd3pH\2*
+fyP˺uo+gM6TBLPڦsW	=|Y-ݘ*69:+ykՏU}*2]1BN0Y! {Kϔz5x].*DAp˟';˲nCV{YS"jj
+bfL8gG|cPQcNe=55`pZ&?-~ ZG
+ne0%j;xEwT4x;~dYitԑ^h[pvߘI)²V6rD07ͩ>d"4W|ο|-Eޙv!i#ۡ6 5(<I!TќEV} w'ŘĊ1s 
+ab$u~h|gOEΕzwo!1쵨Ais7rK 0C{^fI}Mn$) b[5½v:&ES_wֳ*vO<O
+;K5+?ޯ!g^rCwHm,Bx4wViG3j 	P[R'UqPѦխSxf+ZwsFE(W,$Ѽu5X
+Jק~y/xCKkKM, ¾<b=fĕQ[=:o{9}*.!tiu.fg1@<b!agߠ(nP\uxƧ?:4()'?H$C J:)3`/hh`ٻNoHPBlo2Qci<MAor_NI??$К6i q0\#Hs@D"29ms
+R`LLc#ktNF~f`8ڡhsXaҋ:Q`hz{@sqiQa!,^jpam;ᩋ1Ho28f;	N|OqI:wKc; ZD R+*!]x/]ꋗÙNRXu?#FP~VӱL>aU!(C&|4ŏqm31)[qyv]KqW#{o?4Y]s<' )y1M&|MSM	@1a{[M9S%K8i|{39gS"a.@mu9?r03j6qr\fEK2Y:!~EbJe4Bkz7r{ަt18Ҹ@(1ASour*È㲴K:댙f#G!+Q*3fDb1W?vht]H#y.ЃԱ\-M$KVm-sZñϿqpܔ4-^;cax4s>~p6s]}ZFG{I~n: U[gDmeDG9-x($;ߦ&>? twDɿ*	RܞQrXp'{\yʡuj^{  WrzՃHű 쨏sbA*ȨR=wrwB^I6w=Abo˚ 7#Ё'fLbAǣYO䎲D0L}sG\[rɒXT#炄[F zO-LC<y1\:*K_<ViBvYvǮakƺ8*,g
+^k:eQ;m͙Y_{ 5_s9ÿ-MLݻe{t@;^)0&TdRUdrGhsUN\d
+\巃VKVLF[?'o:aeU穢QƝ0"9YWp2*W ߢ㱂Ϗ&I{re6ƛם ~e~!xO Tv4bpr_#uo$eq#[Q(ъo/UDi7u̿]Eܮ>6#^:Cig /O9yXZdmFr\M66=t\s[Of?'EwP0(*^7KP!XFըzbR.50+,ƄSjAamp{ڑPܭ08t+Q~K<<_{_Es]kGtXrlY[r ]㿓4	=VS&5/HytGլs	6C1oGhn2DsmHپ.]
+!5wX %	pXF/ߖ6N q/[SJFM?"]ưևxٯxlRi̿@?ie` Vt,.*DXpklazvQ[A5E\L FPv;[;$,B}:$T̲'<[eImOί8f)_ȶ$ܸRǄ'3j(̀ƿb[ԲZ2~qۊAJsDReZpcVqL(#d}UށPZŊٯGz;}zidȗ j>88x#
+\ݠ^n^\07ga`:	=1G߸bn%,p27O[9\9@j|PǠ{{ $!pWam-sOI=W#nca:-!&TsCA|h51G>Ym)^Lg`~u){AhO/!xSooO ٜat.݄DLܧ_V3 `ïb>ک/xN?CzBnUa^Etaɴ?3!tXpЫXZ]̱PC{cB4xw|80#?0b\Sg{ =p'c nomf1bWWg8cX><}1|{TnR3z(B.J/")NeTf0ٜS4+,ӆCq-%^祙1{QF[D(V,-.a,l$̋x!hfPcmY`~-1@[58JNX~jEG{4E)ed!b't
+3\ߘzFTB.i)Jgp}״ƭҙ1rv7) /lUDAlƁR']*>Ծ8/ՃBcGebY(h(68KO)q.,wufuϣw7ޚHŚY8ME I:j}iO=cW:ΑPTґ\ZR\;('?qjPf|XMRaF3 k3Q["ƗjvtiOAgr|	yŴWWZ՚oveHjzv\S؎= ;ҳ(}'>lOW&Sh|Yťq~-Ժ8}Z=VzP᧩W,߇bzvMkIyT.J
+!WaUy9Neu/6,R?$@3BQ̮A N
+KvvgiCRD8XgGkwa!U)#\<~x^AS<#Sw
+ȟx*-?km,ize;Ah.] z !tZj6ijBPIIL
+wcJG4[RƝa/R{GCj$-C@=Lp^%YC=4]mMUz~.=Q`c5~
+≴RnsG?&<ֶϳ8Up,Ne|,24-n$0inbcBz&W*PO[ęМA#wWjUM*{Y tXc5jV$:ٜ}66:+ZҀðd&(6֥z`i:n3;w
+cL&K#S>3ќ톛˥]cյ6CMi(e\polGKE<:G='G>	g`,ю25?(7X$8|>Y˸/o{kjN/ԇ!{NS3]5Y2މ`7	S"rPma( w*6,UߊZ&LFdR}Tfv艨E!uv<~\JL}N0[qUh[:e2fڢpyNd3!"3)|5N-MK/PmM6u,삧Bϳ@7.PQF^#6PfD}qc>Z+#/?S}e&h.05OGoؑ&G5U
+Io|1YJ}U׏	R'z~92ٮ)'D̖w_ ;a~.dPqxrnyQG9"' mX]E:/^zS0'_N9b;aQ-,^鎷1ٗ'o_q2IՐj禠?lEDȦA1fF!IJhofdӘ&}=!zmW&E?zsl,Agv籯ʦ9'plCGj0w61!l"dI+2&>+?	q^P#L]n*-	{f!)KC^[5
+3)O.m
+✮v~Xqc$?sHZ>JKrBw?y#+θdV1qx۾ؼV qxJqFkuIpL53~?@*2ju2w[]+n1tσMh@Nu_y66.oG*Neݨ%ͽ#G|H>scT3Lmq?wE旖[.ER>ļuԺL4*.@'^6rE'4hl	Oϗ<qR(B˥  i7wHzL_DZNnnAԂݵ?Ei"
+Q+ؗܤVpqÍb?bO{cv:0
+g
+	gxd aXl;RM4$Y@/Vb&hFWZBcDnm~)E)WPu8EKj֭gn[[|2=BP},^bqӴtp53!KHW2%1OMg!h(3p0J /iJreplace_file_contentZ`

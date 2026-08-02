@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/combat/collector/scrape 竞品网页爬取与分析端点。",
+  "EndLine": 947,
+  "Instruction": "在服务器启动之前加入公开网页爬取路由。",
+  "ReplacementContent": "\n// 模拟网页抓取与竞品价格检测接口\napp.post('/api/combat/collector/scrape', (req, res) => {\n  const { url } = req.body;\n  if (!url) return res.status(400).json({ error: \"Missing parameter: url\" });\n\n  console.log(`[Scraper Engine] Pulling DOM from: ${url}`);\n\n  res.json({\n    success: true,\n    site_title: \"竞品 AI 销冠官网\",\n    pricing_plans: [\n      { name: \"Starter\", price: \"$19/mo\", limit: \"1,000 Messages\" },\n      { name: \"Pro\", price: \"$99/mo\", limit: \"10,000 Messages\" }\n    ],\n    detected_changes: [\n      \"官网悄悄上线了‘按量付费’计费方案，降低入门门槛。\",\n      \"新增了飞书多维表格一键导出插件。\"\n    ]\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 947,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding scraper routes to Gateway",
+  "toolSummary": "Modify file"
+}

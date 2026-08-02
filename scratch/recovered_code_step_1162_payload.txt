@@ -1,0 +1,32 @@
+-3750763034362895579H
+=====================
+W3BYapHMML_j_uMPjPnSiAMX
+=====================
+b$49cbc5c5-3366-46c5-8fdd-acb4b9ec7dd8j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Prioritizing Specialized Tools**
+
+I'm focusing intently on using the most specialized tools available. I'm actively avoiding generic bash commands where more tailored alternatives are accessible. I'm actively reminding myself not to use 'cat' to manipulate files.
+
+
+2(bot-5a1560ee-9fc6-4bc8-93ba-9bdfc154b407:
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"Remove duplicate jwt declaration that caused SyntaxError.","EndLine":252,"Instruction":"Remove duplicate jwt declaration on line 250","ReplacementContent":"// ==========================================\n// 
+=====================
+\n// ==========================================","StartLine":249,"TargetContent":"\nconst jwt = require('jsonwebtoken');\n\n// ==========================================\n// 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Removing duplicate jwt declaration","toolSummary":"Remove duplicate jwt"}:
+=====================
+Vx'[R|y2V"6c0U
+-4,p.bGO
+=====================
+replace_file_contentZ

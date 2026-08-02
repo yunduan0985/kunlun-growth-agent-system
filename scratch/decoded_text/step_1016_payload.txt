@@ -1,0 +1,41 @@
+-3750763034362895579P
+=====================
+Z!req_vrtx_011Cd58wKiQ4iQr79zrX96kQX
+=====================
+b$9043cfd8-2487-4216-819c-4b1fef5a6e3cj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-0c25d39f-e0c1-4c05-8baa-e6e94897d537:
+=====================
+
+#toolu_vrtx_018KiN1hfrRUwdAvUL8pdBvr
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":907,"Instruction":"
+=====================
+","ReplacementContent":"    let _authToken = localStorage.getItem('kunlun_token') || '';\n    let _currentUser = null;\n\n    // 
+=====================
+\n    function getCurrentRole() {\n      return _currentUser ? (_currentUser.role || 'sales') : 'sales';\n    }\n\n    // 
+=====================
+\n    const ROLE_DISPLAY = {\n      admin:  { icon: '
+=====================
+ (Admin)',  color: '#1d1d1f' },\n      editor: { icon: '
+=====================
+ (Editor)', color: '#0071e3' },\n      sales:  { icon: '
+=====================
+ (Sales)',    color: '#34c759' },\n    };\n\n    // 
+=====================
+\n    function updateRoleBadge(role) {\n      const info = ROLE_DISPLAY[role] || ROLE_DISPLAY.sales;\n      const iconEl = document.getElementById('role-badge-icon');\n      const textEl = document.getElementById('role-badge-text');\n      const badgeEl = document.getElementById('role-badge-display');\n      if (iconEl) iconEl.textContent = info.icon;\n      if (textEl) textEl.textContent = info.text;\n      if (badgeEl) badgeEl.style.borderColor = info.color + '44'; // 
+=====================
+\n    }\n\n","StartLine":905,"TargetContent":"    let _authToken = localStorage.getItem('kunlun_token') || '';\n    let _currentUser = null;\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Injecting getCurrentRole helper function","toolSummary":"Add getCurrentRole"}J
+=====================
+replace_file_content`

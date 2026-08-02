@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课程 B：AI 商业视觉设计实战营 - 商业视觉工作站</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-logo">B</div>
+      <div>
+        <div style="font-size:1.2rem; font-weight:700;">AI 商业视觉设计实战营</div>
+        <span style="font-size:0.7rem; background:linear-gradient(135deg,#ec4899,#8b5cf6); padding:2px 8px; border-radius:20px;">课程 B 官方商业视觉工作站</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="model">
+        💃 商业人像与模特换装
+      </button>
+      <button class="tab-btn" data-tab="packaging">
+        📦 3D 渲染与爆款主图
+      </button>
+      <button class="tab-btn" data-tab="controlnet">
+        🎯 ControlNet 姿势控图
+      </button>
+      <button class="tab-btn" data-tab="syllabus">
+        📚 课程大纲与 Prompt
+      </button>
+    </div>
+
+    <div>
+      <button class="btn" onclick="alert('已打通 Midjourney & ComfyUI 视觉生成引擎！')">⚡ 系统状态: 正常</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Tab 1: Model & Outfit -->
+    <div id="model" class="tab-content active">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">💃 Midjourney / ComfyUI 商业摄影与模特换装 SOP</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>服装/产品描述：</label>
+              <input type="text" id="outfitType" class="form-control" value="法式复古真丝连衣裙 (Red Luxury Silk Dress)">
+            </div>
+
+            <div class="form-group">
+              <label>模特风格与光影设置：</label>
+              <select id="modelStyle" class="form-control">
+                <option value="European Editorial Studio">欧美时尚杂志摄影棚光</option>
+                <option value="Asian Minimalist Daylight">日系极简自然日光</option>
+                <option value="Street Fashion Cyberpunk">街头潮牌赛博朋克光影</option>
+              </select>
+            </div>
+
+            <button class="btn" style="width:100%;" onclick="generateModelPhotoPrompt()">✨ 1秒生成商业模特提示词 & ComfyUI 工作流</button>
+          </div>
+
+          <div>
+            <div id="modelOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: 3D Packaging -->
+    <div id="packaging" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📦 3D 产品渲染与爆款电商主图生成</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>产品品类与外观材质：</label>
+              <input type="text" id="productType" class="form-control" value="高端抗衰精华液玻璃瓶 (Frosted Glass Serum)">
+            </div>
+
+            <button class="btn" style="width:100%;" onclick="generate3DPackagingPrompt()">📦 1秒生成 Octane 3D 渲染爆款主图</button>
+          </div>
+
+          <div>
+            <div id="packagingOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: ControlNet -->
+    <div id="controlnet" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">🎯 ControlNet 与 IP-Adapter 角色控图与姿势锁定</h3>
+        <p style="color:var(--text-muted); line-height:1.6;">
+          提供 Canny 轮廓锁定、OpenPose 姿势锁定与 IP-Adapter 材质迁移的推荐参数。
+        </p>
+      </div>
+    </div>
+
+    <!-- Tab 4: Syllabus -->
+    <div id="syllabus" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📚 课程 B 教学大纲与降本 90% 流程全闭环</h3>
+        <div style="line-height:1.8; color:var(--text-muted);">
+          <p><strong style="color:var(--text-main);">Day 1：</strong> Midjourney 与 ComfyUI 商业摄影与模特换装 SOP</p>
+          <p><strong style="color:var(--text-main);">Day 2：</strong> 电商主图 3D 包装与场景化爆款海报生成</p>
+          <p><strong style="color:var(--text-main);">Day 3：</strong> ControlNet 与 IP-Adapter 角色及产品一致性控图</p>
+          <p><strong style="color:var(--text-main);">Day 4：</strong> 企业级视觉设计降本 90% 流程全闭环交付</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

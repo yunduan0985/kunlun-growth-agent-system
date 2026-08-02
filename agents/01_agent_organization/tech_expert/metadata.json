@@ -1,0 +1,16 @@
+{
+  "id": "tech_expert",
+  "name": "技术专家",
+  "group": "agent组织部",
+  "description": "提供深度的全栈技术支持、算法研发建议和高并发系统架构设计指南。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=tech_expert",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

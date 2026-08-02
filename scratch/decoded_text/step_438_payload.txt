@@ -1,0 +1,46 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/combat/manual/compile 
+=====================
+","EndLine":990,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/combat/manual/compile', (req, res) =\u003e {\n  const { chapter_title, raw_sop_text, warnings, attachment_links } = req.body;\n  if (!chapter_title || !raw_sop_text) {\n    return res.status(400).json({ error: \"Missing parameter: chapter_title or raw_sop_text\" });\n  }\n\n  console.log(`[Manual Compiler] Bundling chapter: \"${chapter_title}\"...`);\n\n  const compiledMarkdown = `\n# 
+=====================
+${chapter_title}\n- **
+=====================
+: 2026-07-15]\n\n---\n\n\u003e [!IMPORTANT]\n\u003e **
+=====================
+\n${raw_sop_text}\n\n### 
+=====================
+\n${(attachment_links || []).map(link =\u003e `- 
+=====================
+](${link})`).join('\\n')}\n  `;\n\n  res.json({\n    success: true,\n    compiled_markdown: compiledMarkdown,\n    save_path: \"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/docs/manual_chapter.md\"\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":990,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding manual compile routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$1eea91b9-3054-42aa-a172-18657aa3c4faj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+'Adding manual compile routes to Gateway

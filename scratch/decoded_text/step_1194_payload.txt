@@ -1,0 +1,49 @@
+-3750763034362895579H
+=====================
+HXFYapCoBfze_uMPvtH80AkX
+=====================
+b$a6bfeab9-daac-436e-9e1e-1d32eb8e015cj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Defining the Whitelist**
+
+I've successfully identified that the whitelist is defined as `AUTH_WHITELIST`. My next step involves modifying `src/index.js`. Specifically, I'm integrating `/api/auth/machine-id`, `/api/auth/license/status`, and `/api/auth/license/activate` into the `AUTH_WHITELIST`.
+
+
+2(bot-c387714c-a594-4a0b-b168-7005d040cf50:#
+
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":60,"Instruction":"
+=====================
+","ReplacementContent":"// JWT 
+=====================
+\nconst AUTH_WHITELIST = [\n  '/api/auth/login',\n  '/api/auth/register',\n  '/api/auth/check-init',\n  '/api/auth/machine-id',\n  '/api/auth/license/status',\n  '/api/auth/license/activate'\n];\n\n// ------------------------------------------\n// 
+=====================
+)\n// ------------------------------------------\nconst LICENSE_FILE = path.join(DATA_DIR, 'license.json');\nconst LICENSE_SALT = 'KUNLUN_AGENT_SALT_2026_OFFLINE';\n\nfunction getMachineId() {\n  const interfaces = os.networkInterfaces();\n  const macs = [];\n  for (const name of Object.keys(interfaces)) {\n    for (const net of interfaces[name]) {\n      if (!net.internal \u0026\u0026 net.mac \u0026\u0026 net.mac !== '00:00:00:00:00:00') {\n        macs.push(net.mac);\n      }\n    }\n  }\n  macs.sort();\n  const raw = macs.join(':') || os.hostname();\n  return crypto.createHash('sha256').update(raw).digest('hex').toUpperCase().substring(0, 16);\n}\n\nfunction verifyLicense(code) {\n  if (!code) return false;\n  const mid = getMachineId();\n  const expected = crypto.createHash('md5').update(mid + LICENSE_SALT).digest('hex').toUpperCase().substring(0, 16);\n  return code === expected;\n}\n\nfunction isSystemActivated() {\n  if (!fs.existsSync(LICENSE_FILE)) return false;\n  try {\n    const data = JSON.parse(fs.readFileSync(LICENSE_FILE, 'utf-8'));\n    return verifyLicense(data.license_key);\n  } catch {\n    return false;\n  }\n}\n\nfunction authMiddleware(req, res, next) {\n  // 
+=====================
+\n  if (!req.path.startsWith('/api/')) return next();\n  \n  // 1. 
+=====================
+\n  const isWhiteListed = AUTH_WHITELIST.some(w =\u003e req.path.startsWith(w));\n  if (!isWhiteListed \u0026\u0026 !isSystemActivated()) {\n    return res.status(402).json({ error: 'LICENSE_REQUIRED', message: '
+=====================
+' });\n  }\n\n  // 2. 
+=====================
+\n  if (isWhiteListed) return next();\n\n  const authHeader = req.headers['authorization'];\n  const token = authHeader \u0026\u0026 authHeader.split(' ')[1]; // Bearer \u003ctoken\u003e","StartLine":46,"TargetContent":"// JWT 
+=====================
+\nconst AUTH_WHITELIST = [\n  '/api/auth/login',\n  '/api/auth/register',\n  '/api/auth/check-init',\n];\n\nfunction authMiddleware(req, res, next) {\n  // 
+=====================
+\n  if (!req.path.startsWith('/api/')) return next();\n  // 
+=====================
+\n  if (AUTH_WHITELIST.some(w =\u003e req.path.startsWith(w))) return next();\n\n  const authHeader = req.headers['authorization'];\n  const token = authHeader \u0026\u0026 authHeader.split(' ')[1]; // Bearer \u003ctoken\u003e","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding license validation middleware","toolSummary":"Add license validation middleware"}:
+
+=====================
+replace_file_contentZ

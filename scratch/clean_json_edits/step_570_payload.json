@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "将 Gateway src/index.js 的默认启动端口从 8000 更换为专属端口 8888。",
+  "EndLine": 11,
+  "Instruction": "修改端口声明的默认回退值。",
+  "ReplacementContent": "const PORT = process.env.PORT || 8888;",
+  "StartLine": 10,
+  "TargetContent": "const PORT = process.env.PORT || 8000;",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Changing Gateway port to 8888",
+  "toolSummary": "Modify file"
+}

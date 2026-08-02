@@ -1,0 +1,37 @@
+{
+  "Description": "在 index.html 网页前端中，补充缺失的 switchKbTab 选项卡切换 JavaScript 函数，并在所有前往本地网关（/api/system/ 等受保护路由）的 fetch 请求中追加 Authorization: Bearer JWT 令牌头部，彻底解决因鉴权拦截导致的页面“无反应”与“Loading...”悬挂 Bug。",
+  "Instruction": "在前端脚本部分插入 switchKbTab 函数；在微信探测、Token账单、知识库列表、参数保存等 fetch 调用处补上 Authorization 令牌请求头。",
+  "ReplacementChunks": [
+    {
+      "AllowMultiple": false,
+      "EndLine": 2065,
+      "ReplacementContent": "        const res = await fetch(`${getGatewayUrl()}/api/wechat/detect-path`, {\n          headers: { 'Authorization': `Bearer ${_authToken}` }\n        });",
+      "StartLine": 2064,
+      "TargetContent": "        const res = await fetch(`${getGatewayUrl()}/api/wechat/detect-path`);"
+    },
+    {
+      "AllowMultiple": false,
+      "EndLine": 2113,
+      "ReplacementContent": "        const res = await fetch(`${getGatewayUrl()}/api/system/token/usage`, {\n          headers: { 'Authorization': `Bearer ${_authToken}` }\n        });",
+      "StartLine": 2112,
+      "TargetContent": "        const res = await fetch(`${getGatewayUrl()}/api/system/token/usage`);"
+    },
+    {
+      "AllowMultiple": false,
+      "EndLine": 2171,
+      "ReplacementContent": "        const res = await fetch(`${getGatewayUrl()}/api/system/knowledge/list`, {\n          headers: { 'Authorization': `Bearer ${_authToken}` }\n        });",
+      "StartLine": 2170,
+      "TargetContent": "        const res = await fetch(`${getGatewayUrl()}/api/system/knowledge/list`);"
+    },
+    {
+      "AllowMultiple": false,
+      "EndLine": 2226,
+      "ReplacementContent": "    // 切换多源知识库选项卡 (Local/Lark/NotebookLM/IMA)\n    function switchKbTab(tabId, btn) {\n      const contents = document.querySelectorAll('.kb-tab-content');\n      contents.forEach(c => c.style.display = 'none');\n      const activeContent = document.getElementById(`kb-tab-${tabId}`);\n      if (activeContent) activeContent.style.display = 'block';\n      const buttons = document.querySelectorAll('.kb-tab-btn');\n      buttons.forEach(b => {\n        b.style.color = 'var(--text-muted)';\n        b.classList.remove('active');\n      });\n      btn.style.color = 'var(--text-main)';\n      btn.classList.add('active');\n    }\n\n    // 🕊️ 飞书与 NotebookLM 多源知识库前端配置接口\n    let currentKnowledgeConfig = {};\n    async function loadKnowledgeProviderInputs() {\n      try {\n        const res = await fetch(`${getGatewayUrl()}/api/system/config/knowledge`, {\n          headers: { 'Authorization': `Bearer ${_authToken}` }\n        });",
+      "StartLine": 2223,
+      "TargetContent": "    // 🕊️ 飞书与 NotebookLM 多源知识库前端配置接口\n    let currentKnowledgeConfig = {};\n    async function loadKnowledgeProviderInputs() {\n      try {\n        const res = await fetch(`${getGatewayUrl()}/api/system/config/knowledge`);"
+    }
+  ],
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Adding switchKbTab and missing authorization headers to RAG list and tab requests in index.html",
+  "toolSummary": "Add switchKbTab & auth headers"
+}

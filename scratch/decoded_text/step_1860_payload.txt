@@ -1,0 +1,88 @@
+{"CommandLine":"python3 scratch/extract_code.py","Cwd":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent","WaitMsBeforeAsync":3000,"toolAction":"Running extract_code.py to extract code snippets from previous session logs","toolSummary":"Run extract_code.py"}:
+=====================
+WaitMsBeforeAsync*
+toolAction*
+=====================
+b$fccc4b95-0c4b-411a-a677-c09bdfcb9ef0j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+KRunning extract_code.py to extract code snippets from previous session logs
+=====================
+&/Volumes/MOVESPEED/
+=====================
+ Extracting code chunks from previous transcript: /Users/dasean/.gemini/antigravity/brain/339f5518-9980-4e89-a848-d3d6b7f639c9/.system_generated/logs/transcript_full.jsonl...
+
+=====================
+ Step 17: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_17_replace.js
+
+=====================
+ Step 25: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_25_replace.js
+
+=====================
+ Step 39: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_39_replace.js
+
+=====================
+ Step 45: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_45_replace.js
+
+=====================
+ Step 51: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_51_replace.js
+
+=====================
+ Step 59: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_59_replace.js
+
+=====================
+ Step 65: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_65_replace.js
+
+=====================
+ Step 67: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_67_replace.js
+
+=====================
+ Step 73: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_73_replace.js
+
+=====================
+ Step 75: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_75_replace.js
+
+=====================
+ Step 77: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_77_replace.js
+
+=====================
+ Step 87: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_87_replace.js
+
+=====================
+ Step 101: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_101_replace.js
+
+=====================
+ Step 121: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_121_replace.js
+
+=====================
+ Step 138: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_138_replace.js
+
+=====================
+ Step 160: replace_file_content
+   Saved chunk to scratch/extracted_chunks/step_160_replace.js
+
+=====================
+python3 scratch/extract_code.py
+=====================
+python3 scratch/extract_code.py

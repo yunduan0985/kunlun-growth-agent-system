@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/x/likes/fetch 与 /api/x/likes/archive 两个点赞审计归档端点。",
+  "EndLine": 553,
+  "Instruction": "在服务器启动部分之前加入 X 点赞获取和点赞归档路由。",
+  "ReplacementContent": "\n// 模拟获取指定 X 账号点赞记录接口\napp.get('/api/x/likes/fetch', (req, res) => {\n  const { username, limit } = req.query;\n  if (!username) return res.status(400).json({ error: \"Missing parameter: username\" });\n\n  console.log(`[X Likes Exporter] Fetching likes for user: @${username} (limit ${limit || 10})`);\n\n  res.json([\n    {\n      author: \"karpathy\",\n      tweet_url: \"https://x.com/karpathy/status/999991\",\n      content: \"I've been writing custom integrations all my life, but MCP standardizes everything. It's the Unix socket of LLM apps.\",\n      timestamp: new Date(Date.now() - 3600000 * 5).toISOString()\n    },\n    {\n      author: \"sama\",\n      tweet_url: \"https://x.com/sama/status/999992\",\n      content: \"GPT-5 is looking incredibly smart. The reasoning capabilities will shock people.\",\n      timestamp: new Date(Date.now() - 3600000 * 12).toISOString()\n    }\n  ]);\n});\n\n// 模拟点赞归档存入数据库/知识库接口\napp.post('/api/x/likes/archive', (req, res) => {\n  const { username, tweet_url, content, motivation } = req.body;\n  if (!username || !tweet_url || !content) {\n    return res.status(400).json({ error: \"Missing required parameters for archive.\" });\n  }\n\n  console.log(`[Likes Archive] Storing liked tweet by @${username}. Motivation: ${motivation || 'none'}`);\n\n  res.json({\n    success: true,\n    archive_id: \"arch_\" + Math.random().toString(36).substring(2, 9)\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 553,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding X likes routes to Gateway",
+  "toolSummary": "Modify file"
+}

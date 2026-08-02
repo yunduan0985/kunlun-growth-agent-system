@@ -1,0 +1,16 @@
+{
+  "id": "shuai_knowledge_base",
+  "name": "帅总知识库",
+  "group": "数据组",
+  "description": "核心私有知识检索与问答 Agent，基于本地文档和行业研究报告进行精准 RAG 问答。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=shuai_knowledge_base",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/finance/audit 项目财务核算与超支预警端点。",
+  "EndLine": 919,
+  "Instruction": "在服务器启动之前加入财务决算审计路由。",
+  "ReplacementContent": "\n// 模拟财务决算审计接口\napp.post('/api/finance/audit', (req, res) => {\n  const { project_name, budget_limit, actual_expenses, estimated_revenue } = req.body;\n  if (!project_name || budget_limit === undefined || actual_expenses === undefined || estimated_revenue === undefined) {\n    return res.status(400).json({ error: \"Missing required numeric parameters for financial audit.\" });\n  }\n\n  console.log(`[Financial Audit] Processing accounting ledger for project: ${project_name}`);\n\n  const variance_ratio = (actual_expenses - budget_limit) / budget_limit;\n  const roi = (estimated_revenue - actual_expenses) / actual_expenses;\n  let risk_level = \"none\";\n\n  if (variance_ratio > 0.1 || roi < 1.0) {\n    risk_level = \"high\";\n  } else if (roi < 1.5) {\n    risk_level = \"medium\";\n  }\n\n  res.json({\n    success: true,\n    variance_ratio,\n    roi,\n    risk_level\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 919,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding finance routes to Gateway",
+  "toolSummary": "Modify file"
+}

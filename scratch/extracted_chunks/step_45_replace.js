@@ -1,0 +1,1 @@
+        display dialog "未找到微信应用，请确认微信已安装。" buttons {"确定"} default button 1 with icon stop

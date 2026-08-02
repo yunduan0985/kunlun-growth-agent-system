@@ -1,0 +1,7 @@
+ *
+Ȍ2Ѽ:BJX(0B!
+	sessionID-3750763034362895579PZ!req_vrtx_011Cd59CckkF9GEKE3ebUERZXb$9043cfd8-2487-4216-819c-4b1fef5a6e3cjR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd$
+
+2(bot-c56c0fdd-3b3f-42c9-9037-95ed90a2190b:
+#toolu_vrtx_01S5FwHpm2NaUZs1LmfwxMXb	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":2135,"StartLine":2097,"toolAction":"Viewing token usage route","toolSummary":"View token route"}J	view_file`

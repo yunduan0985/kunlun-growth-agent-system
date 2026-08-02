@@ -1,0 +1,16 @@
+{
+  "id": "notebook_weread",
+  "name": "Notebook&Weread",
+  "group": "数据组",
+  "description": "同步并整理微信读书（Weread）中的划线、想法，并将其与个人笔记系统（如 Obsidian）进行归档对接。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=notebook_weread",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

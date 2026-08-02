@@ -1,0 +1,24 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":390,"Instruction":"
+=====================
+","ReplacementContent":"    const GATEWAY_URL = 'http://localhost:8888';","StartLine":388,"TargetContent":"    const GATEWAY_URL = 'http://localhost:8000';","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Changing index.html connection port to 8888","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$e799f58c-5b50-43bd-8074-1f4b3862a4adj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
++Changing index.html connection port to 8888

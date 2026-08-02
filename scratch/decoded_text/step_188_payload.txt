@@ -1,0 +1,40 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/wechat/openclaw/messages 
+=====================
+","EndLine":458,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.get('/api/wechat/openclaw/messages', (req, res) =\u003e {\n  const limit = parseInt(req.query.limit) || 20;\n  console.log(`[OpenClaw] Fetching last ${limit} WeChat messages...`);\n\n  res.json([\n    { from_user: \"
+=====================
+\", timestamp: new Date(Date.now() - 600000).toISOString(), is_group: true },\n    { from_user: \"
+=====================
+\", timestamp: new Date(Date.now() - 3600000).toISOString(), is_group: false },\n    { from_user: \"
+=====================
+\", timestamp: new Date(Date.now() - 7200000).toISOString(), is_group: true }\n  ]);\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":458,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding WeChat message fetch routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$2c6c4849-b6b6-47d1-8708-4f261af25cb5j
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+Y"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+-Adding WeChat message fetch routes to Gateway

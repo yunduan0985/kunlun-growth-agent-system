@@ -1,0 +1,9 @@
+ *
+2:BJX(̟
+0B!
+	sessionID-3750763034362895579PZ!req_vrtx_011Cd3v9Uq9nJPT3BMTP6aLBXb$9854c2a5-7b94-497b-8274-45148b995d52jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd#
+
+
+y现在在网关底部添加所有新的 API 路由（文件上传、FTS5 检索、Token 账单、微信路径探测）：2(bot-a47b75e0-28f4-41c9-bd60-07b6315f8985:
+#toolu_vrtx_01LU9jpVfskJnGcVh6XC4z1m	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":1800,"StartLine":1770,"toolAction":"Viewing bottom of gateway file","toolSummary":"View gateway bottom"}J	view_fileBy现在在网关底部添加所有新的 API 路由（文件上传、FTS5 检索、Token 账单、微信路径探测）：`

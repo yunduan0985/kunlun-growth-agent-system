@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课程 D：AI 独立站开发与 GEO 搜索引擎优化营 - 出海中枢</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-logo">D</div>
+      <div>
+        <div style="font-size:1.2rem; font-weight:700;">AI 独立站开发与 GEO 搜索引擎优化</div>
+        <span style="font-size:0.7rem; background:linear-gradient(135deg,#14b8a6,#0284c7); padding:2px 8px; border-radius:20px;">课程 D 官方 GEO 出海中枢</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="geo">
+        🌐 GEO 算法与 Schema 优化
+      </button>
+      <button class="tab-btn" data-tab="site">
+        ⚡ AI 辅助 Vite/Shopify 建站
+      </button>
+      <button class="tab-btn" data-tab="blog">
+        📝 多语种 SEO 博客生成
+      </button>
+      <button class="tab-btn" data-tab="syllabus">
+        📚 课程大纲与 Prompt
+      </button>
+    </div>
+
+    <div>
+      <button class="btn" onclick="alert('已连接 GEO 生成式搜索引擎优化算法中枢！')">⚡ 系统状态: 正常</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Tab 1: GEO -->
+    <div id="geo" class="tab-content active">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">🌐 GEO (Generative Engine Optimization) 针对 ChatGPT / Perplexity 排名优化</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>出海品牌名称：</label>
+              <input type="text" id="geoBrandName" class="form-control" value="ApexGear Outdoor Equipment">
+            </div>
+
+            <div class="form-group">
+              <label>独立站主营品类：</label>
+              <input type="text" id="geoProductCategory" class="form-control" value="Ultralight Camping Tents (超轻露营帐篷)">
+            </div>
+
+            <button class="btn" style="width:100%;" onclick="generateGeoSchema()">🌐 1秒生成 GEO 高排名 Schema 代码</button>
+          </div>
+
+          <div>
+            <div id="geoOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Site -->
+    <div id="site" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">⚡ AI 辅助 Vite / Shopify 高颜值响应式独立站极速建站</h3>
+        <p style="color:var(--text-muted); line-height:1.8;">
+          自动输出支持 TailwindCSS & React 的独立站 Hero Section 代码与响应式布局模版。
+        </p>
+      </div>
+    </div>
+
+    <!-- Tab 3: Blog -->
+    <div id="blog" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📝 海外多语种博客与长尾词 SEO 批量生产闭环</h3>
+      </div>
+    </div>
+
+    <!-- Tab 4: Syllabus -->
+    <div id="syllabus" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📚 课程 D 教学大纲与 GEO 独立站 SOP</h3>
+        <div style="line-height:1.8; color:var(--text-muted);">
+          <p><strong style="color:var(--text-main);">Day 1：</strong> AI辅助Vite与Shopify高颜值响应式独立站极速建站</p>
+          <p><strong style="color:var(--text-main);">Day 2：</strong> GEO生成式搜索引擎优化针对ChatGPT与Perplexity算法实战</p>
+          <p><strong style="color:var(--text-main);">Day 3：</strong> 海外多语种博客与长尾词SEO批量生产闭环</p>
+          <p><strong style="color:var(--text-main);">Day 4：</strong> 外贸高转化询盘与客户邮件自动化追踪SOP</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

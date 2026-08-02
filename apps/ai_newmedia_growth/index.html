@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课程 C：AI 新媒体全渠道获客营 - 获客工作站</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-logo">C</div>
+      <div>
+        <div style="font-size:1.2rem; font-weight:700;">AI 新媒体全渠道获客营</div>
+        <span style="font-size:0.7rem; background:linear-gradient(135deg,#f97316,#ef4444); padding:2px 8px; border-radius:20px;">课程 C 官方获客中枢</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="titles">
+        📕 爆款选题与标题矩阵
+      </button>
+      <button class="tab-btn" data-tab="moments">
+        📱 去 AI 味朋友圈文案
+      </button>
+      <button class="tab-btn" data-tab="camp">
+        🎯 4 天体验营变现 SOP
+      </button>
+      <button class="tab-btn" data-tab="syllabus">
+        📚 课程大纲与 Prompt
+      </button>
+    </div>
+
+    <div>
+      <button class="btn" onclick="alert('已连接【生财获客大帖 + 坏脾气的小可爱朋友圈】引擎！')">⚡ 系统状态: 正常</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Tab 1: Titles -->
+    <div id="titles" class="tab-content active">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📕 小红书 / 抖音爆款选题与“钩子标题”生成</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>新媒体选题方向 / 行业：</label>
+              <input type="text" id="mediaTopic" class="form-control" value="企业 AI 降本增效与数字化转型">
+            </div>
+
+            <button class="btn" style="width:100%;" onclick="generateXiaohongshuTitles()">🚀 1秒输出 5 大高转化钩子标题</button>
+          </div>
+
+          <div>
+            <div id="titleOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Moments -->
+    <div id="moments" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📱 坏脾气的小可爱同款 - 去 AI 味朋友圈文案生成</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>今日真实案例 / 故事热点：</label>
+              <input type="text" id="momentsEvent" class="form-control" value="手把手带学员重构朋友圈并帮他成交一单19800">
+            </div>
+
+            <button class="btn" style="width:100%;" onclick="generateNoAiWechatMoments()">📱 1秒生成高转化朋友圈文案</button>
+          </div>
+
+          <div>
+            <div id="momentsOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Camp -->
+    <div id="camp" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">🎯 私域 4 天体验营引流与 19,800 高客单发售 SOP</h3>
+        <p style="color:var(--text-muted); line-height:1.8;">
+          深度打通【公域干货引流 ➔ 体验营打卡筛选 ➔ 独家场景 1V1 诊断 ➔ 19,800 场景共创营 5:5 利润分成】。
+        </p>
+      </div>
+    </div>
+
+    <!-- Tab 4: Syllabus -->
+    <div id="syllabus" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📚 课程 C 教学大纲与新媒体全渠道 SOP</h3>
+        <div style="line-height:1.8; color:var(--text-muted);">
+          <p><strong style="color:var(--text-main);">Day 1：</strong> 小红书与抖音爆款选题及钩子标题矩阵</p>
+          <p><strong style="color:var(--text-main);">Day 2：</strong> 去 AI 味朋友圈文案高转化打造 SOP</p>
+          <p><strong style="color:var(--text-main);">Day 3：</strong> 短视频高光切片与批量文案合成自动化</p>
+          <p><strong style="color:var(--text-main);">Day 4：</strong> 4 天私域体验营引流与 19800 高客单发售闭环</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

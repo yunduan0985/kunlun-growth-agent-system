@@ -1,0 +1,106 @@
+[
+  {
+    "id": "COURSE-A",
+    "name": "AI 跨境电商爆破营",
+    "direction": "跨境电商",
+    "targetAudience": "亚马逊 / TikTok / 独立站卖家及跨境团队",
+    "coreModules": [
+      "AI 选品与全网竞品热词抓取分析",
+      "多语言（英/德/日/西）高转化 Listing 与 SEO 自动生成",
+      "TikTok 爆款短视频脚本与多语种 AI 数字人带货口播",
+      "智能客服尺码引导换码（降低 30% 跨境退货率闭环）"
+    ],
+    "deliverable": "跨境卖家 5 大 AI 自动化 SOP + 智能客服机器人"
+  },
+  {
+    "id": "COURSE-B",
+    "name": "AI 商业视觉设计实战营",
+    "direction": "视觉设计",
+    "targetAudience": "全行业设计师、电商美工、品牌营销人员",
+    "coreModules": [
+      "Midjourney & ComfyUI 商业摄影与模特换装流程",
+      "电商主图、详情页与 3D 渲染包装图极速生成",
+      "AI 品牌 VI 视觉标识与全套宣发海报工作流",
+      "控图一致性 (ControlNet / IP-Adapter) 商业级落地"
+    ],
+    "deliverable": "企业级 3 秒降本 90% 视觉设计 SOP 流程包"
+  },
+  {
+    "id": "COURSE-C",
+    "name": "AI 新媒体全渠道获客营",
+    "direction": "新媒体运营",
+    "targetAudience": "新媒体团队、个人 IP、需要线上引流获客的企业",
+    "coreModules": [
+      "小红书 / 抖音 / 微信公众号爆款选题与标题矩阵",
+      "去 AI 味高转化朋友圈文案 SOP（坏脾气的小可爱同款）",
+      "短视频高光切片自动提取与批量文案合成",
+      "私域 4 天体验营引流与 19,800 高客单转化闭环"
+    ],
+    "deliverable": "新媒体获客与去 AI 味文案全套生成 Prompt 库"
+  },
+  {
+    "id": "COURSE-D",
+    "name": "AI 独立站开发与 GEO 搜索引擎优化",
+    "direction": "独立站开发+GEO",
+    "targetAudience": "外贸企业、品牌出海团队、B2B/B2C 独立站站长",
+    "coreModules": [
+      "AI 辅助 Vite / Shopify 高颜值响应式独立站极速建站",
+      "GEO (Generative Engine Optimization) 针对 Perplexity / ChatGPT 搜索排名优化",
+      "海外多语种博客与 SEO 优质长尾词批量生成",
+      "外贸询盘与客户邮件智能自动化追踪跟进"
+    ],
+    "deliverable": "GEO 出海独立站建站与生成式 SEO 获客模型"
+  },
+  {
+    "id": "COURSE-E",
+    "name": "OPC (One-Person Company) 内容自动化爆破营",
+    "direction": "OPC内容自动化",
+    "targetAudience": "超级个体、个人创作者、小微极客团队",
+    "coreModules": [
+      "单人 AI 矩阵搭建（一人即一家公司）",
+      "n8n / Coze 工作流自动化与多平台一键分发",
+      "数字人口播视频自动化流水线（剪映 API + AI 配音）",
+      "全网热点抓取与自动改写爆文系统"
+    ],
+    "deliverable": "超级个体 24 小时无人值守内容自动产出系统"
+  },
+  {
+    "id": "COURSE-F",
+    "name": "AI 企服通识与数字员工普及营",
+    "direction": "AI通识",
+    "targetAudience": "所有企业、全员培训、中高层管理者",
+    "coreModules": [
+      "DeepSeek / ChatGPT 大模型底层逻辑与 Prompt 基础设施",
+      "企业数据安全与敏感 PII 保护防护规范",
+      "森马 94 台数字员工拆解（400+ 场景自动化闭环）",
+      "人机协同（Man-Machine Synergy）组织重塑"
+    ],
+    "deliverable": "企业全员 AI 通识认证与数字员工岗位手册"
+  },
+  {
+    "id": "COURSE-G",
+    "name": "AI 智能办公全员提效营",
+    "direction": "办公提效",
+    "targetAudience": "销售、客服、行政、HR、财务人员",
+    "coreModules": [
+      "AI 标书快速解析、资质匹配与风控初稿生成",
+      "Excel / VBA / Python 复杂表格与财务发票智能识别",
+      "智能会议纪要提取、待办事项归纳与邮件撰写",
+      "合同风险合规扫描与法律条款自动比对"
+    ],
+    "deliverable": "办公全岗位 10 倍提效 Prompt & 工具表"
+  },
+  {
+    "id": "COURSE-H",
+    "name": "AI 教师实战与教务系统全闭环营（标杆已落地）",
+    "direction": "教育AI（已标杆落地）",
+    "targetAudience": "K12 老师、校长、教培机构、职业院校教师",
+    "coreModules": [
+      "SuperTA 9 维防刷防作弊评估与自适应试卷 PDF 导出",
+      "00-《教师 AI 实战训练营》课程总设计与 1 秒互动教案",
+      "生财黑客松亚军 AI 智能教务系统（排课 + 一键消课）",
+      "错题本智能切题、归因分析与家校学情雷达报告"
+    ],
+    "deliverable": "教师 AI 错题本 Web 系统 + 智能教务 OS"
+  }
+]

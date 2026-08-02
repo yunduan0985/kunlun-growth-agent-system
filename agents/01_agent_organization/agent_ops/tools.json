@@ -1,0 +1,182 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Agent 运维监控与飞书 CLI 控制插件",
+    "version": "1.2.0",
+    "description": "提供给运维智能体的系统状态、链路追踪日志检索、网关重启以及本地飞书 Lark CLI 交互接口。"
+  },
+  "paths": {
+    "/api/ops/metrics": {
+      "get": {
+        "summary": "获取当前大模型调用成功率、平均 Latency 和 Token 消耗监控数据",
+        "operationId": "getSystemMetrics",
+        "responses": {
+          "200": {
+            "description": "返回监控指标列表",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "llm_success_rate": {
+                      "type": "number"
+                    },
+                    "average_latency_ms": {
+                      "type": "integer"
+                    },
+                    "token_cost_today_usd": {
+                      "type": "number"
+                    },
+                    "api_timeout_count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ops/logs": {
+      "get": {
+        "summary": "拉取 Gateway 服务器最近的运行日志",
+        "operationId": "readGatewayLogs",
+        "parameters": [
+          {
+            "name": "lines",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 50
+            },
+            "description": "需要拉取的日志行数"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功返回日志文本",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "logs": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": {
+                    "type": "string",
+                    "description": "完整的终端命令"
+                  },
+                  "cwd": {
+                    "type": "string",
+                    "description": "运行路径"
+                  }
+                },
+                "required": [
+                  "command"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "stdout": {
+                      "type": "string"
+                    },
+                    "stderr": {
+                      "type": "string"
+                    },
+                    "exitCode": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": {
+                    "type": "string",
+                    "description": "微信群聊ID或联系人微信号/备注"
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "发送的文本内容"
+                  }
+                },
+                "required": [
+                  "to_username",
+                  "content"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "msgId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

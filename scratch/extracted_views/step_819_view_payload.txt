@@ -1,0 +1,31 @@
+ *
+슻"
+#toolu_vrtx_01LU9jpVfskJnGcVh6XC4z1m	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":1800,"StartLine":1770,"toolAction":"Viewing bottom of gateway file","toolSummary":"View gateway bottom"}J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2º:ºB
+Xb$9854c2a5-7b94-497b-8274-45148b995d52jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd͹.3
+
+	
+
+View gateway bottomViewing bottom of gateway file	r
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js"  try {
+    if (!fs.existsSync(knowledgeDir)) fs.mkdirSync(knowledgeDir, { recursive: true });
+    fs.writeFileSync(targetPath, content, 'utf-8');
+    res.json({ success: true, message: `离线知识库文档「${safeFilename}」已物理持久化写入本地，Agent 已实时挂载！` });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to write knowledge base file." });
+  }
+});
+
+
+
+// ==========================================
+// 5. 服务器启动
+// ==========================================
+app.listen(PORT, () => {
+  console.log(`==================================================`);
+  console.log(`🚀 昆仑增长 Agent Gateway & MCP 网关已启动！`);
+  console.log(`   运行端口: http://localhost:${PORT}`);
+  console.log(`==================================================`);
+});
+X`

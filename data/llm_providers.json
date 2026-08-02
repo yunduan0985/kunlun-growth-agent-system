@@ -1,0 +1,26 @@
+{
+  "claude": {
+    "name": "Anthropic Claude",
+    "base_url": "https://api.anthropic.com",
+    "api_key": "sk-ant-xxxxxxxxxxxxxxxxxxxx",
+    "model_name": "claude-3-5-sonnet"
+  },
+  "openai": {
+    "name": "OpenAI GPT-4",
+    "base_url": "https://api.openai.com/v1",
+    "api_key": "sk-proj-xxxxxxxxxxxxxxxxxxxx",
+    "model_name": "gpt-4o"
+  },
+  "deepseek": {
+    "name": "DeepSeek API",
+    "base_url": "https://api.deepseek.com/v1",
+    "api_key": "sk-deepseek-xxxxxxxxxxxxxxxxx",
+    "model_name": "deepseek-chat"
+  },
+  "aggregator": {
+    "name": "聚合中转平台 (Custom)",
+    "base_url": "https://api.oneapi.com/v1",
+    "api_key": "sk-custom-xxxxxxxxxxxxxxxxxx",
+    "model_name": "gpt-4o-mini"
+  }
+}

@@ -1,0 +1,28 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ setup_claude_desktop.js 
+=====================
+","EndLine":49,"Instruction":"
+=====================
+","ReplacementContent":"const GATEWAY_SCRIPT_PATH = path.resolve(__dirname, '../src/index.js');","StartLine":48,"TargetContent":"const GATEWAY_SCRIPT_PATH = '/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js';","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/scripts/setup_claude_desktop.js","toolAction":"Resolving absolute paths to relative paths in setup script","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$bc65084a-b018-4f15-968e-9ac2973168abj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+:Resolving absolute paths to relative paths in setup script

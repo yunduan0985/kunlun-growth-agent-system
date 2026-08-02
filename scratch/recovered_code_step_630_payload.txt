@@ -1,0 +1,62 @@
+replace_file_content
+=====================
+({"AllowMultiple":false,"Description":"
+=====================
+ wechat/openclaw/messages 
+=====================
+ /api/system/task/status 
+=====================
+","EndLine":326,"Instruction":"
+=====================
+","ReplacementContent":"// 
+=====================
+)\napp.get('/api/wechat/openclaw/messages', async (req, res) =\u003e {\n  const isAsync = req.query.async === 'true';\n  const limit = parseInt(req.query.limit) || 20;\n\n  if (isAsync) {\n    const taskId = 'task_wx_' + Date.now();\n    console.log(`[Task Queue] Created asynchronous WeChat scanning task: ${taskId}`);\n\n    // 
+=====================
+\n    TASK_QUEUE[taskId] = {\n      status: \"processing\",\n      progress: 0,\n      result: null\n    };\n\n    // 
+=====================
+)\n    let progressInterval = setInterval(() =\u003e {\n      if (!TASK_QUEUE[taskId]) {\n        clearInterval(progressInterval);\n        return;\n      }\n      TASK_QUEUE[taskId].progress += 25; // 
+=====================
+ 25%\n      console.log(`
+=====================
+ [Task Queue] WeChat scanning task ${taskId} progress: ${TASK_QUEUE[taskId].progress}%`);\n\n      if (TASK_QUEUE[taskId].progress \u003e= 100) {\n        clearInterval(progressInterval);\n        TASK_QUEUE[taskId].status = \"completed\";\n        TASK_QUEUE[taskId].result = [\n          { from_user: \"
+=====================
+\", timestamp: new Date(Date.now() - 600000).toISOString(), is_group: true },\n          { from_user: \"
+=====================
+\", timestamp: new Date(Date.now() - 3600000).toISOString(), is_group: false }\n        ];\n        console.log(`
+=====================
+ [Task Queue] WeChat scanning task ${taskId} completed.`);\n      }\n    }, 500); // 
+=====================
+\n\n    return res.json({\n      success: true,\n      task_id: taskId,\n      status: \"processing\"\n    });\n  }\n\n  // 
+=====================
+)\n  try {\n    if (process.env.OPENCLAW_API_URL \u0026\u0026 process.env.OPENCLAW_API_URL !== 'http://localhost:18000') {\n      const response = await fetch(`${OPENCLAW_API_URL}/api/get_messages?limit=${limit}`, {\n        headers: { 'Authorization': `Bearer ${OPENCLAW_TOKEN}` }\n      });\n      const data = await response.json();\n      return res.json(data);\n    }\n    res.json([\n      { from_user: \"
+=====================
+\", timestamp: new Date(Date.now() - 600000).toISOString(), is_group: true },\n      { from_user: \"
+=====================
+\", timestamp: new Date(Date.now() - 3600000).toISOString(), is_group: false }\n    ]);\n  } catch (err) {\n    res.status(500).json({ error: err.message });\n  }\n});\n\n// 
+=====================
+\napp.get('/api/system/task/status', (req, res) =\u003e {\n  const { task_id } = req.query;\n  if (!task_id) return res.status(400).json({ error: \"Missing parameter: task_id\" });\n\n  const task = TASK_QUEUE[task_id];\n  if (!task) return res.status(404).json({ error: \"Task not found.\" });\n\n  res.json({\n    success: true,\n    task_id,\n    status: task.status,\n    progress: task.progress,\n    result: task.result\n  });\n});\n","StartLine":307,"TargetContent":"// 
+=====================
+\napp.get('/api/wechat/openclaw/messages', async (req, res) =\u003e {\n  try {\n    const limit = parseInt(req.query.limit) || 20;\n    if (process.env.OPENCLAW_API_URL \u0026\u0026 process.env.OPENCLAW_API_URL !== 'http://localhost:18000') {\n      const response = await fetch(`${OPENCLAW_API_URL}/api/get_messages?limit=${limit}`, {\n        headers: { 'Authorization': `Bearer ${OPENCLAW_TOKEN}` }\n      });\n      const data = await response.json();\n      return res.json(data);\n    }\n    res.json([\n      { from_user: \"
+=====================
+\", timestamp: new Date(Date.now() - 600000).toISOString(), is_group: true },\n      { from_user: \"
+=====================
+\", timestamp: new Date(Date.now() - 3600000).toISOString(), is_group: false }\n    ]);\n  } catch (err) {\n    res.status(500).json({ error: err.message });\n  }\n});","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Upgrading WeChat routes with Task Queue features","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$bc65084a-b018-4f15-968e-9ac2973168abj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+0Upgrading WeChat routes with Task Queue features

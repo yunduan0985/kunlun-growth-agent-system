@@ -1,0 +1,16 @@
+{
+  "id": "official_account_editor",
+  "name": "公众号编辑",
+  "group": "内容组",
+  "description": "负责微信公众号文章排版优化，将 Markdown 自动转换为精美排版样式并进行接口预发布。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=official_account_editor",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

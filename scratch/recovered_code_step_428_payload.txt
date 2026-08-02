@@ -1,0 +1,47 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/combat/researcher/analyze 
+=====================
+","EndLine":968,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/combat/researcher/analyze', (req, res) =\u003e {\n  const { competitor_name, raw_intel_summary } = req.body;\n  if (!competitor_name || !raw_intel_summary) {\n    return res.status(400).json({ error: \"Missing required parameters.\" });\n  }\n\n  console.log(`[Intel Researcher] Performing SWOT Matrix calculations on competitor: ${competitor_name}`);\n\n  res.json({\n    success: true,\n    winning_rate: 0.85,\n    swot_results: {\n      strengths: \"
+=====================
+\",\n      weaknesses: \"
+=====================
+\",\n      opportunities: \"
+=====================
+\",\n      threats: \"
+=====================
+\"\n    }\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":968,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding researcher routes to Gateway","toolSummary":"Modify file"}:
+
+=====================
+<Q~!Soi|f)e}@12	6J@{x
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$9032b07f-b12b-4150-a1a1-77a9b53c8236j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+#Adding researcher routes to Gateway

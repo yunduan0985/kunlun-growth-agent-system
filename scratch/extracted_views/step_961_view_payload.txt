@@ -1,0 +1,18 @@
+ *
+߀"
+#toolu_vrtx_01CXPtJTmxgKzUbm9fjn8W6H	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":10,"StartLine":1,"toolAction":"Viewing gateway imports","toolSummary":"View imports"}J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2:BXb$ae9edf35-110e-4109-b5bb-1a0c90de006ejR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd܂)3
+ฆ
+Й
+View importsViewing gateway importsr
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js	"const express = require('express');
+const cors = require('cors');
+const { exec } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+const sqlite3 = require('sqlite3').verbose();
+const multer = require('multer');
+require('dotenv').config();
+
+const app = express();X`

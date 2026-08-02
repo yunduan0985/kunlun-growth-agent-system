@@ -1,0 +1,45 @@
+-3750763034362895579PZ!req_vrtx_011Cd3v4jjCxAMQEpFq4LYasX
+=====================
+b$9854c2a5-7b94-497b-8274-45148b995d52j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+&2(bot-be6be781-6539-432b-a75a-2d5e3689c904:%
+#toolu_vrtx_0172TtiVt7D3spuziSULpzHk
+=====================
+replace_file_content
+=====================
+%{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":23,"Instruction":"
+=====================
+","ReplacementContent":"const express = require('express');\nconst cors = require('cors');\nconst { exec } = require('child_process');\nconst fs = require('fs');\nconst path = require('path');\nconst sqlite3 = require('sqlite3').verbose();\nconst multer = require('multer');\nrequire('dotenv').config();\n\nconst app = express();\nconst PORT = process.env.PORT || 8888;\n\napp.use(cors());\napp.use(express.json({ limit: '50mb' }));\n\n// 
+=====================
+ http://localhost:8888 
+=====================
+\napp.use(express.static(path.join(__dirname, '..')));\n\n// 
+=====================
+\nconst OPENCLAW_API_URL = process.env.OPENCLAW_API_URL || 'http://localhost:18000';\nconst OPENCLAW_TOKEN = process.env.OPENCLAW_TOKEN || 'mock_token_123';\nconst LARK_CLI_PATH = process.env.LARK_CLI_PATH || 'lark';\nconst WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');\n\n// 
+=====================
+)\nconst TASK_QUEUE = {};\n\n// ==========================================\n// Token 
+=====================
+\n// ==========================================\nconst TOKEN_USAGE_PATH = path.join(__dirname, '../data/token_usage.json');\n\nfunction loadTokenUsage() {\n  if (!fs.existsSync(TOKEN_USAGE_PATH)) return { total_input: 0, total_output: 0, records: [] };\n  try { return JSON.parse(fs.readFileSync(TOKEN_USAGE_PATH, 'utf-8')); } catch { return { total_input: 0, total_output: 0, records: [] }; }\n}\n\nfunction saveTokenUsage(usage) {\n  try {\n    const dataDir = path.dirname(TOKEN_USAGE_PATH);\n    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });\n    fs.writeFileSync(TOKEN_USAGE_PATH, JSON.stringify(usage, null, 2), 'utf-8');\n  } catch (e) { console.error('[Token Tracker] Failed to save:', e.message); }\n}\n\n/**\n * 
+=====================
+\n */\nfunction estimateTokens(text) {\n  if (!text) return 0;\n  const chineseChars = (text.match(/[\\u4e00-\\u9fff]/g) || []).length;\n  const otherChars = text.length - chineseChars;\n  return Math.ceil(chineseChars / 1.5 + otherChars / 4);\n}\n\nfunction recordTokenUsage(provider, model, inputText, outputText) {\n  const usage = loadTokenUsage();\n  const inputTokens = estimateTokens(inputText);\n  const outputTokens = estimateTokens(outputText);\n  usage.total_input += inputTokens;\n  usage.total_output += outputTokens;\n  usage.records.push({\n    ts: new Date().toISOString(),\n    provider,\n    model,\n    input_tokens: inputTokens,\n    output_tokens: outputTokens\n  });\n  // 
+=====================
+\n  if (usage.records.length \u003e 500) usage.records = usage.records.slice(-500);\n  saveTokenUsage(usage);\n}\n\n// ==========================================\n// Multer 
+=====================
+\n// ==========================================\nconst knowledgeDir = path.join(__dirname, '../data/knowledge');\nif (!fs.existsSync(knowledgeDir)) fs.mkdirSync(knowledgeDir, { recursive: true });\n\nconst upload = multer({\n  dest: path.join(__dirname, '../data/uploads_tmp/'),\n  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB 
+=====================
+\n  fileFilter: (req, file, cb) =\u003e {\n    const allowed = ['.pdf', '.docx', '.doc', '.txt', '.md'];\n    const ext = path.extname(file.originalname).toLowerCase();\n    if (allowed.includes(ext)) cb(null, true);\n    else cb(new Error('Only PDF, Word, TXT, MD files are allowed'));\n  }\n});\n","StartLine":1,"TargetContent":"const express = require('express');\nconst cors = require('cors');\nconst { exec } = require('child_process');\nconst fs = require('fs');\nconst path = require('path');\nconst sqlite3 = require('sqlite3').verbose();\nrequire('dotenv').config();\n\nconst app = express();\nconst PORT = process.env.PORT || 8888;\n\napp.use(cors());\napp.use(express.json());\n\n// 
+=====================
+\nconst OPENCLAW_API_URL = process.env.OPENCLAW_API_URL || 'http://localhost:18000';\nconst OPENCLAW_TOKEN = process.env.OPENCLAW_TOKEN || 'mock_token_123';\nconst LARK_CLI_PATH = process.env.LARK_CLI_PATH || 'lark';\nconst WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');\n\n// 
+=====================
+)\nconst TASK_QUEUE = {};","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Upgrading gateway imports with multer, token tracker, FTS5","toolSummary":"Gateway header upgrade"}J
+=====================
+replace_file_content`

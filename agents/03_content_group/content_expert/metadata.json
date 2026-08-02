@@ -1,0 +1,16 @@
+{
+  "id": "content_expert",
+  "name": "内容专家",
+  "group": "内容组",
+  "description": "对内容进行深度编辑，提升文章逻辑性、说服力，去除“AI味”，使其符合专业读者期望。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=content_expert",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

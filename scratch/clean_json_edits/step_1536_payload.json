@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "修复审计扫描脚本的默认路径计算逻辑，由 3 级目录调整为 4 级目录（../../../../），从而能正确探测到项目主目录的 package.json、src/index.js 以及 .gitignore。",
+  "EndLine": 168,
+  "Instruction": "将 audit_scanner.py 脚本底部的 root_dir 计算路径调整为向上 4 级（../../../../）。",
+  "ReplacementContent": "    root_dir = sys.argv[1] if len(sys.argv) > 1 else os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../'))",
+  "StartLine": 164,
+  "TargetContent": "    root_dir = sys.argv[1] if len(sys.argv) > 1 else os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/.agents/skills/agent-security-audit/scripts/audit_scanner.py",
+  "toolAction": "Correcting target project directory calculation in security scanner script",
+  "toolSummary": "Correct default directory"
+}

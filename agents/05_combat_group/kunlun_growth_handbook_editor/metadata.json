@@ -1,0 +1,16 @@
+{
+  "id": "kunlun_growth_handbook_editor",
+  "name": "昆仑增长训练营手册编辑",
+  "group": "实战组",
+  "description": "将实战案例、增长方法论、工具使用手册进行结构化整理，汇编为易于阅读的实战手册。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=kunlun_growth_handbook_editor",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

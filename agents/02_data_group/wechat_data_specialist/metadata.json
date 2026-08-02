@@ -1,0 +1,16 @@
+{
+  "id": "wechat_data_specialist",
+  "name": "微信数据专员",
+  "group": "数据组",
+  "description": "监听并提取微信群聊、私聊中的关键线索、用户反馈和交付问题，实现自动清洗与归档。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=wechat_data_specialist",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

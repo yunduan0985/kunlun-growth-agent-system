@@ -1,0 +1,16 @@
+{
+  "id": "github_searcher",
+  "name": "Github检索",
+  "group": "数据组",
+  "description": "通过 GitHub API 检索特定开源项目、技术趋势、代码库细节，输出分析报告。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=github_searcher",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

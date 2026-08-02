@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "Remove duplicate jwt declaration that caused SyntaxError.",
+  "EndLine": 252,
+  "Instruction": "Remove duplicate jwt declaration on line 250",
+  "ReplacementContent": "// ==========================================\n// 核心路径与本地数据配置\n// ==========================================",
+  "StartLine": 249,
+  "TargetContent": "\nconst jwt = require('jsonwebtoken');\n\n// ==========================================\n// 核心路径与本地数据配置\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Removing duplicate jwt declaration",
+  "toolSummary": "Remove duplicate jwt"
+}

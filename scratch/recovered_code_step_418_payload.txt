@@ -1,0 +1,41 @@
+replace_file_content
+=====================
+
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/combat/collector/scrape 
+=====================
+","EndLine":947,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/combat/collector/scrape', (req, res) =\u003e {\n  const { url } = req.body;\n  if (!url) return res.status(400).json({ error: \"Missing parameter: url\" });\n\n  console.log(`[Scraper Engine] Pulling DOM from: ${url}`);\n\n  res.json({\n    success: true,\n    site_title: \"
+=====================
+\",\n    pricing_plans: [\n      { name: \"Starter\", price: \"$19/mo\", limit: \"1,000 Messages\" },\n      { name: \"Pro\", price: \"$99/mo\", limit: \"10,000 Messages\" }\n    ],\n    detected_changes: [\n      \"
+=====================
+\"\n    ]\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":947,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding scraper routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$b9cdee7b-210d-4284-a4a1-7ce24d5b1340j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+ Adding scraper routes to Gateway

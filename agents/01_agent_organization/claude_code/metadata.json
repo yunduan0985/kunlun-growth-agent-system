@@ -1,0 +1,16 @@
+{
+  "id": "claude_code",
+  "name": "Claude code",
+  "group": "agent组织部",
+  "description": "命令行自主编程与代码库分析专家，专注于快速阅读、修改代码及自动化测试。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=claude_code",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

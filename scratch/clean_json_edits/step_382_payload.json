@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/management/briefing/create 与 /api/management/schedule/event 两个 CEO 决策助理相关的端点。",
+  "EndLine": 855,
+  "Instruction": "在服务器启动之前加入日程管理和简报生成路由。",
+  "ReplacementContent": "\n// 模拟跨部门日报提炼总裁办简报接口\napp.post('/api/management/briefing/create', (req, res) => {\n  const { raw_reports } = req.body;\n  if (!raw_reports) return res.status(400).json({ error: \"Missing: raw_reports\" });\n\n  console.log(`[Executive Assistant] Creating weekly/daily briefing from ${raw_reports.length} report sources.`);\n\n  res.json({\n    success: true,\n    briefing: {\n      alert: \"【珠宝AI销冠项目】合作方在天眼查中被发现有一笔 20 万的司法诉讼卡点。\",\n      highlights: [\"内容组本周小红书冷启动起号数据增长 15%\", \"数据组完成了对微信 SQLite 历史库的去噪清洗\"],\n      suggestions: [\"方案A：暂缓付款，要求合作方提供结案证明\", \"方案B：继续合作，但在合同中追加违约责任\"]\n    }\n  });\n});\n\n// 模拟 CEO 日程会议创建接口\napp.post('/api/management/schedule/event', (req, res) => {\n  const { summary, start_time, end_time, attendees } = req.body;\n  if (!summary || !start_time) return res.status(400).json({ error: \"Missing required calendar parameters.\" });\n\n  console.log(`[Calendar Service] Booking event: \"${summary}\" at ${start_time} for: ${JSON.stringify(attendees || [])}`);\n\n  res.json({\n    success: true,\n    event_id: \"evt_\" + Math.random().toString(36).substring(2, 9)\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 855,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding CEO assistant routes to Gateway",
+  "toolSummary": "Modify file"
+}

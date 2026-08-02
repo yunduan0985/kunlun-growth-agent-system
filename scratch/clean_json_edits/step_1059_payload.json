@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 .env 末尾加入 INVITE_CODE 配置项，供非首次注册的用户使用。",
+  "EndLine": 1000,
+  "Instruction": "追加 INVITE_CODE 到 .env",
+  "ReplacementContent": "TWITTER_API_TOKEN=\n\n# --------- 用户注册邀请码（非管理员注册时需要此码）---------\n# 修改后需重启服务生效\nINVITE_CODE=KUNLUN2025\n",
+  "StartLine": 998,
+  "TargetContent": "TWITTER_API_TOKEN=\n",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/.env",
+  "toolAction": "Adding INVITE_CODE to .env",
+  "toolSummary": "Add INVITE_CODE"
+}

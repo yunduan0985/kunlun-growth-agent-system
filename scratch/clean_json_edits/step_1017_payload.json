@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在认证变量声明后立即注入 getCurrentRole() 函数，从 JWT _currentUser 读取角色，彻底替代 select.value 的硬编码读取。同时更新 enterApp() 中的角色徽章渲染逻辑。",
+  "EndLine": 907,
+  "Instruction": "在 _authToken 声明后加入 getCurrentRole 工具函数。",
+  "ReplacementContent": "    let _authToken = localStorage.getItem('kunlun_token') || '';\n    let _currentUser = null;\n\n    // ✅ 核心工具函数：始终从 JWT Token 读取角色，不依赖任何 UI 元素\n    function getCurrentRole() {\n      return _currentUser ? (_currentUser.role || 'sales') : 'sales';\n    }\n\n    // 角色显示名映射\n    const ROLE_DISPLAY = {\n      admin:  { icon: '👑', text: '系统管理员 (Admin)',  color: '#1d1d1f' },\n      editor: { icon: '✏️', text: '自媒体编辑 (Editor)', color: '#0071e3' },\n      sales:  { icon: '📞', text: '私域销售 (Sales)',    color: '#34c759' },\n    };\n\n    // 更新顶栏角色徽章（只读显示）\n    function updateRoleBadge(role) {\n      const info = ROLE_DISPLAY[role] || ROLE_DISPLAY.sales;\n      const iconEl = document.getElementById('role-badge-icon');\n      const textEl = document.getElementById('role-badge-text');\n      const badgeEl = document.getElementById('role-badge-display');\n      if (iconEl) iconEl.textContent = info.icon;\n      if (textEl) textEl.textContent = info.text;\n      if (badgeEl) badgeEl.style.borderColor = info.color + '44'; // 半透明边框\n    }\n\n",
+  "StartLine": 905,
+  "TargetContent": "    let _authToken = localStorage.getItem('kunlun_token') || '';\n    let _currentUser = null;\n",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Injecting getCurrentRole helper function",
+  "toolSummary": "Add getCurrentRole"
+}

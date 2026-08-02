@@ -1,0 +1,203 @@
+{"CodeContent":"import json\nimport os\n\nlog_path = \"/Users/dasean/.gemini/antigravity/brain/339f5518-9980-4e89-a848-d3d6b7f639c9/.system_generated/logs/transcript_full.jsonl\"\nout_dir = \"scratch/extracted_chunks\"\nos.makedirs(out_dir, exist_ok=True)\n\nprint(f\"
+=====================
+ Extracting code chunks from previous transcript: {log_path}...\")\nwith open(log_path, 'r', encoding='utf-8') as f:\n    for line in f:\n        try:\n            step = json.loads(line)\n            tool_calls = step.get('tool_calls', [])\n            for call in tool_calls:\n                name = call.get('name')\n                args = call.get('args', {})\n                if 'replace_file_content' in name or 'multi_replace_file_content' in name:\n                    step_idx = step.get('step_index')\n                    print(f\"
+=====================
+ Step {step_idx}: {name}\")\n                    \n                    # For replace_file_content\n                    if 'ReplacementContent' in args:\n                        chunk_path = os.path.join(out_dir, f\"step_{step_idx}_replace.js\")\n                        with open(chunk_path, 'w', encoding='utf-8') as out:\n                            out.write(args['ReplacementContent'])\n                        print(f\"   Saved chunk to {chunk_path}\")\n                    \n                    # For multi_replace_file_content\n                    if 'ReplacementChunks' in args:\n                        for idx, chunk in enumerate(args['ReplacementChunks']):\n                            chunk_path = os.path.join(out_dir, f\"step_{step_idx}_multi_{idx}.js\")\n                            with open(chunk_path, 'w', encoding='utf-8') as out:\n                                out.write(chunk['ReplacementContent'])\n                            print(f\"   Saved chunk to {chunk_path}\")\n        except Exception as e:\n            pass\n","Description":"Update recovery script to parse the previous session transcript logs for code extractions","Overwrite":true,"TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/scratch/extract_code.py","toolAction":"Updating extract_code.py to scan the previous session transcript logs","toolSummary":"Update extract_code.py"}:
+=====================
+.9gqV6ulkTQP9;U;Ul`WG
+=====================
+Description*	Overwrite*
+TargetFile*
+toolAction*
+=====================
+b$fccc4b95-0c4b-411a-a677-c09bdfcb9ef0j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Update extract_code.py
+=====================
+EUpdating extract_code.py to scan the previous session transcript logs
+=====================
+import json
+import os
+
+log_path = "/Users/dasean/.gemini/antigravity/brain/339f5518-9980-4e89-a848-d3d6b7f639c9/.system_generated/logs/transcript_full.jsonl"
+out_dir = "scratch/extracted_chunks"
+os.makedirs(out_dir, exist_ok=True)
+
+print(f"
+=====================
+ Extracting code chunks from previous transcript: {log_path}...")
+with open(log_path, 'r', encoding='utf-8') as f:
+    for line in f:
+        try:
+            step = json.loads(line)
+            tool_calls = step.get('tool_calls', [])
+            for call in tool_calls:
+                name = call.get('name')
+                args = call.get('args', {})
+                if 'replace_file_content' in name or 'multi_replace_file_content' in name:
+                    step_idx = step.get('step_index')
+                    print(f"
+=====================
+ Step {step_idx}: {name}")
+                    
+                    # For replace_file_content
+                    if 'ReplacementContent' in args:
+                        chunk_path = os.path.join(out_dir, f"step_{step_idx}_replace.js")
+                        with open(chunk_path, 'w', encoding='utf-8') as out:
+                            out.write(args['ReplacementContent'])
+                        print(f"   Saved chunk to {chunk_path}")
+                    
+                    # For multi_replace_file_content
+                    if 'ReplacementChunks' in args:
+                        for idx, chunk in enumerate(args['ReplacementChunks']):
+                            chunk_path = os.path.join(out_dir, f"step_{step_idx}_multi_{idx}.js")
+                            with open(chunk_path, 'w', encoding='utf-8') as out:
+                                out.write(chunk['ReplacementContent'])
+                            print(f"   Saved chunk to {chunk_path}")
+        except Exception as e:
+            pass
+
+=====================
+*Qfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scratch/extract_code.py2T
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+scratch/extract_code.py 
+=====================
+log_path = "/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/.system_generated/logs/transcript_full.jsonl"
+=====================
+log_path = "/Users/dasean/.gemini/antigravity/brain/339f5518-9980-4e89-a848-d3d6b7f639c9/.system_generated/logs/transcript_full.jsonl"
+=====================
+(
+$out_dir = "scratch/extracted_chunks"
+=====================
+'
+#os.makedirs(out_dir, exist_ok=True)
+=====================
+ Extracting code chunks from transcript...")
+=====================
+ Extracting code chunks from previous transcript: {log_path}...")
+=====================
+4
+0with open(log_path, 'r', encoding='utf-8') as f:
+=====================
+'
+#            step = json.loads(line)
+=====================
+7
+3            tool_calls = step.get('tool_calls', [])
+=====================
+'
+#            for call in tool_calls:
+=====================
++
+'                name = call.get('name')
+=====================
+/
++                args = call.get('args', {})
+=====================
+^
+Z                if 'replace_file_content' in name or 'multi_replace_file_content' in name:
+=====================
+9
+5                    step_idx = step.get('step_index')
+=====================
+>
+:                    print(f"
+=====================
+ Step {step_idx}: {name}")
+=====================
+                    
+=====================
+2
+.                    # For replace_file_content
+=====================
+8
+4                    if 'ReplacementContent' in args:
+=====================
+]
+Y                        chunk_path = os.path.join(out_dir, f"step_{step_idx}_replace.js")
+=====================
+P
+L                        with open(chunk_path, 'w', encoding='utf-8') as out:
+=====================
+E
+A                            out.write(args['ReplacementContent'])
+=====================
+D
+@                        print(f"   Saved chunk to {chunk_path}")
+=====================
+                    
+=====================
+8
+4                    # For multi_replace_file_content
+=====================
+7
+3                    if 'ReplacementChunks' in args:
+=====================
+S
+O                        for idx, chunk in enumerate(args['ReplacementChunks']):
+=====================
+e
+a                            chunk_path = os.path.join(out_dir, f"step_{step_idx}_multi_{idx}.js")
+=====================
+T
+P                            with open(chunk_path, 'w', encoding='utf-8') as out:
+=====================
+J
+F                                out.write(chunk['ReplacementContent'])
+=====================
+H
+D                            print(f"   Saved chunk to {chunk_path}")
+=====================
+        except Exception as e:
+=====================
+BQfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scratch/extract_code.pyRimport json
+import os
+
+log_path = "/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/.system_generated/logs/transcript_full.jsonl"
+out_dir = "scratch/extracted_chunks"
+os.makedirs(out_dir, exist_ok=True)
+
+print("
+=====================
+ Extracting code chunks from transcript...")
+with open(log_path, 'r', encoding='utf-8') as f:
+    for line in f:
+        try:
+            step = json.loads(line)
+            tool_calls = step.get('tool_calls', [])
+            for call in tool_calls:
+                name = call.get('name')
+                args = call.get('args', {})
+                if 'replace_file_content' in name or 'multi_replace_file_content' in name:
+                    step_idx = step.get('step_index')
+                    print(f"
+=====================
+ Step {step_idx}: {name}")
+                    
+                    # For replace_file_content
+                    if 'ReplacementContent' in args:
+                        chunk_path = os.path.join(out_dir, f"step_{step_idx}_replace.js")
+                        with open(chunk_path, 'w', encoding='utf-8') as out:
+                            out.write(args['ReplacementContent'])
+                        print(f"   Saved chunk to {chunk_path}")
+                    
+                    # For multi_replace_file_content
+                    if 'ReplacementChunks' in args:
+                        for idx, chunk in enumerate(args['ReplacementChunks']):
+                            chunk_path = os.path.join(out_dir, f"step_{step_idx}_multi_{idx}.js")
+                            with open(chunk_path, 'w', encoding='utf-8') as out:
+                                out.write(chunk['ReplacementContent'])
+                            print(f"   Saved chunk to {chunk_path}")
+        except Exception as e:
+            pass
+ 
+=====================
+YUpdate recovery script to parse the previous session transcript logs for code extractions

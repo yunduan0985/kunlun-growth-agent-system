@@ -1,0 +1,16 @@
+{
+  "id": "kunlun_growth_mcp",
+  "name": "昆仑增长MCP",
+  "group": "数据组",
+  "description": "基于 Model Context Protocol (MCP) 的网关，向大模型提供昆仑增长业务的实时 API 查询工具。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=kunlun_growth_mcp",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

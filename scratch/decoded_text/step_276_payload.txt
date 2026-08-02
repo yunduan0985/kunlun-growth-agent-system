@@ -1,0 +1,38 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/x/likes/fetch 
+=====================
+ /api/x/likes/archive 
+=====================
+","EndLine":553,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.get('/api/x/likes/fetch', (req, res) =\u003e {\n  const { username, limit } = req.query;\n  if (!username) return res.status(400).json({ error: \"Missing parameter: username\" });\n\n  console.log(`[X Likes Exporter] Fetching likes for user: @${username} (limit ${limit || 10})`);\n\n  res.json([\n    {\n      author: \"karpathy\",\n      tweet_url: \"https://x.com/karpathy/status/999991\",\n      content: \"I've been writing custom integrations all my life, but MCP standardizes everything. It's the Unix socket of LLM apps.\",\n      timestamp: new Date(Date.now() - 3600000 * 5).toISOString()\n    },\n    {\n      author: \"sama\",\n      tweet_url: \"https://x.com/sama/status/999992\",\n      content: \"GPT-5 is looking incredibly smart. The reasoning capabilities will shock people.\",\n      timestamp: new Date(Date.now() - 3600000 * 12).toISOString()\n    }\n  ]);\n});\n\n// 
+=====================
+\napp.post('/api/x/likes/archive', (req, res) =\u003e {\n  const { username, tweet_url, content, motivation } = req.body;\n  if (!username || !tweet_url || !content) {\n    return res.status(400).json({ error: \"Missing required parameters for archive.\" });\n  }\n\n  console.log(`[Likes Archive] Storing liked tweet by @${username}. Motivation: ${motivation || 'none'}`);\n\n  res.json({\n    success: true,\n    archive_id: \"arch_\" + Math.random().toString(36).substring(2, 9)\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":553,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding X likes routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$4b0ed6ae-12fa-4690-a381-b1a4bd73f4e7j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+ Adding X likes routes to Gateway

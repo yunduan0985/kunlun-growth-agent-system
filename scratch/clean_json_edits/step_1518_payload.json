@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "优化 macOS 编译配置，将打包目标架构由混合架构（arm64, x64）精简为当前 Mac 物理机的 arm64 架构，消除 node-sqlite3 交叉编译 native 模块的失败风险并提速编译。",
+  "EndLine": 69,
+  "Instruction": "修改 build.mac.target.arch 仅保留 arm64。",
+  "ReplacementContent": "          \"arch\": [\n            \"arm64\"\n          ]",
+  "StartLine": 65,
+  "TargetContent": "          \"arch\": [\n            \"arm64\",\n            \"x64\"\n          ]",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/package.json",
+  "toolAction": "Optimizing package.json to output arm64 DMG only",
+  "toolSummary": "Optimize target arch"
+}

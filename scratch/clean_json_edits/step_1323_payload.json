@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "修改 Python 钥匙串扫描脚本，使用标准的 import Security 模块加载 C 级别 API 函数。",
+  "EndLine": 10,
+  "Instruction": "使用 import Security 来加载 SecItem 接口。",
+  "ReplacementContent": "import Security\nimport objc\nfrom Foundation import NSMutableDictionary, kCFBooleanTrue\nimport sys",
+  "StartLine": 1,
+  "TargetContent": "import objc\nfrom Foundation import NSMutableDictionary, kCFBooleanTrue\nimport sys\n\n# 加载 Security 框架\ntry:\n    objc.loadBundle('Security', bundle_path='/System/Library/Frameworks/Security.framework', module_globals=globals())\nexcept Exception as e:\n    print(f\"❌ Failed to load Security framework: {e}\")\n    sys.exit(1)",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/scratch/search_keychain.py",
+  "toolAction": "Importing Security module in Python script",
+  "toolSummary": "Import Security module"
+}

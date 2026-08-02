@@ -1,0 +1,37 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/operation/ticket/resolve 
+=====================
+","EndLine":1024,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/operation/ticket/resolve', (req, res) =\u003e {\n  const { member_name, question } = req.body;\n  if (!member_name || !question) return res.status(400).json({ error: \"Missing parameter: member_name or question\" });\n\n  console.log(`[Support Ticket] Processing incident for member: ${member_name}. Issue: ${question}`);\n\n  const isTechnical = question.toLowerCase().includes(\"npm\") || question.toLowerCase().includes(\"err\") || question.toLowerCase().includes(\"code\") || question.toLowerCase().includes(\"sqlite\");\n\n  res.json({\n    success: true,\n    replied_text: isTechnical ? \"
+=====================
+\",\n    need_escalation: isTechnical\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":1024,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding ticketing routes to Gateway","toolSummary":"Modify file"}:
+
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$d6e740a3-b3d9-4bcb-b80b-053299629656j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+"Adding ticketing routes to Gateway

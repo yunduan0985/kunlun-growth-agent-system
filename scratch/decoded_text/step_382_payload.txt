@@ -1,0 +1,44 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/management/briefing/create 
+=====================
+ /api/management/schedule/event 
+=====================
+","EndLine":855,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/management/briefing/create', (req, res) =\u003e {\n  const { raw_reports } = req.body;\n  if (!raw_reports) return res.status(400).json({ error: \"Missing: raw_reports\" });\n\n  console.log(`[Executive Assistant] Creating weekly/daily briefing from ${raw_reports.length} report sources.`);\n\n  res.json({\n    success: true,\n    briefing: {\n      alert: \"
+=====================
+\",\n      highlights: [\"
+=====================
+\"],\n      suggestions: [\"
+=====================
+\"]\n    }\n  });\n});\n\n// 
+=====================
+\napp.post('/api/management/schedule/event', (req, res) =\u003e {\n  const { summary, start_time, end_time, attendees } = req.body;\n  if (!summary || !start_time) return res.status(400).json({ error: \"Missing required calendar parameters.\" });\n\n  console.log(`[Calendar Service] Booking event: \"${summary}\" at ${start_time} for: ${JSON.stringify(attendees || [])}`);\n\n  res.json({\n    success: true,\n    event_id: \"evt_\" + Math.random().toString(36).substring(2, 9)\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":855,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding CEO assistant routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$4fa90786-75cf-445a-b727-26794ea8d6fcj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+&Adding CEO assistant routes to Gateway

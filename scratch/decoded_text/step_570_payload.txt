@@ -1,0 +1,26 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+","EndLine":11,"Instruction":"
+=====================
+","ReplacementContent":"const PORT = process.env.PORT || 8888;","StartLine":10,"TargetContent":"const PORT = process.env.PORT || 8000;","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Changing Gateway port to 8888","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$e799f58c-5b50-43bd-8074-1f4b3862a4adj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Changing Gateway port to 8888

@@ -1,0 +1,33 @@
+-3750763034362895579P
+=====================
+Z!req_vrtx_011Cd58zBxAJcX3nwtT5JCa8X
+=====================
+b$9043cfd8-2487-4216-819c-4b1fef5a6e3cj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-a5f36b1a-9912-4f59-8354-8b3d8d6d7afb:
+
+#toolu_vrtx_014VkoQ67C7g5i1E9XPqZNEE
+=====================
+replace_file_content
+=====================
+
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":1398,"Instruction":"
+=====================
+","ReplacementContent":"\n      // 
+=====================
+\n      const roleLabelEl = document.getElementById('role-label');\n      if (roleLabelEl) roleLabelEl.textContent = currentLang === 'zh' ? '
+=====================
+' : 'Current Role';\n      // 
+=====================
+\n      updateRoleBadge(getCurrentRole());\n\n      switchDepartment(currentDept, document.querySelector(`.sidebar .active`));\n    }\n","StartLine":1391,"TargetContent":"\n      const roleSelect = document.getElementById('user-role-select');\n      const val = roleSelect.value;\n      roleSelect.options[0].text = dict.role_admin;\n      roleSelect.options[1].text = dict.role_editor;\n      roleSelect.options[2].text = dict.role_sales;\n      roleSelect.value = val;\n\n      switchDepartment(currentDept, document.querySelector(`.sidebar .active`));\n    }\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Fixing toggleLanguage role select reference","toolSummary":"Fix toggleLanguage"}J
+=====================
+replace_file_content`

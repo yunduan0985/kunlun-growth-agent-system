@@ -1,0 +1,122 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "天眼查企业征信尽调工具集",
+    "version": "1.2.0",
+    "description": "提供给天眼查 Agent 进行工商基本信息查询、股权穿透审计及司法经营风险评估的 API 规范。"
+  },
+  "paths": {
+    "/api/tianyancha/search": {
+      "get": {
+        "summary": "搜索企业工商基本注册登记信息",
+        "operationId": "searchCompany",
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "企业名称、信用代码或拼音缩写"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功返回工商明细"
+          }
+        }
+      }
+    },
+    "/api/tianyancha/equity": {
+      "get": {
+        "summary": "获取指定企业股权穿透层级与实际控制人持股比重",
+        "operationId": "getCompanyEquity",
+        "parameters": [
+          {
+            "name": "company_name",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "企业官方标准工商全称"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功返回股权链条与受益人数据"
+          }
+        }
+      }
+    },
+    "/api/tianyancha/risk": {
+      "get": {
+        "summary": "获取企业被执行、失信诉讼、司法纠纷及经营异常日志",
+        "operationId": "getCompanyRisk",
+        "parameters": [
+          {
+            "name": "company_name",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "企业标准工商全称"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功返回负面和诉讼风险清单"
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

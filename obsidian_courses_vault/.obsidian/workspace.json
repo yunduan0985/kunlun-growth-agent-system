@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "f5c9730889ca4ce8",
+    "type": "split",
+    "children": [
+      {
+        "id": "c73d5780f5d06028",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "213369347b727c6c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "00-全电脑全盘资产大地图"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "686b025449698978",
+    "type": "split",
+    "children": [
+      {
+        "id": "9fde40e1ca3bf546",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eb7096bc9217611d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "19dd46c3240bbfee",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "899adb35fd6b51c9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f387019b876c4913",
+    "type": "split",
+    "children": [
+      {
+        "id": "4491eb751a0a4f06",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8b964f624262e259",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "00-全电脑全盘资产大地图 的反向链接列表"
+            }
+          },
+          {
+            "id": "0a0a7a93abc55f0e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "00-全电脑全盘资产大地图 的出链列表"
+            }
+          },
+          {
+            "id": "6d51f32c061ab088",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "fe0d4a95c418b6ac",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "4dbc96415167f868",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "00-全电脑全盘资产大地图 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "213369347b727c6c",
+  "lastOpenFiles": [
+    "08-企业数字资产与实力展示中枢 (Portfolio & Showcase)/00-企业全量数字资产实力展示中枢.md",
+    "09-GitHub远程资产与1500iOS应用中枢 (GitHub & iOS Apps)/00-GitHub远程资产与1500iOS应用中枢.md",
+    "06-全盘资产与项目盘点中枢 (Master Inventory)/02-公域引流与流量爆破勾子资产清单.md",
+    "09-GitHub远程资产与1500iOS应用中枢 (GitHub & iOS Apps)",
+    "08-企业数字资产与实力展示中枢 (Portfolio & Showcase)",
+    "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
+    "07-全电脑全盘资产大地图 (System Wide Master Map)",
+    "06-全盘资产与项目盘点中枢 (Master Inventory)/01-客户当面与直播Demo展示资产清单.md",
+    "06-全盘资产与项目盘点中枢 (Master Inventory)/00-全盘项目与资产盘点中枢.md",
+    "03-Prompt库与工具链/03-36_Agent军团实操与提示词手册.md",
+    "06-全盘资产与项目盘点中枢 (Master Inventory)",
+    "00-主主控总纲/02-原子拼图乐高系统全集.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/COURSE-H-PUZZLE_生财黑客松亚军 AI 智能排课消课原子块.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/COURSE-D-PUZZLE_GEO Perplexity与ChatGPT 排名优化 Schema 原子块.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/COURSE-B-PUZZLE_Midjourney 商业模特换装 Prompt 原子块.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/COURSE-A-PUZZLE_跨境客服尺码引导换码降退货率原子块.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/SELL-SELF-03_Docker 一键私有化部署交钥匙.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/SELL-SELF-02_现场导入客户真实业务数据测试.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/SELL-SELF-01_当面或直播展示真实运行后台.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/MOMENTS-01_破折叠首句模板 (15字内).md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/TAG-02_意向评分与合伙人标签划分 (0-100分).md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/TAG-01_进群自动化欢迎语与痛点调研.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/MOMENTS-02_评论区第 1 条引流避风控模板.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/MOMENTS-01_破折叠首句模板 (<15字).md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/HOOK-03_免费试用工具勾子.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/HOOK-02_数字强烈对比钩子.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/HOOK-01_痛点反转开场钩子.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/CAMP-DAY4_Day 4 闭营发售与 5:5 签约.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/CAMP-DAY3_Day 3 独家场景 1V1 诊断.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/CAMP-DAY1_Day 1 破冰与认知颠覆.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)",
+    "01-课程矩阵 (8大垂直方向)/课程G-AI智能办公全员提效营",
+    "01-课程矩阵 (8大垂直方向)/课程F-AI企服通识与数字员工",
+    "01-课程矩阵 (8大垂直方向)/课程E-OPC内容自动化爆破营",
+    "01-课程矩阵 (8大垂直方向)/课程D-AI独立站开发与GEO",
+    "01-课程矩阵 (8大垂直方向)/课程C-AI新媒体全渠道获客营"
+  ]
+}

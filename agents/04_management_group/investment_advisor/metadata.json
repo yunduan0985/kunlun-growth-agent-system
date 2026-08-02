@@ -1,0 +1,16 @@
+{
+  "id": "investment_advisor",
+  "name": "投资顾问",
+  "group": "管理组",
+  "description": "分析 market 研报、项目商业计划书（BP），评估项目的投资价值、ROI及潜在财务风险。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=investment_advisor",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

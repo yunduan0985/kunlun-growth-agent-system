@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 auth-card 内部插入离线授权激活表单 HTML 结构。",
+  "EndLine": 745,
+  "Instruction": "在登录表单之前插入激活表单。",
+  "ReplacementContent": "      <!-- 授权激活表单 -->\n      <div id=\"form-license\" style=\"display:none;\">\n        <div class=\"auth-title\">授权激活</div>\n        <div class=\"auth-subtitle\">系统检测到当前设备尚未激活。本产品为本地绑定授权，请输入您的激活码：</div>\n\n        <div class=\"auth-input-group\">\n          <label class=\"auth-label\">您的机器特征码 (Machine ID)</label>\n          <div style=\"display:flex; gap:8px;\">\n            <input type=\"text\" class=\"auth-input\" id=\"license-machine-id\" readonly style=\"background:rgba(255,255,255,0.05); color:#86868b; text-align:center; font-family:monospace; font-weight:bold; flex:1; letter-spacing:1px;\">\n            <button class=\"auth-btn\" style=\"margin-top:0; width:auto; padding:0 16px; font-size:12px; white-space:nowrap; background:#86868b;\" onclick=\"copyMachineId()\">复制</button>\n          </div>\n        </div>\n\n        <div class=\"auth-input-group\">\n          <label class=\"auth-label\">授权激活码 (License Key)</label>\n          <input type=\"text\" class=\"auth-input\" id=\"license-key\" placeholder=\"请输入 16 位激活码\" style=\"text-align:center; font-family:monospace; font-weight:bold; letter-spacing:1px;\" onkeydown=\"if(event.key==='Enter')doActivateLicense()\">\n        </div>\n\n        <div class=\"auth-err\" id=\"license-err\"></div>\n        <div class=\"auth-ok\" id=\"license-ok\"></div>\n\n        <button class=\"auth-btn\" id=\"license-btn\" onclick=\"doActivateLicense()\">激活系统</button>\n\n        <div class=\"auth-switch\" style=\"margin-top:15px; font-size:11px;\">\n          未获取激活码？请联系销售顾问并提供上方特征码。\n        </div>\n      </div>\n\n      <!-- 登录表单 -->\n      <div id=\"form-login\">",
+  "StartLine": 744,
+  "TargetContent": "      <!-- 登录表单 -->\n      <div id=\"form-login\">",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Inserting license form HTML into auth card",
+  "toolSummary": "Insert license form HTML"
+}

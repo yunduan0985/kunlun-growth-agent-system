@@ -1,0 +1,697 @@
+ **
+ɗ"'
+#toolu_vrtx_012rtqqaE6FypNzGR8XjCUdamulti_replace_file_content&{"Description":"修复两个关键 Bug：1) 用系统 node 二进制替代 Electron execPath 启动网关；2) 等待更长时间让网关完全就绪后再显示窗口；3) ready-to-show 注入端口改为 executeJavaScript 时序安全版本。","Instruction":"1. 查找系统 node 路径，用它替代 process.execPath 启动网关子进程。\n2. 等待时间从 2000ms 改为 3500ms（确保网关完全就绪）。\n3. executeJavaScript 添加 try-catch，避免 initGatewayUrl 未定义报错。","ReplacementChunks":[{"AllowMultiple":false,"EndLine":66,"ReplacementContent":"// 启动 Express 网关子进程\n// ==========================================\nfunction startGateway(port) {\n  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）\n  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;\n  const gatewayPath = isDev\n    ? path.join(__dirname, '../src/index.js')\n    : path.join(process.resourcesPath, 'app/src/index.js');\n\n  // ✅ 关键修复：必须使用系统 node，而非 process.execPath（Electron 二进制）\n  // 按优先级依次尝试常见 node 路径\n  const fs = require('fs');\n  const CANDIDATE_NODE_PATHS = [\n    '/opt/homebrew/bin/node',   // macOS Apple Silicon (Homebrew)\n    '/usr/local/bin/node',      // macOS Intel (Homebrew / nvm)\n    '/usr/bin/node',            // Linux\n    process.env.NODE_BINARY,   // 用户自定义（环境变量）\n    'node',                    // PATH 中的 node（兜底）\n  ].filter(Boolean);\n\n  let nodeExecutable = 'node'; // 默认兜底\n  for (const p of CANDIDATE_NODE_PATHS) {\n    if (p === 'node') { nodeExecutable = p; break; } // PATH 兜底，不用 existsSync 检查\n    if (fs.existsSync(p)) { nodeExecutable = p; break; }\n  }\n\n  console.log(`[Electron] Node binary: ${nodeExecutable}`);\n  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);\n\n  const env = Object.assign({}, process.env, {\n    PORT: String(port),\n    NODE_ENV: isDev ? 'development' : 'production'\n  });\n\n  gatewayProcess = spawn(nodeExecutable, [gatewayPath], {\n    env,\n    stdio: ['pipe', 'pipe', 'pipe']\n  });","StartLine":45,"TargetContent":"// 启动 Express 网关子进程\n// ==========================================\nfunction startGateway(port) {\n  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）\n  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;\n  const gatewayPath = isDev\n    ? path.join(__dirname, '../src/index.js')\n    : path.join(process.resourcesPath, 'app/src/index.js');\n\n  const nodeExecutable = process.execPath; // 使用 Electron 内置的 Node 运行时\n\n  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);\n\n  const env = Object.assign({}, process.env, {\n    PORT: String(port),\n    NODE_ENV: isDev ? 'development' : 'production'\n  });\n\n  gatewayProcess = spawn(process.execPath, [gatewayPath], {\n    env,\n    stdio: ['pipe', 'pipe', 'pipe']\n  });"},{"AllowMultiple":false,"EndLine":120,"ReplacementContent":"  // 3. 等待网关就绪（3.5 秒，给 node 子进程足够的启动时间）\n  await new Promise(r =\u003e setTimeout(r, 3500));","StartLine":117,"TargetContent":"  // 3. 等待网关就绪（最多 5 秒）\n  await new Promise(r =\u003e setTimeout(r, 2000));"},{"AllowMultiple":false,"EndLine":147,"ReplacementContent":"  // 6. 页面加载完成后显示窗口（苹果丝滑淡入）\n  mainWindow.once('ready-to-show', () =\u003e {\n    mainWindow.show();\n    // 通知前端使用正确的端口（延迟 500ms 确保 JS 上下文初始化完毕）\n    setTimeout(() =\u003e {\n      if (mainWindow \u0026\u0026 !mainWindow.isDestroyed()) {\n        mainWindow.webContents.executeJavaScript(\n          `try { \n            window.__GATEWAY_PORT__ = ${activePort}; \n            if(typeof window.initGatewayUrl === 'function') window.initGatewayUrl(${activePort});\n            console.log('[Electron IPC] Gateway port injected:', ${activePort});\n          } catch(e) { console.warn('initGatewayUrl not ready yet', e); }`\n        ).catch(e =\u003e console.error('[Electron] executeJavaScript error:', e));\n      }\n    }, 500);\n  });","StartLine":143,"TargetContent":"  // 6. 页面加载完成后显示窗口（苹果丝滑淡入）\n  mainWindow.once('ready-to-show', () =\u003e {\n    mainWindow.show();\n    // 通知前端使用正确的端口\n    mainWindow.webContents.executeJavaScript(\n      `window.__GATEWAY_PORT__ = ${activePort}; \n       if(typeof initGatewayUrl === 'function') initGatewayUrl(${activePort});\n       console.log('[Electron IPC] Gateway port set to:', ${activePort});`\n    );\n  });"}],"TargetFile":"/Volumes/MOVESPEED/下载/AIcode/Agent/electron/main.js","toolAction":"Fixing Electron main process gateway spawn","toolSummary":"Fix gateway spawn"}Jmulti_replace_file_content*Description*Instruction*ReplacementChunks*
+TargetFile*
+toolAction*toolSummary2:BXb$8688c2dc-2c28-4eee-b193-c94b5f5f4a59jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bdƕ	6
+
+
+Fix gateway spawn*Fixing Electron main process gateway spawn̸R
+!
+!
+1. 查找系统 node 路径，用它替代 process.execPath 启动网关子进程。
+2. 等待时间从 2000ms 改为 3500ms（确保网关完全就绪）。
+3. executeJavaScript 添加 try-catch，避免 initGatewayUrl 未定义报错。@J
+// 启动 Express 网关子进程
+// ==========================================
+function startGateway(port) {
+  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）
+  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+  const gatewayPath = isDev
+    ? path.join(__dirname, '../src/index.js')
+    : path.join(process.resourcesPath, 'app/src/index.js');
+
+  const nodeExecutable = process.execPath; // 使用 Electron 内置的 Node 运行时
+
+  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);
+
+  const env = Object.assign({}, process.env, {
+    PORT: String(port),
+    NODE_ENV: isDev ? 'development' : 'production'
+  });
+
+  gatewayProcess = spawn(process.execPath, [gatewayPath], {
+    env,
+    stdio: ['pipe', 'pipe', 'pipe']
+  });// 启动 Express 网关子进程
+// ==========================================
+function startGateway(port) {
+  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）
+  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+  const gatewayPath = isDev
+    ? path.join(__dirname, '../src/index.js')
+    : path.join(process.resourcesPath, 'app/src/index.js');
+
+  // ✅ 关键修复：必须使用系统 node，而非 process.execPath（Electron 二进制）
+  // 按优先级依次尝试常见 node 路径
+  const fs = require('fs');
+  const CANDIDATE_NODE_PATHS = [
+    '/opt/homebrew/bin/node',   // macOS Apple Silicon (Homebrew)
+    '/usr/local/bin/node',      // macOS Intel (Homebrew / nvm)
+    '/usr/bin/node',            // Linux
+    process.env.NODE_BINARY,   // 用户自定义（环境变量）
+    'node',                    // PATH 中的 node（兜底）
+  ].filter(Boolean);
+
+  let nodeExecutable = 'node'; // 默认兜底
+  for (const p of CANDIDATE_NODE_PATHS) {
+    if (p === 'node') { nodeExecutable = p; break; } // PATH 兜底，不用 existsSync 检查
+    if (fs.existsSync(p)) { nodeExecutable = p; break; }
+  }
+
+  console.log(`[Electron] Node binary: ${nodeExecutable}`);
+  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);
+
+  const env = Object.assign({}, process.env, {
+    PORT: String(port),
+    NODE_ENV: isDev ? 'development' : 'production'
+  });
+
+  gatewayProcess = spawn(nodeExecutable, [gatewayPath], {
+    env,
+    stdio: ['pipe', 'pipe', 'pipe']
+  });0-8BJ
+[  // 3. 等待网关就绪（最多 5 秒）
+  await new Promise(r => setTimeout(r, 2000));  // 3. 等待网关就绪（3.5 秒，给 node 子进程足够的启动时间）
+  await new Promise(r => setTimeout(r, 3500));0u8xJ	
+  // 6. 页面加载完成后显示窗口（苹果丝滑淡入）
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+    // 通知前端使用正确的端口
+    mainWindow.webContents.executeJavaScript(
+      `window.__GATEWAY_PORT__ = ${activePort}; 
+       if(typeof initGatewayUrl === 'function') initGatewayUrl(${activePort});
+       console.log('[Electron IPC] Gateway port set to:', ${activePort});`
+    );
+  });  // 6. 页面加载完成后显示窗口（苹果丝滑淡入）
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+    // 通知前端使用正确的端口（延迟 500ms 确保 JS 上下文初始化完毕）
+    setTimeout(() => {
+      if (mainWindow && !mainWindow.isDestroyed()) {
+        mainWindow.webContents.executeJavaScript(
+          `try { 
+            window.__GATEWAY_PORT__ = ${activePort}; 
+            if(typeof window.initGatewayUrl === 'function') window.initGatewayUrl(${activePort});
+            console.log('[Electron IPC] Gateway port injected:', ${activePort});
+          } catch(e) { console.warn('initGatewayUrl not ready yet', e); }`
+        ).catch(e => console.error('[Electron] executeJavaScript error:', e));
+      }
+    }, 500);
+  });08"*Jfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/electron/main.js2M
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agentelectron/main.js
+VV
+/**<
+8 * Kunlun Agent OS — Electron 主进程 (Main Process)
+ * 
+ * 职责：^
+Z * 1. 检测 8888 端口是否可用，冲突时自动寻找可用端口（端口自愈）@
+< * 2. 以子进程方式启动 Express 网关 (src/index.js)?
+; * 3. 创建无边框桌面窗口，加载本地 index.htmlF
+B * 4. 网关崩溃时自动秒级热重启（守护进程保活）T
+P * 5. 将选定端口通过 IPC 注入到前端，前端动态修正 GATEWAY_URL
+ */M
+Iconst { app, BrowserWindow, ipcMain, shell, Menu } = require('electron');!
+const path = require('path'); 
+const net  = require('net');/
++const { spawn } = require('child_process');
+const fs = require('fs');1
+-// ==========================================:
+6// 工具函数：探测可用端口（自愈机制）1
+-// ==========================================+
+'function findAvailablePort(startPort) {'
+#  return new Promise((resolve) => {*
+&    const server = net.createServer();(
+$    server.listen(startPort, () => {-
+)      const port = server.address().port;,
+(      server.close(() => resolve(port));
+    });"
+    server.on('error', () => {1
+-      // 端口冲突，自动尝试下一个4
+0      resolve(findAvailablePort(startPort + 1));
+    });	
+  });
+}1
+-// ==========================================
+// 全局变量1
+-// ==========================================
+let mainWindow = null;
+let gatewayProcess = null;
+let activePort = 8888;
+let restartCount = 0;
+const MAX_RESTARTS = 10;1
+-// ==========================================%
+!// 启动 Express 网关子进程1
+-// ==========================================!
+function startGateway(port) {U
+Q  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）N
+J  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+  const gatewayPath = isDev1
+-    ? path.join(__dirname, '../src/index.js')?
+;    : path.join(process.resourcesPath, 'app/src/index.js');Z
+V  const nodeExecutable = process.execPath; // 使用 Electron 内置的 Node 运行时e
+a  // ✅ 关键修复：必须使用系统 node，而非 process.execPath（Electron 二进制）3
+/  // 按优先级依次尝试常见 node 路径
+  const fs = require('fs');$
+   const CANDIDATE_NODE_PATHS = [E
+A    '/opt/homebrew/bin/node',   // macOS Apple Silicon (Homebrew)C
+?    '/usr/local/bin/node',      // macOS Intel (Homebrew / nvm),
+(    '/usr/bin/node',            // LinuxG
+C    process.env.NODE_BINARY,   // 用户自定义（环境变量）B
+>    'node',                    // PATH 中的 node（兜底）
+  ].filter(Boolean);2
+.  let nodeExecutable = 'node'; // 默认兜底-
+)  for (const p of CANDIDATE_NODE_PATHS) {b
+^    if (p === 'node') { nodeExecutable = p; break; } // PATH 兜底，不用 existsSync 检查<
+8    if (fs.existsSync(p)) { nodeExecutable = p; break; }
+  }?
+;  console.log(`[Electron] Node binary: ${nodeExecutable}`);W
+S  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);2
+.  const env = Object.assign({}, process.env, {
+    PORT: String(port),6
+2    NODE_ENV: isDev ? 'development' : 'production'	
+  });?
+;  gatewayProcess = spawn(process.execPath, [gatewayPath], {=
+9  gatewayProcess = spawn(nodeExecutable, [gatewayPath], {
+    env,'
+#    stdio: ['pipe', 'pipe', 'pipe']	
+  });2
+.  gatewayProcess.stdout.on('data', (data) => {B
+>    console.log(`[Gateway STDOUT] ${data.toString().trim()}`);	
+  });2
+.  gatewayProcess.stderr.on('data', (data) => {D
+@    console.error(`[Gateway STDERR] ${data.toString().trim()}`);	
+  });9
+5  // 守护进程：网关异常退出时自动重启3
+/  gatewayProcess.on('exit', (code, signal) => {U
+Q    console.warn(`[Gateway] Process exited with code=${code}, signal=${signal}`);U
+Q    if (restartCount < MAX_RESTARTS && mainWindow && !mainWindow.isDestroyed()) {
+      restartCount++;i
+e      console.log(`[Guardian] Auto-restarting gateway (attempt ${restartCount}/${MAX_RESTARTS})...`);;
+7      setTimeout(() => startGateway(activePort), 1500);2
+.    } else if (restartCount >= MAX_RESTARTS) {\
+X      console.error('[Guardian] Max restart attempts reached. Please restart the app.');	
+    }	
+  });
+}1
+-// ==========================================
+// 创建主窗口1
+-// ==========================================#
+async function createWindow() {
+  // 1. 端口自愈探测1
+-  activePort = await findAvailablePort(8888);E
+A  console.log(`[Electron] Selected gateway port: ${activePort}`);
+  // 2. 启动网关
+  startGateway(activePort);0
+,  // 3. 等待网关就绪（最多 5 秒）2
+.  await new Promise(r => setTimeout(r, 2000));U
+Q  // 3. 等待网关就绪（3.5 秒，给 node 子进程足够的启动时间）2
+.  await new Promise(r => setTimeout(r, 3500));
+  // 4. 创建窗口&
+"  mainWindow = new BrowserWindow({
+    width: 1440,
+    height: 900,
+    minWidth: 1024,
+    minHeight: 700,U
+Q    titleBarStyle: 'hiddenInset',      // macOS 苹果原生交通灯按钮内嵌/
++    trafficLightPosition: { x: 18, y: 18 },#
+    backgroundColor: '#f5f5f7',
+    webPreferences: {6
+2      preload: path.join(__dirname, 'preload.js'),!
+      contextIsolation: true,!
+      nodeIntegration: false,
+
+    },V
+R    show: false,  // 先隐藏，等页面 ready 后显示（避免白屏闪烁）
+    icon: getAppIcon(),	
+  });0
+,  // 5. 加载页面（注入端口参数）>
+:  const indexPath = path.join(__dirname, '../index.html');&
+"  mainWindow.loadFile(indexPath, {3
+/    query: { gateway_port: String(activePort) }	
+  });E
+A  // 6. 页面加载完成后显示窗口（苹果丝滑淡入）.
+*  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();,
+(    // 通知前端使用正确的端口1
+-    mainWindow.webContents.executeJavaScript(4
+0      `window.__GATEWAY_PORT__ = ${activePort}; R
+N       if(typeof initGatewayUrl === 'function') initGatewayUrl(${activePort});N
+J       console.log('[Electron IPC] Gateway port set to:', ${activePort});`
+
+    );a
+]    // 通知前端使用正确的端口（延迟 500ms 确保 JS 上下文初始化完毕）
+    setTimeout(() => {8
+4      if (mainWindow && !mainWindow.isDestroyed()) {5
+1        mainWindow.webContents.executeJavaScript(
+          `try { 9
+5            window.__GATEWAY_PORT__ = ${activePort}; e
+a            if(typeof window.initGatewayUrl === 'function') window.initGatewayUrl(${activePort});T
+P            console.log('[Electron IPC] Gateway port injected:', ${activePort});N
+J          } catch(e) { console.warn('initGatewayUrl not ready yet', e); }`R
+N        ).catch(e => console.error('[Electron] executeJavaScript error:', e));
+      }
+    }, 500);	
+  });*
+&  // 7. 外链在系统浏览器打开@
+<  mainWindow.webContents.setWindowOpenHandler(({ url }) => { 
+    shell.openExternal(url);"
+    return { action: 'deny' };	
+  });%
+!  mainWindow.on('closed', () => {
+    mainWindow = null;	
+  });
+  // 8. 设置精简菜单
+  buildAppMenu();
+}1
+-// ==========================================%
+!// 应用图标（容错处理）1
+-// ==========================================
+function getAppIcon() {:
+6  const assetsDir = path.join(__dirname, '../assets');^
+Z  if (process.platform === 'darwin' && fs.existsSync(path.join(assetsDir, 'icon.icns'))) {1
+-    return path.join(assetsDir, 'icon.icns');
+  }\
+X  if (process.platform === 'win32' && fs.existsSync(path.join(assetsDir, 'icon.ico'))) {0
+,    return path.join(assetsDir, 'icon.ico');
+  }
+  return undefined;
+}1
+-// ==========================================%
+!// 苹果风格精简应用菜单1
+-// ==========================================
+function buildAppMenu() {
+  const template = [	
+    {)
+%      label: '昆仑增长 Agent OS',
+      submenu: [/
++        { label: '关于', role: 'about' },"
+        { type: 'separator' },2
+.        { label: '服务', role: 'services' },"
+        { type: 'separator' },D
+@        { label: '隐藏', role: 'hide', accelerator: 'Cmd+H' },D
+@        { label: '退出', role: 'quit', accelerator: 'Cmd+Q' },
+      ],
+
+    },	
+    {
+      label: '编辑',
+      submenu: [.
+*        { label: '撤销', role: 'undo' },.
+*        { label: '重做', role: 'redo' },"
+        { type: 'separator' },-
+)        { label: '剪切', role: 'cut' },.
+*        { label: '复制', role: 'copy' },/
++        { label: '粘贴', role: 'paste' },3
+/        { label: '全选', role: 'selectAll' },
+      ],
+
+    },	
+    {
+      label: '视图',
+      submenu: [L
+H        { label: '重新载入', role: 'reload', accelerator: 'Cmd+R' },[
+W        { label: '开发者工具', role: 'toggleDevTools', accelerator: 'Alt+Cmd+I' },"
+        { type: 'separator' },9
+5        { label: '实际大小', role: 'resetZoom' },0
+,        { label: '放大', role: 'zoomIn' },1
+-        { label: '缩小', role: 'zoomOut' },
+      ],
+
+    },	
+    {
+      label: '窗口',
+      submenu: [K
+G        { label: '最小化', role: 'minimize', accelerator: 'Cmd+M' },:
+6        { label: '全屏', role: 'togglefullscreen' },E
+A        { label: '关闭', role: 'close', accelerator: 'Cmd+W' },
+      ],
+
+    },
+  ];4
+0  const menu = Menu.buildFromTemplate(template);$
+   Menu.setApplicationMenu(menu);
+}1
+-// ==========================================,
+(// IPC 处理：前端请求当前端口1
+-// ==========================================9
+5ipcMain.handle('get-gateway-port', () => activePort);1
+-// =========================================="
+// Electron 应用生命周期1
+-// =========================================='
+#app.whenReady().then(createWindow);'
+#app.on('window-all-closed', () => {4
+0  if (process.platform !== 'darwin') app.quit();
+});
+app.on('activate', () => {E
+A  if (BrowserWindow.getAllWindows().length === 0) createWindow();
+});%
+!// 退出前终止网关子进程!
+app.on('before-quit', () => {
+  if (gatewayProcess) {I
+E    console.log('[Electron] Killing gateway process before quit...');'
+#    gatewayProcess.kill('SIGTERM');
+    gatewayProcess = null;
+  }
+});.
+*process.on('uncaughtException', (err) => {;
+7  console.error('[Electron] Uncaught Exception:', err);
+});BJfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/electron/main.jsR>/**
+ * Kunlun Agent OS — Electron 主进程 (Main Process)
+ * 
+ * 职责：
+ * 1. 检测 8888 端口是否可用，冲突时自动寻找可用端口（端口自愈）
+ * 2. 以子进程方式启动 Express 网关 (src/index.js)
+ * 3. 创建无边框桌面窗口，加载本地 index.html
+ * 4. 网关崩溃时自动秒级热重启（守护进程保活）
+ * 5. 将选定端口通过 IPC 注入到前端，前端动态修正 GATEWAY_URL
+ */
+
+const { app, BrowserWindow, ipcMain, shell, Menu } = require('electron');
+const path = require('path');
+const net  = require('net');
+const { spawn } = require('child_process');
+const fs = require('fs');
+
+// ==========================================
+// 工具函数：探测可用端口（自愈机制）
+// ==========================================
+function findAvailablePort(startPort) {
+  return new Promise((resolve) => {
+    const server = net.createServer();
+    server.listen(startPort, () => {
+      const port = server.address().port;
+      server.close(() => resolve(port));
+    });
+    server.on('error', () => {
+      // 端口冲突，自动尝试下一个
+      resolve(findAvailablePort(startPort + 1));
+    });
+  });
+}
+
+// ==========================================
+// 全局变量
+// ==========================================
+let mainWindow = null;
+let gatewayProcess = null;
+let activePort = 8888;
+let restartCount = 0;
+const MAX_RESTARTS = 10;
+
+// ==========================================
+// 启动 Express 网关子进程
+// ==========================================
+function startGateway(port) {
+  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）
+  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+  const gatewayPath = isDev
+    ? path.join(__dirname, '../src/index.js')
+    : path.join(process.resourcesPath, 'app/src/index.js');
+
+  const nodeExecutable = process.execPath; // 使用 Electron 内置的 Node 运行时
+
+  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);
+
+  const env = Object.assign({}, process.env, {
+    PORT: String(port),
+    NODE_ENV: isDev ? 'development' : 'production'
+  });
+
+  gatewayProcess = spawn(process.execPath, [gatewayPath], {
+    env,
+    stdio: ['pipe', 'pipe', 'pipe']
+  });
+
+  gatewayProcess.stdout.on('data', (data) => {
+    console.log(`[Gateway STDOUT] ${data.toString().trim()}`);
+  });
+
+  gatewayProcess.stderr.on('data', (data) => {
+    console.error(`[Gateway STDERR] ${data.toString().trim()}`);
+  });
+
+  // 守护进程：网关异常退出时自动重启
+  gatewayProcess.on('exit', (code, signal) => {
+    console.warn(`[Gateway] Process exited with code=${code}, signal=${signal}`);
+    if (restartCount < MAX_RESTARTS && mainWindow && !mainWindow.isDestroyed()) {
+      restartCount++;
+      console.log(`[Guardian] Auto-restarting gateway (attempt ${restartCount}/${MAX_RESTARTS})...`);
+      setTimeout(() => startGateway(activePort), 1500);
+    } else if (restartCount >= MAX_RESTARTS) {
+      console.error('[Guardian] Max restart attempts reached. Please restart the app.');
+    }
+  });
+}
+
+// ==========================================
+// 创建主窗口
+// ==========================================
+async function createWindow() {
+  // 1. 端口自愈探测
+  activePort = await findAvailablePort(8888);
+  console.log(`[Electron] Selected gateway port: ${activePort}`);
+
+  // 2. 启动网关
+  startGateway(activePort);
+
+  // 3. 等待网关就绪（最多 5 秒）
+  await new Promise(r => setTimeout(r, 2000));
+
+  // 4. 创建窗口
+  mainWindow = new BrowserWindow({
+    width: 1440,
+    height: 900,
+    minWidth: 1024,
+    minHeight: 700,
+    titleBarStyle: 'hiddenInset',      // macOS 苹果原生交通灯按钮内嵌
+    trafficLightPosition: { x: 18, y: 18 },
+    backgroundColor: '#f5f5f7',
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: true,
+      nodeIntegration: false,
+    },
+    show: false,  // 先隐藏，等页面 ready 后显示（避免白屏闪烁）
+    icon: getAppIcon(),
+  });
+
+  // 5. 加载页面（注入端口参数）
+  const indexPath = path.join(__dirname, '../index.html');
+  mainWindow.loadFile(indexPath, {
+    query: { gateway_port: String(activePort) }
+  });
+
+  // 6. 页面加载完成后显示窗口（苹果丝滑淡入）
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+    // 通知前端使用正确的端口
+    mainWindow.webContents.executeJavaScript(
+      `window.__GATEWAY_PORT__ = ${activePort}; 
+       if(typeof initGatewayUrl === 'function') initGatewayUrl(${activePort});
+       console.log('[Electron IPC] Gateway port set to:', ${activePort});`
+    );
+  });
+
+  // 7. 外链在系统浏览器打开
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    shell.openExternal(url);
+    return { action: 'deny' };
+  });
+
+  mainWindow.on('closed', () => {
+    mainWindow = null;
+  });
+
+  // 8. 设置精简菜单
+  buildAppMenu();
+}
+
+// ==========================================
+// 应用图标（容错处理）
+// ==========================================
+function getAppIcon() {
+  const assetsDir = path.join(__dirname, '../assets');
+  if (process.platform === 'darwin' && fs.existsSync(path.join(assetsDir, 'icon.icns'))) {
+    return path.join(assetsDir, 'icon.icns');
+  }
+  if (process.platform === 'win32' && fs.existsSync(path.join(assetsDir, 'icon.ico'))) {
+    return path.join(assetsDir, 'icon.ico');
+  }
+  return undefined;
+}
+
+// ==========================================
+// 苹果风格精简应用菜单
+// ==========================================
+function buildAppMenu() {
+  const template = [
+    {
+      label: '昆仑增长 Agent OS',
+      submenu: [
+        { label: '关于', role: 'about' },
+        { type: 'separator' },
+        { label: '服务', role: 'services' },
+        { type: 'separator' },
+        { label: '隐藏', role: 'hide', accelerator: 'Cmd+H' },
+        { label: '退出', role: 'quit', accelerator: 'Cmd+Q' },
+      ],
+    },
+    {
+      label: '编辑',
+      submenu: [
+        { label: '撤销', role: 'undo' },
+        { label: '重做', role: 'redo' },
+        { type: 'separator' },
+        { label: '剪切', role: 'cut' },
+        { label: '复制', role: 'copy' },
+        { label: '粘贴', role: 'paste' },
+        { label: '全选', role: 'selectAll' },
+      ],
+    },
+    {
+      label: '视图',
+      submenu: [
+        { label: '重新载入', role: 'reload', accelerator: 'Cmd+R' },
+        { label: '开发者工具', role: 'toggleDevTools', accelerator: 'Alt+Cmd+I' },
+        { type: 'separator' },
+        { label: '实际大小', role: 'resetZoom' },
+        { label: '放大', role: 'zoomIn' },
+        { label: '缩小', role: 'zoomOut' },
+      ],
+    },
+    {
+      label: '窗口',
+      submenu: [
+        { label: '最小化', role: 'minimize', accelerator: 'Cmd+M' },
+        { label: '全屏', role: 'togglefullscreen' },
+        { label: '关闭', role: 'close', accelerator: 'Cmd+W' },
+      ],
+    },
+  ];
+
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
+}
+
+// ==========================================
+// IPC 处理：前端请求当前端口
+// ==========================================
+ipcMain.handle('get-gateway-port', () => activePort);
+
+// ==========================================
+// Electron 应用生命周期
+// ==========================================
+app.whenReady().then(createWindow);
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) createWindow();
+});
+
+// 退出前终止网关子进程
+app.on('before-quit', () => {
+  if (gatewayProcess) {
+    console.log('[Electron] Killing gateway process before quit...');
+    gatewayProcess.kill('SIGTERM');
+    gatewayProcess = null;
+  }
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('[Electron] Uncaught Exception:', err);
+});
+ j
+
+// 启动 Express 网关子进程
+// ==========================================
+function startGateway(port) {
+  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）
+  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+  const gatewayPath = isDev
+    ? path.join(__dirname, '../src/index.js')
+    : path.join(process.resourcesPath, 'app/src/index.js');
+
+  const nodeExecutable = process.execPath; // 使用 Electron 内置的 Node 运行时
+
+  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);
+
+  const env = Object.assign({}, process.env, {
+    PORT: String(port),
+    NODE_ENV: isDev ? 'development' : 'production'
+  });
+
+  gatewayProcess = spawn(process.execPath, [gatewayPath], {
+    env,
+    stdio: ['pipe', 'pipe', 'pipe']
+  });// 启动 Express 网关子进程
+// ==========================================
+function startGateway(port) {
+  // 确定 src/index.js 的正确路径（打包后在 resources/app/src/ 内）
+  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+  const gatewayPath = isDev
+    ? path.join(__dirname, '../src/index.js')
+    : path.join(process.resourcesPath, 'app/src/index.js');
+
+  // ✅ 关键修复：必须使用系统 node，而非 process.execPath（Electron 二进制）
+  // 按优先级依次尝试常见 node 路径
+  const fs = require('fs');
+  const CANDIDATE_NODE_PATHS = [
+    '/opt/homebrew/bin/node',   // macOS Apple Silicon (Homebrew)
+    '/usr/local/bin/node',      // macOS Intel (Homebrew / nvm)
+    '/usr/bin/node',            // Linux
+    process.env.NODE_BINARY,   // 用户自定义（环境变量）
+    'node',                    // PATH 中的 node（兜底）
+  ].filter(Boolean);
+
+  let nodeExecutable = 'node'; // 默认兜底
+  for (const p of CANDIDATE_NODE_PATHS) {
+    if (p === 'node') { nodeExecutable = p; break; } // PATH 兜底，不用 existsSync 检查
+    if (fs.existsSync(p)) { nodeExecutable = p; break; }
+  }
+
+  console.log(`[Electron] Node binary: ${nodeExecutable}`);
+  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);
+
+  const env = Object.assign({}, process.env, {
+    PORT: String(port),
+    NODE_ENV: isDev ? 'development' : 'production'
+  });
+
+  gatewayProcess = spawn(nodeExecutable, [gatewayPath], {
+    env,
+    stdio: ['pipe', 'pipe', 'pipe']
+  });0-8B(j
+
+[  // 3. 等待网关就绪（最多 5 秒）
+  await new Promise(r => setTimeout(r, 2000));  // 3. 等待网关就绪（3.5 秒，给 node 子进程足够的启动时间）
+  await new Promise(r => setTimeout(r, 3500));0u8xXj	
+	
+  // 6. 页面加载完成后显示窗口（苹果丝滑淡入）
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+    // 通知前端使用正确的端口
+    mainWindow.webContents.executeJavaScript(
+      `window.__GATEWAY_PORT__ = ${activePort}; 
+       if(typeof initGatewayUrl === 'function') initGatewayUrl(${activePort});
+       console.log('[Electron IPC] Gateway port set to:', ${activePort});`
+    );
+  });  // 6. 页面加载完成后显示窗口（苹果丝滑淡入）
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+    // 通知前端使用正确的端口（延迟 500ms 确保 JS 上下文初始化完毕）
+    setTimeout(() => {
+      if (mainWindow && !mainWindow.isDestroyed()) {
+        mainWindow.webContents.executeJavaScript(
+          `try { 
+            window.__GATEWAY_PORT__ = ${activePort}; 
+            if(typeof window.initGatewayUrl === 'function') window.initGatewayUrl(${activePort});
+            console.log('[Electron IPC] Gateway port injected:', ${activePort});
+          } catch(e) { console.warn('initGatewayUrl not ready yet', e); }`
+        ).catch(e => console.error('[Electron] executeJavaScript error:', e));
+      }
+    }, 500);
+  });08X修复两个关键 Bug：1) 用系统 node 二进制替代 Electron execPath 启动网关；2) 等待更长时间让网关完全就绪后再显示窗口；3) ready-to-show 注入端口改为 executeJavaScript 时序安全版本。

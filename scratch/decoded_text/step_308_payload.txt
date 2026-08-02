@@ -1,0 +1,58 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/content/risk/scan 
+=====================
+ /api/content/risk/ip-check 
+=====================
+","EndLine":647,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+)\napp.post('/api/content/risk/scan', (req, res) =\u003e {\n  const { text, platform } = req.body;\n  if (!text) return res.status(400).json({ error: \"Missing parameter: text\" });\n\n  console.log(`[Content Risk Scan] Auditing text for platform: ${platform || 'xiaohongshu'}`);\n\n  const violations = [];\n  let risk_level = \"none\";\n\n  if (text.includes(\"
+=====================
+\") || text.includes(\"
+=====================
+\")) {\n    risk_level = \"medium\";\n    violations.push({\n      trigger_text: text.includes(\"
+=====================
+\",\n      risk_type: \"advertising_law_violation\",\n      suggested_fix: \"
+=====================
+\"\n    });\n  }\n\n  if (text.includes(\"
+=====================
+\") || text.includes(\"
+=====================
+\") || text.includes(\"
+=====================
+\")) {\n    risk_level = \"medium\";\n    violations.push({\n      trigger_text: \"
+=====================
+\",\n      risk_type: \"platform_traffic_bypass_risk\",\n      suggested_fix: \"
+=====================
+\"\n    });\n  }\n\n  res.json({\n    success: true,\n    risk_level,\n    violations\n  });\n});\n\n// 
+=====================
+\napp.post('/api/content/risk/ip-check', (req, res) =\u003e {\n  const { brands } = req.body;\n  console.log(`[IP Compliance] Checking brands authorization: ${JSON.stringify(brands || [])}`);\n\n  res.json({\n    success: true,\n    status: \"compliant\",\n    warning: (brands \u0026\u0026 brands.includes(\"
+=====================
+\")) ? \"Detected unregistered trademark referencing. Potential trademark conflict.\" : \"No registered copyright issues found.\"\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":647,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding risk scan and IP check routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$3749531b-9d95-447f-9633-ab58b76c6d5aj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+/Adding risk scan and IP check routes to Gateway

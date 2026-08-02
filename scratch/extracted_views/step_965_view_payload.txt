@@ -1,0 +1,29 @@
+ *
+v"
+#toolu_vrtx_013iDpe3C9v9WCvWQXJGU5Pt	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":102,"StartLine":82,"toolAction":"Viewing app setup section","toolSummary":"View app setup"}J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2:НBXb$ae9edf35-110e-4109-b5bb-1a0c90de006ejR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd惈*6
+蒅
+Ҿ
+View app setupViewing app setup sectionr	
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.jsQe"// 提供 index.html 静态服务（Electron 直接加载文件，浏览器可通过 http://localhost:8888 访问）
+app.use(express.static(path.join(__dirname, '..')));
+
+// 从环境变量读取配置
+const OPENCLAW_API_URL = process.env.OPENCLAW_API_URL || 'http://localhost:18000';
+const OPENCLAW_TOKEN = process.env.OPENCLAW_TOKEN || 'mock_token_123';
+const LARK_CLI_PATH = process.env.LARK_CLI_PATH || 'lark';
+const WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');
+
+// 全局异步任务队列存储 (防止长耗时 HTTP 超时挂起)
+const TASK_QUEUE = {};
+
+// ==========================================
+// Token 消费账单追踪器（本地 JSON 持久化）
+// ==========================================
+const TOKEN_USAGE_PATH = path.join(__dirname, '../data/token_usage.json');
+
+function loadTokenUsage() {
+  if (!fs.existsSync(TOKEN_USAGE_PATH)) return { total_input: 0, total_output: 0, records: [] };
+  try { return JSON.parse(fs.readFileSync(TOKEN_USAGE_PATH, 'utf-8')); } catch { return { total_input: 0, total_output: 0, records: [] }; }
+}X`

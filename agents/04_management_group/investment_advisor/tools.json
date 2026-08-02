@@ -1,0 +1,121 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "投资尽调与风控穿透插件",
+    "version": "1.2.0",
+    "description": "提供给投资顾问 Agent 进行天眼查工商查询、股权多级嵌套穿透及司法民事纠纷审计的 API 规范。"
+  },
+  "paths": {
+    "/api/tianyancha/search": {
+      "get": {
+        "summary": "天眼查基本工商查询接口，检查目标公司的经营状态与注册资本",
+        "operationId": "fetchTianyanchaInfo",
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "目标公司名称"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "查询成功"
+          }
+        }
+      }
+    },
+    "/api/tianyancha/equity": {
+      "get": {
+        "summary": "查询目标公司多层股权结构、合伙人比重及底层穿透实控人",
+        "operationId": "getEquityStructure",
+        "parameters": [
+          {
+            "name": "company_name",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "公司全称"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "穿透成功"
+          }
+        }
+      }
+    },
+    "/api/tianyancha/risk": {
+      "get": {
+        "summary": "调阅目标公司司法起诉、强制执行、限制高消费等老赖风险记录",
+        "operationId": "getLegalCourtRisk",
+        "parameters": [
+          {
+            "name": "company_name",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "公司全称"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "审计完毕"
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

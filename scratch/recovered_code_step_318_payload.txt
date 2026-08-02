@@ -1,0 +1,58 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/content/risk/legal-audit 
+=====================
+","EndLine":694,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+)\napp.post('/api/content/risk/legal-audit', (req, res) =\u003e {\n  const { text } = req.body;\n  if (!text) return res.status(400).json({ error: \"Missing parameter: text\" });\n\n  console.log(`[Legal Audit] Checking legislation red-lines...`);\n\n  const warnings = [];\n  let is_legal = true;\n\n  if (text.includes(\"100%\") || text.includes(\"
+=====================
+\") || text.includes(\"
+=====================
+\")) {\n    is_legal = false;\n    warnings.push({\n      segment: text.substring(0, 30) + \"...\",\n      risk_description: \"
+=====================
+\",\n      law_reference: \"
+=====================
+\",\n      suggestion: \"
+=====================
+\"\n    });\n  }\n\n  if (text.includes(\"
+=====================
+\") || text.includes(\"
+=====================
+\") || text.includes(\"
+=====================
+\")) {\n    is_legal = false;\n    warnings.push({\n      segment: text.substring(0, 30) + \"...\",\n      risk_description: \"
+=====================
+\",\n      law_reference: \"
+=====================
+\",\n      suggestion: \"
+=====================
+\"\n    });\n  }\n\n  res.json({\n    success: true,\n    is_legal,\n    warnings\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":694,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding legal audit routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$81fb86ea-52db-4f02-80a2-ef464770b757j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+$Adding legal audit routes to Gateway

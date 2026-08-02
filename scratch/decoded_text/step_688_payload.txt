@@ -1,0 +1,38 @@
+-3750763034362895579H9P
+=====================
+3YVXaoCwC_LB1MkP2cvqgAoX
+=====================
+b$7b8af942-242e-4785-ad09-ad85c5bff8a3j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-5d397bd8-e6de-466e-a7f1-e2e606b57621:
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":770,"Instruction":"
+=====================
+ loadSystemConfigInputs 
+=====================
+","ReplacementContent":"    function loadSystemConfigInputs() {\n      if (currentConfigData.CLAUDE_API_KEY) {\n        document.getElementById('claude-key').value = currentConfigData.CLAUDE_API_KEY;\n        document.getElementById('db-path').value = currentConfigData.WECHAT_DB_PATH;\n        document.getElementById('lark-id').value = currentConfigData.LARK_APP_ID || '';\n        document.getElementById('lark-secret').value = currentConfigData.LARK_APP_SECRET || '';\n        document.getElementById('lark-path').value = currentConfigData.LARK_CLI_PATH || 'lark';\n        document.getElementById('openclaw-url').value = currentConfigData.OPENCLAW_API_URL || '';\n        document.getElementById('openclaw-token').value = currentConfigData.OPENCLAW_TOKEN || '';\n      }\n    }\n\n    // 
+=====================
+\n    async function saveEnvConfig() {\n      const role = document.getElementById('user-role-select').value;\n      const config = {\n        CLAUDE_API_KEY: document.getElementById('claude-key').value,\n        WECHAT_DB_PATH: document.getElementById('db-path').value,\n        LARK_APP_ID: document.getElementById('lark-id').value,\n        LARK_APP_SECRET: document.getElementById('lark-secret').value,\n        LARK_CLI_PATH: document.getElementById('lark-path').value,\n        OPENCLAW_API_URL: document.getElementById('openclaw-url').value,\n        OPENCLAW_TOKEN: document.getElementById('openclaw-token').value\n      };\n\n      try {\n        const res = await fetch(`${GATEWAY_URL}/api/system/config/save`, {\n          method: 'POST',\n          headers: { 'Content-Type': 'application/json' },\n          body: JSON.stringify({ config, user_role: role })\n        });\n        const data = await res.json();\n        if (data.success) {\n          alert('
+=====================
+');\n          currentConfigData = config;\n        } else {\n          alert(`
+=====================
+${data.error}`);\n        }","StartLine":746,"TargetContent":"    function loadSystemConfigInputs() {\n      if (currentConfigData.CLAUDE_API_KEY) {\n        document.getElementById('claude-key').value = currentConfigData.CLAUDE_API_KEY;\n        document.getElementById('db-path').value = currentConfigData.WECHAT_DB_PATH;\n      }\n    }\n\n    // 
+=====================
+\n    async function saveEnvConfig() {\n      const role = document.getElementById('user-role-select').value;\n      const config = {\n        CLAUDE_API_KEY: document.getElementById('claude-key').value,\n        WECHAT_DB_PATH: document.getElementById('db-path').value\n      };\n\n      try {\n        const res = await fetch(`${GATEWAY_URL}/api/system/config/save`, {\n          method: 'POST',\n          headers: { 'Content-Type': 'application/json' },\n          body: JSON.stringify({ config, user_role: role })\n        });\n        const data = await res.json();\n        if (data.success) {\n          alert('
+=====================
+');\n          currentConfigData = config;\n        } else {\n          alert(`
+=====================
+${data.error}`);\n        }","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Updating config inputs binding logic","toolSummary":"Modify file"}:
+=====================
+replace_file_content`

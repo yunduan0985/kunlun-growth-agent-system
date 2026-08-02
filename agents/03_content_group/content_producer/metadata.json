@@ -1,0 +1,16 @@
+{
+  "id": "content_producer",
+  "name": "内容生产官",
+  "group": "内容组",
+  "description": "根据选定的主题和提纲，快速撰写小红书、微信公众号、知乎等平台的高质量初稿。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=content_producer",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

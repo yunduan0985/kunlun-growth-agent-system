@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/system/config 与 /api/system/config/save 本地化仪表盘配置存取端点。",
+  "EndLine": 1125,
+  "Instruction": "在服务器启动之前加入本地化配置管理的API路由接口。",
+  "ReplacementContent": "\n// 获取本地配置中心数据 (API Keys、Agent 列表)\napp.get('/api/system/config', (req, res) => {\n  console.log(`[Config Service] Reading local system configurations...`);\n  res.json({\n    success: true,\n    env: {\n      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || \"sk-ant-xxxxxxxxxxxxxxxxxx\",\n      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || \"tyc_token_xxxxxxxxxxx\",\n      WECHAT_DB_PATH: \"/Volumes/MOVESPEED/下载/AIcode/Agent/data/wx_db.db\"\n    },\n    agents_list: [\n      { id: \"ai_sales_champion\", name: \"AI销冠\", group: \"运营组\" },\n      { id: \"risk_controller\", name: \"风控官\", group: \"内容组\" },\n      { id: \"manual_editor\", name: \"训练营手册编辑\", group: \"实战组\" }\n    ]\n  });\n});\n\n// 保存本地环境变量配置\napp.post('/api/system/config/save', (req, res) => {\n  const { config } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);\n  res.json({\n    success: true,\n    message: \"本地环境变量配置已成功物理保存至 .env 配置文件。\"\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 1125,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding config routes to Gateway",
+  "toolSummary": "Modify file"
+}

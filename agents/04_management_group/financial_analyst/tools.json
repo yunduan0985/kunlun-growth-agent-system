@@ -1,0 +1,102 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "项目财务审计与预算控制插件",
+    "version": "1.2.0",
+    "description": "提供给财务分析师 Agent 进行项目收支平衡审计、ROI 计算与预算超支警报的 API 规范。"
+  },
+  "paths": {
+    "/api/finance/audit": {
+      "post": {
+        "summary": "输入项目预计预算、实际花费和预计回款明细，自动进行 ROI 与超支率计算并反馈警告",
+        "operationId": "auditProjectFinance",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "project_name": { "type": "string" },
+                  "budget_limit": { "type": "number", "description": "项目预设预算限额" },
+                  "actual_expenses": { "type": "number", "description": "项目实际已发生费用" },
+                  "estimated_revenue": { "type": "number", "description": "项目预计回款/收入" }
+                },
+                "required": ["project_name", "budget_limit", "actual_expenses", "estimated_revenue"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "财务审计完毕",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "variance_ratio": { "type": "number", "description": "预算偏差率 (正数为超支)" },
+                    "roi": { "type": "number", "description": "投资回报率" },
+                    "risk_level": { "type": "string", "enum": ["high", "medium", "none"] }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "添加 panel-card CSS 类定义，确保配置中心面板正常显示（白色背景、圆角、内边距、完整宽度）。同时修复 agent-grid 在配置中心模式下的高度问题。",
+  "EndLine": 153,
+  "Instruction": "在 agent-grid CSS 后面插入 panel-card 类定义。",
+  "ReplacementContent": "    .agent-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));\n      gap: 24px;\n      margin-bottom: 30px;\n    }\n\n    /* 配置中心全幅面板 */\n    .panel-card {\n      background: var(--card-bg);\n      border-radius: 18px;\n      padding: 32px 36px;\n      width: 100%;\n      min-height: 200px;\n      overflow: visible;\n    }\n",
+  "StartLine": 148,
+  "TargetContent": "    .agent-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));\n      gap: 24px;\n      margin-bottom: 30px;\n    }\n",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Adding panel-card CSS class",
+  "toolSummary": "Fix panel-card CSS"
+}

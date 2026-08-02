@@ -1,0 +1,135 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "技术专家架构与代码审计工具集",
+    "version": "1.2.0",
+    "description": "提供给技术专家进行代码审查、并发性能诊断及中间件调优分析的 API 规范。"
+  },
+  "paths": {
+    "/api/tech/code-review": {
+      "post": {
+        "summary": "静态审查指定的代码片段或模块文件的质量与安全隐患",
+        "operationId": "reviewCodeQuality",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": { "type": "string", "description": "要审计的原始代码文本" },
+                  "language": { "type": "string", "description": "编程语言 (例如 python, typescript)" }
+                },
+                "required": ["code"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "审查成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "vulnerabilities": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "severity": { "type": "string", "enum": ["high", "medium", "low"] },
+                          "description": { "type": "string" },
+                          "suggested_fix": { "type": "string" }
+                        }
+                      }
+                    },
+                    "dry_violations": { "type": "boolean" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tech/perf-analyze": {
+      "post": {
+        "summary": "针对指定系统瓶颈进行性能分析与数据结构选型推荐",
+        "operationId": "profilePerformance",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "qps": { "type": "integer", "description": "目标系统每秒并发请求数" },
+                  "bottleneck": { "type": "string", "description": "当前遇到的系统瓶颈描述 (如 数据库连接溢出, CPU利用率过高)" }
+                },
+                "required": ["qps", "bottleneck"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "分析成功并提供调优方案"
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

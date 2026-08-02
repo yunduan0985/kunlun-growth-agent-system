@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "启用 SQLite WAL 模式防止知识库并发切片写入时产生锁库冲突。",
+  "EndLine": 40,
+  "Instruction": "在 FTS5 创建前运行 PRAGMA journal_mode=WAL;",
+  "ReplacementContent": "// 📚 初始化 RAG SQLite FTS5 本地向量/全文检索库\nconst RAG_DB_PATH = path.join(DATA_DIR, 'rag_knowledge.db');\nconst ragDb = new sqlite3.Database(RAG_DB_PATH, (err) => {\n  if (err) console.error('[RAG Engine] Failed to open rag_knowledge.db', err);\n  else {\n    // 开启 WAL (Write-Ahead Logging) 模式防高并发锁库 (EADDRINUSE/SQLITE_BUSY)\n    ragDb.run(\"PRAGMA journal_mode=WAL\");\n    ragDb.run(`\n      CREATE VIRTUAL TABLE IF NOT EXISTS knowledge_chunks USING fts5(\n        filename, \n        chunk_index, \n        content,\n        tokenize='porter'\n      )\n    `);\n    console.log('[RAG Engine] FTS5 Knowledge Base Database initialized with WAL mode.');\n  }\n});",
+  "StartLine": 25,
+  "TargetContent": "// 📚 初始化 RAG SQLite FTS5 本地向量/全文检索库\nconst RAG_DB_PATH = path.join(DATA_DIR, 'rag_knowledge.db');\nconst ragDb = new sqlite3.Database(RAG_DB_PATH, (err) => {\n  if (err) console.error('[RAG Engine] Failed to open rag_knowledge.db', err);\n  else {\n    ragDb.run(`\n      CREATE VIRTUAL TABLE IF NOT EXISTS knowledge_chunks USING fts5(\n        filename, \n        chunk_index, \n        content,\n        tokenize='porter'\n      )\n    `);\n    console.log('[RAG Engine] FTS5 Knowledge Base Database initialized.');\n  }\n});",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Enabling SQLite WAL mode",
+  "toolSummary": "Enable WAL mode"
+}

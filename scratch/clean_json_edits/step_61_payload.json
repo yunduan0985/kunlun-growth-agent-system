@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "更新任务列表，标记所有任务已完成。",
+  "EndLine": 25,
+  "Instruction": "将所有任务标记为完成。",
+  "ReplacementContent": "- [x] 初始化目录结构与多平台集成文档\n  - [x] 创建基础目录结构\n  - [x] 编写全局 `README.md`\n  - [x] 编写 `docs/feishu_integration.md`（飞书集成与多维表格配置指南）\n  - [x] 编写 `docs/coze_codex_integration.md`（Coze/Codex 导入指南）\n  - [x] 编写 `docs/workbuddy_integration.md`（Workbuddy 导入指南）\n- [x] 编写 30 个 Agent 的核心配置文件 (metadata.json, system_prompt.md, tools.json)\n  - [x] agent组织部 (5 个 Agent)\n  - [x] 数据组 (10 个 Agent)\n  - [x] content组 (6 个 Agent)\n  - [x] 管理组 (5 个 Agent)\n  - [x] 实战组 (3 个 Agent)\n  - [x] 运营组 (3 个 Agent)\n- [x] 搭建 昆仑增长MCP服务 与 辅助微服务\n  - [x] 编写 `mcp/kunlun_growth_mcp` 服务代码 (Node.js)\n  - [x] 提供视频转录、会议纪要的简易后端 API\n  - [x] 编写 `docker-compose.yml` 集成开源 RAG 和机器人\n- [x] 校验与测试\n  - [x] 验证 OpenAPI 格式与提示词合规性\n  - [x] 编写 Walkthrough 报告并嵌入说明",
+  "StartLine": 3,
+  "TargetContent": "- [x] 初始化目录结构与多平台集成文档\n  - [x] 创建基础目录结构\n  - [x] 编写全局 `README.md`\n  - [x] 编写 `docs/feishu_integration.md`（飞书集成与多维表格配置指南）\n  - [x] 编写 `docs/coze_codex_integration.md`（Coze/Codex 导入指南）\n  - [x] 编写 `docs/workbuddy_integration.md`（Workbuddy 导入指南）\n- [/] 编写 30 个 Agent 的核心配置文件 (metadata.json, system_prompt.md, tools.json)\n  - [/] agent组织部 (5 个 Agent)\n  - [/] 数据组 (10 个 Agent)\n  - [/] 内容组 (6 个 Agent)\n  - [/] 管理组 (5 个 Agent)\n  - [/] 实战组 (3 个 Agent)\n  - [/] 运营组 (3 个 Agent)\n- [ ] 搭建 昆仑增长MCP服务 与 辅助微服务\n  - [ ] 编写 `mcp/kunlun_growth_mcp` 服务代码 (Node.js)\n  - [ ] 提供视频转录、会议纪要的简易后端 API\n  - [ ] 编写 `docker-compose.yml` 集成开源 RAG 和机器人\n- [ ] 校验与测试\n  - [ ] 验证 OpenAPI 格式与提示词合规性\n  - [ ] 编写 Walkthrough 报告并嵌入说明",
+  "TargetFile": "/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/task.md",
+  "toolAction": "Finalizing task list",
+  "toolSummary": "Modify file"
+}

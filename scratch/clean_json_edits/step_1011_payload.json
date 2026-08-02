@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "将顶栏的角色切换 select 改为只读角色徽章，角色由登录账号 JWT 决定，不可手动切换。",
+  "EndLine": 873,
+  "Instruction": "移除 select 下拉框，改为只读角色显示徽章。",
+  "ReplacementContent": "        <div>\n          <div class=\"form-label\" style=\"margin-bottom: 3px;\" id=\"role-label\">当前登录角色</div>\n          <!-- 只读角色徽章：由登录账号 JWT 决定，不可手动切换 -->\n          <div id=\"role-badge-display\" style=\"display:inline-flex; align-items:center; gap:6px; padding: 6px 14px; background:#f5f5f7; border:1.5px solid var(--border-light); border-radius:8px; font-size:12px; font-weight:700; color:var(--text-main); min-width:190px;\">\n            <span id=\"role-badge-icon\">⏳</span>\n            <span id=\"role-badge-text\">加载中...</span>\n          </div>\n        </div>\n",
+  "StartLine": 866,
+  "TargetContent": "        <div>\n          <div class=\"form-label\" style=\"margin-bottom: 3px;\" id=\"role-label\">当前登录职位切换 (动态 RBAC)</div>\n          <select class=\"form-input\" id=\"user-role-select\" onchange=\"loadPermissionMatrix()\" style=\"padding: 6px 12px; font-size: 12px; background: #ffffff; border-color: var(--border-color); font-weight: 600; width: 190px; border-radius: 8px;\">\n            <option value=\"admin\">系统管理员 (Admin)</option>\n            <option value=\"editor\">自媒体编辑 (Editor)</option>\n            <option value=\"sales\">私域销售 (Sales)</option>\n          </select>\n        </div>\n",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Replacing role select with read-only badge",
+  "toolSummary": "Remove role switcher"
+}

@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/x/following/changes 与 /api/x/replies/fetch 两个社交网络审计接口。",
+  "EndLine": 592,
+  "Instruction": "在服务器启动部分之前加入 X 新增关注和互动回复抓取路由。",
+  "ReplacementContent": "\n// 模拟获取指定 X 账号新增关注列表接口\napp.get('/api/x/following/changes', (req, res) => {\n  const { username } = req.query;\n  if (!username) return res.status(400).json({ error: \"Missing: username\" });\n\n  console.log(`[X Connections] Fetching following list changes for: @${username}`);\n\n  res.json([\n    { username: \"rust_mcp_dev\", bio: \"Building blazing fast MCP servers in Rust. Actively looking for agent integration opportunities.\", followed_at: new Date(Date.now() - 3600000).toISOString() },\n    { username: \"indie_hacker_mom\", bio: \"Building micro AI SaaS tools in public. ARR $120k.\", followed_at: new Date(Date.now() - 3600000 * 8).toISOString() }\n  ]);\n});\n\n// 模拟获取指定大V在他人推文下的互动回复接口\napp.get('/api/x/replies/fetch', (req, res) => {\n  const { username } = req.query;\n  if (!username) return res.status(400).json({ error: \"Missing: username\" });\n\n  console.log(`[X Interactions] Fetching replies for: @${username}`);\n\n  res.json([\n    { author: username, to_user: \"openai_dev\", content: \"Impressive reasoning speed. Is this running on a custom hardware cluster?\", likes: 450, time: \"4 hours ago\" },\n    { author: username, to_user: \"indie_developer\", content: \"This is a great micro AI tool! I'd love to see a desktop client.\", likes: 890, time: \"18 hours ago\" }\n  ]);\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 592,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding X follow and reply routes to Gateway",
+  "toolSummary": "Modify file"
+}

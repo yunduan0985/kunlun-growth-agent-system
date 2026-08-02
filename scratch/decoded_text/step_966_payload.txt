@@ -1,0 +1,95 @@
+-3750763034362895579P
+=====================
+Z!req_vrtx_011Cd585ZRGWRkfqyk3AE3fiX
+=====================
+b$ae9edf35-110e-4109-b5bb-1a0c90de006ej
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+62(bot-59478fc0-8e41-40e8-b6d7-f1f8f95d38c2:6
+#toolu_vrtx_01H1MjMWEc9L5XYAYaUANUwf
+=====================
+replace_file_content
+=====================
+5{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":84,"Instruction":"
+=====================
+","ReplacementContent":"// 
+=====================
+ http://localhost:8888 
+=====================
+\napp.use(express.static(path.join(__dirname, '..')));\n\n// 
+=====================
+\napp.use(authMiddleware);\n\n// ==========================================\n// 
+=====================
+\n// ==========================================\n\n// 
+=====================
+\napp.get('/api/auth/check-init', (req, res) =\u003e {\n  const users = loadUsers();\n  res.json({ initialized: users.length \u003e 0, user_count: users.length });\n});\n\n// 
+=====================
+\napp.post('/api/auth/register', async (req, res) =\u003e {\n  const { email, password, display_name, invite_code } = req.body;\n\n  if (!email || !password) {\n    return res.status(400).json({ error: '
+=====================
+' });\n  }\n  if (password.length \u003c 8) {\n    return res.status(400).json({ error: '
+=====================
+' });\n  }\n  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {\n    return res.status(400).json({ error: '
+=====================
+' });\n  }\n\n  const users = loadUsers();\n  const isFirstUser = users.length === 0;\n\n  // 
+=====================
+\n  if (!isFirstUser) {\n    const VALID_INVITE_CODE = process.env.INVITE_CODE || 'KUNLUN2025';\n    if (invite_code !== VALID_INVITE_CODE) {\n      return res.status(403).json({ error: '
+=====================
+' });\n    }\n  }\n\n  // 
+=====================
+\n  if (users.find(u =\u003e u.email.toLowerCase() === email.toLowerCase())) {\n    return res.status(409).json({ error: '
+=====================
+' });\n  }\n\n  try {\n    const passwordHash = await bcrypt.hash(password, 12);\n    const newUser = {\n      id: require('crypto').randomBytes(16).toString('hex'),\n      email: email.toLowerCase().trim(),\n      display_name: display_name || email.split('@')[0],\n      password_hash: passwordHash,\n      role: isFirstUser ? 'admin' : 'editor', // 
+=====================
+\n      created_at: new Date().toISOString(),\n      last_login: null,\n    };\n\n    users.push(newUser);\n    saveUsers(users);\n\n    // 
+=====================
+ Token\n    const token = jwt.sign(\n      { id: newUser.id, email: newUser.email, role: newUser.role, display_name: newUser.display_name },\n      JWT_SECRET,\n      { expiresIn: JWT_EXPIRES_IN }\n    );\n\n    console.log(`[Auth] New user registered: ${newUser.email} (${newUser.role})`);\n    res.json({\n      success: true,\n      token,\n      user: { id: newUser.id, email: newUser.email, display_name: newUser.display_name, role: newUser.role },\n      message: isFirstUser\n        ? `
+=====================
+`\n    });\n  } catch (err) {\n    console.error('[Auth] Register error:', err);\n    res.status(500).json({ error: '
+=====================
+' });\n  }\n});\n\n// 
+=====================
+\napp.post('/api/auth/login', async (req, res) =\u003e {\n  const { email, password } = req.body;\n\n  if (!email || !password) {\n    return res.status(400).json({ error: '
+=====================
+' });\n  }\n\n  const users = loadUsers();\n  const user = users.find(u =\u003e u.email.toLowerCase() === email.toLowerCase().trim());\n\n  if (!user) {\n    // 
+=====================
+\n    return res.status(401).json({ error: '
+=====================
+' });\n  }\n\n  try {\n    const isMatch = await bcrypt.compare(password, user.password_hash);\n    if (!isMatch) {\n      return res.status(401).json({ error: '
+=====================
+' });\n    }\n\n    // 
+=====================
+\n    user.last_login = new Date().toISOString();\n    saveUsers(users);\n\n    const token = jwt.sign(\n      { id: user.id, email: user.email, role: user.role, display_name: user.display_name },\n      JWT_SECRET,\n      { expiresIn: JWT_EXPIRES_IN }\n    );\n\n    console.log(`[Auth] User logged in: ${user.email}`);\n    res.json({\n      success: true,\n      token,\n      user: { id: user.id, email: user.email, display_name: user.display_name, role: user.role },\n      message: `
+=====================
+${user.display_name}
+=====================
+`\n    });\n  } catch (err) {\n    console.error('[Auth] Login error:', err);\n    res.status(500).json({ error: '
+=====================
+' });\n  }\n});\n\n// 
+=====================
+\napp.get('/api/auth/me', (req, res) =\u003e {\n  const users = loadUsers();\n  const user = users.find(u =\u003e u.id === req.user.id);\n  if (!user) return res.status(404).json({ error: 'User not found.' });\n  res.json({\n    success: true,\n    user: { id: user.id, email: user.email, display_name: user.display_name, role: user.role, last_login: user.last_login }\n  });\n});\n\n// 
+=====================
+\napp.post('/api/auth/change-password', async (req, res) =\u003e {\n  const { old_password, new_password } = req.body;\n  if (!old_password || !new_password) return res.status(400).json({ error: '
+=====================
+' });\n  if (new_password.length \u003c 8) return res.status(400).json({ error: '
+=====================
+' });\n\n  const users = loadUsers();\n  const user = users.find(u =\u003e u.id === req.user.id);\n  if (!user) return res.status(404).json({ error: 'User not found.' });\n\n  const isMatch = await bcrypt.compare(old_password, user.password_hash);\n  if (!isMatch) return res.status(401).json({ error: '
+=====================
+' });\n\n  user.password_hash = await bcrypt.hash(new_password, 12);\n  saveUsers(users);\n  res.json({ success: true, message: '
+=====================
+\napp.get('/api/auth/users', (req, res) =\u003e {\n  if (req.user.role !== 'admin') return res.status(403).json({ error: '
+=====================
+' });\n  const users = loadUsers().map(u =\u003e ({\n    id: u.id, email: u.email, display_name: u.display_name, role: u.role,\n    created_at: u.created_at, last_login: u.last_login\n  }));\n  res.json({ success: true, users });\n});\n\n","StartLine":82,"TargetContent":"// 
+=====================
+ http://localhost:8888 
+=====================
+\napp.use(express.static(path.join(__dirname, '..')));\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Registering auth middleware and auth routes","toolSummary":"Auth routes injection"}J
+=====================
+replace_file_content`

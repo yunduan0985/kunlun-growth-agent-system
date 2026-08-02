@@ -1,0 +1,3903 @@
+replace_file_content
+=====================
++{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":1225,"Instruction":"
+=====================
+ GET/POST /api/system/config 
+=====================
+","ReplacementContent":"// 
+=====================
+)\napp.get('/api/system/config', (req, res) =\u003e {\n  console.log(`[Config Service] Reading local system configurations...`);\n  res.json({\n    success: true,\n    env: {\n      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || \"sk-ant-xxxxxxxxxxxxxxxxxx\",\n      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || \"tyc_token_xxxxxxxxxxx\",\n      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),\n      LARK_APP_ID: process.env.LARK_APP_ID || \"cli_a1b2c3d4e5f6g7h8\",\n      LARK_APP_SECRET: process.env.LARK_APP_SECRET || \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n      LARK_CLI_PATH: process.env.LARK_CLI_PATH || \"lark\",\n      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || \"http://localhost:18000\",\n      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || \"mock_token_123\"\n    }\n  });\n});\n\n// 
+=====================
+)\napp.post('/api/system/config/save', (req, res) =\u003e {\n  const { config, user_role } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  // 
+=====================
+)\n  if (user_role !== 'admin') {\n    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: \"${user_role || 'unknown'}\"`);\n    return res.status(403).json({\n      success: false,\n      error: `Access Denied: Role \"${user_role || 'unknown'}\" is not authorized to edit system environment variables.`\n    });\n  }\n\n  const envPath = path.resolve(__dirname, '../.env');\n  console.log(`[Config Service] Writing new API keys and Lark config to local: ${envPath}`);\n\n  // 1. 
+=====================
+\n  const envContent = `# 
+=====================
+)\nPORT=8888\nCLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}\nTIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}\nWECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}\nLARK_APP_ID=${config.LARK_APP_ID || ''}\nLARK_APP_SECRET=${config.LARK_APP_SECRET || ''}\nLARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}\nOPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}\nOPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}\n`;\n\n  try {\n    // 2. 
+=====================
+\n    fs.writeFileSync(envPath, envContent, 'utf-8');\n    \n    // 3. 
+=====================
+\n    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;\n    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;\n    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;\n    process.env.LARK_APP_ID = config.LARK_APP_ID;\n    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;\n    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;\n    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;\n    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;\n\n    console.log(`
+=====================
+ [Config Service] Successfully hot-saved new environmental settings.`);\n    res.json({\n      success: true,\n      message: \"
+=====================
+\"\n    });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to write .env file: \" + err.message });\n  }\n});","StartLine":1188,"TargetContent":"// 
+=====================
+)\napp.get('/api/system/config', (req, res) =\u003e {\n  console.log(`[Config Service] Reading local system configurations...`);\n  res.json({\n    success: true,\n    env: {\n      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || \"sk-ant-xxxxxxxxxxxxxxxxxx\",\n      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || \"tyc_token_xxxxxxxxxxx\",\n      WECHAT_DB_PATH: \"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/data/wx_db.db\"\n    },\n    agents_list: [\n      { id: \"ai_sales_champion\", name: \"AI
+=====================
+\" },\n      { id: \"risk_controller\", name: \"
+=====================
+\" },\n      { id: \"manual_editor\", name: \"
+=====================
+\" }\n    ]\n  });\n});\n\n// 
+=====================
+)\napp.post('/api/system/config/save', (req, res) =\u003e {\n  const { config, user_role } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  // 
+=====================
+\n  if (user_role !== 'admin') {\n    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: \"${user_role || 'unknown'}\"`);\n    return res.status(403).json({\n      success: false,\n      error: `Access Denied: Role \"${user_role || 'unknown'}\" is not authorized to edit system environment variables.`\n    });\n  }\n\n  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);\n  res.json({\n    success: true,\n    message: \"
+=====================
+\"\n  });\n});","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Upgrading env configuration save to physical files","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$7b8af942-242e-4785-ad09-ad85c5bff8a3j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2Upgrading env configuration save to physical files
+=====================
+ GET/POST /api/system/config 
+=====================
+)
+app.get('/api/system/config', (req, res) => {
+  console.log(`[Config Service] Reading local system configurations...`);
+  res.json({
+    success: true,
+    env: {
+      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "sk-ant-xxxxxxxxxxxxxxxxxx",
+      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || "tyc_token_xxxxxxxxxxx",
+      WECHAT_DB_PATH: "/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/data/wx_db.db"
+    },
+    agents_list: [
+      { id: "ai_sales_champion", name: "AI
+=====================
+" },
+      { id: "risk_controller", name: "
+=====================
+" },
+      { id: "manual_editor", name: "
+=====================
+" }
+    ]
+  });
+});
+
+// 
+=====================
+)
+app.post('/api/system/config/save', (req, res) => {
+  const { config, user_role } = req.body;
+  if (!config) return res.status(400).json({ error: "Missing config object." });
+
+  // 
+=====================
+
+  if (user_role !== 'admin') {
+    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: "${user_role || 'unknown'}"`);
+    return res.status(403).json({
+      success: false,
+      error: `Access Denied: Role "${user_role || 'unknown'}" is not authorized to edit system environment variables.`
+    });
+  }
+
+  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);
+  res.json({
+    success: true,
+    message: "
+=====================
+)
+app.get('/api/system/config', (req, res) => {
+  console.log(`[Config Service] Reading local system configurations...`);
+  res.json({
+    success: true,
+    env: {
+      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "sk-ant-xxxxxxxxxxxxxxxxxx",
+      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || "tyc_token_xxxxxxxxxxx",
+      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),
+      LARK_APP_ID: process.env.LARK_APP_ID || "cli_a1b2c3d4e5f6g7h8",
+      LARK_APP_SECRET: process.env.LARK_APP_SECRET || "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      LARK_CLI_PATH: process.env.LARK_CLI_PATH || "lark",
+      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || "http://localhost:18000",
+      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || "mock_token_123"
+    }
+  });
+});
+
+// 
+=====================
+)
+app.post('/api/system/config/save', (req, res) => {
+  const { config, user_role } = req.body;
+  if (!config) return res.status(400).json({ error: "Missing config object." });
+
+  // 
+=====================
+)
+  if (user_role !== 'admin') {
+    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: "${user_role || 'unknown'}"`);
+    return res.status(403).json({
+      success: false,
+      error: `Access Denied: Role "${user_role || 'unknown'}" is not authorized to edit system environment variables.`
+    });
+  }
+
+  const envPath = path.resolve(__dirname, '../.env');
+  console.log(`[Config Service] Writing new API keys and Lark config to local: ${envPath}`);
+
+  // 1. 
+=====================
+
+  const envContent = `# 
+=====================
+)
+PORT=8888
+CLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}
+TIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}
+WECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}
+LARK_APP_ID=${config.LARK_APP_ID || ''}
+LARK_APP_SECRET=${config.LARK_APP_SECRET || ''}
+LARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}
+OPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}
+OPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}
+`;
+
+  try {
+    // 2. 
+=====================
+
+    fs.writeFileSync(envPath, envContent, 'utf-8');
+    
+    // 3. 
+=====================
+
+    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;
+    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;
+    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;
+    process.env.LARK_APP_ID = config.LARK_APP_ID;
+    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;
+    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;
+    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;
+    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;
+
+    console.log(`
+=====================
+ [Config Service] Successfully hot-saved new environmental settings.`);
+    res.json({
+      success: true,
+      message: "
+=====================
+"
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to write .env file: " + err.message });
+  }
+});0	8	"
+=====================
+*Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js2I
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+'
+#const express = require('express');
+=====================
+const cors = require('cors');
+=====================
+.
+*const { exec } = require('child_process');
+=====================
+const fs = require('fs');
+=====================
+const path = require('path');
+=====================
+1
+-const sqlite3 = require('sqlite3').verbose();
+=====================
+require('dotenv').config();
+=====================
+const app = express();
+=====================
+*
+&const PORT = process.env.PORT || 8888;
+=====================
+app.use(express.json());
+=====================
+V
+Rconst OPENCLAW_API_URL = process.env.OPENCLAW_API_URL || 'http://localhost:18000';
+=====================
+J
+Fconst OPENCLAW_TOKEN = process.env.OPENCLAW_TOKEN || 'mock_token_123';
+=====================
+>
+:const LARK_CLI_PATH = process.env.LARK_CLI_PATH || 'lark';
+=====================
+@
+<const WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');
+=====================
+const TASK_QUEUE = {};
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+const MOCK_COMPANY_DB = {
+=====================
+*
+&    credit_code: "91440300MA5GD7XX8Y",
+=====================
+/
++    registered_capital: "1000
+=====================
+%
+!    establish_date: "2021-08-18",
+=====================
+}
+y    business_scope: "
+=====================
+*
+&    credit_code: "9144030071522300XG",
+=====================
++
+'    registered_capital: "200
+=====================
+%
+!    establish_date: "1998-11-11",
+=====================
+b
+^    business_scope: "
+=====================
+(
+$function getMockTranscription(url) {
+=====================
+)
+%  const lowerUrl = url.toLowerCase();
+=====================
+u
+q  const isEnglish = lowerUrl.includes('youtube') || lowerUrl.includes('english') || lowerUrl.includes('foreign');
+=====================
+m
+i  const isDouyin = lowerUrl.includes('douyin') || lowerUrl.includes('tiktok') || lowerUrl.includes('dy');
+=====================
+Q
+M  const isXhs = lowerUrl.includes('xhs') || lowerUrl.includes('xiaohongshu');
+=====================
+s
+o  const isWechat = lowerUrl.includes('wechat') || lowerUrl.includes('weixin') || lowerUrl.includes('channels');
+=====================
+      video_url: url,
+=====================
+      duration: "08:45",
+=====================
+      language: "en-US",
+=====================
+@
+<      title: "Model Context Protocol Explained (MCP Guide)",
+=====================
+          start: "00:00", 
+=====================
+          end: "01:15", 
+=====================
+          text: "ENG: Today we are talking about Model Context Protocol, the open standard to connect LLMs to data sources.\nCHS: 
+=====================
+          start: "01:15", 
+=====================
+          end: "03:40", 
+=====================
+          text: "ENG: With MCP, your agent can inspect database tables and run APIs securely in the background.\nCHS: 
+=====================
+      video_url: url,
+=====================
+      duration: "01:30",
+=====================
+      language: "zh-CN",
+=====================
+        { start: "00:00", end: "00:30", text: "
+=====================
+        { start: "00:30", end: "01:30", text: "
+=====================
+      video_url: url,
+=====================
+      duration: "02:15",
+=====================
+      language: "zh-CN",
+=====================
+        { start: "00:00", end: "01:00", text: "
+=====================
+        { start: "01:00", end: "02:15", text: "
+=====================
+      video_url: url,
+=====================
+      duration: "04:12",
+=====================
+      language: "zh-CN",
+=====================
+        { start: "00:00", end: "02:00", text: "
+=====================
+        { start: "02:00", end: "04:12", text: "
+=====================
+    duration: "15:24",
+=====================
+    language: "zh-CN",
+=====================
+      { start: "00:00", end: "01:30", text: "
+=====================
+      { start: "01:30", end: "05:10", text: "
+=====================
+      { start: "05:10", end: "10:15", text: "
+=====================
+      { start: "10:15", end: "15:24", text: "
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+5
+1app.get('/api/tianyancha/search', (req, res) => {
+=====================
+$
+   const { keyword } = req.query;
+=====================
+Y
+U  if (!keyword) return res.status(400).json({ error: "Missing parameter: keyword" });
+=====================
+9
+5  console.log(`[TianYanCha] Search for: ${keyword}`);
+=====================
+p
+l  const matchKey = Object.keys(MOCK_COMPANY_DB).find(key => keyword.includes(key) || key.includes(keyword));
+=====================
+  res.json({ success: true, data: matchKey ? MOCK_COMPANY_DB[matchKey] : { name: `${keyword} (
+=====================
+5
+1app.get('/api/tianyancha/equity', (req, res) => {
+=====================
+)
+%  const { company_name } = req.query;
+=====================
+c
+_  if (!company_name) return res.status(400).json({ error: "Missing parameter: company_name" });
+=====================
+@
+<  console.log(`[TianYanCha] Equity query: ${company_name}`);
+=====================
+(
+$    actual_controller: "
+=====================
+A", type: "natural_person", ratio: "60.0%" },
+=====================
+B", type: "enterprise", ratio: "30.0%" },
+=====================
+C", type: "natural_person", ratio: "10.0%" }
+=====================
+    nesting_level: 2
+=====================
+3
+/app.get('/api/tianyancha/risk', (req, res) => {
+=====================
+)
+%  const { company_name } = req.query;
+=====================
+c
+_  if (!company_name) return res.status(400).json({ error: "Missing parameter: company_name" });
+=====================
+>
+:  console.log(`[TianYanCha] Risk audit: ${company_name}`);
+=====================
+]
+Y  const hasHighRisk = company_name.includes("
+=====================
+") || company_name.includes("
+=====================
+1
+-    risk_level: hasHighRisk ? "high" : "low",
+=====================
+    cases: hasHighRisk ? [
+=====================
+      { type: "execute_case", detail: "
+=====================
+", status: "unfulfilled" }
+=====================
+,
+(    judgment_count: hasHighRisk ? 12 : 0
+=====================
+5
+1app.post('/api/transcribe/video', (req, res) => {
+=====================
+  const { url } = req.body;
+=====================
+Q
+M  if (!url) return res.status(400).json({ error: "Missing parameter: url" });
+=====================
+<
+8  console.log(`[Transcription] Processing URL: ${url}`);
+=====================
+L
+H  res.json({ success: true, transcription: getMockTranscription(url) });
+=====================
+5
+1app.get('/api/transcribe/status', (req, res) => {
+=====================
+$
+   const { task_id } = req.query;
+=====================
+Y
+U  if (!task_id) return res.status(400).json({ error: "Missing parameter: task_id" });
+=====================
+S
+O  console.log(`[Transcription Status] Checking progress for Task: ${task_id}`);
+=====================
+    status: "completed",
+=====================
+`
+\    transcription: getMockTranscription("https://www.youtube.com/watch?v=english_mcp_video")
+=====================
+6
+2app.post('/api/meeting/summarize', (req, res) => {
+=====================
+  const { content } = req.body;
+=====================
+Y
+U  if (!content) return res.status(400).json({ error: "Missing parameter: content" });
+=====================
+8
+4  console.log(`[Meeting Summarizer] Processing...`);
+=====================
+C
+?      participants: ["
+=====================
+F
+B      decisions: ["
+=====================
+      action_items: [
+=====================
+x
+t        { owner: "
+=====================
+9
+5app.post('/api/meeting/action-items', (req, res) => {
+=====================
+7
+3  const { meeting_title, action_items } = req.body;
+=====================
+,
+(  if (!meeting_title || !action_items) {
+=====================
+d
+`    return res.status(400).json({ error: "Missing parameters: meeting_title or action_items" });
+=====================
+j
+f  console.log(`[Action Items Linker] Dispatching ${action_items.length} tasks for: ${meeting_title}`);
+=====================
+: action_items.length
+=====================
+5
+1app.post('/api/terminal/execute', (req, res) => {
+=====================
+2
+.  const { command, cwd, agent_id } = req.body;
+=====================
+Y
+U  if (!command) return res.status(400).json({ error: "Missing parameter: command" });
+=====================
+p
+l  const privilegedAgents = ['agent_ops', 'agent_architect', 'claude_code', 'tech_specialist', 'privileged'];
+=====================
+>
+:  if (!agent_id || !privilegedAgents.includes(agent_id)) {
+=====================
+|
+x    console.warn(`
+=====================
+ [Security Alert] Unauthorized command execution attempt by Agent: "${agent_id || 'unknown'}"`);
+=====================
+%
+!    return res.status(403).json({
+=====================
+      success: false,
+=====================
+t
+p      error: `Access Denied: Agent "${agent_id || 'unknown'}" is not authorized to run local terminal commands.`
+=====================
+\
+X  const forbiddenKeywords = ['rm -rf /', 'mkfs', 'dd if', 'shutdown', 'reboot', 'sudo'];
+=====================
+?
+;  if (forbiddenKeywords.some(kw => command.includes(kw))) {
+=====================
+h
+d    return res.status(403).json({ success: false, error: "Forbidden: high risk command blocked." });
+=====================
+ [Terminal Security Check] Agent "${agent_id}" authorized. Running: "${command}"`);
+=====================
+  const execOptions = {
+=====================
+    cwd: cwd || undefined,
+=====================
+    env: { ...process.env }
+=====================
+=
+9  exec(command, execOptions, (error, stdout, stderr) => {
+=====================
+      success: !error,
+=====================
+      stdout: stdout || "",
+=====================
+      stderr: stderr || "",
+=====================
+*
+&      exitCode: error ? error.code : 0
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+?
+;app.post('/api/wechat/openclaw/send', async (req, res) => {
+=====================
+2
+.    const { to_username, content } = req.body;
+=====================
+p
+l    if (!to_username || !content) return res.status(400).json({ error: "Missing: to_username or content" });
+=====================
+G
+C    console.log(`[OpenClaw] Send to ${to_username}: "${content}"`);
+=====================
+,
+(    if (!process.env.OPENCLAW_API_URL) {
+=====================
+      return res.json({
+=====================
+        success: true,
+=====================
+*
+&        message: "Mock send success.",
+=====================
+5
+1        data: { msgId: "mock_msg_" + Date.now() }
+=====================
+K
+G    const response = await fetch(`${OPENCLAW_API_URL}/api/send_text`, {
+=====================
+      method: 'POST',
+=====================
+/
++        'Content-Type': 'application/json',
+=====================
+7
+3        'Authorization': `Bearer ${OPENCLAW_TOKEN}`
+=====================
+8
+4      body: JSON.stringify({ to_username, content })
+=====================
+.
+*    const resData = await response.json();
+=====================
+5
+1    res.json({ success: true, origin: resData });
+=====================
+j
+f    res.json({ success: true, warn: "Fallback to mock.", data: { msgId: "fallback_" + Date.now() } });
+=====================
+B
+>app.get('/api/wechat/openclaw/messages', async (req, res) => {
+=====================
+1
+-  const isAsync = req.query.async === 'true';
+=====================
+4
+0  const limit = parseInt(req.query.limit) || 20;
+=====================
+/
++    const taskId = 'task_wx_' + Date.now();
+=====================
+Y
+U    console.log(`[Task Queue] Created asynchronous WeChat scanning task: ${taskId}`);
+=====================
+    TASK_QUEUE[taskId] = {
+=====================
+      status: "processing",
+=====================
+2
+.    let progressInterval = setInterval(() => {
+=====================
+$
+       if (!TASK_QUEUE[taskId]) {
+=====================
+,
+(        clearInterval(progressInterval);
+=====================
+=
+9      TASK_QUEUE[taskId].progress += 25; // 
+=====================
+s
+o      console.log(`
+=====================
+ [Task Queue] WeChat scanning task ${taskId} progress: ${TASK_QUEUE[taskId].progress}%`);
+=====================
+3
+/      if (TASK_QUEUE[taskId].progress >= 100) {
+=====================
+,
+(        clearInterval(progressInterval);
+=====================
+4
+0        TASK_QUEUE[taskId].status = "completed";
+=====================
+)
+%        TASK_QUEUE[taskId].result = [
+=====================
+          { from_user: "
+=====================
+", timestamp: new Date(Date.now() - 600000).toISOString(), is_group: true },
+=====================
+          { from_user: "
+=====================
+", timestamp: new Date(Date.now() - 3600000).toISOString(), is_group: false }
+=====================
+V
+R        console.log(`
+=====================
+ [Task Queue] WeChat scanning task ${taskId} completed.`);
+=====================
+    return res.json({
+=====================
+      success: true,
+=====================
+      task_id: taskId,
+=====================
+      status: "processing"
+=====================
+h
+d    if (process.env.OPENCLAW_API_URL && process.env.OPENCLAW_API_URL !== 'http://localhost:18000') {
+=====================
+_
+[      const response = await fetch(`${OPENCLAW_API_URL}/api/get_messages?limit=${limit}`, {
+=====================
+D
+@        headers: { 'Authorization': `Bearer ${OPENCLAW_TOKEN}` }
+=====================
+-
+)      const data = await response.json();
+=====================
+      return res.json(data);
+=====================
+      { from_user: "
+=====================
+", timestamp: new Date(Date.now() - 600000).toISOString(), is_group: true },
+=====================
+      { from_user: "
+=====================
+", timestamp: new Date(Date.now() - 3600000).toISOString(), is_group: false }
+=====================
+5
+1    res.status(500).json({ error: err.message });
+=====================
+6
+2app.get('/api/system/task/status', (req, res) => {
+=====================
+$
+   const { task_id } = req.query;
+=====================
+Y
+U  if (!task_id) return res.status(400).json({ error: "Missing parameter: task_id" });
+=====================
+'
+#  const task = TASK_QUEUE[task_id];
+=====================
+K
+G  if (!task) return res.status(404).json({ error: "Task not found." });
+=====================
+    status: task.status,
+=====================
+    progress: task.progress,
+=====================
+    result: task.result
+=====================
+4
+0app.post('/api/wechat/db/query', (req, res) => {
+=====================
+  const { sql } = req.body;
+=====================
+Q
+M  if (!sql) return res.status(400).json({ error: "Missing parameter: sql" });
+=====================
+;
+7  console.log(`[WeChat DB Query] Executing: "${sql}"`);
+=====================
+'
+#  if (!fs.existsSync(WX_DB_PATH)) {
+=====================
+O
+K    console.log(`
+=====================
+    return res.json({
+=====================
+      success: true,
+=====================
+        { msg_id: 101, talker: "
+=====================
+", create_time: "2026-06-15 14:20:00" },
+=====================
+
+~        { msg_id: 102, talker: "
+=====================
+", create_time: "2026-06-16 09:15:00" }
+=====================
+S
+O  const db = new sqlite3.Database(WX_DB_PATH, sqlite3.OPEN_READONLY, (err) => {
+=====================
+E
+A    if (err) return res.status(500).json({ error: err.message });
+=====================
+&
+"  db.all(sql, [], (err, rows) => {
+=====================
+E
+A    if (err) return res.status(500).json({ error: err.message });
+=====================
+*
+&    res.json({ success: true, rows });
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+/
++app.get('/api/ops/metrics', (req, res) => {
+=====================
+    llm_success_rate: 99.4,
+=====================
+    average_latency_ms: 2450,
+=====================
+$
+     token_cost_today_usd: 14.85,
+=====================
+    api_timeout_count: 2
+=====================
+,
+(app.get('/api/ops/logs', (req, res) => {
+=====================
+4
+0  const lines = parseInt(req.query.lines) || 50;
+=====================
+    logs: `[INFO] ${new Date().toISOString()} - [Gateway] Server initialized on port ${PORT}\n[INFO] [MCP] Registered 5 tools\n[INFO] [OpenClaw] Connection established at ${OPENCLAW_API_URL}\n[DEBUG] [Terminal] lark-cli path configured as: ${LARK_CLI_PATH}\n[INFO] [Gateway] Listening for remote trace events... (Truncated to past ${lines} lines)`
+=====================
+2
+.app.post('/api/security/scan', (req, res) => {
+=====================
+  const { text } = req.body;
+=====================
+S
+O  if (!text) return res.status(400).json({ error: "Missing parameter: text" });
+=====================
+s
+o  const isInjection = text.toLowerCase().includes("ignore previous") || text.includes("
+=====================
+P
+L  const isSensitive = text.includes("
+=====================
+") || text.includes("
+=====================
+-
+)    isSafe: !isInjection && !isSensitive,
+=====================
+X
+T    riskType: isInjection ? "injection" : (isSensitive ? "sensitive_word" : "none"),
+=====================
+    details: isInjection ? "Detected high-risk Prompt Injection attempt." : (isSensitive ? "Detected forbidden terms." : "Clear.")
+=====================
+4
+0app.post('/api/security/policy', (req, res) => {
+=====================
+2
+.  const { agent_id, operation_id } = req.body;
+=====================
+c
+_  if (!agent_id || !operation_id) return res.status(400).json({ error: "Missing parameters" });
+=====================
+_
+[  const sensitiveTools = ['runLarkCli', 'executeTerminalCommand', 'execute_local_command'];
+=====================
+O
+K  const privilegedAgents = ['agent_ops', 'agent_architect', 'claude_code'];
+=====================
+d
+`  const allowed = !sensitiveTools.includes(operation_id) || privilegedAgents.includes(agent_id);
+=====================
+  res.json({ allowed, reason: allowed ? "Authorized." : `Access denied: Agent ${agent_id} is not privileged to call ${operation_id}.` });
+=====================
+5
+1app.post('/api/tech/code-review', (req, res) => {
+=====================
+  const { code } = req.body;
+=====================
+I
+E  if (!code) return res.status(400).json({ error: "Missing: code" });
+=====================
+s
+o  const hasSql = code.toLowerCase().includes("select * from") && !code.toLowerCase().includes("parameterized");
+=====================
+j
+f  const hasSecret = code.toLowerCase().includes("api_key") || code.toLowerCase().includes("password");
+=====================
+  const vulnerabilities = [];
+=====================
+    vulnerabilities.push({ severity: "high", description: "Potential SQL Injection detected.", suggested_fix: "Use parameterized queries." });
+=====================
+    vulnerabilities.push({ severity: "high", description: "Hardcoded credential detected.", suggested_fix: "Store secrets in env variables." });
+=====================
+  res.json({ success: true, vulnerabilities, dry_violations: code.includes("function") && code.split("function").length > 3 });
+=====================
+6
+2app.post('/api/tech/perf-analyze', (req, res) => {
+=====================
++
+'  const { qps, bottleneck } = req.body;
+=====================
+    recommendation: `
+=====================
+4
+0app.post('/api/knowledge/query', (req, res) => {
+=====================
+(
+$  const { query, top_k } = req.body;
+=====================
+9
+5  console.log(`[RAG Database] Querying: "${query}"`);
+=====================
+  const mockRags = [
+=====================
+    { document_name: "
+=====================
+    { document_name: "AI
+=====================
+  const hits = mockRags.filter(rag => query.includes("
+=====================
+") || query.includes("
+=====================
+") || query.includes("
+=====================
+") || rag.content.includes(query));
+=====================
+  res.json({ success: true, hits: hits.length > 0 ? hits : [{ document_name: "
+=====================
+", score: 0.50 }] });
+=====================
+;
+7app.get('/api/knowledge/document/list', (req, res) => {
+=====================
+y
+u    { filename: "
+=====================
+.pdf", file_size: 2450122, uploaded_time: "2026-03-01T10:00:00Z" },
+=====================
+q
+m    { filename: "AI
+=====================
+.docx", file_size: 512033, uploaded_time: "2026-05-12T14:30:00Z" }
+=====================
+9
+5app.get('/api/notebook/weread/fetch', (req, res) => {
+=====================
+$
+   const { book_id } = req.query;
+=====================
+_
+[  console.log(`[WeRead Exporter] Fetching highlights for book ID: ${book_id || 'latest'}`);
+=====================
+'
+#      book_name: "
+=====================
+x
+t      highlight: "
+=====================
+=
+9app.post('/api/notebook/notebooklm/sync', (req, res) => {
+=====================
+6
+2  const { filename, markdown_content } = req.body;
+=====================
++
+'  if (!filename || !markdown_content) {
+=====================
+c
+_    return res.status(400).json({ error: "Missing parameters: filename or markdown_content" });
+=====================
+P
+L  console.log(`[NotebookLM Sync] Uploading ${filename} to Google Drive...`);
+=====================
+r
+n    cloud_url: `https://drive.google.com/drive/folders/notebooklm_growth_sync/${encodeURIComponent(filename)}`
+=====================
+?
+;app.post('/api/github/search/repositories', (req, res) => {
+=====================
++
+'  const { query, language } = req.body;
+=====================
+X
+T  console.log(`[GitHub Search] Query: "${query}" (Language: ${language || 'any'})`);
+=====================
+      { name: "langchain-ai/langgraph", description: "Build resilient language agents as graphs.", stars: 5800, language: "python" },
+=====================
+      { name: "dify-ai/dify", description: "An open-source LLM app development platform.", stars: 32000, language: "typescript" }
+=====================
+6
+2app.get('/api/github/repo/detail', (req, res) => {
+=====================
+&
+"  const { repo_name } = req.query;
+=====================
+S
+O  if (!repo_name) return res.status(400).json({ error: "Missing: repo_name" });
+=====================
+E
+A  console.log(`[GitHub API] Fetching details for: ${repo_name}`);
+=====================
+0
+,  const isDify = repo_name.includes("dify");
+=====================
+    full_name: repo_name,
+=====================
+%
+!    stars: isDify ? 32000 : 5800,
+=====================
+/
++    license: isDify ? "Apache-2.0" : "MIT",
+=====================
+K
+G    last_commit_time: new Date(Date.now() - 3600000 * 2).toISOString(),
+=====================
+-
+)    open_issues_count: isDify ? 412 : 54,
+=====================
+1
+-    closed_issues_count: isDify ? 8900 : 1200
+=====================
+3
+/app.get('/api/github/trending', (req, res) => {
+=====================
+%
+!  const { language } = req.query;
+=====================
+S
+O  console.log(`[GitHub Trending] Fetching trending for: ${language || 'all'}`);
+=====================
+    { rank: 1, name: "modelcontextprotocol/servers", description: "Reference MCP server implementations.", stars_today: 450, language: "typescript" },
+=====================
+    { rank: 2, name: "openai/whisper", description: "Robust Speech Recognition via Large-Scale Weak Supervision.", stars_today: 230, language: "python" }
+=====================
+-
+)app.post('/api/x/search', (req, res) => {
+=====================
+,
+(  const { query, min_likes } = req.body;
+=====================
+R
+N  console.log(`[X Search] Query: "${query}" (Min Likes: ${min_likes || 50})`);
+=====================
+      { id: "tweet_101", author: "karpathy", content: "Model Context Protocol (MCP) is a beautiful standard. It makes custom tooling for agents standard and clean.", likes: 8500, replies: 120, time: "2026-07-14T10:00:00Z" },
+=====================
+      { id: "tweet_102", author: "swyx", content: "Agentic workflow is shifting from centralized code to decentralized MCP servers.", likes: 1200, replies: 45, time: "2026-07-14T14:30:00Z" }
+=====================
+0
+,app.get('/api/x/kol/tweets', (req, res) => {
+=====================
+%
+!  const { username } = req.query;
+=====================
+Q
+M  if (!username) return res.status(400).json({ error: "Missing: username" });
+=====================
+C
+?  console.log(`[X API] Fetching tweets for KOL: @${username}`);
+=====================
+    { id: "kol_tweet_01", author: username, content: `Just launched our new open-source project. Check it out on GitHub.`, likes: 4500, time: "3 hours ago" },
+=====================
+    { id: "kol_tweet_02", author: username, content: `AGI is closer than we think, but we need robust safety guardrails first.`, likes: 9800, time: "8 hours ago" }
+=====================
+.
+*app.get('/api/x/trending', (req, res) => {
+=====================
+:
+6  console.log(`[X Trending] Fetching tech trends...`);
+=====================
+T
+P    { topic: "#ModelContextProtocol", tweet_count: 45100, fever_level: "high" },
+=====================
+K
+G    { topic: "#LangGraph", tweet_count: 12000, fever_level: "medium" },
+=====================
+L
+H    { topic: "#FeishuBitableAI", tweet_count: 8900, fever_level: "low" }
+=====================
+1
+-app.get('/api/x/likes/fetch', (req, res) => {
+=====================
+,
+(  const { username, limit } = req.query;
+=====================
+[
+W  if (!username) return res.status(400).json({ error: "Missing parameter: username" });
+=====================
+e
+a  console.log(`[X Likes Exporter] Fetching likes for user: @${username} (limit ${limit || 10})`);
+=====================
+      author: "karpathy",
+=====================
+<
+8      tweet_url: "https://x.com/karpathy/status/999991",
+=====================
+      content: "I've been writing custom integrations all my life, but MCP standardizes everything. It's the Unix socket of LLM apps.",
+=====================
+E
+A      timestamp: new Date(Date.now() - 3600000 * 5).toISOString()
+=====================
+      author: "sama",
+=====================
+8
+4      tweet_url: "https://x.com/sama/status/999992",
+=====================
+f
+b      content: "GPT-5 is looking incredibly smart. The reasoning capabilities will shock people.",
+=====================
+F
+B      timestamp: new Date(Date.now() - 3600000 * 12).toISOString()
+=====================
+4
+0app.post('/api/x/likes/archive', (req, res) => {
+=====================
+D
+@  const { username, tweet_url, content, motivation } = req.body;
+=====================
+0
+,  if (!username || !tweet_url || !content) {
+=====================
+[
+W    return res.status(400).json({ error: "Missing required parameters for archive." });
+=====================
+n
+j  console.log(`[Likes Archive] Storing liked tweet by @${username}. Motivation: ${motivation || 'none'}`);
+=====================
+H
+D    archive_id: "arch_" + Math.random().toString(36).substring(2, 9)
+=====================
+7
+3app.get('/api/x/following/changes', (req, res) => {
+=====================
+%
+!  const { username } = req.query;
+=====================
+Q
+M  if (!username) return res.status(400).json({ error: "Missing: username" });
+=====================
+W
+S  console.log(`[X Connections] Fetching following list changes for: @${username}`);
+=====================
+    { username: "rust_mcp_dev", bio: "Building blazing fast MCP servers in Rust. Actively looking for agent integration opportunities.", followed_at: new Date(Date.now() - 3600000).toISOString() },
+=====================
+    { username: "indie_hacker_mom", bio: "Building micro AI SaaS tools in public. ARR $120k.", followed_at: new Date(Date.now() - 3600000 * 8).toISOString() }
+=====================
+3
+/app.get('/api/x/replies/fetch', (req, res) => {
+=====================
+%
+!  const { username } = req.query;
+=====================
+Q
+M  if (!username) return res.status(400).json({ error: "Missing: username" });
+=====================
+I
+E  console.log(`[X Interactions] Fetching replies for: @${username}`);
+=====================
+    { author: username, to_user: "openai_dev", content: "Impressive reasoning speed. Is this running on a custom hardware cluster?", likes: 450, time: "4 hours ago" },
+=====================
+    { author: username, to_user: "indie_developer", content: "This is a great micro AI tool! I'd love to see a desktop client.", likes: 890, time: "18 hours ago" }
+=====================
+2
+.app.get('/api/content/trends', (req, res) => {
+=====================
+%
+!  const { platform } = req.query;
+=====================
+d
+`  console.log(`[Media Trends] Fetching hot content for platform: ${platform || 'xiaohongshu'}`);
+=====================
+", platform: "xiaohongshu", likes: 25100, comments: 450 },
+=====================
+", platform: "xiaohongshu", likes: 18900, comments: 230 },
+=====================
+", platform: "wechat", likes: 8900, comments: 120 }
+=====================
+;
+7app.post('/api/content/topics/archive', (req, res) => {
+=====================
+V
+R  const { topic_title, suggested_titles, target_audience, model_type } = req.body;
+=====================
+B
+>  if (!topic_title || !suggested_titles || !target_audience) {
+=====================
+U
+Q    return res.status(400).json({ error: "Missing required topic parameters." });
+=====================
+w
+s  console.log(`[Bitable Content Dashboard] Archiving topic: "${topic_title}". Model: ${model_type || 'conflict'}`);
+=====================
+T
+P    bitable_record_id: "rec_topic_" + Math.random().toString(36).substring(2, 9)
+=====================
+6
+2app.post('/api/content/risk/scan', (req, res) => {
+=====================
+*
+&  const { text, platform } = req.body;
+=====================
+S
+O  if (!text) return res.status(400).json({ error: "Missing parameter: text" });
+=====================
+b
+^  console.log(`[Content Risk Scan] Auditing text for platform: ${platform || 'xiaohongshu'}`);
+=====================
+  const violations = [];
+=====================
+  let risk_level = "none";
+=====================
+<
+8  if (text.includes("
+=====================
+") || text.includes("
+=====================
+    risk_level = "medium";
+=====================
+    violations.push({
+=====================
+C
+?      trigger_text: text.includes("
+=====================
+1
+-      risk_type: "advertising_law_violation",
+=====================
+*
+&      suggested_fix: "
+=====================
+Z
+V  if (text.includes("
+=====================
+") || text.includes("
+=====================
+") || text.includes("
+=====================
+    risk_level = "medium";
+=====================
+    violations.push({
+=====================
+'
+#      trigger_text: "
+=====================
+4
+0      risk_type: "platform_traffic_bypass_risk",
+=====================
+i
+e      suggested_fix: "
+=====================
+>
+:app.post('/api/content/risk/anti-ai-scan', (req, res) => {
+=====================
+  const { text } = req.body;
+=====================
+S
+O  if (!text) return res.status(400).json({ error: "Missing parameter: text" });
+=====================
+N
+J  console.log(`[Anti-AI Scanner] Running tone audit on content draft...`);
+=====================
+  const aiKeywords = [
+=====================
+  const matchedKeywords = [];
+=====================
+  let scorePenalty = 0;
+=====================
+  aiKeywords.forEach(word => {
+=====================
+4
+0    const count = (text.split(word).length - 1);
+=====================
+    if (count > 0) {
+=====================
+0
+,      matchedKeywords.push({ word, count });
+=====================
+?
+;      scorePenalty += count * 15; // 
+=====================
+6
+2  const aiScore = Math.max(0, 100 - scorePenalty);
+=====================
+J
+F  const aiIndex = 100 - aiScore; // AI 
+=====================
+P
+L  const isTooMachinery = aiIndex > 30; // 
+=====================
+    ai_index: aiIndex,
+=====================
+)
+%    is_too_machinery: isTooMachinery,
+=====================
+'
+#    matched_words: matchedKeywords,
+=====================
+    message: isTooMachinery 
+=====================
+:
+6app.post('/api/content/risk/ip-check', (req, res) => {
+=====================
+  const { brands } = req.body;
+=====================
+d
+`  console.log(`[IP Compliance] Checking brands authorization: ${JSON.stringify(brands || [])}`);
+=====================
+    status: "compliant",
+=====================
+    warning: (brands && brands.includes("
+=====================
+")) ? "Detected unregistered trademark referencing. Potential trademark conflict." : "No registered copyright issues found."
+=====================
+=
+9app.post('/api/content/risk/legal-audit', (req, res) => {
+=====================
+  const { text } = req.body;
+=====================
+S
+O  if (!text) return res.status(400).json({ error: "Missing parameter: text" });
+=====================
+E
+A  console.log(`[Legal Audit] Checking legislation red-lines...`);
+=====================
+  const warnings = [];
+=====================
+  let is_legal = true;
+=====================
+X
+T  if (text.includes("100%") || text.includes("
+=====================
+") || text.includes("
+=====================
+    is_legal = false;
+=====================
+1
+-      segment: text.substring(0, 30) + "...",
+=====================
+y
+u      risk_description: "
+=====================
+Y
+U      law_reference: "
+=====================
+~
+z      suggestion: "
+=====================
+]
+Y  if (text.includes("
+=====================
+") || text.includes("
+=====================
+") || text.includes("
+=====================
+    is_legal = false;
+=====================
+1
+-      segment: text.substring(0, 30) + "...",
+=====================
+j
+f      risk_description: "
+=====================
+X
+T      law_reference: "
+=====================
+i
+e      suggestion: "
+=====================
+:
+6app.post('/api/content/expert/polish', (req, res) => {
+=====================
+%
+!  const { raw_draft } = req.body;
+=====================
+]
+Y  if (!raw_draft) return res.status(400).json({ error: "Missing parameter: raw_draft" });
+=====================
+L
+H  console.log(`[Content Polisher] Refining draft to remove AI tone...`);
+=====================
+  let polished = raw_draft
+=====================
+    polished_text: polished,
+=====================
+    golden_sentences: [
+=====================
+:
+6app.post('/api/content/expert/verify', (req, res) => {
+=====================
+  const { claims } = req.body;
+=====================
+[
+W  console.log(`[Fact Checker] Verifying data points: ${JSON.stringify(claims || [])}`);
+=====================
+    unverified_items: []
+=====================
+;
+7app.post('/api/content/producer/write', (req, res) => {
+=====================
+4
+0  const { title, outline, platform } = req.body;
+=====================
+v
+r  if (!title || !outline) return res.status(400).json({ error: "Missing required parameters: title or outline" });
+=====================
+Z
+V  console.log(`[Content Writer] Drafting text for platform: ${platform || 'wechat'}`);
+=====================
+'
+#  if (platform === "xiaohongshu") {
+=====================
+    return res.json({
+=====================
+      success: true,
+=====================
+      draft_content: `
+=====================
+ Claude Desktop MCP 
+=====================
+      estimated_words: 240
+=====================
+  if (platform === "douyin") {
+=====================
+    return res.json({
+=====================
+      success: true,
+=====================
+      draft_content: `
+=====================
+      estimated_words: 180
+=====================
+    draft_content: `
+=====================
+    estimated_words: 1200
+=====================
+:
+6app.post('/api/content/editor/render', (req, res) => {
+=====================
+,
+(  const { markdown_content } = req.body;
+=====================
+k
+g  if (!markdown_content) return res.status(400).json({ error: "Missing parameter: markdown_content" });
+=====================
+P
+L  console.log(`[Rich-Text Renderer] Compiling Markdown with Inline CSS...`);
+=====================
+  const styledHtml = `
+=====================
+s
+o    <section style="font-size: 15px; color: #3e3e3e; line-height: 1.75; letter-spacing: 1.5px; padding: 10px;">
+=====================
+      <h2 style="border-left: 4px solid #1a1a1a; padding-left: 8px; font-size: 18px; color: #1a1a1a; margin-top: 24px; margin-bottom: 16px; font-weight: bold;">
+=====================
+*
+&      <p style="margin-bottom: 16px;">
+=====================
+7
+3        ${markdown_content.replace(/\n/g, '<br/>')}
+=====================
+      <blockquote style="background-color: #f7f7f7; border-radius: 8px; padding: 16px; border: 1px solid #eeeeee; font-size: 14px; color: #666666; margin: 16px 0;">
+=====================
+    html_content: styledHtml
+=====================
+;
+7app.post('/api/content/editor/publish', (req, res) => {
+=====================
+7
+3  const { title, html_content, author } = req.body;
+=====================
+l
+h  if (!title || !html_content) return res.status(400).json({ error: "Missing title or html_content." });
+=====================
+m
+i  console.log(`[WeChat API] Uploading draft: "${title}" by ${author || '
+=====================
+'} to Draft Box...`);
+=====================
+P
+L    media_id: "wx_media_draft_" + Math.random().toString(36).substring(2, 9)
+=====================
+9
+5app.post('/api/content/zsxq/publish', (req, res) => {
+=====================
+A
+=  const { title, content, group_name, is_sticky } = req.body;
+=====================
+v
+r  if (!title || !content) return res.status(400).json({ error: "Missing required parameters: title or content" });
+=====================
+  console.log(`[ZSXQ API] Publishing post: "${title}" on Planet: ${group_name || '
+=====================
+'}. Sticky: ${is_sticky}`);
+=====================
+L
+H    topic_id: "zsxq_topic_" + Math.random().toString(36).substring(2, 9)
+=====================
+?
+;app.post('/api/management/briefing/create', (req, res) => {
+=====================
+'
+#  const { raw_reports } = req.body;
+=====================
+W
+S  if (!raw_reports) return res.status(400).json({ error: "Missing: raw_reports" });
+=====================
+u
+q  console.log(`[Executive Assistant] Creating weekly/daily briefing from ${raw_reports.length} report sources.`);
+=====================
+      highlights: ["
+=====================
+      suggestions: ["
+=====================
+>
+:app.post('/api/management/schedule/event', (req, res) => {
+=====================
+D
+@  const { summary, start_time, end_time, attendees } = req.body;
+=====================
+s
+o  if (!summary || !start_time) return res.status(400).json({ error: "Missing required calendar parameters." });
+=====================
+}
+y  console.log(`[Calendar Service] Booking event: "${summary}" at ${start_time} for: ${JSON.stringify(attendees || [])}`);
+=====================
+E
+A    event_id: "evt_" + Math.random().toString(36).substring(2, 9)
+=====================
+7
+3app.post('/api/project/wbs/create', (req, res) => {
+=====================
+:
+6  const { project_name, raw_requirements } = req.body;
+=====================
+/
++  if (!project_name || !raw_requirements) {
+=====================
+f
+b    return res.status(400).json({ error: "Missing parameter: project_name or raw_requirements" });
+=====================
+]
+Y  console.log(`[WBS Decomposer] Creating breakdown stages for project: ${project_name}`);
+=====================
+l
+h      { id: "1.1", task: "
+=====================
+u
+q      { id: "1.2", task: "
+=====================
+", hours: 6, pre_id: "1.1" },
+=====================
+p
+l      { id: "2.1", task: "
+=====================
+", hours: 12, pre_id: "1.2" }
+=====================
+9
+5app.post('/api/project/bitable/sync', (req, res) => {
+=====================
+/
++  const { project_name, tasks } = req.body;
+=====================
+j
+f  if (!project_name || !tasks) return res.status(400).json({ error: "Missing required parameters." });
+=====================
+y
+u  console.log(`[Lark Bitable Sync] Uploading ${tasks.length} tasks for project: ${project_name} to Kanban board...`);
+=====================
+*
+&    synced_records_count: tasks.length
+=====================
+2
+.app.post('/api/finance/audit', (req, res) => {
+=====================
+Z
+V  const { project_name, budget_limit, actual_expenses, estimated_revenue } = req.body;
+=====================
+|
+x  if (!project_name || budget_limit === undefined || actual_expenses === undefined || estimated_revenue === undefined) {
+=====================
+k
+g    return res.status(400).json({ error: "Missing required numeric parameters for financial audit." });
+=====================
+a
+]  console.log(`[Financial Audit] Processing accounting ledger for project: ${project_name}`);
+=====================
+M
+I  const variance_ratio = (actual_expenses - budget_limit) / budget_limit;
+=====================
+J
+F  const roi = (estimated_revenue - actual_expenses) / actual_expenses;
+=====================
+  let risk_level = "none";
+=====================
+.
+*  if (variance_ratio > 0.1 || roi < 1.0) {
+=====================
+    risk_level = "high";
+=====================
+  } else if (roi < 1.5) {
+=====================
+    risk_level = "medium";
+=====================
+<
+8app.post('/api/combat/collector/scrape', (req, res) => {
+=====================
+  const { url } = req.body;
+=====================
+Q
+M  if (!url) return res.status(400).json({ error: "Missing parameter: url" });
+=====================
+?
+;  console.log(`[Scraper Engine] Pulling DOM from: ${url}`);
+=====================
+-
+)    site_title: "
+=====================
+    pricing_plans: [
+=====================
+H
+D      { name: "Starter", price: "$19/mo", limit: "1,000 Messages" },
+=====================
+D
+@      { name: "Pro", price: "$99/mo", limit: "10,000 Messages" }
+=====================
+    detected_changes: [
+=====================
+>
+:app.post('/api/combat/researcher/analyze', (req, res) => {
+=====================
+>
+:  const { competitor_name, raw_intel_summary } = req.body;
+=====================
+3
+/  if (!competitor_name || !raw_intel_summary) {
+=====================
+O
+K    return res.status(400).json({ error: "Missing required parameters." });
+=====================
+n
+j  console.log(`[Intel Researcher] Performing SWOT Matrix calculations on competitor: ${competitor_name}`);
+=====================
+    winning_rate: 0.85,
+=====================
+c
+_      strengths: "
+=====================
+p
+l      opportunities: "
+=====================
+:
+6app.post('/api/combat/manual/compile', (req, res) => {
+=====================
+S
+O  const { chapter_title, raw_sop_text, warnings, attachment_links } = req.body;
+=====================
+,
+(  if (!chapter_title || !raw_sop_text) {
+=====================
+c
+_    return res.status(400).json({ error: "Missing parameter: chapter_title or raw_sop_text" });
+=====================
+O
+K  console.log(`[Manual Compiler] Bundling chapter: "${chapter_title}"...`);
+=====================
+  const compiledMarkdown = `
+=====================
+^
+Z${(attachment_links || []).map(link => `- 
+=====================
+](${link})`).join('\n')}
+=====================
+,
+(    compiled_markdown: compiledMarkdown,
+=====================
+R
+N    save_path: "/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/docs/manual_chapter.md"
+=====================
+=
+9app.post('/api/operation/ticket/resolve', (req, res) => {
+=====================
+1
+-  const { member_name, question } = req.body;
+=====================
+z
+v  if (!member_name || !question) return res.status(400).json({ error: "Missing parameter: member_name or question" });
+=====================
+i
+e  console.log(`[Support Ticket] Processing incident for member: ${member_name}. Issue: ${question}`);
+=====================
+  const isTechnical = question.toLowerCase().includes("npm") || question.toLowerCase().includes("err") || question.toLowerCase().includes("code") || question.toLowerCase().includes("sqlite");
+=====================
+    replied_text: isTechnical ? "
+=====================
+$
+     need_escalation: isTechnical
+=====================
+<
+8app.post('/api/operation/sales/qualify', (req, res) => {
+=====================
+(
+$  const { chat_history } = req.body;
+=====================
+c
+_  if (!chat_history) return res.status(400).json({ error: "Missing parameter: chat_history" });
+=====================
+P
+L  console.log(`[Sales Agent] Running BANT analysis on WeChat chat logs...`);
+=====================
+    budget_confirmed: true,
+=====================
+w
+s    need_description: "
+=====================
+    closing_rate: 0.80,
+=====================
+    recommended_script: "
+=====================
+<
+8app.post('/api/operation/designer/draw', (req, res) => {
+=====================
+0
+,  const { prompt, aspect_ratio } = req.body;
+=====================
+W
+S  if (!prompt) return res.status(400).json({ error: "Missing parameter: prompt" });
+=====================
+u
+q  console.log(`[Graphic Engine] Drawing image for Prompt: "${prompt}" (Aspect Ratio: ${aspect_ratio || '3:4'})`);
+=====================
+Z
+V    image_url: "file:///Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/docs/weread-placeholder"
+=====================
+1
+-app.get('/api/system/config', (req, res) => {
+=====================
+M
+I  console.log(`[Config Service] Reading local system configurations...`);
+=====================
+T
+P      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "sk-ant-xxxxxxxxxxxxxxxxxx",
+=====================
+T
+P      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || "tyc_token_xxxxxxxxxxx",
+=====================
+P
+L      WECHAT_DB_PATH: "/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/data/wx_db.db"
+=====================
+L
+H      { id: "ai_sales_champion", name: "AI
+=====================
+K
+G      { id: "risk_controller", name: "
+=====================
+T
+P      { id: "manual_editor", name: "
+=====================
+d
+`      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),
+=====================
+I
+E      LARK_APP_ID: process.env.LARK_APP_ID || "cli_a1b2c3d4e5f6g7h8",
+=====================
+]
+Y      LARK_APP_SECRET: process.env.LARK_APP_SECRET || "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+=====================
+=
+9      LARK_CLI_PATH: process.env.LARK_CLI_PATH || "lark",
+=====================
+U
+Q      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || "http://localhost:18000",
+=====================
+H
+D      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || "mock_token_123"
+=====================
+7
+3app.post('/api/system/config/save', (req, res) => {
+=====================
+-
+)  const { config, user_role } = req.body;
+=====================
+T
+P  if (!config) return res.status(400).json({ error: "Missing config object." });
+=====================
+  if (user_role !== 'admin') {
+=====================
+v
+r    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: "${user_role || 'unknown'}"`);
+=====================
+%
+!    return res.status(403).json({
+=====================
+      success: false,
+=====================
+z
+v      error: `Access Denied: Role "${user_role || 'unknown'}" is not authorized to edit system environment variables.`
+=====================
+Y
+U  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);
+=====================
+9
+5  const envPath = path.resolve(__dirname, '../.env');
+=====================
+`
+\  console.log(`[Config Service] Writing new API keys and Lark config to local: ${envPath}`);
+=====================
+g
+c  const envContent = `# 
+=====================
+1
+-CLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}
+=====================
+5
+1TIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}
+=====================
+1
+-WECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}
+=====================
++
+'LARK_APP_ID=${config.LARK_APP_ID || ''}
+=====================
+3
+/LARK_APP_SECRET=${config.LARK_APP_SECRET || ''}
+=====================
+3
+/LARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}
+=====================
+K
+GOPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}
+=====================
+1
+-OPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}
+=====================
+7
+3    fs.writeFileSync(envPath, envContent, 'utf-8');
+=====================
+;
+7    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;
+=====================
+?
+;    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;
+=====================
+;
+7    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;
+=====================
+5
+1    process.env.LARK_APP_ID = config.LARK_APP_ID;
+=====================
+=
+9    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;
+=====================
+9
+5    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;
+=====================
+?
+;    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;
+=====================
+;
+7    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;
+=====================
+_
+[    console.log(`
+=====================
+ [Config Service] Successfully hot-saved new environmental settings.`);
+=====================
+      success: true,
+=====================
+U
+Q    res.status(500).json({ error: "Failed to write .env file: " + err.message });
+=====================
+6
+2app.get('/api/system/permissions', (req, res) => {
+=====================
+H
+D  const permPath = path.join(__dirname, '../data/permissions.json');
+=====================
+P
+L  console.log(`[Permission Service] Loading role matrix from: ${permPath}`);
+=====================
+%
+!  if (!fs.existsSync(permPath)) {
+=====================
+    const defaultMatrix = {
+=====================
+C
+?      admin: ["wechat_audit", "content_risk", "system_config"],
+=====================
+      editor: ["content_risk"],
+=====================
+      sales: ["wechat_audit"]
+=====================
+1
+-      const dataDir = path.dirname(permPath);
+=====================
+(
+$      if (!fs.existsSync(dataDir)) {
+=====================
+7
+3        fs.mkdirSync(dataDir, { recursive: true });
+=====================
+V
+R      fs.writeFileSync(permPath, JSON.stringify(defaultMatrix, null, 2), 'utf-8');
+=====================
+H
+D      console.error(`Failed to write default permissions file:`, e);
+=====================
+B
+>    return res.json({ success: true, matrix: defaultMatrix });
+=====================
+;
+7    const rawData = fs.readFileSync(permPath, 'utf-8');
+=====================
+A
+=    res.json({ success: true, matrix: JSON.parse(rawData) });
+=====================
+Z
+V    res.status(500).json({ error: "Failed to read permission file: " + err.message });
+=====================
+<
+8app.post('/api/system/permissions/save', (req, res) => {
+=====================
+-
+)  const { matrix, user_role } = req.body;
+=====================
+U
+Q  if (!matrix) return res.status(400).json({ error: "Missing matrix payload." });
+=====================
+  if (user_role !== 'admin') {
+=====================
+%
+!    return res.status(403).json({
+=====================
+      success: false,
+=====================
+X
+T      error: "Access Denied: Only Admin can update the system authorization matrix."
+=====================
+H
+D  const permPath = path.join(__dirname, '../data/permissions.json');
+=====================
+Y
+U  console.log(`[Permission Service] Overwriting local authorization matrix file...`);
+=====================
+/
++    const dataDir = path.dirname(permPath);
+=====================
+&
+"    if (!fs.existsSync(dataDir)) {
+=====================
+5
+1      fs.mkdirSync(dataDir, { recursive: true });
+=====================
+M
+I    fs.writeFileSync(permPath, JSON.stringify(matrix, null, 2), 'utf-8');
+=====================
+s
+o    res.json({ success: true, message: "
+=====================
+\
+X    res.status(500).json({ error: "Failed to save permission matrix: " + err.message });
+=====================
+8
+4app.get('/api/system/agents/status', (req, res) => {
+=====================
+K
+G  const statusPath = path.join(__dirname, '../data/agent_status.json');
+=====================
+[
+W  console.log(`[Agent Hot-Swap] Loading agent lifecycle switches from: ${statusPath}`);
+=====================
+'
+#  if (!fs.existsSync(statusPath)) {
+=====================
+    const defaultStatus = {
+=====================
+      ai_sales_champion: true,
+=====================
+      risk_controller: true,
+=====================
+      manual_editor: true,
+=====================
+      claude_code: true,
+=====================
+*
+&      meeting_minutes_specialist: true
+=====================
+3
+/      const dataDir = path.dirname(statusPath);
+=====================
+R
+N      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+=====================
+X
+T      fs.writeFileSync(statusPath, JSON.stringify(defaultStatus, null, 2), 'utf-8');
+=====================
+      console.error(e);
+=====================
+I
+E    return res.json({ success: true, status_matrix: defaultStatus });
+=====================
+=
+9    const rawData = fs.readFileSync(statusPath, 'utf-8');
+=====================
+H
+D    res.json({ success: true, status_matrix: JSON.parse(rawData) });
+=====================
+M
+I    res.status(500).json({ error: "Failed to read agent status file." });
+=====================
+>
+:app.post('/api/system/agents/status/save', (req, res) => {
+=====================
+4
+0  const { status_matrix, user_role } = req.body;
+=====================
+c
+_  if (!status_matrix) return res.status(400).json({ error: "Missing status_matrix payload." });
+=====================
+  if (user_role !== 'admin') {
+=====================
+
+}    return res.status(403).json({ success: false, error: "Access Denied: Only Admin can update Agent lifecycle switches." });
+=====================
+K
+G  const statusPath = path.join(__dirname, '../data/agent_status.json');
+=====================
+^
+Z  console.log(`[Agent Hot-Swap] Saving new agent status configuration to: ${statusPath}`);
+=====================
+V
+R    fs.writeFileSync(statusPath, JSON.stringify(status_matrix, null, 2), 'utf-8');
+=====================
+    res.json({ success: true, message: "Agent 
+=====================
+M
+I    res.status(500).json({ error: "Failed to save agent status file." });
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+app.listen(PORT, () => {
+=====================
+H
+D  console.log(`==================================================`);
+=====================
+ Agent Gateway & MCP 
+=====================
+?
+;  console.log(`   
+=====================
+: http://localhost:${PORT}`);
+=====================
+H
+D  console.log(`==================================================`);
+=====================
+BFfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.jsR
+=====================
+const express = require('express');
+const cors = require('cors');
+const { exec } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+const sqlite3 = require('sqlite3').verbose();
+require('dotenv').config();
+
+const app = express();
+const PORT = process.env.PORT || 8888;
+
+app.use(cors());
+app.use(express.json());
+
+// 
+=====================
+
+const OPENCLAW_API_URL = process.env.OPENCLAW_API_URL || 'http://localhost:18000';
+const OPENCLAW_TOKEN = process.env.OPENCLAW_TOKEN || 'mock_token_123';
+const LARK_CLI_PATH = process.env.LARK_CLI_PATH || 'lark';
+const WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');
+
+// 
+=====================
+)
+const TASK_QUEUE = {};
+
+// ==========================================
+// 1. Mock 
+=====================
+
+// ==========================================
+
+// 
+=====================
+
+const MOCK_COMPANY_DB = {
+  "
+=====================
+",
+    legal_person: "
+=====================
+",
+    credit_code: "91440300MA5GD7XX8Y",
+    status: "
+=====================
+",
+    registered_capital: "1000
+=====================
+",
+    establish_date: "2021-08-18",
+    business_scope: "
+=====================
+",
+    legal_person: "
+=====================
+",
+    credit_code: "9144030071522300XG",
+    status: "
+=====================
+",
+    registered_capital: "200
+=====================
+",
+    establish_date: "1998-11-11",
+    business_scope: "
+=====================
+)
+function getMockTranscription(url) {
+  const lowerUrl = url.toLowerCase();
+  const isEnglish = lowerUrl.includes('youtube') || lowerUrl.includes('english') || lowerUrl.includes('foreign');
+  const isDouyin = lowerUrl.includes('douyin') || lowerUrl.includes('tiktok') || lowerUrl.includes('dy');
+  const isXhs = lowerUrl.includes('xhs') || lowerUrl.includes('xiaohongshu');
+  const isWechat = lowerUrl.includes('wechat') || lowerUrl.includes('weixin') || lowerUrl.includes('channels');
+  
+  if (isEnglish) {
+    return {
+      video_url: url,
+      duration: "08:45",
+      language: "en-US",
+      title: "Model Context Protocol Explained (MCP Guide)",
+      segments: [
+        { 
+          start: "00:00", 
+          end: "01:15", 
+          text: "ENG: Today we are talking about Model Context Protocol, the open standard to connect LLMs to data sources.\nCHS: 
+=====================
+" 
+        },
+        { 
+          start: "01:15", 
+          end: "03:40", 
+          text: "ENG: With MCP, your agent can inspect database tables and run APIs securely in the background.\nCHS: 
+=====================
+" 
+        }
+      ]
+    };
+  }
+
+  if (isDouyin) {
+    return {
+      video_url: url,
+      duration: "01:30",
+      language: "zh-CN",
+      title: "
+=====================
+",
+      segments: [
+        { start: "00:00", end: "00:30", text: "
+=====================
+" },
+        { start: "00:30", end: "01:30", text: "
+=====================
+" }
+      ]
+    };
+  }
+
+  if (isXhs) {
+    return {
+      video_url: url,
+      duration: "02:15",
+      language: "zh-CN",
+      title: "
+=====================
+",
+      segments: [
+        { start: "00:00", end: "01:00", text: "
+=====================
+" },
+        { start: "01:00", end: "02:15", text: "
+=====================
+" }
+      ]
+    };
+  }
+
+  if (isWechat) {
+    return {
+      video_url: url,
+      duration: "04:12",
+      language: "zh-CN",
+      title: "
+=====================
+",
+      segments: [
+        { start: "00:00", end: "02:00", text: "
+=====================
+" },
+        { start: "02:00", end: "04:12", text: "
+=====================
+" }
+      ]
+    };
+  }
+
+  return {
+    video_url: url,
+    duration: "15:24",
+    language: "zh-CN",
+    title: "
+=====================
+",
+    segments: [
+      { start: "00:00", end: "01:30", text: "
+=====================
+" },
+      { start: "01:30", end: "05:10", text: "
+=====================
+" },
+      { start: "05:10", end: "10:15", text: "
+=====================
+" },
+      { start: "10:15", end: "15:24", text: "
+=====================
+" }
+    ]
+  };
+}
+
+// ==========================================
+// 2. 
+=====================
+
+// ==========================================
+
+// 
+=====================
+
+app.get('/api/tianyancha/search', (req, res) => {
+  const { keyword } = req.query;
+  if (!keyword) return res.status(400).json({ error: "Missing parameter: keyword" });
+  console.log(`[TianYanCha] Search for: ${keyword}`);
+  const matchKey = Object.keys(MOCK_COMPANY_DB).find(key => keyword.includes(key) || key.includes(keyword));
+  res.json({ success: true, data: matchKey ? MOCK_COMPANY_DB[matchKey] : { name: `${keyword} (
+=====================
+
+app.get('/api/tianyancha/equity', (req, res) => {
+  const { company_name } = req.query;
+  if (!company_name) return res.status(400).json({ error: "Missing parameter: company_name" });
+  console.log(`[TianYanCha] Equity query: ${company_name}`);
+  res.json({
+    success: true,
+    actual_controller: "
+=====================
+A",
+    shareholders: [
+      { name: "
+=====================
+A", type: "natural_person", ratio: "60.0%" },
+      { name: "
+=====================
+B", type: "enterprise", ratio: "30.0%" },
+      { name: "
+=====================
+C", type: "natural_person", ratio: "10.0%" }
+    ],
+    nesting_level: 2
+  });
+});
+
+// 
+=====================
+
+app.get('/api/tianyancha/risk', (req, res) => {
+  const { company_name } = req.query;
+  if (!company_name) return res.status(400).json({ error: "Missing parameter: company_name" });
+  console.log(`[TianYanCha] Risk audit: ${company_name}`);
+  const hasHighRisk = company_name.includes("
+=====================
+") || company_name.includes("
+=====================
+");
+  res.json({
+    success: true,
+    risk_level: hasHighRisk ? "high" : "low",
+    cases: hasHighRisk ? [
+      { type: "execute_case", detail: "
+=====================
+", status: "unfulfilled" }
+    ] : [],
+    judgment_count: hasHighRisk ? 12 : 0
+  });
+});
+
+// 
+=====================
+
+app.post('/api/transcribe/video', (req, res) => {
+  const { url } = req.body;
+  if (!url) return res.status(400).json({ error: "Missing parameter: url" });
+  console.log(`[Transcription] Processing URL: ${url}`);
+  res.json({ success: true, transcription: getMockTranscription(url) });
+});
+
+// 
+=====================
+)
+app.get('/api/transcribe/status', (req, res) => {
+  const { task_id } = req.query;
+  if (!task_id) return res.status(400).json({ error: "Missing parameter: task_id" });
+
+  console.log(`[Transcription Status] Checking progress for Task: ${task_id}`);
+
+  res.json({
+    task_id,
+    status: "completed",
+    progress: 100,
+    transcription: getMockTranscription("https://www.youtube.com/watch?v=english_mcp_video")
+  });
+});
+
+// 
+=====================
+
+app.post('/api/meeting/summarize', (req, res) => {
+  const { content } = req.body;
+  if (!content) return res.status(400).json({ error: "Missing parameter: content" });
+  console.log(`[Meeting Summarizer] Processing...`);
+  res.json({
+    success: true,
+    summary: {
+      title: "
+=====================
+",
+      participants: ["
+=====================
+"],
+      decisions: ["
+=====================
+"],
+      action_items: [
+        { owner: "
+=====================
+" }
+      ]
+    }
+  });
+});
+
+// 
+=====================
+
+app.post('/api/meeting/action-items', (req, res) => {
+  const { meeting_title, action_items } = req.body;
+  if (!meeting_title || !action_items) {
+    return res.status(400).json({ error: "Missing parameters: meeting_title or action_items" });
+  }
+  console.log(`[Action Items Linker] Dispatching ${action_items.length} tasks for: ${meeting_title}`);
+  res.json({
+    success: true,
+    message: "
+=====================
+: action_items.length
+  });
+});
+
+// 
+=====================
+)
+app.post('/api/terminal/execute', (req, res) => {
+  const { command, cwd, agent_id } = req.body;
+  if (!command) return res.status(400).json({ error: "Missing parameter: command" });
+
+  // 1. 
+=====================
+)
+  const privilegedAgents = ['agent_ops', 'agent_architect', 'claude_code', 'tech_specialist', 'privileged'];
+  if (!agent_id || !privilegedAgents.includes(agent_id)) {
+    console.warn(`
+=====================
+ [Security Alert] Unauthorized command execution attempt by Agent: "${agent_id || 'unknown'}"`);
+    return res.status(403).json({
+      success: false,
+      error: `Access Denied: Agent "${agent_id || 'unknown'}" is not authorized to run local terminal commands.`
+    });
+  }
+
+  // 2. 
+=====================
+
+  const forbiddenKeywords = ['rm -rf /', 'mkfs', 'dd if', 'shutdown', 'reboot', 'sudo'];
+  if (forbiddenKeywords.some(kw => command.includes(kw))) {
+    return res.status(403).json({ success: false, error: "Forbidden: high risk command blocked." });
+  }
+
+  console.log(`
+=====================
+ [Terminal Security Check] Agent "${agent_id}" authorized. Running: "${command}"`);
+  
+  const execOptions = {
+    cwd: cwd || undefined,
+    env: { ...process.env }
+  };
+
+  exec(command, execOptions, (error, stdout, stderr) => {
+    res.json({
+      success: !error,
+      stdout: stdout || "",
+      stderr: stderr || "",
+      exitCode: error ? error.code : 0
+    });
+  });
+});
+
+
+// ==========================================
+// 3. OpenClaw 
+=====================
+)
+// ==========================================
+
+// 
+=====================
+
+app.post('/api/wechat/openclaw/send', async (req, res) => {
+  try {
+    const { to_username, content } = req.body;
+    if (!to_username || !content) return res.status(400).json({ error: "Missing: to_username or content" });
+
+    console.log(`[OpenClaw] Send to ${to_username}: "${content}"`);
+
+    if (!process.env.OPENCLAW_API_URL) {
+      return res.json({
+        success: true,
+        message: "Mock send success.",
+        data: { msgId: "mock_msg_" + Date.now() }
+      });
+    }
+
+    const response = await fetch(`${OPENCLAW_API_URL}/api/send_text`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENCLAW_TOKEN}`
+      },
+      body: JSON.stringify({ to_username, content })
+    });
+    const resData = await response.json();
+    res.json({ success: true, origin: resData });
+  } catch (err) {
+    res.json({ success: true, warn: "Fallback to mock.", data: { msgId: "fallback_" + Date.now() } });
+  }
+});
+
+// 
+=====================
+)
+app.get('/api/wechat/openclaw/messages', async (req, res) => {
+  const isAsync = req.query.async === 'true';
+  const limit = parseInt(req.query.limit) || 20;
+
+  if (isAsync) {
+    const taskId = 'task_wx_' + Date.now();
+    console.log(`[Task Queue] Created asynchronous WeChat scanning task: ${taskId}`);
+
+    // 
+=====================
+
+    TASK_QUEUE[taskId] = {
+      status: "processing",
+      progress: 0,
+      result: null
+    };
+
+    // 
+=====================
+)
+    let progressInterval = setInterval(() => {
+      if (!TASK_QUEUE[taskId]) {
+        clearInterval(progressInterval);
+        return;
+      }
+      TASK_QUEUE[taskId].progress += 25; // 
+=====================
+ 25%
+      console.log(`
+=====================
+ [Task Queue] WeChat scanning task ${taskId} progress: ${TASK_QUEUE[taskId].progress}%`);
+
+      if (TASK_QUEUE[taskId].progress >= 100) {
+        clearInterval(progressInterval);
+        TASK_QUEUE[taskId].status = "completed";
+        TASK_QUEUE[taskId].result = [
+          { from_user: "
+=====================
+", timestamp: new Date(Date.now() - 600000).toISOString(), is_group: true },
+          { from_user: "
+=====================
+", timestamp: new Date(Date.now() - 3600000).toISOString(), is_group: false }
+        ];
+        console.log(`
+=====================
+ [Task Queue] WeChat scanning task ${taskId} completed.`);
+      }
+    }, 500); // 
+=====================
+
+
+    return res.json({
+      success: true,
+      task_id: taskId,
+      status: "processing"
+    });
+  }
+
+  // 
+=====================
+)
+  try {
+    if (process.env.OPENCLAW_API_URL && process.env.OPENCLAW_API_URL !== 'http://localhost:18000') {
+      const response = await fetch(`${OPENCLAW_API_URL}/api/get_messages?limit=${limit}`, {
+        headers: { 'Authorization': `Bearer ${OPENCLAW_TOKEN}` }
+      });
+      const data = await response.json();
+      return res.json(data);
+    }
+    res.json([
+      { from_user: "
+=====================
+", timestamp: new Date(Date.now() - 600000).toISOString(), is_group: true },
+      { from_user: "
+=====================
+", timestamp: new Date(Date.now() - 3600000).toISOString(), is_group: false }
+    ]);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// 
+=====================
+
+app.get('/api/system/task/status', (req, res) => {
+  const { task_id } = req.query;
+  if (!task_id) return res.status(400).json({ error: "Missing parameter: task_id" });
+
+  const task = TASK_QUEUE[task_id];
+  if (!task) return res.status(404).json({ error: "Task not found." });
+
+  res.json({
+    success: true,
+    task_id,
+    status: task.status,
+    progress: task.progress,
+    result: task.result
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/wechat/db/query', (req, res) => {
+  const { sql } = req.body;
+  if (!sql) return res.status(400).json({ error: "Missing parameter: sql" });
+
+  console.log(`[WeChat DB Query] Executing: "${sql}"`);
+
+  if (!fs.existsSync(WX_DB_PATH)) {
+    console.log(`
+=====================
+`);
+    return res.json({
+      success: true,
+      rows: [
+        { msg_id: 101, talker: "
+=====================
+", create_time: "2026-06-15 14:20:00" },
+        { msg_id: 102, talker: "
+=====================
+", create_time: "2026-06-16 09:15:00" }
+      ]
+    });
+  }
+
+  const db = new sqlite3.Database(WX_DB_PATH, sqlite3.OPEN_READONLY, (err) => {
+    if (err) return res.status(500).json({ error: err.message });
+  });
+
+  db.all(sql, [], (err, rows) => {
+    db.close();
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ success: true, rows });
+  });
+});
+
+// ==========================================
+// 4. 
+=====================
+
+// ==========================================
+
+// 
+=====================
+
+app.get('/api/ops/metrics', (req, res) => {
+  res.json({
+    llm_success_rate: 99.4,
+    average_latency_ms: 2450,
+    token_cost_today_usd: 14.85,
+    api_timeout_count: 2
+  });
+});
+
+// 
+=====================
+
+app.get('/api/ops/logs', (req, res) => {
+  const lines = parseInt(req.query.lines) || 50;
+  res.json({
+    logs: `[INFO] ${new Date().toISOString()} - [Gateway] Server initialized on port ${PORT}\n[INFO] [MCP] Registered 5 tools\n[INFO] [OpenClaw] Connection established at ${OPENCLAW_API_URL}\n[DEBUG] [Terminal] lark-cli path configured as: ${LARK_CLI_PATH}\n[INFO] [Gateway] Listening for remote trace events... (Truncated to past ${lines} lines)`
+  });
+});
+
+// 
+=====================
+
+app.post('/api/security/scan', (req, res) => {
+  const { text } = req.body;
+  if (!text) return res.status(400).json({ error: "Missing parameter: text" });
+  const isInjection = text.toLowerCase().includes("ignore previous") || text.includes("
+=====================
+");
+  const isSensitive = text.includes("
+=====================
+") || text.includes("
+=====================
+");
+  res.json({
+    isSafe: !isInjection && !isSensitive,
+    riskType: isInjection ? "injection" : (isSensitive ? "sensitive_word" : "none"),
+    details: isInjection ? "Detected high-risk Prompt Injection attempt." : (isSensitive ? "Detected forbidden terms." : "Clear.")
+  });
+});
+
+// API 
+=====================
+
+app.post('/api/security/policy', (req, res) => {
+  const { agent_id, operation_id } = req.body;
+  if (!agent_id || !operation_id) return res.status(400).json({ error: "Missing parameters" });
+  const sensitiveTools = ['runLarkCli', 'executeTerminalCommand', 'execute_local_command'];
+  const privilegedAgents = ['agent_ops', 'agent_architect', 'claude_code'];
+  const allowed = !sensitiveTools.includes(operation_id) || privilegedAgents.includes(agent_id);
+  res.json({ allowed, reason: allowed ? "Authorized." : `Access denied: Agent ${agent_id} is not privileged to call ${operation_id}.` });
+});
+
+// 
+=====================
+
+app.post('/api/tech/code-review', (req, res) => {
+  const { code } = req.body;
+  if (!code) return res.status(400).json({ error: "Missing: code" });
+  const hasSql = code.toLowerCase().includes("select * from") && !code.toLowerCase().includes("parameterized");
+  const hasSecret = code.toLowerCase().includes("api_key") || code.toLowerCase().includes("password");
+  const vulnerabilities = [];
+  if (hasSql) {
+    vulnerabilities.push({ severity: "high", description: "Potential SQL Injection detected.", suggested_fix: "Use parameterized queries." });
+  }
+  if (hasSecret) {
+    vulnerabilities.push({ severity: "high", description: "Hardcoded credential detected.", suggested_fix: "Store secrets in env variables." });
+  }
+  res.json({ success: true, vulnerabilities, dry_violations: code.includes("function") && code.split("function").length > 3 });
+});
+
+// 
+=====================
+
+app.post('/api/tech/perf-analyze', (req, res) => {
+  const { qps, bottleneck } = req.body;
+  res.json({
+    success: true,
+    recommendation: `
+=====================
+
+app.post('/api/knowledge/query', (req, res) => {
+  const { query, top_k } = req.body;
+  console.log(`[RAG Database] Querying: "${query}"`);
+  const mockRags = [
+    { document_name: "
+=====================
+", score: 0.89 },
+    { document_name: "AI
+=====================
+", score: 0.82 }
+  ];
+  const hits = mockRags.filter(rag => query.includes("
+=====================
+") || query.includes("
+=====================
+") || query.includes("
+=====================
+") || rag.content.includes(query));
+  res.json({ success: true, hits: hits.length > 0 ? hits : [{ document_name: "
+=====================
+", score: 0.50 }] });
+});
+
+// 
+=====================
+
+app.get('/api/knowledge/document/list', (req, res) => {
+  res.json([
+    { filename: "
+=====================
+.pdf", file_size: 2450122, uploaded_time: "2026-03-01T10:00:00Z" },
+    { filename: "AI
+=====================
+.docx", file_size: 512033, uploaded_time: "2026-05-12T14:30:00Z" }
+  ]);
+});
+
+
+// 
+=====================
+
+app.get('/api/notebook/weread/fetch', (req, res) => {
+  const { book_id } = req.query;
+  console.log(`[WeRead Exporter] Fetching highlights for book ID: ${book_id || 'latest'}`);
+
+  res.json([
+    {
+      book_name: "
+=====================
+",
+      highlight: "
+=====================
+"
+    },
+    {
+      book_name: "
+=====================
+",
+      highlight: "
+=====================
+"
+    }
+  ]);
+});
+
+// 
+=====================
+
+app.post('/api/notebook/notebooklm/sync', (req, res) => {
+  const { filename, markdown_content } = req.body;
+  if (!filename || !markdown_content) {
+    return res.status(400).json({ error: "Missing parameters: filename or markdown_content" });
+  }
+
+  console.log(`[NotebookLM Sync] Uploading ${filename} to Google Drive...`);
+
+  res.json({
+    success: true,
+    cloud_url: `https://drive.google.com/drive/folders/notebooklm_growth_sync/${encodeURIComponent(filename)}`
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/github/search/repositories', (req, res) => {
+  const { query, language } = req.body;
+  console.log(`[GitHub Search] Query: "${query}" (Language: ${language || 'any'})`);
+
+  res.json({
+    success: true,
+    items: [
+      { name: "langchain-ai/langgraph", description: "Build resilient language agents as graphs.", stars: 5800, language: "python" },
+      { name: "dify-ai/dify", description: "An open-source LLM app development platform.", stars: 32000, language: "typescript" }
+    ]
+  });
+});
+
+// 
+=====================
+
+app.get('/api/github/repo/detail', (req, res) => {
+  const { repo_name } = req.query;
+  if (!repo_name) return res.status(400).json({ error: "Missing: repo_name" });
+
+  console.log(`[GitHub API] Fetching details for: ${repo_name}`);
+
+  const isDify = repo_name.includes("dify");
+
+  res.json({
+    success: true,
+    full_name: repo_name,
+    stars: isDify ? 32000 : 5800,
+    license: isDify ? "Apache-2.0" : "MIT",
+    last_commit_time: new Date(Date.now() - 3600000 * 2).toISOString(),
+    open_issues_count: isDify ? 412 : 54,
+    closed_issues_count: isDify ? 8900 : 1200
+  });
+});
+
+// 
+=====================
+
+app.get('/api/github/trending', (req, res) => {
+  const { language } = req.query;
+  console.log(`[GitHub Trending] Fetching trending for: ${language || 'all'}`);
+
+  res.json([
+    { rank: 1, name: "modelcontextprotocol/servers", description: "Reference MCP server implementations.", stars_today: 450, language: "typescript" },
+    { rank: 2, name: "openai/whisper", description: "Robust Speech Recognition via Large-Scale Weak Supervision.", stars_today: 230, language: "python" }
+  ]);
+});
+
+
+// 
+=====================
+
+app.post('/api/x/search', (req, res) => {
+  const { query, min_likes } = req.body;
+  console.log(`[X Search] Query: "${query}" (Min Likes: ${min_likes || 50})`);
+
+  res.json({
+    success: true,
+    tweets: [
+      { id: "tweet_101", author: "karpathy", content: "Model Context Protocol (MCP) is a beautiful standard. It makes custom tooling for agents standard and clean.", likes: 8500, replies: 120, time: "2026-07-14T10:00:00Z" },
+      { id: "tweet_102", author: "swyx", content: "Agentic workflow is shifting from centralized code to decentralized MCP servers.", likes: 1200, replies: 45, time: "2026-07-14T14:30:00Z" }
+    ]
+  });
+});
+
+// 
+=====================
+
+app.get('/api/x/kol/tweets', (req, res) => {
+  const { username } = req.query;
+  if (!username) return res.status(400).json({ error: "Missing: username" });
+
+  console.log(`[X API] Fetching tweets for KOL: @${username}`);
+
+  res.json([
+    { id: "kol_tweet_01", author: username, content: `Just launched our new open-source project. Check it out on GitHub.`, likes: 4500, time: "3 hours ago" },
+    { id: "kol_tweet_02", author: username, content: `AGI is closer than we think, but we need robust safety guardrails first.`, likes: 9800, time: "8 hours ago" }
+  ]);
+});
+
+// 
+=====================
+
+app.get('/api/x/trending', (req, res) => {
+  console.log(`[X Trending] Fetching tech trends...`);
+
+  res.json([
+    { topic: "#ModelContextProtocol", tweet_count: 45100, fever_level: "high" },
+    { topic: "#LangGraph", tweet_count: 12000, fever_level: "medium" },
+    { topic: "#FeishuBitableAI", tweet_count: 8900, fever_level: "low" }
+  ]);
+});
+
+
+// 
+=====================
+
+app.get('/api/x/likes/fetch', (req, res) => {
+  const { username, limit } = req.query;
+  if (!username) return res.status(400).json({ error: "Missing parameter: username" });
+
+  console.log(`[X Likes Exporter] Fetching likes for user: @${username} (limit ${limit || 10})`);
+
+  res.json([
+    {
+      author: "karpathy",
+      tweet_url: "https://x.com/karpathy/status/999991",
+      content: "I've been writing custom integrations all my life, but MCP standardizes everything. It's the Unix socket of LLM apps.",
+      timestamp: new Date(Date.now() - 3600000 * 5).toISOString()
+    },
+    {
+      author: "sama",
+      tweet_url: "https://x.com/sama/status/999992",
+      content: "GPT-5 is looking incredibly smart. The reasoning capabilities will shock people.",
+      timestamp: new Date(Date.now() - 3600000 * 12).toISOString()
+    }
+  ]);
+});
+
+// 
+=====================
+
+app.post('/api/x/likes/archive', (req, res) => {
+  const { username, tweet_url, content, motivation } = req.body;
+  if (!username || !tweet_url || !content) {
+    return res.status(400).json({ error: "Missing required parameters for archive." });
+  }
+
+  console.log(`[Likes Archive] Storing liked tweet by @${username}. Motivation: ${motivation || 'none'}`);
+
+  res.json({
+    success: true,
+    archive_id: "arch_" + Math.random().toString(36).substring(2, 9)
+  });
+});
+
+
+// 
+=====================
+
+app.get('/api/x/following/changes', (req, res) => {
+  const { username } = req.query;
+  if (!username) return res.status(400).json({ error: "Missing: username" });
+
+  console.log(`[X Connections] Fetching following list changes for: @${username}`);
+
+  res.json([
+    { username: "rust_mcp_dev", bio: "Building blazing fast MCP servers in Rust. Actively looking for agent integration opportunities.", followed_at: new Date(Date.now() - 3600000).toISOString() },
+    { username: "indie_hacker_mom", bio: "Building micro AI SaaS tools in public. ARR $120k.", followed_at: new Date(Date.now() - 3600000 * 8).toISOString() }
+  ]);
+});
+
+// 
+=====================
+
+app.get('/api/x/replies/fetch', (req, res) => {
+  const { username } = req.query;
+  if (!username) return res.status(400).json({ error: "Missing: username" });
+
+  console.log(`[X Interactions] Fetching replies for: @${username}`);
+
+  res.json([
+    { author: username, to_user: "openai_dev", content: "Impressive reasoning speed. Is this running on a custom hardware cluster?", likes: 450, time: "4 hours ago" },
+    { author: username, to_user: "indie_developer", content: "This is a great micro AI tool! I'd love to see a desktop client.", likes: 890, time: "18 hours ago" }
+  ]);
+});
+
+
+// 
+=====================
+
+app.get('/api/content/trends', (req, res) => {
+  const { platform } = req.query;
+  console.log(`[Media Trends] Fetching hot content for platform: ${platform || 'xiaohongshu'}`);
+
+  res.json([
+    { title: "
+=====================
+", platform: "xiaohongshu", likes: 25100, comments: 450 },
+    { title: "
+=====================
+", platform: "xiaohongshu", likes: 18900, comments: 230 },
+    { title: "ARR 
+=====================
+", platform: "wechat", likes: 8900, comments: 120 }
+  ]);
+});
+
+// 
+=====================
+
+app.post('/api/content/topics/archive', (req, res) => {
+  const { topic_title, suggested_titles, target_audience, model_type } = req.body;
+  if (!topic_title || !suggested_titles || !target_audience) {
+    return res.status(400).json({ error: "Missing required topic parameters." });
+  }
+
+  console.log(`[Bitable Content Dashboard] Archiving topic: "${topic_title}". Model: ${model_type || 'conflict'}`);
+
+  res.json({
+    success: true,
+    bitable_record_id: "rec_topic_" + Math.random().toString(36).substring(2, 9)
+  });
+});
+
+
+// 
+=====================
+)
+app.post('/api/content/risk/scan', (req, res) => {
+  const { text, platform } = req.body;
+  if (!text) return res.status(400).json({ error: "Missing parameter: text" });
+
+  console.log(`[Content Risk Scan] Auditing text for platform: ${platform || 'xiaohongshu'}`);
+
+  const violations = [];
+  let risk_level = "none";
+
+  if (text.includes("
+=====================
+") || text.includes("
+=====================
+")) {
+    risk_level = "medium";
+    violations.push({
+      trigger_text: text.includes("
+=====================
+",
+      risk_type: "advertising_law_violation",
+      suggested_fix: "
+=====================
+"
+    });
+  }
+
+  if (text.includes("
+=====================
+") || text.includes("
+=====================
+") || text.includes("
+=====================
+")) {
+    risk_level = "medium";
+    violations.push({
+      trigger_text: "
+=====================
+",
+      risk_type: "platform_traffic_bypass_risk",
+      suggested_fix: "
+=====================
+"
+    });
+  }
+
+  res.json({
+    success: true,
+    risk_level,
+    violations
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/content/risk/anti-ai-scan', (req, res) => {
+  const { text } = req.body;
+  if (!text) return res.status(400).json({ error: "Missing parameter: text" });
+
+  console.log(`[Anti-AI Scanner] Running tone audit on content draft...`);
+
+  // AI 
+=====================
+
+  const aiKeywords = [
+    "
+=====================
+"
+  ];
+
+  const matchedKeywords = [];
+  let scorePenalty = 0;
+
+  aiKeywords.forEach(word => {
+    const count = (text.split(word).length - 1);
+    if (count > 0) {
+      matchedKeywords.push({ word, count });
+      scorePenalty += count * 15; // 
+=====================
+
+    }
+  });
+
+  const aiScore = Math.max(0, 100 - scorePenalty);
+  const aiIndex = 100 - aiScore; // AI 
+=====================
+)
+  const isTooMachinery = aiIndex > 30; // 
+=====================
+
+
+  res.json({
+    success: true,
+    ai_index: aiIndex,
+    is_too_machinery: isTooMachinery,
+    score: aiScore,
+    matched_words: matchedKeywords,
+    message: isTooMachinery 
+      ? `
+=====================
+
+app.post('/api/content/risk/ip-check', (req, res) => {
+  const { brands } = req.body;
+  console.log(`[IP Compliance] Checking brands authorization: ${JSON.stringify(brands || [])}`);
+
+  res.json({
+    success: true,
+    status: "compliant",
+    warning: (brands && brands.includes("
+=====================
+")) ? "Detected unregistered trademark referencing. Potential trademark conflict." : "No registered copyright issues found."
+  });
+});
+
+
+// 
+=====================
+)
+app.post('/api/content/risk/legal-audit', (req, res) => {
+  const { text } = req.body;
+  if (!text) return res.status(400).json({ error: "Missing parameter: text" });
+
+  console.log(`[Legal Audit] Checking legislation red-lines...`);
+
+  const warnings = [];
+  let is_legal = true;
+
+  if (text.includes("100%") || text.includes("
+=====================
+") || text.includes("
+=====================
+")) {
+    is_legal = false;
+    warnings.push({
+      segment: text.substring(0, 30) + "...",
+      risk_description: "
+=====================
+",
+      law_reference: "
+=====================
+",
+      suggestion: "
+=====================
+"
+    });
+  }
+
+  if (text.includes("
+=====================
+") || text.includes("
+=====================
+") || text.includes("
+=====================
+")) {
+    is_legal = false;
+    warnings.push({
+      segment: text.substring(0, 30) + "...",
+      risk_description: "
+=====================
+",
+      law_reference: "
+=====================
+",
+      suggestion: "
+=====================
+"
+    });
+  }
+
+  res.json({
+    success: true,
+    is_legal,
+    warnings
+  });
+});
+
+
+// 
+=====================
+)
+app.post('/api/content/expert/polish', (req, res) => {
+  const { raw_draft } = req.body;
+  if (!raw_draft) return res.status(400).json({ error: "Missing parameter: raw_draft" });
+
+  console.log(`[Content Polisher] Refining draft to remove AI tone...`);
+
+  let polished = raw_draft
+    .replace(/
+=====================
+");
+
+  res.json({
+    success: true,
+    polished_text: polished,
+    golden_sentences: [
+      "
+=====================
+"
+    ]
+  });
+});
+
+// 
+=====================
+
+app.post('/api/content/expert/verify', (req, res) => {
+  const { claims } = req.body;
+  console.log(`[Fact Checker] Verifying data points: ${JSON.stringify(claims || [])}`);
+
+  res.json({
+    success: true,
+    verified: true,
+    unverified_items: []
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/content/producer/write', (req, res) => {
+  const { title, outline, platform } = req.body;
+  if (!title || !outline) return res.status(400).json({ error: "Missing required parameters: title or outline" });
+
+  console.log(`[Content Writer] Drafting text for platform: ${platform || 'wechat'}`);
+
+  if (platform === "xiaohongshu") {
+    return res.json({
+      success: true,
+      draft_content: `
+=====================
+ Claude Desktop MCP 
+=====================
+`,
+      estimated_words: 240
+    });
+  }
+
+  if (platform === "douyin") {
+    return res.json({
+      success: true,
+      draft_content: `
+=====================
+`,
+      estimated_words: 180
+    });
+  }
+
+  res.json({
+    success: true,
+    draft_content: `
+=====================
+`,
+    estimated_words: 1200
+  });
+});
+
+
+// 
+=====================
+ CSS)
+app.post('/api/content/editor/render', (req, res) => {
+  const { markdown_content } = req.body;
+  if (!markdown_content) return res.status(400).json({ error: "Missing parameter: markdown_content" });
+
+  console.log(`[Rich-Text Renderer] Compiling Markdown with Inline CSS...`);
+
+  const styledHtml = `
+    <section style="font-size: 15px; color: #3e3e3e; line-height: 1.75; letter-spacing: 1.5px; padding: 10px;">
+      <h2 style="border-left: 4px solid #1a1a1a; padding-left: 8px; font-size: 18px; color: #1a1a1a; margin-top: 24px; margin-bottom: 16px; font-weight: bold;">
+        
+=====================
+
+      </h2>
+      <p style="margin-bottom: 16px;">
+        ${markdown_content.replace(/\n/g, '<br/>')}
+      </p>
+      <blockquote style="background-color: #f7f7f7; border-radius: 8px; padding: 16px; border: 1px solid #eeeeee; font-size: 14px; color: #666666; margin: 16px 0;">
+        
+=====================
+
+      </blockquote>
+    </section>
+  `;
+
+  res.json({
+    success: true,
+    html_content: styledHtml
+  });
+});
+
+// 
+=====================
+
+app.post('/api/content/editor/publish', (req, res) => {
+  const { title, html_content, author } = req.body;
+  if (!title || !html_content) return res.status(400).json({ error: "Missing title or html_content." });
+
+  console.log(`[WeChat API] Uploading draft: "${title}" by ${author || '
+=====================
+'} to Draft Box...`);
+
+  res.json({
+    success: true,
+    media_id: "wx_media_draft_" + Math.random().toString(36).substring(2, 9)
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/content/zsxq/publish', (req, res) => {
+  const { title, content, group_name, is_sticky } = req.body;
+  if (!title || !content) return res.status(400).json({ error: "Missing required parameters: title or content" });
+
+  console.log(`[ZSXQ API] Publishing post: "${title}" on Planet: ${group_name || '
+=====================
+'}. Sticky: ${is_sticky}`);
+
+  res.json({
+    success: true,
+    topic_id: "zsxq_topic_" + Math.random().toString(36).substring(2, 9)
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/management/briefing/create', (req, res) => {
+  const { raw_reports } = req.body;
+  if (!raw_reports) return res.status(400).json({ error: "Missing: raw_reports" });
+
+  console.log(`[Executive Assistant] Creating weekly/daily briefing from ${raw_reports.length} report sources.`);
+
+  res.json({
+    success: true,
+    briefing: {
+      alert: "
+=====================
+",
+      highlights: ["
+=====================
+"],
+      suggestions: ["
+=====================
+"]
+    }
+  });
+});
+
+// 
+=====================
+
+app.post('/api/management/schedule/event', (req, res) => {
+  const { summary, start_time, end_time, attendees } = req.body;
+  if (!summary || !start_time) return res.status(400).json({ error: "Missing required calendar parameters." });
+
+  console.log(`[Calendar Service] Booking event: "${summary}" at ${start_time} for: ${JSON.stringify(attendees || [])}`);
+
+  res.json({
+    success: true,
+    event_id: "evt_" + Math.random().toString(36).substring(2, 9)
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/project/wbs/create', (req, res) => {
+  const { project_name, raw_requirements } = req.body;
+  if (!project_name || !raw_requirements) {
+    return res.status(400).json({ error: "Missing parameter: project_name or raw_requirements" });
+  }
+
+  console.log(`[WBS Decomposer] Creating breakdown stages for project: ${project_name}`);
+
+  res.json({
+    success: true,
+    stages: [
+      { id: "1.1", task: "
+=====================
+", hours: 8 },
+      { id: "1.2", task: "
+=====================
+", hours: 6, pre_id: "1.1" },
+      { id: "2.1", task: "
+=====================
+", hours: 12, pre_id: "1.2" }
+    ]
+  });
+});
+
+// 
+=====================
+
+app.post('/api/project/bitable/sync', (req, res) => {
+  const { project_name, tasks } = req.body;
+  if (!project_name || !tasks) return res.status(400).json({ error: "Missing required parameters." });
+
+  console.log(`[Lark Bitable Sync] Uploading ${tasks.length} tasks for project: ${project_name} to Kanban board...`);
+
+  res.json({
+    success: true,
+    synced_records_count: tasks.length
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/finance/audit', (req, res) => {
+  const { project_name, budget_limit, actual_expenses, estimated_revenue } = req.body;
+  if (!project_name || budget_limit === undefined || actual_expenses === undefined || estimated_revenue === undefined) {
+    return res.status(400).json({ error: "Missing required numeric parameters for financial audit." });
+  }
+
+  console.log(`[Financial Audit] Processing accounting ledger for project: ${project_name}`);
+
+  const variance_ratio = (actual_expenses - budget_limit) / budget_limit;
+  const roi = (estimated_revenue - actual_expenses) / actual_expenses;
+  let risk_level = "none";
+
+  if (variance_ratio > 0.1 || roi < 1.0) {
+    risk_level = "high";
+  } else if (roi < 1.5) {
+    risk_level = "medium";
+  }
+
+  res.json({
+    success: true,
+    variance_ratio,
+    roi,
+    risk_level
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/combat/collector/scrape', (req, res) => {
+  const { url } = req.body;
+  if (!url) return res.status(400).json({ error: "Missing parameter: url" });
+
+  console.log(`[Scraper Engine] Pulling DOM from: ${url}`);
+
+  res.json({
+    success: true,
+    site_title: "
+=====================
+",
+    pricing_plans: [
+      { name: "Starter", price: "$19/mo", limit: "1,000 Messages" },
+      { name: "Pro", price: "$99/mo", limit: "10,000 Messages" }
+    ],
+    detected_changes: [
+      "
+=====================
+"
+    ]
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/combat/researcher/analyze', (req, res) => {
+  const { competitor_name, raw_intel_summary } = req.body;
+  if (!competitor_name || !raw_intel_summary) {
+    return res.status(400).json({ error: "Missing required parameters." });
+  }
+
+  console.log(`[Intel Researcher] Performing SWOT Matrix calculations on competitor: ${competitor_name}`);
+
+  res.json({
+    success: true,
+    winning_rate: 0.85,
+    swot_results: {
+      strengths: "
+=====================
+",
+      weaknesses: "
+=====================
+",
+      opportunities: "
+=====================
+"
+    }
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/combat/manual/compile', (req, res) => {
+  const { chapter_title, raw_sop_text, warnings, attachment_links } = req.body;
+  if (!chapter_title || !raw_sop_text) {
+    return res.status(400).json({ error: "Missing parameter: chapter_title or raw_sop_text" });
+  }
+
+  console.log(`[Manual Compiler] Bundling chapter: "${chapter_title}"...`);
+
+  const compiledMarkdown = `
+# 
+=====================
+${chapter_title}
+- **
+=====================
+: 2026-07-15]
+
+---
+
+> [!IMPORTANT]
+> **
+=====================
+
+${raw_sop_text}
+
+### 
+=====================
+
+${(attachment_links || []).map(link => `- 
+=====================
+](${link})`).join('\n')}
+  `;
+
+  res.json({
+    success: true,
+    compiled_markdown: compiledMarkdown,
+    save_path: "/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/docs/manual_chapter.md"
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/operation/ticket/resolve', (req, res) => {
+  const { member_name, question } = req.body;
+  if (!member_name || !question) return res.status(400).json({ error: "Missing parameter: member_name or question" });
+
+  console.log(`[Support Ticket] Processing incident for member: ${member_name}. Issue: ${question}`);
+
+  const isTechnical = question.toLowerCase().includes("npm") || question.toLowerCase().includes("err") || question.toLowerCase().includes("code") || question.toLowerCase().includes("sqlite");
+
+  res.json({
+    success: true,
+    replied_text: isTechnical ? "
+=====================
+",
+    need_escalation: isTechnical
+  });
+});
+
+
+// 
+=====================
+
+app.post('/api/operation/sales/qualify', (req, res) => {
+  const { chat_history } = req.body;
+  if (!chat_history) return res.status(400).json({ error: "Missing parameter: chat_history" });
+
+  console.log(`[Sales Agent] Running BANT analysis on WeChat chat logs...`);
+
+  res.json({
+    success: true,
+    budget_confirmed: true,
+    need_description: "
+=====================
+",
+    closing_rate: 0.80,
+    recommended_script: "
+=====================
+
+app.post('/api/operation/designer/draw', (req, res) => {
+  const { prompt, aspect_ratio } = req.body;
+  if (!prompt) return res.status(400).json({ error: "Missing parameter: prompt" });
+
+  console.log(`[Graphic Engine] Drawing image for Prompt: "${prompt}" (Aspect Ratio: ${aspect_ratio || '3:4'})`);
+
+  res.json({
+    success: true,
+    image_url: "file:///Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/docs/weread-placeholder"
+  });
+});
+
+
+// 
+=====================
+)
+app.get('/api/system/config', (req, res) => {
+  console.log(`[Config Service] Reading local system configurations...`);
+  res.json({
+    success: true,
+    env: {
+      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "sk-ant-xxxxxxxxxxxxxxxxxx",
+      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || "tyc_token_xxxxxxxxxxx",
+      WECHAT_DB_PATH: "/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/data/wx_db.db"
+    },
+    agents_list: [
+      { id: "ai_sales_champion", name: "AI
+=====================
+" },
+      { id: "risk_controller", name: "
+=====================
+" },
+      { id: "manual_editor", name: "
+=====================
+" }
+    ]
+  });
+});
+
+// 
+=====================
+)
+app.post('/api/system/config/save', (req, res) => {
+  const { config, user_role } = req.body;
+  if (!config) return res.status(400).json({ error: "Missing config object." });
+
+  // 
+=====================
+
+  if (user_role !== 'admin') {
+    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: "${user_role || 'unknown'}"`);
+    return res.status(403).json({
+      success: false,
+      error: `Access Denied: Role "${user_role || 'unknown'}" is not authorized to edit system environment variables.`
+    });
+  }
+
+  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);
+  res.json({
+    success: true,
+    message: "
+=====================
+
+app.get('/api/system/permissions', (req, res) => {
+  const permPath = path.join(__dirname, '../data/permissions.json');
+  console.log(`[Permission Service] Loading role matrix from: ${permPath}`);
+
+  if (!fs.existsSync(permPath)) {
+    const defaultMatrix = {
+      admin: ["wechat_audit", "content_risk", "system_config"],
+      editor: ["content_risk"],
+      sales: ["wechat_audit"]
+    };
+    try {
+      const dataDir = path.dirname(permPath);
+      if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+      }
+      fs.writeFileSync(permPath, JSON.stringify(defaultMatrix, null, 2), 'utf-8');
+    } catch (e) {
+      console.error(`Failed to write default permissions file:`, e);
+    }
+    return res.json({ success: true, matrix: defaultMatrix });
+  }
+
+  try {
+    const rawData = fs.readFileSync(permPath, 'utf-8');
+    res.json({ success: true, matrix: JSON.parse(rawData) });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to read permission file: " + err.message });
+  }
+});
+
+// 
+=====================
+
+app.post('/api/system/permissions/save', (req, res) => {
+  const { matrix, user_role } = req.body;
+  if (!matrix) return res.status(400).json({ error: "Missing matrix payload." });
+
+  if (user_role !== 'admin') {
+    return res.status(403).json({
+      success: false,
+      error: "Access Denied: Only Admin can update the system authorization matrix."
+    });
+  }
+
+  const permPath = path.join(__dirname, '../data/permissions.json');
+  console.log(`[Permission Service] Overwriting local authorization matrix file...`);
+
+  try {
+    const dataDir = path.dirname(permPath);
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+    fs.writeFileSync(permPath, JSON.stringify(matrix, null, 2), 'utf-8');
+    res.json({ success: true, message: "
+=====================
+" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to save permission matrix: " + err.message });
+  }
+});
+
+
+// 
+=====================
+)
+app.get('/api/system/agents/status', (req, res) => {
+  const statusPath = path.join(__dirname, '../data/agent_status.json');
+  console.log(`[Agent Hot-Swap] Loading agent lifecycle switches from: ${statusPath}`);
+
+  if (!fs.existsSync(statusPath)) {
+    const defaultStatus = {
+      ai_sales_champion: true,
+      risk_controller: true,
+      manual_editor: true,
+      claude_code: true,
+      meeting_minutes_specialist: true
+    };
+    try {
+      const dataDir = path.dirname(statusPath);
+      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+      fs.writeFileSync(statusPath, JSON.stringify(defaultStatus, null, 2), 'utf-8');
+    } catch (e) {
+      console.error(e);
+    }
+    return res.json({ success: true, status_matrix: defaultStatus });
+  }
+
+  try {
+    const rawData = fs.readFileSync(statusPath, 'utf-8');
+    res.json({ success: true, status_matrix: JSON.parse(rawData) });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to read agent status file." });
+  }
+});
+
+// 
+=====================
+
+app.post('/api/system/agents/status/save', (req, res) => {
+  const { status_matrix, user_role } = req.body;
+  if (!status_matrix) return res.status(400).json({ error: "Missing status_matrix payload." });
+
+  if (user_role !== 'admin') {
+    return res.status(403).json({ success: false, error: "Access Denied: Only Admin can update Agent lifecycle switches." });
+  }
+
+  const statusPath = path.join(__dirname, '../data/agent_status.json');
+  console.log(`[Agent Hot-Swap] Saving new agent status configuration to: ${statusPath}`);
+
+  try {
+    fs.writeFileSync(statusPath, JSON.stringify(status_matrix, null, 2), 'utf-8');
+    res.json({ success: true, message: "Agent 
+=====================
+" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to save agent status file." });
+  }
+});
+
+// ==========================================
+// 5. 
+=====================
+
+// ==========================================
+app.listen(PORT, () => {
+  console.log(`==================================================`);
+  console.log(`
+=====================
+ Agent Gateway & MCP 
+=====================
+`);
+  console.log(`   
+=====================
+: http://localhost:${PORT}`);
+  console.log(`==================================================`);
+});
+ 
+=====================
+)
+app.get('/api/system/config', (req, res) => {
+  console.log(`[Config Service] Reading local system configurations...`);
+  res.json({
+    success: true,
+    env: {
+      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "sk-ant-xxxxxxxxxxxxxxxxxx",
+      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || "tyc_token_xxxxxxxxxxx",
+      WECHAT_DB_PATH: "/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/data/wx_db.db"
+    },
+    agents_list: [
+      { id: "ai_sales_champion", name: "AI
+=====================
+" },
+      { id: "risk_controller", name: "
+=====================
+" },
+      { id: "manual_editor", name: "
+=====================
+" }
+    ]
+  });
+});
+
+// 
+=====================
+)
+app.post('/api/system/config/save', (req, res) => {
+  const { config, user_role } = req.body;
+  if (!config) return res.status(400).json({ error: "Missing config object." });
+
+  // 
+=====================
+
+  if (user_role !== 'admin') {
+    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: "${user_role || 'unknown'}"`);
+    return res.status(403).json({
+      success: false,
+      error: `Access Denied: Role "${user_role || 'unknown'}" is not authorized to edit system environment variables.`
+    });
+  }
+
+  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);
+  res.json({
+    success: true,
+    message: "
+=====================
+)
+app.get('/api/system/config', (req, res) => {
+  console.log(`[Config Service] Reading local system configurations...`);
+  res.json({
+    success: true,
+    env: {
+      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "sk-ant-xxxxxxxxxxxxxxxxxx",
+      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || "tyc_token_xxxxxxxxxxx",
+      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),
+      LARK_APP_ID: process.env.LARK_APP_ID || "cli_a1b2c3d4e5f6g7h8",
+      LARK_APP_SECRET: process.env.LARK_APP_SECRET || "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      LARK_CLI_PATH: process.env.LARK_CLI_PATH || "lark",
+      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || "http://localhost:18000",
+      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || "mock_token_123"
+    }
+  });
+});
+
+// 
+=====================
+)
+app.post('/api/system/config/save', (req, res) => {
+  const { config, user_role } = req.body;
+  if (!config) return res.status(400).json({ error: "Missing config object." });
+
+  // 
+=====================
+)
+  if (user_role !== 'admin') {
+    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: "${user_role || 'unknown'}"`);
+    return res.status(403).json({
+      success: false,
+      error: `Access Denied: Role "${user_role || 'unknown'}" is not authorized to edit system environment variables.`
+    });
+  }
+
+  const envPath = path.resolve(__dirname, '../.env');
+  console.log(`[Config Service] Writing new API keys and Lark config to local: ${envPath}`);
+
+  // 1. 
+=====================
+
+  const envContent = `# 
+=====================
+)
+PORT=8888
+CLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}
+TIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}
+WECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}
+LARK_APP_ID=${config.LARK_APP_ID || ''}
+LARK_APP_SECRET=${config.LARK_APP_SECRET || ''}
+LARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}
+OPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}
+OPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}
+`;
+
+  try {
+    // 2. 
+=====================
+
+    fs.writeFileSync(envPath, envContent, 'utf-8');
+    
+    // 3. 
+=====================
+
+    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;
+    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;
+    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;
+    process.env.LARK_APP_ID = config.LARK_APP_ID;
+    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;
+    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;
+    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;
+    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;
+
+    console.log(`
+=====================
+ [Config Service] Successfully hot-saved new environmental settings.`);
+    res.json({
+      success: true,
+      message: "
+=====================
+"
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to write .env file: " + err.message });
+  }
+});0	8	(

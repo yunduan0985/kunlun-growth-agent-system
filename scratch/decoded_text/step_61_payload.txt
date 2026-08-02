@@ -1,0 +1,60 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":25,"Instruction":"
+=====================
+","ReplacementContent":"- [x] 
+=====================
+ `README.md`\n  - [x] 
+=====================
+ `docs/feishu_integration.md`
+=====================
+ `docs/coze_codex_integration.md`
+=====================
+ `docs/workbuddy_integration.md`
+=====================
+ (metadata.json, system_prompt.md, tools.json)\n  - [x] agent
+=====================
+ Agent)\n  - [x] content
+=====================
+ `mcp/kunlun_growth_mcp` 
+=====================
+ (Node.js)\n  - [x] 
+=====================
+ `docker-compose.yml` 
+=====================
+","StartLine":3,"TargetContent":"- [x] 
+=====================
+ `README.md`\n  - [x] 
+=====================
+ `docs/feishu_integration.md`
+=====================
+ `docs/coze_codex_integration.md`
+=====================
+ `docs/workbuddy_integration.md`
+=====================
+ (metadata.json, system_prompt.md, tools.json)\n  - [/] agent
+=====================
+ `mcp/kunlun_growth_mcp` 
+=====================
+ (Node.js)\n  - [ ] 
+=====================
+ `docker-compose.yml` 
+=====================
+","TargetFile":"/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/task.md","toolAction":"Finalizing task list","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$7794b295-2654-429b-a7ad-ed1baf739324j
+=====================
+P
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Finalizing task list

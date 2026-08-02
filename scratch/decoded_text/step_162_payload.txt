@@ -1,0 +1,62 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/knowledge/query 
+=====================
+ /api/knowledge/document/list 
+=====================
+","EndLine":374,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/knowledge/query', (req, res) =\u003e {\n  const { query, top_k } = req.body;\n  if (!query) return res.status(400).json({ error: \"Missing parameter: query\" });\n\n  console.log(`[RAG Database] Querying for: \"${query}\" (top_${top_k || 5})`);\n\n  const mockRags = [\n    {\n      document_name: \"
+=====================
+.pdf\",\n      content: \"
+=====================
+\",\n      score: 0.89\n    },\n    {\n      document_name: \"AI
+=====================
+.docx\",\n      content: \"
+=====================
+\",\n      score: 0.82\n    }\n  ];\n\n  const hits = mockRags.filter(rag =\u003e \n    query.includes(\"
+=====================
+\") || query.includes(\"
+=====================
+\") || query.includes(\"
+=====================
+\") || \n    rag.content.toLowerCase().includes(query.toLowerCase())\n  );\n\n  res.json({ success: true, hits: hits.length \u003e 0 ? hits : [\n    {\n      document_name: \"
+=====================
+.txt\",\n      content: `
+=====================
+`,\n      score: 0.50\n    }\n  ] });\n});\n\n// 
+=====================
+\napp.get('/api/knowledge/document/list', (req, res) =\u003e {\n  res.json([\n    { filename: \"
+=====================
+.pdf\", file_size: 2450122, uploaded_time: \"2026-03-01T10:00:00Z\" },\n    { filename: \"AI
+=====================
+.docx\", file_size: 512033, uploaded_time: \"2026-05-12T14:30:00Z\" },\n    { filename: \"
+=====================
+.pdf\", file_size: 1045900, uploaded_time: \"2026-06-20T08:15:00Z\" }\n  ]);\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":374,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding knowledge query routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$a2df5911-ca28-4ab9-9da6-0104b2b5153bj
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+L"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+(Adding knowledge query routes to Gateway

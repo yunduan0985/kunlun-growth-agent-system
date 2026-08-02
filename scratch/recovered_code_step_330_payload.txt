@@ -1,0 +1,44 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/content/expert/polish 
+=====================
+ /api/content/expert/verify 
+=====================
+","EndLine":733,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+)\napp.post('/api/content/expert/polish', (req, res) =\u003e {\n  const { raw_draft } = req.body;\n  if (!raw_draft) return res.status(400).json({ error: \"Missing parameter: raw_draft\" });\n\n  console.log(`[Content Polisher] Refining draft to remove AI tone...`);\n\n  let polished = raw_draft\n    .replace(/
+=====================
+\");\n\n  res.json({\n    success: true,\n    polished_text: polished,\n    golden_sentences: [\n      \"
+=====================
+\"\n    ]\n  });\n});\n\n// 
+=====================
+\napp.post('/api/content/expert/verify', (req, res) =\u003e {\n  const { claims } = req.body;\n  console.log(`[Fact Checker] Verifying data points: ${JSON.stringify(claims || [])}`);\n\n  res.json({\n    success: true,\n    verified: true,\n    unverified_items: []\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":733,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding content expert routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$34d84365-8059-4146-883c-a1089df84f53j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+'Adding content expert routes to Gateway

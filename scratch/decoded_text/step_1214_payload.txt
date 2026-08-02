@@ -1,0 +1,83 @@
+-3750763034362895579H
+=====================
+O3FYavDyBbmn1MkP18m8EQX
+=====================
+b$a6bfeab9-daac-436e-9e1e-1d32eb8e015cj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Prioritizing License Checks**
+
+I'm currently focused on streamlining the `initAuth` function. The key update involves prioritizing license activation checks. I've integrated a check that fetches the license status from the `/api/auth/license/status` endpoint before proceeding. Error handling is included; if the backend is unavailable, it defaults to assuming the license is activated. This ensures smoother initial authentication.
+
+
+2(bot-fd542519-37f7-4529-82ff-af65ecfed7f7:>
+
+=====================
+replace_file_content
+=====================
+3{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":1012,"Instruction":"
+=====================
+","ReplacementContent":"    // 
+=====================
+\n    async function initAuth() {\n      // 0. 
+=====================
+\n      try {\n        const licRes = await fetch(`${getGatewayUrl()}/api/auth/license/status`).then(r =\u003e r.json());\n        if (!licRes.activated) {\n          switchAuthForm('license');\n          const midRes = await fetch(`${getGatewayUrl()}/api/auth/machine-id`).then(r =\u003e r.json());\n          document.getElementById('license-machine-id').value = midRes.machine_id;\n          document.getElementById('auth-screen').classList.remove('hidden');\n          return;\n        }\n      } catch (err) {\n        console.warn('[License Engine] Verify license failed, connection error. Retrying...');\n      }\n\n      // 1. 
+=====================
+\n      const initRes = await fetch(`${getGatewayUrl()}/api/auth/check-init`).then(r =\u003e r.json()).catch(() =\u003e ({ initialized: true }));\n\n      // 2. 
+=====================
+\n      if (_authToken) {\n        try {\n          const me = await fetch(`${getGatewayUrl()}/api/auth/me`).then(r =\u003e r.json());\n          if (me.success) {\n            _currentUser = me.user;\n            enterApp();\n            return;\n          }\n        } catch (_) {}\n        // Token 
+=====================
+\n        localStorage.removeItem('kunlun_token');\n        _authToken = '';\n      }\n\n      // 3. 
+=====================
+\n      if (!initRes.initialized) {\n        // 
+=====================
+\n        switchAuthForm('register');\n        document.getElementById('reg-subtitle').textContent = '
+=====================
+';\n        document.getElementById('invite-code-group').style.display = 'none';\n      } else {\n        switchAuthForm('login');\n      }\n      document.getElementById('auth-screen').classList.remove('hidden');\n    }\n\n    function switchAuthForm(type) {\n      document.getElementById('form-login').style.display = type === 'login' ? 'block' : 'none';\n      document.getElementById('form-register').style.display = type === 'register' ? 'block' : 'none';\n      document.getElementById('form-license').style.display = type === 'license' ? 'block' : 'none';\n      // 
+=====================
+\n      ['login-err','login-ok','reg-err','reg-ok','license-err','license-ok'].forEach(id =\u003e {\n        const el = document.getElementById(id);\n        if (el) {\n          el.className = el.className.replace(' show', '');\n          el.textContent = '';\n        }\n      });\n    }\n\n    function copyMachineId() {\n      const input = document.getElementById('license-machine-id');\n      input.select();\n      document.execCommand('copy');\n      alert('
+=====================
+');\n    }\n\n    async function doActivateLicense() {\n      const key = document.getElementById('license-key').value.trim();\n      const errEl = document.getElementById('license-err');\n      const okEl = document.getElementById('license-ok');\n      const btn = document.getElementById('license-btn');\n\n      if (!key) {\n        errEl.textContent = '
+=====================
+';\n        errEl.classList.add('show');\n        return;\n      }\n\n      btn.disabled = true;\n      btn.textContent = '
+=====================
+...';\n      errEl.classList.remove('show');\n      okEl.classList.remove('show');\n\n      try {\n        const res = await fetch(`${getGatewayUrl()}/api/auth/license/activate`, {\n          method: 'POST',\n          headers: { 'Content-Type': 'application/json' },\n          body: JSON.stringify({ license_key: key })\n        }).then(r =\u003e r.json());\n\n        if (res.success) {\n          okEl.textContent = '
+=====================
+...';\n          okEl.classList.add('show');\n          setTimeout(() =\u003e {\n            // 
+=====================
+\n            initAuth();\n          }, 1500);\n        } else {\n          errEl.textContent = res.error || '
+=====================
+';\n          errEl.classList.add('show');\n          btn.disabled = false;\n          btn.textContent = '
+=====================
+';\n        }\n      } catch (err) {\n        errEl.textContent = '
+=====================
+';\n        errEl.classList.add('show');\n        btn.disabled = false;\n        btn.textContent = '
+=====================
+';\n      }\n    }","StartLine":971,"TargetContent":"    // 
+=====================
+\n    async function initAuth() {\n      // 1. 
+=====================
+\n      const initRes = await fetch(`${getGatewayUrl()}/api/auth/check-init`).then(r =\u003e r.json()).catch(() =\u003e ({ initialized: true }));\n\n      // 2. 
+=====================
+\n      if (_authToken) {\n        try {\n          const me = await fetch(`${getGatewayUrl()}/api/auth/me`).then(r =\u003e r.json());\n          if (me.success) {\n            _currentUser = me.user;\n            enterApp();\n            return;\n          }\n        } catch (_) {}\n        // Token 
+=====================
+\n        localStorage.removeItem('kunlun_token');\n        _authToken = '';\n      }\n\n      // 3. 
+=====================
+\n      if (!initRes.initialized) {\n        // 
+=====================
+\n        switchAuthForm('register');\n        document.getElementById('reg-subtitle').textContent = '
+=====================
+';\n        document.getElementById('invite-code-group').style.display = 'none';\n      } else {\n        switchAuthForm('login');\n      }\n      document.getElementById('auth-screen').classList.remove('hidden');\n    }\n\n    function switchAuthForm(type) {\n      document.getElementById('form-login').style.display = type === 'login' ? 'block' : 'none';\n      document.getElementById('form-register').style.display = type === 'register' ? 'block' : 'none';\n      // 
+=====================
+\n      ['login-err','login-ok','reg-err','reg-ok'].forEach(id =\u003e {\n        const el = document.getElementById(id);\n        el.className = el.className.replace(' show', '');\n        el.textContent = '';\n      });\n    }","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Adding license activation front-end script","toolSummary":"Add license front-end script"}:
+
+=====================
+replace_file_contentZ

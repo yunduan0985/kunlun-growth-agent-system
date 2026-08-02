@@ -1,0 +1,70 @@
+ *
+"
+ivyk3aks	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":1730,"StartLine":1670,"toolAction":"Viewing end of save config route logic","toolSummary":"View config end"}:(&
+$e24830a7-5cd6-42fe-998b-ee539e72b9c3J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2:BКXb$150d3650-a2a5-4882-83c3-c83a8c70e530jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/6
+
+
+View config end&Viewing end of save config route logicr
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js"    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;
+    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;
+    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;
+    process.env.WHATSAPP_API_URL = config.WHATSAPP_API_URL;
+    process.env.TWITTER_API_TOKEN = config.TWITTER_API_TOKEN;
+
+    console.log(`✅ [Config Service] Successfully hot-saved new environmental settings.`);
+    res.json({
+      success: true,
+      message: "本地环境变量配置已成功物理保存并热更新生效。"
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to write .env file: " + err.message });
+  }
+});
+
+
+// 获取本地自定义职位与权限矩阵配置
+app.get('/api/system/permissions', (req, res) => {
+  const permPath = path.join(__dirname, '../data/permissions.json');
+  console.log(`[Permission Service] Loading role matrix from: ${permPath}`);
+
+  if (!fs.existsSync(permPath)) {
+    const defaultMatrix = {
+      admin: ["wechat_audit", "content_risk", "system_config"],
+      editor: ["content_risk"],
+      sales: ["wechat_audit"]
+    };
+    try {
+      const dataDir = path.dirname(permPath);
+      if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+      }
+      fs.writeFileSync(permPath, JSON.stringify(defaultMatrix, null, 2), 'utf-8');
+    } catch (e) {
+      console.error(`Failed to write default permissions file:`, e);
+    }
+    return res.json({ success: true, matrix: defaultMatrix });
+  }
+
+  try {
+    const rawData = fs.readFileSync(permPath, 'utf-8');
+    res.json({ success: true, matrix: JSON.parse(rawData) });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to read permission file: " + err.message });
+  }
+});
+
+// 管理员物理保存自定义职位与权限矩阵
+app.post('/api/system/permissions/save', (req, res) => {
+  const { matrix } = req.body;
+  const user_role = req.user?.role || 'sales';
+  if (!matrix) return res.status(400).json({ error: "Missing matrix payload." });
+
+  if (user_role !== 'admin') {
+    return res.status(403).json({
+      success: false,
+      error: "Access Denied: Only Admin can update the system authorization matrix."
+    });
+  }
+X`

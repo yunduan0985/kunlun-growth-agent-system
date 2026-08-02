@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/knowledge/query 和 /api/knowledge/document/list 两个 RAG 检索端点。",
+  "EndLine": 374,
+  "Instruction": "在服务器启动部分之前加入 RAG 知识库查询和文件列表路由。",
+  "ReplacementContent": "\n// 模拟向量数据库检索接口\napp.post('/api/knowledge/query', (req, res) => {\n  const { query, top_k } = req.body;\n  if (!query) return res.status(400).json({ error: \"Missing parameter: query\" });\n\n  console.log(`[RAG Database] Querying for: \"${query}\" (top_${top_k || 5})`);\n\n  const mockRags = [\n    {\n      document_name: \"昆仑增长冷启动运营手册.pdf\",\n      content: \"冷启动起号的7步工作流：1.确定细分人群画像；2.利用冲突模型设计选题；3.去AI腔调文案撰写；4.首封关注流设置；5.微信openclaw私域沉淀；6.BANT转化跟进；7.多维表格交付履约。\",\n      score: 0.89\n    },\n    {\n      document_name: \"AI销冠标准答疑话术.docx\",\n      content: \"应对‘价格贵’异议：同理心拥抱（‘我理解您的顾虑，很多同行起步时也是这么看’） -> ROI成本拆解（‘但如果这套Agent能帮你把日均转化从2%提升到5%，多赚的利润在一周内就能收回成本’） -> 制造紧迫感。\",\n      score: 0.82\n    }\n  ];\n\n  const hits = mockRags.filter(rag => \n    query.includes(\"冷启动\") || query.includes(\"话术\") || query.includes(\"价格\") || \n    rag.content.toLowerCase().includes(query.toLowerCase())\n  );\n\n  res.json({ success: true, hits: hits.length > 0 ? hits : [\n    {\n      document_name: \"通用常识汇编.txt\",\n      content: `在知识库中未查到与“${query}”精确对齐的规章，当前返回通用知识归档说明。`,\n      score: 0.50\n    }\n  ] });\n});\n\n// 知识库挂载手册列表接口\napp.get('/api/knowledge/document/list', (req, res) => {\n  res.json([\n    { filename: \"昆仑增长冷启动运营手册.pdf\", file_size: 2450122, uploaded_time: \"2026-03-01T10:00:00Z\" },\n    { filename: \"AI销冠标准答疑话术.docx\", file_size: 512033, uploaded_time: \"2026-05-12T14:30:00Z\" },\n    { filename: \"会员服务交付标准.pdf\", file_size: 1045900, uploaded_time: \"2026-06-20T08:15:00Z\" }\n  ]);\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 374,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding knowledge query routes to Gateway",
+  "toolSummary": "Modify file"
+}

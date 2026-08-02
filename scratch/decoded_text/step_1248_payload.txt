@@ -1,0 +1,32 @@
+-3750763034362895579H
+=====================
+v3FYarSdNMeW_uMPlc62gQMX
+=====================
+b$a6bfeab9-daac-436e-9e1e-1d32eb8e015cj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-9aeb90ed-f655-4a83-920a-280ee3f5b68b:
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":40,"Instruction":"
+=====================
+ PRAGMA journal_mode=WAL;","ReplacementContent":"// 
+=====================
+\nconst RAG_DB_PATH = path.join(DATA_DIR, 'rag_knowledge.db');\nconst ragDb = new sqlite3.Database(RAG_DB_PATH, (err) =\u003e {\n  if (err) console.error('[RAG Engine] Failed to open rag_knowledge.db', err);\n  else {\n    // 
+=====================
+ WAL (Write-Ahead Logging) 
+=====================
+ (EADDRINUSE/SQLITE_BUSY)\n    ragDb.run(\"PRAGMA journal_mode=WAL\");\n    ragDb.run(`\n      CREATE VIRTUAL TABLE IF NOT EXISTS knowledge_chunks USING fts5(\n        filename, \n        chunk_index, \n        content,\n        tokenize='porter'\n      )\n    `);\n    console.log('[RAG Engine] FTS5 Knowledge Base Database initialized with WAL mode.');\n  }\n});","StartLine":25,"TargetContent":"// 
+=====================
+\nconst RAG_DB_PATH = path.join(DATA_DIR, 'rag_knowledge.db');\nconst ragDb = new sqlite3.Database(RAG_DB_PATH, (err) =\u003e {\n  if (err) console.error('[RAG Engine] Failed to open rag_knowledge.db', err);\n  else {\n    ragDb.run(`\n      CREATE VIRTUAL TABLE IF NOT EXISTS knowledge_chunks USING fts5(\n        filename, \n        chunk_index, \n        content,\n        tokenize='porter'\n      )\n    `);\n    console.log('[RAG Engine] FTS5 Knowledge Base Database initialized.');\n  }\n});","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Enabling SQLite WAL mode","toolSummary":"Enable WAL mode"}:
+=====================
+replace_file_content`

@@ -1,0 +1,38 @@
+ *
+f"
+#toolu_vrtx_01LduAGrvaiAR24bKVitr4CE	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":30,"StartLine":1,"toolAction":"Viewing gateway entry point","toolSummary":"View gateway top"}J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2:BҗXb$9854c2a5-7b94-497b-8274-45148b995d52jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd+6
+Љ
+
+View gateway topViewing gateway entry pointΣr
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js"const express = require('express');
+const cors = require('cors');
+const { exec } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+const sqlite3 = require('sqlite3').verbose();
+require('dotenv').config();
+
+const app = express();
+const PORT = process.env.PORT || 8888;
+
+app.use(cors());
+app.use(express.json());
+
+// 从环境变量读取配置
+const OPENCLAW_API_URL = process.env.OPENCLAW_API_URL || 'http://localhost:18000';
+const OPENCLAW_TOKEN = process.env.OPENCLAW_TOKEN || 'mock_token_123';
+const LARK_CLI_PATH = process.env.LARK_CLI_PATH || 'lark';
+const WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');
+
+// 全局异步任务队列存储 (防止长耗时 HTTP 超时挂起)
+const TASK_QUEUE = {};
+
+// ==========================================
+// 1. Mock 数据库与静态资源
+// ==========================================
+
+// 模拟天眼查企业数据库
+const MOCK_COMPANY_DB = {
+  "昆仑增长": {X`

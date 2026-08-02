@@ -1,0 +1,299 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":37,"Instruction":"
+=====================
+","ReplacementContent":"if status == 0:\n    # 
+=====================
+\n    result = objc.objc_object(c_void_p=result_ptr.value)\n    print(\"Result type:\", type(result), \"Length:\", len(result))\n    if len(result) \u003e 0:\n        print(\"First item type:\", type(result[0]), \"Value:\", result[0])\n    \n    found = False\n    for item in result:\n        # 
+=====================
+\n        if hasattr(item, 'get'):\n            service = item.get('svce')\n            account = item.get('acct')\n            label = item.get('labl')\n        else:\n            # 
+=====================
+\n            continue","StartLine":29,"TargetContent":"if status == 0:\n    # 
+=====================
+\n    result = objc.objc_object(c_void_p=result_ptr.value)\n    found = False\n    for item in result:\n        service = item.get('svce')\n        account = item.get('acct')\n        label = item.get('labl')","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/scratch/search_keychain.py","toolAction":"Adding debug logs to pyobjc keychain script","toolSummary":"Add debug logs"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$041e5ef9-4f92-44d8-b59a-77ecdde8f342j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
++Adding debug logs to pyobjc keychain script
+=====================
+if status == 0:
+    # 
+=====================
+
+    result = objc.objc_object(c_void_p=result_ptr.value)
+    found = False
+    for item in result:
+        service = item.get('svce')
+        account = item.get('acct')
+        label = item.get('labl')
+=====================
+if status == 0:
+    # 
+=====================
+
+    result = objc.objc_object(c_void_p=result_ptr.value)
+    print("Result type:", type(result), "Length:", len(result))
+    if len(result) > 0:
+        print("First item type:", type(result[0]), "Value:", result[0])
+    
+    found = False
+    for item in result:
+        # 
+=====================
+
+        if hasattr(item, 'get'):
+            service = item.get('svce')
+            account = item.get('acct')
+            label = item.get('labl')
+        else:
+            # 
+=====================
+
+            continue0
+=====================
+*Tfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scratch/search_keychain.py2W
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+scratch/search_keychain.py
+=====================
+>
+:from Foundation import NSMutableDictionary, kCFBooleanTrue
+=====================
+X
+T    Security = ctypes.CDLL('/System/Library/Frameworks/Security.framework/Security')
+=====================
+except Exception as e:
+=====================
+ Failed to load Security framework: {e}")
+=====================
+ SecItemCopyMatching 
+=====================
+^
+ZSecurity.SecItemCopyMatching.argtypes = [ctypes.c_void_p, ctypes.POINTER(ctypes.c_void_p)]
+=====================
+9
+5Security.SecItemCopyMatching.restype = ctypes.c_int32
+=====================
+,
+(query = NSMutableDictionary.dictionary()
+=====================
+X
+Tquery['class'] = 'genp' # kSecClassGenericPassword (
+=====================
+;
+7query['r_Attr'] = kCFBooleanTrue # kSecReturnAttributes
+=====================
+5
+1query['r_Data'] = kCFBooleanTrue # kSecReturnData
+=====================
+7
+3query['m_Limit'] = 'all'        # kSecMatchLimitAll
+=====================
+%
+!query_ptr = objc.pyobjc_id(query)
+=====================
+result_ptr = ctypes.c_void_p()
+=====================
+N
+Jstatus = Security.SecItemCopyMatching(query_ptr, ctypes.byref(result_ptr))
+=====================
+<
+8    result = objc.objc_object(c_void_p=result_ptr.value)
+=====================
+C
+?    print("Result type:", type(result), "Length:", len(result))
+=====================
+    if len(result) > 0:
+=====================
+K
+G        print("First item type:", type(result[0]), "Value:", result[0])
+=====================
+    for item in result:
+=====================
+&
+"        service = item.get('svce')
+=====================
+&
+"        account = item.get('acct')
+=====================
+$
+         label = item.get('labl')
+=====================
+$
+         if hasattr(item, 'get'):
+=====================
+*
+&            service = item.get('svce')
+=====================
+*
+&            account = item.get('acct')
+=====================
+(
+$            label = item.get('labl')
+=====================
+            continue
+=====================
+b
+^        if (service and 'wechat' in service.lower()) or (label and 'wechat' in label.lower()):
+=====================
+            found = True
+=====================
+)
+%            data = item.get('v_Data')
+=====================
+            secret = ""
+=====================
+            if data:
+=====================
+                try:
+=====================
+K
+G                    # 
+=====================
+<
+8                    secret = bytes(data).decode('utf-8')
+=====================
+%
+!                except Exception:
+=====================
+:
+6                    secret = bytes(data).hex().upper()
+=====================
+b
+^            print(f"Label: {label} | Service: {service} | Account: {account} | Key: {secret}")
+=====================
+ No WeChat related items found in Keychain.")
+=====================
+ SecItemCopyMatching failed with status: {status}")
+=====================
+BTfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scratch/search_keychain.pyR
+=====================
+import ctypes
+import objc
+from Foundation import NSMutableDictionary, kCFBooleanTrue
+import sys
+
+# 
+=====================
+
+try:
+    Security = ctypes.CDLL('/System/Library/Frameworks/Security.framework/Security')
+except Exception as e:
+    print(f"
+=====================
+ Failed to load Security framework: {e}")
+    sys.exit(1)
+
+# 
+=====================
+ SecItemCopyMatching 
+=====================
+
+Security.SecItemCopyMatching.argtypes = [ctypes.c_void_p, ctypes.POINTER(ctypes.c_void_p)]
+Security.SecItemCopyMatching.restype = ctypes.c_int32
+
+# 
+=====================
+
+query = NSMutableDictionary.dictionary()
+query['class'] = 'genp' # kSecClassGenericPassword (
+=====================
+ 'class': 'genp')
+query['r_Attr'] = kCFBooleanTrue # kSecReturnAttributes
+query['r_Data'] = kCFBooleanTrue # kSecReturnData
+query['m_Limit'] = 'all'        # kSecMatchLimitAll
+
+# 
+=====================
+
+query_ptr = objc.pyobjc_id(query)
+result_ptr = ctypes.c_void_p()
+
+# 
+=====================
+ C API
+status = Security.SecItemCopyMatching(query_ptr, ctypes.byref(result_ptr))
+
+if status == 0:
+    # 
+=====================
+
+    result = objc.objc_object(c_void_p=result_ptr.value)
+    found = False
+    for item in result:
+        service = item.get('svce')
+        account = item.get('acct')
+        label = item.get('labl')
+        
+        if (service and 'wechat' in service.lower()) or (label and 'wechat' in label.lower()):
+            found = True
+            data = item.get('v_Data')
+            secret = ""
+            if data:
+                try:
+                    # 
+=====================
+ Database Key
+                    secret = bytes(data).decode('utf-8')
+                except Exception:
+                    secret = bytes(data).hex().upper()
+            print(f"Label: {label} | Service: {service} | Account: {account} | Key: {secret}")
+    if not found:
+        print("
+=====================
+ No WeChat related items found in Keychain.")
+else:
+    print(f"
+=====================
+ SecItemCopyMatching failed with status: {status}")
+ 
+=====================
+if status == 0:
+    # 
+=====================
+
+    result = objc.objc_object(c_void_p=result_ptr.value)
+    found = False
+    for item in result:
+        service = item.get('svce')
+        account = item.get('acct')
+        label = item.get('labl')
+=====================
+if status == 0:
+    # 
+=====================
+
+    result = objc.objc_object(c_void_p=result_ptr.value)
+    print("Result type:", type(result), "Length:", len(result))
+    if len(result) > 0:
+        print("First item type:", type(result[0]), "Value:", result[0])
+    
+    found = False
+    for item in result:
+        # 
+=====================
+
+        if hasattr(item, 'get'):
+            service = item.get('svce')
+            account = item.get('acct')
+            label = item.get('labl')
+        else:
+            # 
+=====================
+
+            continue0

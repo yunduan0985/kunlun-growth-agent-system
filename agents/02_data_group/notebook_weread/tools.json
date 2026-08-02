@@ -1,0 +1,136 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "微信读书与 NotebookLM 笔记同步插件",
+    "version": "1.3.0",
+    "description": "提供给笔记 Agent 进行微信读书划线抓取、Obsidian 归档、以及 NotebookLM 挂载文件夹云端同步的 API 规范。"
+  },
+  "paths": {
+    "/api/notebook/weread/fetch": {
+      "get": {
+        "summary": "抓取并获取当前微信读书账号中最新添加的书籍划线、想法及元数据",
+        "operationId": "fetchWeReadHighlights",
+        "parameters": [
+          {
+            "name": "book_id",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string" },
+            "description": "指定抓取的书籍ID，留空表示抓取最新更新"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "抓取成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "book_name": { "type": "string" },
+                      "author": { "type": "string" },
+                      "highlight": { "type": "string" },
+                      "thought": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/notebook/notebooklm/sync": {
+      "post": {
+        "summary": "将清洗增强后的 Markdown 笔记文件上传并同步至 NotebookLM 挂载的云端或本地存储空间",
+        "operationId": "syncToNotebookLM",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "filename": { "type": "string", "description": "保存的文件名 (例如: 第一性原理_笔记.md)" },
+                  "markdown_content": { "type": "string", "description": "增强型 Markdown 笔记文本" },
+                  "cloud_provider": { "type": "string", "enum": ["google_drive", "local_folder"], "default": "google_drive" }
+                },
+                "required": ["filename", "markdown_content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "同步成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "cloud_url": { "type": "string", "description": "云端文件地址" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

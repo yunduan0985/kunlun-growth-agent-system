@@ -1,0 +1,16 @@
+{
+  "id": "agent_architect",
+  "name": "agent架构师",
+  "group": "agent组织部",
+  "description": "设计复杂的多智能体协同流（Multi-Agent Flow）和工作流拓扑结构，精通 LangGraph 和 AutoGen。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=agent_architect",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

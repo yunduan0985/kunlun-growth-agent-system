@@ -1,0 +1,36 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/finance/audit 
+=====================
+","EndLine":919,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/finance/audit', (req, res) =\u003e {\n  const { project_name, budget_limit, actual_expenses, estimated_revenue } = req.body;\n  if (!project_name || budget_limit === undefined || actual_expenses === undefined || estimated_revenue === undefined) {\n    return res.status(400).json({ error: \"Missing required numeric parameters for financial audit.\" });\n  }\n\n  console.log(`[Financial Audit] Processing accounting ledger for project: ${project_name}`);\n\n  const variance_ratio = (actual_expenses - budget_limit) / budget_limit;\n  const roi = (estimated_revenue - actual_expenses) / actual_expenses;\n  let risk_level = \"none\";\n\n  if (variance_ratio \u003e 0.1 || roi \u003c 1.0) {\n    risk_level = \"high\";\n  } else if (roi \u003c 1.5) {\n    risk_level = \"medium\";\n  }\n\n  res.json({\n    success: true,\n    variance_ratio,\n    roi,\n    risk_level\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":919,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding finance routes to Gateway","toolSummary":"Modify file"}:	
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$392a8547-fc27-4baf-9df8-955dcf52e30fj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+ Adding finance routes to Gateway

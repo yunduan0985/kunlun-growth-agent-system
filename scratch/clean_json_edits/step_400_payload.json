@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/project/wbs/create 与 /api/project/bitable/sync 两个敏捷项目管理端点。",
+  "EndLine": 886,
+  "Instruction": "在服务器启动之前加入WBS拆解和飞书看板同步路由。",
+  "ReplacementContent": "\n// 模拟任务 WBS 拆解接口\napp.post('/api/project/wbs/create', (req, res) => {\n  const { project_name, raw_requirements } = req.body;\n  if (!project_name || !raw_requirements) {\n    return res.status(400).json({ error: \"Missing parameter: project_name or raw_requirements\" });\n  }\n\n  console.log(`[WBS Decomposer] Creating breakdown stages for project: ${project_name}`);\n\n  res.json({\n    success: true,\n    stages: [\n      { id: \"1.1\", task: \"微信解密 SQLite 历史数据库挂载\", owner: \"技术专家\", hours: 8 },\n      { id: \"1.2\", task: \"通过 SQL 提取客户线索\", owner: \"微信数据专员\", hours: 6, pre_id: \"1.1\" },\n      { id: \"2.1\", task: \"撰写公众号推广初稿\", owner: \"内容生产官\", hours: 12, pre_id: \"1.2\" }\n    ]\n  });\n});\n\n// 模拟 WBS 任务同步到多维表格看板接口\napp.post('/api/project/bitable/sync', (req, res) => {\n  const { project_name, tasks } = req.body;\n  if (!project_name || !tasks) return res.status(400).json({ error: \"Missing required parameters.\" });\n\n  console.log(`[Lark Bitable Sync] Uploading ${tasks.length} tasks for project: ${project_name} to Kanban board...`);\n\n  res.json({\n    success: true,\n    synced_records_count: tasks.length\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 886,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding PM routes to Gateway",
+  "toolSummary": "Modify file"
+}

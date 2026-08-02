@@ -1,0 +1,84 @@
+replace_file_content
+=====================
+9{"AllowMultiple":false,"Description":"
+=====================
+ Gateway getMockTranscription 
+=====================
+","EndLine":94,"Instruction":"
+=====================
+ getMockTranscription 
+=====================
+","ReplacementContent":"// 
+=====================
+)\nfunction getMockTranscription(url) {\n  const lowerUrl = url.toLowerCase();\n  const isEnglish = lowerUrl.includes('youtube') || lowerUrl.includes('english') || lowerUrl.includes('foreign');\n  const isDouyin = lowerUrl.includes('douyin') || lowerUrl.includes('tiktok') || lowerUrl.includes('dy');\n  const isXhs = lowerUrl.includes('xhs') || lowerUrl.includes('xiaohongshu');\n  const isWechat = lowerUrl.includes('wechat') || lowerUrl.includes('weixin') || lowerUrl.includes('channels');\n  \n  if (isEnglish) {\n    return {\n      video_url: url,\n      duration: \"08:45\",\n      language: \"en-US\",\n      title: \"Model Context Protocol Explained (MCP Guide)\",\n      segments: [\n        { \n          start: \"00:00\", \n          end: \"01:15\", \n          text: \"ENG: Today we are talking about Model Context Protocol, the open standard to connect LLMs to data sources.\\nCHS: 
+=====================
+\" \n        },\n        { \n          start: \"01:15\", \n          end: \"03:40\", \n          text: \"ENG: With MCP, your agent can inspect database tables and run APIs securely in the background.\\nCHS: 
+=====================
+\" \n        }\n      ]\n    };\n  }\n\n  if (isDouyin) {\n    return {\n      video_url: url,\n      duration: \"01:30\",\n      language: \"zh-CN\",\n      title: \"
+=====================
+\",\n      segments: [\n        { start: \"00:00\", end: \"00:30\", text: \"
+=====================
+\" },\n        { start: \"00:30\", end: \"01:30\", text: \"
+=====================
+\" }\n      ]\n    };\n  }\n\n  if (isXhs) {\n    return {\n      video_url: url,\n      duration: \"02:15\",\n      language: \"zh-CN\",\n      title: \"
+=====================
+\",\n      segments: [\n        { start: \"00:00\", end: \"01:00\", text: \"
+=====================
+\" },\n        { start: \"01:00\", end: \"02:15\", text: \"
+=====================
+\" }\n      ]\n    };\n  }\n\n  if (isWechat) {\n    return {\n      video_url: url,\n      duration: \"04:12\",\n      language: \"zh-CN\",\n      title: \"
+=====================
+\",\n      segments: [\n        { start: \"00:00\", end: \"02:00\", text: \"
+=====================
+\" },\n        { start: \"02:00\", end: \"04:12\", text: \"
+=====================
+\" }\n      ]\n    };\n  }\n\n  return {\n    video_url: url,\n    duration: \"15:24\",\n    language: \"zh-CN\",\n    title: \"
+=====================
+\",\n    segments: [\n      { start: \"00:00\", end: \"01:30\", text: \"
+=====================
+\" },\n      { start: \"01:30\", end: \"05:10\", text: \"
+=====================
+\" },\n      { start: \"05:10\", end: \"10:15\", text: \"
+=====================
+\" },\n      { start: \"10:15\", end: \"15:24\", text: \"
+=====================
+\" }\n    ]\n  };\n}","StartLine":47,"TargetContent":"// 
+=====================
+)\nfunction getMockTranscription(url) {\n  const isEnglish = url.toLowerCase().includes('youtube') || url.toLowerCase().includes('english') || url.toLowerCase().includes('foreign');\n  \n  if (isEnglish) {\n    return {\n      video_url: url,\n      duration: \"08:45\",\n      language: \"en-US\",\n      title: \"Model Context Protocol Explained (MCP Guide)\",\n      segments: [\n        { \n          start: \"00:00\", \n          end: \"01:15\", \n          text: \"ENG: Today we are talking about Model Context Protocol, the open standard to connect LLMs to data sources.\\nCHS: 
+=====================
+\" \n        },\n        { \n          start: \"01:15\", \n          end: \"03:40\", \n          text: \"ENG: With MCP, your agent can inspect database tables and run APIs securely in the background.\\nCHS: 
+=====================
+\" \n        },\n        { \n          start: \"03:40\", \n          end: \"06:10\", \n          text: \"ENG: This solves the integration problem, so you don't have to build custom integrations for every platform.\\nCHS: 
+=====================
+\" \n        },\n        { \n          start: \"06:10\", \n          end: \"08:45\", \n          text: \"ENG: Let's see how we write a simple Node.js MCP server from scratch in under 5 minutes.\\nCHS: 
+=====================
+\" \n        }\n      ]\n    };\n  }\n\n  return {\n    video_url: url,\n    duration: \"15:24\",\n    language: \"zh-CN\",\n    title: \"
+=====================
+\",\n    segments: [\n      { start: \"00:00\", end: \"01:30\", text: \"
+=====================
+\" },\n      { start: \"01:30\", end: \"05:10\", text: \"
+=====================
+\" },\n      { start: \"05:10\", end: \"10:15\", text: \"
+=====================
+\" },\n      { start: \"10:15\", end: \"15:24\", text: \"
+=====================
+\" }\n    ]\n  };\n}","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding Douyin and XHS mock logic to transcription helper","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$8c32dc24-70fa-49c7-b343-d41d38cb9c37j
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+n"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+8Adding Douyin and XHS mock logic to transcription helper

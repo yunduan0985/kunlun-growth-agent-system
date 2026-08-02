@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课程 A：AI 跨境电商爆破营 - 卖家智能工作站</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-logo">A</div>
+      <div>
+        <div class="brand-text">AI 跨境电商爆破营</div>
+        <span class="brand-badge">课程 A 官方全闭环工作站</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="selection">
+        📦 AI 选品与热词挖掘
+      </button>
+      <button class="tab-btn" data-tab="listing">
+        📝 多语言 Listing 生成
+      </button>
+      <button class="tab-btn" data-tab="tiktok">
+        🎬 TikTok 爆款脚本
+      </button>
+      <button class="tab-btn" data-tab="customer">
+        💬 尺码引导 (降30%退货)
+      </button>
+      <button class="tab-btn" data-tab="syllabus">
+        📚 课程大纲与 Prompt 库
+      </button>
+    </div>
+
+    <div>
+      <span style="font-size:0.85rem; color:var(--text-muted); margin-right:12px;">适配：Amazon / TikTok / Shopify</span>
+      <button class="btn btn-primary" onclick="alert('已连接昆仑 AI 跨境电商引擎，支持多语种实时生成！')">⚡ 系统状态: 正常</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Tab 1: Selection & Painpoints -->
+    <div id="selection" class="tab-content active">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">🔍 AI 智能选品与竞品买家评论热词挖掘</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>拟选品名称 / 品类：</label>
+              <input type="text" id="productName" class="form-control" value="智能降噪运动耳机">
+            </div>
+
+            <div class="form-group">
+              <label>所属细分赛道：</label>
+              <input type="text" id="productCategory" class="form-control" value="3C 数码 / 户外运动设备">
+            </div>
+
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="analyzeProductPainpoints()">🚀 1秒挖掘买家卖点与避坑词</button>
+          </div>
+
+          <div>
+            <div id="selectionOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Multilingual Listing (Amazon A9) -->
+    <div id="listing" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📝 多语言高转化 Listing & Amazon A9 SEO 生成器</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>核心产品关键词：</label>
+              <input type="text" id="listingTitleInput" class="form-control" value="Wireless Noise Cancelling Earbuds">
+            </div>
+
+            <div class="form-group">
+              <label>目标出口市场语言：</label>
+              <select id="listingLangSelect" class="form-control">
+                <option value="en">英语 (美国/英国/加拿大)</option>
+                <option value="de">德语 (德国/欧洲首选)</option>
+                <option value="jp">日语 (日本亚马逊)</option>
+                <option value="es">西班牙语 (西班牙/拉美)</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateMultilingualListing()">⚡ 生成爆款 Listing & A+ 文案</button>
+          </div>
+
+          <div>
+            <div id="listingOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: TikTok Short Video Scripts -->
+    <div id="tiktok" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">🎬 TikTok 爆款短视频黄金 3 秒 Hook 口播脚本生成</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>带货产品名称：</label>
+              <input type="text" id="tiktokProduct" class="form-control" value="Portable Mini Blender (便携迷你榨汁机)">
+            </div>
+
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="generateTikTokScript()">🎬 1秒生成爆款短视频脚本</button>
+          </div>
+
+          <div>
+            <div id="tiktokOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: Customer Service & Return Prevention -->
+    <div id="customer" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">💬 智能客服尺码引导换码（降低 30% 跨境退货率闭环）</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>买家退货/客诉留言理由：</label>
+              <input type="text" id="customerReason" class="form-control" value="收到衣服发现偏小，穿不上，申请退货并退款">
+            </div>
+
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="handleSizeExchangeSimulation()">🛡️ 触发高情商换码拦截与免寄回包邮策略</button>
+          </div>
+
+          <div>
+            <div id="customerOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 5: Syllabus & Prompt Hub -->
+    <div id="syllabus" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📚 课程 A 教学大纲与卖家全套 SOP 提示词库</h3>
+        <div style="line-height:1.8; color:var(--text-muted);">
+          <p><strong style="color:var(--text-main);">Day 1：</strong> AI 爆品选品与竞品搜索热词挖掘（解析 10,000+ 买家评价）</p>
+          <p><strong style="color:var(--text-main);">Day 2：</strong> 多语言（英/德/日/西）高转化 Listing & Amazon A9 SEO 极速生成</p>
+          <p><strong style="color:var(--text-main);">Day 3：</strong> TikTok 爆款短视频脚本与多语种 AI 数字人口播带货</p>
+          <p><strong style="color:var(--text-main);">Day 4：</strong> 智能客服尺码引导换码（降低 30% 跨境退货率闭环）</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

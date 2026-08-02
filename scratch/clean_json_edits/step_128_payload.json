@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在网关服务器 src/index.js 中添加运维专用的 /api/ops/metrics 与 /api/ops/logs 两个 HTTP GET 路由接口。",
+  "EndLine": 275,
+  "Instruction": "在服务器启动部分之前加入 /api/ops/metrics 和 /api/ops/logs 路由实现。",
+  "ReplacementContent": "\n// 运维系统指标接口\napp.get('/api/ops/metrics', (req, res) => {\n  res.json({\n    llm_success_rate: 99.4,\n    average_latency_ms: 2450,\n    token_cost_today_usd: 14.85,\n    api_timeout_count: 2\n  });\n});\n\n// 运维日志检索接口\napp.get('/api/ops/logs', (req, res) => {\n  const lines = parseInt(req.query.lines) || 50;\n  res.json({\n    logs: `[INFO] ${new Date().toISOString()} - [Gateway] Server initialized on port ${PORT}\\n[INFO] [MCP] Registered 4 tools\\n[INFO] [OpenClaw] Connection established at ${OPENCLAW_API_URL}\\n[DEBUG] [Terminal] lark-cli path configured as: ${LARK_CLI_PATH}\\n[INFO] [Gateway] Listening for remote trace events... (Truncated to past ${lines} lines)`\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 271,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding logs and metrics routes to Gateway",
+  "toolSummary": "Modify file"
+}

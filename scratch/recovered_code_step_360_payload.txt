@@ -1,0 +1,38 @@
+replace_file_content
+=====================
+	{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/content/zsxq/publish 
+=====================
+","EndLine":841,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/content/zsxq/publish', (req, res) =\u003e {\n  const { title, content, group_name, is_sticky } = req.body;\n  if (!title || !content) return res.status(400).json({ error: \"Missing required parameters: title or content\" });\n\n  console.log(`[ZSXQ API] Publishing post: \"${title}\" on Planet: ${group_name || '
+=====================
+'}. Sticky: ${is_sticky}`);\n\n  res.json({\n    success: true,\n    topic_id: \"zsxq_topic_\" + Math.random().toString(36).substring(2, 9)\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":841,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding ZSXQ routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$56fe21ed-1ce5-4394-95e5-add2e622b1bcj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Adding ZSXQ routes to Gateway

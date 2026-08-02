@@ -1,0 +1,43 @@
+replace_file_content
+=====================
+
+{"AllowMultiple":false,"Description":"
+=====================
+ /api/system/config/save 
+=====================
+ user_role !== 'admin' 
+=====================
+","EndLine":1154,"Instruction":"
+=====================
+","ReplacementContent":"// 
+=====================
+)\napp.post('/api/system/config/save', (req, res) =\u003e {\n  const { config, user_role } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  // 
+=====================
+\n  if (user_role !== 'admin') {\n    console.warn(`
+=====================
+ [Access Denied] Unauthorized config edit attempt by Role: \"${user_role || 'unknown'}\"`);\n    return res.status(403).json({\n      success: false,\n      error: `Access Denied: Role \"${user_role || 'unknown'}\" is not authorized to edit system environment variables.`\n    });\n  }\n\n  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);\n  res.json({\n    success: true,\n    message: \"
+=====================
+\"\n  });\n});","StartLine":1144,"TargetContent":"// 
+=====================
+\napp.post('/api/system/config/save', (req, res) =\u003e {\n  const { config } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);\n  res.json({\n    success: true,\n    message: \"
+=====================
+\"\n  });\n});","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Enforcing RBAC role checks on Gateway config endpoints","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$1f700c1b-14f5-4e78-87ae-db4ced489f92j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+6Enforcing RBAC role checks on Gateway config endpoints

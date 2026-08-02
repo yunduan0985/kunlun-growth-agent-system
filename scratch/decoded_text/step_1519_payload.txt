@@ -1,0 +1,293 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":69,"Instruction":"
+=====================
+ build.mac.target.arch 
+=====================
+","ReplacementContent":"          \"arch\": [\n            \"arm64\"\n          ]","StartLine":65,"TargetContent":"          \"arch\": [\n            \"arm64\",\n            \"x64\"\n          ]","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/package.json","toolAction":"Optimizing package.json to output arm64 DMG only","toolSummary":"Optimize target arch"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$440a3df4-8c1b-4728-8d76-6d9f77978dcbj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Optimize target arch
+=====================
+0Optimizing package.json to output arm64 DMG only
+=====================
+ build.mac.target.arch 
+=====================
+
+F          "arch": [
+            "arm64",
+            "x64"
+          ]
+=====================
+3          "arch": [
+            "arm64"
+          ]0A8E"
+=====================
+*Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/package.json2I
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+  "name": "kunlun-agent-os",
+=====================
+  "version": "2.0.0",
+=====================
+T
+P  "description": "Kunlun Growth Multi-Agent OS 
+=====================
+ Commercial Delivery Edition",
+=====================
+  "main": "electron/main.js",
+=====================
+%
+!    "start": "node src/index.js",
+=====================
+&
+"    "dev": "nodemon src/index.js",
+=====================
+    "electron": "electron .",
+=====================
+:
+6    "electron:dev": "NODE_ENV=development electron .",
+=====================
+.
+*    "build:mac": "electron-builder --mac",
+=====================
+.
+*    "build:win": "electron-builder --win",
+=====================
+4
+0    "build:all": "electron-builder --mac --win",
+=====================
+:
+6    "release:mac": "node scripts/build-prod.js --mac",
+=====================
+:
+6    "release:win": "node scripts/build-prod.js --win",
+=====================
+?
+;    "release:all": "node scripts/build-prod.js --mac --win"
+=====================
+    "bcryptjs": "^3.0.3",
+=====================
+    "cors": "^2.8.5",
+=====================
+    "dotenv": "^16.4.5",
+=====================
+    "express": "^4.19.2",
+=====================
+    "jsonwebtoken": "^9.0.3",
+=====================
+    "mammoth": "^1.7.0",
+=====================
+    "multer": "^1.4.5-lts.1",
+=====================
+    "pdf-parse": "^1.1.1",
+=====================
+    "sqlite3": "^5.1.7"
+=====================
+  "devDependencies": {
+=====================
+    "electron": "^31.7.7",
+=====================
+'
+#    "electron-builder": "^24.13.3",
+=====================
+*
+&    "javascript-obfuscator": "^5.4.7",
+=====================
+    "nodemon": "^3.1.0"
+=====================
+    "node": ">=20.0.0"
+=====================
+&
+"    "appId": "com.kunlun.agentOS",
+=====================
+/
++    "productName": "
+=====================
+7
+3    "copyright": "Copyright 
+=====================
+ 2025 Kunlun Growth",
+=====================
+    "directories": {
+=====================
+      "output": "dist"
+=====================
+      "electron/**/*",
+=====================
+&
+"      "!node_modules/.cache/**/*",
+=====================
+      "!data/knowledge/**/*"
+=====================
+    "extraResources": [
+=====================
+        "from": "data/",
+=====================
+        "to": "data/",
+=====================
+          "!knowledge/**"
+=====================
+5
+1      "category": "public.app-category.business",
+=====================
+%
+!      "icon": "assets/icon.icns",
+=====================
+          "target": "dmg",
+=====================
+            "arm64",
+=====================
+:
+6      "entitlements": "assets/entitlements.mac.plist",
+=====================
+@
+<      "entitlementsInherit": "assets/entitlements.mac.plist"
+=====================
+$
+       "icon": "assets/icon.ico",
+=====================
+          "target": "nsis",
+=====================
+      "oneClick": false,
+=====================
+5
+1      "allowToChangeInstallationDirectory": true,
+=====================
+-
+)      "installerIcon": "assets/icon.ico",
+=====================
+.
+*      "uninstallerIcon": "assets/icon.ico"
+=====================
+BFfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/package.jsonR
+=====================
+{
+  "name": "kunlun-agent-os",
+  "version": "2.0.0",
+  "description": "Kunlun Growth Multi-Agent OS 
+=====================
+ Commercial Delivery Edition",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "electron": "electron .",
+    "electron:dev": "NODE_ENV=development electron .",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "build:all": "electron-builder --mac --win",
+    "release:mac": "node scripts/build-prod.js --mac",
+    "release:win": "node scripts/build-prod.js --win",
+    "release:all": "node scripts/build-prod.js --mac --win"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.3",
+    "mammoth": "^1.7.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3",
+    "javascript-obfuscator": "^5.4.7",
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "build": {
+    "appId": "com.kunlun.agentOS",
+    "productName": "
+=====================
+ Agent OS",
+    "copyright": "Copyright 
+=====================
+ 2025 Kunlun Growth",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron/**/*",
+      "src/**/*",
+      "index.html",
+      "data/**/*",
+      "!node_modules/.cache/**/*",
+      "!data/knowledge/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "data/",
+        "to": "data/",
+        "filter": [
+          "**/*",
+          "!knowledge/**"
+        ]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.business",
+      "icon": "assets/icon.icns",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "entitlements": "assets/entitlements.mac.plist",
+      "entitlementsInherit": "assets/entitlements.mac.plist"
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico"
+    }
+  }
+}
+ 
+=====================
+
+F          "arch": [
+            "arm64",
+            "x64"
+          ]
+=====================
+3          "arch": [
+            "arm64"
+          ]0A8EX

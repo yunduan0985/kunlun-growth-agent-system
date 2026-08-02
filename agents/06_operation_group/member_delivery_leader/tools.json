@@ -1,0 +1,99 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "会员交付工单处理插件",
+    "version": "1.2.0",
+    "description": "提供给会员交付负责人 Agent 进行会员答疑工单诊断、知识库检索以及飞书敏捷派单流转的 API 规范。"
+  },
+  "paths": {
+    "/api/operation/ticket/resolve": {
+      "post": {
+        "summary": "输入会员提问，自动匹配知识库应答，若无法解决则自动生成技术派单数据",
+        "operationId": "resolveMemberTicket",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "member_name": { "type": "string" },
+                  "question": { "type": "string", "description": "会员遇到的实际卡点报错或问题" }
+                },
+                "required": ["member_name", "question"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "工单处理完毕",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "replied_text": { "type": "string", "description": "自动应答话术" },
+                    "need_escalation": { "type": "boolean", "description": "是否需要升级派单给技术专家" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

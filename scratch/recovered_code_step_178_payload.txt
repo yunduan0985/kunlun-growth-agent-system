@@ -1,0 +1,56 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/tianyancha/equity 
+=====================
+ /api/tianyancha/risk 
+=====================
+","EndLine":418,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.get('/api/tianyancha/equity', (req, res) =\u003e {\n  const { company_name } = req.query;\n  if (!company_name) return res.status(400).json({ error: \"Missing: company_name\" });\n\n  console.log(`[TianYanCha] Querying equity structure for: ${company_name}`);\n\n  res.json({\n    success: true,\n    actual_controller: \"
+=====================
+A\",\n    shareholders: [\n      { name: \"
+=====================
+A\", type: \"natural_person\", ratio: \"60.0%\" },\n      { name: \"
+=====================
+B\", type: \"enterprise\", ratio: \"30.0%\" },\n      { name: \"
+=====================
+C\", type: \"natural_person\", ratio: \"10.0%\" }\n    ],\n    nesting_level: 2\n  });\n});\n\n// 
+=====================
+\napp.get('/api/tianyancha/risk', (req, res) =\u003e {\n  const { company_name } = req.query;\n  if (!company_name) return res.status(400).json({ error: \"Missing: company_name\" });\n\n  console.log(`[TianYanCha] Auditing risks for: ${company_name}`);\n\n  const hasHighRisk = company_name.includes(\"
+=====================
+\") || company_name.includes(\"
+=====================
+\");\n\n  res.json({\n    success: true,\n    risk_level: hasHighRisk ? \"high\" : \"low\",\n    cases: hasHighRisk ? [\n      { type: \"execute_case\", detail: \"
+=====================
+\", status: \"unfulfilled\" },\n      { type: \"operation_exception\", detail: \"
+=====================
+\", status: \"active\" }\n    ] : [],\n    judgment_count: hasHighRisk ? 12 : 0\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":418,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding tianyancha routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$ebafc95a-b453-428d-8d86-1bba1cd4edd5j
+=====================
+Q
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+T"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+#Adding tianyancha routes to Gateway

@@ -1,0 +1,4100 @@
+replace_file_content
+=====================
+1{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":709,"Instruction":"
+=====================
+","ReplacementContent":"    // 
+=====================
+)\n    let lastScannedLeads = [];\n    async function fetchWechatData() {\n      const out = document.getElementById('wechat-out');\n      out.textContent = '
+=====================
+...\\n';\n      document.getElementById('lark-sync-btn').style.display = 'none'; // 
+=====================
+\n      \n      try {\n        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);\n        const triggerData = await triggerRes.json();\n        if (!triggerData.success || !triggerData.task_id) {\n          out.textContent = '
+=====================
+';\n          return;\n        }\n\n        const taskId = triggerData.task_id;\n        out.textContent += `
+=====================
+ID: ${taskId}\\n`;\n\n        const pollInterval = setInterval(async () =\u003e {\n          try {\n            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);\n            const statusData = await statusRes.json();\n            \n            if (statusData.success) {\n              out.textContent = `
+=====================
+...\\n` +\n                `[
+=====================
+]: ${statusData.progress}%\\n`;\n              \n              if (statusData.status === 'completed') {\n                clearInterval(pollInterval);\n                const data = statusData.result;\n                lastScannedLeads = data;\n                document.getElementById('lark-sync-btn').style.display = 'block'; // 
+=====================
+\n                \n                out.innerHTML = `\u003cspan style=\"color: var(--success-color);\"\u003e
+=====================
+\u003c/span\u003e\u003cbr\u003e` + \n                  data.map((m, i) =\u003e `${i+1}. \u003cstrong\u003e${m.from_user}\u003c/strong\u003e: \"${m.content.substring(0,25)}...\"`).join('\u003cbr\u003e');\n              }\n            }\n          } catch (pollErr) {\n            clearInterval(pollInterval);\n            out.textContent += `\\n
+=====================
+: ${pollErr.message}`;\n          }\n        }, 500);\n\n      } catch (err) {\n        out.textContent = `[
+=====================
+\\n${err.message}`;\n      }\n    }\n\n    // 
+=====================
+\n    async function syncToLarkBitable() {\n      const out = document.getElementById('wechat-out');\n      out.innerHTML += `\u003cbr\u003e\u003cbr\u003e\u003cspan style=\"color: #38bdf8;\"\u003e
+=====================
+...\u003c/span\u003e`;\n      \n      try {\n        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/sync`, {\n          method: 'POST',\n          headers: { 'Content-Type': 'application/json' },\n          body: JSON.stringify({ leads: lastScannedLeads })\n        });\n        const data = await res.json();\n        \n        if (data.success) {\n          out.innerHTML += `\u003cbr\u003e\u003cbr\u003e\u003cspan style=\"color: var(--success-color);\"\u003e
+=====================
+] ${data.message}\u003c/span\u003e\u003cbr\u003e` +\n            `
+=====================
+ \u003ca href=\"${data.bitable_url}\" target=\"_blank\" style=\"color: #38bdf8; text-decoration: underline; font-weight: bold;\"\u003e[
+=====================
+]\u003c/a\u003e`;\n        } else {\n          out.innerHTML += `\u003cbr\u003e\u003cspan style=\"color: var(--danger-color);\"\u003e
+=====================
+: ${data.error}\u003c/span\u003e`;\n        }\n      } catch (err) {\n        out.innerHTML += `\u003cbr\u003e\u003cspan style=\"color: var(--danger-color);\"\u003e
+=====================
+: ${err.message}\u003c/span\u003e`;\n      }\n    }","StartLine":667,"TargetContent":"    // 
+=====================
+)\n    async function fetchWechatData() {\n      const out = document.getElementById('wechat-out');\n      out.textContent = '
+=====================
+...\\n';\n      \n      try {\n        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);\n        const triggerData = await triggerRes.json();\n        if (!triggerData.success || !triggerData.task_id) {\n          out.textContent = '
+=====================
+';\n          return;\n        }\n\n        const taskId = triggerData.task_id;\n        out.textContent += `
+=====================
+ID: ${taskId}\\n`;\n\n        const pollInterval = setInterval(async () =\u003e {\n          try {\n            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);\n            const statusData = await statusRes.json();\n            \n            if (statusData.success) {\n              out.textContent = `
+=====================
+...\\n` +\n                `[
+=====================
+]: ${statusData.progress}%\\n`;\n              \n              if (statusData.status === 'completed') {\n                clearInterval(pollInterval);\n                const data = statusData.result;\n                out.textContent = `
+=====================
+\\n` + \n                  data.map((m, i) =\u003e `${i+1}. ${m.from_user}: \"${m.content.substring(0,25)}...\"`).join('\\n');\n              }\n            }\n          } catch (pollErr) {\n            clearInterval(pollInterval);\n            out.textContent += `\\n
+=====================
+: ${pollErr.message}`;\n          }\n        }, 500);\n\n      } catch (err) {\n        out.textContent = `[
+=====================
+\\n${err.message}`;\n      }\n    }","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Adding syncToLarkBitable frontend script to Dashboard","toolSummary":"Modify file"}:
+=====================
+J#S A
+p8>nx%0,D5>.>x3X;<!L)*_r.IkCX
+=====================
+^.-(I\N8nCY/&Tx${20k
+=====================
+Zc'm G/RHcYs!\xK!2:/S
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$1d910ea5-1fb6-477c-b00e-accf26403e2fj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+5Adding syncToLarkBitable frontend script to Dashboard
+=====================
+)
+    async function fetchWechatData() {
+      const out = document.getElementById('wechat-out');
+      out.textContent = '
+=====================
+...\n';
+      
+      try {
+        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+        const triggerData = await triggerRes.json();
+        if (!triggerData.success || !triggerData.task_id) {
+          out.textContent = '
+=====================
+';
+          return;
+        }
+
+        const taskId = triggerData.task_id;
+        out.textContent += `
+=====================
+ID: ${taskId}\n`;
+
+        const pollInterval = setInterval(async () => {
+          try {
+            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+            const statusData = await statusRes.json();
+            
+            if (statusData.success) {
+              out.textContent = `
+=====================
+...\n` +
+                `[
+=====================
+]: ${statusData.progress}%\n`;
+              
+              if (statusData.status === 'completed') {
+                clearInterval(pollInterval);
+                const data = statusData.result;
+                out.textContent = `
+=====================
+\n` + 
+                  data.map((m, i) => `${i+1}. ${m.from_user}: "${m.content.substring(0,25)}..."`).join('\n');
+              }
+            }
+          } catch (pollErr) {
+            clearInterval(pollInterval);
+            out.textContent += `\n
+=====================
+: ${pollErr.message}`;
+          }
+        }, 500);
+
+      } catch (err) {
+        out.textContent = `[
+=====================
+\n${err.message}`;
+      }
+    }
+=====================
+)
+    let lastScannedLeads = [];
+    async function fetchWechatData() {
+      const out = document.getElementById('wechat-out');
+      out.textContent = '
+=====================
+...\n';
+      document.getElementById('lark-sync-btn').style.display = 'none'; // 
+=====================
+
+      
+      try {
+        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+        const triggerData = await triggerRes.json();
+        if (!triggerData.success || !triggerData.task_id) {
+          out.textContent = '
+=====================
+';
+          return;
+        }
+
+        const taskId = triggerData.task_id;
+        out.textContent += `
+=====================
+ID: ${taskId}\n`;
+
+        const pollInterval = setInterval(async () => {
+          try {
+            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+            const statusData = await statusRes.json();
+            
+            if (statusData.success) {
+              out.textContent = `
+=====================
+...\n` +
+                `[
+=====================
+]: ${statusData.progress}%\n`;
+              
+              if (statusData.status === 'completed') {
+                clearInterval(pollInterval);
+                const data = statusData.result;
+                lastScannedLeads = data;
+                document.getElementById('lark-sync-btn').style.display = 'block'; // 
+=====================
+
+                
+                out.innerHTML = `<span style="color: var(--success-color);">
+=====================
+</span><br>` + 
+                  data.map((m, i) => `${i+1}. <strong>${m.from_user}</strong>: "${m.content.substring(0,25)}..."`).join('<br>');
+              }
+            }
+          } catch (pollErr) {
+            clearInterval(pollInterval);
+            out.textContent += `\n
+=====================
+: ${pollErr.message}`;
+          }
+        }, 500);
+
+      } catch (err) {
+        out.textContent = `[
+=====================
+\n${err.message}`;
+      }
+    }
+
+    // 
+=====================
+
+    async function syncToLarkBitable() {
+      const out = document.getElementById('wechat-out');
+      out.innerHTML += `<br><br><span style="color: #38bdf8;">
+=====================
+...</span>`;
+      
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/sync`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ leads: lastScannedLeads })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          out.innerHTML += `<br><br><span style="color: var(--success-color);">
+=====================
+] ${data.message}</span><br>` +
+            `
+=====================
+ <a href="${data.bitable_url}" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;">[
+=====================
+]</a>`;
+        } else {
+          out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+: ${data.error}</span>`;
+        }
+      } catch (err) {
+        out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+: ${err.message}</span>`;
+      }
+    }0
+=====================
+*Dfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/index.html2G
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+  <meta charset="UTF-8">
+=====================
+L
+H  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=====================
+      --bg-color: #0b0c10;
+=====================
+      --sidebar-bg: #11131a;
+=====================
+0
+,      --panel-bg: rgba(255, 255, 255, 0.03);
+=====================
+4
+0      --panel-border: rgba(255, 255, 255, 0.06);
+=====================
+      --text-main: #f1f5f9;
+=====================
+      --text-muted: #64748b;
+=====================
+      --accent-color: #3b82f6;
+=====================
+      --accent-hover: #1d4ed8;
+=====================
+      --success-color: #10b981;
+=====================
+      --warning-color: #f59e0b;
+=====================
+      --danger-color: #ef4444;
+=====================
+)
+%      --input-bg: rgba(0, 0, 0, 0.2);
+=====================
+      box-sizing: border-box;
+=====================
+D
+@      font-family: 'Outfit', 'Inter', -apple-system, sans-serif;
+=====================
+,
+(      background-color: var(--bg-color);
+=====================
+      color: var(--text-main);
+=====================
+      display: flex;
+=====================
+      height: 100vh;
+=====================
+      overflow: hidden;
+=====================
+(
+$      background: var(--sidebar-bg);
+=====================
+6
+2      border-right: 1px solid var(--panel-border);
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+      padding: 30px 15px;
+=====================
+      overflow-y: auto;
+=====================
+    .logo-container {
+=====================
+      display: flex;
+=====================
+      align-items: center;
+=====================
+      margin-bottom: 30px;
+=====================
+      padding-left: 10px;
+=====================
+@
+<      background: linear-gradient(135deg, #3b82f6, #10b981);
+=====================
+      border-radius: 8px;
+=====================
+      font-size: 18px;
+=====================
+      font-weight: 700;
+=====================
+      letter-spacing: 0.5px;
+=====================
+B
+>      background: linear-gradient(to right, #ffffff, #94a3b8);
+=====================
+(
+$      -webkit-background-clip: text;
+=====================
+/
++      -webkit-text-fill-color: transparent;
+=====================
+      font-size: 11px;
+=====================
+      color: var(--text-muted);
+=====================
+$
+       text-transform: uppercase;
+=====================
+      letter-spacing: 1px;
+=====================
+      margin: 20px 0 10px 10px;
+=====================
+      font-weight: 600;
+=====================
+      padding: 10px 14px;
+=====================
+      border-radius: 8px;
+=====================
+      color: var(--text-muted);
+=====================
+      cursor: pointer;
+=====================
+      transition: all 0.2s;
+=====================
+      margin-bottom: 4px;
+=====================
+      font-size: 13.5px;
+=====================
+      display: flex;
+=====================
+      align-items: center;
+=====================
+)
+%      justify-content: space-between;
+=====================
+-
+)    .menu-item:hover, .menu-item.active {
+=====================
+&
+"      background: var(--panel-bg);
+=====================
+      color: var(--text-main);
+=====================
+    .menu-item.active {
+=====================
+5
+1      border-left: 3px solid var(--accent-color);
+=====================
+      padding-left: 11px;
+=====================
+      font-size: 10px;
+=====================
+0
+,      background: rgba(255, 255, 255, 0.05);
+=====================
+      padding: 2px 6px;
+=====================
+      border-radius: 10px;
+=====================
+      color: var(--text-muted);
+=====================
+(
+$    .menu-item.active .badge-count {
+=====================
+/
++      background: rgba(59, 130, 246, 0.15);
+=====================
+%
+!      color: var(--accent-color);
+=====================
+      display: flex;
+=====================
+      flex-direction: column;
+=====================
+      padding: 40px;
+=====================
+      overflow-y: auto;
+=====================
+      display: flex;
+=====================
+)
+%      justify-content: space-between;
+=====================
+      align-items: center;
+=====================
+      margin-bottom: 30px;
+=====================
+7
+3      border-bottom: 1px solid var(--panel-border);
+=====================
+      padding-bottom: 20px;
+=====================
+.
+*      background: rgba(16, 185, 129, 0.1);
+=====================
+&
+"      color: var(--success-color);
+=====================
+      padding: 6px 12px;
+=====================
+      border-radius: 20px;
+=====================
+      font-size: 12px;
+=====================
+4
+0      border: 1px solid rgba(16, 185, 129, 0.2);
+=====================
+      display: grid;
+=====================
+G
+C      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+=====================
+      margin-bottom: 30px;
+=====================
+&
+"      background: var(--panel-bg);
+=====================
+0
+,      border: 1px solid var(--panel-border);
+=====================
+      border-radius: 16px;
+=====================
+      padding: 24px;
+=====================
+&
+"      backdrop-filter: blur(10px);
+=====================
+      transition: all 0.3s;
+=====================
+      position: relative;
+=====================
+    .agent-card:hover {
+=====================
+&
+"      transform: translateY(-2px);
+=====================
+1
+-      border-color: rgba(59, 130, 246, 0.25);
+=====================
+    .agent-card.disabled {
+=====================
+      display: flex;
+=====================
+)
+%      justify-content: space-between;
+=====================
+      align-items: center;
+=====================
+      margin-bottom: 12px;
+=====================
+7
+3      border-bottom: 1px solid var(--panel-border);
+=====================
+      padding-bottom: 10px;
+=====================
+      font-size: 16px;
+=====================
+      font-weight: 600;
+=====================
+    .switch-container {
+=====================
+      display: inline-block;
+=====================
+      position: relative;
+=====================
+    .switch-container input {
+=====================
+      position: absolute;
+=====================
+      cursor: pointer;
+=====================
+/
++      top: 0; left: 0; right: 0; bottom: 0;
+=====================
+5
+1      background-color: rgba(255, 255, 255, 0.1);
+=====================
+      transition: .3s;
+=====================
+      border-radius: 24px;
+=====================
+    .slider:before {
+=====================
+      position: absolute;
+=====================
+      background-color: #fff;
+=====================
+      transition: .3s;
+=====================
+      border-radius: 50%;
+=====================
+    input:checked + .slider {
+=====================
+1
+-      background-color: var(--success-color);
+=====================
+(
+$    input:checked + .slider:before {
+=====================
+&
+"      transform: translateX(22px);
+=====================
+      font-size: 13px;
+=====================
+      color: var(--text-muted);
+=====================
+      line-height: 1.5;
+=====================
+      min-height: 40px;
+=====================
+      margin-bottom: 15px;
+=====================
+      margin-bottom: 15px;
+=====================
+      display: block;
+=====================
+      font-size: 12px;
+=====================
+      color: var(--text-muted);
+=====================
+      margin-bottom: 6px;
+=====================
+      font-weight: 500;
+=====================
+&
+"      background: var(--input-bg);
+=====================
+0
+,      border: 1px solid var(--panel-border);
+=====================
+      color: var(--text-main);
+=====================
+      padding: 10px 14px;
+=====================
+      border-radius: 8px;
+=====================
+      font-size: 13px;
+=====================
+      outline: none;
+=====================
+(
+$      transition: border-color 0.3s;
+=====================
+    .form-input:focus {
+=====================
+,
+(      border-color: var(--accent-color);
+=====================
+*
+&      background: var(--accent-color);
+=====================
+      padding: 10px 20px;
+=====================
+      border-radius: 8px;
+=====================
+      font-weight: 500;
+=====================
+      cursor: pointer;
+=====================
+&
+"      transition: background 0.3s;
+=====================
+      margin-top: 10px;
+=====================
+      font-size: 13px;
+=====================
+    .btn-action:hover {
+=====================
+*
+&      background: var(--accent-hover);
+=====================
+    .terminal-output {
+=====================
+)
+%      background: rgba(0, 0, 0, 0.3);
+=====================
+0
+,      border: 1px solid var(--panel-border);
+=====================
+      border-radius: 8px;
+=====================
+      padding: 15px;
+=====================
+9
+5      font-family: 'Courier New', Courier, monospace;
+=====================
+      font-size: 12px;
+=====================
+      color: #38bdf8;
+=====================
+      min-height: 100px;
+=====================
+      max-height: 180px;
+=====================
+      overflow-y: auto;
+=====================
+      margin-top: 15px;
+=====================
+      white-space: pre-wrap;
+=====================
+$
+       border-collapse: collapse;
+=====================
+      margin-top: 15px;
+=====================
+      font-size: 13px;
+=====================
+(
+$    .perm-table th, .perm-table td {
+=====================
+0
+,      border: 1px solid var(--panel-border);
+=====================
+      padding: 10px;
+=====================
+      text-align: center;
+=====================
+    .perm-table th {
+=====================
+0
+,      background: rgba(255, 255, 255, 0.02);
+=====================
+      font-weight: 600;
+=====================
+      color: var(--text-muted);
+=====================
+  <div class="sidebar">
+=====================
+$
+     <div class="logo-container">
+=====================
+'
+#      <div class="logo-icon"></div>
+=====================
+5
+1      <div class="logo-title">KUNLUN GROWTH</div>
+=====================
+<
+8    <div class="menu-header">
+=====================
+N
+J    <div class="menu-item active" onclick="switchDepartment('org', this)">
+=====================
+,
+(      <span class="badge-count">5</span>
+=====================
+H
+D    <div class="menu-item" onclick="switchDepartment('data', this)">
+=====================
+-
+)      <span class="badge-count">10</span>
+=====================
+K
+G    <div class="menu-item" onclick="switchDepartment('content', this)">
+=====================
+,
+(      <span class="badge-count">6</span>
+=====================
+N
+J    <div class="menu-item" onclick="switchDepartment('management', this)">
+=====================
+,
+(      <span class="badge-count">5</span>
+=====================
+J
+F    <div class="menu-item" onclick="switchDepartment('combat', this)">
+=====================
+,
+(      <span class="badge-count">3</span>
+=====================
+M
+I    <div class="menu-item" onclick="switchDepartment('operation', this)">
+=====================
+,
+(      <span class="badge-count">3</span>
+=====================
+3
+/    <div class="menu-header">
+=====================
+J
+F    <div class="menu-item" onclick="switchDepartment('config', this)">
+=====================
+  <div class="main-content">
+=====================
+    <div class="header-bar">
+=====================
+r
+n        <h1 id="dept-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">agent
+=====================
+        <p id="dept-desc" style="color: var(--text-muted); font-size: 14px;">
+=====================
+F
+B      <div style="display: flex; align-items: center; gap: 15px;">
+=====================
+,
+(        <div style="text-align: right;">
+=====================
+n
+j          <div class="form-label" style="margin-bottom: 2px;">
+=====================
+          <select class="form-input" id="user-role-select" onchange="loadPermissionMatrix()" style="padding: 6px 12px; font-size: 12px; background: rgba(59, 130, 246, 0.1); border-color: var(--accent-color); font-weight: bold; width: 180px;">
+=====================
+F
+B            <option value="admin">
+=====================
+H
+D            <option value="editor">
+=====================
+C
+?            <option value="sales">
+=====================
+^
+Z        <div class="net-badge" id="net-badge">
+=====================
+5
+1    <div class="agent-grid" id="agent-container">
+=====================
+4
+0    const GATEWAY_URL = 'http://localhost:8888';
+=====================
+    let currentDept = 'org';
+=====================
+F
+B    let globalAgentStatus = {}; // 
+=====================
+>
+:    let globalPermMatrix = {}; // 
+=====================
+    const AGENTS_DATABASE = {
+=====================
+$
+         title: "agent
+=====================
+          { id: "claude_code", name: "Claude code", desc: "
+=====================
+          { id: "agent_architect", name: "agent
+=====================
+          { id: "agent_ops", name: "agent
+=====================
+          { id: "agent_audit", name: "agent
+=====================
+          { id: "tech_specialist", name: "
+=====================
+          { id: "advisor_db", name: "
+=====================
+          { id: "kunlun_mcp", name: "
+=====================
+          { id: "tianyancha", name: "
+=====================
+          { id: "wechat_audit", name: "
+=====================
+", hasUI: true, type: "wechat" },
+=====================
+          { id: "meeting_minutes", name: "
+=====================
+          { id: "video_transcription", name: "
+=====================
+          { id: "notebook_weread", name: "Notebook&Weread", desc: "
+=====================
+          { id: "github_search", name: "Github
+=====================
+          { id: "x_search", name: "X
+=====================
+          { id: "x_like_collect", name: "X
+=====================
+ Building in Public 
+=====================
+          { id: "topic_selector", name: "
+=====================
+          { id: "risk_controller", name: "
+=====================
+", hasUI: true, type: "risk" },
+=====================
+          { id: "content_expert", name: "
+=====================
+          { id: "content_producer", name: "
+=====================
+          { id: "official_account_editor", name: "
+=====================
+          { id: "zsxq_publisher", name: "
+=====================
+          { id: "ai_shuai", name: "AI
+=====================
+          { id: "ceo_assistant", name: "CEO
+=====================
+          { id: "investment_advisor", name: "
+=====================
+          { id: "project_manager", name: "
+=====================
+          { id: "financial_analyst", name: "
+=====================
+          { id: "intelligence_collector", name: "
+=====================
+          { id: "intelligence_researcher", name: "
+=====================
+          { id: "manual_editor", name: "
+=====================
+          { id: "member_delivery", name: "
+=====================
+          { id: "ai_sales_champion", name: "AI
+=====================
+          { id: "ai_designer", name: "AI
+=====================
+", desc: " Midjourney 
+=====================
+A
+=    window.addEventListener('DOMContentLoaded', async () => {
+=====================
+      await loadSystemConfig();
+=====================
+'
+#      await loadPermissionMatrix();
+=====================
+      await loadAgentStatus();
+=====================
+4
+0    function switchDepartment(deptId, element) {
+=====================
+      currentDept = deptId;
+=====================
+_
+[      document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+=====================
+*
+&      element.classList.add('active');
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+      container.innerHTML = '';
+=====================
+$
+       if (deptId === 'config') {
+=====================
+[
+W        document.getElementById('dept-title').textContent = "
+=====================
+        document.getElementById('dept-desc').textContent = "
+=====================
+        renderConfigCenter();
+=====================
+5
+1        const deptData = AGENTS_DATABASE[deptId];
+=====================
+O
+K        document.getElementById('dept-title').textContent = deptData.title;
+=====================
+M
+I        document.getElementById('dept-desc').textContent = deptData.desc;
+=====================
+.
+*        renderAgentCards(deptData.agents);
+=====================
++
+'    function renderAgentCards(agents) {
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+      agents.forEach(agent => {
+=====================
+T
+P        const isEnabled = globalAgentStatus[agent.id] !== false; // 
+=====================
+O
+K        const cardClass = isEnabled ? 'agent-card' : 'agent-card disabled';
+=====================
+:
+6        const checkedStr = isEnabled ? 'checked' : '';
+=====================
+7
+3        const card = document.createElement('div');
+=====================
+'
+#        card.className = cardClass;
+=====================
+)
+%        card.id = `card-${agent.id}`;
+=====================
+        let actionUI = '';
+=====================
+        if (agent.hasUI) {
+=====================
+,
+(          if (agent.type === 'wechat') {
+=====================
+            actionUI = `
+=====================
+q
+m              <button class="btn-action" onclick="fetchWechatData()">
+=====================
+              <button class="btn-action" id="lark-sync-btn" style="background-color: var(--success-color); margin-top: 8px; display: none;" onclick="syncToLarkBitable()">
+=====================
+ (Lark Base)</button>
+=====================
+T
+P              <div class="terminal-output" id="wechat-out">
+=====================
+1
+-          } else if (agent.type === 'risk') {
+=====================
+            actionUI = `
+=====================
+              <button class="btn-action" style="background-color: var(--warning-color);" onclick="scanAiTone()">
+=====================
+j
+f              <div class="terminal-output" id="risk-out" style="color: #f87171;">
+=====================
+          actionUI = `
+=====================
+            <button class="btn-action" style="background-color: #475569;" onclick="runGenericAgent('${agent.name}')">
+=====================
+T
+P            <div class="terminal-output" id="log-${agent.id}">
+=====================
+        card.innerHTML = `
+=====================
+(
+$          <div class="agent-header">
+=====================
+=
+9            <span class="agent-name">${agent.name}</span>
+=====================
+0
+,            <label class="switch-container">
+=====================
+w
+s              <input type="checkbox" id="sw-${agent.id}" ${checkedStr} onchange="toggleAgentSwitch('${agent.id}')">
+=====================
+.
+*              <span class="slider"></span>
+=====================
+            </label>
+=====================
+9
+5          <div class="agent-desc">${agent.desc}</div>
+=====================
+          ${actionUI}
+=====================
+(
+$        container.appendChild(card);
+=====================
+3
+/    async function toggleAgentSwitch(agentId) {
+=====================
+>
+:      const cb = document.getElementById(`sw-${agentId}`);
+=====================
+B
+>      const card = document.getElementById(`card-${agentId}`);
+=====================
+      if (cb.checked) {
+=====================
+.
+*        card.classList.remove('disabled');
+=====================
+.
+*        globalAgentStatus[agentId] = true;
+=====================
++
+'        card.classList.add('disabled');
+=====================
+/
++        globalAgentStatus[agentId] = false;
+=====================
+M
+I      const userRole = document.getElementById('user-role-select').value;
+=====================
+I
+E        await fetch(`${GATEWAY_URL}/api/system/agents/status/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+]
+Y          body: JSON.stringify({ status_matrix: globalAgentStatus, user_role: userRole })
+=====================
+9
+5        console.error("
+=====================
+(
+$    function runGenericAgent(name) {
+=====================
+'
+#    function renderConfigCenter() {
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+6
+2      const panel = document.createElement('div');
+=====================
+)
+%      panel.className = 'panel-card';
+=====================
+<
+8      panel.style.gridColumn = '1 / -1'; // 
+=====================
+      panel.innerHTML = `
+=====================
+S
+O        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+=====================
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">1. 
+=====================
+W
+S            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+=====================
+G
+C              <div class="form-group" style="grid-column: 1 / -1;">
+=====================
+\
+X                <label class="form-label">Claude API Key (
+=====================
+J
+F                <input type="text" class="form-input" id="claude-key">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+O
+K                <label class="form-label">
+=====================
+h
+d                <input type="text" class="form-input" id="lark-id" placeholder="cli_xxxxxxxxxxxxxx">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+S
+O                <label class="form-label">
+=====================
+                <input type="password" class="form-input" id="lark-secret" placeholder="
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+S
+O                <label class="form-label">
+=====================
+\
+X                <input type="text" class="form-input" id="lark-path" placeholder="lark">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+M
+I                <label class="form-label">
+=====================
+q
+m                <input type="text" class="form-input" id="openclaw-url" placeholder="http://localhost:18000">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+O
+K                <label class="form-label">
+=====================
+k
+g                <input type="text" class="form-input" id="openclaw-token" placeholder="mock_token_123">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+[
+W                <label class="form-label">
+=====================
+G
+C                <input type="text" class="form-input" id="db-path">
+=====================
+              </div>
+=====================
+u
+q            <button class="btn-action" onclick="saveEnvConfig()">
+=====================
+1
+-            <!-- 
+=====================
+            <h3 style="font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">2. 
+=====================
+ (Industry Presets)</h3>
+=====================
+(
+$            <div class="form-group">
+=====================
+F
+B              <label class="form-label">
+=====================
+j
+f              <select class="form-input" id="industry-preset-select" onchange="applyIndustryPreset()">
+=====================
+M
+I                <option value="none">-- 
+=====================
+]
+Y                <option value="jewelry">
+=====================
+Y
+U                <option value="dev">
+=====================
+              </select>
+=====================
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">3. 
+=====================
+*
+&            <table class="perm-table">
+=====================
+              <thead>
+=====================
+                <tr>
+=====================
+%
+!                  <th>
+=====================
++
+'                  <th>
+=====================
++
+'                  <th>
+=====================
++
+'                  <th>
+=====================
+                </tr>
+=====================
+              </thead>
+=====================
+7
+3              <tbody id="permission-tbody"></tbody>
+=====================
+            </table>
+=====================
+I
+E            <div style="display: flex; gap: 10px; margin-top: 15px;">
+=====================
+}
+y              <input type="text" class="form-input" id="new-role-input" placeholder="
+=====================
+              <button class="btn-action" style="margin-top:0; width: auto; white-space: nowrap; background: #64748b;" onclick="addNewRoleRow()">
+=====================
+            <button class="btn-action" style="background: var(--success-color);" onclick="savePermissionMatrix()">
+=====================
+'
+#      container.appendChild(panel);
+=====================
+      loadSystemConfigInputs();
+=====================
+      renderPermissionTable();
+=====================
+*
+&    async function fetchWechatData() {
+=====================
+<
+8      const out = document.getElementById('wechat-out');
+=====================
+j
+f      out.textContent = '
+=====================
+e
+a        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+=====================
+8
+4        const triggerData = await triggerRes.json();
+=====================
+?
+;        if (!triggerData.success || !triggerData.task_id) {
+=====================
+E
+A          out.textContent = '
+=====================
+/
++        const taskId = triggerData.task_id;
+=====================
+H
+D        out.textContent += `
+=====================
+:
+6        const pollInterval = setInterval(async () => {
+=====================
+i
+e            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+=====================
+:
+6            const statusData = await statusRes.json();
+=====================
+)
+%            if (statusData.success) {
+=====================
+f
+b              out.textContent = `
+=====================
+:
+6                `[
+=====================
+]: ${statusData.progress}%\n`;
+=====================
+:
+6              if (statusData.status === 'completed') {
+=====================
+0
+,                clearInterval(pollInterval);
+=====================
+3
+/                const data = statusData.result;
+=====================
+                out.textContent = `
+=====================
+q
+m                  data.map((m, i) => `${i+1}. ${m.from_user}: "${m.content.substring(0,25)}..."`).join('\n');
+=====================
+          } catch (pollErr) {
+=====================
+,
+(            clearInterval(pollInterval);
+=====================
+R
+N            out.textContent += `\n
+=====================
+: ${pollErr.message}`;
+=====================
+      } catch (err) {
+=====================
+        out.textContent = `[
+=====================
+%
+!    async function scanAiTone() {
+=====================
+:
+6      const out = document.getElementById('risk-out');
+=====================
+<
+8      out.textContent = '
+=====================
+        const testText = "
+=====================
+U
+Q        const res = await fetch(`${GATEWAY_URL}/api/content/risk/anti-ai-scan`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+6
+2          body: JSON.stringify({ text: testText })
+=====================
+*
+&        const data = await res.json();
+=====================
+e
+a        out.textContent = `[AI
+=====================
+] AI-Index: ${data.ai_index}
+=====================
+: ${data.is_too_machinery ? '
+=====================
+: ` + data.matched_words.map(w => `"${w.word}"(${w.count}
+=====================
+      } catch (err) {
+=====================
+
+{        out.textContent = `[
+=====================
+    let currentConfigData = {};
+=====================
++
+'    async function loadSystemConfig() {
+=====================
+H
+D        const res = await fetch(`${GATEWAY_URL}/api/system/config`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
++
+'          currentConfigData = data.env;
+=====================
+      } catch (err) {
+=====================
+n
+j        document.getElementById('net-badge').textContent = '
+=====================
+U
+Q        document.getElementById('net-badge').style.color = 'var(--danger-color)';
+=====================
+]
+Y        document.getElementById('net-badge').style.background = 'rgba(239, 68, 68, 0.1)';
+=====================
++
+'    function loadSystemConfigInputs() {
+=====================
+1
+-      if (currentConfigData.CLAUDE_API_KEY) {
+=====================
+[
+W        document.getElementById('claude-key').value = currentConfigData.CLAUDE_API_KEY;
+=====================
+X
+T        document.getElementById('db-path').value = currentConfigData.WECHAT_DB_PATH;
+=====================
+[
+W        document.getElementById('lark-id').value = currentConfigData.LARK_APP_ID || '';
+=====================
+c
+_        document.getElementById('lark-secret').value = currentConfigData.LARK_APP_SECRET || '';
+=====================
+c
+_        document.getElementById('lark-path').value = currentConfigData.LARK_CLI_PATH || 'lark';
+=====================
+e
+a        document.getElementById('openclaw-url').value = currentConfigData.OPENCLAW_API_URL || '';
+=====================
+e
+a        document.getElementById('openclaw-token').value = currentConfigData.OPENCLAW_TOKEN || '';
+=====================
+(
+$    async function saveEnvConfig() {
+=====================
+I
+E      const role = document.getElementById('user-role-select').value;
+=====================
+      const config = {
+=====================
+H
+D        CLAUDE_API_KEY: document.getElementById('claude-key').value,
+=====================
+E
+A        WECHAT_DB_PATH: document.getElementById('db-path').value,
+=====================
+B
+>        LARK_APP_ID: document.getElementById('lark-id').value,
+=====================
+J
+F        LARK_APP_SECRET: document.getElementById('lark-secret').value,
+=====================
+F
+B        LARK_CLI_PATH: document.getElementById('lark-path').value,
+=====================
+L
+H        OPENCLAW_API_URL: document.getElementById('openclaw-url').value,
+=====================
+K
+G        OPENCLAW_TOKEN: document.getElementById('openclaw-token').value
+=====================
+N
+J        const res = await fetch(`${GATEWAY_URL}/api/system/config/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+?
+;          body: JSON.stringify({ config, user_role: role })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+m
+i          alert('
+=====================
+)
+%          currentConfigData = config;
+=====================
+8
+4          alert(`
+=====================
+      } catch (err) {
+=====================
+/
++    async function loadPermissionMatrix() {
+=====================
+M
+I        const res = await fetch(`${GATEWAY_URL}/api/system/permissions`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+-
+)          globalPermMatrix = data.matrix;
+=====================
+          applyRBACRules(); 
+=====================
+      } catch (err) {
+=====================
+<
+8        console.error("
+=====================
+*
+&    function renderPermissionTable() {
+=====================
+D
+@      const tbody = document.getElementById('permission-tbody');
+=====================
+      tbody.innerHTML = '';
+=====================
+0
+,      for (const role in globalPermMatrix) {
+=====================
+4
+0        const tr = document.createElement('tr');
+=====================
+_
+[        const hasWechat = globalPermMatrix[role].includes('wechat_audit') ? 'checked' : '';
+=====================
+]
+Y        const hasRisk = globalPermMatrix[role].includes('content_risk') ? 'checked' : '';
+=====================
+`
+\        const hasConfig = globalPermMatrix[role].includes('system_config') ? 'checked' : '';
+=====================
+B
+>        const isDisabled = role === 'admin' ? 'disabled' : '';
+=====================
+        tr.innerHTML = `
+=====================
+K
+G          <td style="font-weight: bold; text-align: left;">${role}</td>
+=====================
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="wechat_audit" ${hasWechat} ${isDisabled}></td>
+=====================
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="content_risk" ${hasRisk} ${isDisabled}></td>
+=====================
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="system_config" ${hasConfig} ${isDisabled}></td>
+=====================
+        tbody.appendChild(tr);
+=====================
+    function addNewRoleRow() {
+=====================
+c
+_      const newRoleName = document.getElementById('new-role-input').value.trim().toLowerCase();
+=====================
+N
+J      if (!newRoleName) return alert('
+=====================
+S
+O      if (globalPermMatrix[newRoleName]) return alert('
+=====================
+-
+)      globalPermMatrix[newRoleName] = [];
+=====================
+      renderPermissionTable();
+=====================
+?
+;      document.getElementById('new-role-input').value = '';
+=====================
+/
++    async function savePermissionMatrix() {
+=====================
+U
+Q      const currentAdminRole = document.getElementById('user-role-select').value;
+=====================
+C
+?      const checkboxes = document.querySelectorAll('.perm-cb');
+=====================
+Y
+U      const newMatrix = { admin: ["wechat_audit", "content_risk", "system_config"] };
+=====================
+$
+       checkboxes.forEach(cb => {
+=====================
+6
+2        const role = cb.getAttribute('data-role');
+=====================
+6
+2        const perm = cb.getAttribute('data-perm');
+=====================
+)
+%        if (role === 'admin') return;
+=====================
+7
+3        if (!newMatrix[role]) newMatrix[role] = [];
+=====================
+        if (cb.checked) {
+=====================
+)
+%          newMatrix[role].push(perm);
+=====================
+S
+O        const res = await fetch(`${GATEWAY_URL}/api/system/permissions/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+V
+R          body: JSON.stringify({ matrix: newMatrix, user_role: currentAdminRole })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+T
+P          alert('
+=====================
++
+'          globalPermMatrix = newMatrix;
+=====================
+8
+4          alert(`
+=====================
+      } catch (err) {
+=====================
+    function applyRBACRules() {
+=====================
+P
+L      const currentRole = document.getElementById('user-role-select').value;
+=====================
+C
+?      const currentPerms = globalPermMatrix[currentRole] || [];
+=====================
+P
+L      const sidebarItems = document.querySelectorAll('.sidebar .menu-item');
+=====================
+&
+"      // wechat_audit 
+=====================
+]
+Y      const wechatBtn = document.querySelector('.sidebar div:nth-child(4)'); // 
+=====================
+&
+"      // content_risk 
+=====================
+^
+Z      const contentBtn = document.querySelector('.sidebar div:nth-child(5)'); // 
+=====================
+'
+#      // system_config 
+=====================
+`
+\      const configBtn = document.querySelector('.sidebar div:nth-child(9)'); // 
+=====================
+X
+T      console.log(`
+=====================
+*
+&    async function loadAgentStatus() {
+=====================
+O
+K        const res = await fetch(`${GATEWAY_URL}/api/system/agents/status`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+5
+1          globalAgentStatus = data.status_matrix;
+=====================
+U
+Q          switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+=====================
+      } catch (err) {
+=====================
+P
+L        console.error("
+=====================
+S
+O        switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+=====================
+(
+$    function applyIndustryPreset() {
+=====================
+Q
+M      const preset = document.getElementById('industry-preset-select').value;
+=====================
+(
+$      if (preset === 'none') return;
+=====================
+      const switches = {
+=====================
+        wechat_audit: false,
+=====================
+        risk_controller: false,
+=====================
+        claude_code: false,
+=====================
+        meeting_minutes: false,
+=====================
+&
+"        video_transcription: false
+=====================
+%
+!      if (preset === 'jewelry') {
+=====================
+)
+%        switches.wechat_audit = true;
+=====================
+,
+(        switches.risk_controller = true;
+=====================
+(
+$      } else if (preset === 'dev') {
+=====================
+(
+$        switches.claude_code = true;
+=====================
+,
+(        switches.meeting_minutes = true;
+=====================
+&
+"      for (const id in switches) {
+=====================
+1
+-        globalAgentStatus[id] = switches[id];
+=====================
+$
+       saveAgentStatusDirectly();
+=====================
+ [${preset === 'jewelry' ? '
+=====================
+2
+.    async function saveAgentStatusDirectly() {
+=====================
+M
+I      const userRole = document.getElementById('user-role-select').value;
+=====================
+I
+E        await fetch(`${GATEWAY_URL}/api/system/agents/status/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+]
+Y          body: JSON.stringify({ status_matrix: globalAgentStatus, user_role: userRole })
+=====================
+        console.error(e);
+=====================
+BDfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/index.htmlR
+=====================
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+=====================
+</title>
+  <style>
+    :root {
+      --bg-color: #0b0c10;
+      --sidebar-bg: #11131a;
+      --panel-bg: rgba(255, 255, 255, 0.03);
+      --panel-border: rgba(255, 255, 255, 0.06);
+      --text-main: #f1f5f9;
+      --text-muted: #64748b;
+      --accent-color: #3b82f6;
+      --accent-hover: #1d4ed8;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --danger-color: #ef4444;
+      --input-bg: rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', 'Inter', -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* 
+=====================
+ */
+    .sidebar {
+      width: 280px;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--panel-border);
+      display: flex;
+      flex-direction: column;
+      padding: 30px 15px;
+      overflow-y: auto;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
+      padding-left: 10px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #3b82f6, #10b981);
+      border-radius: 8px;
+    }
+
+    .logo-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(to right, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .menu-header {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 20px 0 10px 10px;
+      font-weight: 600;
+    }
+
+    .menu-item {
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 4px;
+      font-size: 13.5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .menu-item:hover, .menu-item.active {
+      background: var(--panel-bg);
+      color: var(--text-main);
+    }
+
+    .menu-item.active {
+      border-left: 3px solid var(--accent-color);
+      padding-left: 11px;
+    }
+
+    .badge-count {
+      font-size: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2px 6px;
+      border-radius: 10px;
+      color: var(--text-muted);
+    }
+
+    .menu-item.active .badge-count {
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--accent-color);
+    }
+
+    /* 
+=====================
+ */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--panel-border);
+      padding-bottom: 20px;
+    }
+
+    .net-badge {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--success-color);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    /* Agent 
+=====================
+ */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .agent-card {
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .agent-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(59, 130, 246, 0.25);
+    }
+
+    .agent-card.disabled {
+      opacity: 0.3;
+    }
+
+    /* 
+=====================
+ */
+    .agent-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--panel-border);
+      padding-bottom: 10px;
+    }
+
+    .agent-name {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* iOS 
+=====================
+ */
+    .switch-container {
+      display: inline-block;
+      position: relative;
+      width: 44px;
+      height: 22px;
+    }
+
+    .switch-container input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: .3s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 3px;
+      bottom: 3px;
+      background-color: #fff;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: var(--success-color);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(22px);
+    }
+
+    .agent-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      min-height: 40px;
+      margin-bottom: 15px;
+    }
+
+    /* 
+=====================
+ */
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--text-main);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-input:focus {
+      border-color: var(--accent-color);
+    }
+
+    .btn-action {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .btn-action:hover {
+      background: var(--accent-hover);
+    }
+
+    /* 
+=====================
+ */
+    .terminal-output {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 15px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #38bdf8;
+      min-height: 100px;
+      max-height: 180px;
+      overflow-y: auto;
+      margin-top: 15px;
+      white-space: pre-wrap;
+    }
+
+    /* 
+=====================
+ */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    .perm-table th, .perm-table td {
+      border: 1px solid var(--panel-border);
+      padding: 10px;
+      text-align: center;
+    }
+
+    .perm-table th {
+      background: rgba(255, 255, 255, 0.02);
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+=====================
+ -->
+  <div class="sidebar">
+    <div class="logo-container">
+      <div class="logo-icon"></div>
+      <div class="logo-title">KUNLUN GROWTH</div>
+    </div>
+    
+    <div class="menu-header">
+=====================
+</div>
+    <div class="menu-item active" onclick="switchDepartment('org', this)">
+      <span>
+=====================
+</span>
+      <span class="badge-count">5</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('data', this)">
+      <span>
+=====================
+</span>
+      <span class="badge-count">10</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('content', this)">
+      <span>
+=====================
+</span>
+      <span class="badge-count">6</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('management', this)">
+      <span>
+=====================
+</span>
+      <span class="badge-count">5</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('combat', this)">
+      <span>
+=====================
+</span>
+      <span class="badge-count">3</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('operation', this)">
+      <span>
+=====================
+</span>
+      <span class="badge-count">3</span>
+    </div>
+
+    <div class="menu-header">
+=====================
+</div>
+    <div class="menu-item" onclick="switchDepartment('config', this)">
+      <span>
+=====================
+</span>
+    </div>
+  </div>
+
+  <!-- 
+=====================
+ -->
+  <div class="main-content">
+    <div class="header-bar">
+      <div>
+        <h1 id="dept-title" style="font-size: 24px; font-weight: 700; margin-bottom: 6px;">agent
+=====================
+</h1>
+        <p id="dept-desc" style="color: var(--text-muted); font-size: 14px;">
+=====================
+</p>
+      </div>
+      
+      <!-- 
+=====================
+ Badge -->
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <div style="text-align: right;">
+          <div class="form-label" style="margin-bottom: 2px;">
+=====================
+ RBAC)</div>
+          <select class="form-input" id="user-role-select" onchange="loadPermissionMatrix()" style="padding: 6px 12px; font-size: 12px; background: rgba(59, 130, 246, 0.1); border-color: var(--accent-color); font-weight: bold; width: 180px;">
+            <option value="admin">
+=====================
+ (Admin)</option>
+            <option value="editor">
+=====================
+ (Editor)</option>
+            <option value="sales">
+=====================
+ (Sales)</option>
+          </select>
+        </div>
+        <div class="net-badge" id="net-badge">
+=====================
+</div>
+      </div>
+    </div>
+
+    <!-- 
+=====================
+ -->
+    <div class="agent-grid" id="agent-container">
+      <!-- 
+=====================
+ -->
+    </div>
+  </div>
+
+  <script>
+    const GATEWAY_URL = 'http://localhost:8888';
+    let currentDept = 'org';
+    let globalAgentStatus = {}; // 
+=====================
+
+    let globalPermMatrix = {}; // 
+=====================
+)
+    const AGENTS_DATABASE = {
+      org: {
+        title: "agent
+=====================
+",
+        agents: [
+          { id: "claude_code", name: "Claude code", desc: "
+=====================
+" },
+          { id: "agent_architect", name: "agent
+=====================
+" },
+          { id: "agent_ops", name: "agent
+=====================
+" },
+          { id: "agent_audit", name: "agent
+=====================
+" },
+          { id: "tech_specialist", name: "
+=====================
+" }
+        ]
+      },
+      data: {
+        title: "
+=====================
+",
+        agents: [
+          { id: "advisor_db", name: "
+=====================
+" },
+          { id: "kunlun_mcp", name: "
+=====================
+" },
+          { id: "tianyancha", name: "
+=====================
+" },
+          { id: "wechat_audit", name: "
+=====================
+", hasUI: true, type: "wechat" },
+          { id: "meeting_minutes", name: "
+=====================
+" },
+          { id: "video_transcription", name: "
+=====================
+" },
+          { id: "notebook_weread", name: "Notebook&Weread", desc: "
+=====================
+" },
+          { id: "github_search", name: "Github
+=====================
+" },
+          { id: "x_search", name: "X
+=====================
+" },
+          { id: "x_like_collect", name: "X
+=====================
+ Building in Public 
+=====================
+" }
+        ]
+      },
+      content: {
+        title: "
+=====================
+",
+        agents: [
+          { id: "topic_selector", name: "
+=====================
+" },
+          { id: "risk_controller", name: "
+=====================
+", hasUI: true, type: "risk" },
+          { id: "content_expert", name: "
+=====================
+" },
+          { id: "content_producer", name: "
+=====================
+" },
+          { id: "official_account_editor", name: "
+=====================
+" },
+          { id: "zsxq_publisher", name: "
+=====================
+" }
+        ]
+      },
+      management: {
+        title: "
+=====================
+",
+        agents: [
+          { id: "ai_shuai", name: "AI
+=====================
+" },
+          { id: "ceo_assistant", name: "CEO
+=====================
+" },
+          { id: "investment_advisor", name: "
+=====================
+" },
+          { id: "project_manager", name: "
+=====================
+" },
+          { id: "financial_analyst", name: "
+=====================
+" }
+        ]
+      },
+      combat: {
+        title: "
+=====================
+",
+        agents: [
+          { id: "intelligence_collector", name: "
+=====================
+" },
+          { id: "intelligence_researcher", name: "
+=====================
+" },
+          { id: "manual_editor", name: "
+=====================
+" }
+        ]
+      },
+      operation: {
+        title: "
+=====================
+",
+        agents: [
+          { id: "member_delivery", name: "
+=====================
+" },
+          { id: "ai_sales_champion", name: "AI
+=====================
+" },
+          { id: "ai_designer", name: "AI
+=====================
+", desc: " Midjourney 
+=====================
+" }
+        ]
+      }
+    };
+
+    // 
+=====================
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      await loadSystemConfig();
+      await loadPermissionMatrix();
+      await loadAgentStatus();
+    });
+
+    // 
+=====================
+
+    function switchDepartment(deptId, element) {
+      currentDept = deptId;
+      
+      // 
+=====================
+
+      document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+
+      const container = document.getElementById('agent-container');
+      container.innerHTML = '';
+
+      if (deptId === 'config') {
+        // 
+=====================
+
+        document.getElementById('dept-title').textContent = "
+=====================
+";
+        document.getElementById('dept-desc').textContent = "
+=====================
+";
+        renderConfigCenter();
+      } else {
+        // 
+=====================
+
+        const deptData = AGENTS_DATABASE[deptId];
+        document.getElementById('dept-title').textContent = deptData.title;
+        document.getElementById('dept-desc').textContent = deptData.desc;
+        renderAgentCards(deptData.agents);
+      }
+    }
+
+    // 
+=====================
+
+    function renderAgentCards(agents) {
+      const container = document.getElementById('agent-container');
+      
+      agents.forEach(agent => {
+        const isEnabled = globalAgentStatus[agent.id] !== false; // 
+=====================
+
+        const cardClass = isEnabled ? 'agent-card' : 'agent-card disabled';
+        const checkedStr = isEnabled ? 'checked' : '';
+
+        const card = document.createElement('div');
+        card.className = cardClass;
+        card.id = `card-${agent.id}`;
+
+        let actionUI = '';
+        if (agent.hasUI) {
+          if (agent.type === 'wechat') {
+            actionUI = `
+              <button class="btn-action" onclick="fetchWechatData()">
+=====================
+ (BANT)</button>
+              <button class="btn-action" id="lark-sync-btn" style="background-color: var(--success-color); margin-top: 8px; display: none;" onclick="syncToLarkBitable()">
+=====================
+ (Lark Base)</button>
+              <div class="terminal-output" id="wechat-out">
+=====================
+...</div>
+            `;
+          } else if (agent.type === 'risk') {
+            actionUI = `
+              <button class="btn-action" style="background-color: var(--warning-color);" onclick="scanAiTone()">
+=====================
+</button>
+              <div class="terminal-output" id="risk-out" style="color: #f87171;">
+=====================
+...</div>
+            `;
+          }
+        } else {
+          actionUI = `
+            <button class="btn-action" style="background-color: #475569;" onclick="runGenericAgent('${agent.name}')">
+=====================
+ Tools</button>
+            <div class="terminal-output" id="log-${agent.id}">
+=====================
+...</div>
+          `;
+        }
+
+        card.innerHTML = `
+          <div class="agent-header">
+            <span class="agent-name">${agent.name}</span>
+            <label class="switch-container">
+              <input type="checkbox" id="sw-${agent.id}" ${checkedStr} onchange="toggleAgentSwitch('${agent.id}')">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="agent-desc">${agent.desc}</div>
+          ${actionUI}
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // 
+=====================
+
+    async function toggleAgentSwitch(agentId) {
+      const cb = document.getElementById(`sw-${agentId}`);
+      const card = document.getElementById(`card-${agentId}`);
+      
+      if (cb.checked) {
+        card.classList.remove('disabled');
+        globalAgentStatus[agentId] = true;
+      } else {
+        card.classList.add('disabled');
+        globalAgentStatus[agentId] = false;
+      }
+
+      // 
+=====================
+
+      const userRole = document.getElementById('user-role-select').value;
+      try {
+        await fetch(`${GATEWAY_URL}/api/system/agents/status/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status_matrix: globalAgentStatus, user_role: userRole })
+        });
+      } catch (e) {
+        console.error("
+=====================
+:", e);
+      }
+    }
+
+    // 
+=====================
+
+    function runGenericAgent(name) {
+      alert(`
+=====================
+
+    function renderConfigCenter() {
+      const container = document.getElementById('agent-container');
+      const panel = document.createElement('div');
+      panel.className = 'panel-card';
+      panel.style.gridColumn = '1 / -1'; // 
+=====================
+
+
+      panel.innerHTML = `
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+          <!-- 
+=====================
+ -->
+          <div>
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">1. 
+=====================
+ (.env)</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label class="form-label">Claude API Key (
+=====================
+)</label>
+                <input type="text" class="form-input" id="claude-key">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ APP_ID</label>
+                <input type="text" class="form-input" id="lark-id" placeholder="cli_xxxxxxxxxxxxxx">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ APP_SECRET</label>
+                <input type="password" class="form-input" id="lark-secret" placeholder="
+=====================
+">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+</label>
+                <input type="text" class="form-input" id="lark-path" placeholder="lark">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ API URL</label>
+                <input type="text" class="form-input" id="openclaw-url" placeholder="http://localhost:18000">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ App Token</label>
+                <input type="text" class="form-input" id="openclaw-token" placeholder="mock_token_123">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ (wx_db.db)</label>
+                <input type="text" class="form-input" id="db-path">
+              </div>
+            </div>
+            <button class="btn-action" onclick="saveEnvConfig()">
+=====================
+</button>
+
+            <!-- 
+=====================
+ -->
+            <h3 style="font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">2. 
+=====================
+ (Industry Presets)</h3>
+            <div class="form-group">
+              <label class="form-label">
+=====================
+</label>
+              <select class="form-input" id="industry-preset-select" onchange="applyIndustryPreset()">
+                <option value="none">-- 
+=====================
+ --</option>
+                <option value="jewelry">
+=====================
+)</option>
+                <option value="dev">
+=====================
+)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 
+=====================
+ -->
+          <div>
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">3. 
+=====================
+ (RBAC Matrix)</h3>
+            <table class="perm-table">
+              <thead>
+                <tr>
+                  <th>
+=====================
+</th>
+                  <th>
+=====================
+</th>
+                  <th>
+=====================
+</th>
+                  <th>
+=====================
+</th>
+                </tr>
+              </thead>
+              <tbody id="permission-tbody"></tbody>
+            </table>
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+              <input type="text" class="form-input" id="new-role-input" placeholder="
+=====================
+ intern)">
+              <button class="btn-action" style="margin-top:0; width: auto; white-space: nowrap; background: #64748b;" onclick="addNewRoleRow()">
+=====================
+</button>
+            </div>
+            <button class="btn-action" style="background: var(--success-color);" onclick="savePermissionMatrix()">
+=====================
+</button>
+          </div>
+        </div>
+      `;
+      container.appendChild(panel);
+      
+      // 
+=====================
+
+      loadSystemConfigInputs();
+      renderPermissionTable();
+    }
+
+    // 
+=====================
+)
+    async function fetchWechatData() {
+      const out = document.getElementById('wechat-out');
+      out.textContent = '
+=====================
+...\n';
+      
+      try {
+        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+        const triggerData = await triggerRes.json();
+        if (!triggerData.success || !triggerData.task_id) {
+          out.textContent = '
+=====================
+';
+          return;
+        }
+
+        const taskId = triggerData.task_id;
+        out.textContent += `
+=====================
+ID: ${taskId}\n`;
+
+        const pollInterval = setInterval(async () => {
+          try {
+            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+            const statusData = await statusRes.json();
+            
+            if (statusData.success) {
+              out.textContent = `
+=====================
+...\n` +
+                `[
+=====================
+]: ${statusData.progress}%\n`;
+              
+              if (statusData.status === 'completed') {
+                clearInterval(pollInterval);
+                const data = statusData.result;
+                out.textContent = `
+=====================
+\n` + 
+                  data.map((m, i) => `${i+1}. ${m.from_user}: "${m.content.substring(0,25)}..."`).join('\n');
+              }
+            }
+          } catch (pollErr) {
+            clearInterval(pollInterval);
+            out.textContent += `\n
+=====================
+: ${pollErr.message}`;
+          }
+        }, 500);
+
+      } catch (err) {
+        out.textContent = `[
+=====================
+\n${err.message}`;
+      }
+    }
+
+    // 
+=====================
+
+    async function scanAiTone() {
+      const out = document.getElementById('risk-out');
+      out.textContent = '
+=====================
+...\n';
+      try {
+        const testText = "
+=====================
+";
+        const res = await fetch(`${GATEWAY_URL}/api/content/risk/anti-ai-scan`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: testText })
+        });
+        const data = await res.json();
+        out.textContent = `[AI
+=====================
+] AI-Index: ${data.ai_index}
+=====================
+: ${data.is_too_machinery ? '
+=====================
+: ` + data.matched_words.map(w => `"${w.word}"(${w.count}
+=====================
+)`).join(', ');
+      } catch (err) {
+        out.textContent = `[
+=====================
+\n${err.message}`;
+      }
+    }
+
+    // 
+=====================
+
+    let currentConfigData = {};
+    async function loadSystemConfig() {
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/config`);
+        const data = await res.json();
+        if (data.success) {
+          currentConfigData = data.env;
+        }
+      } catch (err) {
+        document.getElementById('net-badge').textContent = '
+=====================
+ npm start)';
+        document.getElementById('net-badge').style.color = 'var(--danger-color)';
+        document.getElementById('net-badge').style.background = 'rgba(239, 68, 68, 0.1)';
+      }
+    }
+
+    function loadSystemConfigInputs() {
+      if (currentConfigData.CLAUDE_API_KEY) {
+        document.getElementById('claude-key').value = currentConfigData.CLAUDE_API_KEY;
+        document.getElementById('db-path').value = currentConfigData.WECHAT_DB_PATH;
+        document.getElementById('lark-id').value = currentConfigData.LARK_APP_ID || '';
+        document.getElementById('lark-secret').value = currentConfigData.LARK_APP_SECRET || '';
+        document.getElementById('lark-path').value = currentConfigData.LARK_CLI_PATH || 'lark';
+        document.getElementById('openclaw-url').value = currentConfigData.OPENCLAW_API_URL || '';
+        document.getElementById('openclaw-token').value = currentConfigData.OPENCLAW_TOKEN || '';
+      }
+    }
+
+    // 
+=====================
+
+    async function saveEnvConfig() {
+      const role = document.getElementById('user-role-select').value;
+      const config = {
+        CLAUDE_API_KEY: document.getElementById('claude-key').value,
+        WECHAT_DB_PATH: document.getElementById('db-path').value,
+        LARK_APP_ID: document.getElementById('lark-id').value,
+        LARK_APP_SECRET: document.getElementById('lark-secret').value,
+        LARK_CLI_PATH: document.getElementById('lark-path').value,
+        OPENCLAW_API_URL: document.getElementById('openclaw-url').value,
+        OPENCLAW_TOKEN: document.getElementById('openclaw-token').value
+      };
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/config/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ config, user_role: role })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('
+=====================
+');
+          currentConfigData = config;
+        } else {
+          alert(`
+=====================
+${data.error}`);
+        }
+      } catch (err) {
+        alert('
+=====================
+');
+      }
+    }
+
+    // 
+=====================
+
+    async function loadPermissionMatrix() {
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/permissions`);
+        const data = await res.json();
+        if (data.success) {
+          globalPermMatrix = data.matrix;
+          applyRBACRules(); 
+        }
+      } catch (err) {
+        console.error("
+=====================
+:", err);
+      }
+    }
+
+    function renderPermissionTable() {
+      const tbody = document.getElementById('permission-tbody');
+      tbody.innerHTML = '';
+      
+      for (const role in globalPermMatrix) {
+        const tr = document.createElement('tr');
+        const hasWechat = globalPermMatrix[role].includes('wechat_audit') ? 'checked' : '';
+        const hasRisk = globalPermMatrix[role].includes('content_risk') ? 'checked' : '';
+        const hasConfig = globalPermMatrix[role].includes('system_config') ? 'checked' : '';
+        const isDisabled = role === 'admin' ? 'disabled' : '';
+
+        tr.innerHTML = `
+          <td style="font-weight: bold; text-align: left;">${role}</td>
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="wechat_audit" ${hasWechat} ${isDisabled}></td>
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="content_risk" ${hasRisk} ${isDisabled}></td>
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="system_config" ${hasConfig} ${isDisabled}></td>
+        `;
+        tbody.appendChild(tr);
+      }
+    }
+
+    function addNewRoleRow() {
+      const newRoleName = document.getElementById('new-role-input').value.trim().toLowerCase();
+      if (!newRoleName) return alert('
+=====================
+');
+      if (globalPermMatrix[newRoleName]) return alert('
+=====================
+');
+
+      globalPermMatrix[newRoleName] = [];
+      renderPermissionTable();
+      document.getElementById('new-role-input').value = '';
+    }
+
+    async function savePermissionMatrix() {
+      const currentAdminRole = document.getElementById('user-role-select').value;
+      const checkboxes = document.querySelectorAll('.perm-cb');
+      const newMatrix = { admin: ["wechat_audit", "content_risk", "system_config"] };
+
+      checkboxes.forEach(cb => {
+        const role = cb.getAttribute('data-role');
+        const perm = cb.getAttribute('data-perm');
+        if (role === 'admin') return;
+
+        if (!newMatrix[role]) newMatrix[role] = [];
+        if (cb.checked) {
+          newMatrix[role].push(perm);
+        }
+      });
+
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/permissions/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ matrix: newMatrix, user_role: currentAdminRole })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('
+=====================
+');
+          globalPermMatrix = newMatrix;
+        } else {
+          alert(`
+=====================
+${data.error}`);
+        }
+      } catch (err) {
+        alert('
+=====================
+');
+      }
+    }
+
+    // 
+=====================
+
+    function applyRBACRules() {
+      const currentRole = document.getElementById('user-role-select').value;
+      const currentPerms = globalPermMatrix[currentRole] || [];
+
+      // 
+=====================
+
+      const sidebarItems = document.querySelectorAll('.sidebar .menu-item');
+      
+      // wechat_audit 
+=====================
+
+      const wechatBtn = document.querySelector('.sidebar div:nth-child(4)'); // 
+=====================
+
+      
+      // content_risk 
+=====================
+
+      const contentBtn = document.querySelector('.sidebar div:nth-child(5)'); // 
+=====================
+
+
+      // system_config 
+=====================
+
+      const configBtn = document.querySelector('.sidebar div:nth-child(9)'); // 
+=====================
+)
+      console.log(`
+=====================
+`, currentPerms);
+    }
+
+    // 
+=====================
+
+    async function loadAgentStatus() {
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/system/agents/status`);
+        const data = await res.json();
+        if (data.success) {
+          globalAgentStatus = data.status_matrix;
+          // 
+=====================
+)
+          switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+        }
+      } catch (err) {
+        console.error("
+=====================
+:", err);
+        // 
+=====================
+
+        switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+      }
+    }
+
+    // 
+=====================
+
+    function applyIndustryPreset() {
+      const preset = document.getElementById('industry-preset-select').value;
+      if (preset === 'none') return;
+
+      const switches = {
+        wechat_audit: false,
+        risk_controller: false,
+        claude_code: false,
+        meeting_minutes: false,
+        video_transcription: false
+      };
+
+      if (preset === 'jewelry') {
+        switches.wechat_audit = true;
+        switches.risk_controller = true;
+      } else if (preset === 'dev') {
+        switches.claude_code = true;
+        switches.meeting_minutes = true;
+      }
+
+      // 
+=====================
+
+      for (const id in switches) {
+        globalAgentStatus[id] = switches[id];
+      }
+      saveAgentStatusDirectly();
+      alert(`
+=====================
+ [${preset === 'jewelry' ? '
+=====================
+`);
+    }
+
+    async function saveAgentStatusDirectly() {
+      const userRole = document.getElementById('user-role-select').value;
+      try {
+        await fetch(`${GATEWAY_URL}/api/system/agents/status/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status_matrix: globalAgentStatus, user_role: userRole })
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  </script>
+</body>
+</html>
+ 
+=====================
+)
+    async function fetchWechatData() {
+      const out = document.getElementById('wechat-out');
+      out.textContent = '
+=====================
+...\n';
+      
+      try {
+        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+        const triggerData = await triggerRes.json();
+        if (!triggerData.success || !triggerData.task_id) {
+          out.textContent = '
+=====================
+';
+          return;
+        }
+
+        const taskId = triggerData.task_id;
+        out.textContent += `
+=====================
+ID: ${taskId}\n`;
+
+        const pollInterval = setInterval(async () => {
+          try {
+            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+            const statusData = await statusRes.json();
+            
+            if (statusData.success) {
+              out.textContent = `
+=====================
+...\n` +
+                `[
+=====================
+]: ${statusData.progress}%\n`;
+              
+              if (statusData.status === 'completed') {
+                clearInterval(pollInterval);
+                const data = statusData.result;
+                out.textContent = `
+=====================
+\n` + 
+                  data.map((m, i) => `${i+1}. ${m.from_user}: "${m.content.substring(0,25)}..."`).join('\n');
+              }
+            }
+          } catch (pollErr) {
+            clearInterval(pollInterval);
+            out.textContent += `\n
+=====================
+: ${pollErr.message}`;
+          }
+        }, 500);
+
+      } catch (err) {
+        out.textContent = `[
+=====================
+\n${err.message}`;
+      }
+    }
+=====================
+)
+    let lastScannedLeads = [];
+    async function fetchWechatData() {
+      const out = document.getElementById('wechat-out');
+      out.textContent = '
+=====================
+...\n';
+      document.getElementById('lark-sync-btn').style.display = 'none'; // 
+=====================
+
+      
+      try {
+        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+        const triggerData = await triggerRes.json();
+        if (!triggerData.success || !triggerData.task_id) {
+          out.textContent = '
+=====================
+';
+          return;
+        }
+
+        const taskId = triggerData.task_id;
+        out.textContent += `
+=====================
+ID: ${taskId}\n`;
+
+        const pollInterval = setInterval(async () => {
+          try {
+            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+            const statusData = await statusRes.json();
+            
+            if (statusData.success) {
+              out.textContent = `
+=====================
+...\n` +
+                `[
+=====================
+]: ${statusData.progress}%\n`;
+              
+              if (statusData.status === 'completed') {
+                clearInterval(pollInterval);
+                const data = statusData.result;
+                lastScannedLeads = data;
+                document.getElementById('lark-sync-btn').style.display = 'block'; // 
+=====================
+
+                
+                out.innerHTML = `<span style="color: var(--success-color);">
+=====================
+</span><br>` + 
+                  data.map((m, i) => `${i+1}. <strong>${m.from_user}</strong>: "${m.content.substring(0,25)}..."`).join('<br>');
+              }
+            }
+          } catch (pollErr) {
+            clearInterval(pollInterval);
+            out.textContent += `\n
+=====================
+: ${pollErr.message}`;
+          }
+        }, 500);
+
+      } catch (err) {
+        out.textContent = `[
+=====================
+\n${err.message}`;
+      }
+    }
+
+    // 
+=====================
+
+    async function syncToLarkBitable() {
+      const out = document.getElementById('wechat-out');
+      out.innerHTML += `<br><br><span style="color: #38bdf8;">
+=====================
+...</span>`;
+      
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/sync`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ leads: lastScannedLeads })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          out.innerHTML += `<br><br><span style="color: var(--success-color);">
+=====================
+] ${data.message}</span><br>` +
+            `
+=====================
+ <a href="${data.bitable_url}" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;">[
+=====================
+]</a>`;
+        } else {
+          out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+: ${data.error}</span>`;
+        }
+      } catch (err) {
+        out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+: ${err.message}</span>`;
+      }
+    }0
+=====================
+roup">
+                <label class="form-label">
+=====================
+ APP_ID</label>
+                <input type="text" class="form-input" id="lark-id" placeholder="cli_xxxxxxxxxxxxxx">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ APP_SECRET</label>
+                <input type="password" class="form-input" id="lark-secret" placeholder="
+=====================
+">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+</label>
+                <input type="text" class="form-input" id="lark-path" placeholder="lark">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ API URL</label>
+                <input type="text" class="form-input" id="openclaw-url" placeholder="http://localhost:18000">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ App Token</label>
+                <input type="text" class="form-input" id="openclaw-token" placeholder="mock_token_123">
+              </div>
+              <div class="form-group">
+                <label class="form-label">
+=====================
+ (wx_db.db)</label>
+                <input type="text" class="form-input" id="db-path">
+              </div>
+            </div>
+            <button class="btn-action" onclick="saveEnvConfig()">
+=====================
+</button>
+
+            <!-- 
+=====================
+ -->
+            <h3 style="font-size:
+=====================
+J target content not found in fileP
+=====================
+    const AGENTS_DATABASE = {
+=====================
+$
+         title: "agent
+=====================
+          { id: "claude_code", name: "Claude code", desc: "
+=====================
+          { id: "agent_architect", name: "agent
+=====================
+          { id: "agent_ops", name: "agent
+=====================
+          { id: "agent_audit", name: "agent
+=====================
+          { id: "tech_specialist", name: "
+=====================
+          { id: "advisor_db", name: "
+=====================
+          { id: "kunlun_mcp", name: "
+=====================
+          { id: "tianyancha", name: "
+=====================
+          { id: "wechat_audit", name: "
+=====================
+", hasUI: true, type: "wechat" },
+=====================
+          { id: "meeting_minutes", name: "
+=====================
+          { id: "video_transcription", name: "
+=====================
+          { id: "notebook_weread", name: "Notebook&Weread", desc: "
+=====================
+          { id: "github_search", name: "Github
+=====================
+          { id: "x_search", name: "X
+=====================
+          { id: "x_like_collect", name: "X
+=====================
+ Building in Public 
+=====================
+          { id: "topic_selector", name: "
+=====================
+          { id: "risk_controller", name: "
+=====================
+", hasUI: true, type: "risk" },
+=====================
+          { id: "content_expert", name: "
+=====================
+          { id: "content_producer", name: "
+=====================
+          { id: "official_account_editor", name: "
+=====================
+          { id: "zsxq_publisher", name: "
+=====================
+          { id: "ai_shuai", name: "AI
+=====================
+          { id: "ceo_assistant", name: "CEO
+=====================
+          { id: "investment_advisor", name: "
+=====================
+          { id: "project_manager", name: "
+=====================
+          { id: "financial_analyst", name: "
+=====================
+          { id: "intelligence_collector", name: "
+=====================
+          { id: "intelligence_researcher", name: "
+=====================
+          { id: "manual_editor", name: "
+=====================
+          { id: "member_delivery", name: "
+=====================
+          { id: "ai_sales_champion", name: "AI
+=====================
+          { id: "ai_designer", name: "AI
+=====================
+", desc: " Midjourney 
+=====================
+A
+=    window.addEventListener('DOMContentLoaded', async () => {
+=====================
+      await loadSystemConfig();
+=====================
+'
+#      await loadPermissionMatrix();
+=====================
+      await loadAgentStatus();
+=====================
+4
+0    function switchDepartment(deptId, element) {
+=====================
+      currentDept = deptId;
+=====================
+_
+[      document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+=====================
+*
+&      element.classList.add('active');
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+      container.innerHTML = '';
+=====================
+$
+       if (deptId === 'config') {
+=====================
+[
+W        document.getElementById('dept-title').textContent = "
+=====================
+        document.getElementById('dept-desc').textContent = "
+=====================
+        renderConfigCenter();
+=====================
+5
+1        const deptData = AGENTS_DATABASE[deptId];
+=====================
+O
+K        document.getElementById('dept-title').textContent = deptData.title;
+=====================
+M
+I        document.getElementById('dept-desc').textContent = deptData.desc;
+=====================
+.
+*        renderAgentCards(deptData.agents);
+=====================
++
+'    function renderAgentCards(agents) {
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+      agents.forEach(agent => {
+=====================
+T
+P        const isEnabled = globalAgentStatus[agent.id] !== false; // 
+=====================
+O
+K        const cardClass = isEnabled ? 'agent-card' : 'agent-card disabled';
+=====================
+:
+6        const checkedStr = isEnabled ? 'checked' : '';
+=====================
+7
+3        const card = document.createElement('div');
+=====================
+'
+#        card.className = cardClass;
+=====================
+)
+%        card.id = `card-${agent.id}`;
+=====================
+        let actionUI = '';
+=====================
+        if (agent.hasUI) {
+=====================
+,
+(          if (agent.type === 'wechat') {
+=====================
+            actionUI = `
+=====================
+q
+m              <button class="btn-action" onclick="fetchWechatData()">
+=====================
+              <button class="btn-action" id="lark-sync-btn" style="background-color: var(--success-color); margin-top: 8px; display: none;" onclick="syncToLarkBitable()">
+=====================
+ (Lark Base)</button>
+=====================
+T
+P              <div class="terminal-output" id="wechat-out">
+=====================
+1
+-          } else if (agent.type === 'risk') {
+=====================
+            actionUI = `
+=====================
+              <button class="btn-action" style="background-color: var(--warning-color);" onclick="scanAiTone()">
+=====================
+j
+f              <div class="terminal-output" id="risk-out" style="color: #f87171;">
+=====================
+          actionUI = `
+=====================
+            <button class="btn-action" style="background-color: #475569;" onclick="runGenericAgent('${agent.name}')">
+=====================
+T
+P            <div class="terminal-output" id="log-${agent.id}">
+=====================
+        card.innerHTML = `
+=====================
+(
+$          <div class="agent-header">
+=====================
+=
+9            <span class="agent-name">${agent.name}</span>
+=====================
+0
+,            <label class="switch-container">
+=====================
+w
+s              <input type="checkbox" id="sw-${agent.id}" ${checkedStr} onchange="toggleAgentSwitch('${agent.id}')">
+=====================
+.
+*              <span class="slider"></span>
+=====================
+            </label>
+=====================
+9
+5          <div class="agent-desc">${agent.desc}</div>
+=====================
+          ${actionUI}
+=====================
+(
+$        container.appendChild(card);
+=====================
+3
+/    async function toggleAgentSwitch(agentId) {
+=====================
+>
+:      const cb = document.getElementById(`sw-${agentId}`);
+=====================
+B
+>      const card = document.getElementById(`card-${agentId}`);
+=====================
+      if (cb.checked) {
+=====================
+.
+*        card.classList.remove('disabled');
+=====================
+.
+*        globalAgentStatus[agentId] = true;
+=====================
++
+'        card.classList.add('disabled');
+=====================
+/
++        globalAgentStatus[agentId] = false;
+=====================
+M
+I      const userRole = document.getElementById('user-role-select').value;
+=====================
+I
+E        await fetch(`${GATEWAY_URL}/api/system/agents/status/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+]
+Y          body: JSON.stringify({ status_matrix: globalAgentStatus, user_role: userRole })
+=====================
+9
+5        console.error("
+=====================
+(
+$    function runGenericAgent(name) {
+=====================
+'
+#    function renderConfigCenter() {
+=====================
+G
+C      const container = document.getElementById('agent-container');
+=====================
+6
+2      const panel = document.createElement('div');
+=====================
+)
+%      panel.className = 'panel-card';
+=====================
+<
+8      panel.style.gridColumn = '1 / -1'; // 
+=====================
+      panel.innerHTML = `
+=====================
+S
+O        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+=====================
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">1. 
+=====================
+W
+S            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+=====================
+G
+C              <div class="form-group" style="grid-column: 1 / -1;">
+=====================
+\
+X                <label class="form-label">Claude API Key (
+=====================
+J
+F                <input type="text" class="form-input" id="claude-key">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+O
+K                <label class="form-label">
+=====================
+h
+d                <input type="text" class="form-input" id="lark-id" placeholder="cli_xxxxxxxxxxxxxx">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+S
+O                <label class="form-label">
+=====================
+                <input type="password" class="form-input" id="lark-secret" placeholder="
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+S
+O                <label class="form-label">
+=====================
+\
+X                <input type="text" class="form-input" id="lark-path" placeholder="lark">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+M
+I                <label class="form-label">
+=====================
+q
+m                <input type="text" class="form-input" id="openclaw-url" placeholder="http://localhost:18000">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+O
+K                <label class="form-label">
+=====================
+k
+g                <input type="text" class="form-input" id="openclaw-token" placeholder="mock_token_123">
+=====================
+              </div>
+=====================
+*
+&              <div class="form-group">
+=====================
+[
+W                <label class="form-label">
+=====================
+G
+C                <input type="text" class="form-input" id="db-path">
+=====================
+              </div>
+=====================
+u
+q            <button class="btn-action" onclick="saveEnvConfig()">
+=====================
+1
+-            <!-- 
+=====================
+            <h3 style="font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">2. 
+=====================
+ (Industry Presets)</h3>
+=====================
+(
+$            <div class="form-group">
+=====================
+F
+B              <label class="form-label">
+=====================
+j
+f              <select class="form-input" id="industry-preset-select" onchange="applyIndustryPreset()">
+=====================
+M
+I                <option value="none">-- 
+=====================
+]
+Y                <option value="jewelry">
+=====================
+Y
+U                <option value="dev">
+=====================
+              </select>
+=====================
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">3. 
+=====================
+*
+&            <table class="perm-table">
+=====================
+              <thead>
+=====================
+                <tr>
+=====================
+%
+!                  <th>
+=====================
++
+'                  <th>
+=====================
++
+'                  <th>
+=====================
++
+'                  <th>
+=====================
+                </tr>
+=====================
+              </thead>
+=====================
+7
+3              <tbody id="permission-tbody"></tbody>
+=====================
+            </table>
+=====================
+I
+E            <div style="display: flex; gap: 10px; margin-top: 15px;">
+=====================
+}
+y              <input type="text" class="form-input" id="new-role-input" placeholder="
+=====================
+              <button class="btn-action" style="margin-top:0; width: auto; white-space: nowrap; background: #64748b;" onclick="addNewRoleRow()">
+=====================
+            <button class="btn-action" style="background: var(--success-color);" onclick="savePermissionMatrix()">
+=====================
+'
+#      container.appendChild(panel);
+=====================
+      loadSystemConfigInputs();
+=====================
+      renderPermissionTable();
+=====================
+    let lastScannedLeads = [];
+=====================
+*
+&    async function fetchWechatData() {
+=====================
+<
+8      const out = document.getElementById('wechat-out');
+=====================
+j
+f      out.textContent = '
+=====================
+`
+\      document.getElementById('lark-sync-btn').style.display = 'none'; // 
+=====================
+e
+a        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+=====================
+8
+4        const triggerData = await triggerRes.json();
+=====================
+?
+;        if (!triggerData.success || !triggerData.task_id) {
+=====================
+E
+A          out.textContent = '
+=====================
+/
++        const taskId = triggerData.task_id;
+=====================
+H
+D        out.textContent += `
+=====================
+:
+6        const pollInterval = setInterval(async () => {
+=====================
+i
+e            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+=====================
+:
+6            const statusData = await statusRes.json();
+=====================
+)
+%            if (statusData.success) {
+=====================
+f
+b              out.textContent = `
+=====================
+:
+6                `[
+=====================
+]: ${statusData.progress}%\n`;
+=====================
+:
+6              if (statusData.status === 'completed') {
+=====================
+0
+,                clearInterval(pollInterval);
+=====================
+3
+/                const data = statusData.result;
+=====================
+                out.textContent = `
+=====================
+q
+m                  data.map((m, i) => `${i+1}. ${m.from_user}: "${m.content.substring(0,25)}..."`).join('\n');
+=====================
+,
+(                lastScannedLeads = data;
+=====================
+q
+m                document.getElementById('lark-sync-btn').style.display = 'block'; // 
+=====================
+                out.innerHTML = `<span style="color: var(--success-color);">
+=====================
+                  data.map((m, i) => `${i+1}. <strong>${m.from_user}</strong>: "${m.content.substring(0,25)}..."`).join('<br>');
+=====================
+          } catch (pollErr) {
+=====================
+,
+(            clearInterval(pollInterval);
+=====================
+R
+N            out.textContent += `\n
+=====================
+: ${pollErr.message}`;
+=====================
+      } catch (err) {
+=====================
+        out.textContent = `[
+=====================
+,
+(    async function syncToLarkBitable() {
+=====================
+<
+8      const out = document.getElementById('wechat-out');
+=====================
+      out.innerHTML += `<br><br><span style="color: #38bdf8;">
+=====================
+M
+I        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/sync`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+?
+;          body: JSON.stringify({ leads: lastScannedLeads })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+          out.innerHTML += `<br><br><span style="color: var(--success-color);">
+=====================
+] ${data.message}</span><br>` +
+=====================
+ <a href="${data.bitable_url}" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;">[
+=====================
+|
+x          out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+: ${data.error}</span>`;
+=====================
+      } catch (err) {
+=====================
+
+}        out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+: ${err.message}</span>`;
+=====================
+%
+!    async function scanAiTone() {
+=====================
+:
+6      const out = document.getElementById('risk-out');
+=====================
+<
+8      out.textContent = '
+=====================
+        const testText = "
+=====================
+U
+Q        const res = await fetch(`${GATEWAY_URL}/api/content/risk/anti-ai-scan`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+6
+2          body: JSON.stringify({ text: testText })
+=====================
+*
+&        const data = await res.json();
+=====================
+e
+a        out.textContent = `[AI
+=====================
+] AI-Index: ${data.ai_index}
+=====================
+: ${data.is_too_machinery ? '
+=====================
+: ` + data.matched_words.map(w => `"${w.word}"(${w.count}
+=====================
+      } catch (err) {
+=====================
+
+{        out.textContent = `[
+=====================
+    let currentConfigData = {};
+=====================
++
+'    async function loadSystemConfig() {
+=====================
+H
+D        const res = await fetch(`${GATEWAY_URL}/api/system/config`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
++
+'          currentConfigData = data.env;
+=====================
+      } catch (err) {
+=====================
+n
+j        document.getElementById('net-badge').textContent = '
+=====================
+U
+Q        document.getElementById('net-badge').style.color = 'var(--danger-color)';
+=====================
+]
+Y        document.getElementById('net-badge').style.background = 'rgba(239, 68, 68, 0.1)';
+=====================
++
+'    function loadSystemConfigInputs() {
+=====================
+1
+-      if (currentConfigData.CLAUDE_API_KEY) {
+=====================
+[
+W        document.getElementById('claude-key').value = currentConfigData.CLAUDE_API_KEY;
+=====================
+X
+T        document.getElementById('db-path').value = currentConfigData.WECHAT_DB_PATH;
+=====================
+[
+W        document.getElementById('lark-id').value = currentConfigData.LARK_APP_ID || '';
+=====================
+c
+_        document.getElementById('lark-secret').value = currentConfigData.LARK_APP_SECRET || '';
+=====================
+c
+_        document.getElementById('lark-path').value = currentConfigData.LARK_CLI_PATH || 'lark';
+=====================
+e
+a        document.getElementById('openclaw-url').value = currentConfigData.OPENCLAW_API_URL || '';
+=====================
+e
+a        document.getElementById('openclaw-token').value = currentConfigData.OPENCLAW_TOKEN || '';
+=====================
+(
+$    async function saveEnvConfig() {
+=====================
+I
+E      const role = document.getElementById('user-role-select').value;
+=====================
+      const config = {
+=====================
+H
+D        CLAUDE_API_KEY: document.getElementById('claude-key').value,
+=====================
+E
+A        WECHAT_DB_PATH: document.getElementById('db-path').value,
+=====================
+B
+>        LARK_APP_ID: document.getElementById('lark-id').value,
+=====================
+J
+F        LARK_APP_SECRET: document.getElementById('lark-secret').value,
+=====================
+F
+B        LARK_CLI_PATH: document.getElementById('lark-path').value,
+=====================
+L
+H        OPENCLAW_API_URL: document.getElementById('openclaw-url').value,
+=====================
+K
+G        OPENCLAW_TOKEN: document.getElementById('openclaw-token').value
+=====================
+N
+J        const res = await fetch(`${GATEWAY_URL}/api/system/config/save`, {
+=====================
+          method: 'POST',
+=====================
+>
+:          headers: { 'Content-Type': 'application/json' },
+=====================
+?
+;          body: JSON.stringify({ config, user_role: role })
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+m
+i          alert('
+=====================
+)
+%          currentConfigData = config;
+=====================
+8
+4          alert(`
+=====================
+      } catch (err) {
+=====================
+/
++    async function loadPermissionMatrix() {
+=====================
+M
+I        const res = await fetch(`${GATEWAY_URL}/api/system/permissions`);
+=====================
+*
+&        const data = await res.json();
+=====================
+        if (data.success) {
+=====================
+-
+)          globalPermMatrix = data.matrix;
+=====================
+          applyRBACRules(); 
+=====================
+      } catch (err) {
+=====================
+<
+8        console.error("
+=====================
+*
+&    function renderPermissionTable() {
+=====================
+D
+@      const tbody = document.getElementById('permission-tbody');
+=====================
+      tbody.innerHTML = '';
+=====================
+0
+,      for (const role in globalPermMatrix) {
+=====================
+4
+0        const tr = document.createElement('tr');
+=====================
+_
+[        const hasWechat = globalPermMatrix[role].includes('wechat_audit') ? 'checked' : '';
+=====================
+]
+Y        const hasRisk = globalPermMatrix[role].includes('content_risk') ? 'checked' : '';
+=====================
+`
+\        const hasConfig = globalPermMatrix[role].includes('system_config') ? 'checked' : '';
+=====================
+B
+>        const isDisabled = role === 'admin' ? 'disabled' : '';
+=====================
+        tr.innerHTML = `
+=====================
+K
+G          <td style="font-weight: bold; text-align: left;">${role}</td>
+=====================
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="wechat_audit" ${hasWechat} ${isDisabled}></td>
+=====================
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="content_risk" ${hasRisk} ${isDisabled}></td>
+=====================
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="system_config" ${hasConfig} ${isDisabled}></td>
+=====================
+        tbody.appendChild(tr);
+=====================
+    function addNewRoleRow() {
+=====================
+c
+_      const newRoleName = document.getElementById('new-role-input').value.trim().toLowerCase();
+=====================
+
+
+Code Edit:
+```
+{{ ... }}
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label class="form-label">Claude API Key (
+=====================
+)</label>
+                <input type="text" class="form-input" id="claude-key">
+              </div>
+              <div class="form-g    // 
+=====================
+)
+    let lastScannedLeads = [];
+    async function fetchWechatData() {
+      const out = document.getElementById('wechat-out');
+      out.textContent = '
+=====================
+...\n';
+      document.getElementById('lark-sync-btn').style.display = 'none'; // 
+=====================
+
+      
+      try {
+        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);
+        const triggerData = await triggerRes.json();
+        if (!triggerData.success || !triggerData.task_id) {
+          out.textContent = '
+=====================
+';
+          return;
+        }
+
+        const taskId = triggerData.task_id;
+        out.textContent += `
+=====================
+ID: ${taskId}\n`;
+
+        const pollInterval = setInterval(async () => {
+          try {
+            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);
+            const statusData = await statusRes.json();
+            
+            if (statusData.success) {
+              out.textContent = `
+=====================
+...\n` +
+                `[
+=====================
+]: ${statusData.progress}%\n`;
+              
+              if (statusData.status === 'completed') {
+                clearInterval(pollInterval);
+                const data = statusData.result;
+                lastScannedLeads = data;
+                document.getElementById('lark-sync-btn').style.display = 'block'; // 
+=====================
+
+                
+                out.innerHTML = `<span style="color: var(--success-color);">
+=====================
+</span><br>` + 
+                  data.map((m, i) => `${i+1}. <strong>${m.from_user}</strong>: "${m.content.substring(0,25)}..."`).join('<br>');
+              }
+            }
+          } catch (pollErr) {
+            clearInterval(pollInterval);
+            out.textContent += `\n
+=====================
+: ${pollErr.message}`;
+          }
+        }, 500);
+
+      } catch (err) {
+        out.textContent = `[
+=====================
+\n${err.message}`;
+      }
+    }
+
+    // 
+=====================
+
+    async function syncToLarkBitable() {
+      const out = document.getElementById('wechat-out');
+      out.innerHTML += `<br><br><span style="color: #38bdf8;">
+=====================
+...</span>`;
+      
+      try {
+        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/sync`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ leads: lastScannedLeads })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          out.innerHTML += `<br><br><span style="color: var(--success-color);">
+=====================
+] ${data.message}</span><br>` +
+            `
+=====================
+ <a href="${data.bitable_url}" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;">[
+=====================
+]</a>`;
+        } else {
+          out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+: ${data.error}</span>`;
+        }
+      } catch (err) {
+        out.innerHTML += `<br><span style="color: var(--danger-color);">
+=====================
+: ${err.message}</span>`;
+      }
+    } 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px;">2. 
+=====================
+ (Industry Presets)</h3>
+            <div class="form-group">
+              <label class="form-label">
+=====================
+</label>
+              <select class="form-input" id="industry-preset-select" onchange="applyIndustryPreset()">
+                <option value="none">-- 
+=====================
+ --</option>
+                <option value="jewelry">
+=====================
+)</option>
+{{ ... }}
+```0#

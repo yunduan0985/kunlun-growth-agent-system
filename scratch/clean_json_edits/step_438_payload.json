@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/combat/manual/compile 训练营手册章节格式化打包端点。",
+  "EndLine": 990,
+  "Instruction": "在服务器启动之前加入手册章节编译路由。",
+  "ReplacementContent": "\n// 模拟手册章节编译打包接口\napp.post('/api/combat/manual/compile', (req, res) => {\n  const { chapter_title, raw_sop_text, warnings, attachment_links } = req.body;\n  if (!chapter_title || !raw_sop_text) {\n    return res.status(400).json({ error: \"Missing parameter: chapter_title or raw_sop_text\" });\n  }\n\n  console.log(`[Manual Compiler] Bundling chapter: \"${chapter_title}\"...`);\n\n  const compiledMarkdown = `\n# 📘 昆仑增长实战手册：${chapter_title}\n- **同步状态**：已成功同步至会员工具箱 [时间: 2026-07-15]\n\n---\n\n> [!IMPORTANT]\n> **避坑卡点提示**：${warnings || '暂无特别注意事项'}\n\n### 🛠️ 核心实操步骤\n${raw_sop_text}\n\n### 📦 附录：本章配套交付件\n${(attachment_links || []).map(link => `- 📥 [工具文件直达](${link})`).join('\\n')}\n  `;\n\n  res.json({\n    success: true,\n    compiled_markdown: compiledMarkdown,\n    save_path: \"/Volumes/MOVESPEED/下载/AIcode/Agent/docs/manual_chapter.md\"\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 990,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding manual compile routes to Gateway",
+  "toolSummary": "Modify file"
+}

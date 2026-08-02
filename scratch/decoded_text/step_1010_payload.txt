@@ -1,0 +1,43 @@
+-3750763034362895579P
+=====================
+Z!req_vrtx_011Cd58upBcJ288E1fpk6vLzX
+=====================
+b$9043cfd8-2487-4216-819c-4b1fef5a6e3cj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-85b3637b-2a03-48f6-80fd-151239c47f75:
+=====================
+
+#toolu_vrtx_01C4QXdMVKtWMgHhkyyPHHTU
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":873,"Instruction":"
+=====================
+","ReplacementContent":"        \u003cdiv\u003e\n          \u003cdiv class=\"form-label\" style=\"margin-bottom: 3px;\" id=\"role-label\"\u003e
+=====================
+\u003c/div\u003e\n          \u003c!-- 
+=====================
+ --\u003e\n          \u003cdiv id=\"role-badge-display\" style=\"display:inline-flex; align-items:center; gap:6px; padding: 6px 14px; background:#f5f5f7; border:1.5px solid var(--border-light); border-radius:8px; font-size:12px; font-weight:700; color:var(--text-main); min-width:190px;\"\u003e\n            \u003cspan id=\"role-badge-icon\"\u003e
+=====================
+\u003c/span\u003e\n            \u003cspan id=\"role-badge-text\"\u003e
+=====================
+...\u003c/span\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n","StartLine":866,"TargetContent":"        \u003cdiv\u003e\n          \u003cdiv class=\"form-label\" style=\"margin-bottom: 3px;\" id=\"role-label\"\u003e
+=====================
+ RBAC)\u003c/div\u003e\n          \u003cselect class=\"form-input\" id=\"user-role-select\" onchange=\"loadPermissionMatrix()\" style=\"padding: 6px 12px; font-size: 12px; background: #ffffff; border-color: var(--border-color); font-weight: 600; width: 190px; border-radius: 8px;\"\u003e\n            \u003coption value=\"admin\"\u003e
+=====================
+ (Admin)\u003c/option\u003e\n            \u003coption value=\"editor\"\u003e
+=====================
+ (Editor)\u003c/option\u003e\n            \u003coption value=\"sales\"\u003e
+=====================
+ (Sales)\u003c/option\u003e\n          \u003c/select\u003e\n        \u003c/div\u003e\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Replacing role select with read-only badge","toolSummary":"Remove role switcher"}J
+=====================
+replace_file_content`

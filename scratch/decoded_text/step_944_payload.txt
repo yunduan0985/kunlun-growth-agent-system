@@ -1,0 +1,207 @@
+-3750763034362895579P3Z!req_vrtx_011Cd3wx2qPp1i2taFgtpsgdX
+=====================
+b$8fb92904-6426-46f2-8ec6-7b24e82e5254j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-1f9a6be1-c49d-4bfa-855d-4720a656588e:
+=====================
+
+#toolu_vrtx_012DB9eJH3wM3Y4KKCeiNKJd
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ org/data/content/management/combat/operation 
+=====================
+","EndLine":620,"Instruction":"
+=====================
+","ReplacementContent":"    let globalKnowledgeDocs = []; // 
+=====================
+\n    let lastScannedLeads = []; // 
+=====================
+\n\n    // ==========================================\n    // 
+=====================
+\n    // ==========================================\n    const AGENTS_DATABASE = {\n      org: {\n        zh: {\n          title: \"
+=====================
+\",\n          desc: \"
+=====================
+\",\n          agents: [\n            { id: \"ai_sales_champion\", name: \"AI 
+=====================
+\", tools: [\"wechat_listener\", \"bant_scorer\", \"lark_sync\"] },\n            { id: \"hr_recruiter\", name: \"
+=====================
+\", tools: [\"jd_publisher\", \"resume_parser\", \"interview_scheduler\"] },\n            { id: \"salary_manager\", name: \"
+=====================
+\", tools: [\"payroll_calculator\", \"lark_writer\", \"notification_sender\"] },\n            { id: \"trainer\", name: \"
+=====================
+\", tools: [\"rag_retriever\", \"quiz_generator\", \"report_writer\"] },\n            { id: \"bd_specialist\", name: \"
+=====================
+\", tools: [\"company_scanner\", \"email_composer\", \"crm_updater\"] },\n          ]\n        },\n        en: {\n          title: \"
+=====================
+ Agent HR Department\",\n          desc: \"Five AI agents covering sales, recruitment, payroll, training and BD to power your team.\",\n          agents: [\n            { id: \"ai_sales_champion\", name: \"AI Sales Champion\", icon: \"
+=====================
+\", desc: \"Private-domain chat agent with full BANT framework. Identifies high-intent customers and drives conversions.\", tools: [\"wechat_listener\", \"bant_scorer\", \"lark_sync\"] },\n            { id: \"hr_recruiter\", name: \"Smart Recruiter\", icon: \"
+=====================
+\", desc: \"Automates JD posting, resume screening and interview scheduling with Lark integration.\", tools: [\"jd_publisher\", \"resume_parser\", \"interview_scheduler\"] },\n            { id: \"salary_manager\", name: \"Payroll Manager\", icon: \"
+=====================
+\", desc: \"Auto-calculates monthly salaries, generates payslips and notifies employees.\", tools: [\"payroll_calculator\", \"lark_writer\", \"notification_sender\"] },\n            { id: \"trainer\", name: \"Corporate Trainer\", icon: \"
+=====================
+\", desc: \"Generates quizzes from RAG knowledge base, grades responses and creates personalized learning plans.\", tools: [\"rag_retriever\", \"quiz_generator\", \"report_writer\"] },\n            { id: \"bd_specialist\", name: \"BD Specialist\", icon: \"
+=====================
+\", desc: \"Scans for partnership targets, drafts BD emails and tracks deal progress to contract signing.\", tools: [\"company_scanner\", \"email_composer\", \"crm_updater\"] },\n          ]\n        }\n      },\n      data: {\n        zh: {\n          title: \"
+=====================
+\",\n          desc: \"10 
+=====================
+\",\n          agents: [\n            { id: \"market_intel\", name: \"
+=====================
+\", tools: [\"web_crawler\", \"news_aggregator\", \"brief_writer\"] },\n            { id: \"company_researcher\", name: \"
+=====================
+\", tools: [\"tianyancha_api\", \"report_generator\", \"pdf_exporter\"] },\n            { id: \"competitor_analyst\", name: \"
+=====================
+\", tools: [\"web_scraper\", \"social_monitor\", \"swot_analyzer\"] },\n            { id: \"wechat_data_miner\", name: \"
+=====================
+\", tools: [\"sqlite_reader\", \"bant_scorer\", \"lead_exporter\"] },\n            { id: \"data_cleaner\", name: \"
+=====================
+\", tools: [\"dedup_engine\", \"normalizer\", \"entity_merger\"] },\n            { id: \"bi_reporter\", name: \"BI 
+=====================
+\", tools: [\"lark_bitable\", \"chart_generator\", \"dashboard_builder\"] },\n            { id: \"lead_scorer\", name: \"
+=====================
+\", tools: [\"bant_scorer\", \"behavior_analyzer\", \"priority_queue\"] },\n            { id: \"social_listener\", name: \"
+=====================
+\", tools: [\"wechat_group_monitor\", \"social_crawler\", \"sentiment_analyzer\"] },\n            { id: \"crm_syncer\", name: \"CRM 
+=====================
+\", tools: [\"crm_api\", \"lead_pusher\", \"status_tracker\"] },\n            { id: \"api_connector\", name: \"
+=====================
+\", tools: [\"api_manager\", \"rate_limiter\", \"cache_engine\"] },\n          ]\n        },\n        en: {\n          title: \"
+=====================
+ Data Intelligence\",\n          desc: \"10 data agents covering market intel, company research, competitor analysis, WeChat mining and BI reporting.\",\n          agents: [\n            { id: \"market_intel\", name: \"Market Intel Officer\", icon: \"
+=====================
+\", desc: \"Monitors industry trends, competitor moves and regulations. Delivers daily intelligence briefs to DingTalk/Lark.\", tools: [\"web_crawler\", \"news_aggregator\", \"brief_writer\"] },\n            { id: \"company_researcher\", name: \"Company Researcher\", icon: \"
+=====================
+\", desc: \"Calls Tianyancha API to auto-generate comprehensive company profiles including risk, equity and news.\", tools: [\"tianyancha_api\", \"report_generator\", \"pdf_exporter\"] },\n            { id: \"competitor_analyst\", name: \"Competitor Analyst\", icon: \"
+=====================
+\", desc: \"Regularly scrapes competitor websites, Xiaohongshu and Douyin to produce SWOT benchmark reports.\", tools: [\"web_scraper\", \"social_monitor\", \"swot_analyzer\"] },\n            { id: \"wechat_data_miner\", name: \"WeChat Data Miner\", icon: \"
+=====================
+\", desc: \"Parses local WeChat SQLite, extracts BANT leads and scores them. Processes 100K+ messages per day.\", tools: [\"sqlite_reader\", \"bant_scorer\", \"lead_exporter\"] },\n            { id: \"data_cleaner\", name: \"Data Cleaner\", icon: \"
+=====================
+\", desc: \"Auto-deduplicates, normalizes and enriches lead data. Identifies and merges duplicate entities.\", tools: [\"dedup_engine\", \"normalizer\", \"entity_merger\"] },\n            { id: \"bi_reporter\", name: \"BI Reporter\", icon: \"
+=====================
+\", desc: \"Connects to Lark Bitable to auto-generate weekly/monthly sales funnels and customer profile dashboards.\", tools: [\"lark_bitable\", \"chart_generator\", \"dashboard_builder\"] },\n            { id: \"lead_scorer\", name: \"Lead Scorer\", icon: \"
+=====================
+\", desc: \"Scores leads 0-100 using BANT + behavioral data. Automatically prioritizes high-score leads for follow-up.\", tools: [\"bant_scorer\", \"behavior_analyzer\", \"priority_queue\"] },\n            { id: \"social_listener\", name: \"Social Listener\", icon: \"
+=====================
+\", desc: \"24/7 monitors WeChat groups, Xiaohongshu and Douyin comments for business opportunities and negative sentiment.\", tools: [\"wechat_group_monitor\", \"social_crawler\", \"sentiment_analyzer\"] },\n            { id: \"crm_syncer\", name: \"CRM Syncer\", icon: \"
+=====================
+\", desc: \"Auto-syncs high-score leads from the Kunlun lead database to the enterprise CRM to trigger sales follow-up.\", tools: [\"crm_api\", \"lead_pusher\", \"status_tracker\"] },\n            { id: \"api_connector\", name: \"Data API Connector\", icon: \"
+=====================
+\", desc: \"Manages Tianyancha, OpenClaw and Google Maps APIs. Provides standardized data interfaces.\", tools: [\"api_manager\", \"rate_limiter\", \"cache_engine\"] },\n          ]\n        }\n      },\n      content: {\n        zh: {\n          title: \"
+=====================
+\",\n          desc: \"6 
+=====================
+\",\n          agents: [\n            { id: \"xhs_writer\", name: \"
+=====================
+\", tools: [\"rag_retriever\", \"title_formula_engine\", \"anti_ai_scanner\"] },\n            { id: \"video_scriptwriter\", name: \"
+=====================
+\", tools: [\"script_generator\", \"shot_planner\", \"hook_writer\"] },\n            { id: \"email_sequence\", name: \"
+=====================
+\", tools: [\"email_composer\", \"smtp_sender\", \"reply_detector\"] },\n            { id: \"anti_ai_auditor\", name: \"
+=====================
+\", tools: [\"anti_ai_scanner\", \"word_replacer\", \"readability_scorer\"] },\n            { id: \"dm_icebreaker\", name: \"
+=====================
+\", tools: [\"profile_analyzer\", \"message_personalizer\", \"send_scheduler\"] },\n            { id: \"multilang_localizer\", name: \"
+=====================
+\", tools: [\"translator\", \"culture_adapter\", \"terminology_checker\"] },\n          ]\n        },\n        en: {\n          title: \"
+=====================
+ Content Factory\",\n          desc: \"6 content agents covering Xiaohongshu virals, video scripts, email sequences, anti-AI auditing and localization.\",\n          agents: [\n            { id: \"xhs_writer\", name: \"XHS Viral Writer\", icon: \"
+=====================
+\", desc: \"Uses viral title formulas and emotional hooks to generate high-engagement Xiaohongshu content with AI-score auditing.\", tools: [\"rag_retriever\", \"title_formula_engine\", \"anti_ai_scanner\"] },\n            { id: \"video_scriptwriter\", name: \"Video Script Director\", icon: \"
+=====================
+\", desc: \"Generates complete short video scripts with shot language. Supports 15s/30s/60s/3min formats for instant filming.\", tools: [\"script_generator\", \"shot_planner\", \"hook_writer\"] },\n            { id: \"email_sequence\", name: \"Email Sequence Engineer\", icon: \"
+=====================
+\", desc: \"Designs Day0
+=====================
+Day7 follow-up email sequences, detects replies and triggers handoff to human sales.\", tools: [\"email_composer\", \"smtp_sender\", \"reply_detector\"] },\n            { id: \"anti_ai_auditor\", name: \"Anti-AI Auditor\", icon: \"
+=====================
+\", desc: \"Scans content for robotic AI patterns, replaces high-frequency AI words to ensure 100% natural feel.\", tools: [\"anti_ai_scanner\", \"word_replacer\", \"readability_scorer\"] },\n            { id: \"dm_icebreaker\", name: \"DM Icebreaker Bot\", icon: \"
+=====================
+\", desc: \"Generates personalized first DMs based on user profile features. 3-5x higher response rate vs templates.\", tools: [\"profile_analyzer\", \"message_personalizer\", \"send_scheduler\"] },\n            { id: \"multilang_localizer\", name: \"Multilingual Localizer\", icon: \"
+=====================
+\", desc: \"Professionally localizes Chinese content to 12 languages including English, Japanese, Arabic and Spanish.\", tools: [\"translator\", \"culture_adapter\", \"terminology_checker\"] },\n          ]\n        }\n      },\n      management: {\n        zh: {\n          title: \"
+=====================
+\",\n          desc: \"5 
+=====================
+\",\n          agents: [\n            { id: \"compliance_guard\", name: \"
+=====================
+\", tools: [\"sensitive_word_filter\", \"ad_law_checker\", \"compliance_reporter\"] },\n            { id: \"finance_planner\", name: \"
+=====================
+\", tools: [\"accounting_api\", \"cashflow_forecaster\", \"budget_alerter\"] },\n            { id: \"meeting_secretary\", name: \"
+=====================
+\", tools: [\"whisper_transcriber\", \"action_item_extractor\", \"lark_task_pusher\"] },\n            { id: \"okr_tracker\", name: \"OKR 
+=====================
+\", tools: [\"lark_bitable\", \"okr_calculator\", \"reminder_sender\"] },\n            { id: \"contract_reviewer\", name: \"
+=====================
+\", tools: [\"pdf_parser\", \"clause_analyzer\", \"risk_highlighter\"] },\n          ]\n        },\n        en: {\n          title: \"
+=====================
+ Management Group\",\n          desc: \"5 management agents covering compliance, finance, meeting minutes, OKR tracking and contract review.\",\n          agents: [\n            { id: \"compliance_guard\", name: \"Compliance Guard\", icon: \"
+=====================
+\", desc: \"Scans outgoing content for sensitive words, illegal promises and false advertising. Generates compliance reports.\", tools: [\"sensitive_word_filter\", \"ad_law_checker\", \"compliance_reporter\"] },\n            { id: \"finance_planner\", name: \"Finance Planner\", icon: \"
+=====================
+\", desc: \"Auto-aggregates monthly income/expenses, generates cashflow forecasts and alerts on budget overruns.\", tools: [\"accounting_api\", \"cashflow_forecaster\", \"budget_alerter\"] },\n            { id: \"meeting_secretary\", name: \"Meeting Secretary\", icon: \"
+=====================
+\", desc: \"Transcribes meeting recordings, extracts action items, owners and deadlines, pushes tasks to Lark.\", tools: [\"whisper_transcriber\", \"action_item_extractor\", \"lark_task_pusher\"] },\n            { id: \"okr_tracker\", name: \"OKR Tracker\", icon: \"
+=====================
+\", desc: \"Auto-pings responsible parties weekly to report OKR progress and generates consolidated dashboards.\", tools: [\"lark_bitable\", \"okr_calculator\", \"reminder_sender\"] },\n            { id: \"contract_reviewer\", name: \"Contract Reviewer\", icon: \"
+=====================
+\", desc: \"Parses contract PDFs, identifies unfair clauses and hidden risks, generates redline annotations.\", tools: [\"pdf_parser\", \"clause_analyzer\", \"risk_highlighter\"] },\n          ]\n        }\n      },\n      combat: {\n        zh: {\n          title: \"
+=====================
+\",\n          desc: \"3 
+=====================
+\",\n          agents: [\n            { id: \"ecom_product_hunter\", name: \"
+=====================
+ Movers \u0026 Shakers
+=====================
+\", tools: [\"product_scanner\", \"trend_analyzer\", \"profit_calculator\"] },\n            { id: \"livestream_assistant\", name: \"
+=====================
+\", tools: [\"danmu_listener\", \"auto_replier\", \"hot_user_tagger\"] },\n            { id: \"dropship_strategist\", name: \"
+=====================
+ Facebook/TikTok Ads 
+=====================
+\", tools: [\"shopify_connector\", \"ad_optimizer\", \"roas_calculator\"] },\n          ]\n        },\n        en: {\n          title: \"
+=====================
+ Combat Operations\",\n          desc: \"3 high-intensity combat agents focused on product hunting, livestream assistance and dropship strategy.\",\n          agents: [\n            { id: \"ecom_product_hunter\", name: \"Ecom Product Hunter\", icon: \"
+=====================
+\", desc: \"Scans 1688, AliExpress and Amazon Movers \u0026 Shakers to identify products with 7-day sales surges.\", tools: [\"product_scanner\", \"trend_analyzer\", \"profit_calculator\"] },\n            { id: \"livestream_assistant\", name: \"Livestream Assistant\", icon: \"
+=====================
+\", desc: \"Processes danmu in real-time, auto-replies to discount queries, identifies high-intent followers for DM follow-up.\", tools: [\"danmu_listener\", \"auto_replier\", \"hot_user_tagger\"] },\n            { id: \"dropship_strategist\", name: \"Dropship Strategist\", icon: \"
+=====================
+\", desc: \"Analyzes Shopify data, optimizes Facebook/TikTok Ads strategy and pauses low-ROAS ad sets.\", tools: [\"shopify_connector\", \"ad_optimizer\", \"roas_calculator\"] },\n          ]\n        }\n      },\n      operation: {\n        zh: {\n          title: \"
+=====================
+\",\n          desc: \"3 
+=====================
+\",\n          agents: [\n            { id: \"fission_operator\", name: \"
+=====================
+\", tools: [\"poster_generator\", \"invite_code_manager\", \"fission_tracker\"] },\n            { id: \"retention_specialist\", name: \"
+=====================
+\", tools: [\"behavior_analyzer\", \"churn_predictor\", \"recall_sender\"] },\n            { id: \"campaign_planner\", name: \"
+=====================
+\", tools: [\"calendar_planner\", \"persona_analyzer\", \"budget_estimator\"] },\n          ]\n        },\n        en: {\n          title: \"
+=====================
+ Private-Domain Ops\",\n          desc: \"3 growth operation agents covering viral fission, user retention and campaign planning.\",\n          agents: [\n            { id: \"fission_operator\", name: \"Fission Operator\", icon: \"
+=====================
+\", desc: \"Designs community fission campaigns, auto-generates posters and invite codes, tracks ROI.\", tools: [\"poster_generator\", \"invite_code_manager\", \"fission_tracker\"] },\n            { id: \"retention_specialist\", name: \"Retention Specialist\", icon: \"
+=====================
+\", desc: \"Analyzes user behavior, identifies churn warning signals and sends personalized recall messages.\", tools: [\"behavior_analyzer\", \"churn_predictor\", \"recall_sender\"] },\n            { id: \"campaign_planner\", name: \"Campaign Planner\", icon: \"
+=====================
+\", desc: \"Plans quarterly activity calendars aligned with holidays and user personas. Generates full execution plans.\", tools: [\"calendar_planner\", \"persona_analyzer\", \"budget_estimator\"] },\n          ]\n        }\n      }\n    };\n\n","StartLine":618,"TargetContent":"    let globalKnowledgeDocs = []; // 
+=====================
+\n    let lastScannedLeads = []; // 
+=====================
+\n\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Injecting complete 30-agent AGENTS_DATABASE","toolSummary":"Inject agents database"}J
+=====================
+replace_file_content`

@@ -1,0 +1,75 @@
+ *
+@"
+wg1hzag5	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":1675,"StartLine":1610,"toolAction":"Viewing loadSystemConfig and saveEnvConfig backend implementation","toolSummary":"View config env backend"}:(&
+$e24830a7-5cd6-42fe-998b-ee539e72b9c3J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2P:PBTXb$150d3650-a2a5-4882-83c3-c83a8c70e530jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bdP73
+P
+ȯS
+TView config env backendAViewing loadSystemConfig and saveEnvConfig backend implementationSr
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js"  res.json({
+    success: true,
+    env: {
+      CLAUDE_API_KEY: process.env.CLAUDE_API_KEY || "sk-ant-xxxxxxxxxxxxxxxxxx",
+      TIANYANCHA_TOKEN: process.env.TIANYANCHA_TOKEN || "tyc_token_xxxxxxxxxxx",
+      WECHAT_DB_PATH: process.env.WECHAT_DB_PATH || path.resolve(__dirname, '../data/wx_db.db'),
+      LARK_APP_ID: process.env.LARK_APP_ID || "cli_a1b2c3d4e5f6g7h8",
+      LARK_APP_SECRET: process.env.LARK_APP_SECRET || "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      LARK_CLI_PATH: process.env.LARK_CLI_PATH || "lark",
+      OPENCLAW_API_URL: process.env.OPENCLAW_API_URL || "http://localhost:18000",
+      OPENCLAW_TOKEN: process.env.OPENCLAW_TOKEN || "mock_token_123",
+      WHATSAPP_API_URL: process.env.WHATSAPP_API_URL || "http://localhost:19000",
+      TWITTER_API_TOKEN: process.env.TWITTER_API_TOKEN || "twitter_token_xxxxxxxxxxxxx"
+    }
+  });
+});
+
+// 保存本地环境变量配置 (仅管理员有权修改，且真正物理写入硬盘 .env 文件中)
+app.post('/api/system/config/save', (req, res) => {
+  const { config } = req.body;
+  const user_role = req.user?.role || 'sales'; // ✅ 从 JWT 读取，防止伪造
+  if (!config) return res.status(400).json({ error: "Missing config object." });
+
+  // 校验当前操作人职位权限 (RBAC 拦截)
+  if (user_role !== 'admin') {
+    console.warn(`🛡️ [Access Denied] Unauthorized config edit attempt by Role: "${user_role || 'unknown'}"`);
+    return res.status(403).json({
+      success: false,
+      error: `Access Denied: Role "${user_role || 'unknown'}" is not authorized to edit system environment variables.`
+    });
+  }
+
+  const envPath = path.resolve(__dirname, '../.env');
+  console.log(`[Config Service] Writing new API keys and Lark config to local: ${envPath}`);
+
+  // 1. 生成物理 .env 文件正文
+  const envContent = `# 昆仑增长多智能体系统本地配置文件 (通过控制台热更新)
+PORT=8888
+CLAUDE_API_KEY=${config.CLAUDE_API_KEY || ''}
+TIANYANCHA_TOKEN=${config.TIANYANCHA_TOKEN || ''}
+WECHAT_DB_PATH=${config.WECHAT_DB_PATH || ''}
+LARK_APP_ID=${config.LARK_APP_ID || ''}
+LARK_APP_SECRET=${config.LARK_APP_SECRET || ''}
+LARK_CLI_PATH=${config.LARK_CLI_PATH || 'lark'}
+OPENCLAW_API_URL=${config.OPENCLAW_API_URL || 'http://localhost:18000'}
+OPENCLAW_TOKEN=${config.OPENCLAW_TOKEN || ''}
+WHATSAPP_API_URL=${config.WHATSAPP_API_URL || 'http://localhost:19000'}
+TWITTER_API_TOKEN=${config.TWITTER_API_TOKEN || ''}
+`;
+
+  try {
+    // 2. 物理写入本地文件
+    fs.writeFileSync(envPath, envContent, 'utf-8');
+    
+    // 3. 热更新内存环境变量，使下次 API 连通直接生效，无需重启进程
+    process.env.CLAUDE_API_KEY = config.CLAUDE_API_KEY;
+    process.env.TIANYANCHA_TOKEN = config.TIANYANCHA_TOKEN;
+    process.env.WECHAT_DB_PATH = config.WECHAT_DB_PATH;
+    process.env.LARK_APP_ID = config.LARK_APP_ID;
+    process.env.LARK_APP_SECRET = config.LARK_APP_SECRET;
+    process.env.LARK_CLI_PATH = config.LARK_CLI_PATH;
+    process.env.OPENCLAW_API_URL = config.OPENCLAW_API_URL;
+    process.env.OPENCLAW_TOKEN = config.OPENCLAW_TOKEN;
+    process.env.WHATSAPP_API_URL = config.WHATSAPP_API_URL;
+    process.env.TWITTER_API_TOKEN = config.TWITTER_API_TOKEN;
+X`

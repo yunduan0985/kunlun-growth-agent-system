@@ -1,0 +1,84 @@
+-3750763034362895579HsP
+=====================
+YIZXasWFIOaI_uMPhcKw6A4X
+=====================
+b$1d910ea5-1fb6-477c-b00e-accf26403e2fj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Refining Code Replacement**
+
+I encountered a silent skip due to matching issues during the last code replacement attempt. Now, I'm employing `replace_file_content` with meticulously defined `StartLine`, `EndLine`, and `TargetContent`. Specifically, I am targeting lines 668 through 709.
+
+
+2(bot-898fb26d-0acc-4870-b8cb-8ad7e425e757:6
+
+=====================
+replace_file_content
+=====================
+1{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":710,"Instruction":"
+=====================
+","ReplacementContent":"    // 
+=====================
+)\n    let lastScannedLeads = [];\n    async function fetchWechatData() {\n      const out = document.getElementById('wechat-out');\n      out.textContent = '
+=====================
+...\\n';\n      document.getElementById('lark-sync-btn').style.display = 'none'; // 
+=====================
+\n      \n      try {\n        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);\n        const triggerData = await triggerRes.json();\n        if (!triggerData.success || !triggerData.task_id) {\n          out.textContent = '
+=====================
+';\n          return;\n        }\n\n        const taskId = triggerData.task_id;\n        out.textContent += `
+=====================
+ID: ${taskId}\\n`;\n\n        const pollInterval = setInterval(async () =\u003e {\n          try {\n            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);\n            const statusData = await statusRes.json();\n            \n            if (statusData.success) {\n              out.textContent = `
+=====================
+...\\n` +\n                `[
+=====================
+]: ${statusData.progress}%\\n`;\n              \n              if (statusData.status === 'completed') {\n                clearInterval(pollInterval);\n                const data = statusData.result;\n                lastScannedLeads = data;\n                document.getElementById('lark-sync-btn').style.display = 'block'; // 
+=====================
+\n                \n                out.innerHTML = `\u003cspan style=\"color: var(--success-color);\"\u003e
+=====================
+\u003c/span\u003e\u003cbr\u003e` + \n                  data.map((m, i) =\u003e `${i+1}. \u003cstrong\u003e${m.from_user}\u003c/strong\u003e: \"${m.content.substring(0,25)}...\"`).join('\u003cbr\u003e');\n              }\n            }\n          } catch (pollErr) {\n            clearInterval(pollInterval);\n            out.textContent += `\\n
+=====================
+: ${pollErr.message}`;\n          }\n        }, 500);\n\n      } catch (err) {\n        out.textContent = `[
+=====================
+\\n${err.message}`;\n      }\n    }\n\n    // 
+=====================
+\n    async function syncToLarkBitable() {\n      const out = document.getElementById('wechat-out');\n      out.innerHTML += `\u003cbr\u003e\u003cbr\u003e\u003cspan style=\"color: #38bdf8;\"\u003e
+=====================
+...\u003c/span\u003e`;\n      \n      try {\n        const res = await fetch(`${GATEWAY_URL}/api/lark/bitable/sync`, {\n          method: 'POST',\n          headers: { 'Content-Type': 'application/json' },\n          body: JSON.stringify({ leads: lastScannedLeads })\n        });\n        const data = await res.json();\n        \n        if (data.success) {\n          out.innerHTML += `\u003cbr\u003e\u003cbr\u003e\u003cspan style=\"color: var(--success-color);\"\u003e
+=====================
+] ${data.message}\u003c/span\u003e\u003cbr\u003e` +\n            `
+=====================
+ \u003ca href=\"${data.bitable_url}\" target=\"_blank\" style=\"color: #38bdf8; text-decoration: underline; font-weight: bold;\"\u003e[
+=====================
+]\u003c/a\u003e`;\n        } else {\n          out.innerHTML += `\u003cbr\u003e\u003cspan style=\"color: var(--danger-color);\"\u003e
+=====================
+: ${data.error}\u003c/span\u003e`;\n        }\n      } catch (err) {\n        out.innerHTML += `\u003cbr\u003e\u003cspan style=\"color: var(--danger-color);\"\u003e
+=====================
+: ${err.message}\u003c/span\u003e`;\n      }\n    }","StartLine":668,"TargetContent":"    // 
+=====================
+)\n    async function fetchWechatData() {\n      const out = document.getElementById('wechat-out');\n      out.textContent = '
+=====================
+...\\n';\n      \n      try {\n        const triggerRes = await fetch(`${GATEWAY_URL}/api/wechat/openclaw/messages?async=true`);\n        const triggerData = await triggerRes.json();\n        if (!triggerData.success || !triggerData.task_id) {\n          out.textContent = '
+=====================
+';\n          return;\n        }\n\n        const taskId = triggerData.task_id;\n        out.textContent += `
+=====================
+ID: ${taskId}\\n`;\n\n        const pollInterval = setInterval(async () =\u003e {\n          try {\n            const statusRes = await fetch(`${GATEWAY_URL}/api/system/task/status?task_id=${taskId}`);\n            const statusData = await statusRes.json();\n            \n            if (statusData.success) {\n              out.textContent = `
+=====================
+...\\n` +\n                `[
+=====================
+]: ${statusData.progress}%\\n`;\n              \n              if (statusData.status === 'completed') {\n                clearInterval(pollInterval);\n                const data = statusData.result;\n                out.textContent = `
+=====================
+\\n` + \n                  data.map((m, i) =\u003e `${i+1}. ${m.from_user}: \"${m.content.substring(0,25)}...\"`).join('\\n');\n              }\n            }\n          } catch (pollErr) {\n            clearInterval(pollInterval);\n            out.textContent += `\\n
+=====================
+: ${pollErr.message}`;\n          }\n        }, 500);\n\n      } catch (err) {\n        out.textContent = `[
+=====================
+\\n${err.message}`;\n      }\n    }","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Replacing fetchWechatData code block","toolSummary":"Modify file"}:
+=====================
+replace_file_contentZ

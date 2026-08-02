@@ -1,0 +1,29 @@
+-3750763034362895579H
+=====================
+HHVYaq7OELOV_uMP7tzDmAUX
+=====================
+b$150d3650-a2a5-4882-83c3-c83a8c70e530j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Prioritizing Specialized Tools**
+
+I'm focused on the most effective tool use. I'm actively avoiding generic bash commands in favor of specialized tools. Specifically, I'm making sure that I use `grep_search` instead of `grep` and I'm being mindful to choose appropriate file handling tools, avoiding `cat` for file creation and appending.
+
+
+2(bot-dbdb8dc7-2c61-422a-9476-d34bf91deb72:
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":14,"Instruction":"
+=====================
+","ReplacementContent":"    \"build:mac\": \"electron-builder --mac\",\n    \"build:win\": \"electron-builder --win\",\n    \"build:all\": \"electron-builder --mac --win\",\n    \"release:mac\": \"node scripts/build-prod.js --mac\",\n    \"release:win\": \"node scripts/build-prod.js --win\",\n    \"release:all\": \"node scripts/build-prod.js --mac --win\"","StartLine":11,"TargetContent":"    \"build:mac\": \"electron-builder --mac\",\n    \"build:win\": \"electron-builder --win\",\n    \"build:all\": \"electron-builder --mac --win\"","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/package.json","toolAction":"Adding obfuscation package release scripts to package.json","toolSummary":"Add release scripts to package.json"}:
+=====================
+replace_file_contentZ

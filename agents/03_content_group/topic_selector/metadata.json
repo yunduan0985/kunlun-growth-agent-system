@@ -1,0 +1,16 @@
+{
+  "id": "topic_selector",
+  "name": "选题官",
+  "group": "内容组",
+  "description": "根据行业热点、受众画像与近期爆款文章，生成具备传播潜力的爆款内容选题。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=topic_selector",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

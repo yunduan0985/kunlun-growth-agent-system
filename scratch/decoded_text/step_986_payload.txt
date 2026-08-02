@@ -1,0 +1,33 @@
+-3750763034362895579P
+=====================
+Z!req_vrtx_011Cd58HAuWvGxMcUZVmpEmnX
+=====================
+b$ae9edf35-110e-4109-b5bb-1a0c90de006ej
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-9e0a60f5-cafe-4f89-b5e8-c8d8259a22f9:
+
+#toolu_vrtx_01DcMCPuXABwsWpA1AmAYDEs
+=====================
+replace_file_content
+=====================
+
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":1322,"Instruction":"
+=====================
+","ReplacementContent":"    window.addEventListener('DOMContentLoaded', async () =\u003e {\n      // auth-screen 
+=====================
+\n      document.getElementById('auth-screen').classList.add('hidden');\n\n      // 1. 
+=====================
+\n      await initAuth();\n\n      // 2. initAuth 
+=====================
+\n      if (_currentUser) {\n        await loadSystemConfig();\n        await loadPermissionMatrix();\n        await loadAgentStatus();\n      }\n    });\n","StartLine":1318,"TargetContent":"    window.addEventListener('DOMContentLoaded', async () =\u003e {\n      await loadSystemConfig();\n      await loadPermissionMatrix();\n      await loadAgentStatus();\n    });\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Updating DOMContentLoaded to call initAuth first","toolSummary":"Update init handler"}J
+=====================
+replace_file_content`

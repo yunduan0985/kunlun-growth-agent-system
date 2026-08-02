@@ -1,0 +1,99 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "战略情报研判与分析插件",
+    "version": "1.2.0",
+    "description": "提供给情报研究者 Agent 进行竞品 SWOT 定性矩阵分析、技术漏洞核算及胜率评估的 API 规范。"
+  },
+  "paths": {
+    "/api/combat/researcher/analyze": {
+      "post": {
+        "summary": "输入竞品多源原始情报包，进行 SWOT 矩阵分析并定量输出胜率预测",
+        "operationId": "analyzeCompetitorIntel",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "competitor_name": { "type": "string" },
+                  "raw_intel_summary": { "type": "string", "description": "抓取到的原始情报总括" }
+                },
+                "required": ["competitor_name", "raw_intel_summary"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "战略矩阵分析成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "winning_rate": { "type": "number", "description": "胜率预测 (0.0-1.0)" },
+                    "swot_results": { "type": "object" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

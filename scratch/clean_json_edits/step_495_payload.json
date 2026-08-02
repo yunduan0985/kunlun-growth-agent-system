@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/content/risk/anti-ai-scan 自媒体文案降 AI 味跑分及审核拦截端点。",
+  "EndLine": 694,
+  "Instruction": "在 content/risk/scan 路由后插入自媒体去 AI 机器腔的量化跑分审计端点。",
+  "ReplacementContent": "\n// 微信/自媒体文案去 AI 味量化跑分及拦截接口\napp.post('/api/content/risk/anti-ai-scan', (req, res) => {\n  const { text } = req.body;\n  if (!text) return res.status(400).json({ error: \"Missing parameter: text\" });\n\n  console.log(`[Anti-AI Scanner] Running tone audit on content draft...`);\n\n  // AI 腔高频废话词清单\n  const aiKeywords = [\n    \"不得不说\", \"值得注意的是\", \"在当今快节奏的社会中\", \"正如前文所述\", \n    \"如前所述\", \"总而言之\", \"综上所述\", \"双刃剑\", \"维度\", \"画卷\"\n  ];\n\n  const matchedKeywords = [];\n  let scorePenalty = 0;\n\n  aiKeywords.forEach(word => {\n    const count = (text.split(word).length - 1);\n    if (count > 0) {\n      matchedKeywords.push({ word, count });\n      scorePenalty += count * 15; // 命中一次扣 15 分\n    }\n  });\n\n  const aiScore = Math.max(0, 100 - scorePenalty);\n  const aiIndex = 100 - aiScore; // AI 味值 (0 - 100，越低越好)\n  const isTooMachinery = aiIndex > 30; // 超过 30 分判定为 AI味严重\n\n  res.json({\n    success: true,\n    ai_index: aiIndex,\n    is_too_machinery: isTooMachinery,\n    score: aiScore,\n    matched_words: matchedKeywords,\n    message: isTooMachinery \n      ? `🔴 警告：文章AI味值高达 ${aiIndex}，八股废话严重。请指示【内容专家】进行去AI味改写润色。` \n      : `🟢 绿灯：文章AI味值 ${aiIndex}，口语化表达良好，可安全发布。`\n  });\n});\n\n// 模拟商业品牌侵权审计接口",
+  "StartLine": 694,
+  "TargetContent": "// 模拟商业品牌侵权审计接口",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding anti-AI scan routes to Gateway",
+  "toolSummary": "Modify file"
+}

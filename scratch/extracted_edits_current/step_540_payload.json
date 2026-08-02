@@ -1,0 +1,11 @@
+ *
+"
+l80c9hporeplace_file_content{"AllowMultiple":false,"Description":"在 Gateway 中的 /api/system/config/save 路由里，添加 user_role !== 'admin' 的强校验拦截逻辑。","EndLine":1154,"Instruction":"将系统配置修改升级为管理员权限校验拦截模式。","ReplacementContent":"// 保存本地环境变量配置 (仅管理员有权修改，防止越权)\napp.post('/api/system/config/save', (req, res) =\u003e {\n  const { config, user_role } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  // 校验当前操作人职位权限\n  if (user_role !== 'admin') {\n    console.warn(`🛡️ [Access Denied] Unauthorized config edit attempt by Role: \"${user_role || 'unknown'}\"`);\n    return res.status(403).json({\n      success: false,\n      error: `Access Denied: Role \"${user_role || 'unknown'}\" is not authorized to edit system environment variables.`\n    });\n  }\n\n  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);\n  res.json({\n    success: true,\n    message: \"本地环境变量配置已成功物理保存至 .env 配置文件。\"\n  });\n});","StartLine":1144,"TargetContent":"// 保存本地环境变量配置\napp.post('/api/system/config/save', (req, res) =\u003e {\n  const { config } = req.body;\n  if (!config) return res.status(400).json({ error: \"Missing config object.\" });\n\n  console.log(`[Config Service] Saving new API keys and filepaths to local .env...`);\n  res.json({\n    success: true,\n    message: \"本地环境变量配置已成功物理保存至 .env 配置文件。\"\n  });\n});","TargetFile":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","toolAction":"Enforcing RBAC role checks on Gateway config endpoints","toolSummary":"Modify file"}:
+M2%l#la9Q&STv*Fyn F͟o:5Ave\]xQLNr%gP;Yżㆠ/-H2JLqTrK/6f)5U?5l6&2 Yp!EդީuaGKi1.RZD"XÍ	|'&J?HG2OȽ#L^p<piV4؏â!7{Gic=&E7t[%GWub:2GƇK)K&AJreplace_file_content*AllowMultiple*Description*EndLine*Instruction*ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*toolSummary2:BXb$1f700c1b-14f5-4e78-87ae-db4ced489f92jR
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bdH
+
+
+
+ڟModify file6Enforcing RBAC role checks on Gateway config endpoints

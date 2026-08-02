@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课程 E：OPC 内容自动化爆破营 - 超级个体中枢</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-logo">E</div>
+      <div>
+        <div style="font-size:1.2rem; font-weight:700;">OPC 内容自动化爆破营</div>
+        <span style="font-size:0.7rem; background:linear-gradient(135deg,#f59e0b,#f43f5e); padding:2px 8px; border-radius:20px;">课程 E 官方 OPC 超级个体中枢</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="n8n">
+        🤖 n8n / Coze 工作流
+      </button>
+      <button class="tab-btn" data-tab="avatar">
+        🗣️ 数字人口播流水线
+      </button>
+      <button class="tab-btn" data-tab="crawler">
+        📡 24h 无人值守改写
+      </button>
+      <button class="tab-btn" data-tab="syllabus">
+        📚 课程大纲与 Prompt
+      </button>
+    </div>
+
+    <div>
+      <button class="btn" onclick="alert('已连接 OPC 单人超级个体自动化中枢！')">⚡ 系统状态: 正常</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Tab 1: n8n -->
+    <div id="n8n" class="tab-content active">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">🤖 n8n / Coze 全网内容自动化分发工作流</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>监听热点源 RSS / 链接：</label>
+              <input type="text" id="opcRssUrl" class="form-control" value="https://news.ycombinator.com/rss">
+            </div>
+
+            <button class="btn" style="width:100%;" onclick="generateN8nWorkflow()">🚀 1秒生成 n8n 自动化分发 JSON 流程</button>
+          </div>
+
+          <div>
+            <div id="n8nOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Avatar -->
+    <div id="avatar" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">🗣️ 数字人口播视频流水线与剪映 API 自动合成</h3>
+        <p style="color:var(--text-muted); line-height:1.8;">
+          音色克隆 + 剪映 API 批量生成口播视频。
+        </p>
+      </div>
+    </div>
+
+    <!-- Tab 3: Crawler -->
+    <div id="crawler" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📡 24 小时无人值守热点抓取与自动改写爆文</h3>
+      </div>
+    </div>
+
+    <!-- Tab 4: Syllabus -->
+    <div id="syllabus" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📚 课程 E 教学大纲与 OPC 超级个体 SOP</h3>
+        <div style="line-height:1.8; color:var(--text-muted);">
+          <p><strong style="color:var(--text-main);">Day 1：</strong> 一人即一家公司单人AI矩阵搭建与人机协同</p>
+          <p><strong style="color:var(--text-main);">Day 2：</strong> n8n与Coze工作流自动化及全网多平台一键分发</p>
+          <p><strong style="color:var(--text-main);">Day 3：</strong> 数字人口播视频流水线与剪映API自动合成</p>
+          <p><strong style="color:var(--text-main);">Day 4：</strong> 24小时无人值守热点抓取与自动改写爆文系统</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

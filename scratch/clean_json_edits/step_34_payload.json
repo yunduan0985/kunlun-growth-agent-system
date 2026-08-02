@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "更新任务列表，标记初始化完成，开始编写 Agent 的核心配置。",
+  "EndLine": 14,
+  "Instruction": "更新初始化任务为已完成，开启 Agent 配置文件编写任务。",
+  "ReplacementContent": "- [x] 初始化目录结构与多平台集成文档\n  - [x] 创建基础目录结构\n  - [x] 编写全局 `README.md`\n  - [x] 编写 `docs/feishu_integration.md`（飞书集成与多维表格配置指南）\n  - [x] 编写 `docs/coze_codex_integration.md`（Coze/Codex 导入指南）\n  - [x] 编写 `docs/workbuddy_integration.md`（Workbuddy 导入指南）\n- [/] 编写 30 个 Agent 的核心配置文件 (metadata.json, system_prompt.md, tools.json)\n  - [/] agent组织部 (5 个 Agent)\n  - [/] 数据组 (10 个 Agent)\n  - [/] 内容组 (6 个 Agent)\n  - [/] 管理组 (5 个 Agent)\n  - [/] 实战组 (3 个 Agent)\n  - [/] 运营组 (3 个 Agent)",
+  "StartLine": 3,
+  "TargetContent": "- [/] 初始化目录结构与多平台集成文档\n  - [/] 创建基础目录结构\n  - [ ] 编写全局 `README.md`\n  - [ ] 编写 `docs/feishu_integration.md`（飞书集成与多维表格配置指南）\n  - [ ] 编写 `docs/coze_codex_integration.md`（Coze/Codex 导入指南）\n  - [ ] 编写 `docs/workbuddy_integration.md`（Workbuddy 导入指南）\n- [ ] 编写 30 个 Agent 的核心配置文件 (metadata.json, system_prompt.md, tools.json)\n  - [ ] agent组织部 (5 个 Agent)\n  - [ ] 数据组 (10 个 Agent)\n  - [ ] 内容组 (6 个 Agent)\n  - [ ] 管理组 (5 个 Agent)\n  - [ ] 实战组 (3 个 Agent)\n  - [ ] 运营组 (3 个 Agent)",
+  "TargetFile": "/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/task.md",
+  "toolAction": "Updating task list completed items",
+  "toolSummary": "Modify file"
+}

@@ -1,0 +1,70 @@
+ *
+ȡ"
+pqzuwq2x	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":1785,"StartLine":1725,"toolAction":"Viewing rest of permissions save and lark configuration routes","toolSummary":"View permissions save"}:(&
+$e24830a7-5cd6-42fe-998b-ee539e72b9c3J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2ŵ:ŵBʃXb$150d3650-a2a5-4882-83c3-c83a8c70e530jR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bdĵ66
+Ƶ
+Ϝ
+View permissions save>Viewing rest of permissions save and lark configuration routesr
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js"    return res.status(403).json({
+      success: false,
+      error: "Access Denied: Only Admin can update the system authorization matrix."
+    });
+  }
+
+  const permPath = path.join(__dirname, '../data/permissions.json');
+  console.log(`[Permission Service] Overwriting local authorization matrix file...`);
+
+  try {
+    const dataDir = path.dirname(permPath);
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+    fs.writeFileSync(permPath, JSON.stringify(matrix, null, 2), 'utf-8');
+    res.json({ success: true, message: "自定义职位权限矩阵已成功物理保存并实时生效。" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to save permission matrix: " + err.message });
+  }
+});
+
+
+// 获取本地 30个 Agent 开关状态 (热插拔模块)
+app.get('/api/system/agents/status', (req, res) => {
+  const statusPath = path.join(__dirname, '../data/agent_status.json');
+  console.log(`[Agent Hot-Swap] Loading agent lifecycle switches from: ${statusPath}`);
+
+  if (!fs.existsSync(statusPath)) {
+    const defaultStatus = {
+      ai_sales_champion: true,
+      risk_controller: true,
+      manual_editor: true,
+      claude_code: true,
+      meeting_minutes_specialist: true
+    };
+    try {
+      const dataDir = path.dirname(statusPath);
+      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+      fs.writeFileSync(statusPath, JSON.stringify(defaultStatus, null, 2), 'utf-8');
+    } catch (e) {
+      console.error(e);
+    }
+    return res.json({ success: true, status_matrix: defaultStatus });
+  }
+
+  try {
+    const rawData = fs.readFileSync(statusPath, 'utf-8');
+    res.json({ success: true, status_matrix: JSON.parse(rawData) });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to read agent status file." });
+  }
+});
+
+// 管理员物理保存 Agent 开关矩阵
+app.post('/api/system/agents/status/save', (req, res) => {
+  const { status_matrix } = req.body;
+  const user_role = req.user?.role || 'sales';
+  if (!status_matrix) return res.status(400).json({ error: "Missing status_matrix payload." });
+
+  if (user_role !== 'admin') {
+    return res.status(403).json({ success: false, error: "Access Denied: Only Admin can update Agent lifecycle switches." });X`

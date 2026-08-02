@@ -1,0 +1,154 @@
+
+#toolu_vrtx_017Ux77VEjmnE6byhFEe95Mp
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":1000,"Instruction":"
+=====================
+ .env","ReplacementContent":"TWITTER_API_TOKEN=\n\n# --------- 
+=====================
+\nINVITE_CODE=KUNLUN2025\n","StartLine":998,"TargetContent":"TWITTER_API_TOKEN=\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/.env","toolAction":"Adding INVITE_CODE to .env","toolSummary":"Add INVITE_CODE"}J
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$9043cfd8-2487-4216-819c-4b1fef5a6e3cj
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Adding INVITE_CODE to .env
+=====================
+TWITTER_API_TOKEN=
+
+# --------- 
+=====================
+
+INVITE_CODE=KUNLUN2025
+0
+=====================
+*>file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/.env2A
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+B
+># ============================================================
+=====================
+B
+># ============================================================
+=====================
+# Anthropic Claude (
+=====================
+6
+2CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+=====================
+4
+0DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+=====================
+6
+2AGGREGATOR_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+=====================
+2
+.AGGREGATOR_BASE_URL=https://api.example.com/v1
+=====================
+$
+ LARK_APP_ID=cli_xxxxxxxxxxxxxxxx
+=====================
+4
+0LARK_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+=====================
+X
+TWECHAT_DB_PATH=/Users/username/Library/Containers/com.tencent.xinWeChat/.../wx_db.db
+=====================
+G
+C# --------- WhatsApp 
+=====================
++
+'WHATSAPP_API_URL=http://localhost:19000
+=====================
+%
+!# --------- X (Twitter) ---------
+=====================
+INVITE_CODE=KUNLUN2025
+=====================
+9
+5TIANYANCHA_TOKEN=tyc_token_xxxxxxxxxxxxxxxxxxxxxxxxxx
+=====================
++
+'OPENCLAW_API_URL=http://localhost:18000
+=====================
+B>file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/.envR
+=====================
+# ============================================================
+# 
+=====================
+
+# ============================================================
+
+# --------- 
+=====================
+ ---------
+PORT=8888
+
+# --------- 
+=====================
+) ---------
+# Anthropic Claude (
+=====================
+ API)
+CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# DeepSeek API
+DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# 
+=====================
+ OpenAI Compatible)
+AGGREGATOR_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+AGGREGATOR_BASE_URL=https://api.example.com/v1
+
+# --------- 
+=====================
+ ---------
+LARK_APP_ID=cli_xxxxxxxxxxxxxxxx
+LARK_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# 
+=====================
+
+LARK_TABLE_ID=
+
+# --------- 
+=====================
+
+WECHAT_DB_PATH=/Users/username/Library/Containers/com.tencent.xinWeChat/.../wx_db.db
+
+# --------- WhatsApp 
+=====================
+) ---------
+WHATSAPP_API_URL=http://localhost:19000
+
+# --------- X (Twitter) ---------
+TWITTER_API_TOKEN=
+
+# --------- 
+=====================
+ ---------
+TIANYANCHA_TOKEN=tyc_token_xxxxxxxxxxxxxxxxxxxxxxxxxx
+OPENCLAW_API_URL=http://localhost:18000
+ 
+=====================
+TWITTER_API_TOKEN=
+
+# --------- 
+=====================
+
+INVITE_CODE=KUNLUN2025
+0

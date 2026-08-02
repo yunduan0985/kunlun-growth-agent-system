@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/content/trends 与 /api/content/topics/archive 两个选题热点与飞书看板同步端点。",
+  "EndLine": 619,
+  "Instruction": "在服务器启动部分之前加入自媒体爆款趋势获取和选题飞书归档路由。",
+  "ReplacementContent": "\n// 模拟获取自媒体渠道爆红选题趋势接口\napp.get('/api/content/trends', (req, res) => {\n  const { platform } = req.query;\n  console.log(`[Media Trends] Fetching hot content for platform: ${platform || 'xiaohongshu'}`);\n\n  res.json([\n    { title: \"普通人拿捏 AI 绘图，其实只需要这 4 个词\", platform: \"xiaohongshu\", likes: 25100, comments: 450 },\n    { title: \"别再瞎买课了！我把昆仑增长的 6 大核心 Agent 架构图公开了\", platform: \"xiaohongshu\", likes: 18900, comments: 230 },\n    { title: \"ARR 破十万美金的微型 AI SaaS 工具，底层全是用这个开源协议写的\", platform: \"wechat\", likes: 8900, comments: 120 }\n  ]);\n});\n\n// 模拟将选题一键同步至飞书内容排期看板接口\napp.post('/api/content/topics/archive', (req, res) => {\n  const { topic_title, suggested_titles, target_audience, model_type } = req.body;\n  if (!topic_title || !suggested_titles || !target_audience) {\n    return res.status(400).json({ error: \"Missing required topic parameters.\" });\n  }\n\n  console.log(`[Bitable Content Dashboard] Archiving topic: \"${topic_title}\". Model: ${model_type || 'conflict'}`);\n\n  res.json({\n    success: true,\n    bitable_record_id: \"rec_topic_\" + Math.random().toString(36).substring(2, 9)\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 619,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding content and Bitable routes to Gateway",
+  "toolSummary": "Modify file"
+}

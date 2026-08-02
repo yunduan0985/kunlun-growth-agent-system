@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "清理 enterApp 中残留的 user-role-select 引用，改为调用 updateRoleBadge() 更新只读角色徽章。",
+  "EndLine": 1098,
+  "Instruction": "移除 role-select 同步代码，改为更新只读徽章。",
+  "ReplacementContent": "      // 隐藏登录界面\n      document.getElementById('auth-screen').classList.add('hidden');\n      // 显示用户头像按钮\n      if (_currentUser) {\n        const initials = (_currentUser.display_name || _currentUser.email).substring(0, 2).toUpperCase();\n        document.getElementById('user-avatar-initials').textContent = initials;\n        document.getElementById('user-display-name').textContent = _currentUser.display_name || _currentUser.email.split('@')[0];\n        document.getElementById('dropdown-name').textContent = _currentUser.display_name;\n        document.getElementById('dropdown-email').textContent = _currentUser.email;\n        document.getElementById('dropdown-role').textContent = ROLE_DISPLAY[_currentUser.role]?.text || _currentUser.role;\n        document.getElementById('user-avatar-btn').style.display = 'flex';\n        // ✅ 更新只读角色徽章（角色由 JWT 决定，不可手动切换）\n        updateRoleBadge(_currentUser.role);\n      }\n",
+  "StartLine": 1083,
+  "TargetContent": "      // 隐藏登录界面\n      document.getElementById('auth-screen').classList.add('hidden');\n      // 显示用户头像按钮\n      if (_currentUser) {\n        const initials = (_currentUser.display_name || _currentUser.email).substring(0, 2).toUpperCase();\n        document.getElementById('user-avatar-initials').textContent = initials;\n        document.getElementById('user-display-name').textContent = _currentUser.display_name || _currentUser.email.split('@')[0];\n        document.getElementById('dropdown-name').textContent = _currentUser.display_name;\n        document.getElementById('dropdown-email').textContent = _currentUser.email;\n        document.getElementById('dropdown-role').textContent = _currentUser.role === 'admin' ? '👑 系统管理员' : _currentUser.role;\n        document.getElementById('user-avatar-btn').style.display = 'flex';\n        // 同步角色选择器\n        const roleMap = { admin: 'admin', editor: 'editor', sales: 'sales' };\n        const sel = document.getElementById('user-role-select');\n        if (sel && roleMap[_currentUser.role]) sel.value = roleMap[_currentUser.role];\n      }\n",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Fixing enterApp role badge update",
+  "toolSummary": "Fix enterApp role"
+}

@@ -1,0 +1,247 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":8,"Instruction":"
+=====================
+","ReplacementContent":"console.log('==================================================');\nconsole.log('
+=====================
+...');\nconsole.log('==================================================\\n');","StartLine":5,"TargetContent":"console.log('==================================================');\n2: console.log('
+=====================
+...');\n3: console.log('==================================================\\n');","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/scripts/install.js","toolAction":"Removing stray line numbers from install script","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$072f2138-4904-4a81-b165-a86c0a2e5395j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+/Removing stray line numbers from install script
+=====================
+console.log('==================================================');
+2: console.log('
+=====================
+...');
+3: console.log('==================================================\n');
+=====================
+console.log('==================================================');
+console.log('
+=====================
+...');
+console.log('==================================================\n');0
+=====================
+*Lfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scripts/install.js2O
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+const fs = require('fs');
+=====================
+const path = require('path');
+=====================
+2
+.const { execSync } = require('child_process');
+=====================
+F
+Bconsole.log('==================================================');
+=====================
+K
+G3: console.log('==================================================\n');
+=====================
+H
+Dconsole.log('==================================================\n');
+=====================
+8
+4const WORKSPACE_DIR = path.resolve(__dirname, '..');
+=====================
+;
+7const ENV_FILE_PATH = path.join(WORKSPACE_DIR, '.env');
+=====================
+;
+7const DATA_DIR_PATH = path.join(WORKSPACE_DIR, 'data');
+=====================
+A
+=const DEFAULT_DB_PATH = path.join(DATA_DIR_PATH, 'wx_db.db');
+=====================
+: ${WORKSPACE_DIR}`);
+=====================
+(
+$if (!fs.existsSync(DATA_DIR_PATH)) {
+=====================
+9
+5    fs.mkdirSync(DATA_DIR_PATH, { recursive: true });
+=====================
+Y
+U    console.log('
+=====================
+G
+C    console.error('
+=====================
+(
+$if (!fs.existsSync(ENV_FILE_PATH)) {
+=====================
+S
+O  const defaultEnvContent = `# 
+=====================
+6
+2CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+=====================
+9
+5TIANYANCHA_TOKEN=tyc_token_xxxxxxxxxxxxxxxxxxxxxxxxxx
+=====================
+%
+!WECHAT_DB_PATH=${DEFAULT_DB_PATH}
+=====================
++
+'OPENCLAW_API_URL=http://localhost:18000
+=====================
+D
+@    fs.writeFileSync(ENV_FILE_PATH, defaultEnvContent, 'utf-8');
+=====================
+s
+o    console.log('
+=====================
+>
+:    console.error('
+=====================
+ setup_claude_desktop.js 
+=====================
+[
+Wconst setupScriptPath = path.join(WORKSPACE_DIR, 'scripts', 'setup_claude_desktop.js');
+=====================
+ Claude Desktop MCP 
+=====================
+R
+N  const output = execSync(`node "${setupScriptPath}"`, { encoding: 'utf-8' });
+=====================
+  console.log(output);
+=====================
+j
+f  console.error('
+=====================
+F
+Bconsole.log('==================================================');
+=====================
+BLfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scripts/install.jsR
+=====================
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+console.log('==================================================');
+2: console.log('
+=====================
+...');
+3: console.log('==================================================\n');
+
+// 1. 
+=====================
+
+const WORKSPACE_DIR = path.resolve(__dirname, '..');
+const ENV_FILE_PATH = path.join(WORKSPACE_DIR, '.env');
+const DATA_DIR_PATH = path.join(WORKSPACE_DIR, 'data');
+const DEFAULT_DB_PATH = path.join(DATA_DIR_PATH, 'wx_db.db');
+
+console.log(`
+=====================
+: ${WORKSPACE_DIR}`);
+
+// 2. 
+=====================
+
+if (!fs.existsSync(DATA_DIR_PATH)) {
+  try {
+    fs.mkdirSync(DATA_DIR_PATH, { recursive: true });
+    console.log('
+=====================
+');
+  } catch (err) {
+    console.error('
+=====================
+:', err.message);
+  }
+}
+
+// 3. 
+=====================
+)
+if (!fs.existsSync(ENV_FILE_PATH)) {
+  console.log('
+=====================
+...');
+  const defaultEnvContent = `# 
+=====================
+
+PORT=8888
+CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TIANYANCHA_TOKEN=tyc_token_xxxxxxxxxxxxxxxxxxxxxxxxxx
+# 
+=====================
+)
+WECHAT_DB_PATH=${DEFAULT_DB_PATH}
+OPENCLAW_API_URL=http://localhost:18000
+`;
+  try {
+    fs.writeFileSync(ENV_FILE_PATH, defaultEnvContent, 'utf-8');
+    console.log('
+=====================
+');
+  } catch (err) {
+    console.error('
+=====================
+:', err.message);
+  }
+} else {
+  console.log('
+=====================
+ setup_claude_desktop.js 
+=====================
+ MCP
+const setupScriptPath = path.join(WORKSPACE_DIR, 'scripts', 'setup_claude_desktop.js');
+console.log('
+=====================
+ Claude Desktop MCP 
+=====================
+...');
+try {
+  const output = execSync(`node "${setupScriptPath}"`, { encoding: 'utf-8' });
+  console.log(output);
+} catch (err) {
+  console.error('
+=====================
+:', err.message);
+}
+
+console.log('
+=====================
+');
+console.log('1. 
+=====================
+');
+console.log('2. 
+=====================
+');
+console.log('3. 
+=====================
+');
+console.log('==================================================');
+ 
+=====================
+console.log('==================================================');
+2: console.log('
+=====================
+...');
+3: console.log('==================================================\n');
+=====================
+console.log('==================================================');
+console.log('
+=====================
+...');
+console.log('==================================================\n');0

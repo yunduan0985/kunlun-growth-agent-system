@@ -1,0 +1,42 @@
+-3750763034362895579H
+=====================
+PIZXaqabF8Wu_PUP55652AkX
+=====================
+b$1d910ea5-1fb6-477c-b00e-accf26403e2fj
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+**Adding Sync Button**
+
+I've added a new button to the WeChat card, specifically on lines 517-520. It's designed to sync data with Feishu. I'm calling this the "Lark Sync" button.
+
+
+2(bot-af4eb8b0-657e-46da-b428-60b879cef4f2:
+=====================
+replace_file_content
+=====================
+
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":521,"Instruction":"
+=====================
+","ReplacementContent":"          if (agent.type === 'wechat') {\n            actionUI = `\n              \u003cbutton class=\"btn-action\" onclick=\"fetchWechatData()\"\u003e
+=====================
+ (BANT)\u003c/button\u003e\n              \u003cbutton class=\"btn-action\" id=\"lark-sync-btn\" style=\"background-color: var(--success-color); margin-top: 8px; display: none;\" onclick=\"syncToLarkBitable()\"\u003e
+=====================
+ (Lark Base)\u003c/button\u003e\n              \u003cdiv class=\"terminal-output\" id=\"wechat-out\"\u003e
+=====================
+...\u003c/div\u003e\n            `;","StartLine":515,"TargetContent":"          if (agent.type === 'wechat') {\n            actionUI = `\n              \u003cbutton class=\"btn-action\" onclick=\"fetchWechatData()\"\u003e
+=====================
+ (BANT)\u003c/button\u003e\n              \u003cdiv class=\"terminal-output\" id=\"wechat-out\"\u003e
+=====================
+...\u003c/div\u003e\n            `;","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Adding Lark sync button template to Dashboard","toolSummary":"Modify file"}:
+=====================
+B.8lO=w~^bXv[@7b=iJ7xA
+=====================
+replace_file_contentZ

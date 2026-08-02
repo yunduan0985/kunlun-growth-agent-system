@@ -1,0 +1,16 @@
+{
+  "id": "intel_collector",
+  "name": "情报收集者",
+  "group": "实战组",
+  "description": "对竞品、行业动态和市场变化进行全天候自动化数据监控，收集一手线索与情报。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=intel_collector",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

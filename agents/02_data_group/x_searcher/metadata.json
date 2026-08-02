@@ -1,0 +1,16 @@
+{
+  "id": "x_searcher",
+  "name": "X检索官",
+  "group": "数据组",
+  "description": "在 X (Twitter) 上根据关键词 and KOL 列表检索最新科技、AI 以及商业增长的趋势与动态。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=x_searcher",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

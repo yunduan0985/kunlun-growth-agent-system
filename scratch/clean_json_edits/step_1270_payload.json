@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Electron 主进程的引入中加入 utilityProcess 模块。",
+  "EndLine": 16,
+  "Instruction": "修改引入，加入 utilityProcess。",
+  "ReplacementContent": "const { app, BrowserWindow, ipcMain, shell, Menu, utilityProcess } = require('electron');\nconst path = require('path');\nconst net  = require('net');\nconst { spawn } = require('child_process');\nconst fs = require('fs');",
+  "StartLine": 12,
+  "TargetContent": "const { app, BrowserWindow, ipcMain, shell, Menu } = require('electron');\nconst path = require('path');\nconst net  = require('net');\nconst { spawn } = require('child_process');\nconst fs = require('fs');",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/electron/main.js",
+  "toolAction": "Importing utilityProcess in electron/main.js",
+  "toolSummary": "Import utilityProcess"
+}

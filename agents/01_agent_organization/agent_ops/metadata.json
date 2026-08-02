@@ -1,0 +1,16 @@
+{
+  "id": "agent_ops",
+  "name": "agent运维官",
+  "group": "agent组织部",
+  "description": "监控 Agent 链路、运行状态与日志审计，基于 Langfuse 或 OpenTelemetry 提供监控方案。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=agent_ops",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

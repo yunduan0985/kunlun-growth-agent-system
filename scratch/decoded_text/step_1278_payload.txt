@@ -1,0 +1,32 @@
+-3750763034362895579H
+=====================
+PHJYauGxHLie1MkPydTs0A8X
+=====================
+b$f1792df7-40f2-4b66-9b3b-ab881af761a0j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-3434fbb4-62b7-4574-a263-cdbfbe35fc3d:
+=====================
+replace_file_content
+=====================
+	{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":19,"Instruction":"
+=====================
+ KUNLUN_USER_DATA_PATH 
+=====================
+","ReplacementContent":"// ==========================================\n// 
+=====================
+)\n// ==========================================\n// 
+=====================
+\nconst DATA_DIR = process.env.KUNLUN_USER_DATA_PATH || path.join(__dirname, '../data');\nif (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });","StartLine":14,"TargetContent":"// ==========================================\n// 
+=====================
+)\n// ==========================================\nconst DATA_DIR = path.join(__dirname, '../data');\nif (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Updating DATA_DIR definition in src/index.js","toolSummary":"Update DATA_DIR definition"}:
+=====================
+replace_file_content`

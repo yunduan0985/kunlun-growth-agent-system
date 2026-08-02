@@ -1,0 +1,30 @@
+-3750763034362895579HUP
+=====================
+aIRXavDbKOaI_uMPhcKw6A4X
+=====================
+b$072f2138-4904-4a81-b165-a86c0a2e5395j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-b01a3cd9-0871-43cd-9eb4-050036985a90:
+
+
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":8,"Instruction":"
+=====================
+","ReplacementContent":"console.log('==================================================');\nconsole.log('
+=====================
+...');\nconsole.log('==================================================\\n');","StartLine":5,"TargetContent":"console.log('==================================================');\n2: console.log('
+=====================
+...');\n3: console.log('==================================================\\n');","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/scripts/install.js","toolAction":"Removing stray line numbers from install script","toolSummary":"Modify file"}:
+=====================
+replace_file_content`

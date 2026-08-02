@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway 中新增全局异步任务存储字典 TASK_QUEUE 以支持长耗时异步任务调度。",
+  "EndLine": 21,
+  "Instruction": "在环境变量声明后加入TASK_QUEUE。",
+  "ReplacementContent": "const WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');\n\n// 全局异步任务队列存储 (防止长耗时 HTTP 超时挂起)\nconst TASK_QUEUE = {};\n\n// ==========================================",
+  "StartLine": 19,
+  "TargetContent": "const WX_DB_PATH = path.join(__dirname, '../data/wx_db.db');\n\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding TASK_QUEUE state variable to Gateway",
+  "toolSummary": "Modify file"
+}

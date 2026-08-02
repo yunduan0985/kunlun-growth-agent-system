@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/content/risk/scan 与 /api/content/risk/ip-check 两个内容风控检测端点。",
+  "EndLine": 647,
+  "Instruction": "在服务器启动部分之前加入内容极限词扫描和知识产权侵权审计路由。",
+  "ReplacementContent": "\n// 模拟自媒体文案极限敏感词检测接口 (包含自愈替换)\napp.post('/api/content/risk/scan', (req, res) => {\n  const { text, platform } = req.body;\n  if (!text) return res.status(400).json({ error: \"Missing parameter: text\" });\n\n  console.log(`[Content Risk Scan] Auditing text for platform: ${platform || 'xiaohongshu'}`);\n\n  const violations = [];\n  let risk_level = \"none\";\n\n  if (text.includes(\"第一\") || text.includes(\"最\")) {\n    risk_level = \"medium\";\n    violations.push({\n      trigger_text: text.includes(\"第一\") ? \"第一\" : \"最\",\n      risk_type: \"advertising_law_violation\",\n      suggested_fix: \"行业领先的\"\n    });\n  }\n\n  if (text.includes(\"微信\") || text.includes(\"加我\") || text.includes(\"私信\")) {\n    risk_level = \"medium\";\n    violations.push({\n      trigger_text: \"加我微信\",\n      risk_type: \"platform_traffic_bypass_risk\",\n      suggested_fix: \"在下方留下【SOP】或滴滴我，我会直接发送在您的信息流中\"\n    });\n  }\n\n  res.json({\n    success: true,\n    risk_level,\n    violations\n  });\n});\n\n// 模拟商业品牌侵权审计接口\napp.post('/api/content/risk/ip-check', (req, res) => {\n  const { brands } = req.body;\n  console.log(`[IP Compliance] Checking brands authorization: ${JSON.stringify(brands || [])}`);\n\n  res.json({\n    success: true,\n    status: \"compliant\",\n    warning: (brands && brands.includes(\"侵权品牌\")) ? \"Detected unregistered trademark referencing. Potential trademark conflict.\" : \"No registered copyright issues found.\"\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 647,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding risk scan and IP check routes to Gateway",
+  "toolSummary": "Modify file"
+}

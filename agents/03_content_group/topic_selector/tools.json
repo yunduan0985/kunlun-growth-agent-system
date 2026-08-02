@@ -1,0 +1,125 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "内容选题官辅助与同步工具集",
+    "version": "1.2.0",
+    "description": "提供给选题官 Agent 进行全网流量热点分析及内容选题多维表格同步的 API 规范。"
+  },
+  "paths": {
+    "/api/content/trends": {
+      "get": {
+        "summary": "获取当前自媒体平台上（如小红书、公众号、抖音）最新爆红的 AI 商业类热文标题列表",
+        "operationId": "getHotTrends",
+        "parameters": [
+          {
+            "name": "platform",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string", "enum": ["xiaohongshu", "wechat", "dy"], "default": "xiaohongshu" },
+            "description": "自媒体渠道"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功返回热点推文"
+          }
+        }
+      }
+    },
+    "/api/content/topics/archive": {
+      "post": {
+        "summary": "将确定选用的高价值选题、爆款标题备选及受众画像同步写入飞书多维表格内容发布看板中",
+        "operationId": "archiveContentTopic",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "topic_title": { "type": "string", "description": "选题核心主旨" },
+                  "suggested_titles": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "爆款标题备选列表"
+                  },
+                  "target_audience": { "type": "string", "description": "核心受众画像" },
+                  "model_type": { "type": "string", "enum": ["conflict", "low_effort", "fud"], "description": "采用的选题模型" }
+                },
+                "required": ["topic_title", "suggested_titles", "target_audience"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "选题归档同步成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "bitable_record_id": { "type": "string", "description": "飞书多维表格记录ID" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

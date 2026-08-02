@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # 统一的昆仑增长服务集成容器 (包含 MCP Gateway, 视频转录与会议纪要 API 桥接器)
+  kunlun-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kunlun-gateway
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - NODE_ENV=production
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+      - TIANYANCHA_API_KEY=${TIANYANCHA_API_KEY}
+    volumes:
+      - ./data:/app/data
+    restart: always
+
+  # 本地开源 RAG 与 Agent 测试平台 Dify
+  dify-db:
+    image: postgres:15-alpine
+    container_name: dify-db
+    environment:
+      - POSTGRES_DB=dify
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=dify_pwd
+    volumes:
+      - ./data/pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+
+  dify-redis:
+    image: redis:6-alpine
+    container_name: dify-redis
+    volumes:
+      - ./data/redis:/data
+    restart: always
+
+  dify-api:
+    image: langgenius/dify-api:0.6.15
+    container_name: dify-api
+    environment:
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=dify_pwd
+      - DB_HOST=dify-db
+      - DB_PORT=5432
+      - DB_DATABASE=dify
+      - REDIS_HOST=dify-redis
+      - REDIS_PORT=6379
+      - CELERY_BROKER_URL=redis://dify-redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://dify-redis:6379/1
+      - SECRET_KEY=kunlun_secret_key_123456
+    ports:
+      - "5001:5001"
+    depends_on:
+      - dify-db
+      - dify-redis
+    restart: always

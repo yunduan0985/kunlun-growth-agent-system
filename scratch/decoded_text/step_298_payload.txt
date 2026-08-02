@@ -1,0 +1,44 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/content/trends 
+=====================
+ /api/content/topics/archive 
+=====================
+","EndLine":619,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.get('/api/content/trends', (req, res) =\u003e {\n  const { platform } = req.query;\n  console.log(`[Media Trends] Fetching hot content for platform: ${platform || 'xiaohongshu'}`);\n\n  res.json([\n    { title: \"
+=====================
+\", platform: \"xiaohongshu\", likes: 25100, comments: 450 },\n    { title: \"
+=====================
+\", platform: \"xiaohongshu\", likes: 18900, comments: 230 },\n    { title: \"ARR 
+=====================
+\", platform: \"wechat\", likes: 8900, comments: 120 }\n  ]);\n});\n\n// 
+=====================
+\napp.post('/api/content/topics/archive', (req, res) =\u003e {\n  const { topic_title, suggested_titles, target_audience, model_type } = req.body;\n  if (!topic_title || !suggested_titles || !target_audience) {\n    return res.status(400).json({ error: \"Missing required topic parameters.\" });\n  }\n\n  console.log(`[Bitable Content Dashboard] Archiving topic: \"${topic_title}\". Model: ${model_type || 'conflict'}`);\n\n  res.json({\n    success: true,\n    bitable_record_id: \"rec_topic_\" + Math.random().toString(36).substring(2, 9)\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":619,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding content and Bitable routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$717d9050-3a05-431f-9ad9-a201557f8a36j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+,Adding content and Bitable routes to Gateway

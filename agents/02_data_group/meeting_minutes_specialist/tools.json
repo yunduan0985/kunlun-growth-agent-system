@@ -1,0 +1,135 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "会议纪要与待办追踪插件",
+    "version": "1.2.0",
+    "description": "提供给会议纪要 Agent 进行非结构化文本去噪总结、决策项提取及行动看板分发的 API 规范。"
+  },
+  "paths": {
+    "/api/meeting/summarize": {
+      "post": {
+        "summary": "分析会议原始转录文本，生成结构化的决议日志与摘要信息",
+        "operationId": "summarizeMeeting",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "content": { "type": "string", "description": "口语化的视频或音频转录原始文本" }
+                },
+                "required": ["content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "纪要生成成功"
+          }
+        }
+      }
+    },
+    "/api/meeting/action-items": {
+      "post": {
+        "summary": "将提取出来的行动待办项同步推送并创建到外部飞书多维表格或任务看板中",
+        "operationId": "createActionItems",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "meeting_title": { "type": "string" },
+                  "action_items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "owner": { "type": "string", "description": "任务负责人" },
+                        "task": { "type": "string", "description": "核心任务内容" },
+                        "deadline": { "type": "string", "description": "截止日期" }
+                      },
+                      "required": ["owner", "task", "deadline"]
+                    }
+                  }
+                },
+                "required": ["meeting_title", "action_items"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "待办分发成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "看板条目数": { "type": "integer" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口：向微信群聊或联系人投递文本消息",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string", "description": "微信群聊ID或联系人微信号/备注" },
+                  "content": { "type": "string", "description": "发送的文本内容" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口：运行安全的 Mac 本地 Shell 编译、打包指令或飞书 lark CLI、claude CLI 命令",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string", "description": "完整的终端命令" },
+                  "cwd": { "type": "string", "description": "运行路径" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

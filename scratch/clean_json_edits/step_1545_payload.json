@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "优化凭证硬编码审计规则，将匹配范围缩窄到具体的 API Key 前缀或赋值语句，规避常规 32 位 MD5/Hash 字符串导致的误报。",
+  "EndLine": 26,
+  "Instruction": "修改 patterns 字典中的 Lark App Secret 和其他 Key 规则。",
+  "ReplacementContent": "    patterns = {\n        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',\n        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',\n        'Lark App ID': r'cli_[a-z0-9]{16}',\n        'Lark App Secret': r'LARK_APP_SECRET\\s*=\\s*[\\'\"][a-zA-Z0-9]{32}[\\'\"]|app_secret\\s*:\\s*[\\'\"][a-zA-Z0-9]{32}[\\'\"]',\n        'JWT Secret Keyword': r'const JWT_SECRET\\s*=\\s*[\\'\"][a-zA-Z0-9_-]{16,}[\\'\"]'\n    }",
+  "StartLine": 20,
+  "TargetContent": "    patterns = {\n        'Anthropic API Key': r'sk-ant-[a-zA-Z0-9_-]{30,}',\n        'OpenAI API Key': r'sk-[a-zA-Z0-9]{48}',\n        'Lark App ID': r'cli_[a-z0-9]{16}',\n        'Lark App Secret': r'[a-zA-Z0-9]{32}',\n        'JWT Secret Keyword': r'const JWT_SECRET\\s*=\\s*[\\'\"][^\\'\"]+[\\'\"]'\n    }",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/.agents/skills/agent-security-audit/scripts/audit_scanner.py",
+  "toolAction": "Fixing regex false positives in security scanner patterns",
+  "toolSummary": "Refine regex patterns"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "video_transcription_helper",
+  "name": "视频转录助手",
+  "group": "数据组",
+  "description": "接收视频链接（如B站、YouTube），调用后台 Whisper 接口完成音视频提取、转录与字幕生成。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=video_transcription_helper",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

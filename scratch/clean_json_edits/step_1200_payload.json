@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "实现获取机器码、校验激活状态、以及激活授权的后端 API 接口。",
+  "EndLine": 141,
+  "Instruction": "在 check-init 之前添加 machine-id 和 license 相关接口。",
+  "ReplacementContent": "// 获取机器码\napp.get('/api/auth/machine-id', (req, res) => {\n  res.json({ machine_id: getMachineId() });\n});\n\n// 获取激活状态\napp.get('/api/auth/license/status', (req, res) => {\n  res.json({ activated: isSystemActivated() });\n});\n\n// 激活系统\napp.post('/api/auth/license/activate', (req, res) => {\n  const { license_key } = req.body;\n  if (!license_key) return res.status(400).json({ error: '激活码不能为空。' });\n  \n  if (verifyLicense(license_key)) {\n    try {\n      fs.writeFileSync(LICENSE_FILE, JSON.stringify({ license_key, activated_at: new Date().toISOString() }, null, 2), 'utf-8');\n      res.json({ success: true, message: '系统激活成功！感谢使用 KUNLUN GROWTH Agent OS。' });\n    } catch (e) {\n      res.status(500).json({ error: '写入授权文件失败，请检查写入权限。' });\n    }\n  } else {\n    res.status(400).json({ error: '激活码无效，请核对后重试。' });\n  }\n});\n\n// 检查是否已初始化（首次启动引导）\napp.get('/api/auth/check-init', (req, res) => {",
+  "StartLine": 140,
+  "TargetContent": "// 检查是否已初始化（首次启动引导）\napp.get('/api/auth/check-init', (req, res) => {",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding license endpoints",
+  "toolSummary": "Add license endpoints"
+}

@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/operation/ticket/resolve 会员交付异常工单应答与技术组派流转端点。",
+  "EndLine": 1024,
+  "Instruction": "在服务器启动之前加入会员工单诊断和自愈应答路由。",
+  "ReplacementContent": "\n// 模拟会员答疑与派单流转接口\napp.post('/api/operation/ticket/resolve', (req, res) => {\n  const { member_name, question } = req.body;\n  if (!member_name || !question) return res.status(400).json({ error: \"Missing parameter: member_name or question\" });\n\n  console.log(`[Support Ticket] Processing incident for member: ${member_name}. Issue: ${question}`);\n\n  const isTechnical = question.toLowerCase().includes(\"npm\") || question.toLowerCase().includes(\"err\") || question.toLowerCase().includes(\"code\") || question.toLowerCase().includes(\"sqlite\");\n\n  res.json({\n    success: true,\n    replied_text: isTechnical ? \"抱歉哈兄弟，这看起来是个环境编译编译卡点。我已经帮您将此工单自动升级派发给我们的技术专家，技术人员会在飞书看板上跟进，并及时给您回复。\" : \"收到，关于您提问的冷启动选题方案，建议查阅我们的《小红书冷启动7步起号手册》第二章。\",\n    need_escalation: isTechnical\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 1024,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding ticketing routes to Gateway",
+  "toolSummary": "Modify file"
+}

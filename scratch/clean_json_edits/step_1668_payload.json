@@ -1,0 +1,7 @@
+{
+  "MatchPerLine": true,
+  "Query": "\"TargetFile\":\"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js\"",
+  "SearchPath": "/Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/.system_generated/logs/transcript_full.jsonl",
+  "toolAction": "Searching for TargetFile index.js write operations in the logs",
+  "toolSummary": "Search index.js TargetFile"
+}

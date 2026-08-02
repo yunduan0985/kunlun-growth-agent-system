@@ -1,0 +1,41 @@
+replace_file_content
+=====================
+
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/operation/sales/qualify 
+=====================
+","EndLine":1041,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.post('/api/operation/sales/qualify', (req, res) =\u003e {\n  const { chat_history } = req.body;\n  if (!chat_history) return res.status(400).json({ error: \"Missing parameter: chat_history\" });\n\n  console.log(`[Sales Agent] Running BANT analysis on WeChat chat logs...`);\n\n  res.json({\n    success: true,\n    budget_confirmed: true,\n    need_description: \"
+=====================
+\",\n    closing_rate: 0.80,\n    recommended_script: \"
+=====================
+\"\n  });\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":1041,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding sales qualify routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*
+AllowMultiple*
+=====================
+ReplacementContent*	StartLine*
+TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$3a45aca5-cf24-4517-83f7-e84b65ee8ab6j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+&Adding sales qualify routes to Gateway

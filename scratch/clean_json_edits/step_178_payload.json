@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/tianyancha/equity 与 /api/tianyancha/risk 两个征信风险审计接口。",
+  "EndLine": 418,
+  "Instruction": "在服务器启动部分之前加入天眼查股权穿透和司法风险查询路由。",
+  "ReplacementContent": "\n// 模拟天眼查股权穿透接口\napp.get('/api/tianyancha/equity', (req, res) => {\n  const { company_name } = req.query;\n  if (!company_name) return res.status(400).json({ error: \"Missing: company_name\" });\n\n  console.log(`[TianYanCha] Querying equity structure for: ${company_name}`);\n\n  res.json({\n    success: true,\n    actual_controller: \"自然人A\",\n    shareholders: [\n      { name: \"自然人A\", type: \"natural_person\", ratio: \"60.0%\" },\n      { name: \"母公司B\", type: \"enterprise\", ratio: \"30.0%\" },\n      { name: \"小股东C\", type: \"natural_person\", ratio: \"10.0%\" }\n    ],\n    nesting_level: 2\n  });\n});\n\n// 模拟天眼查司法风险接口\napp.get('/api/tianyancha/risk', (req, res) => {\n  const { company_name } = req.query;\n  if (!company_name) return res.status(400).json({ error: \"Missing: company_name\" });\n\n  console.log(`[TianYanCha] Auditing risks for: ${company_name}`);\n\n  const hasHighRisk = company_name.includes(\"风险\") || company_name.includes(\"暴雷\");\n\n  res.json({\n    success: true,\n    risk_level: hasHighRisk ? \"high\" : \"low\",\n    cases: hasHighRisk ? [\n      { type: \"execute_case\", detail: \"被北京市朝阳区人民法院强制执行 450 万元人民币\", status: \"unfulfilled\" },\n      { type: \"operation_exception\", detail: \"因连续6个月未经营被列入异常名录\", status: \"active\" }\n    ] : [],\n    judgment_count: hasHighRisk ? 12 : 0\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 418,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding tianyancha routes to Gateway",
+  "toolSummary": "Modify file"
+}

@@ -1,0 +1,65 @@
+-3750763034362895579P
+=====================
+Z!req_vrtx_011Cd3wZkuaHpxoV66kPp4GxX
+=====================
+b$8688c2dc-2c28-4eee-b193-c94b5f5f4a59j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+ `executeJavaScript` 
+=====================
+2(bot-cc8401ca-c141-47f9-b342-28c7d5e34df6:'
+#toolu_vrtx_012rtqqaE6FypNzGR8XjCUda
+=====================
+multi_replace_file_content
+=====================
+","Instruction":"1. 
+=====================
+\n3. executeJavaScript 
+=====================
+","ReplacementChunks":[{"AllowMultiple":false,"EndLine":66,"ReplacementContent":"// 
+=====================
+\n// ==========================================\nfunction startGateway(port) {\n  // 
+=====================
+ resources/app/src/ 
+=====================
+\n  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;\n  const gatewayPath = isDev\n    ? path.join(__dirname, '../src/index.js')\n    : path.join(process.resourcesPath, 'app/src/index.js');\n\n  // 
+=====================
+\n  const fs = require('fs');\n  const CANDIDATE_NODE_PATHS = [\n    '/opt/homebrew/bin/node',   // macOS Apple Silicon (Homebrew)\n    '/usr/local/bin/node',      // macOS Intel (Homebrew / nvm)\n    '/usr/bin/node',            // Linux\n    process.env.NODE_BINARY,   // 
+=====================
+\n    'node',                    // PATH 
+=====================
+\n  ].filter(Boolean);\n\n  let nodeExecutable = 'node'; // 
+=====================
+\n  for (const p of CANDIDATE_NODE_PATHS) {\n    if (p === 'node') { nodeExecutable = p; break; } // PATH 
+=====================
+\n    if (fs.existsSync(p)) { nodeExecutable = p; break; }\n  }\n\n  console.log(`[Electron] Node binary: ${nodeExecutable}`);\n  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);\n\n  const env = Object.assign({}, process.env, {\n    PORT: String(port),\n    NODE_ENV: isDev ? 'development' : 'production'\n  });\n\n  gatewayProcess = spawn(nodeExecutable, [gatewayPath], {\n    env,\n    stdio: ['pipe', 'pipe', 'pipe']\n  });","StartLine":45,"TargetContent":"// 
+=====================
+\n// ==========================================\nfunction startGateway(port) {\n  // 
+=====================
+ resources/app/src/ 
+=====================
+\n  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;\n  const gatewayPath = isDev\n    ? path.join(__dirname, '../src/index.js')\n    : path.join(process.resourcesPath, 'app/src/index.js');\n\n  const nodeExecutable = process.execPath; // 
+=====================
+\n\n  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);\n\n  const env = Object.assign({}, process.env, {\n    PORT: String(port),\n    NODE_ENV: isDev ? 'development' : 'production'\n  });\n\n  gatewayProcess = spawn(process.execPath, [gatewayPath], {\n    env,\n    stdio: ['pipe', 'pipe', 'pipe']\n  });"},{"AllowMultiple":false,"EndLine":120,"ReplacementContent":"  // 3. 
+=====================
+\n  await new Promise(r =\u003e setTimeout(r, 3500));","StartLine":117,"TargetContent":"  // 3. 
+=====================
+\n  await new Promise(r =\u003e setTimeout(r, 2000));"},{"AllowMultiple":false,"EndLine":147,"ReplacementContent":"  // 6. 
+=====================
+\n  mainWindow.once('ready-to-show', () =\u003e {\n    mainWindow.show();\n    // 
+=====================
+\n    setTimeout(() =\u003e {\n      if (mainWindow \u0026\u0026 !mainWindow.isDestroyed()) {\n        mainWindow.webContents.executeJavaScript(\n          `try { \n            window.__GATEWAY_PORT__ = ${activePort}; \n            if(typeof window.initGatewayUrl === 'function') window.initGatewayUrl(${activePort});\n            console.log('[Electron IPC] Gateway port injected:', ${activePort});\n          } catch(e) { console.warn('initGatewayUrl not ready yet', e); }`\n        ).catch(e =\u003e console.error('[Electron] executeJavaScript error:', e));\n      }\n    }, 500);\n  });","StartLine":143,"TargetContent":"  // 6. 
+=====================
+\n  mainWindow.once('ready-to-show', () =\u003e {\n    mainWindow.show();\n    // 
+=====================
+\n    mainWindow.webContents.executeJavaScript(\n      `window.__GATEWAY_PORT__ = ${activePort}; \n       if(typeof initGatewayUrl === 'function') initGatewayUrl(${activePort});\n       console.log('[Electron IPC] Gateway port set to:', ${activePort});`\n    );\n  });"}],"TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/electron/main.js","toolAction":"Fixing Electron main process gateway spawn","toolSummary":"Fix gateway spawn"}J
+=====================
+multi_replace_file_contentB
+=====================
+ `executeJavaScript` 

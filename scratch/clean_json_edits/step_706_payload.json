@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 index.html 微信卡片渲染中，增加用于一键同步到飞书多维表格的隐藏操作按钮。",
+  "EndLine": 521,
+  "Instruction": "修改 actionUI 里的 wechat 卡片部分，加入隐藏的飞书同步按钮。",
+  "ReplacementContent": "          if (agent.type === 'wechat') {\n            actionUI = `\n              <button class=\"btn-action\" onclick=\"fetchWechatData()\">一键扫描微信线索 (BANT)</button>\n              <button class=\"btn-action\" id=\"lark-sync-btn\" style=\"background-color: var(--success-color); margin-top: 8px; display: none;\" onclick=\"syncToLarkBitable()\">一键同步飞书多维表格 (Lark Base)</button>\n              <div class=\"terminal-output\" id=\"wechat-out\">等待触发...</div>\n            `;",
+  "StartLine": 515,
+  "TargetContent": "          if (agent.type === 'wechat') {\n            actionUI = `\n              <button class=\"btn-action\" onclick=\"fetchWechatData()\">一键扫描微信线索 (BANT)</button>\n              <div class=\"terminal-output\" id=\"wechat-out\">等待触发...</div>\n            `;",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/index.html",
+  "toolAction": "Adding Lark sync button template to Dashboard",
+  "toolSummary": "Modify file"
+}

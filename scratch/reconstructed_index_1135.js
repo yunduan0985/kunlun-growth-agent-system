@@ -1,0 +1,2772 @@
+unsupported mime type image/png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/agent_audit_and_optimization_roadmap.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/agent_hot_swap_and_future_roadmap.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/agent_platform_build_vs_buy.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/audit_and_apple_style_roadmap.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/browser/scratchpad_hirzwpc3.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/implementation_plan.md
+f
+f
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/lark_base_and_interface_integration.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/local_html_console_design.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/local_private_agent_architecture.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784116522880.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784116547373.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784118730897.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784118863752.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784119262872.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784120495688.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784120578356.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784122967683.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784123186910.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784123204916.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784177468066.png
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/media__1784179112632.png
+f
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/private_rag_and_knowledge_base_spec.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/scratch/init_agents.py
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/scratch/upgrade_all_agents.py
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/task.md
+file:///Users/dasean/.gemini/antigravity/brain/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd/walkthrough.md
+# Kunlun A
+i
+# Codex (扣子/Coze) 
+# Role: AI帅总 (CEO & Top Busine
+{
+  "openapi": "3.0.0",
+  "
+# Role: 选题官
+#
+version: '3
+{
+  "name": "ku
+F
+const
+# Role: AI销冠 (WeChat Private-Domai
+# Role: 微信数据专
+# Role: 视频转录助手
+
+# Role: Claude code (Aut
+{
+  "openapi": "3.0.0",
+  "info":
+const fs = requir
+{
+  "openapi": "3.0.0",
+  "
+{
+  "openapi": "3.0.0",
+ 
+# Role: agent架构师 (Mult
+{
+  "openapi": "3.0.0",
+  "
+# Role: agent运维官 (LLMOp
+import os
+import json
+
+BASE_PATH = "/Volumes/MOV
+# Role: agent应用审核专员 (A
+{
+  "openapi": "3.0.0",
+  "info": 
+# Role: 技术专家 (Lead Soluti
+{
+  "openapi": "3.0.0",
+  "info": 
+# Role: 帅总知识库 (RAG K
+{
+  "openapi": "3.0.0",
+  "info": 
+# Role: 天眼查 (Company Due D
+{
+  "openapi": "3.0.0",
+  "i
+# Role: 会议纪要专员 (Meet
+{
+  "openapi": "3.0.0",
+  "info": 
+{
+  "openapi": "3.0.0",
+  "info": {
+ 
+# Role: Notebook&Weread (WeRead 
+{
+  "openapi": "3.0.0",
+  "info": {
+# Role: Github检索 (GitHub Open 
+{
+  "openapi": "3.0.0",
+  "info
+# Role: X检索官 (X/Twitter AI & 
+{
+  "openapi": "3.0.0",
+  "i
+{
+  "openapi": "3.0.0",
+  "info": {
+
+{
+  "openapi": "3.0.0",
+  "info":
+# Role: 风控官 (Content Legal & Compl
+{
+  "openapi": "3.0.0",
+  "info": {
+ 
+# Role: 内容专家 (Content Expert
+{
+  "openapi": "3.0.0",
+  "info": {
+# Role: 内容生产官 (High-
+{
+  "openapi": "3.0.0",
+  
+
+  "openapi": "3.0.0",
+  "info": {
+    "title": "内容生产官快速写作插件",
+    "version": "1.2.0",
+    "descripti
+# Role: 公众号排版编辑 (WeC
+{
+  "openapi": "3.0.0",
+  "info": 
+{
+  "openapi": "3.0.0",
+  
+
+  "openapi": "3.0.0",
+  "info": {
+    "title": "知识星球自动发布插件",
+    "version": "1.2.0",
+    "description"
+{
+  "openapi": "3.0.0",
+ 
+# Role: CEO助理 (Executive Ass
+{
+  "openapi": "3.0.0",
+  "inf
+# Role: 投资顾问 (Equity & Risk D
+{
+  "openapi": "3.0.0",
+  
+
+  "openapi": "3.0.0",
+  "info": {
+    "title": "投资尽调与风控穿透插件",
+    "version": "1.2.0",
+    "descripti
+# Role: 项目经理 (WBS Execution
+{
+  "openapi": "3.0.0",
+  "info
+# Role: 财务分析师 (Financial
+{
+  "openapi": "3.0.0",
+  "
+# Role: 情报收集者 (Competitor
+rfile:///V
+{
+  "openapi": "3.0.0",
+ 
+# Role: 情报研究者 (Strategic I
+sfile:///V
+{
+  "openapi": "3.0.0",
+
+{
+  "openapi": "3.0.0",
+  "
+# Role: 会员交付负责人 (Membe
+ufile:///V
+{
+  "openapi": "3.0.0",
+ 
+{
+  "openapi": "3.0.0",
+  
+
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AI 销冠私域成交转化插件",
+    "version": "1.2.0",
+    "descripti
+# Role: AI设计师 (Visual Aesthetic
+{
+  "openapi": "3.0.0"
+# ⚖️ 昆仑增长 Agent 平台：B
+# 🎨 昆仑增
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>昆仑增长 · 离线多智能体双语控制台 (Kunlun Growth Console)</title>
+  <style>
+    :root {
+      --bg-color: #f5f5f7; /* 苹果官网淡灰底色 */
+      --sidebar-bg: #ffffff; 
+      --card-bg: #ffffff; 
+      --border-light: #e8e8ed; 
+      --border-color: #d2d2d7; 
+      --text-main: #1d1d1f; 
+      --text-muted: #86868b; 
+      --accent-color: #0071e3; 
+      --accent-hover: #0077ed;
+      --success-color: #34c759; 
+      --warning-color: #ff9500; 
+      --danger-color: #ff3b30; 
+      --input-bg: #f5f5f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      letter-spacing: -0.015em;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==========================================
+       🔐 登录 / 注册 界面
+       ========================================== */
+    #auth-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f5f5f7 0%, #e8e8f0 50%, #f0f0f5 100%);
+    }
+
+    #auth-screen.hidden { display: none; }
+
+    .auth-card {
+      width: 420px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 24px;
+      padding: 48px 44px 44px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid rgba(255,255,255,0.8);
+      animation: authCardIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
+    @keyframes authCardIn {
+      from { opacity: 0; transform: scale(0.92) translateY(16px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .auth-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .auth-logo-icon {
+      width: 44px;
+      height: 44px;
+      background: #1d1d1f;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .auth-logo-text { font-size: 18px; font-weight: 700; color: var(--text-main); }
+    .auth-logo-sub  { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    .auth-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      letter-spacing: -0.03em;
+    }
+
+    .auth-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .auth-input-group { margin-bottom: 14px; }
+
+    .auth-label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .auth-input {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
+      font-size: 14px;
+      color: var(--text-main);
+      background: var(--input-bg);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      font-family: inherit;
+    }
+
+    .auth-input:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(0,113,227,0.12);
+      background: #fff;
+    }
+
+    .auth-input.error { border-color: var(--danger-color); }
+
+    .auth-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--text-main);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 14.5px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: all 0.15s;
+      font-family: inherit;
+      letter-spacing: -0.01em;
+    }
+
+    .auth-btn:hover { background: #2d2d2f; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .auth-btn:active { transform: translateY(0); }
+    .auth-btn:disabled { background: var(--text-muted); cursor: not-allowed; transform: none; box-shadow: none; }
+
+    .auth-err {
+      font-size: 12px;
+      color: var(--danger-color);
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: rgba(255,59,48,0.08);
+      border-radius: 8px;
+      display: none;
+    }
+
+    .auth-err.show { display: block; }
+
+    .auth-ok {
+      font-size: 12px;
+      color: var(--success-color);
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: rgba(52,199,89,0.08);
+      border-radius: 8px;
+      display: none;
+    }
+
+    .auth-ok.show { display: block; }
+
+    .auth-switch {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .auth-switch a {
+      color: var(--accent-color);
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .auth-switch a:hover { text-decoration: underline; }
+
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+    .auth-divider::before, .auth-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-light);
+    }
+
+    /* 用户头像菜单 */
+    .user-avatar-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border-light);
+      background: white;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-main);
+      transition: all 0.15s;
+      position: relative;
+    }
+    .user-avatar-btn:hover { background: var(--bg-color); border-color: var(--border-color); }
+
+    .user-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0071e3, #34c759);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .user-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 8px;
+      min-width: 200px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      display: none;
+      z-index: 1000;
+    }
+    .user-dropdown.show { display: block; animation: authCardIn 0.2s ease both; }
+
+    .dropdown-item {
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .dropdown-item:hover { background: var(--bg-color); }
+    .dropdown-item.danger { color: var(--danger-color); }
+    .dropdown-divider { height: 1px; background: var(--border-light); margin: 6px 0; }
+
+    /* 侧边栏 */
+    .sidebar {
+      width: 290px;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      padding: 35px 20px;
+      overflow-y: auto;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 35px;
+      padding-left: 8px;
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--text-main);
+      border-radius: 6px;
+    }
+
+    .logo-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .menu-header {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 22px 0 10px 8px;
+      font-weight: 600;
+    }
+
+    .menu-item {
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      margin-bottom: 4px;
+      font-size: 13.5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 500;
+    }
+
+    .menu-item:hover {
+      background: var(--bg-color);
+    }
+
+    .menu-item.active {
+      background: var(--bg-color);
+      font-weight: 600;
+      color: var(--accent-color);
+    }
+
+    .badge-count {
+      font-size: 10px;
+      background: var(--border-light);
+      padding: 2px 6px;
+      border-radius: 10px;
+      color: var(--text-muted);
+      font-weight: bold;
+    }
+
+    .menu-item.active .badge-count {
+      background: rgba(0, 113, 227, 0.1);
+      color: var(--accent-color);
+    }
+
+    /* 主工作区 */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 45px 50px;
+      overflow-y: auto;
+    }
+
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 35px;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 25px;
+    }
+
+    .net-badge {
+      background: rgba(52, 199, 89, 0.1);
+      color: var(--success-color);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Agent 模块网格 */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    /* 配置中心全幅面板 */
+    .panel-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 32px 36px;
+      width: 100%;
+      min-height: 200px;
+      overflow: visible;
+    }
+
+    .agent-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+    }
+
+    .agent-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+      border-color: var(--border-color);
+    }
+
+    .agent-card.disabled {
+      opacity: 0.35;
+    }
+
+    .agent-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 10px;
+    }
+
+    .agent-name {
+      font-size: 15.5px;
+      font-weight: 600;
+    }
+
+    /* Switch 开关 */
+    .switch-container {
+      display: inline-block;
+      position: relative;
+      width: 42px;
+      height: 22px;
+    }
+
+    .switch-container input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--border-light);
+      transition: .25s ease;
+      border-radius: 22px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 2px;
+      bottom: 2px;
+      background-color: #fff;
+      transition: .25s ease;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+    input:checked + .slider {
+      background-color: var(--success-color);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .agent-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      min-height: 40px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      outline: none;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+
+    .form-input:focus {
+      background: #ffffff;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+    }
+
+    .btn-action {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .btn-action:hover {
+      background: #0077ed;
+      box-shadow: 0 2px 8px rgba(0, 113, 227, 0.25);
+    }
+
+    .terminal-output {
+      background: #1d1d1f; 
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 15px;
+      font-family: SFMono-Regular, Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #30d158; 
+      min-height: 105px;
+      max-height: 180px;
+      overflow-y: auto;
+      margin-top: 15px;
+      white-space: pre-wrap;
+    }
+
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    .perm-table th, .perm-table td {
+      border: 1px solid var(--border-light);
+      padding: 12px;
+      text-align: center;
+    }
+
+    .perm-table th {
+      background: var(--bg-color);
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* IM 聊天布局 */
+    .im-container {
+      display: flex;
+      height: calc(100vh - 190px);
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+    }
+
+    .im-agent-list {
+      width: 250px;
+      border-right: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+    }
+
+    .im-list-item {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-light);
+      cursor: pointer;
+      transition: background 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .im-list-item:hover {
+      background: var(--bg-color);
+    }
+
+    .im-list-item.active {
+      background: rgba(0, 113, 227, 0.05);
+      border-left: 4px solid var(--accent-color);
+      padding-left: 14px;
+    }
+
+    .im-item-name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .im-item-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .im-chat-pane {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #f5f5f7; 
+    }
+
+    .im-chat-header {
+      padding: 15px 25px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .im-chat-header-title {
+      font-size: 14.5px;
+      font-weight: 600;
+    }
+
+    .im-history {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .chat-bubble-container {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .bubble {
+      max-width: 75%;
+      padding: 12px 18px;
+      border-radius: 16px;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .bubble.user {
+      align-self: flex-end;
+      background: var(--accent-color);
+      color: #ffffff;
+      border-bottom-right-radius: 4px;
+    }
+
+    .bubble.agent {
+      align-self: flex-start;
+      background: #ffffff;
+      color: var(--text-main);
+      border-bottom-left-radius: 4px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+    }
+
+    .im-chat-input-bar {
+      padding: 20px 25px;
+      background: #ffffff;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .im-profile-pane {
+      width: 280px;
+      border-left: 1px solid var(--border-light);
+      background: #ffffff;
+      padding: 25px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* 📚 知识库卡片组件 */
+    .knowledge-card {
+      background: var(--bg-color);
+      border: 1px solid var(--border-light);
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 12.5px;
+    }
+
+    .knowledge-card-title {
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .knowledge-card-preview {
+      color: var(--text-muted);
+      font-size: 11.5px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       🔐 登录 / 注册 全屏界面（默认显示，登录后隐藏）
+       ========================================== -->
+  <div id="auth-screen">
+    <div class="auth-card" id="auth-card">
+      <!-- Logo -->
+      <div class="auth-logo">
+        <div class="auth-logo-icon">🤖</div>
+        <div>
+          <div class="auth-logo-text">KUNLUN GROWTH</div>
+          <div class="auth-logo-sub">Agent OS · Private AI Platform</div>
+        </div>
+      </div>
+
+      <!-- 登录表单 -->
+      <div id="form-login">
+        <div class="auth-title">欢迎回来</div>
+        <div class="auth-subtitle" id="login-subtitle">登录您的账号，开始使用 AI 智能体矩阵</div>
+
+        <div class="auth-input-group">
+          <label class="auth-label">邮箱地址</label>
+          <input type="email" class="auth-input" id="login-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="auth-input-group">
+          <label class="auth-label">密码</label>
+          <input type="password" class="auth-input" id="login-password" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+        </div>
+
+        <div class="auth-err" id="login-err"></div>
+        <div class="auth-ok" id="login-ok"></div>
+
+        <button class="auth-btn" id="login-btn" onclick="doLogin()">登录</button>
+
+        <div class="auth-switch">
+          还没有账号？<a onclick="switchAuthForm('register')">立即注册</a>
+        </div>
+      </div>
+
+      <!-- 注册表单 -->
+      <div id="form-register" style="display:none;">
+        <div class="auth-title" id="reg-title">创建账号</div>
+        <div class="auth-subtitle" id="reg-subtitle">首次使用？创建您的管理员账号</div>
+
+        <div class="auth-input-group">
+          <label class="auth-label">显示名称</label>
+          <input type="text" class="auth-input" id="reg-name" placeholder="您的姓名或昵称">
+        </div>
+        <div class="auth-input-group">
+          <label class="auth-label">邮箱地址</label>
+          <input type="email" class="auth-input" id="reg-email" placeholder="your@email.com">
+        </div>
+        <div class="auth-input-group">
+          <label class="auth-label">密码（至少 8 位）</label>
+          <input type="password" class="auth-input" id="reg-password" placeholder="至少 8 位字符" autocomplete="new-password">
+        </div>
+        <div class="auth-input-group" id="invite-code-group" style="display:none;">
+          <label class="auth-label">邀请码</label>
+          <input type="text" class="auth-input" id="reg-invite" placeholder="联系管理员获取邀请码" style="text-transform:uppercase;">
+        </div>
+
+        <div class="auth-err" id="reg-err"></div>
+        <div class="auth-ok" id="reg-ok"></div>
+
+        <button class="auth-btn" id="reg-btn" onclick="doRegister()">创建账号</button>
+
+        <div class="auth-switch">
+          已有账号？<a onclick="switchAuthForm('login')">返回登录</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 左侧边栏：以 6 大智能体分组为主导航 -->
+  <div class="sidebar">
+    <div class="logo-container">
+      <div class="logo-icon"></div>
+      <div class="logo-title" id="logo-title-text">KUNLUN GROWTH</div>
+    </div>
+    
+    <div class="menu-header" id="menu-header-dept">智能体军团部门</div>
+    <div class="menu-item active" onclick="switchDepartment('org', this)" id="menu-org">
+      <span>🏢 agent组织部</span>
+      <span class="badge-count">5</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('data', this)" id="menu-data">
+      <span>📊 数据组</span>
+      <span class="badge-count">10</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('content', this)" id="menu-content">
+      <span>📝 内容组</span>
+      <span class="badge-count">6</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('management', this)" id="menu-management">
+      <span>💼 管理组</span>
+      <span class="badge-count">5</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('combat', this)" id="menu-combat">
+      <span>⚔️ 实战组</span>
+      <span class="badge-count">3</span>
+    </div>
+    <div class="menu-item" onclick="switchDepartment('operation', this)" id="menu-operation">
+      <span>🚀 运营组</span>
+      <span class="badge-count">3</span>
+    </div>
+
+    <!-- AI 对话工作区 -->
+    <div class="menu-header" id="menu-header-chat">AI 对话工作区</div>
+    <div class="menu-item" onclick="switchDepartment('chat', this)" id="menu-chat">
+      <span>💬 智能客服工作台</span>
+    </div>
+
+    <div class="menu-header" id="menu-header-sys">系统控制</div>
+    <div class="menu-item" onclick="switchDepartment('config', this)" id="menu-config">
+      <span>⚙️ 系统全局配置</span>
+    </div>
+  </div>
+
+  <!-- 主界面工作区 -->
+  <div class="main-content">
+    <div class="header-bar">
+      <div>
+        <h1 id="dept-title" style="font-size: 26px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">agent组织部</h1>
+        <p id="dept-desc" style="color: var(--text-muted); font-size: 13.5px; font-weight: 400;">负责多智能体架构调试、代码物理安全校验及本地编译运维。</p>
+      </div>
+      
+      <!-- 顶部功能栏 -->
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <!-- 🌍 语言切换器 -->
+        <div>
+          <div class="form-label" style="margin-bottom: 3px; text-align: right;" id="lang-label">🌍 切换界面语言 (Language)</div>
+          <select class="form-input" id="lang-select" onchange="toggleLanguage()" style="padding: 6px 12px; font-size: 12px; background: #ffffff; border-color: var(--border-color); font-weight: 600; width: 130px; border-radius: 8px;">
+            <option value="zh">简体中文</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+
+        <div>
+          <div class="form-label" style="margin-bottom: 3px;" id="role-label">当前登录角色</div>
+          <!-- 只读角色徽章：由登录账号 JWT 决定，不可手动切换 -->
+          <div id="role-badge-display" style="display:inline-flex; align-items:center; gap:6px; padding: 6px 14px; background:#f5f5f7; border:1.5px solid var(--border-light); border-radius:8px; font-size:12px; font-weight:700; color:var(--text-main); min-width:190px;">
+            <span id="role-badge-icon">⏳</span>
+            <span id="role-badge-text">加载中...</span>
+          </div>
+        </div>
+        <div class="net-badge" id="net-badge">● 本地网关 127.0.0.1:8888 连通</div>
+        <!-- 用户头像菜单 -->
+        <div class="user-avatar-btn" id="user-avatar-btn" onclick="toggleUserDropdown()" style="display:none;">
+          <div class="user-avatar" id="user-avatar-initials">U</div>
+          <span id="user-display-name">用户</span>
+          <span style="font-size:10px; color:var(--text-muted);">▾</span>
+          <div class="user-dropdown" id="user-dropdown">
+            <div style="padding:10px 14px 8px;">
+              <div style="font-weight:700; font-size:13px;" id="dropdown-name">用户</div>
+              <div style="font-size:11px; color:var(--text-muted);" id="dropdown-email">email</div>
+              <div style="font-size:10px; color:var(--accent-color); font-weight:600; margin-top:3px;" id="dropdown-role">admin</div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item" onclick="showChangePassword()">🔑 修改密码</div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item danger" onclick="doLogout()">🚪 退出登录</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 动态 Agent 展现区 -->
+    <div class="agent-grid" id="agent-container">
+      <!-- 动态渲染 -->
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // 🔐 前端认证模块
+    // ==========================================
+    let _authToken = localStorage.getItem('kunlun_token') || '';
+    let _currentUser = null;
+
+    // ✅ 核心工具函数：始终从 JWT Token 读取角色，不依赖任何 UI 元素
+    function getCurrentRole() {
+      return _currentUser ? (_currentUser.role || 'sales') : 'sales';
+    }
+
+    // 角色显示名映射
+    const ROLE_DISPLAY = {
+      admin:  { icon: '👑', text: '系统管理员 (Admin)',  color: '#1d1d1f' },
+      editor: { icon: '✏️', text: '自媒体编辑 (Editor)', color: '#0071e3' },
+      sales:  { icon: '📞', text: '私域销售 (Sales)',    color: '#34c759' },
+    };
+
+    // 更新顶栏角色徽章（只读显示）
+    function updateRoleBadge(role) {
+      const info = ROLE_DISPLAY[role] || ROLE_DISPLAY.sales;
+      const iconEl = document.getElementById('role-badge-icon');
+      const textEl = document.getElementById('role-badge-text');
+      const badgeEl = document.getElementById('role-badge-display');
+      if (iconEl) iconEl.textContent = info.icon;
+      if (textEl) textEl.textContent = info.text;
+      if (badgeEl) badgeEl.style.borderColor = info.color + '44'; // 半透明边框
+    }
+
+
+    // 在所有 API 请求里自动带上 Bearer Token
+    const _origFetch = window.fetch;
+    window.fetch = function(url, opts = {}) {
+      if (_authToken && typeof url === 'string' && url.includes('/api/')) {
+        opts.headers = Object.assign({}, opts.headers || {}, {
+          'Authorization': `Bearer ${_authToken}`
+        });
+      }
+      return _origFetch.call(this, url, opts);
+    };
+
+    // 初始化认证状态
+    async function initAuth() {
+      // 1. 检查系统是否已初始化
+      const initRes = await fetch(`${getGatewayUrl()}/api/auth/check-init`).then(r => r.json()).catch(() => ({ initialized: true }));
+
+      // 2. 如果已有 Token，先验证
+      if (_authToken) {
+        try {
+          const me = await fetch(`${getGatewayUrl()}/api/auth/me`).then(r => r.json());
+          if (me.success) {
+            _currentUser = me.user;
+            enterApp();
+            return;
+          }
+        } catch (_) {}
+        // Token 失效，清除
+        localStorage.removeItem('kunlun_token');
+        _authToken = '';
+      }
+
+      // 3. 无有效 Token，显示登录界面
+      if (!initRes.initialized) {
+        // 首次启动：直接显示注册界面
+        switchAuthForm('register');
+        document.getElementById('reg-subtitle').textContent = '首次使用，请创建您的超级管理员账号';
+        document.getElementById('invite-code-group').style.display = 'none';
+      } else {
+        switchAuthForm('login');
+      }
+      document.getElementById('auth-screen').classList.remove('hidden');
+    }
+
+    function switchAuthForm(type) {
+      document.getElementById('form-login').style.display = type === 'login' ? 'block' : 'none';
+      document.getElementById('form-register').style.display = type === 'register' ? 'block' : 'none';
+      // 清空错误信息
+      ['login-err','login-ok','reg-err','reg-ok'].forEach(id => {
+        const el = document.getElementById(id);
+        el.className = el.className.replace(' show', '');
+        el.textContent = '';
+      });
+    }
+
+    async function doLogin() {
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      const btn = document.getElementById('login-btn');
+      const errEl = document.getElementById('login-err');
+      const okEl = document.getElementById('login-ok');
+
+      errEl.classList.remove('show');
+      okEl.classList.remove('show');
+
+      if (!email || !password) {
+        errEl.textContent = '请填写邮箱和密码。';
+        errEl.classList.add('show');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = '登录中...';
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/auth/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        }).then(r => r.json());
+
+        if (res.success) {
+          _authToken = res.token;
+          _currentUser = res.user;
+          localStorage.setItem('kunlun_token', res.token);
+          okEl.textContent = res.message;
+          okEl.classList.add('show');
+          setTimeout(() => enterApp(), 600);
+        } else {
+          errEl.textContent = res.error || '登录失败';
+          errEl.classList.add('show');
+          btn.disabled = false;
+          btn.textContent = '登录';
+        }
+      } catch (err) {
+        errEl.textContent = '连接网关失败，请确认服务已启动。';
+        errEl.classList.add('show');
+        btn.disabled = false;
+        btn.textContent = '登录';
+      }
+    }
+
+    async function doRegister() {
+      const name = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const password = document.getElementById('reg-password').value;
+      const invite = document.getElementById('reg-invite').value.trim();
+      const btn = document.getElementById('reg-btn');
+      const errEl = document.getElementById('reg-err');
+      const okEl = document.getElementById('reg-ok');
+
+      errEl.classList.remove('show');
+      okEl.classList.remove('show');
+
+      if (!email || !password) {
+        errEl.textContent = '请填写邮箱和密码。';
+        errEl.classList.add('show');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = '创建中...';
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/auth/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password, display_name: name, invite_code: invite })
+        }).then(r => r.json());
+
+        if (res.success) {
+          _authToken = res.token;
+          _currentUser = res.user;
+          localStorage.setItem('kunlun_token', res.token);
+          okEl.textContent = res.message;
+          okEl.classList.add('show');
+          setTimeout(() => enterApp(), 800);
+        } else {
+          errEl.textContent = res.error || '注册失败';
+          errEl.classList.add('show');
+          btn.disabled = false;
+          btn.textContent = '创建账号';
+        }
+      } catch (err) {
+        errEl.textContent = '连接网关失败，请确认服务已启动。';
+        errEl.classList.add('show');
+        btn.disabled = false;
+        btn.textContent = '创建账号';
+      }
+    }
+
+    function enterApp() {
+      // 隐藏登录界面
+      document.getElementById('auth-screen').classList.add('hidden');
+      // 显示用户头像按钮
+      if (_currentUser) {
+        const initials = (_currentUser.display_name || _currentUser.email).substring(0, 2).toUpperCase();
+        document.getElementById('user-avatar-initials').textContent = initials;
+        document.getElementById('user-display-name').textContent = _currentUser.display_name || _currentUser.email.split('@')[0];
+        document.getElementById('dropdown-name').textContent = _currentUser.display_name;
+        document.getElementById('dropdown-email').textContent = _currentUser.email;
+        document.getElementById('dropdown-role').textContent = ROLE_DISPLAY[_currentUser.role]?.text || _currentUser.role;
+        document.getElementById('user-avatar-btn').style.display = 'flex';
+        // ✅ 更新只读角色徽章（角色由 JWT 决定，不可手动切换）
+        updateRoleBadge(_currentUser.role);
+      }
+
+      // 初始化主界面数据（登录/注册成功后均调用）
+      Promise.all([
+        loadSystemConfig(),
+        loadPermissionMatrix(),
+        loadAgentStatus()
+      ]).catch(e => console.warn('[App] Init data warning:', e));
+    }
+
+    function doLogout() {
+      localStorage.removeItem('kunlun_token');
+      _authToken = '';
+      _currentUser = null;
+      location.reload();
+    }
+
+    function toggleUserDropdown() {
+      const dd = document.getElementById('user-dropdown');
+      dd.classList.toggle('show');
+    }
+
+    // 点击外部关闭下拉菜单
+    document.addEventListener('click', (e) => {
+      const btn = document.getElementById('user-avatar-btn');
+      if (btn && !btn.contains(e.target)) {
+        document.getElementById('user-dropdown').classList.remove('show');
+      }
+    });
+
+    async function showChangePassword() {
+      document.getElementById('user-dropdown').classList.remove('show');
+      const oldPwd = prompt('请输入旧密码：');
+      if (!oldPwd) return;
+      const newPwd = prompt('请输入新密码（至少 8 位）：');
+      if (!newPwd || newPwd.length < 8) { alert('新密码至少 8 位！'); return; }
+      const confirmPwd = prompt('请再次确认新密码：');
+      if (newPwd !== confirmPwd) { alert('两次密码不一致！'); return; }
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/auth/change-password`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ old_password: oldPwd, new_password: newPwd })
+        }).then(r => r.json());
+        if (res.success) {
+          alert('✅ ' + res.message + '\n请重新登录。');
+          doLogout();
+        } else {
+          alert('❌ ' + (res.error || '修改失败'));
+        }
+      } catch(e) { alert('❌ 连接失败'); }
+    }
+
+    // ==========================================
+    // 🔌 动态 Gateway 端口适配（支持 Electron 端口自愈）
+    // ==========================================
+    let _gatewayPort = 8888;
+
+    // 从 URL query string 读取端口（Electron 注入）
+    const _urlParams = new URLSearchParams(window.location.search);
+    if (_urlParams.get('gateway_port')) {
+      _gatewayPort = parseInt(_urlParams.get('gateway_port'));
+    }
+
+    // 从 Electron IPC 动态获取最终端口
+    if (window.electronAPI) {
+      window.electronAPI.getGatewayPort().then(port => {
+        _gatewayPort = port;
+        console.log('[Electron] Gateway port from IPC:', port);
+      });
+    }
+
+    // 全局 Gateway URL getter（每次调用都实时读取最新端口）
+    function getGatewayUrl() {
+      return `http://localhost:${_gatewayPort}`;
+    }
+    // 兼容旧代码直接使用 GATEWAY_URL
+    let GATEWAY_URL = `http://localhost:${_gatewayPort}`;
+
+    // 供 Electron 主进程回调更新端口
+    window.initGatewayUrl = function(port) {
+      _gatewayPort = port;
+      GATEWAY_URL = `http://localhost:${port}`;
+      console.log('[Console] GATEWAY_URL updated to:', GATEWAY_URL);
+    };
+
+    let currentDept = 'org';
+    let globalAgentStatus = {}; 
+    let globalPermMatrix = {}; 
+    let globalLlmProviders = {}; 
+    let currentLang = 'zh'; 
+    let selectedChatAgent = 'ai_sales_champion'; 
+    let globalKnowledgeDocs = []; // 存储离线知识库列表
+    let lastScannedLeads = []; // 最近一次扫描到的微信线索
+
+    // ==========================================
+    // 🤖 30 个 Agent 双语数据库
+    // ==========================================
+    const AGENTS_DATABASE = {
+      org: {
+        zh: {
+          title: "🏢 Agent 组织部",
+          desc: "负责人力资源、团队协作与业务拓展的五大智能体，覆盖 AI 销冠、招聘、薪酬、培训与BD全链路。",
+          agents: [
+            { id: "ai_sales_champion", name: "AI 销冠", icon: "🏆", desc: "私域对话智能体，具备完整 BANT 销售框架，自动识别高意向客户并推动成交。", tools: ["wechat_listener", "bant_scorer", "lark_sync"] },
+            { id: "hr_recruiter", name: "智能招聘官", icon: "🎯", desc: "JD 发布、简历筛选、面试安排全自动化，可接入飞书招聘模块实时同步。", tools: ["jd_publisher", "resume_parser", "interview_scheduler"] },
+            { id: "salary_manager", name: "薪酬管理师", icon: "💰", desc: "自动核算月度薪酬，生成工资条并通知员工，支持多维表格导出。", tools: ["payroll_calculator", "lark_writer", "notification_sender"] },
+            { id: "trainer", name: "企业培训师", icon: "📚", desc: "根据 RAG 知识库自动出题、批改，生成个性化学习计划与考核报告。", tools: ["rag_retriever", "quiz_generator", "report_writer"] },
+            { id: "bd_specialist", name: "商务拓展 BD", icon: "🤝", desc: "主动扫描潜在合作目标，起草商务合作邮件，跟踪合作进度至签约。", tools: ["company_scanner", "email_composer", "crm_updater"] },
+          ]
+        },
+        en: {
+          title: "🏢 Agent HR Department",
+          desc: "Five AI agents covering sales, recruitment, payroll, training and BD to power your team.",
+          agents: [
+            { id: "ai_sales_champion", name: "AI Sales Champion", icon: "🏆", desc: "Private-domain chat agent with full BANT framework. Identifies high-intent customers and drives conversions.", tools: ["wechat_listener", "bant_scorer", "lark_sync"] },
+            { id: "hr_recruiter", name: "Smart Recruiter", icon: "🎯", desc: "Automates JD posting, resume screening and interview scheduling with Lark integration.", tools: ["jd_publisher", "resume_parser", "interview_scheduler"] },
+            { id: "salary_manager", name: "Payroll Manager", icon: "💰", desc: "Auto-calculates monthly salaries, generates payslips and notifies employees.", tools: ["payroll_calculator", "lark_writer", "notification_sender"] },
+            { id: "trainer", name: "Corporate Trainer", icon: "📚", desc: "Generates quizzes from RAG knowledge base, grades responses and creates personalized learning plans.", tools: ["rag_retriever", "quiz_generator", "report_writer"] },
+            { id: "bd_specialist", name: "BD Specialist", icon: "🤝", desc: "Scans for partnership targets, drafts BD emails and tracks deal progress to contract signing.", tools: ["company_scanner", "email_composer", "crm_updater"] },
+          ]
+        }
+      },
+      data: {
+        zh: {
+          title: "📊 数据组",
+          desc: "10 大数据智能体，覆盖市场情报采集、企业尽调、竞品分析、私域数据挖掘与 BI 报表全链路。",
+          agents: [
+            { id: "market_intel", name: "市场情报官", icon: "🔍", desc: "实时监控行业动态、竞品动向、政策法规，每日生成情报简报推送钉钉/飞书。", tools: ["web_crawler", "news_aggregator", "brief_writer"] },
+            { id: "company_researcher", name: "企业深度调研师", icon: "🏭", desc: "调用天眼查 API，自动生成目标企业的工商、股权、风险、新闻全景报告。", tools: ["tianyancha_api", "report_generator", "pdf_exporter"] },
+            { id: "competitor_analyst", name: "竞品分析师", icon: "⚔️", desc: "定期抓取竞品官网、小红书、抖音内容，生成 SWOT 对标报告。", tools: ["web_scraper", "social_monitor", "swot_analyzer"] },
+            { id: "wechat_data_miner", name: "微信私域挖掘师", icon: "💬", desc: "解析本地微信 SQLite，提取 BANT 意向线索并自动评分，日处理量 10 万+条消息。", tools: ["sqlite_reader", "bant_scorer", "lead_exporter"] },
+            { id: "data_cleaner", name: "数据清洗工程师", icon: "🧹", desc: "自动去重、标准化、富化企业线索数据，识别并合并重复实体。", tools: ["dedup_engine", "normalizer", "entity_merger"] },
+            { id: "bi_reporter", name: "BI 报表生成师", icon: "📈", desc: "连接 Lark 多维表格，自动生成周/月销售漏斗、线索转化率、客户画像 BI 看板。", tools: ["lark_bitable", "chart_generator", "dashboard_builder"] },
+            { id: "lead_scorer", name: "线索评分官", icon: "⭐", desc: "基于 BANT + 行为数据，为每条线索输出 0-100 意向分，自动触发高分线索优先跟进。", tools: ["bant_scorer", "behavior_analyzer", "priority_queue"] },
+            { id: "social_listener", name: "社媒监听器", icon: "📡", desc: "全天候监控微信群、小红书、抖音评论中的潜在商机与负面舆情。", tools: ["wechat_group_monitor", "social_crawler", "sentiment_analyzer"] },
+            { id: "crm_syncer", name: "CRM 同步专员", icon: "🔄", desc: "将昆仑线索库中的高分客户自动同步至企业 CRM，触发销售跟进流程。", tools: ["crm_api", "lead_pusher", "status_tracker"] },
+            { id: "api_connector", name: "数据 API 连接器", icon: "🔌", desc: "统一管理天眼查、OpenClaw、Google Maps 等数据源 API，提供标准化数据接口。", tools: ["api_manager", "rate_limiter", "cache_engine"] },
+          ]
+        },
+        en: {
+          title: "📊 Data Intelligence",
+          desc: "10 data agents covering market intel, company research, competitor analysis, WeChat mining and BI reporting.",
+          agents: [
+            { id: "market_intel", name: "Market Intel Officer", icon: "🔍", desc: "Monitors industry trends, competitor moves and regulations. Delivers daily intelligence briefs to DingTalk/Lark.", tools: ["web_crawler", "news_aggregator", "brief_writer"] },
+            { id: "company_researcher", name: "Company Researcher", icon: "🏭", desc: "Calls Tianyancha API to auto-generate comprehensive company profiles including risk, equity and news.", tools: ["tianyancha_api", "report_generator", "pdf_exporter"] },
+            { id: "competitor_analyst", name: "Competitor Analyst", icon: "⚔️", desc: "Regularly scrapes competitor websites, Xiaohongshu and Douyin to produce SWOT benchmark reports.", tools: ["web_scraper", "social_monitor", "swot_analyzer"] },
+            { id: "wechat_data_miner", name: "WeChat Data Miner", icon: "💬", desc: "Parses local WeChat SQLite, extracts BANT leads and scores them. Processes 100K+ messages per day.", tools: ["sqlite_reader", "bant_scorer", "lead_exporter"] },
+            { id: "data_cleaner", name: "Data Cleaner", icon: "🧹", desc: "Auto-deduplicates, normalizes and enriches lead data. Identifies and merges duplicate entities.", tools: ["dedup_engine", "normalizer", "entity_merger"] },
+            { id: "bi_reporter", name: "BI Reporter", icon: "📈", desc: "Connects to Lark Bitable to auto-generate weekly/monthly sales funnels and customer profile dashboards.", tools: ["lark_bitable", "chart_generator", "dashboard_builder"] },
+            { id: "lead_scorer", name: "Lead Scorer", icon: "⭐", desc: "Scores leads 0-100 using BANT + behavioral data. Automatically prioritizes high-score leads for follow-up.", tools: ["bant_scorer", "behavior_analyzer", "priority_queue"] },
+            { id: "social_listener", name: "Social Listener", icon: "📡", desc: "24/7 monitors WeChat groups, Xiaohongshu and Douyin comments for business opportunities and negative sentiment.", tools: ["wechat_group_monitor", "social_crawler", "sentiment_analyzer"] },
+            { id: "crm_syncer", name: "CRM Syncer", icon: "🔄", desc: "Auto-syncs high-score leads from the Kunlun lead database to the enterprise CRM to trigger sales follow-up.", tools: ["crm_api", "lead_pusher", "status_tracker"] },
+            { id: "api_connector", name: "Data API Connector", icon: "🔌", desc: "Manages Tianyancha, OpenClaw and Google Maps APIs. Provides standardized data interfaces.", tools: ["api_manager", "rate_limiter", "cache_engine"] },
+          ]
+        }
+      },
+      content: {
+        zh: {
+          title: "📝 内容组",
+          desc: "6 大内容智能体，覆盖小红书爆款、视频脚本、邮件序列、去 AI 味审核、私信破冰与多语言本地化。",
+          agents: [
+            { id: "xhs_writer", name: "小红书爆款写手", icon: "🌸", desc: "基于爆款标题公式、情绪钩子理论，自动生成高互动小红书图文文案，并附 AI 味评分。", tools: ["rag_retriever", "title_formula_engine", "anti_ai_scanner"] },
+            { id: "video_scriptwriter", name: "视频脚本导演", icon: "🎬", desc: "生成带镜头语言的完整短视频脚本，支持 15s/30s/60s/3min 多种时长，口播稿即开即拍。", tools: ["script_generator", "shot_planner", "hook_writer"] },
+            { id: "email_sequence", name: "邮件序列工程师", icon: "📧", desc: "设计 Day0→Day3→Day7 自动化跟进邮件序列，检测回复率并触发人工交接节点。", tools: ["email_composer", "smtp_sender", "reply_detector"] },
+            { id: "anti_ai_auditor", name: "去 AI 味审核官", icon: "🔬", desc: "扫描内容的 AI 机械味评分（AI-Index），自动替换高频 AI 词，确保内容 100% 过审。", tools: ["anti_ai_scanner", "word_replacer", "readability_scorer"] },
+            { id: "dm_icebreaker", name: "私信破冰机器人", icon: "💌", desc: "基于用户主页特征生成个性化首条私信，破冰率比模板消息提升 3-5 倍。", tools: ["profile_analyzer", "message_personalizer", "send_scheduler"] },
+            { id: "multilang_localizer", name: "多语言本地化师", icon: "🌍", desc: "将中文内容专业本地化为英、日、阿、西等 12 种语言，并适配目标市场文化习惯。", tools: ["translator", "culture_adapter", "terminology_checker"] },
+          ]
+        },
+        en: {
+          title: "📝 Content Factory",
+          desc: "6 content agents covering Xiaohongshu virals, video scripts, email sequences, anti-AI auditing and localization.",
+          agents: [
+            { id: "xhs_writer", name: "XHS Viral Writer", icon: "🌸", desc: "Uses viral title formulas and emotional hooks to generate high-engagement Xiaohongshu content with AI-score auditing.", tools: ["rag_retriever", "title_formula_engine", "anti_ai_scanner"] },
+            { id: "video_scriptwriter", name: "Video Script Director", icon: "🎬", desc: "Generates complete short video scripts with shot language. Supports 15s/30s/60s/3min formats for instant filming.", tools: ["script_generator", "shot_planner", "hook_writer"] },
+            { id: "email_sequence", name: "Email Sequence Engineer", icon: "📧", desc: "Designs Day0→Day3→Day7 follow-up email sequences, detects replies and triggers handoff to human sales.", tools: ["email_composer", "smtp_sender", "reply_detector"] },
+            { id: "anti_ai_auditor", name: "Anti-AI Auditor", icon: "🔬", desc: "Scans content for robotic AI patterns, replaces high-frequency AI words to ensure 100% natural feel.", tools: ["anti_ai_scanner", "word_replacer", "readability_scorer"] },
+            { id: "dm_icebreaker", name: "DM Icebreaker Bot", icon: "💌", desc: "Generates personalized first DMs based on user profile features. 3-5x higher response rate vs templates.", tools: ["profile_analyzer", "message_personalizer", "send_scheduler"] },
+            { id: "multilang_localizer", name: "Multilingual Localizer", icon: "🌍", desc: "Professionally localizes Chinese content to 12 languages including English, Japanese, Arabic and Spanish.", tools: ["translator", "culture_adapter", "terminology_checker"] },
+          ]
+        }
+      },
+      management: {
+        zh: {
+          title: "💼 管理组",
+          desc: "5 大管理智能体，覆盖合规风控、财务预算、会议纪要、OKR 追踪与法务合同全链路。",
+          agents: [
+            { id: "compliance_guard", name: "合规风控官", icon: "🛡️", desc: "实时扫描对外发布内容，拦截敏感词、违规承诺、虚假宣传，生成合规审查报告。", tools: ["sensitive_word_filter", "ad_law_checker", "compliance_reporter"] },
+            { id: "finance_planner", name: "财务预算师", icon: "💹", desc: "自动汇总月度收支，生成现金流预测，识别预算超支风险并提前预警。", tools: ["accounting_api", "cashflow_forecaster", "budget_alerter"] },
+            { id: "meeting_secretary", name: "智能会议秘书", icon: "📋", desc: "录音转写会议内容，自动提炼行动项、负责人、截止日期，推送飞书任务。", tools: ["whisper_transcriber", "action_item_extractor", "lark_task_pusher"] },
+            { id: "okr_tracker", name: "OKR 进度追踪器", icon: "🎯", desc: "每周自动 Ping 相关负责人填报 OKR 进度，汇总看板并生成分析报告。", tools: ["lark_bitable", "okr_calculator", "reminder_sender"] },
+            { id: "contract_reviewer", name: "合同法务审查员", icon: "📜", desc: "解析合同 PDF，识别不平等条款、隐藏风险点，生成红线批注与修改建议。", tools: ["pdf_parser", "clause_analyzer", "risk_highlighter"] },
+          ]
+        },
+        en: {
+          title: "💼 Management Group",
+          desc: "5 management agents covering compliance, finance, meeting minutes, OKR tracking and contract review.",
+          agents: [
+            { id: "compliance_guard", name: "Compliance Guard", icon: "🛡️", desc: "Scans outgoing content for sensitive words, illegal promises and false advertising. Generates compliance reports.", tools: ["sensitive_word_filter", "ad_law_checker", "compliance_reporter"] },
+            { id: "finance_planner", name: "Finance Planner", icon: "💹", desc: "Auto-aggregates monthly income/expenses, generates cashflow forecasts and alerts on budget overruns.", tools: ["accounting_api", "cashflow_forecaster", "budget_alerter"] },
+            { id: "meeting_secretary", name: "Meeting Secretary", icon: "📋", desc: "Transcribes meeting recordings, extracts action items, owners and deadlines, pushes tasks to Lark.", tools: ["whisper_transcriber", "action_item_extractor", "lark_task_pusher"] },
+            { id: "okr_tracker", name: "OKR Tracker", icon: "🎯", desc: "Auto-pings responsible parties weekly to report OKR progress and generates consolidated dashboards.", tools: ["lark_bitable", "okr_calculator", "reminder_sender"] },
+            { id: "contract_reviewer", name: "Contract Reviewer", icon: "📜", desc: "Parses contract PDFs, identifies unfair clauses and hidden risks, generates redline annotations.", tools: ["pdf_parser", "clause_analyzer", "risk_highlighter"] },
+          ]
+        }
+      },
+      combat: {
+        zh: {
+          title: "⚔️ 实战组",
+          desc: "3 大高强度实战智能体，专注于电商选品、直播实时助手与跨境独立站爆款策略。",
+          agents: [
+            { id: "ecom_product_hunter", name: "电商爆品猎手", icon: "🛍️", desc: "扫描 1688、速卖通、亚马逊 Movers & Shakers，实时识别 7 天销量暴增的潜力爆款。", tools: ["product_scanner", "trend_analyzer", "profit_calculator"] },
+            { id: "livestream_assistant", name: "直播实时助手", icon: "🎥", desc: "直播过程中实时处理弹幕，自动回复优惠疑问，识别高意向粉丝并标记私信跟进。", tools: ["danmu_listener", "auto_replier", "hot_user_tagger"] },
+            { id: "dropship_strategist", name: "独立站 Dropship 策略师", icon: "🌐", desc: "分析 Shopify 数据，优化 Facebook/TikTok Ads 投放策略，识别 ROAS 低效广告组并暂停。", tools: ["shopify_connector", "ad_optimizer", "roas_calculator"] },
+          ]
+        },
+        en: {
+          title: "⚔️ Combat Operations",
+          desc: "3 high-intensity combat agents focused on product hunting, livestream assistance and dropship strategy.",
+          agents: [
+            { id: "ecom_product_hunter", name: "Ecom Product Hunter", icon: "🛍️", desc: "Scans 1688, AliExpress and Amazon Movers & Shakers to identify products with 7-day sales surges.", tools: ["product_scanner", "trend_analyzer", "profit_calculator"] },
+            { id: "livestream_assistant", name: "Livestream Assistant", icon: "🎥", desc: "Processes danmu in real-time, auto-replies to discount queries, identifies high-intent followers for DM follow-up.", tools: ["danmu_listener", "auto_replier", "hot_user_tagger"] },
+            { id: "dropship_strategist", name: "Dropship Strategist", icon: "🌐", desc: "Analyzes Shopify data, optimizes Facebook/TikTok Ads strategy and pauses low-ROAS ad sets.", tools: ["shopify_connector", "ad_optimizer", "roas_calculator"] },
+          ]
+        }
+      },
+      operation: {
+        zh: {
+          title: "🚀 运营组",
+          desc: "3 大运营增长智能体，覆盖私域裂变、用户留存与活动策划全链路运营。",
+          agents: [
+            { id: "fission_operator", name: "私域裂变操盘手", icon: "🚀", desc: "设计社群裂变活动，自动生成海报、邀请码，追踪裂变链路并统计 ROI。", tools: ["poster_generator", "invite_code_manager", "fission_tracker"] },
+            { id: "retention_specialist", name: "用户留存专家", icon: "🔗", desc: "分析用户行为，识别流失预警信号，自动发送个性化召回消息。", tools: ["behavior_analyzer", "churn_predictor", "recall_sender"] },
+            { id: "campaign_planner", name: "活动策划师", icon: "🎪", desc: "结合节日节点和用户画像，自动规划季度活动日历，生成完整执行方案与预算表。", tools: ["calendar_planner", "persona_analyzer", "budget_estimator"] },
+          ]
+        },
+        en: {
+          title: "🚀 Private-Domain Ops",
+          desc: "3 growth operation agents covering viral fission, user retention and campaign planning.",
+          agents: [
+            { id: "fission_operator", name: "Fission Operator", icon: "🚀", desc: "Designs community fission campaigns, auto-generates posters and invite codes, tracks ROI.", tools: ["poster_generator", "invite_code_manager", "fission_tracker"] },
+            { id: "retention_specialist", name: "Retention Specialist", icon: "🔗", desc: "Analyzes user behavior, identifies churn warning signals and sends personalized recall messages.", tools: ["behavior_analyzer", "churn_predictor", "recall_sender"] },
+            { id: "campaign_planner", name: "Campaign Planner", icon: "🎪", desc: "Plans quarterly activity calendars aligned with holidays and user personas. Generates full execution plans.", tools: ["calendar_planner", "persona_analyzer", "budget_estimator"] },
+          ]
+        }
+      }
+    };
+
+    // 页面载入初始化
+    window.addEventListener('DOMContentLoaded', async () => {
+      // auth-screen 默认隐藏（待 initAuth 决定是否显示）
+      document.getElementById('auth-screen').classList.add('hidden');
+
+      // 1. 先初始化认证（如果没有有效 Token 就弹登录框）
+      await initAuth();
+
+      // 2. initAuth 会调 enterApp()，enterApp 之后才初始化主界面数据
+      // 如果已经有 Token（enterApp 内部调用）则继续
+      if (_currentUser) {
+        await loadSystemConfig();
+        await loadPermissionMatrix();
+        await loadAgentStatus();
+      }
+    });
+
+    // 切换语言
+    function toggleLanguage() {
+      currentLang = document.getElementById('lang-select').value;
+      const dict = TRANSLATIONS[currentLang];
+
+      document.getElementById('logo-title-text').textContent = dict.logo;
+      document.getElementById('menu-header-dept').textContent = dict.dept_header;
+      document.getElementById('menu-header-sys').textContent = dict.sys_header;
+      document.getElementById('lang-label').textContent = dict.lang_label;
+      document.getElementById('role-label').textContent = dict.role_label;
+
+      document.getElementById('menu-org').querySelector('span:first-child').textContent = dict.menu_org;
+      document.getElementById('menu-data').querySelector('span:first-child').textContent = dict.menu_data;
+      document.getElementById('menu-content').querySelector('span:first-child').textContent = dict.menu_content;
+      document.getElementById('menu-management').querySelector('span:first-child').textContent = dict.menu_management;
+      document.getElementById('menu-combat').querySelector('span:first-child').textContent = dict.menu_combat;
+      document.getElementById('menu-operation').querySelector('span:first-child').textContent = dict.menu_operation;
+      document.getElementById('menu-config').querySelector('span:first-child').textContent = dict.menu_config;
+
+      const netBadge = document.getElementById('net-badge');
+      if (netBadge.style.color === 'var(--danger-color)') {
+        netBadge.textContent = dict.net_failed;
+      } else {
+        netBadge.textContent = dict.net_connected;
+      }
+
+      // 更新角色标签文字（国际化）
+      const roleLabelEl = document.getElementById('role-label');
+      if (roleLabelEl) roleLabelEl.textContent = currentLang === 'zh' ? '当前登录角色' : 'Current Role';
+      // 更新角色徽章文字
+      updateRoleBadge(getCurrentRole());
+
+      switchDepartment(currentDept, document.querySelector(`.sidebar .active`));
+    }
+
+    // 切换部门/切换至 IM 对话聊天室
+    function switchDepartment(deptId, element) {
+      currentDept = deptId;
+      const dict = TRANSLATIONS[currentLang];
+      
+      document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+      if (element) element.classList.add('active');
+
+      const container = document.getElementById('agent-container');
+      container.innerHTML = '';
+
+      if (deptId === 'config') {
+        document.getElementById('dept-title').textContent = dict.config_title;
+        document.getElementById('dept-desc').textContent = dict.config_desc;
+        renderConfigCenter();
+      } else if (deptId === 'chat') {
+        document.getElementById('dept-title').textContent = "智能客服工作台 (IM Workspace)";
+        document.getElementById('dept-desc').textContent = "在右侧选择智能体并直接对话，物理桥接本地 Gateway 多模型中转网络，自动检索已挂载的离线私有知识库。";
+        renderChatRoomWorkspace();
+      } else {
+        const deptData = AGENTS_DATABASE[deptId][currentLang];
+        document.getElementById('dept-title').textContent = deptData.title;
+        document.getElementById('dept-desc').textContent = deptData.desc;
+        renderAgentCards(deptData.agents);
+      }
+    }
+
+    // 动态渲染 Agent 卡片
+    function renderAgentCards(agents) {
+      const container = document.getElementById('agent-container');
+      const dict = TRANSLATIONS[currentLang];
+      
+      agents.forEach(agent => {
+        const isEnabled = globalAgentStatus[agent.id] !== false; 
+        const cardClass = isEnabled ? 'agent-card' : 'agent-card disabled';
+        const checkedStr = isEnabled ? 'checked' : '';
+
+        const card = document.createElement('div');
+        card.className = cardClass;
+        card.id = `card-${agent.id}`;
+
+        let actionUI = '';
+        if (agent.id === 'wechat_audit') {
+          actionUI = `
+            <button class="btn-action" onclick="fetchWechatData()">${dict.btn_scan}</button>
+            <button class="btn-action" id="lark-sync-btn" style="background-color: var(--success-color); margin-top: 8px; display: none;" onclick="syncToLarkBitable()">${dict.btn_sync_lark}</button>
+            <div class="terminal-output" id="wechat-out">Wait trigger...</div>
+          `;
+        } else if (agent.id === 'risk_controller') {
+          actionUI = `
+            <button class="btn-action" style="background-color: var(--warning-color);" onclick="scanAiTone()">${dict.btn_anti_ai}</button>
+            <div class="terminal-output" id="risk-out" style="color: var(--danger-color);">Wait trigger...</div>
+          `;
+        } else {
+          actionUI = `
+            <button class="btn-action" style="background-color: #86868b;" onclick="runGenericAgent('${agent.name}')">${dict.btn_start_tools}</button>
+            <div class="terminal-output" id="log-${agent.id}">Sleeping...</div>
+          `;
+        }
+
+        card.innerHTML = `
+          <div class="agent-header">
+            <span class="agent-name">${agent.name}</span>
+            <label class="switch-container">
+              <input type="checkbox" id="sw-${agent.id}" ${checkedStr} onchange="toggleAgentSwitch('${agent.id}')">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="agent-desc">${agent.desc}</div>
+          ${actionUI}
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // 切换 Agent 启用状态
+    async function toggleAgentSwitch(agentId) {
+      const cb = document.getElementById(`sw-${agentId}`);
+      const card = document.getElementById(`card-${agentId}`);
+      
+      if (cb.checked) {
+        card.classList.remove('disabled');
+        globalAgentStatus[agentId] = true;
+      } else {
+        card.classList.add('disabled');
+        globalAgentStatus[agentId] = false;
+      }
+
+      const userRole = getCurrentRole();
+      try {
+        await fetch(`${getGatewayUrl()}/api/system/agents/status/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status_matrix: globalAgentStatus, user_role: userRole })
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // 通用 Agent 启动
+    function runGenericAgent(name) {
+      const tips = currentLang === 'zh' ? '已在您的 Mac 本地拉起' : 'Successfully spawned on your Mac';
+      alert(`🤖 Spawned! ${tips} 【${name}】`);
+    }
+
+    // ==========================================
+    // 💬 IM 聊天工作台与 RAG 数据流控制
+    // ==========================================
+    function renderChatRoomWorkspace() {
+      const container = document.getElementById('agent-container');
+      const chatWrapper = document.createElement('div');
+      chatWrapper.className = 'im-container';
+      chatWrapper.style.gridColumn = '1 / -1';
+
+      let itemsHTML = '';
+      const groups = ['org', 'data', 'content', 'management', 'combat', 'operation'];
+      
+      groups.forEach(g => {
+        const list = AGENTS_DATABASE[g][currentLang].agents;
+        list.forEach(a => {
+          const isActive = a.id === selectedChatAgent ? 'active' : '';
+          itemsHTML += `
+            <div class="im-list-item ${isActive}" id="im-item-${a.id}" onclick="selectChatAgent('${a.id}')">
+              <div class="im-item-name">${a.name}</div>
+              <div class="im-item-desc">${a.desc}</div>
+            </div>
+          `;
+        });
+      });
+
+      chatWrapper.innerHTML = `
+        <!-- 左侧 Agent 列表 -->
+        <div class="im-agent-list" style="overflow-y:auto;">
+          ${itemsHTML}
+        </div>
+        
+        <!-- 中部会话视窗 -->
+        <div class="im-chat-pane">
+          <div class="im-chat-header">
+            <div class="im-chat-header-title" id="chat-title-text">AI销冠 (AI Sales Champion)</div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="form-label" style="margin-bottom:0; font-size:10px;">路由基座:</span>
+              <select class="form-input" id="chat-provider-select" style="padding:4px 8px; font-size:11px; width:120px; border-radius:6px; background:#ffffff;">
+                <option value="claude">Claude 3.5</option>
+                <option value="deepseek">DeepSeek-V3</option>
+                <option value="aggregator">聚合中转模型</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="im-history" id="chat-history-container">
+            <div class="chat-bubble-container">
+              <div class="bubble agent">
+                你好！我是昆仑增长智能体军团的 AI 销冠。我已经加载了 BANT 私域沟通模型，支持微信解密数据库及飞书多维表格推送，且我已自动挂载了离线知识库。您可以向我提问比如“报价是多少”、“联系人是谁”，我会精准为您匹配本地知识库。
+              </div>
+            </div>
+          </div>
+
+          <div class="im-chat-input-bar">
+            <input type="text" class="form-input" id="chat-user-input" placeholder="输入消息，按 Enter 发送... 可试下提问 '报价是多少' 以触发本地 RAG" style="background:#f5f5f7;" onkeydown="handleChatInputKey(event)">
+            <button class="btn-action" style="margin-top:0; width:100px; height:38px;" onclick="sendChatMessage()">发送</button>
+          </div>
+        </div>
+
+        <!-- 右侧当前 Agent 画像 -->
+        <div class="im-profile-pane">
+          <div>
+            <h4 style="font-size:13px; font-weight:600; margin-bottom:8px; color:var(--text-main);">智能体系统设定 (Prompt)</h4>
+            <div id="chat-profile-prompt" style="font-size:11.5px; line-height:1.4; color:var(--text-muted); background:var(--bg-color); padding:12px; border-radius:8px; white-space:pre-wrap; border:1px solid var(--border-light); max-height: 250px; overflow-y:auto;">
+            </div>
+          </div>
+          
+          <div>
+            <h4 style="font-size:13px; font-weight:600; margin-bottom:8px; color:var(--text-main);">使用 API 工具库 (Tools)</h4>
+            <div id="chat-profile-tools" style="font-size:11px; font-family:monospace; color:#0071e3; background:rgba(0,113,227,0.03); padding:10px; border-radius:8px; border:1px dashed rgba(0,113,227,0.2);">
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(chatWrapper);
+      updateAgentChatProfile();
+    }
+
+    function selectChatAgent(agentId) {
+      selectedChatAgent = agentId;
+      document.querySelectorAll('.im-list-item').forEach(el => el.classList.remove('active'));
+      document.getElementById(`im-item-${agentId}`).classList.add('active');
+
+      let agentName = agentId;
+      const groups = ['org', 'data', 'content', 'management', 'combat', 'operation'];
+      groups.forEach(g => {
+        const found = AGENTS_DATABASE[g][currentLang].agents.find(a => a.id === agentId);
+        if (found) agentName = found.name;
+      });
+
+      document.getElementById('chat-title-text').textContent = agentName;
+      
+      const history = document.getElementById('chat-history-container');
+      const welcomeMsg = currentLang === 'zh' 
+        ? `你好！我是军团中的【${agentName}】。我已接收到本地网关的调度部署，我们可以直接在此进行大模型交互与 Tools 演练。`
+        : `Hello! I am 【${agentName}】 from the Agent workspace. I am fully loaded and ready to process commands.`;
+      
+      history.innerHTML = `
+        <div class="chat-bubble-container">
+          <div class="bubble agent">
+            ${welcomeMsg}
+          </div>
+        </div>
+      `;
+
+      updateAgentChatProfile();
+    }
+
+    function updateAgentChatProfile() {
+      const promptDiv = document.getElementById('chat-profile-prompt');
+      const toolsDiv = document.getElementById('chat-profile-tools');
+
+      if (selectedChatAgent === 'ai_sales_champion') {
+        promptDiv.textContent = `# Role: AI销冠 (WeChat Private Sales Expert)\n- 瓦解“价格太贵”异议；\n- 提取 BANT 线索并自动归档。`;
+        toolsDiv.textContent = `- /api/operation/sales/qualify\n- /api/lark/bitable/sync\n- /api/wechat/db/query`;
+      } else if (selectedChatAgent === 'risk_controller') {
+        promptDiv.textContent = `# Role: 内容风控官 (Advertising Compliance Officer)\n- 审计违规绝对词；\n- 计算去 AI 机器味评分，超30分直接打回。`;
+        toolsDiv.textContent = `- /api/content/risk/anti-ai-scan\n- /api/terminal/execute`;
+      } else if (selectedChatAgent === 'claude_code') {
+        promptDiv.textContent = `# Role: Claude Code (Super Architect)\n- 审查本地工作区健康度；\n- 支持本地代码物理修改及 Shell 指令。`;
+        toolsDiv.textContent = `- /api/terminal/execute\n- /api/system/config/save`;
+      } else {
+        promptDiv.textContent = `# Role: ${selectedChatAgent}\n- 遵守 WBS 项目拆解与 SOLID/DRY 代码开发规范。\n- 支持多语言中英文双语无缝切换。`;
+        toolsDiv.textContent = `- /api/terminal/execute\n- /api/system/config`;
+      }
+    }
+
+    function handleChatInputKey(event) {
+      if (event.key === 'Enter') sendChatMessage();
+    }
+
+    async function sendChatMessage() {
+      const input = document.getElementById('chat-user-input');
+      const message = input.value.trim();
+      if (!message) return;
+
+      input.value = ''; 
+
+      const history = document.getElementById('chat-history-container');
+      
+      const userContainer = document.createElement('div');
+      userContainer.className = 'chat-bubble-container';
+      userContainer.innerHTML = `<div class="bubble user">${message}</div>`;
+      history.appendChild(userContainer);
+      history.scrollTop = history.scrollHeight;
+
+      const thinkingContainer = document.createElement('div');
+      thinkingContainer.className = 'chat-bubble-container';
+      thinkingContainer.id = 'thinking-bubble-temp';
+      thinkingContainer.innerHTML = `<div class="bubble agent" style="color:var(--text-muted);">⚡️ Thinking...</div>`;
+      history.appendChild(thinkingContainer);
+      history.scrollTop = history.scrollHeight;
+
+      const providerType = document.getElementById('chat-provider-select').value;
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/chat/agent`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            agent_id: selectedChatAgent,
+            message: message,
+            provider_type: providerType
+          })
+        });
+        const data = await res.json();
+        
+        const temp = document.getElementById('thinking-bubble-temp');
+        if (temp) temp.remove();
+
+        const agentContainer = document.createElement('div');
+        agentContainer.className = 'chat-bubble-container';
+        
+        let metaInfo = `<div style="font-size:10px; color:var(--text-muted); margin-bottom:4px; align-self:flex-start;">[Base Router: ${data.provider.toUpperCase()} / Model: ${data.model}]</div>`;
+        agentContainer.innerHTML = `${metaInfo}<div class="bubble agent">${data.reply.replace(/\n/g, '<br>')}</div>`;
+        
+        history.appendChild(agentContainer);
+        history.scrollTop = history.scrollHeight;
+
+      } catch (err) {
+        const temp = document.getElementById('thinking-bubble-temp');
+        if (temp) temp.remove();
+
+        const errContainer = document.createElement('div');
+        errContainer.className = 'chat-bubble-container';
+        errContainer.innerHTML = `<div class="bubble agent" style="color:var(--danger-color);">❌ Gateway connection failed: ${err.message}</div>`;
+        history.appendChild(errContainer);
+        history.scrollTop = history.scrollHeight;
+      }
+    }
+
+    // ==========================================
+    // ⚙️ 系统配置中心模块 (RAG 物理挂载)
+    // ==========================================
+    function renderConfigCenter() {
+      const container = document.getElementById('agent-container');
+      const panel = document.createElement('div');
+      panel.className = 'panel-card';
+      panel.style.gridColumn = '1 / -1'; 
+      const dict = TRANSLATIONS[currentLang];
+
+      panel.innerHTML = `
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+          <!-- 左侧：多大模型 Key 与中转聚合平台管理 -->
+          <div>
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">🧠 1. 国内外多大模型与中转配置</h3>
+            
+            <div style="background: var(--bg-color); border: 1px solid var(--border-light); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <strong style="font-size:13px; color:var(--text-main); font-weight:600;">Anthropic Claude</strong>
+                <button class="btn-action" style="margin-top:0; width:auto; padding:4px 10px; font-size:11px; background:#1d1d1f;" onclick="pingLlmConnection('https://api.anthropic.com', 'ping-claude')">⚡️ Ping</button>
+                <span id="ping-claude" style="font-size:11px; font-weight:bold;"></span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <input type="text" class="form-input" id="llm-claude-url" placeholder="Base URL">
+                <input type="text" class="form-input" id="llm-claude-model" placeholder="Model Name">
+                <input type="password" class="form-input" id="llm-claude-key" placeholder="API Key" style="grid-column: 1 / -1;">
+              </div>
+            </div>
+
+            <div style="background: var(--bg-color); border: 1px solid var(--border-light); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <strong style="font-size:13px; color:var(--text-main); font-weight:600;">DeepSeek API</strong>
+                <button class="btn-action" style="margin-top:0; width:auto; padding:4px 10px; font-size:11px; background:#1d1d1f;" onclick="pingLlmConnection('https://api.deepseek.com/v1', 'ping-deepseek')">⚡️ Ping</button>
+                <span id="ping-deepseek" style="font-size:11px; font-weight:bold;"></span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <input type="text" class="form-input" id="llm-deepseek-url" placeholder="Base URL">
+                <input type="text" class="form-input" id="llm-deepseek-model" placeholder="Model Name">
+                <input type="password" class="form-input" id="llm-deepseek-key" placeholder="API Key" style="grid-column: 1 / -1;">
+              </div>
+            </div>
+
+            <div style="background: var(--bg-color); border: 1px solid var(--border-light); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <strong style="font-size:13px; color:var(--text-main); font-weight:600;">中转聚合平台 (OpenAI Compatible)</strong>
+                <button class="btn-action" style="margin-top:0; width:auto; padding:4px 10px; font-size:11px; background:#1d1d1f;" onclick="pingLlmConnection(document.getElementById('llm-agg-url').value, 'ping-agg')">⚡️ Ping</button>
+                <span id="ping-agg" style="font-size:11px; font-weight:bold;"></span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <input type="text" class="form-input" id="llm-agg-url" placeholder="Base URL">
+                <input type="text" class="form-input" id="llm-agg-model" placeholder="Model Name">
+                <input type="password" class="form-input" id="llm-agg-key" placeholder="API Key" style="grid-column: 1 / -1;">
+              </div>
+            </div>
+            <button class="btn-action" onclick="saveLlmProviders()">物理保存模型密钥配置</button>
+
+            <!-- 📚 企业级多源知识库管理大屏 (Multi-Source RAG Hub) -->
+            <h3 style="font-size: 14.5px; margin-top: 35px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">📚 4. 企业级多源知识库中心 (Multi-Source RAG Hub)</h3>
+            
+            <!-- Tabs Navigation -->
+            <div style="display: flex; gap: 8px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px;">
+              <button class="kb-tab-btn active" onclick="switchKbTab('local', this)" style="background: none; border: none; font-size: 13px; font-weight: 600; color: var(--text-main); cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.2s;">📂 本地私有库</button>
+              <button class="kb-tab-btn" onclick="switchKbTab('lark', this)" style="background: none; border: none; font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.2s;">🕊️ 飞书知识库</button>
+              <button class="kb-tab-btn" onclick="switchKbTab('notebooklm', this)" style="background: none; border: none; font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.2s;">📓 NotebookLM</button>
+              <button class="kb-tab-btn" onclick="switchKbTab('ima', this)" style="background: none; border: none; font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.2s;">🐧 腾讯 IMA</button>
+            </div>
+
+            <!-- Tab Content: Local RAG (Existing) -->
+            <div id="kb-tab-local" class="kb-tab-content">
+              <div id="knowledge-list-container">
+                <!-- 动态挂载 -->
+              </div>
+              
+              <!-- 📎 文件拖拽上传区域 (PDF/Word/TXT/MD) -->
+              <div id="rag-drop-zone" style="background:var(--bg-color); border:2px dashed var(--border-color); padding:20px; border-radius:12px; margin-top:15px; text-align:center; cursor:pointer; transition: all 0.2s;" ondragover="event.preventDefault(); this.style.borderColor='var(--accent-color)'; this.style.background='rgba(0,113,227,0.04)';" ondragleave="this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-color)';" ondrop="handleKnowledgeDrop(event)" onclick="document.getElementById('rag-file-input').click()">
+                <div style="font-size:28px; margin-bottom:8px;">📂</div>
+                <div style="font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:4px;">拖拽文件至此，或点击选择</div>
+                <div style="font-size:11px; color:var(--text-muted);">支持 PDF · Word (.docx) · TXT · Markdown，单文件上限 20MB</div>
+                <input type="file" id="rag-file-input" accept=".pdf,.docx,.doc,.txt,.md" style="display:none;" onchange="handleKnowledgeFileInput(this.files[0])">
+                <div id="rag-upload-progress" style="margin-top:10px; font-size:12px; color:var(--accent-color); display:none;">⏳ 正在解析文档并写入 FTS5 知识库...</div>
+              </div>
+              <!-- 手动输入文档 -->
+              <details style="margin-top:12px;">
+                <summary style="font-size:12px; color:var(--text-muted); cursor:pointer; padding:6px 0;">▸ 或手动粘贴文本内容入库</summary>
+                <div style="margin-top:10px;">
+                  <div class="form-group">
+                    <label class="form-label">知识库文件名 (如: price_policy.txt)</label>
+                    <input type="text" class="form-input" id="rag-new-filename" placeholder="请输入文件名">
+                  </div>
+                  <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label">专有文档正文</label>
+                    <textarea class="form-input" id="rag-new-content" rows="4" placeholder="请输入您的企业专有指导大纲、产品报价或规章手册内容..." style="resize:none; font-family:inherit;"></textarea>
+                  </div>
+                  <button class="btn-action" style="background:#1d1d1f; margin-top:10px;" onclick="saveNewKnowledgeDoc()">一键保存入库并挂载 Agent</button>
+                </div>
+              </details>
+            </div>
+
+            <!-- Tab Content: Lark Knowledge Base -->
+            <div id="kb-tab-lark" class="kb-tab-content" style="display:none;">
+              <div style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">利用飞书 Open API 实时挂载并检索企业云文档与 Wiki 知识空间。</div>
+              <div class="form-group">
+                <label class="form-label">飞书知识空间 Token (Wiki Token)</label>
+                <input type="text" class="form-input" id="lark-wiki-token" placeholder="填写飞书 Wiki 根节点的 Token">
+              </div>
+              <div class="form-group">
+                <label class="form-label">飞书云文档文件夹 Token (Folder Token)</label>
+                <input type="text" class="form-input" id="lark-folder-token" placeholder="填写云文档文件夹 Token">
+              </div>
+              <button class="btn-action" style="background:#1d1d1f; margin-top:10px;" onclick="saveLarkKbConfig()">保存飞书知识库配置</button>
+            </div>
+
+            <!-- Tab Content: NotebookLM -->
+            <div id="kb-tab-notebooklm" class="kb-tab-content" style="display:none;">
+              <div style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">通过底层无头浏览器 (RPA) 隐式联动 NotebookLM，提供世界级深度长文本洞察。</div>
+              <div class="form-group">
+                <label class="form-label">NotebookLM Notebook ID</label>
+                <input type="text" class="form-input" id="nlm-notebook-id" placeholder="例如: 1abc2def3ghi...">
+              </div>
+              <div class="form-group">
+                <label class="form-label">NotebookLM 会话 Cookie (用于身份模拟)</label>
+                <input type="password" class="form-input" id="nlm-cookie" placeholder="SID=...; __Secure-1PSID=...">
+              </div>
+              <button class="btn-action" style="background:#1d1d1f; margin-top:10px;" onclick="saveNotebookLmConfig()">保存 NotebookLM 挂载参数</button>
+            </div>
+
+            <!-- Tab Content: IMA.copilot -->
+            <div id="kb-tab-ima" class="kb-tab-content" style="display:none;">
+              <div style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">联动本地腾讯 IMA.copilot 客户端或微信读书数据池，补全公域高质量知识源。</div>
+              <div class="form-group">
+                <label class="form-label">IMA Web API Endpoint / 本地端口</label>
+                <input type="text" class="form-input" id="ima-endpoint" placeholder="http://localhost:11025 (或配置 Web Hook)">
+              </div>
+              <div class="form-group">
+                <label class="form-label">访问鉴权 Token</label>
+                <input type="password" class="form-input" id="ima-token" placeholder="填写 Token">
+              </div>
+              <button class="btn-action" style="background:#1d1d1f; margin-top:10px;" onclick="saveImaConfig()">保存 IMA 挂载参数</button>
+            </div>
+          </div>
+
+          <!-- 右侧：飞书、微信、出海通道与权限矩阵 -->
+          <div>
+            <h3 style="font-size: 14.5px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">2. 跨国出海通道与自建应用配置中心</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+              <div class="form-group">
+                <label class="form-label">飞书 APP_ID</label>
+                <input type="text" class="form-input" id="lark-id" placeholder="cli_xxxxxxxx">
+              </div>
+              <div class="form-group">
+                <label class="form-label">飞书 APP_SECRET</label>
+                <input type="password" class="form-input" id="lark-secret">
+              </div>
+              <div class="form-group">
+                <label class="form-label">WhatsApp Hook URL</label>
+                <input type="text" class="form-input" id="whatsapp-url" placeholder="http://localhost:19000">
+              </div>
+              <div class="form-group">
+                <label class="form-label">X Developer Token</label>
+                <input type="text" class="form-input" id="twitter-token">
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1; margin-bottom: 0;">
+                <label class="form-label">微信本地解密 SQLite 数据库路径</label>
+                <div style="display:flex; gap:8px; align-items:center;">
+                  <input type="text" class="form-input" id="db-path" placeholder="/Users/username/.../wx_db.db" style="flex:1;">
+                  <button class="btn-action" style="margin-top:0; width:auto; padding:6px 12px; font-size:11px; white-space:nowrap; background:#86868b;" onclick="autoDetectWechatPath()">🔍 自动探测</button>
+                </div>
+              </div>
+              <!-- 飞书多维表格 ID -->
+              <div class="form-group" style="grid-column: 1 / -1; margin-bottom:0; margin-top:8px;">
+                <label class="form-label">飞书多维表格 ID (LARK_TABLE_ID，配置后启用真实写入)</label>
+                <input type="text" class="form-input" id="lark-table-id" placeholder="填写 Lark Base 表格 App Token">
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; margin-top:12px;">
+              <button class="btn-action" style="background:#1d1d1f; flex:1;" onclick="saveEnvConfig()">${dict.btn_save_env}</button>
+              <button class="btn-action" style="background:var(--success-color); flex:1;" onclick="syncToLarkBitableReal()">🗂️ 真实同步飞书</button>
+            </div>
+
+            <!-- 权限分配 -->
+            <h3 style="font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">3. 职位权限勾选矩阵 (RBAC Matrix)</h3>
+            <table class="perm-table">
+              <thead>
+                <tr>
+                  <th>${dict.tbl_col_role}</th>
+                  <th>${dict.tbl_col_wx}</th>
+                  <th>${dict.tbl_col_risk}</th>
+                  <th>${dict.tbl_col_config}</th>
+                </tr>
+              </thead>
+              <tbody id="permission-tbody"></tbody>
+            </table>
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+              <input type="text" class="form-input" id="new-role-input" placeholder="${dict.input_new_role}">
+              <button class="btn-action" style="margin-top:0; width: auto; white-space: nowrap; background: #86868b;" onclick="addNewRoleRow()">${dict.btn_add_role}</button>
+            </div>
+            <button class="btn-action" style="background: var(--success-color);" onclick="savePermissionMatrix()">${dict.btn_save_perm}</button>
+
+            <!-- 📊 Token 消费账单面板 -->
+            <h3 style="font-size: 14.5px; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; font-weight:600; color: var(--text-main);">5. Token 消费账单 (Cost Control)</h3>
+            <div id="token-usage-panel" style="min-height:40px;">
+              <div style="color:var(--text-muted); font-size:12px;">⏳ 加载账单中...</div>
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(panel);
+      
+      loadSystemConfigInputs();
+      loadLlmProviderInputs();
+      renderPermissionTable();
+      loadKnowledgeList(); // 载入离线 RAG 文档列表
+      loadTokenUsagePanel(); // 载入 Token 账单
+    }
+
+    // ==========================================
+    // 📎 文件上传 Handler
+    // ==========================================
+    async function handleKnowledgeDrop(event) {
+      event.preventDefault();
+      const dropZone = document.getElementById('rag-drop-zone');
+      dropZone.style.borderColor = 'var(--border-color)';
+      dropZone.style.background = 'var(--bg-color)';
+      const file = event.dataTransfer.files[0];
+      if (file) await uploadKnowledgeFile(file);
+    }
+
+    async function handleKnowledgeFileInput(file) {
+      if (file) await uploadKnowledgeFile(file);
+    }
+
+    async function uploadKnowledgeFile(file) {
+      const role = getCurrentRole();
+      const progressDiv = document.getElementById('rag-upload-progress');
+      progressDiv.style.display = 'block';
+      progressDiv.textContent = `⏳ 正在解析「${file.name}」...`;
+
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('user_role', role);
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/knowledge/upload`, {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          progressDiv.textContent = `✅ ${data.message} (${(data.char_count / 1000).toFixed(1)}K 字符已入库)`;
+          progressDiv.style.color = 'var(--success-color)';
+          setTimeout(() => {
+            progressDiv.style.display = 'none';
+            progressDiv.style.color = 'var(--accent-color)';
+          }, 4000);
+          loadKnowledgeList();
+        } else {
+          progressDiv.textContent = `❌ 解析失败: ${data.error}`;
+          progressDiv.style.color = 'var(--danger-color)';
+        }
+      } catch (err) {
+        progressDiv.textContent = `❌ 上传失败: ${err.message}`;
+        progressDiv.style.color = 'var(--danger-color)';
+      }
+    }
+
+    // 微信路径自动探测
+    async function autoDetectWechatPath() {
+      const btn = event.target;
+      btn.textContent = '⏳ 探测中...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/wechat/detect-path`);
+        const data = await res.json();
+        if (data.success && data.paths.length > 0) {
+          document.getElementById('db-path').value = data.paths[0].db_path;
+          alert(`✅ ${data.message}\n已自动填入第一个路径（账户：${data.paths[0].account_hash}）`);
+        } else {
+          alert(`⚠️ ${data.message}`);
+        }
+      } catch (e) {
+        alert('❌ 探测失败，请手动填写路径。');
+      } finally {
+        btn.textContent = '🔍 自动探测';
+        btn.disabled = false;
+      }
+    }
+
+    // 飞书真实写入
+    async function syncToLarkBitableReal() {
+      const leads = lastScannedLeads;
+      if (!leads || leads.length === 0) {
+        alert('⚠️ 请先在「微信数据审计」中扫描线索，再同步飞书。');
+        return;
+      }
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/lark/bitable/real-sync`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ leads })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert(`🎉 ${data.message}${data.is_mock ? '\n（Mock演示模式，请在.env配置真实飞书凭证）' : ''}`);
+        } else {
+          alert(`❌ ${data.error}`);
+        }
+      } catch (err) {
+        alert(`❌ 连接失败: ${err.message}`);
+      }
+    }
+
+    // Token 消费账单面板
+    async function loadTokenUsagePanel() {
+      // 只在配置中心创建 Token 面板（若已存在则刷新）
+      const container = document.getElementById('agent-container');
+      const tokenPanel = document.getElementById('token-usage-panel');
+      if (!tokenPanel) return; // 非配置中心时直接跳过
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/token/usage`);
+        const data = await res.json();
+        if (data.success) {
+          const fmt = n => n.toLocaleString('zh-CN');
+          tokenPanel.innerHTML = `
+            <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:16px;">
+              <div style="background:var(--bg-color); padding:12px; border-radius:10px; border:1px solid var(--border-light);">
+                <div style="font-size:10px; color:var(--text-muted); margin-bottom:4px;">今日调用</div>
+                <div style="font-size:22px; font-weight:700; color:var(--accent-color);">${fmt(data.today_calls)}</div>
+                <div style="font-size:10px; color:var(--text-muted);">次对话</div>
+              </div>
+              <div style="background:var(--bg-color); padding:12px; border-radius:10px; border:1px solid var(--border-light);">
+                <div style="font-size:10px; color:var(--text-muted); margin-bottom:4px;">今日消耗 Token</div>
+                <div style="font-size:22px; font-weight:700; color:var(--text-main);">${fmt(data.today_input + data.today_output)}</div>
+                <div style="font-size:10px; color:var(--text-muted);">输入 ${fmt(data.today_input)} + 输出 ${fmt(data.today_output)}</div>
+              </div>
+              <div style="background:var(--bg-color); padding:12px; border-radius:10px; border:1px solid var(--border-light);">
+                <div style="font-size:10px; color:var(--text-muted); margin-bottom:4px;">累计总 Token</div>
+                <div style="font-size:22px; font-weight:700; color:var(--text-main);">${fmt(data.total_input + data.total_output)}</div>
+                <div style="font-size:10px; color:var(--text-muted);">共 ${fmt(data.total_calls)} 次</div>
+              </div>
+            </div>
+            <div style="font-size:11px; color:var(--text-muted); margin-bottom:6px;">各平台分布</div>
+            ${Object.entries(data.by_provider).map(([p, v]) => `
+              <div style="display:flex; justify-content:space-between; font-size:12px; padding:5px 0; border-bottom:1px solid var(--border-light);">
+                <span style="font-weight:600;">${p}</span>
+                <span style="color:var(--text-muted);">调用 ${v.calls} 次 · ${fmt(v.input + v.output)} tokens</span>
+              </div>
+            `).join('') || '<div style="font-size:12px; color:var(--text-muted);">暂无数据，开始与 Agent 对话后将自动统计</div>'}
+            <button class="btn-action" style="margin-top:12px; background:var(--danger-color); font-size:11px; padding:6px 14px; width:auto;" onclick="resetTokenUsage()">🗑️ 清零账单</button>
+          `;
+        }
+      } catch (e) {
+        if (tokenPanel) tokenPanel.innerHTML = '<div style="color:var(--text-muted); font-size:12px;">Token 账单加载失败，请确认网关已启动。</div>';
+      }
+    }
+
+    async function resetTokenUsage() {
+      const role = getCurrentRole();
+      if (!confirm('确认清零所有 Token 消费记录？')) return;
+      try {
+        await fetch(`${getGatewayUrl()}/api/system/token/reset`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_role: role })
+        });
+        alert('✅ Token 账单已清零！');
+        loadTokenUsagePanel();
+      } catch (e) { alert('❌ 操作失败'); }
+    }
+
+    // 载入离线知识库列表数据
+    async function loadKnowledgeList() {
+      const listContainer = document.getElementById('knowledge-list-container');
+      if (!listContainer) return;
+      listContainer.innerHTML = '⏳ Loading documents...';
+      
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/knowledge/list`);
+        const data = await res.json();
+        if (data.success) {
+          globalKnowledgeDocs = data.documents;
+          
+          if (globalKnowledgeDocs.length === 0) {
+            listContainer.innerHTML = '<div style="color:var(--text-muted); font-size:12px;">暂无本地挂载知识库文档</div>';
+            return;
+          }
+
+          listContainer.innerHTML = globalKnowledgeDocs.map(doc => `
+            <div class="knowledge-card">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div class="knowledge-card-title">📄 ${doc.filename}</div>
+                <div style="font-size:10px; color:var(--text-muted);">${(doc.size_bytes / 1024).toFixed(2)} KB</div>
+              </div>
+              <div class="knowledge-card-preview">${doc.preview}</div>
+            </div>
+          `).join('');
+        }
+      } catch (e) {
+        listContainer.innerHTML = '❌ Failed to load RAG files.';
+      }
+    }
+
+    // 持久化保存新知识库文档
+    async function saveNewKnowledgeDoc() {
+      const role = getCurrentRole();
+      const filename = document.getElementById('rag-new-filename').value.trim();
+      const content = document.getElementById('rag-new-content').value.trim();
+
+      if (!filename || !content) return alert('文件名和内容不能为空！');
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/knowledge/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ filename, content, user_role: role })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert(data.message);
+          document.getElementById('rag-new-filename').value = '';
+          document.getElementById('rag-new-content').value = '';
+          loadKnowledgeList(); // 重新加载列表
+        } else {
+          alert(`❌ 保存失败: ${data.error}`);
+        }
+      } catch (e) {
+        alert('❌ 无法连接网关。');
+      }
+    }
+
+    // 微信数据审计
+    async function fetchWechatData() {
+      const out = document.getElementById('wechat-out');
+      out.textContent = currentLang === 'zh' ? '⏳ [异步队列已启动] 正在扫描...' : '⏳ [Queue Active] Scanning local database...';
+      document.getElementById('lark-sync-btn').style.display = 'none'; 
+      
+      try {
+        const triggerRes = await fetch(`${getGatewayUrl()}/api/wechat/openclaw/messages?async=true`);
+        const triggerData = await triggerRes.json();
+        if (!triggerData.success || !triggerData.task_id) {
+          out.textContent = '❌ Failed to trigger task.';
+          return;
+        }
+
+        const taskId = triggerData.task_id;
+        out.textContent += ` ID: ${taskId}\n`;
+
+        const pollInterval = setInterval(async () => {
+          try {
+            const statusRes = await fetch(`${getGatewayUrl()}/api/system/task/status?task_id=${taskId}`);
+            const statusData = await statusRes.json();
+            
+            if (statusData.success) {
+              out.textContent = currentLang === 'zh' 
+                ? `⏳ 正在解密本地 SQLite 并匹配 BANT 意向数据...\n[进度]: ${statusData.progress}%\n`
+                : `⏳ Decrypting local SQLite and matching BANT leads...\n[Progress]: ${statusData.progress}%\n`;
+              
+              if (statusData.status === 'completed') {
+                clearInterval(pollInterval);
+                const data = statusData.result;
+                lastScannedLeads = data;
+                document.getElementById('lark-sync-btn').style.display = 'block'; 
+                
+                out.innerHTML = `<span style="color: var(--success-color);">✅ [扫描成功] 数据 100% 离线检索完毕！共发现 ${data.length} 条线索：</span><br>` + 
+                  data.map((m, i) => `${i+1}. <strong>${m.from_user}</strong>: "${m.content.substring(0,25)}..."`).join('<br>');
+              }
+            }
+          } catch (pollErr) {
+            clearInterval(pollInterval);
+            out.textContent += `\n❌ Poll failed: ${pollErr.message}`;
+          }
+        }, 500);
+
+      } catch (err) {
+        out.textContent = `[Error] ${err.message}`;
+      }
+    }
+
+    // 同步到飞书多维表格
+    async function syncToLarkBitable() {
+      const out = document.getElementById('wechat-out');
+      const waitTips = currentLang === 'zh' ? '正在推送线索至多维表格...' : 'Pushing leads to Lark Base...';
+      out.innerHTML += `<br><br><span style="color: #38bdf8;">⏳ ${waitTips}</span>`;
+      
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/lark/bitable/sync`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ leads: lastScannedLeads })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          const successTips = currentLang === 'zh' ? '同步成功' : 'Sync Success';
+          const linkTips = currentLang === 'zh' ? '[点击此处直达您的飞书多维表格]' : '[Click here to open Lark Bitable]';
+          out.innerHTML += `<br><br><span style="color: var(--success-color);">🎉 [${successTips}] ${data.message}</span><br>` +
+            `🔗 <a href="${data.bitable_url}" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: bold;">${linkTips}</a>`;
+        } else {
+          out.innerHTML += `<br><span style="color: var(--danger-color);">❌ Failed: ${data.error}</span>`;
+        }
+      } catch (err) {
+        out.innerHTML += `<br><span style="color: var(--danger-color);">❌ Connection error: ${err.message}</span>`;
+      }
+    }
+
+    // 去AI味跑分
+    async function scanAiTone() {
+      const out = document.getElementById('risk-out');
+      out.textContent = 'Parsing draft paragraph...\n';
+      try {
+        const testText = "在当今快节奏的社会中，多智能体落地是一把双刃剑，不得不说非常值得注意。";
+        const res = await fetch(`${getGatewayUrl()}/api/content/risk/anti-ai-scan`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: testText })
+        });
+        const data = await res.json();
+        const scoreLabel = currentLang === 'zh' ? '跑分完成' : 'Score Complete';
+        const blockLabel = data.is_too_machinery 
+          ? (currentLang === 'zh' ? '🔴 AI味超标，已拦截！' : '🔴 Too Robotic, Rejected!')
+          : (currentLang === 'zh' ? '🟢 口语化优良' : '🟢 Natural Copywriting');
+        
+        out.textContent = `[${scoreLabel}] AI-Index: ${data.ai_index} (Lower is better)\n` + 
+          `Audit: ${blockLabel}\n` +
+          `Hits: ` + data.matched_words.map(w => `"${w.word}"(${w.count}x)`).join(', ');
+      } catch (err) {
+        out.textContent = `[Error] ${err.message}`;
+      }
+    }
+
+    // Ping 测试
+    async function pingLlmConnection(baseUrl, spanId) {
+      const span = document.getElementById(spanId);
+      span.textContent = "⏳ Ping...";
+      span.style.color = "var(--text-muted)";
+
+      if (!baseUrl) {
+        span.textContent = "URL Empty";
+        span.style.color = "var(--danger-color)";
+        return;
+      }
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/llm/test-ping`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ base_url: baseUrl })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          span.textContent = `🟢 ${data.latency_ms}ms`;
+          span.style.color = "var(--success-color)";
+        } else {
+          span.textContent = `🔴 超时/阻断`;
+          span.style.color = "var(--danger-color)";
+        }
+      } catch (e) {
+        span.textContent = `🔴 错误`;
+        span.style.color = "var(--danger-color)";
+      }
+    }
+
+    // 获取 .env 配置
+    let currentConfigData = {};
+    async function loadSystemConfig() {
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/config`);
+        const data = await res.json();
+        if (data.success) {
+          currentConfigData = data.env;
+        }
+      } catch (err) {
+        const dict = TRANSLATIONS[currentLang];
+        document.getElementById('net-badge').textContent = dict.net_failed;
+        document.getElementById('net-badge').style.color = 'var(--danger-color)';
+        document.getElementById('net-badge').style.background = 'rgba(255, 59, 48, 0.1)';
+      }
+    }
+
+    function loadSystemConfigInputs() {
+      if (currentConfigData.CLAUDE_API_KEY) {
+        document.getElementById('lark-id').value = currentConfigData.LARK_APP_ID || '';
+        document.getElementById('lark-secret').value = currentConfigData.LARK_APP_SECRET || '';
+        document.getElementById('whatsapp-url').value = currentConfigData.WHATSAPP_API_URL || '';
+        document.getElementById('twitter-token').value = currentConfigData.TWITTER_API_TOKEN || '';
+        document.getElementById('db-path').value = currentConfigData.WECHAT_DB_PATH || '';
+      }
+    }
+
+    // 获取 llm_providers 列表
+    async function loadLlmProviderInputs() {
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/llm/providers`);
+        const data = await res.json();
+        if (data.success) {
+          globalLlmProviders = data.providers;
+          
+          document.getElementById('llm-claude-url').value = globalLlmProviders.claude.base_url;
+          document.getElementById('llm-claude-model').value = globalLlmProviders.claude.model_name;
+          document.getElementById('llm-claude-key').value = globalLlmProviders.claude.api_key;
+
+          document.getElementById('llm-deepseek-url').value = globalLlmProviders.deepseek.base_url;
+          document.getElementById('llm-deepseek-model').value = globalLlmProviders.deepseek.model_name;
+          document.getElementById('llm-deepseek-key').value = globalLlmProviders.deepseek.api_key;
+
+          document.getElementById('llm-agg-url').value = globalLlmProviders.aggregator.base_url;
+          document.getElementById('llm-agg-model').value = globalLlmProviders.aggregator.model_name;
+          document.getElementById('llm-agg-key').value = globalLlmProviders.aggregator.api_key;
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function saveLlmProviders() {
+      const role = getCurrentRole();
+      const providers = {
+        claude: {
+          name: "Anthropic Claude",
+          base_url: document.getElementById('llm-claude-url').value,
+          model_name: document.getElementById('llm-claude-model').value,
+          api_key: document.getElementById('llm-claude-key').value
+        },
+        deepseek: {
+          name: "DeepSeek API",
+          base_url: document.getElementById('llm-deepseek-url').value,
+          model_name: document.getElementById('llm-deepseek-model').value,
+          api_key: document.getElementById('llm-deepseek-key').value
+        },
+        aggregator: {
+          name: "聚合中转平台",
+          base_url: document.getElementById('llm-agg-url').value,
+          model_name: document.getElementById('llm-agg-model').value,
+          api_key: document.getElementById('llm-agg-key').value
+        }
+      };
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/llm/providers/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ providers, user_role: role })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('✅ 大模型密钥及聚合中转配置已成功物理保存至 llm_providers.json 中！');
+          globalLlmProviders = providers;
+        } else {
+          alert(`❌ 保存失败: ${data.error}`);
+        }
+      } catch (e) {
+        alert('❌ 连接网关失败。');
+      }
+    }
+
+    async function saveEnvConfig() {
+      const role = getCurrentRole();
+      const config = {
+        CLAUDE_API_KEY: document.getElementById('llm-claude-key') ? document.getElementById('llm-claude-key').value : (currentConfigData.CLAUDE_API_KEY || ''),
+        WECHAT_DB_PATH: document.getElementById('db-path').value,
+        LARK_APP_ID: document.getElementById('lark-id').value,
+        LARK_APP_SECRET: document.getElementById('lark-secret').value,
+        LARK_CLI_PATH: 'lark',
+        OPENCLAW_API_URL: currentConfigData.OPENCLAW_API_URL || 'http://localhost:18000',
+        OPENCLAW_TOKEN: currentConfigData.OPENCLAW_TOKEN || 'mock_token_123',
+        WHATSAPP_API_URL: document.getElementById('whatsapp-url').value,
+        TWITTER_API_TOKEN: document.getElementById('twitter-token').value
+      };
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/config/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ config, user_role: role })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('✅ 跨国通道及自建应用配置已保存并写入 .env 配置文件！');
+          currentConfigData = config;
+        } else {
+          alert(`❌ 保存失败：${data.error}`);
+        }
+      } catch (err) {
+        alert('❌ 保存失败：网关未响应。');
+      }
+    }
+
+    // 权限矩阵
+    async function loadPermissionMatrix() {
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/permissions`);
+        const data = await res.json();
+        if (data.success) {
+          globalPermMatrix = data.matrix;
+          applyRBACRules(); 
+        }
+      } catch (err) {
+        console.error("加载权限配置失败:", err);
+      }
+    }
+
+    function renderPermissionTable() {
+      const tbody = document.getElementById('permission-tbody');
+      tbody.innerHTML = '';
+      
+      for (const role in globalPermMatrix) {
+        const tr = document.createElement('tr');
+        const hasWechat = globalPermMatrix[role].includes('wechat_audit') ? 'checked' : '';
+        const hasRisk = globalPermMatrix[role].includes('content_risk') ? 'checked' : '';
+        const hasConfig = globalPermMatrix[role].includes('system_config') ? 'checked' : '';
+        const isDisabled = role === 'admin' ? 'disabled' : '';
+
+        tr.innerHTML = `
+          <td style="font-weight: bold; text-align: left;">${role}</td>
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="wechat_audit" ${hasWechat} ${isDisabled}></td>
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="content_risk" ${hasRisk} ${isDisabled}></td>
+          <td><input type="checkbox" class="perm-cb" data-role="${role}" data-perm="system_config" ${hasConfig} ${isDisabled}></td>
+        `;
+        tbody.appendChild(tr);
+      }
+    }
+
+    function addNewRoleRow() {
+      const newRoleName = document.getElementById('new-role-input').value.trim().toLowerCase();
+      if (!newRoleName) return alert('Role name empty!');
+      if (globalPermMatrix[newRoleName]) return alert('Role exists!');
+
+      globalPermMatrix[newRoleName] = [];
+      renderPermissionTable();
+      document.getElementById('new-role-input').value = '';
+    }
+
+    async function savePermissionMatrix() {
+      const currentAdminRole = getCurrentRole();
+      const checkboxes = document.querySelectorAll('.perm-cb');
+      const newMatrix = { admin: ["wechat_audit", "content_risk", "system_config"] };
+
+      checkboxes.forEach(cb => {
+        const role = cb.getAttribute('data-role');
+        const perm = cb.getAttribute('data-perm');
+        if (role === 'admin') return;
+
+        if (!newMatrix[role]) newMatrix[role] = [];
+        if (cb.checked) {
+          newMatrix[role].push(perm);
+        }
+      });
+
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/permissions/save`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ matrix: newMatrix, user_role: currentAdminRole })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('Saved successfully!');
+          globalPermMatrix = newMatrix;
+        } else {
+          alert(`Error: ${data.error}`);
+        }
+      } catch (err) {
+        alert('Failed');
+      }
+    }
+
+    function applyRBACRules() {
+      const currentRole = getCurrentRole();
+      const currentPerms = globalPermMatrix[currentRole] || [];
+      console.log(`👤 RBAC applied for: ${currentRole}`, currentPerms);
+    }
+
+    // 智能体开启状态
+    async function loadAgentStatus() {
+      try {
+        const res = await fetch(`${getGatewayUrl()}/api/system/agents/status`);
+        const data = await res.json();
+        if (data.success) {
+          globalAgentStatus = data.status_matrix;
+          switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+        }
+      } catch (err) {
+        switchDepartment('org', document.querySelector('.sidebar .menu-item'));
+      }
+    }
+
+    // 中英文全对照词典
+    const TRANSLATIONS = {
+      zh: {
+        logo: "KUNLUN GROWTH",
+        dept_header: "智能体军团部门",
+        sys_header: "系统控制",
+        menu_org: "🏢 agent组织部",
+        menu_data: "📊 数据组",
+        menu_content: "📝 内容组",
+        menu_management: "💼 管理组",
+        menu_combat: "⚔️ 实战组",
+        menu_operation: "🚀 运营组",
+        menu_config: "⚙️ 系统全局配置",
+        lang_label: "🌍 切换界面语言 (Language)",
+        role_label: "当前登录职位切换 (动态 RBAC)",
+        net_connected: "● 本地网关 127.0.0.1:8888 连通",
+        net_failed: "● 网关连接失败 (请运行 npm start)",
+        role_admin: "系统管理员 (Admin)",
+        role_editor: "自媒体编辑 (Editor)",
+        role_sales: "私域销售 (Sales)",
+        btn_scan: "一键扫描微信线索 (BANT)",
+        btn_sync_lark: "一键同步飞书多维表格 (Lark Base)",
+        btn_anti_ai: "对草稿运行AI味跑分",
+        btn_start_tools: "启动 Agent 运行 Tools",
+        btn_save_env: "物理保存修改至 .env 配置文件",
+        btn_save_perm: "保存权限矩阵",
+        btn_add_role: "添加职位",
+        input_new_role: "输入新职位名称 (如 intern)",
+        tbl_col_role: "职位",
+        tbl_col_wx: "微信数据",
+        tbl_col_risk: "内容风控",
+        tbl_col_config: "配置中心",
+        config_title: "系统全局配置中心",
+        config_desc: "物理读写本地 .env 环境变量文件、知识库文档库及自定义 RBAC 职位权限矩阵。"
+      },
+      en: {
+        logo: "KUNLUN GLOBAL AI",
+        dept_header: "AGENT DEPARTMENTS",
+        sys_header: "SYSTEM CONTROL",
+        menu_org: "🏢 Agent HR Dept",
+        menu_data: "📊 Data Intelligence",
+        menu_content: "📝 Content Factory",
+        menu_management: "💼 Management Group",
+        menu_combat: "⚔️ Combat Operations",
+        menu_operation: "🚀 Private-Domain Ops",
+        menu_config: "⚙️ Global Config",
+        lang_label: "🌍 Lang Switcher",
+        role_label: "Current Workspace Role (RBAC)",
+        net_connected: "● Local Gateway :8888 Connected",
+        net_failed: "● Connect failed (Run npm start)",
+        role_admin: "Admin (Full Access)",
+        role_editor: "Editor (Content)",
+        role_sales: "Sales (Private WeChat)",
+        btn_scan: "Scan WeChat Message Logs (BANT)",
+        btn_sync_lark: "Sync to Lark Bitable",
+        btn_anti_ai: "Run Anti-AI Scanner",
+        btn_start_tools: "Start Agent & Mount Tools",
+        btn_save_env: "Save Settings to .env file",
+        btn_save_perm: "Save RBAC Authorization Matrix",
+        btn_add_role: "Add New Role",
+        input_new_role: "Enter new role (e.g. intern)",
+        tbl_col_role: "Role",
+        tbl_col_wx: "WeChat DB",
+        tbl_col_risk: "Anti-AI Wind",
+        tbl_col_config: "Sys Settings",
+        config_title: "Global Configuration Tower",
+        config_desc: "Read/Write local .env properties, RAG files, and customize multi-user RBAC authorization matrix."
+      }
+    };
+  </script>
+</body>
+</html>
+
+# 🔌 昆仑增长多行业
+const fs = require('f
+# 🤝 昆仑增长
+# 🌍 跨国多渠道
+tfile:///U
+# 🍏 昆仑增长严格
+# 📚 昆仑增长
+/**
+ * Kunlun Agent OS — Electron 主进程 (Main Process)
+ * 
+ * 职
+/**
+
+# 
+<?xml 
+#!/bin/bash
+
+# ==========

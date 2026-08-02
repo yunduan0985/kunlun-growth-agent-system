@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/content/editor/render 与 /api/content/editor/publish 两个微信编辑器内联富文本渲染与草稿箱推送端点。",
+  "EndLine": 800,
+  "Instruction": "在服务器启动之前加入微信排版渲染和草稿发布路由。",
+  "ReplacementContent": "\n// 模拟公众号富文本排版渲染接口 (编译内联 CSS)\napp.post('/api/content/editor/render', (req, res) => {\n  const { markdown_content } = req.body;\n  if (!markdown_content) return res.status(400).json({ error: \"Missing parameter: markdown_content\" });\n\n  console.log(`[Rich-Text Renderer] Compiling Markdown with Inline CSS...`);\n\n  const styledHtml = `\n    <section style=\"font-size: 15px; color: #3e3e3e; line-height: 1.75; letter-spacing: 1.5px; padding: 10px;\">\n      <h2 style=\"border-left: 4px solid #1a1a1a; padding-left: 8px; font-size: 18px; color: #1a1a1a; margin-top: 24px; margin-bottom: 16px; font-weight: bold;\">\n        昆仑增长架构落地指引\n      </h2>\n      <p style=\"margin-bottom: 16px;\">\n        ${markdown_content.replace(/\\n/g, '<br/>')}\n      </p>\n      <blockquote style=\"background-color: #f7f7f7; border-radius: 8px; padding: 16px; border: 1px solid #eeeeee; font-size: 14px; color: #666666; margin: 16px 0;\">\n        💡 <strong>系统提示：</strong> 请将此富文本直接粘贴至微信公众号草稿箱中预览。\n      </blockquote>\n    </section>\n  `;\n\n  res.json({\n    success: true,\n    html_content: styledHtml\n  });\n});\n\n// 模拟向公众号草稿箱同步推送接口\napp.post('/api/content/editor/publish', (req, res) => {\n  const { title, html_content, author } = req.body;\n  if (!title || !html_content) return res.status(400).json({ error: \"Missing title or html_content.\" });\n\n  console.log(`[WeChat API] Uploading draft: \"${title}\" by ${author || '昆仑增长'} to Draft Box...`);\n\n  res.json({\n    success: true,\n    media_id: \"wx_media_draft_\" + Math.random().toString(36).substring(2, 9)\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 800,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding WeChat editor routes to Gateway",
+  "toolSummary": "Modify file"
+}

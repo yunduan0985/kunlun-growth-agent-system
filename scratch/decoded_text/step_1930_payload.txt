@@ -1,0 +1,134 @@
+{"CodeContent":"import sqlite3\nimport json\nimport os\n\ndb_path = \"/Users/dasean/.gemini/antigravity/conversations/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd.db\"\nout_dir = \"scratch/extracted_edits_current\"\nos.makedirs(out_dir, exist_ok=True)\n\nconn = sqlite3.connect(db_path)\ncursor = conn.cursor()\n\n# Get all rows\ncursor.execute(\"SELECT idx, step_payload, metadata FROM steps;\")\nrows = cursor.fetchall()\nprint(f\"Loaded {len(rows)} rows from current DB steps table.\")\n\nfor idx, payload, meta in rows:\n    payload_str = payload.decode('utf-8', errors='ignore') if isinstance(payload, bytes) else str(payload)\n    meta_str = meta.decode('utf-8', errors='ignore') if isinstance(meta, bytes) else str(meta)\n    \n    # Check if this step is a tool call to edit files\n    if 'replace_file_content' in payload_str or 'multi_replace_file_content' in payload_str:\n        # Save payload to a txt file\n        out_path = os.path.join(out_dir, f\"step_{idx}_payload.json\")\n        with open(out_path, 'w', encoding='utf-8') as out:\n            out.write(payload_str)\n        print(f\"
+=====================
+ Saved step {idx} edit payload to {out_path}\")\n        \n    elif 'replace_file_content' in meta_str or 'multi_replace_file_content' in meta_str:\n        out_path = os.path.join(out_dir, f\"step_{idx}_meta.json\")\n        with open(out_path, 'w', encoding='utf-8') as out:\n            out.write(meta_str)\n        print(f\"
+=====================
+ Saved step {idx} edit meta to {out_path}\")\n\nconn.close()\n","Description":"Write python script to scan the current database for edit tool calls and export them as JSON files","Overwrite":true,"TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/scratch/extract_all_edits.py","toolAction":"Writing extract_all_edits.py to retrieve code edits from SQLite database","toolSummary":"Create extract_all_edits.py"}:
+=====================
+Description*	Overwrite*
+TargetFile*
+toolAction*
+=====================
+b$fccc4b95-0c4b-411a-a677-c09bdfcb9ef0j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Create extract_all_edits.py
+=====================
+HWriting extract_all_edits.py to retrieve code edits from SQLite database
+=====================
+import sqlite3
+import json
+import os
+
+db_path = "/Users/dasean/.gemini/antigravity/conversations/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd.db"
+out_dir = "scratch/extracted_edits_current"
+os.makedirs(out_dir, exist_ok=True)
+
+conn = sqlite3.connect(db_path)
+cursor = conn.cursor()
+
+# Get all rows
+cursor.execute("SELECT idx, step_payload, metadata FROM steps;")
+rows = cursor.fetchall()
+print(f"Loaded {len(rows)} rows from current DB steps table.")
+
+for idx, payload, meta in rows:
+    payload_str = payload.decode('utf-8', errors='ignore') if isinstance(payload, bytes) else str(payload)
+    meta_str = meta.decode('utf-8', errors='ignore') if isinstance(meta, bytes) else str(meta)
+    
+    # Check if this step is a tool call to edit files
+    if 'replace_file_content' in payload_str or 'multi_replace_file_content' in payload_str:
+        # Save payload to a txt file
+        out_path = os.path.join(out_dir, f"step_{idx}_payload.json")
+        with open(out_path, 'w', encoding='utf-8') as out:
+            out.write(payload_str)
+        print(f"
+=====================
+ Saved step {idx} edit payload to {out_path}")
+        
+    elif 'replace_file_content' in meta_str or 'multi_replace_file_content' in meta_str:
+        out_path = os.path.join(out_dir, f"step_{idx}_meta.json")
+        with open(out_path, 'w', encoding='utf-8') as out:
+            out.write(meta_str)
+        print(f"
+=====================
+ Saved step {idx} edit meta to {out_path}")
+
+conn.close()
+
+=====================
+*Vfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scratch/extract_all_edits.py2Y
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+scratch/extract_all_edits.py 
+=====================
+g
+cdb_path = "/Users/dasean/.gemini/antigravity/conversations/7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd.db"
+=====================
+/
++out_dir = "scratch/extracted_edits_current"
+=====================
+'
+#os.makedirs(out_dir, exist_ok=True)
+=====================
+conn = sqlite3.connect(db_path)
+=====================
+cursor = conn.cursor()
+=====================
+D
+@cursor.execute("SELECT idx, step_payload, metadata FROM steps;")
+=====================
+rows = cursor.fetchall()
+=====================
+B
+>print(f"Loaded {len(rows)} rows from current DB steps table.")
+=====================
+for idx, payload, meta in rows:
+=====================
+n
+j    payload_str = payload.decode('utf-8', errors='ignore') if isinstance(payload, bytes) else str(payload)
+=====================
+b
+^    meta_str = meta.decode('utf-8', errors='ignore') if isinstance(meta, bytes) else str(meta)
+=====================
+9
+5    # Check if this step is a tool call to edit files
+=====================
+`
+\    if 'replace_file_content' in payload_str or 'multi_replace_file_content' in payload_str:
+=====================
+(
+$        # Save payload to a txt file
+=====================
+H
+D        out_path = os.path.join(out_dir, f"step_{idx}_payload.json")
+=====================
+>
+:        with open(out_path, 'w', encoding='utf-8') as out:
+=====================
+&
+"            out.write(payload_str)
+=====================
+ Saved step {idx} edit payload to {out_path}")
+=====================
+\
+X    elif 'replace_file_content' in meta_str or 'multi_replace_file_content' in meta_str:
+=====================
+E
+A        out_path = os.path.join(out_dir, f"step_{idx}_meta.json")
+=====================
+>
+:        with open(out_path, 'w', encoding='utf-8') as out:
+=====================
+            out.write(meta_str)
+=====================
+ Saved step {idx} edit meta to {out_path}")
+=====================
+BVfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/scratch/extract_all_edits.pyX
+=====================
+bWrite python script to scan the current database for edit tool calls and export them as JSON files

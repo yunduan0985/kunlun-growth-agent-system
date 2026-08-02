@@ -1,0 +1,40 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+ Gateway src/index.js 
+=====================
+ /api/system/permissions 
+=====================
+ /api/system/permissions/save 
+=====================
+","EndLine":1165,"Instruction":"
+=====================
+","ReplacementContent":"\n// 
+=====================
+\napp.get('/api/system/permissions', (req, res) =\u003e {\n  const permPath = path.join(__dirname, '../data/permissions.json');\n  console.log(`[Permission Service] Loading role matrix from: ${permPath}`);\n\n  if (!fs.existsSync(permPath)) {\n    const defaultMatrix = {\n      admin: [\"wechat_audit\", \"content_risk\", \"system_config\"],\n      editor: [\"content_risk\"],\n      sales: [\"wechat_audit\"]\n    };\n    try {\n      const dataDir = path.dirname(permPath);\n      if (!fs.existsSync(dataDir)) {\n        fs.mkdirSync(dataDir, { recursive: true });\n      }\n      fs.writeFileSync(permPath, JSON.stringify(defaultMatrix, null, 2), 'utf-8');\n    } catch (e) {\n      console.error(`Failed to write default permissions file:`, e);\n    }\n    return res.json({ success: true, matrix: defaultMatrix });\n  }\n\n  try {\n    const rawData = fs.readFileSync(permPath, 'utf-8');\n    res.json({ success: true, matrix: JSON.parse(rawData) });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to read permission file: \" + err.message });\n  }\n});\n\n// 
+=====================
+\napp.post('/api/system/permissions/save', (req, res) =\u003e {\n  const { matrix, user_role } = req.body;\n  if (!matrix) return res.status(400).json({ error: \"Missing matrix payload.\" });\n\n  if (user_role !== 'admin') {\n    return res.status(403).json({\n      success: false,\n      error: \"Access Denied: Only Admin can update the system authorization matrix.\"\n    });\n  }\n\n  const permPath = path.join(__dirname, '../data/permissions.json');\n  console.log(`[Permission Service] Overwriting local authorization matrix file...`);\n\n  try {\n    const dataDir = path.dirname(permPath);\n    if (!fs.existsSync(dataDir)) {\n      fs.mkdirSync(dataDir, { recursive: true });\n    }\n    fs.writeFileSync(permPath, JSON.stringify(matrix, null, 2), 'utf-8');\n    res.json({ success: true, message: \"
+=====================
+\" });\n  } catch (err) {\n    res.status(500).json({ error: \"Failed to save permission matrix: \" + err.message });\n  }\n});\n\n// ==========================================\n// 5. 
+=====================
+\n// ==========================================","StartLine":1164,"TargetContent":"// ==========================================\n// 5. 
+=====================
+\n// ==========================================","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/src/index.js","toolAction":"Adding permission routes to Gateway","toolSummary":"Modify file"}:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$af9ac4d9-d99a-4b2c-906f-3d556f5eb1d9j
+=====================
+R
+$40049f35-6f1a-47f5-b40e-3db4d76f5a41
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+#Adding permission routes to Gateway

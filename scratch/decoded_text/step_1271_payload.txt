@@ -1,0 +1,875 @@
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"
+=====================
+","EndLine":16,"Instruction":"
+=====================
+","ReplacementContent":"const { app, BrowserWindow, ipcMain, shell, Menu, utilityProcess } = require('electron');\nconst path = require('path');\nconst net  = require('net');\nconst { spawn } = require('child_process');\nconst fs = require('fs');","StartLine":12,"TargetContent":"const { app, BrowserWindow, ipcMain, shell, Menu } = require('electron');\nconst path = require('path');\nconst net  = require('net');\nconst { spawn } = require('child_process');\nconst fs = require('fs');","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/electron/main.js","toolAction":"Importing utilityProcess in electron/main.js","toolSummary":"Import utilityProcess"}:$
+=====================
+{q@	<,@%J0$"u=uo9j #
+=====================
+Q|D9"aL+Rc+_tf>J6c{2kOI|	E
+=====================
+ vC*$";3pJhs+z?wigq%NQ
+=====================
+7l;jU([.V	=/:
+tu&$&I:ll:
+=====================
+replace_file_content*AllowMultiple*
+=====================
+ReplacementContent*	StartLine*TargetContent*
+TargetFile*
+toolAction*
+=====================
+b$f1792df7-40f2-4b66-9b3b-ab881af761a0j
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+Import utilityProcess
+=====================
+,Importing utilityProcess in electron/main.js
+=====================
+const { app, BrowserWindow, ipcMain, shell, Menu } = require('electron');
+const path = require('path');
+const net  = require('net');
+const { spawn } = require('child_process');
+const fs = require('fs');
+=====================
+const { app, BrowserWindow, ipcMain, shell, Menu, utilityProcess } = require('electron');
+const path = require('path');
+const net  = require('net');
+const { spawn } = require('child_process');
+const fs = require('fs');0
+=====================
+*Jfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/electron/main.js2M
+9file:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent
+=====================
+<
+8 * Kunlun Agent OS 
+=====================
+M
+Iconst { app, BrowserWindow, ipcMain, shell, Menu } = require('electron');
+=====================
+]
+Yconst { app, BrowserWindow, ipcMain, shell, Menu, utilityProcess } = require('electron');
+=====================
+const path = require('path');
+=====================
+const net  = require('net');
+=====================
+/
++const { spawn } = require('child_process');
+=====================
+const fs = require('fs');
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
++
+'function findAvailablePort(startPort) {
+=====================
+'
+#  return new Promise((resolve) => {
+=====================
+*
+&    const server = net.createServer();
+=====================
+(
+$    server.listen(startPort, () => {
+=====================
+-
+)      const port = server.address().port;
+=====================
+,
+(      server.close(() => resolve(port));
+=====================
+    server.on('error', () => {
+=====================
+4
+0      resolve(findAvailablePort(startPort + 1));
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+let mainWindow = null;
+=====================
+let gatewayProcess = null;
+=====================
+let activePort = 8888;
+=====================
+let restartCount = 0;
+=====================
+const MAX_RESTARTS = 10;
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+function startGateway(port) {
+=====================
+ resources/app/src/ 
+=====================
+N
+J  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+=====================
+  const gatewayPath = isDev
+=====================
+1
+-    ? path.join(__dirname, '../src/index.js')
+=====================
+?
+;    : path.join(process.resourcesPath, 'app/src/index.js');
+=====================
+  const fs = require('fs');
+=====================
+$
+   const CANDIDATE_NODE_PATHS = [
+=====================
+E
+A    '/opt/homebrew/bin/node',   // macOS Apple Silicon (Homebrew)
+=====================
+C
+?    '/usr/local/bin/node',      // macOS Intel (Homebrew / nvm)
+=====================
+,
+(    '/usr/bin/node',            // Linux
+=====================
+G
+C    process.env.NODE_BINARY,   // 
+=====================
+B
+>    'node',                    // PATH 
+=====================
+  ].filter(Boolean);
+=====================
+2
+.  let nodeExecutable = 'node'; // 
+=====================
+-
+)  for (const p of CANDIDATE_NODE_PATHS) {
+=====================
+b
+^    if (p === 'node') { nodeExecutable = p; break; } // PATH 
+=====================
+<
+8    if (fs.existsSync(p)) { nodeExecutable = p; break; }
+=====================
+?
+;  console.log(`[Electron] Node binary: ${nodeExecutable}`);
+=====================
+W
+S  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);
+=====================
+2
+.  const env = Object.assign({}, process.env, {
+=====================
+    PORT: String(port),
+=====================
+6
+2    NODE_ENV: isDev ? 'development' : 'production'
+=====================
+=
+9  gatewayProcess = spawn(nodeExecutable, [gatewayPath], {
+=====================
+'
+#    stdio: ['pipe', 'pipe', 'pipe']
+=====================
+2
+.  gatewayProcess.stdout.on('data', (data) => {
+=====================
+B
+>    console.log(`[Gateway STDOUT] ${data.toString().trim()}`);
+=====================
+2
+.  gatewayProcess.stderr.on('data', (data) => {
+=====================
+D
+@    console.error(`[Gateway STDERR] ${data.toString().trim()}`);
+=====================
+3
+/  gatewayProcess.on('exit', (code, signal) => {
+=====================
+U
+Q    console.warn(`[Gateway] Process exited with code=${code}, signal=${signal}`);
+=====================
+U
+Q    if (restartCount < MAX_RESTARTS && mainWindow && !mainWindow.isDestroyed()) {
+=====================
+      restartCount++;
+=====================
+i
+e      console.log(`[Guardian] Auto-restarting gateway (attempt ${restartCount}/${MAX_RESTARTS})...`);
+=====================
+;
+7      setTimeout(() => startGateway(activePort), 1500);
+=====================
+2
+.    } else if (restartCount >= MAX_RESTARTS) {
+=====================
+\
+X      console.error('[Guardian] Max restart attempts reached. Please restart the app.');
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+async function createWindow() {
+=====================
+1
+-  activePort = await findAvailablePort(8888);
+=====================
+E
+A  console.log(`[Electron] Selected gateway port: ${activePort}`);
+=====================
+  startGateway(activePort);
+=====================
+2
+.  await new Promise(r => setTimeout(r, 3500));
+=====================
+&
+"  mainWindow = new BrowserWindow({
+=====================
+U
+Q    titleBarStyle: 'hiddenInset',      // macOS 
+=====================
+/
++    trafficLightPosition: { x: 18, y: 18 },
+=====================
+    backgroundColor: '#f5f5f7',
+=====================
+    webPreferences: {
+=====================
+6
+2      preload: path.join(__dirname, 'preload.js'),
+=====================
+      contextIsolation: true,
+=====================
+      nodeIntegration: false,
+=====================
+V
+R    show: false,  // 
+=====================
+    icon: getAppIcon(),
+=====================
+>
+:  const indexPath = path.join(__dirname, '../index.html');
+=====================
+&
+"  mainWindow.loadFile(indexPath, {
+=====================
+3
+/    query: { gateway_port: String(activePort) }
+=====================
+.
+*  mainWindow.once('ready-to-show', () => {
+=====================
+    mainWindow.show();
+=====================
+    setTimeout(() => {
+=====================
+8
+4      if (mainWindow && !mainWindow.isDestroyed()) {
+=====================
+5
+1        mainWindow.webContents.executeJavaScript(
+=====================
+9
+5            window.__GATEWAY_PORT__ = ${activePort}; 
+=====================
+e
+a            if(typeof window.initGatewayUrl === 'function') window.initGatewayUrl(${activePort});
+=====================
+T
+P            console.log('[Electron IPC] Gateway port injected:', ${activePort});
+=====================
+N
+J          } catch(e) { console.warn('initGatewayUrl not ready yet', e); }`
+=====================
+R
+N        ).catch(e => console.error('[Electron] executeJavaScript error:', e));
+=====================
+@
+<  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+=====================
+    shell.openExternal(url);
+=====================
+    return { action: 'deny' };
+=====================
+%
+!  mainWindow.on('closed', () => {
+=====================
+    mainWindow = null;
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+function getAppIcon() {
+=====================
+:
+6  const assetsDir = path.join(__dirname, '../assets');
+=====================
+^
+Z  if (process.platform === 'darwin' && fs.existsSync(path.join(assetsDir, 'icon.icns'))) {
+=====================
+1
+-    return path.join(assetsDir, 'icon.icns');
+=====================
+\
+X  if (process.platform === 'win32' && fs.existsSync(path.join(assetsDir, 'icon.ico'))) {
+=====================
+0
+,    return path.join(assetsDir, 'icon.ico');
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+function buildAppMenu() {
+=====================
+  const template = [
+=====================
+/
++        { label: '
+=====================
+        { type: 'separator' },
+=====================
+2
+.        { label: '
+=====================
+', role: 'services' },
+=====================
+        { type: 'separator' },
+=====================
+D
+@        { label: '
+=====================
+', role: 'hide', accelerator: 'Cmd+H' },
+=====================
+D
+@        { label: '
+=====================
+', role: 'quit', accelerator: 'Cmd+Q' },
+=====================
+.
+*        { label: '
+=====================
+.
+*        { label: '
+=====================
+        { type: 'separator' },
+=====================
+-
+)        { label: '
+=====================
+.
+*        { label: '
+=====================
+/
++        { label: '
+=====================
+3
+/        { label: '
+=====================
+', role: 'selectAll' },
+=====================
+L
+H        { label: '
+=====================
+', role: 'reload', accelerator: 'Cmd+R' },
+=====================
+[
+W        { label: '
+=====================
+', role: 'toggleDevTools', accelerator: 'Alt+Cmd+I' },
+=====================
+        { type: 'separator' },
+=====================
+9
+5        { label: '
+=====================
+', role: 'resetZoom' },
+=====================
+0
+,        { label: '
+=====================
+', role: 'zoomIn' },
+=====================
+1
+-        { label: '
+=====================
+', role: 'zoomOut' },
+=====================
+K
+G        { label: '
+=====================
+', role: 'minimize', accelerator: 'Cmd+M' },
+=====================
+:
+6        { label: '
+=====================
+', role: 'togglefullscreen' },
+=====================
+E
+A        { label: '
+=====================
+', role: 'close', accelerator: 'Cmd+W' },
+=====================
+4
+0  const menu = Menu.buildFromTemplate(template);
+=====================
+$
+   Menu.setApplicationMenu(menu);
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+9
+5ipcMain.handle('get-gateway-port', () => activePort);
+=====================
+1
+-// ==========================================
+=====================
+1
+-// ==========================================
+=====================
+'
+#app.whenReady().then(createWindow);
+=====================
+'
+#app.on('window-all-closed', () => {
+=====================
+4
+0  if (process.platform !== 'darwin') app.quit();
+=====================
+app.on('activate', () => {
+=====================
+E
+A  if (BrowserWindow.getAllWindows().length === 0) createWindow();
+=====================
+app.on('before-quit', () => {
+=====================
+  if (gatewayProcess) {
+=====================
+I
+E    console.log('[Electron] Killing gateway process before quit...');
+=====================
+'
+#    gatewayProcess.kill('SIGTERM');
+=====================
+    gatewayProcess = null;
+=====================
+.
+*process.on('uncaughtException', (err) => {
+=====================
+;
+7  console.error('[Electron] Uncaught Exception:', err);
+=====================
+BJfile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/electron/main.jsRG/**
+ * Kunlun Agent OS 
+=====================
+ (Main Process)
+ * 
+ * 
+=====================
+ (src/index.js)
+ * 3. 
+=====================
+ GATEWAY_URL
+ */
+
+const { app, BrowserWindow, ipcMain, shell, Menu } = require('electron');
+const path = require('path');
+const net  = require('net');
+const { spawn } = require('child_process');
+const fs = require('fs');
+
+// ==========================================
+// 
+=====================
+
+// ==========================================
+function findAvailablePort(startPort) {
+  return new Promise((resolve) => {
+    const server = net.createServer();
+    server.listen(startPort, () => {
+      const port = server.address().port;
+      server.close(() => resolve(port));
+    });
+    server.on('error', () => {
+      // 
+=====================
+
+      resolve(findAvailablePort(startPort + 1));
+    });
+  });
+}
+
+// ==========================================
+// 
+=====================
+
+// ==========================================
+let mainWindow = null;
+let gatewayProcess = null;
+let activePort = 8888;
+let restartCount = 0;
+const MAX_RESTARTS = 10;
+
+// ==========================================
+// 
+=====================
+
+// ==========================================
+function startGateway(port) {
+  // 
+=====================
+ resources/app/src/ 
+=====================
+
+  const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
+  const gatewayPath = isDev
+    ? path.join(__dirname, '../src/index.js')
+    : path.join(process.resourcesPath, 'app/src/index.js');
+
+  // 
+=====================
+
+  const fs = require('fs');
+  const CANDIDATE_NODE_PATHS = [
+    '/opt/homebrew/bin/node',   // macOS Apple Silicon (Homebrew)
+    '/usr/local/bin/node',      // macOS Intel (Homebrew / nvm)
+    '/usr/bin/node',            // Linux
+    process.env.NODE_BINARY,   // 
+=====================
+
+    'node',                    // PATH 
+=====================
+
+  ].filter(Boolean);
+
+  let nodeExecutable = 'node'; // 
+=====================
+
+  for (const p of CANDIDATE_NODE_PATHS) {
+    if (p === 'node') { nodeExecutable = p; break; } // PATH 
+=====================
+
+    if (fs.existsSync(p)) { nodeExecutable = p; break; }
+  }
+
+  console.log(`[Electron] Node binary: ${nodeExecutable}`);
+  console.log(`[Electron] Starting gateway on port ${port}, path: ${gatewayPath}`);
+
+  const env = Object.assign({}, process.env, {
+    PORT: String(port),
+    NODE_ENV: isDev ? 'development' : 'production'
+  });
+
+  gatewayProcess = spawn(nodeExecutable, [gatewayPath], {
+    env,
+    stdio: ['pipe', 'pipe', 'pipe']
+  });
+
+  gatewayProcess.stdout.on('data', (data) => {
+    console.log(`[Gateway STDOUT] ${data.toString().trim()}`);
+  });
+
+  gatewayProcess.stderr.on('data', (data) => {
+    console.error(`[Gateway STDERR] ${data.toString().trim()}`);
+  });
+
+  // 
+=====================
+
+  gatewayProcess.on('exit', (code, signal) => {
+    console.warn(`[Gateway] Process exited with code=${code}, signal=${signal}`);
+    if (restartCount < MAX_RESTARTS && mainWindow && !mainWindow.isDestroyed()) {
+      restartCount++;
+      console.log(`[Guardian] Auto-restarting gateway (attempt ${restartCount}/${MAX_RESTARTS})...`);
+      setTimeout(() => startGateway(activePort), 1500);
+    } else if (restartCount >= MAX_RESTARTS) {
+      console.error('[Guardian] Max restart attempts reached. Please restart the app.');
+    }
+  });
+}
+
+// ==========================================
+// 
+=====================
+
+// ==========================================
+async function createWindow() {
+  // 1. 
+=====================
+
+  activePort = await findAvailablePort(8888);
+  console.log(`[Electron] Selected gateway port: ${activePort}`);
+
+  // 2. 
+=====================
+
+  startGateway(activePort);
+
+  // 3. 
+=====================
+
+  await new Promise(r => setTimeout(r, 3500));
+
+  // 4. 
+=====================
+
+  mainWindow = new BrowserWindow({
+    width: 1440,
+    height: 900,
+    minWidth: 1024,
+    minHeight: 700,
+    titleBarStyle: 'hiddenInset',      // macOS 
+=====================
+
+    trafficLightPosition: { x: 18, y: 18 },
+    backgroundColor: '#f5f5f7',
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: true,
+      nodeIntegration: false,
+    },
+    show: false,  // 
+=====================
+
+    icon: getAppIcon(),
+  });
+
+  // 5. 
+=====================
+
+  const indexPath = path.join(__dirname, '../index.html');
+  mainWindow.loadFile(indexPath, {
+    query: { gateway_port: String(activePort) }
+  });
+
+  // 6. 
+=====================
+
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+    // 
+=====================
+
+    setTimeout(() => {
+      if (mainWindow && !mainWindow.isDestroyed()) {
+        mainWindow.webContents.executeJavaScript(
+          `try { 
+            window.__GATEWAY_PORT__ = ${activePort}; 
+            if(typeof window.initGatewayUrl === 'function') window.initGatewayUrl(${activePort});
+            console.log('[Electron IPC] Gateway port injected:', ${activePort});
+          } catch(e) { console.warn('initGatewayUrl not ready yet', e); }`
+        ).catch(e => console.error('[Electron] executeJavaScript error:', e));
+      }
+    }, 500);
+  });
+
+  // 7. 
+=====================
+
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    shell.openExternal(url);
+    return { action: 'deny' };
+  });
+
+  mainWindow.on('closed', () => {
+    mainWindow = null;
+  });
+
+  // 8. 
+=====================
+
+  buildAppMenu();
+}
+
+// ==========================================
+// 
+=====================
+
+// ==========================================
+function getAppIcon() {
+  const assetsDir = path.join(__dirname, '../assets');
+  if (process.platform === 'darwin' && fs.existsSync(path.join(assetsDir, 'icon.icns'))) {
+    return path.join(assetsDir, 'icon.icns');
+  }
+  if (process.platform === 'win32' && fs.existsSync(path.join(assetsDir, 'icon.ico'))) {
+    return path.join(assetsDir, 'icon.ico');
+  }
+  return undefined;
+}
+
+// ==========================================
+// 
+=====================
+
+// ==========================================
+function buildAppMenu() {
+  const template = [
+    {
+      label: '
+=====================
+ Agent OS',
+      submenu: [
+        { label: '
+=====================
+', role: 'about' },
+        { type: 'separator' },
+        { label: '
+=====================
+', role: 'services' },
+        { type: 'separator' },
+        { label: '
+=====================
+', role: 'hide', accelerator: 'Cmd+H' },
+        { label: '
+=====================
+', role: 'quit', accelerator: 'Cmd+Q' },
+      ],
+    },
+    {
+      label: '
+=====================
+',
+      submenu: [
+        { label: '
+=====================
+', role: 'undo' },
+        { label: '
+=====================
+', role: 'redo' },
+        { type: 'separator' },
+        { label: '
+=====================
+', role: 'cut' },
+        { label: '
+=====================
+', role: 'copy' },
+        { label: '
+=====================
+', role: 'paste' },
+        { label: '
+=====================
+', role: 'selectAll' },
+      ],
+    },
+    {
+      label: '
+=====================
+',
+      submenu: [
+        { label: '
+=====================
+', role: 'reload', accelerator: 'Cmd+R' },
+        { label: '
+=====================
+', role: 'toggleDevTools', accelerator: 'Alt+Cmd+I' },
+        { type: 'separator' },
+        { label: '
+=====================
+', role: 'resetZoom' },
+        { label: '
+=====================
+', role: 'zoomIn' },
+        { label: '
+=====================
+', role: 'zoomOut' },
+      ],
+    },
+    {
+      label: '
+=====================
+',
+      submenu: [
+        { label: '
+=====================
+', role: 'minimize', accelerator: 'Cmd+M' },
+        { label: '
+=====================
+', role: 'togglefullscreen' },
+        { label: '
+=====================
+', role: 'close', accelerator: 'Cmd+W' },
+      ],
+    },
+  ];
+
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
+}
+
+// ==========================================
+// IPC 
+=====================
+
+// ==========================================
+ipcMain.handle('get-gateway-port', () => activePort);
+
+// ==========================================
+// Electron 
+=====================
+
+// ==========================================
+app.whenReady().then(createWindow);
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) createWindow();
+});
+
+// 
+=====================
+
+app.on('before-quit', () => {
+  if (gatewayProcess) {
+    console.log('[Electron] Killing gateway process before quit...');
+    gatewayProcess.kill('SIGTERM');
+    gatewayProcess = null;
+  }
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('[Electron] Uncaught Exception:', err);
+});
+ 
+=====================
+const { app, BrowserWindow, ipcMain, shell, Menu } = require('electron');
+const path = require('path');
+const net  = require('net');
+const { spawn } = require('child_process');
+const fs = require('fs');
+=====================
+const { app, BrowserWindow, ipcMain, shell, Menu, utilityProcess } = require('electron');
+const path = require('path');
+const net  = require('net');
+const { spawn } = require('child_process');
+const fs = require('fs');0

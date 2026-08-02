@@ -1,0 +1,16 @@
+{
+  "id": "ai_sales_champion",
+  "name": "AI销冠",
+  "group": "运营组",
+  "description": "基于经典销售心理学与销冠话术库，针对潜在客户的提问和痛点生成极具说服力的个性化回复。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=ai_sales_champion",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

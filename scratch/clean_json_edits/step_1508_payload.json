@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 package.json 中配置商业混淆打包入口脚本命令（release:mac 等）。",
+  "EndLine": 14,
+  "Instruction": "添加 release 打包脚本命令。",
+  "ReplacementContent": "    \"build:mac\": \"electron-builder --mac\",\n    \"build:win\": \"electron-builder --win\",\n    \"build:all\": \"electron-builder --mac --win\",\n    \"release:mac\": \"node scripts/build-prod.js --mac\",\n    \"release:win\": \"node scripts/build-prod.js --win\",\n    \"release:all\": \"node scripts/build-prod.js --mac --win\"",
+  "StartLine": 11,
+  "TargetContent": "    \"build:mac\": \"electron-builder --mac\",\n    \"build:win\": \"electron-builder --win\",\n    \"build:all\": \"electron-builder --mac --win\"",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/package.json",
+  "toolAction": "Adding obfuscation package release scripts to package.json",
+  "toolSummary": "Add release scripts to package.json"
+}

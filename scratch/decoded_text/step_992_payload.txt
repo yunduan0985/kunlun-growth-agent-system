@@ -1,0 +1,47 @@
+-3750763034362895579P
+=====================
+Z!req_vrtx_011Cd58K2aWxDfAvrNeP27uLX
+=====================
+b$ae9edf35-110e-4109-b5bb-1a0c90de006ej
+=====================
+R
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9
+=====================
+"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd
+=====================
+2(bot-f8facd71-83f4-40bf-a453-b08efcea320d:
+=====================
+
+#toolu_vrtx_01YBG1p9AWfWh6KjVzCR4bpq
+=====================
+replace_file_content
+=====================
+{"AllowMultiple":false,"Description":"enterApp 
+=====================
+ loadSystemConfig + loadPermissionMatrix + loadAgentStatus 
+=====================
+","EndLine":1075,"Instruction":"
+=====================
+","ReplacementContent":"    function enterApp() {\n      // 
+=====================
+\n      document.getElementById('auth-screen').classList.add('hidden');\n      // 
+=====================
+\n      if (_currentUser) {\n        const initials = (_currentUser.display_name || _currentUser.email).substring(0, 2).toUpperCase();\n        document.getElementById('user-avatar-initials').textContent = initials;\n        document.getElementById('user-display-name').textContent = _currentUser.display_name || _currentUser.email.split('@')[0];\n        document.getElementById('dropdown-name').textContent = _currentUser.display_name;\n        document.getElementById('dropdown-email').textContent = _currentUser.email;\n        document.getElementById('dropdown-role').textContent = _currentUser.role === 'admin' ? '
+=====================
+' : _currentUser.role;\n        document.getElementById('user-avatar-btn').style.display = 'flex';\n        // 
+=====================
+\n        const roleMap = { admin: 'admin', editor: 'editor', sales: 'sales' };\n        const sel = document.getElementById('user-role-select');\n        if (sel \u0026\u0026 roleMap[_currentUser.role]) sel.value = roleMap[_currentUser.role];\n      }\n\n      // 
+=====================
+\n      Promise.all([\n        loadSystemConfig(),\n        loadPermissionMatrix(),\n        loadAgentStatus()\n      ]).catch(e =\u003e console.warn('[App] Init data warning:', e));\n    }\n","StartLine":1058,"TargetContent":"    function enterApp() {\n      // 
+=====================
+\n      document.getElementById('auth-screen').classList.add('hidden');\n      // 
+=====================
+\n      if (_currentUser) {\n        const initials = (_currentUser.display_name || _currentUser.email).substring(0, 2).toUpperCase();\n        document.getElementById('user-avatar-initials').textContent = initials;\n        document.getElementById('user-display-name').textContent = _currentUser.display_name || _currentUser.email.split('@')[0];\n        document.getElementById('dropdown-name').textContent = _currentUser.display_name;\n        document.getElementById('dropdown-email').textContent = _currentUser.email;\n        document.getElementById('dropdown-role').textContent = _currentUser.role === 'admin' ? '
+=====================
+' : _currentUser.role;\n        document.getElementById('user-avatar-btn').style.display = 'flex';\n        // 
+=====================
+\n        const roleMap = { admin: 'admin', editor: 'editor', sales: 'sales' };\n        const sel = document.getElementById('user-role-select');\n        if (sel \u0026\u0026 roleMap[_currentUser.role]) sel.value = roleMap[_currentUser.role];\n      }\n    }\n","TargetFile":"/Volumes/MOVESPEED/
+=====================
+/AIcode/Agent/index.html","toolAction":"Updating enterApp to trigger data initialization","toolSummary":"Fix enterApp"}J
+=====================
+replace_file_content`

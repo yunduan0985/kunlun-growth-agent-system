@@ -1,0 +1,12 @@
+{
+  "AllowMultiple": false,
+  "Description": "在 Gateway src/index.js 中添加 /api/content/expert/polish 与 /api/content/expert/verify 两个润色与核查端点。",
+  "EndLine": 733,
+  "Instruction": "在服务器启动之前加入内容去AI味润色和数据核对路由。",
+  "ReplacementContent": "\n// 模拟内容深度润色接口 (去 AI 腔与金句提取)\napp.post('/api/content/expert/polish', (req, res) => {\n  const { raw_draft } = req.body;\n  if (!raw_draft) return res.status(400).json({ error: \"Missing parameter: raw_draft\" });\n\n  console.log(`[Content Polisher] Refining draft to remove AI tone...`);\n\n  let polished = raw_draft\n    .replace(/在当今快节奏的社会中/g, \"说句大实话，现在大家节奏都这么快\")\n    .replace(/值得注意的是/g, \"这里面有个很硬核的卡点\")\n    .replace(/不得不说/g, \"老实说\")\n    .replace(/是一把双刃剑/g, \"坑其实挺深的\");\n\n  res.json({\n    success: true,\n    polished_text: polished,\n    golden_sentences: [\n      \"别用机器的套话去糊弄你的客户，真诚的痛点对比，永远比一万句AI生成的废话管用。\",\n      \"AI销冠的核心不是话术，而是对用户预算的残忍审计。\"\n    ]\n  });\n});\n\n// 模拟事实数据交叉核对接口\napp.post('/api/content/expert/verify', (req, res) => {\n  const { claims } = req.body;\n  console.log(`[Fact Checker] Verifying data points: ${JSON.stringify(claims || [])}`);\n\n  res.json({\n    success: true,\n    verified: true,\n    unverified_items: []\n  });\n});\n\n// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "StartLine": 733,
+  "TargetContent": "// ==========================================\n// 5. 服务器启动\n// ==========================================",
+  "TargetFile": "/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js",
+  "toolAction": "Adding content expert routes to Gateway",
+  "toolSummary": "Modify file"
+}

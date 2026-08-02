@@ -1,0 +1,24 @@
+ *
+"
+#toolu_vrtx_01Vzm6tqyaGENAryNXgYpy8J	view_file{"AbsolutePath":"/Volumes/MOVESPEED/下载/AIcode/Agent/src/index.js","EndLine":2025,"StartLine":2010,"toolAction":"Viewing multer upload route","toolSummary":"View upload route"}J	view_file*AbsolutePath*EndLine*	StartLine*
+toolAction*toolSummary2:BƈXb$9043cfd8-2487-4216-819c-4b1fef5a6e3cjR
+$1a63825f-fbef-4c4d-96dc-e424d4893ce9"$7a3eb2cb-a8a5-41a0-8539-02f35b41f1bd؀,6
+
+
+View upload routeViewing multer upload router
+Ffile:///Volumes/MOVESPEED/%E4%B8%8B%E8%BD%BD/AIcode/Agent/src/index.js"
+
+// ==========================================
+// 📎 文件上传解析：PDF / Word / TXT / MD → 知识库自动入库
+// ==========================================
+app.post('/api/system/knowledge/upload', upload.single('file'), async (req, res) => {
+  if (!req.file) return res.status(400).json({ error: 'No file uploaded.' });
+
+  const { user_role } = req.body;
+  if (user_role !== 'admin') {
+    fs.unlinkSync(req.file.path); // 删除临时文件
+    return res.status(403).json({ error: 'Only Admin can upload knowledge files.' });
+  }
+
+  const ext = path.extname(req.file.originalname).toLowerCase();
+  const targetFilename = req.file.originalname.replace(/\s+/g, '_');X`

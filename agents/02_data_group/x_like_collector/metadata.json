@@ -1,0 +1,16 @@
+{
+  "id": "x_like_collector",
+  "name": "X点赞收集官",
+  "group": "数据组",
+  "description": "监控并收集特定账号（如创始人、大V）在 X 上的点赞内容，提取其背后的关注焦点与灵感。",
+  "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=x_like_collector",
+  "version": "1.0.0",
+  "compatibility": [
+    "Feishu",
+    "Workbuddy",
+    "Coze/Codex",
+    "Claude Projects",
+    "Marvis",
+    "Hermes"
+  ]
+}

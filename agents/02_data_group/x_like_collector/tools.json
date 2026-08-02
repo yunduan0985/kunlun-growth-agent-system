@@ -1,0 +1,164 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "X 大佬多维社交行为审计插件",
+    "version": "1.3.0",
+    "description": "提供给 X点赞与社交行为收集官 Agent 进行大V点赞、新增关注账号监控及回复互动抓取的 API 规范。"
+  },
+  "paths": {
+    "/api/x/likes/fetch": {
+      "get": {
+        "summary": "抓取并获取指定 X 账号最近点赞的推文列表",
+        "operationId": "fetchXTweetsLikes",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "被监听的 Twitter 用户名"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/x/following/changes": {
+      "get": {
+        "summary": "监控并获取指定 X 账号最新关注的其它用户账号列表",
+        "operationId": "getFollowingChanges",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "大V的 Twitter 用户名"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "获取新增关注账号成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "username": { "type": "string" },
+                      "bio": { "type": "string" },
+                      "followed_at": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/x/replies/fetch": {
+      "get": {
+        "summary": "拉取并获取指定大V在他人推文下发表的互动回复和讨论片段",
+        "operationId": "getKOLReplies",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "大V的 Twitter 用户名"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "获取互动回复成功"
+          }
+        }
+      }
+    },
+    "/api/x/likes/archive": {
+      "post": {
+        "summary": "将具有商业价值的社交数据及其侧写动机归档存入本地数据库与向量知识库中",
+        "operationId": "archiveXTweetLike",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": { "type": "string" },
+                  "tweet_url": { "type": "string" },
+                  "content": { "type": "string" },
+                  "motivation": { "type": "string" }
+                },
+                "required": ["username", "tweet_url", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/wechat/openclaw/send": {
+      "post": {
+        "summary": "微信 OpenClaw 控制接口",
+        "operationId": "openclawWechatSend",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_username": { "type": "string" },
+                  "content": { "type": "string" }
+                },
+                "required": ["to_username", "content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    },
+    "/api/terminal/execute": {
+      "post": {
+        "summary": "终端命令执行接口",
+        "operationId": "executeTerminalCommand",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "command": { "type": "string" }
+                },
+                "required": ["command"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功"
+          }
+        }
+      }
+    }
+  }
+}

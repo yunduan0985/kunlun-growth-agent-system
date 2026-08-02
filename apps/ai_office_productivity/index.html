@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课程 G：AI 智能办公全员提效营 - 办公中枢</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-logo">G</div>
+      <div>
+        <div style="font-size:1.2rem; font-weight:700;">AI 智能办公全员提效营</div>
+        <span style="font-size:0.7rem; background:linear-gradient(135deg,#10b981,#0284c7); padding:2px 8px; border-radius:20px;">课程 G 官方办公提效中枢</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="bid">
+        📄 标书解析与废标风险
+      </button>
+      <button class="tab-btn" data-tab="excel">
+        📊 Excel / VBA / Python 公式
+      </button>
+      <button class="tab-btn" data-tab="meeting">
+        📝 会议纪要与待办提取
+      </button>
+      <button class="tab-btn" data-tab="contract">
+        ⚖️ 合同违约风险比对
+      </button>
+    </div>
+
+    <div>
+      <button class="btn" onclick="alert('已连接昆仑 AI 办公 10 倍提效中枢！')">⚡ 系统状态: 正常</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Tab 1: Bid -->
+    <div id="bid" class="tab-content active">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📄 AI 标书快速解析、资质匹配与风控初稿生成</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <div class="form-group">
+              <label>招标文件关键资质与条款摘要：</label>
+              <textarea id="bidRequirement" class="form-control" rows="4">项目预算 500 万，要求 ISO9001 质量认证，软件著作权不少于 5 项，注册资本不低于 1000 万，必须提供近 3 个月纳税证明原件</textarea>
+            </div>
+
+            <button class="btn" style="width:100%;" onclick="analyzeBiddingDocument()">🚀 1秒极速解析标书与废标项诊断</button>
+          </div>
+
+          <div>
+            <div id="bidOutput" class="output-box" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Excel -->
+    <div id="excel" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📊 Excel / VBA / Python 复杂表格及财务发票智能处理</h3>
+        <p style="color:var(--text-muted); line-height:1.8;">
+          自然语言生成 VLOOKUP / XLOOKUP / Dynamic Array 及 VBA 宏脚本。
+        </p>
+      </div>
+    </div>
+
+    <!-- Tab 3: Meeting -->
+    <div id="meeting" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">📝 智能会议纪要提取与工作周报待办归纳</h3>
+      </div>
+    </div>
+
+    <!-- Tab 4: Contract -->
+    <div id="contract" class="tab-content">
+      <div class="glass-panel">
+        <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1rem;">⚖️ 合同风险合规扫描与法律条款自动比对</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

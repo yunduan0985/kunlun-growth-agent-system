@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="dark">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>昆仑增长 KunlunGrowth — 让 AI 成为你的数字员工与核心生产力</title>
-    <!-- Google Fonts -->
+    <title>昆仑增长 KunlunGrowth — 麦肯锡级企业 AI 数字大脑与战略实施</title>
+    <!-- Google Fonts: Playfair Display (麦肯锡衬线体) + Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        outfit: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
-                        cyber: {
-                            bg: '#090d16',
-                            card: 'rgba(15, 23, 42, 0.75)',
-                            accent: '#3b82f6',
-                            emerald: '#10b981',
-                            purple: '#8b5cf6',
+                        mckinsey: {
+                            navy: '#051c2c',
+                            blue: '#0066cc',
+                            lightbg: '#f8fafc',
+                            card: '#ffffff',
+                            text: '#0f172a',
+                            muted: '#475569',
+                            border: '#e2e8f0',
+                            accent: '#0284c7'
                         }
                     }
                 }
@@ -35,223 +37,228 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background-color: #090d16; color: #f8fafc; overflow-x: hidden; }
-        .glass-card { 
-            background: rgba(15, 23, 42, 0.75); 
-            backdrop-filter: blur(16px); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        body { background-color: #ffffff; color: #0f172a; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .mckinsey-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(5, 28, 44, 0.04);
+            transition: all 0.3s ease;
         }
-        .glass-card:hover { 
-            border-color: rgba(59, 130, 246, 0.4); 
-            transform: translateY(-4px);
-            box-shadow: 0 25px 60px rgba(59, 130, 246, 0.15);
+        .mckinsey-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 12px 35px rgba(0, 102, 204, 0.08);
+            transform: translateY(-2px);
         }
-        .text-gradient {
-            background: linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #a78bfa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .navy-btn {
+            background-color: #051c2c;
+            color: #ffffff;
+            transition: all 0.2s ease;
         }
-        .glow-effect {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(0,0,0,0) 70%);
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            pointer-events: none;
+        .navy-btn:hover {
+            background-color: #0066cc;
         }
     </style>
 </head>
-<body class="selection:bg-blue-500 selection:text-white">
+<body class="bg-white text-slate-900 selection:bg-blue-600 selection:text-white">
 
-    <!-- 顶栏 Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80 px-6 py-4">
+    <!-- 麦肯锡风顶栏 Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center text-white font-black text-xl shadow-lg">
+                <div class="w-9 h-9 bg-mckinsey-navy text-white flex items-center justify-center font-serif font-bold text-xl tracking-wider">
                     K
                 </div>
-                <span class="font-outfit font-black text-xl tracking-wider text-slate-100">KUNLUN<span class="text-blue-400">GROWTH</span></span>
+                <span class="font-serif font-bold text-xl tracking-tight text-mckinsey-navy">KUNLUN<span class="text-mckinsey-blue font-sans font-normal text-lg ml-1">GROWTH</span></span>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#matrix" class="hover:text-blue-400 transition">产品矩阵</a>
-                <a href="#proof" class="hover:text-blue-400 transition">硬核战绩</a>
-                <a href="#fde" class="hover:text-blue-400 transition">FDE数字员工</a>
-                <a href="#about" class="hover:text-blue-400 transition">关于帅老师</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#matrix" class="hover:text-mckinsey-blue transition">商业矩阵</a>
+                <a href="#proof" class="hover:text-mckinsey-blue transition">战绩与资历</a>
+                <a href="#fde" class="hover:text-mckinsey-blue transition">企业数字大脑</a>
+                <a href="#founder" class="hover:text-mckinsey-blue transition">关于大帅</a>
             </div>
             <div>
-                <a href="#contact" class="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-lg flex items-center gap-2">
+                <a href="#contact" class="navy-btn text-xs font-semibold px-5 py-2.5 rounded-sm transition flex items-center gap-2 shadow-sm">
                     <i class="fa-solid fa-comments"></i> 杭州EFC，找大帅随时聊项目！
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero 首屏 -->
-    <section class="relative pt-36 pb-20 px-6 max-w-7xl mx-auto text-center">
-        <div class="glow-effect"></div>
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-blue-500/30 text-blue-400 text-xs font-semibold mb-8">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            SkillHub 全球榜单 TOP 4 团队架构出品
-        </div>
-        <h1 class="font-outfit text-5xl md:text-7xl font-black tracking-tight leading-tight mb-6">
-            让 AI 成为你的<span class="text-gradient">数字员工</span><br>真正转化为<span class="text-emerald-400">商业生产力</span>
-        </h1>
-        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-            昆仑增长 (KunlunGrowth) 专注于企业级 AI Agent 私有化部署、全栈智能应用研发与工业知识 OS。摆脱花架子，用真机代码与数字员工为企业实现降本增效。
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-2xl transition shadow-xl shadow-blue-600/30 flex items-center gap-3">
-                <i class="fa-solid fa-rocket"></i> 获取企业 AI 私有化方案
-            </a>
-            <a href="#matrix" class="glass-card hover:bg-slate-800/60 text-slate-200 font-semibold px-8 py-4 rounded-2xl transition border-slate-700 flex items-center gap-3">
-                <i class="fa-solid fa-layer-group"></i> 浏览全量产品矩阵
-            </a>
-        </div>
-    </section>
-
-    <!-- 硬核背书与战绩数据墙 (Proof Bar) -->
-    <section id="proof" class="py-12 bg-slate-900/50 border-y border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="font-outfit text-4xl font-black text-blue-400 mb-1">TOP 4</div>
-                <div class="text-xs text-slate-400">SkillHub 全球榜单排名</div>
+    <!-- 麦肯锡咨询风格 Hero 首屏 -->
+    <section class="pt-36 pb-20 px-6 max-w-7xl mx-auto border-b border-slate-200">
+        <div class="max-w-4xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 border border-slate-200 text-mckinsey-navy text-xs font-semibold uppercase tracking-wider mb-6">
+                <span class="w-2 h-2 rounded-full bg-mckinsey-blue"></span>
+                SKILLHUB 全球榜单 TOP 4 团队架构出品
             </div>
-            <div>
-                <div class="font-outfit text-4xl font-black text-emerald-400 mb-1">1,700+</div>
-                <div class="text-xs text-slate-400">生产级 Agent Skills 库</div>
-            </div>
-            <div>
-                <div class="font-outfit text-4xl font-black text-purple-400 mb-1">60+</div>
-                <div class="text-xs text-slate-400">全栈 Web / App / SaaS 交付</div>
-            </div>
-            <div>
-                <div class="font-outfit text-4xl font-black text-amber-400 mb-1">8 大</div>
-                <div class="text-xs text-slate-400">出版级垂直行业 AI 课程矩阵</div>
+            <h1 class="font-serif text-4xl md:text-6xl font-bold tracking-tight leading-tight text-mckinsey-navy mb-6">
+                让 AI 成为企业的<span class="text-mckinsey-blue">数字员工</span><br>驱动可量化的<span class="italic font-normal">商业增长与生产力革命</span>
+            </h1>
+            <p class="text-slate-600 text-base md:text-lg max-w-2xl mb-10 leading-relaxed font-light">
+                昆仑增长 (KunlunGrowth) 专注于企业级 AI Agent 私有化部署、工业级知识 OS 与智能流程自动化。拒绝虚浮概念，以硬核真机代码与数字大脑架构，为 B 端企业与 G 端政企打造生产级落地体系。
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#contact" class="navy-btn font-semibold px-7 py-3.5 text-sm rounded-sm transition shadow-md flex items-center gap-3">
+                    预约企业 AI 私有化咨询 <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#matrix" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold px-7 py-3.5 text-sm rounded-sm transition border border-slate-300 flex items-center gap-2">
+                    浏览产品矩阵
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 产品与解决方案矩阵 (Matrix) -->
-    <section id="matrix" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="font-outfit text-3xl md:text-5xl font-extrabold mb-4">昆仑增长 <span class="text-blue-400">旗舰产品矩阵</span></h2>
-            <p class="text-slate-400 max-w-2xl mx-auto text-sm">面向 B 端中大型企业、G 端高校/政企与高级开发者的一站式落地解决方案</p>
+    <!-- 麦肯锡式数据墙与实力背书 (Proof Wall) -->
+    <section id="proof" class="py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-200">
+                <div class="px-4">
+                    <div class="font-serif text-4xl md:text-5xl font-bold text-mckinsey-navy mb-2">TOP 4</div>
+                    <div class="text-xs text-slate-500 font-medium uppercase tracking-wider">SkillHub 全球榜单排名</div>
+                </div>
+                <div class="px-4">
+                    <div class="font-serif text-4xl md:text-5xl font-bold text-mckinsey-blue mb-2">1,700+</div>
+                    <div class="text-xs text-slate-500 font-medium uppercase tracking-wider">生产级 Agent Skills 资产</div>
+                </div>
+                <div class="px-4">
+                    <div class="font-serif text-4xl md:text-5xl font-bold text-mckinsey-navy mb-2">60+</div>
+                    <div class="text-xs text-slate-500 font-medium uppercase tracking-wider">全栈 Web / App / SaaS 交付</div>
+                </div>
+                <div class="px-4">
+                    <div class="font-serif text-4xl md:text-5xl font-bold text-mckinsey-blue mb-2">8 大</div>
+                    <div class="text-xs text-slate-500 font-medium uppercase tracking-wider">出版级垂直行业 AI 矩阵</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商业产品与解决方案矩阵 (Matrix) -->
+    <section id="matrix" class="py-24 px-6 max-w-7xl mx-auto border-b border-slate-200">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+            <div>
+                <div class="text-xs font-bold text-mckinsey-blue uppercase tracking-widest mb-2">SOLUTIONS & PRODUCTS</div>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-mckinsey-navy">昆仑增长 <span class="italic font-normal">核心商业矩阵</span></h2>
+            </div>
+            <p class="text-slate-500 text-sm max-w-md mt-4 md:mt-0 font-light">面向 B 端中大型企业私有化、G 端政企/学校知识 OS 与高级开发者的落地方案</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- 1. 企业数字员工私有化 -->
-            <div class="glass-card rounded-3xl p-8 relative overflow-hidden">
-                <div class="w-14 h-14 rounded-2xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl mb-6 border border-blue-500/30">
-                    <i class="fa-solid fa-users-gear"></i>
+            <div class="mckinsey-card p-8 flex flex-col justify-between">
+                <div>
+                    <div class="text-xs font-bold text-mckinsey-blue tracking-widest uppercase mb-4">FLAGSHIP PRODUCT 01</div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-mckinsey-navy">企业数字员工私有化 OS</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed font-light">
+                        把自己天天在跑的 Agent 体系私有化交付给企业。包含 PII 敏感数据脱敏网关，全面保护企业财务与核心客户隐私。
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold mb-3 text-slate-100">企业数字员工私有化 OS</h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                    把自己天天在用的 Agent 体系私有化部署给企业。包含 PII 敏感数据脱敏网关，保护企业财务与客户隐私。
-                </p>
-                <div class="text-xs font-semibold text-blue-400 bg-blue-950/50 p-3 rounded-xl border border-blue-800/40 mb-6">
-                    💰 客单价：3.98 万 ~ 9.8 万元 / 企业
+                <div>
+                    <div class="text-xs font-semibold text-mckinsey-navy bg-slate-100 p-3 rounded-sm border border-slate-200 mb-6">
+                        💰 投资额：3.98 万 ~ 9.8 万元 / 企业
+                    </div>
+                    <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-mckinsey-blue"></i> 400+ 岗位数字员工落地场景</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-mckinsey-blue"></i> 支持 DeepSeek 局域网私有化部署</li>
+                    </ul>
                 </div>
-                <ul class="text-xs text-slate-300 space-y-2 mb-6">
-                    <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>400+ 岗位数字员工场景</li>
-                    <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>支持 DeepSeek 局域网私有部署</li>
-                </ul>
             </div>
 
             <!-- 2. KGOS Industrial 工业运维 -->
-            <div class="glass-card rounded-3xl p-8 relative overflow-hidden border-emerald-500/30">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-2xl mb-6 border border-emerald-500/30">
-                    <i class="fa-solid fa-industry"></i>
+            <div class="mckinsey-card p-8 flex flex-col justify-between border-t-2 border-t-mckinsey-blue">
+                <div>
+                    <div class="text-xs font-bold text-mckinsey-blue tracking-widest uppercase mb-4">INDUSTRIAL AGENT 02</div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-mckinsey-navy">KGOS 工业设备智能运维 (ARIA)</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed font-light">
+                        源自 Anthropic 2026 黑客松第一名架构。将工厂说明书、SOP 与老师傅经验转化为工业知识大脑。
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold mb-3 text-slate-100">KGOS 工业设备智能运维 (ARIA)</h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                    源自 Anthropic 2026 黑客松第一名架构。将工厂说明书、SOP 与老员工经验转化为工业知识大脑。
-                </p>
-                <div class="text-xs font-semibold text-emerald-400 bg-emerald-950/50 p-3 rounded-xl border border-emerald-800/40 mb-6">
-                    🏭 客单价：20 万 ~ 100 万元 / 部署
+                <div>
+                    <div class="text-xs font-semibold text-mckinsey-blue bg-blue-50 p-3 rounded-sm border border-blue-100 mb-6">
+                        🏭 投资额：20 万 ~ 100 万元 / 部署
+                    </div>
+                    <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-mckinsey-blue"></i> 包含 Python 隔离物理计算沙箱</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-mckinsey-blue"></i> 自动生成结构化维修工单 (LOTO)</li>
+                    </ul>
                 </div>
-                <ul class="text-xs text-slate-300 space-y-2 mb-6">
-                    <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>带有 Python 隔离物理计算沙箱</li>
-                    <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>自动生成结构化维修工单 (LOTO)</li>
-                </ul>
             </div>
 
             <!-- 3. IP与矩阵自动化 -->
-            <div class="glass-card rounded-3xl p-8 relative overflow-hidden">
-                <div class="w-14 h-14 rounded-2xl bg-purple-600/20 text-purple-400 flex items-center justify-center text-2xl mb-6 border border-purple-500/30">
-                    <i class="fa-solid fa-file-contract"></i>
+            <div class="mckinsey-card p-8 flex flex-col justify-between">
+                <div>
+                    <div class="text-xs font-bold text-mckinsey-blue tracking-widest uppercase mb-4">AUTOMATION TOOLS 03</div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-mckinsey-navy">软著专利与矩阵自动化工具</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed font-light">
+                        代码一键全自动生成软著/专利 .docx 申请材料；公众号与多机分布式矩阵自动化流量引擎。
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold mb-3 text-slate-100">软著专利与矩阵自动化工具</h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                    代码一键全自动生成软著/专利 .docx 申请材料；公众号与多机分布式矩阵自动化流量引擎。
-                </p>
-                <div class="text-xs font-semibold text-purple-400 bg-purple-950/50 p-3 rounded-xl border border-purple-800/40 mb-6">
-                    ⚡ 适用对象：创业者、社群主、流量团队
+                <div>
+                    <div class="text-xs font-semibold text-slate-700 bg-slate-100 p-3 rounded-sm border border-slate-200 mb-6">
+                        ⚡ 适用对象：创业者、社群主、流量团队
+                    </div>
+                    <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-mckinsey-blue"></i> 告别昂贵中介代办费，秒出合规材料</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-mckinsey-blue"></i> 公众号多机分布式矩阵批量调度</li>
+                    </ul>
                 </div>
-                <ul class="text-xs text-slate-300 space-y-2 mb-6">
-                    <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>告别中介代办费，秒出合规材料</li>
-                    <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>公众号多机分布式矩阵批量调度</li>
-                </ul>
             </div>
         </div>
     </section>
 
-    <!-- 关于创始人帅老师 (About) -->
-    <section id="about" class="py-20 bg-slate-900/40 border-t border-slate-800">
+    <!-- 创始人介绍：大帅 (Marshall) -->
+    <section id="founder" class="py-20 bg-slate-50 border-b border-slate-200">
         <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            <div class="w-48 h-48 rounded-3xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-emerald-500 flex items-center justify-center text-white font-black text-6xl shadow-2xl shrink-0">
-                帅
+            <div class="w-44 h-44 bg-mckinsey-navy text-white flex items-center justify-center font-serif font-bold text-5xl shrink-0 shadow-lg">
+                Marshall
             </div>
             <div>
-                <div class="text-xs font-bold text-blue-400 tracking-wider uppercase mb-2">FOUNDER & CHIEF ARCHITECT</div>
-                <h2 class="font-outfit text-3xl font-extrabold mb-4 text-slate-100">大帅 (Marshall)</h2>
-                <p class="text-slate-300 text-sm mb-4 leading-relaxed font-light">
+                <div class="text-xs font-bold text-mckinsey-blue tracking-widest uppercase mb-2">FOUNDER & CHIEF ARCHITECT</div>
+                <h2 class="font-serif text-3xl font-bold text-mckinsey-navy mb-4">大帅 (Marshall)</h2>
+                <p class="text-slate-600 text-sm mb-4 leading-relaxed font-light">
                     高级全栈架构师 & AI 开发者，昆仑增长创始人。拥有极度扎实的全栈代码工程经验，曾独立交付数十款商业级 Web 网站、iOS App 与微信小程序。
                 </p>
-                <blockquote class="border-l-4 border-blue-500 pl-4 py-1 text-slate-400 italic text-sm mb-6">
+                <blockquote class="border-l-2 border-mckinsey-blue pl-4 py-1 text-slate-500 italic text-sm mb-6">
                     “让 AI 成为我们的数字员工，成为我们的生产力。”
                 </blockquote>
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-lg border border-slate-700">SkillHub TOP 4</span>
-                    <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-lg border border-slate-700">全栈 Web / App 开发者</span>
-                    <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-lg border border-slate-700">生财联合办公入驻团队</span>
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <span class="px-3 py-1 bg-white border border-slate-200 text-slate-700 font-medium">SkillHub 全球 TOP 4 开发者</span>
+                    <span class="px-3 py-1 bg-white border border-slate-200 text-slate-700 font-medium">全栈 Web / App 开发者</span>
+                    <span class="px-3 py-1 bg-white border border-slate-200 text-slate-700 font-medium">杭州 EFC 生财联办团队</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 联系与项目聊聊 (Contact) -->
+    <!-- 麦肯锡风联系与项目聊聊 (Contact) -->
     <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center">
-        <div class="glass-card rounded-3xl p-12 relative overflow-hidden border-blue-500/40">
-            <h2 class="font-outfit text-3xl font-bold mb-4 text-slate-100">杭州EFC，找大帅随时聊项目！</h2>
-            <p class="text-slate-400 text-sm mb-8 max-w-xl mx-auto">
+        <div class="mckinsey-card p-12 bg-white border-2 border-slate-200">
+            <div class="text-xs font-bold text-mckinsey-blue tracking-widest uppercase mb-3">CONNECT & COLLABORATE</div>
+            <h2 class="font-serif text-3xl font-bold text-mckinsey-navy mb-4">杭州EFC，找大帅随时聊项目！</h2>
+            <p class="text-slate-500 text-sm mb-8 max-w-xl mx-auto font-light">
                 不管你是想聊 AI 工具落地、定制开发、软著专利申请、还是公众号矩阵自动化，工位就在旁边，随时欢迎勾搭与碰撞！
             </p>
-            <div class="inline-flex flex-col sm:flex-row items-center gap-6 bg-slate-900/90 p-6 rounded-2xl border border-slate-800">
-                <div class="text-left px-4">
-                    <div class="text-xs text-slate-400">坐标地点</div>
-                    <div class="text-sm font-bold text-slate-200">杭州 EFC 生财联合办公（工位找大帅）</div>
+            <div class="inline-flex flex-col sm:flex-row items-center gap-8 bg-slate-50 p-6 border border-slate-200 rounded-sm">
+                <div class="text-left px-2">
+                    <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">坐标地点</div>
+                    <div class="text-sm font-bold text-mckinsey-navy">杭州 EFC 生财联合办公（工位找大帅）</div>
                 </div>
-                <div class="h-8 w-px bg-slate-800 hidden sm:block"></div>
-                <div class="text-left px-4">
-                    <div class="text-xs text-slate-400">官方微信号 (搜索添加)</div>
-                    <div class="text-sm font-bold text-blue-400 font-mono text-base">Dasean-</div>
+                <div class="h-8 w-px bg-slate-300 hidden sm:block"></div>
+                <div class="text-left px-2">
+                    <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">官方微信号</div>
+                    <div class="text-sm font-bold text-mckinsey-blue font-mono text-base">Dasean-</div>
                 </div>
-                <div class="h-8 w-px bg-slate-800 hidden sm:block"></div>
-                <div class="text-left px-4">
-                    <div class="text-xs text-slate-400">联系电话</div>
-                    <div class="text-sm font-bold text-emerald-400 font-mono text-base">13391116628</div>
+                <div class="h-8 w-px bg-slate-300 hidden sm:block"></div>
+                <div class="text-left px-2">
+                    <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">联系电话</div>
+                    <div class="text-sm font-bold text-slate-800 font-mono text-base">13391116628</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-slate-900 text-center text-xs text-slate-500">
-        <p>© 2026 昆仑增长 KunlunGrowth. All Rights Reserved. 保持真实，用代码说话。</p>
+    <footer class="py-8 border-t border-slate-200 text-center text-xs text-slate-400">
+        <p>© 2026 昆仑增长 KunlunGrowth. All Rights Reserved. 恪守真实，用真机代码与商业成果说话。</p>
     </footer>
 
 </body>

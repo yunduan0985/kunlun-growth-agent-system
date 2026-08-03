@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- QRCode.js 用于精确渲染二维码 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- html2canvas 用于 4K 无损一键导出海报 PNG -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         body { background-color: #f1f5f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; font-family: 'Inter', sans-serif; }
         .poster-container {
@@ -143,6 +145,14 @@
         </div>
     </div>
 
+    <!-- 悬浮一键导出高清 PNG 按钮 -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="downloadPosterHD()" class="bg-mckinsey-navy text-white px-6 py-3 rounded-full shadow-2xl hover:bg-mckinsey-blue transition-all duration-300 font-bold text-sm flex items-center gap-2 border border-slate-700">
+            <i class="fa-solid fa-download text-amber-400"></i>
+            <span>保存 4K 无损超高清海报 (PNG)</span>
+        </button>
+    </div>
+
     <script>
         // 生成极度清晰的官网二维码 (指向 https://kunlungrowthai.pages.dev/)
         new QRCode(document.getElementById("qrcode"), {
@@ -153,6 +163,20 @@
             colorLight: "#ffffff",
             correctLevel: QRCode.CorrectLevel.H
         });
+
+        // 4K 超高清无损海报导出逻辑 (scale: 3 保证极致清晰)
+        async function downloadPosterHD() {
+            const poster = document.getElementById('poster');
+            const canvas = await html2canvas(poster, {
+                scale: 3, // 3倍高分辨率采样
+                useCORS: true,
+                backgroundColor: "#ffffff"
+            });
+            const link = document.createElement('a');
+            link.download = '大帅_Marshall_麦肯锡风高奢微信社交名片海报_HD.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
     </script>
 </body>
 </html>

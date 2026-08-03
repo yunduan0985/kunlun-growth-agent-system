@@ -1,0 +1,2385 @@
+万字保姆级干货教程
+
+YouTube “财经人生故事” 赛道制作
+
+自动化工作流教程 所有提示词全公开！
+
+description
+
+飞书文档 - 多人实时在线编辑，促进团队深度协作与互动
+
+DPw1dRSBSoLFR8xMB1Zc9vEanhb
+
+iconInfo
+
+isPermitted
+
+isDeleted
+
+false
+
+tenantId
+
+7192562019186065410
+
+source
+
+ccmCommonSetting
+
+reading
+
+summary
+
+hidden
+
+visible
+
+catalogue
+
+status
+
+preference
+
+unfinished
+
+comment
+
+unitInfo
+
+userUnit
+
+userTenantUnit
+
+docUnit
+
+docTenantUnit
+
+wikiUnit
+
+wikiTenantUnit
+
+versionInfo
+
+bitableUserLayout
+
+fineScheduleDynamicData
+
+static
+
+domain
+
+lf-package-cn
+
+feishucdn
+
+feishu-static
+
+backup
+
+lf-package-cn-bk
+
+grayBranchList
+
+timestamp
+
+1785762305899
+
+branch
+
+master
+
+anonymousLoginCheckInfo
+
+isFreeForDocsTenant
+
+exempt
+
+exemptPageOpenLoginPopup
+
+exemptCopyLoginPopup
+
+exemptScrollLoginPopup
+
+benefitSettings
+
+withOwner
+
+benefits
+
+unbundle
+
+benefit
+
+common
+
+version
+
+enabled
+
+import
+
+create
+
+library
+
+revert
+
+history
+
+setting
+
+management
+
+entrance
+
+settings
+
+convert
+
+rename
+
+security
+
+retention
+
+disabled
+
+template
+
+relationship
+
+standalone
+
+permission
+
+underline
+
+workspace
+
+subpage
+
+calendar
+
+action
+
+wenjuan
+
+ownerUserId
+
+7192562118578470940
+
+clientVars
+
+AbqZd49aNoX8U5xQ854ciei9nEd
+
+parent
+
+comments
+
+revisions
+
+locked
+
+author
+
+children
+
+nextNum
+
+numToAttrib
+
+initialAttributedTexts
+
+attribs
+
+folded
+
+doxcn2e4ViW5jFnHvD0AUbVoHnb
+
+doxcn3kXkzW3HYMg7hL7Xtx8Izf
+
+doxcn1Lvrc1wkWmcwoECp2zmW7g
+
+doxcnyOTXGRO508IdE4CgL5Iwke
+
+doxcn94D0vbXfhSZQmhJJn0Xxgg
+
+doxcnNxAaNorfB2dLEZHPmuqOjf
+
+doxcn614m6bq307HRw99qk7a8Ag
+
+doxcnpOAulEFnJNwlFq15jfkzNb
+
+doxcnMmpTvygvdEWWMl1PwTbTjh
+
+doxcnFaWEhqXJdoEjFlWVqbL55c
+
+doxcnYliP0YzF4WZB1g0bHOGl2e
+
+doxcnobfWvBfauXIP5fPROJ3lLc
+
+doxcn7pRAvckyiINGSJjJhNbYLd
+
+doxcnKxmspIJzHvpcXVvzdGGUeb
+
+doxcnpuzbu5g5Ev4PqJNZJPo25b
+
+doxcnqtl1Id7fJFXzMtrb1QyiNf
+
+doxcnqOoXdNfKXepMFWo90RkhAd
+
+doxcnMuhw5e6onL1FesbeMFLmSg
+
+doxcn2X9Ko298JkesrsuGOVjrOg
+
+doxcn2Ye3BROUgesunkGpkasLlb
+
+doxcnNpITHDv063rBeODPFe0HEb
+
+doxcnNTEewPuREBkI6Ih18sbole
+
+doxcnNH72L6a3I6johIjnd296jb
+
+doxcnPOpp45olKWHQxR0DRt5Nob
+
+doxcnXOgE8hPIy2cR61i1SFvQqf
+
+doxcnHAruhYMjZCS2WsAHBKsKdc
+
+doxcnwxKEEvk7wDWKOTosqSQoGf
+
+doxcnp5sqbvtfGaz8rIaCATQRfm
+
+doxcndKp18xuad0l8L5DGoUHOnh
+
+doxcnRzCPLGYvNiWWcvBkSUHPbd
+
+doxcnsknRLHjUjX6ygPfVULj04e
+
+doxcn4ryuivmxZ94tSDAbXl8SXc
+
+doxcnGQM4PrUbaLcOwTDSReuWAe
+
+doxcnuue2VMB2jiB2OnP6P7G3we
+
+doxcnHInldCmnJQd6RnyWLIlZte
+
+doxcnLw29CmYlqsLmuxTJUPMKhe
+
+doxcnTZccT9EnuObZOslZ2lS7vf
+
+doxcnBWwXEujhxbALEpiECf4nCY
+
+doxcnne1pwDAJ3ftgX91BF0AQ9b
+
+doxcnXTaOVhpVI106r6PNyjaZof
+
+doxcnpAzKJL8rxU0pFP8Ln8FiHh
+
+doxcnrWYO4vZGuwBPEHMbsaUNsd
+
+doxcntiLLPifGXIFPwaZM1QiBoc
+
+doxcn0fiyYogEP7iOcerAEZYJ3g
+
+doxcnWcpTomWbzdU4QXA5fEVlic
+
+doxcnr0Aea1GfWWkcdkF92zvWyh
+
+doxcnz78lVeSJEpzQ9WFimfyqXe
+
+doxcnU7KQqPzdt0StJ7La3F2SzZ
+
+doxcnx7hL5dh5pB6DTw56RZvU4d
+
+doxcn8eOjyN85wYem0r2FFya0eh
+
+doxcnly7l9NTVX9StQm8yuGkfJh
+
+doxcnwFSUgK9uRRkSsOrfkDL502
+
+doxcnZF92AmpgUYbVOVTlNbcrOe
+
+doxcn0rgS90SUM4c9TCkQtAyF9b
+
+doxcnAfqPi96EfvXbu7mMhOxJdc
+
+doxcneNj6UqNQvEVh7OTR3z1XGf
+
+doxcnQekWGboQx7HgkXcd8TgsIf
+
+doxcn0D9TtZvU8tYUEWN2m7JWkX
+
+doxcnW3BLYFKFfaHmCYNq1tJ7Pe
+
+doxcn0nHCzUVGD5hMPNIoyQ4sJh
+
+doxcnrMAKStaLcH4NyPyzU1z7sh
+
+doxcnJGQi4yf5zQkmwW6nzsQBdN
+
+doxcnogZF29pdC4cYxJGHiqESjg
+
+doxcnGotqas8EHu3hABkJwmdyYd
+
+doxcnc7XorhOHy4KKLOyqZtHReb
+
+doxcnfpgvAwbd9H4nMHsif7Axdc
+
+doxcnZc3Pe6WMdmKUt2IAmXVNbg
+
+doxcnTrNDXd3kSNFrJpgJIVy3Dg
+
+doxcnwVTGH3vOrd9vgH7SzA6Wdc
+
+doxcndgihKW1acIDva6rJoEeVue
+
+doxcnJmuTG3kizBSQhQTKvWOBlc
+
+doxcnsrLrouKhCHXIa2IwFug9Zc
+
+doxcncvowmNQfot9ApK30BD7G3b
+
+doxcnIg9Nv1yMeG88fsxc5pRBSP
+
+doxcnLdOPebaX92BjaLETqQsCsg
+
+doxcnOo4AOAq1jqwpZP1QmN4pGg
+
+doxcn0tgioZD4nJIL7unwJ82umh
+
+doxcntIf13PTqtOlFdMeXGU1jGg
+
+doxcnVy2kAEL29ejTrglBLwI2ec
+
+doxcn3ThKHpUhqDFh5RSpxbvUcf
+
+doxcnr9nXQ7iAIqI1j8HtJy4BXe
+
+doxcnjfLlrHwcomBR1V7acdEMLg
+
+doxcnIkp9kqKVf232vWNt1Lbf5e
+
+doxcnNiSg6S884tM60LGBUZ6dhf
+
+doxcntiqIFKcOB92utFXyLYpVMb
+
+doxcnbMQvo4O6U4gRvdTYTX8k6g
+
+doxcn0uqKoJrBhFUL8HZF768Bgb
+
+doxcnMNbJSUmTrgHF0qcaFxpVjd
+
+doxcnOD44xC70PR319jRiR7e2Xg
+
+doxcnMrIwlQBdzpaAyXkZ3XHOqc
+
+doxcn8TvlQsxl2uKRPaOtoDp8Pg
+
+doxcntlXuqEQ4srm9vZq52h6D7b
+
+doxcnBP89VkG97QabYct6JqTwrb
+
+doxcnoYz9zJ27G3fhvcvkNhA7Mf
+
+doxcnmJbFdkA4fWHcgIoYb6po3O
+
+doxcnBc5V5DASASR9XKTyJWik7e
+
+doxcn6SerW5qXquZvcVbyKbEaif
+
+doxcnbvE1IywNBxvlOjrGtmXQfd
+
+doxcnlniKfXrDzN5qLVldTWPWzf
+
+doxcnYazKKcmUkqawQuO1WCMGVx
+
+doxcnnr8DiyVqPyo5LjLV9FjytM
+
+doxcn7v4iOxL8hh3K5h58Bsqyrc
+
+doxcnqmZ8GgFygKEYIglJWzzfGg
+
+doxcn8Zf1ILto7hRtUEgnmGvfbe
+
+doxcnVRdu8vz227xVNyEnNy4lAh
+
+doxcn2qYRnPK5QVDiB5uYk2nAFd
+
+doxcnzcV9saSpZWQWJ6CI8fc1Fc
+
+doxcn65KhnGuBsgrcK0Cg9SqFFg
+
+doxcnzTjcxVDYsNJAJg1CIF0lic
+
+doxcn5TDS9qAUuSuihLmcyCdJBb
+
+doxcntQpHrGXdtOUDzSMfhxeC7g
+
+doxcn2dvm1CwEDWPv5PtMZgeGbh
+
+doxcnvE4B90MgiPUJhZ8p35CX9b
+
+doxcn8sKAu1lUsts9SVfDbnnVhg
+
+doxcniWLmnoN32wP0EbTnPNZsgd
+
+doxcn8dpBPeTS8S892CyHumpjSS
+
+doxcnARbEIRI6gxyA88tBuzGMhh
+
+doxcnFy7THxPtz39t71iHQIdA2d
+
+doxcn1m3UaB7Bh5pmwKhnGlgn2e
+
+doxcnITb9hYhRlDdppZ67fAzbnh
+
+doxcnKFWqP735AshcjuLQpxWjyb
+
+doxcndwKqH3vC6aN7mKtLl7l30b
+
+doxcn0FHE98oCsroQheeP3JJFJy
+
+doxcnCCo5Bjfc09IlIDS3HnxKZy
+
+doxcnm5ltFbFXBd5gvVlBWABHkf
+
+doxcnCNQsnPbTYZxTo8FRu7nlIY
+
+doxcny8ubpiGsURlRj9eq7cYANt
+
+doxcnmTgVFjYcdNra4aS1jq6Jmg
+
+doxcnb1IUo5Jw4JzXbC9ZFY3RCK
+
+doxcn3lQZPNlOVROmUs4TDqQbbb
+
+doxcngcnH4V2XTgB1Uro9kpRtrV
+
+doxcnOdNgQFW8VZnxh9hD6JDIzd
+
+doxcnOpJOtpcSH2MxA1dMqfZAhg
+
+doxcnmfYpRsSpIPb7Wp3hwWZLAe
+
+doxcnzOo2cT1ez7vrNa7dKgyljb
+
+doxcnBnWT6V6GDFiPuwVv56jUqb
+
+doxcnzEFGVJqXEQzUPVHEPorDke
+
+doxcnn6MC0zK9fwAZC5vXnUUPXc
+
+doxcnj03u2qn1oqx9VkefgXbKqh
+
+doxcnEx0PJRPcXDRNI7wFrutSif
+
+doxcnzWufwiv3AhCLA4OsUGS6sd
+
+doxcn2iHqLvMwDSfjH5Eqd4esXb
+
+doxcnWpLCpTeLDKTjtFDdp02xKF
+
+doxcnXAZD2MlRpOVeABoVk0EWAd
+
+doxcnB4sS1m20fyFPc4ygKifZ2c
+
+doxcn5WlwHbAThVuWxzSNo0GN6e
+
+doxcnwPcIi78EB8MV0wvUrP4zVh
+
+doxcnWOuL6SHJVaP1Be01mTytoe
+
+doxcnGkhJdiKJrQOYhXlC1SlgTb
+
+doxcn6yhFLuG1zcitf7B7hbhGnb
+
+doxcnHHPyxo6in6K3LHOroLZXvb
+
+WZdKdAS5zoFgxMxgyFicT26tny8
+
+FOuQdd7NDo1DZVxJzmqcZiGrnhh
+
+doxcne2qR6kLBPGRRTxT8ndSENe
+
+doxcnBd9o1FRaFrRFW4aLPsyrvh
+
+doxcngS81gaIl1stF4sFnlFIBrg
+
+L65qdFjxko99WUxoQdecVfQmnDc
+
+doxcnA6yrdzHFmp5SiPtIFk3AVh
+
+N1wEdw3QZor9v7x7n09c4PChnNd
+
+VJordIqm9oJielxTw3gcpt4VnNM
+
+HrjDdWnLToSigYxgebzcy1SDnds
+
+UUrvdlvnfoEVrjxbSJXcB48AnRf
+
+editors
+
+options
+
+deleted
+
+option
+
+modified
+
+T3M1d97zloRGtuxVeoucnSu9nDf
+
+inline-component
+
+575ee099-6da9-4f00-8183-e122b8c4663d
+
+mention
+
+R5VowSmUciyoI1kAONecaZhcnKg
+
+tenant
+
+gi52wyhtwc
+
+feishu
+
+YouTube长视频做不起来？那是你没选对赛道！（筛选标准全公开）
+
+link-id
+
+43cbd4a6-9690-479d-a7fc-66a2bf498aa5
+
+737b2e8b-bda9-4c62-917d-896b190544e4
+
+PmbJwtgvYirKs7kdiNPc0Nw8nef
+
+YouTube长视频方法大公开！10天过YPP，18小时破10万播放。0成本，完整方法
+
+提示词全公开（万字干货）
+
+66917343-b76e-4904-92c6-e9b80ad71edc
+
+WNppbim6no2VSrxKE1ac3Kfbnsh
+
+mimeType
+
+336510315
+
+16-DEMO
+
+height
+
+originWidth
+
+originHeight
+
+b794f419-4797-484c-ad17-8dc036c05f30
+
+WNBDwTZB7iwRTekdHLPceDujnTa
+
+2026年YouTube生存指南。让你无惧同质化风险（附诊断清单
+
+SOP全流程）
+
+fdcd5d62-7540-44da-8c2b-703c26903bbc
+
+heading2
+
+Demo样片
+
+75694f47-306d-45fb-8201-ad8593f91d2d
+
+Automation 我用的autojourney
+
+ai 家的，https
+
+autojourney
+
+zh。 优惠码：Lizi666
+
+首先我们需要复制脚本提示词到Claude。 这里有两个地方需要你修改。
+
+heading3
+
+第二稿：原创性和平台合规检查
+
+稿子写完，下一步就是配音。
+
+你是一名专业的音频风格分析师，擅长分析 YouTube 视频中的配音特征。
+
+n我会给你一个视频，请你从“声音”的角度做拆解，不需要分析内容，只分析配音本身。
+
+n请你输出以下内容：
+
+n 配音类型（真人
+
+合成感强弱判断）
+
+n 声音性别与大致年龄感（例如：中年男性
+
+年轻女性等）
+
+n 语气特征（平静
+
+教学感等）
+
+n 语速（慢
+
+快，是否有明显停顿或节奏控制）
+
+n 情绪曲线（是否有起伏，还是整体平稳）
+
+n 声音质感（温暖
+
+带磁性等）
+
+n然后，请基于以上分析，给出：
+
+n如果使用 ElevenLabs，推荐的音色类型或接近的 voice 风格
+
+n 如果使用 Google AI Studio TTS，推荐的 voice 类型或参数方向
+
+n 不要泛泛而谈，要具体、可执行
+
+n 尽量贴近“实际可选的音色”，而不是抽象描述
+
+n 输出结果要让我可以直接去选声音使用
+
+n视频链接
+
+音频如下：
+
+language
+
+Plain Text
+
+caption
+
+音色Prompt
+
+center
+
+ONlJbOVunolElPxiv45cEKdjnub
+
+1692200
+
+rotation
+
+doxcn1RLHThUEMWlGsDdf0dcxze
+
+column
+
+doxcnb3VsFZXNTCj9aMR6yNxhWd
+
+5031629494803633
+
+我们会得到一个分镜图prompt以及视频prompt。
+
+拆解对标视频
+
+人生副本题材火爆了！
+
+ErSdbBb5vo9wCbxDlrXccIAVnSe
+
+1028956
+
+bullet
+
+发色（比如紫色头发）
+
+配音，决定观众会不会继续听下去。
+
+b5696891-978c-477b-865c-54ae20c2f69e
+
+youtube
+
+Willie
+
+Finance
+
+videos
+
+然后我们可以点击右侧的这个图标，管理查看我们的任务。可以看到发送成功的，在等待发送的，以及发送
+
+生成失败的。
+
+你就会得到你自己的选题公式。
+
+不需要很复杂，
+
+我们需要知道哪一类标题是火的。
+
+doxcn6HDmz9NULU5NLkRaInV2Bd
+
+如果影片链接不好用，太大，分析不出来的话，我们可以把视频下载，然后传上去再做分析。 还是太大的话，就降低分辨率等办法，再上传。
+
+再用： 1 小时剪完。
+
+ordered
+
+在 cartel
+
+crime
+
+dark stories 这类题材里，找到一个播放量超过 50 万的视频格式
+
+你是一位 AI 视觉风格分析师。
+
+n我会给你一张参考图片，请你不要分析剧情，只分析它的画风。
+
+n请帮我拆出这张图的：
+
+n 整体风格类型（写实
+
+Pixar
+
+插画风等）
+
+n 色彩特点（冷暖、饱和度、明暗关系）
+
+n 光影特点（柔光
+
+高对比等）
+
+n 构图特点（近景
+
+远景，镜头视角，主体位置）
+
+n 人物与场景的质感特点
+
+n 这张图最关键的 5 个风格关键词
+
+n最后，请基于以上分析，输出：
+
+n 一段可直接用于 AI 生图的英文风格 Prompt
+
+n 一段对应的中文版本
+
+n 只聚焦“画风”，不要展开讲故事，不要写太泛。
+
+n参考图片：
+
+视觉风格拆解 Prompt
+
+这里面注意， 不要抄别人的ip。要有自己的风格。
+
+我会把脚本丢给AI，让它做这件事：逐句生成：图片提示词
+
+视频提示词
+
+因为大概是这个节奏：
+
+第三步：按脚本生成画面和动画
+
+CizIbU8gZoQEpTxcMUQc8Mmnndf
+
+202021
+
+其他教程：
+
+但这里有一个关键限制：所有画面必须带同一个主角IP。
+
+如果这里你不知道写多少字，直接复制一下对标视频的字幕，去查一下。 然后根据自己的需要，修改字数。
+
+即梦也很好，但排队。 或者可以用即梦的seedance 1
+
+Deep calm finance documentary narrator
+
+anti-hype
+
+slightly tired tone
+
+AiMSbxG2IowIAJxgdVhcQPRknQd
+
+83080
+
+7733050847457628
+
+doxcnBtZPgMTfcm83YQKA9qk8Fg
+
+doxcnNKJfuPrkEmCMEtr4yTPZmc
+
+5005358462675535
+
+textHighlight
+
+这一家的好处是，下载的时候可以按照任务的顺序命名。这个我们后面拼接视频就简单多了。
+
+我们安装插件，然后付费后， 打开flow。 后打开插件。进入设置里面，我们选择用下载器下载，自动文件夹名称，自动添加人物序号到文件名前面。
+
+我之前使用的Grok。 现在的话我用Meta
+
+ai， 都是免费的。
+
+第三类： your Life a xxx
+
+textHighlightBackground
+
+你是一位经验丰富的 AI 视觉分析与生成专家，擅长将脚本内容转化为统一风格的视觉画面，并确保角色、风格和叙事的一致性。
+
+n我会提供一段视频脚本，以及一个主角角色设定。
+
+n你的任务是：
+
+n基于脚本内容，为每一句生成对应的视觉画面提示词（图片
+
+视频），并保持整体风格统一、角色一致。
+
+n 重要风格规则：
+
+n刻意低细节
+
+n不要电影感
+
+n不要流畅动画
+
+n不要皮克斯风格
+
+n不要动漫风格
+
+n不要电影级质量
+
+n不要高端动态图形
+
+n粗糙的 YouTube 解释类动画美学
+
+n动态缩略图风格
+
+n简单木偶式动作
+
+n大多是静态插画场景
+
+n夸张但有点笨拙的面部表情
+
+n看起来便宜，但要是“好看的便宜感”
+
+n感觉像一个快速制作出来的无露脸财经频道
+
+n年轻男性财经角色，凌乱的棕色头发，大而简单的眼睛，白衬衫，松散的红色领带，海军蓝西装外套，瘦削身材，表情略显压力和焦虑。
+
+n坐在凌乱的书桌前
+
+n到处散落着未支付的账单
+
+n查看很低的银行余额
+
+n桌上有计算器
+
+n桌上有泡面
+
+n深蓝色公寓灯光
+
+n疲惫的表情
+
+n盯着笔记本电脑屏幕
+
+n生存模式的氛围
+
+n动画风格：
+
+n缓慢推近镜头
+
+n简单手臂动作
+
+n分镜式节奏
+
+n大多是静止画面，只带一点点小动作
+
+n应该像动态版 YouTube 缩略图
+
+n输出要求（必须严格执行）
+
+n请对脚本进行逐句拆分，并对每一句输出：
+
+n1）图片生成 Prompt（英文
+
+n用于NanoBanana
+
+n必须包含：
+
+n主体（Subject）
+
+n 明确描述主角（必须带入主角设定）、动作、表情、情绪，以及所在场景与环境细节
+
+n构图（Composition）
+
+n 镜头类型（特写
+
+远景）、视角（正面
+
+俯视等）、主体位置、空间层次与景深
+
+n艺术风格（Art Style）
+
+n 风格类型（写实
+
+Pixar等）、光影（柔光
+
+逆光等）、色彩（冷暖
+
+饱和度）、整体氛围（孤独
+
+温暖等）
+
+n2）视频生成 Prompt（英文）
+
+n 角色动作（动态行为）
+
+n 镜头运动（推进
+
+平移等）
+
+n 情绪变化（如果有）
+
+n 场景连续性（与上一镜头保持一致）
+
+n全局约束（非常重要）
+
+n 所有画面必须使用同一个主角（严格一致）
+
+n 风格必须统一（不可每张图风格变化）
+
+n 每一句脚本
+
+对应一个画面
+
+n 不允许泛泛描述，必须具体、可执行
+
+n 输出结果必须可以直接用于生成
+
+n主角设定：
+
+粘贴主角IP设定
+
+n脚本内容：
+
+画面生成 Prompt
+
+因为今天咱们是手把手教学视频，我直接给出选题prompt。
+
+它能不能安全地用来做 YouTube 商业化。
+
+这里很多人又不会了。 咱们很多人会怎么做， 会去找Willie Finance 最火的视频，复制给AI，然后请AI帮你改脚本，帮你写一篇。 你说会不会同质化？
+
+只做三件事：对齐画面 ，控节奏 ，不出戏。 这里我们可以手动剪辑，也可以用CodeX的skills自动对齐。
+
+大家直接用这个prompt，不需要任何更改。 在gpt就能生成出优秀的话题：
+
+doxcnI0k1Pwr2xQdweB3XmdnkKh
+
+doxcnolI9F4QKuDIfOXHSjuedgg
+
+7440162881010253
+
+Full Sentence-by-Sentence Visual Prompts
+
+Global Character and Style Lock
+
+n- Character continuity
+
+the same young male finance character
+
+messy brown hair
+
+large simple eyes
+
+white shirt
+
+loose red tie
+
+navy blue suit jacket
+
+slim body
+
+stressed and slightly anxious expression
+
+n- 角色一致性：同一个年轻男性财经角色：凌乱的棕色头发、大而简单的眼睛、白衬衫、松散红色领带、海军蓝西装外套、瘦削身材、略显压力和焦虑的表情。
+
+n- Global style
+
+intentionally simple
+
+low-detail rough YouTube finance explainer animation
+
+cheap but good-looking dynamic thumbnail style
+
+thick black outlines
+
+flat colors
+
+minimal shadows
+
+awkward exaggerated facial expression
+
+simple background
+
+mostly static illustration
+
+not cinematic
+
+not Pixar
+
+not anime
+
+not realistic
+
+no glossy high-end motion graphics
+
+n- 全局风格：刻意简单、低细节、粗糙的 YouTube 财经解释类动画风格，好看的便宜感，动态缩略图风格，粗黑描边，扁平颜色，最少阴影，夸张但笨拙的表情，简单背景，大多像静态插画，不要电影感，不要 Pixar，不要动漫，不要写实，不要高端动态图形。
+
+n- Motion rule
+
+limited movement only
+
+slight blinking
+
+small arm gestures
+
+slow push-in or tiny pan
+
+storyboard pacing
+
+mostly static frames
+
+n- Negative style lock
+
+no cinematic composition
+
+no Pixar
+
+no anime
+
+no realistic detail
+
+no smooth animation
+
+no polished high-end graphic design
+
+Script Sentence
+
+nLevel 1
+
+Image Prompt — English
+
+nSubject
+
+sitting at the same messy desk while a big crude paper sign reading LEVEL 1 hangs above the laptop
+
+Expression and emotion
+
+anxious but ready to begin the next stage
+
+Environment
+
+simple low-detail finance story setting
+
+deep blue apartment or matching simple story location
+
+scattered unpaid bills
+
+calculator
+
+instant ramen
+
+laptop or phone props whenever relevant
+
+Composition
+
+wide front shot
+
+character small in the center
+
+oversized LEVEL sign at the top
+
+desk clutter in the lower third
+
+flat simple layers
+
+Art Style
+
+图片生成 Prompt — 中文
+
+n主体：同一个年轻男性财经角色：凌乱的棕色头发、大而简单的眼睛、白衬衫、松散红色领带、海军蓝西装外套、瘦削身材、略显压力和焦虑的表情，坐在同一个凌乱书桌前，笔记本上方挂着一张粗糙纸牌，写着 LEVEL 1。表情与情绪：焦虑但准备进入下一阶段。环境：简单低细节的财经故事场景，深蓝色公寓或同风格的简单叙事地点，按画面需要出现未付账单、计算器、泡面、笔记本电脑或手机。构图：正面远景，主角在中间偏小，LEVEL 标牌占上方，桌面杂物在下三分之一，扁平简单层次。艺术风格：刻意简单、低细节、粗糙的 YouTube 财经解释类动画风格，好看的便宜感，动态缩略图风格，粗黑描边，扁平颜色，最少阴影，夸张但笨拙的表情，简单背景，大多像静态插画，不要电影感，不要 Pixar，不要动漫，不要写实，不要高端动态图形。
+
+Video Prompt — English
+
+nContinue from the previous shot with the same character design and the same rough low-detail YouTube finance explainer style
+
+The character sitting at the same messy desk while a big crude paper sign reading LEVEL 1 hangs above the laptop
+
+use only limited puppet-like motion
+
+slight blink
+
+tiny head tilt
+
+small hand movement
+
+or one simple icon movement
+
+Camera movement
+
+slow subtle push-in or tiny horizontal pan
+
+no smooth cinematic animation
+
+Emotion shifts toward anxious but ready to begin the next stage while keeping the scene mostly static and consistent with the previous frame
+
+nYou have
+
+pointing at a laptop screen showing a tiny bank balance of
+
+unpaid bills crowding the desk
+
+worried but alert
+
+close medium shot from the front
+
+500 screen large in foreground
+
+character behind it with hunched shoulders
+
+n主体：同一个年轻男性财经角色：凌乱的棕色头发、大而简单的眼睛、白衬衫、松散红色领带、海军蓝西装外套、瘦削身材、略显压力和焦虑的表情，指着笔记本屏幕上小小的
+
+500 银行余额，桌面被未付账单挤满。表情与情绪：担心但清醒。环境：简单低细节的财经故事场景，深蓝色公寓或同风格的简单叙事地点，按画面需要出现未付账单、计算器、泡面、笔记本电脑或手机。构图：正面近中景，
+
+500 屏幕在前景放大，主角弓着肩坐在后方。艺术风格：刻意简单、低细节、粗糙的 YouTube 财经解释类动画风格，好看的便宜感，动态缩略图风格，粗黑描边，扁平颜色，最少阴影，夸张但笨拙的表情，简单背景，大多像静态插画，不要电影感，不要 Pixar，不要动漫，不要写实，不要高端动态图形。
+
+The character pointing at a laptop screen showing a tiny bank balance of
+
+Emotion shifts toward worried but alert while keeping the scene mostly static and consistent with the previous frame
+
+s sitting in a checking account that pays you nothing
+
+looking at a dull checking account page that shows zero interest
+
+with a gray empty progress bar
+
+bored and defeated
+
+over-the-shoulder shot
+
+laptop screen dominates
+
+character head and messy hair visible from behind
+
+n主体：同一个年轻男性财经角色：凌乱的棕色头发、大而简单的眼睛、白衬衫、松散红色领带、海军蓝西装外套、瘦削身材、略显压力和焦虑的表情，看着一个毫无利息的支票账户页面，旁边有灰色空进度条。表情与情绪：无聊又泄气。环境：简单低细节的财经故事场景，深蓝色公寓或同风格的简单叙事地点，按画面需要出现未付账单、计算器、泡面、笔记本电脑或手机。构图：越肩镜头，笔记本屏幕占主要画面，后方露出主角头发和肩膀。艺术风格：刻意简单、低细节、粗糙的 YouTube 财经解释类动画风格，好看的便宜感，动态缩略图风格，粗黑描边，扁平颜色，最少阴影，夸张但笨拙的表情，简单背景，大多像静态插画，不要电影感，不要 Pixar，不要动漫，不要写实，不要高端动态图形。
+
+The character looking at a dull checking account page that shows zero interest
+
+Emotion shifts toward bored and defeated while keeping the scene mostly static and consistent with the previous frame
+
+doxcnp7y7EYcqoU9m8Ww1o7qiFe
+
+Preview
+
+中文的好说，剪映直接配音就可以了。 英文的或者其他语言的，可就苦了咱了。 根本听不懂差别。
+
+因为一条脚本能不能录，不只是顺不顺的问题。
+
+我会直接这样问：
+
+RqYdbRhKKojUzrxGzOwcfVAqnpg
+
+1370869
+
+tips： 这里注意我的思路，我没有拿Willie Finance的视频。 我拿的是The Life Outline，也就是其他赛道的爆火视频作为我的形式对标。
+
+doxcnLfFjmlHakUAT53PKoIdiSg
+
+doxcnR6zzocHjLWQTdKshYkUdGb
+
+4968370505196368
+
+doxcnLp2zoaDEhYBkCrUmOn2EI4
+
+doxcnemhgCpVi1QK4SGPrtZpHce
+
+Cxwkbzubcoo99qxgeflclxycnDR
+
+216269
+
+6103678929765887
+
+你在每个财富阶段的人生
+
+n你在每个净资产阶段的人生：从欠债
+
+000 到拥有
+
+nYour Life at Every Net Worth Level
+
+From -
+
+000 to
+
+n你在每个存款阶段的人生：
+
+nYour Life at Every Savings Level
+
+n你在每个收入阶段的人生：从最低工资到年薪
+
+nYour Life at Every Income Level
+
+From Minimum Wage to
+
+500K a Year
+
+n每个投资者等级的人生：从第一次买入到靠资产生活
+
+nEvery Level of Investor
+
+From First Buy to Living Off Assets
+
+n你在每个负债阶段的人生：从信用卡账单到财务崩盘
+
+nYour Life at Every Debt Level
+
+From Credit Card Bills to Financial Collapse
+
+n每个房地产投资者等级：从租房打工人到拥有 20 套房
+
+nEvery Level of Real Estate Investor
+
+From Renter to 20 Properties
+
+n你在每个现金流阶段的人生：从月底清零到钱自动进来
+
+nYour Life at Every Cash Flow Level
+
+From Broke Every Month to Money Coming In
+
+n每个财务自由等级：从不敢请假到永远不用上班
+
+nEvery Level of Financial Freedom
+
+From Afraid to Take a Day Off to Never Working Again
+
+n你在每个职业阶层的人生：从实习生到不用看老板脸色
+
+nYour Life at Every Career Level
+
+From Intern to Answering to No One
+
+n你在每个财富关卡的人生：从生存、稳定、中产到真正自由
+
+nYour Life at Every Wealth Stage
+
+Survival
+
+Stability
+
+Middle Class
+
+Freedom
+
+你的人生会怎样
+
+n如果你 20 多岁拼命存钱，而朋友都在享受人生
+
+nYour Life If You Save Hard in Your 20s While Everyone Else Enjoys Life
+
+n如果你 25 岁买房，而不是把钱投进资产
+
+nYour Life If You Buy a House at 25 Instead of Building Assets
+
+n如果你 30 岁才开始投资，你的人生会怎样
+
+nYour Life If You Don’t Start Investing Until 30
+
+n如果你一直听父母的金钱建议，到 40 岁会怎样
+
+nYour Life If You Follow Your Parents’ Money Advice Until 40
+
+n如果你用 10 年追求面子，而不是现金流
+
+nYour Life If You Spend 10 Years Chasing Status Instead of Cash Flow
+
+n如果你年薪翻倍后，也把生活成本翻倍
+
+nYour Life If Your Income Doubles and Your Lifestyle Doubles Too
+
+n如果你 22 岁开始买资产，而不是买奢侈品
+
+nYour Life If You Buy Assets at 22 Instead of Luxury
+
+n如果你选择稳定工作，而朋友选择高风险机会
+
+nYour Life If You Choose Stability While Your Friend Takes Big Risks
+
+n如果你贷款买豪车，而不是买下第一笔资产
+
+nYour Life If You Finance a Dream Car Instead of Your First Asset
+
+n如果你 10 年都只存钱，从来不理解通胀
+
+nYour Life If You Save for 10 Years and Never Understand Inflation
+
+POV：你
+
+nPOV：你 30 岁了，账户里只有
+
+You’re 30 Years Old With Only
+
+800 in Your Account
+
+nPOV：你 25 岁买了梦寐以求的车，30 岁开始后悔
+
+You Buy Your Dream Car at 25 and Regret It at 30
+
+nPOV：你成了家族第一个赚到
+
+000 的人
+
+You Become the First Person in Your Family to Make
+
+nPOV：你年薪
+
+000，却不敢辞职一天
+
+You Make
+
+200K a Year and Still Can’t Quit for One Day
+
+nPOV：你发现自己不是中产，只是账单比较高级
+
+You Realize You’re Not Middle Class
+
+Just Living With More Expensive Bills
+
+nPOV：你终于明白，银行一直在用你的收入困住你
+
+You Finally Realize the Bank Has Been Using Your Income to Trap You
+
+nPOV：你以为存款在保护你，结果它正在让你变穷
+
+You Think Your Savings Are Protecting You
+
+But They’re Making You Poorer
+
+nPOV：你被信用卡困住 7 年，才发现问题不是消费
+
+You’re Trapped by Credit Cards for 7 Years Before Realizing Spending Wasn’t the Real Problem
+
+nPOV：你第一次进入富人圈，才发现他们从不聊省钱
+
+You Enter a Rich Circle for the First Time and Realize They Never Talk About Saving Money
+
+nPOV：你 35 岁看起来成功，其实每个月都在崩溃边缘
+
+You Look Successful at 35 But Live One Month Away From Collapse
+
+000，然后 3 年后重新变穷
+
+nYou Inherit
+
+000 and Become Broke Again in 3 Years
+
+000，然后发现自己比以前更不自由
+
+nYou Make
+
+250K a Year and Realize You’re Less Free Than Before
+
+n你 28 岁赚到第一桶金，然后失去了所有朋友
+
+nYou Make Your First Fortune at 28 and Lose All Your Friends
+
+n你买下梦想大房子，然后被账单慢慢拖垮
+
+nYou Buy Your Dream House and Slowly Get Crushed by the Bills
+
+n你创业成功，然后每天都比打工时更焦虑
+
+nYou Build a Successful Business and Become More Anxious Than When You Had a Job
+
+n你提前退休，然后发现自己犯了一个昂贵错误
+
+nYou Retire Early and Realize You Made an Expensive Mistake
+
+n你收入翻倍，然后现金流反而变差
+
+nYou Double Your Income and Somehow Have Worse Cash Flow
+
+n你 19 岁退学，然后 29 岁身家
+
+nYou Drop Out at 19 and Become Worth
+
+000 by 29
+
+n你以为自己变富了，然后发现只是负债变大了
+
+nYou Think You Got Rich and Realize Your Debt Just Got Bigger
+
+n你搬进富人区，然后发现自己买的是压力
+
+nYou Move Into a Rich Neighborhood and Realize You Bought Pressure
+
+每个阶段的
+
+n每个财富阶段的人，周日都在做什么
+
+nWhat Every Wealth Level Does on Sunday
+
+n每个收入等级的人，钱都流向哪里
+
+nWhere Money Goes at Every Income Level
+
+n每个投资阶段的人，怎样做同一个决定
+
+nHow Every Investor Level Makes the Same Decision
+
+n每个职场阶层的人，怎样被系统控制
+
+nHow Every Corporate Level Gets Controlled by the System
+
+n每个房产投资阶段：从怕贷款到靠租金生活
+
+nEvery Real Estate Stage
+
+From Fearing Debt to Living on Rent
+
+n每个债务阶段：从最低还款到人生失控
+
+nEvery Debt Stage
+
+From Minimum Payments to Losing Control
+
+n每个财务自由阶段：从请假焦虑到时间属于自己
+
+nEvery Financial Freedom Stage
+
+From Vacation Anxiety to Owning Your Time
+
+n每个富人阶层的隐藏规则：新钱、老钱、家族钱
+
+nEvery Hidden Rule of Wealth
+
+New Money
+
+Old Money
+
+Family Money
+
+n每个现金流等级的人生差别
+
+nEvery Cash Flow Level Explained by Your Daily Life
+
+n每个中产阶段：从安全感到被房贷困住
+
+nEvery Middle-Class Stage
+
+From Feeling Safe to Being Trapped by a Mortgage
+
+隐藏金钱规则
+
+n银行不会告诉你的收入陷阱
+
+nThe Income Trap Banks Won’t Tell You About
+
+n高薪不是自由，是更贵的牢笼
+
+nHigh Income Isn’t Freedom
+
+It’s a More Expensive Cage
+
+n中产最容易被困住
+
+nThe Middle Class Gets Trapped the Easiest
+
+n你以为是资产，其实是负担
+
+nYou Think It’s an Asset
+
+It’s Actually a Burden
+
+n真正让你变穷的不是低收入
+
+nLow Income Isn’t What Really Keeps You Poor
+
+n储蓄账户正在偷走你的未来
+
+nYour Savings Account Is Stealing Your Future
+
+n信用评分不是奖励，是控制系统
+
+nYour Credit Score Isn’t a Reward
+
+It’s a Control System
+
+n公司阶梯不是上升，是交换
+
+nThe Corporate Ladder Isn’t Progress
+
+It’s a Trade
+
+n消费贷款让你看起来更富，实际上更穷
+
+nConsumer Debt Makes You Look Richer and Live Poorer
+
+n钱的数学很残酷
+
+nThe Math of Money Is Brutal
+
+家庭财富
+
+nPOV：你成为家族第一个真正有钱的人
+
+You Become the First Truly Wealthy Person in Your Family
+
+nPOV：你是家里最后一个穷人
+
+You’re the Last Poor Person in Your Family
+
+n每个代际财富阶段：从月光家庭到家族资产
+
+nEvery Level of Generational Wealth
+
+From Paycheck Family to Family Assets
+
+n你继承了父母的金钱恐惧，然后用了 10 年摆脱它
+
+nYou Inherit Your Parents’ Money Fear and Spend 10 Years Escaping It
+
+n你发现家族贫穷不是偶然，而是一套系统
+
+nYou Realize Family Poverty Wasn’t Random
+
+It Was a System
+
+n你用 10 年改变家族命运，但没人理解你
+
+nYou Spend 10 Years Changing Your Family’s Future and No One Understands You
+
+n你进入富人圈后，才发现他们从小被教了另一套规则
+
+nYou Enter a Rich Circle and Realize They Were Taught Different Rules From Childhood
+
+n你发现父母给你的安全建议，正在毁掉你的财富
+
+nYou Realize Your Parents’ Safe Advice Is Destroying Your Wealth
+
+n你从普通家庭走出来，却不知道怎么和有钱人相处
+
+nYou Come From an Ordinary Family and Don’t Know How to Act Around Wealthy People
+
+n你想让下一代变富，第一步却是背叛上一代的观念
+
+nYou Want the Next Generation to Be Rich
+
+But First You Must Break the Last Generation’s Rules
+
+我主要用两套：
+
+第二类：Every Level of xxx  - from 低 到 高
+
+from 高到低。
+
+89fdd7d3-5bd6-47ee-b088-9feb33e15aaa
+
+Google AI Studio（Text-to-Speech）  https
+
+aistudio
+
+google
+
+generate-speech   --免费，但是有时间限制。
+
+用原来的结构节奏，写出一个全新的标题——赚取 RPM 套利
+
+callout
+
+doxcnlEsi08Uw5a0aNpQeJVropd
+
+background
+
+border
+
+pushpin
+
+FaY4bnUhXoA7uHx7ZalcxP5anyh
+
+218132
+
+6165540540540541
+
+我们直接复制视频链接，丢给 Google AI Studio 和 Gemini 去分析。
+
+不过别担心， 可以直接抄。
+
+3f7d9193-eff9-435a-b743-fbc256ede2f4
+
+IuQBOpDCsKQ
+
+我们按照拆解对标 -
+
+脚本制作 -
+
+视觉制作
+
+ElevenLabs  --每个月一个邮箱给1万字符免费额度
+
+每一个图片生成后，都会自动下载。
+
+我们可以在下载器中看到。 下载器可以复制提示词，可以重命名，可以打开图片的位置，也可以本地高清放大图片，去水印，抠图，非常好用。
+
+你是一位擅长拆解爆款长视频的内容分析师，同时具备成熟的脚本创作经验，尤其精通口播型内容的结构设计与留存机制。你能够从内容中快速提炼出“为什么会爆”的核心逻辑，并转化为可复用的方法。我会提供一个 YouTube 长视频，请你在完整理解后，用一段话做出深入但清晰的分析，不要复述内容，而是拆解背后的机制。
+
+n重点分析：
+
+n 这个视频的选题为什么成立，它切中了观众什么情绪、欲望或认知需求；
+
+n 前 30 秒是如何建立吸引力的，例如是否通过结果前置、冲突、提问或信息缺口来抓住注意力；
+
+n 整支视频的文案结构如何层层推进，是否存在节奏变化、重复强化、转折或关键爆点；
+
+n 画面与剪辑是否在关键节点辅助理解或增强情绪。
+
+n同时，你需要从频道层面进行归纳：
+
+n 这个频道的爆款选题方向是什么；
+
+n 它的目标受众是谁，他们真正想获得什么；
+
+n 长期反复出现的内容主题有哪些（3–6 个）；
+
+n 常见的开头钩子模式有哪些（总结 7 种并用自己的话举例）；
+
+n 视频的典型结构流程是什么；
+
+n 留存机制是什么；
+
+n 语气与写作规则是什么；
+
+n 标题与封面的常见模式是什么；
+
+n CTA 通常放在什么位置，怎么表达。
+
+n最后，请结合参考视频，给出可执行的内容模仿建议，方向围绕
+
+，并自然总结出最值得复用的几个关键点，让人看完后能直接知道下一支视频该如何设计与落地。
+
+n分析视频链接：
+
+对标视频拆解 Prompt
+
+我的字数有点少，帮我添加 500 字左右。
+
+n 不要新的故事，不要说教。
+
+n 主要增加一些描述，让整体内容更丰满一些。
+
+n 如果有新增内容，请帮我标记出来。
+
+补字数 Prompt
+
+NS8wb3TlWouk3nxJclUcMUn3nDg
+
+2139470
+
+5472263868065967
+
+好的， 那么现在选一个你感兴趣的，直接开始脚本制作。
+
+是否有轻改写风险
+
+哪怕是同一种画风，也要做差异：
+
+但我可以很直接地说：
+
+到这里，第一稿正式结束。
+
+一个是这里填写我们第一步在Gemini 拆解爆款时候的结果。
+
+IBI9bgyCQo3KcyxSoNjc8PFQnvc
+
+932046
+
+如果你想要效果更好一些，可以用可灵。
+
+到这里，AI模型已经懂了，我也已经懂了这个脚本是讲的什么，为什么火。 接下来，我们就开始，选题。
+
+直接把这 5 个选题再丢给 ChatGPT，让它按点击潜力、竞争度、落地难度、频道匹配度，帮你排个优先级。
+
+不要自己想。直接截图对标。
+
+1200 字左右，约 9 分钟
+
+是否表达过于通用
+
+AOhNb1tQooAIonxM5cAcxKYmnYg
+
+436640
+
+O7lybynzgorOKDxydCWciwDinrh
+
+2360115
+
+5169971671388102
+
+找一个你对标的视频， 把视频丢进 Google AI Studio ，直接问：
+
+第一步：先定风格
+
+所以我会让它检查：
+
+接下来就是把gpt给的结果，给Claude再次修改。 基本2-3次后就会是合规的了
+
+例如： 我要写金融的。 参考的是：
+
+哪些地方可以再改得更有个人风格
+
+去Flow 生成图片。
+
+如果它写出来字数偏少，我会继续补一条：
+
+2559837118989747
+
+是否太像常见模板
+
+2Fweixin
+
+2FANlxH2MHOu
+
+doxcnhoITihsRC2uvOePfIolUSe
+
+doxcnogvozecY77MdWVIpVpTjVe
+
+49946415373244635
+
+这一步大家都比较熟悉了，应该是都很简单。
+
+但声音如果不对，观众会直接出戏。
+
+如果遇到不会的画风怎么办？
+
+1900 字左右，约 14 分钟（1 倍速）
+
+WgcTb55oGo37vIxGMcacZEUEn1s
+
+1472176
+
+设置好后，我们选择图生图。 加入人物的图像作为IP。 然后批量复制提示词。最后点击发送就可以了。
+
+CsxDb4BMdoITS2xIiSHc5ubgnXb
+
+630835
+
+2565003513703443
+
+如果你还是判断不出来哪个更值得先发，那也很简单。
+
+然后做一件事：
+
+我就直接选择Google AI Studio的了：
+
+这个打法（4步）
+
+还包括一个更现实的问题：
+
+TcgjbQRLro2EMMxQA3Yc17cdnVb
+
+249665
+
+6381118881118881
+
+LsPqbo0RMoEFHxx4hWMc4mFznDg
+
+494052
+
+2275561097256858
+
+所以，应该怎么做？ 根据我的万能选题公式，修改成你的目标观众，你的内容。  这里面如果有一些你不知道怎么办？ -- 再给这个prompt的同时，添加你的对标频道的视频截图，并用自己的话说明一下，
+
+OAH6bSrrMot5F2x8Ag4c5Tcqnuh
+
+application
+
+openxmlformats-officedocument
+
+wordprocessingml
+
+document
+
+22397
+
+第一类 POV
+
+You are xxx
+
+我的实际对标是Willie Finance。 但我不能做内容和形式和它一样，这样同质化严重。所以我做的是，我找到它模仿的那个频道，直接向上一步。 这样我的脚本会更有可塑性。
+
+选择一个你已经理解的高 CPM 主题，比如财富、金融、科技、商业
+
+第二步：定一个主角IP
+
+提取它的结构节奏，比如阶层晋升、坠落崩盘，或者 POV 视角
+
+第二个是这里，我们刚才选择的视频选题。
+
+画面可以到85分，
+
+我会再拿回 ChatGPT 做一轮检查。
+
+我们正在为一个无露脸叙事类 YouTube 频道生成高度独特、非泛滥化的视频选题，频道内容基于xxx格式，例如：xxx。
+
+n目标是创造新鲜、以好奇心驱动或神秘感的选题，这些选题需要具备强病毒传播潜力，并且不能是 YouTube 上已经高度饱和的内容。
+
+n你是一位病毒内容策略专家，深度擅长 YouTube 增长、故事叙事心理学和细分赛道研究。你专门寻找尚未被充分开发的创意，这些创意需要感觉原创、有吸引力、令人好奇，并且非常适合点击。
+
+n请根据不同格式风格，将视频选题分成清晰独立的板块。
+
+n需要包含以下板块：
+
+nxxxxx。
+
+n选题不能是 YouTube 上已经被大量使用或过度泛滥的常见题材
+
+n避免基础化选题，除非有非常独特的切入角度
+
+n每个选题都必须感觉新鲜、具体，并且能强烈激发好奇心
+
+n标题要简短，并且具有高点击吸引力
+
+n输出格式：
+
+n清晰标注每一个板块
+
+n每个板块下面使用编号列表
+
+n不需要解释
+
+n未来使用的重要指令：
+
+n如果用户说类似：
+
+n“Give more topics in
+
+section name
+
+n那么只针对该指定板块生成 10 个全新的选题，不要重复之前的创意。
+
+n目标观众：
+
+n年龄xxx 岁
+
+n对xxx 内容感兴趣
+
+n目标是最大化点击率和观看时长
+
+选题万能公式prompt
+
+请对整篇脚本进行一次原创性与平台合规性检查。
+
+n假设该内容将用于 YouTube 商业化，请评估其是否具备充分的原创性，并指出是否存在与常见内容结构或表达过于相似的部分。
+
+n如果有潜在的重复风险、表达过于通用、或可能影响变现审核的地方，请明确标出具体段落并给出修改建议。
+
+n同时，检查是否存在容易被判定为模板化、低原创度或轻度改写的问题，并提供更自然、更具个人表达风格的优化方向。
+
+n目标是确保这篇脚本在结构、表达和信息呈现上都具备独立性与辨识度，从而更安全地用于 YouTube 变现。
+
+这里添加脚本
+
+第三稿 Prompt
+
+很多人会低估这一块。
+
+但一定要“能被记住”。
+
+用claude写脚本。
+
+步骤是这样的：
+
+我们正在为一个无露脸财经叙事类 YouTube 频道生成高度独特、非泛滥化的视频选题。
+
+n频道风格参考以下类型：
+
+n“Your Life at Every Level of Net Worth —
+
+100 Million”
+
+n“Your Life If You Spend Your 20s Building Wealth vs Spending It”
+
+You Buy Your Dream Car at 25 and Regret It at 30”
+
+You’re the First Millionaire in Your Family’s History”
+
+n“Every Level of a Real Estate Investor —
+
+0 to Empire”
+
+n“You Inherit
+
+1 Million and Go Broke in 3 Years”
+
+n“You Make
+
+000 a Year and Still Feel Broke”
+
+n“Your Life If You Never Invest in Your 20s”
+
+n“Every Level of Investor — First
+
+100 to First
+
+n请注意：只能模仿这些标题的结构、情绪、选题逻辑和点击感，不能复制原题。
+
+n这个频道不是普通理财教学频道。
+
+n不是股票推荐频道。
+
+n不是单纯讲投资知识的频道。
+
+n不是“如何变富”的教程频道。
+
+n它是一个把金融、财富、阶层、消费、职业和人生选择包装成“沉浸式人生故事”的财经叙事频道。
+
+n选题要让观众感觉：
+
+n这可能就是我的人生
+
+n我如果选错路，未来会很惨
+
+n原来钱背后有一套隐藏规则
+
+n财富不是数字，而是人生轨迹
+
+n穷、富、中产、负债、自由，其实是不同的人生关卡
+
+n一个财务选择可能改变未来 10 年
+
+n你是一位 YouTube 病毒内容策略专家，深度擅长财经叙事、无露脸频道增长、标题心理学、财富焦虑、阶层跃迁和高 RPM 选题设计。
+
+n你的任务是生成适合中文财经频道的高点击选题。
+
+n选题必须具备以下特征：
+
+n有人生代入感
+
+n有财富等级感
+
+n有后悔感或危机感
+
+n有强烈对比
+
+n有时间跨度，比如 20岁、30岁、40岁、10年后
+
+n有阶层变化，比如从
+
+100万、从打工人到投资者、从中产到破产
+
+n有画面感，适合做成无露脸动画解释视频
+
+n标题要短、有冲击力、容易理解、适合 YouTube
+
+n请根据以下格式生成选题：
+
+n生成 10 个选题。
+
+n重点模仿：
+
+n“Your Life at Every Level of Net Worth”
+
+n“Every Level of Investor”
+
+n“Every Level of Real Estate Investor”
+
+n选题方向：
+
+n净资产等级
+
+n投资者等级
+
+n房地产投资等级
+
+n职业阶层等级
+
+n财务自由等级
+
+n从普通人到富人
+
+n标题要体现从低到高、从穷到富、从压力到自由、从新手到高手的变化。
+
+n“Your Life If You Follow Old Money Rules”
+
+n“Your Life If You Buy a House in Your 20s vs Invest That Money Instead”
+
+n20多岁选择积累财富 vs 及时享乐
+
+n买房 vs 投资
+
+n高薪消费 vs 普通收入储蓄
+
+n听父母建议 vs 走自己的财务路线
+
+n追求面子 vs 追求现金流
+
+n早投资 vs 晚投资
+
+n过度消费 vs 极简主义
+
+n稳定工作 vs 高风险职业
+
+n贷款买豪车 vs 用钱买资产
+
+n标题要有明显的命运分叉感。
+
+You’re 35 Years Old With
+
+0 in Savings”
+
+You Find Out Your Savings Account Is Making You Poorer”
+
+n你30岁发现自己没有存款
+
+n你买了梦寐以求的车，但后悔了
+
+n你成为家族第一个有钱人
+
+n你发现银行在利用你
+
+n你赚很多钱但依然很穷
+
+n你被债务困住
+
+n你以为自己是中产，其实很脆弱
+
+n你发现储蓄账户正在让你变穷
+
+n你终于理解富人为什么不炫富
+
+n标题要有第一人称代入感、压力感和故事开场感。
+
+n“You Drop Out of College at 19 and Are Worth
+
+3 Million at 28”
+
+n你突然继承一大笔钱，然后失去它
+
+n你年薪很高，但依然没钱
+
+n你很年轻就赚到第一桶金
+
+n你看起来成功，其实现金流崩了
+
+n你买了大房子，然后被账单拖垮
+
+n你创业成功，但生活更焦虑
+
+n你提前退休，但发现自己犯了一个错误
+
+n你收入翻倍，但自由变少了
+
+n你以为自己变富了，其实只是负债变大了
+
+n标题要有强烈反差：看似成功，结果危险；看似失败，结果逆袭。
+
+n“Every Level of Wealth Explained by How You Spend Your Sunday”
+
+n“Every Level of Tax Free Wealth”
+
+n“Every Level of the Corporate Ladder — Intern to Chairman”
+
+n每个财富阶段的人怎么花周末
+
+n每个收入等级的人怎么花钱
+
+n每个投资阶段的人怎么做决定
+
+n每个职场阶层的人怎么被系统控制
+
+n每个房产投资者阶段
+
+n每个债务阶段
+
+n每个财务自由阶段
+
+n每个富人阶层的隐藏规则
+
+n标题要有“等级系统”和“人生关卡”的感觉。
+
+n“They Can’t Tell”
+
+n“The System”
+
+n“You Find Out Banks Have Been Using Your Income Against You”
+
+n“The Math Hurts”
+
+n“The Real Cost”
+
+n“Still Broke
+
+n银行不会告诉你的规则
+
+n税务系统如何奖励富人
+
+n高薪为什么不等于自由
+
+n消费贷款如何让你留在原地
+
+n储蓄为什么可能让你越来越穷
+
+n信用评分如何控制你的选择
+
+n中产为什么最容易被困住
+
+n公司阶梯为什么像一个系统
+
+n真正让人变穷的不是低收入，而是错误结构
+
+n标题要短、有压迫感、有秘密感，适合封面大字。
+
+You’re the Last Poor Generation in Your Family”
+
+n“Every Level of Generational Wealth — From Broke to Dynasty”
+
+n“Your Life If You Followed Your Parent’s Advice”
+
+n你成为家族第一个富人
+
+n你打破贫穷循环
+
+n你继承了父母的财务观念
+
+n你发现家族贫穷不是偶然
+
+n你试图让下一代变富
+
+n你从普通家庭进入富人圈
+
+n你学会富人家庭不会明说的规则
+
+n你发现父母的建议已经过时
+
+n你用10年改变家族命运
+
+n标题要有家族、阶层、代际差距和命运改变的感觉。
+
+n所有标题必须用中英文输出
+
+n不要中英混杂，除非保留 POV 这种固定格式
+
+n不要生成普通教程型标题，比如“如何理财”“如何投资”“如何省钱”
+
+n不要推荐具体股票、基金、币或金融产品
+
+n不要写成新闻标题
+
+n不要写成知识科普标题
+
+n标题必须像一个人的人生故事，而不是一篇理财文章
+
+n每个标题都要有强点击感、强画面感、强代入感
+
+n每个标题都要适合做成 12–25 分钟的无露脸动画财经视频
+
+n尽量使用数字、年龄、金额、时间跨度、阶层变化、后悔感和命运分叉
+
+n避免泛泛而谈，要具体到一个人生处境
+
+n清晰标注每个板块
+
+n每个板块生成 10 个中文英文对照的标题
+
+n不需要分析
+
+n不需要英文翻译
+
+n如果用户说：
+
+n“继续给我
+
+n那么只针对该指定板块生成 10 个全新的中文选题，不要重复之前的创意。
+
+n年龄 18–40 岁
+
+n对财富、阶层、金钱焦虑、投资心理、职业选择、房地产、家庭财富和财务自由感兴趣
+
+n喜欢沉浸式人生故事，而不是枯燥理财课
+
+n容易被后悔、对比、隐藏规则、阶层跃迁、命运分叉和金钱真相吸引
+
+n目标是最大化点击率、观看留存、RPM 和复看率
+
+财经人生故事 选题prompt
+
+QJoIbHWsKoWdRYxY2CbcYTXrnJh
+
+3847443
+
+24158152744753103
+
+Gemini
+
+Generated
+
+5unqo25unqo25unq
+
+1900 字左右，约 12 分 50 秒（1
+
+1 倍速）
+
+我对视觉的要求很简单： 85分就够了。不追100分。因为你不是在做作品，你是在做内容。
+
+是否有可能影响变现审核
+
+这里我一般会卡在 2000 字左右。
+
+我们正在为一个无露脸叙事类 YouTube 视频创作一篇高吸引力脚本，采用类似爆款 POV 视频的“等级递进”结构。爆款结构参考如下：
+
+填写第一步拆解爆款时的结果
+
+n脚本必须具有电影感、沉浸感和强烈张力，让观众感觉自己正在亲身经历一个危险或隐藏世界中的每一个阶段。
+
+n你是一位顶级 YouTube 脚本作者和故事叙事专家，专门创作高留存、病毒传播型内容。你擅长使用第二人称叙事风格，也就是用“你”来讲述故事，并使用短促、有力、具有电影感的句子。
+
+n你理解如何在多个等级之间构建紧张感、成长感和情绪投入。
+
+n请根据以下主题，写一篇完整的 12-18分钟 YouTube 脚本：
+
+填写视频选题
+
+n脚本风格要求：
+
+n使用“Level 1、Level 2、Level 3
+
+”的等级递进结构
+
+n每一个 Level 都代表成长、风险、权力，或更深层次的卷入
+
+n直接从 Level 1 开始，不要写很长的开场白
+
+n使用第二人称视角，也就是“你”
+
+n使用简短、有冲击力的句子，避免长段落
+
+n保持严肃、沉浸式的语气
+
+n每一个 Level 的风险和代价都要逐渐升高
+
+n包含金钱、风险、后果和情绪变化
+
+n加入一些真实的小细节，让故事更有现实感，比如地点、任务、场景
+
+n结尾要用一个强有力的最终 Level，展现后果、崩塌，或反转
+
+n结构流程：
+
+nLevel 1：入口阶段，低风险，简单任务
+
+nLevel 2–4：成长阶段，卷入更深
+
+nLevel 5–7：权力、金钱、控制感增强，但危险也在上升
+
+n最后几个 Level：后果、疑神疑鬼、崩塌，或循环继续
+
+n写作风格：
+
+n有电影感，直接有力
+
+n不要废话，不要不必要的解释
+
+n每一句都要推动故事向前
+
+n每一个 Level 都要保持观众的好奇心
+
+n只输出纯脚本
+
+n清晰标注每一个 Level，比如 Level 1、Level 2 等
+
+n不要使用项目符号
+
+n不要在脚本外写解释
+
+等待图片生成完，我们就可以生成视频了。
+
+在文件夹里面也会按照顺序排列好。
+
+我们这个内容视频不是那么重要，简单一些就可以。
+
+脸型 （方脸）
+
+sequence
+
+concurrent
+
+cursor
+
+wpsbBUDDjUPCvsKZMmRYEXszasOhw7pZwrlSwpvCtyfCqjbCqcO5w4V9wo1vwqYzw7TCk8OzIEHCpcOQFCk-OFLDigdrw5Rrwoxtf8O9GcO1GcOuw5BLw4nCmRXDqHTDjhJ7w6sYOnvDh8KkCSTCuhlIw6DCmEHDisOWw7cKIsOvw7nCq2ELVQvDtQo
+
+editor
+
+用户2714
+
+avatar
+
+s1-imfile
+
+static-resource
+
+e6f5a9e2-91f0-4b42-9c06-c702a7925879
+
+default-face
+
+quality
+
+format
+
+sticker
+
+user 2714
+
+resigned
+
+display
+
+department
+
+external
+
+2026-07-30T10
+
+creator
+
+2026-07-30T19
+
+product
+
+update
+
+2026-07-31T11
+
+cursors
+
+preloadedImages
+
+blocks
+
+structure
+
+synced
+
+CLIENT
+
+message
+
+success
+
+header
+
+accept
+
+encoding
+
+deflate
+
+20260803210505E3C2A5109D3FB3DD0959
+
+devtool
+
+branchV2
+
+i18nInfo

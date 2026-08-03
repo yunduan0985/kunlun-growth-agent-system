@@ -1,0 +1,477 @@
+heading1 7094548015129706498 author *0+q 二、抖音独家计划+伙伴计划介绍（赛道选择和创作方法）
+
+bullet 7094548015129706498 author *0+36 达到门槛以后，可以申请加入，平台会对你的内容创作质量&原创程度进行审核，审核通过后才会正式加入计划（具体门槛请抖音搜索“创作者伙伴计划”查看计划规划），请密切关注你的内容质量和原创度，如果不符合要求，就会有无法加入计划的风险哦！ left
+
+text 7094548015129706498 author *0+l 如果你们也在做油管，一定不要碰平台的红线。
+
+bullet 7094548015129706498 author *0+f 近30日有效互动粉丝≥5000 left
+
+bullet 7094548015129706498 author *0+b 内容符合平台的原创标准 left
+
+image 7094548015129706498 BKqrb6xupo5G0MxFJWFc62J5nmd image/jpeg Ayz08dvB.jpg
+
+text 7094548015129706498 author *0+35 第二类是新人扶持和优质内容激励。新开通伙伴计划的账号享有专属新人流量扶持，作品单价会有正向提升，平台会不定期上线优质创作者激励活动，那些长期稳定产出合规优质内容的账号有机会获得平台定向发放的流量或现金补贴，属于阶段性额外福利。
+
+text 7094548015129706498 author *0+2l 第三，只有抖音推荐页进来的流量才计入获利播放考核。其他搜索页、个人主页、同城页、话题合集来的流量全部不算，所以当我们弄懂了获利播放与千次播放单价这两个概念后，很多人的疑惑应该就能解开了。
+
+text 7094548015129706498 author *0+2p 能做指的就是平台上这个赛道的大部分的创作者，他们的流量怎么样？收益怎么样？容不容易违规？以及是不是平台要的东西啊，如果各方面都ok的话，这就叫做能做。比如说搬运就不能做，影视的剧情解说也不建议做
+
+text 7094548015129706498 author *0+m 五、我对内容创作的思考以及对内容创作者的建议
+
+heading3 7094548015129706498 author *0+f 第二种——被动邀约加入计划
+
+text 7094548015129706498 author *0+1c 这个英文的睡眠故事赛道收益很可观，千播在20-30美刀，因为美国人经常听着睡觉，播放时长蛮久的。
+
+heading2 7094548015129706498 author *0+8 1.影视解说赛道
+
+heading3 7094548015129706498 author bold true textHighlight rgb(143,149,158) textHighlightBackground rgba(255,246,122,0.8) *0*1*2*3+f 第二层收益：阶梯式内容加成
+
+text 7094548015129706498 author bold true underline *0+j*0*1*2+t*0+h 抖音伙伴计划的总收益结构分为三大部分：基础流量广告分成、阶梯内容加成收益、平台官方任务补贴收益，而单条作品的精准计算公式只有一个：
+
+synced_source 7094548015129706498 Kr41dk9C4o9bY3xef7TcC6LPnLf author *0+3 同步块 left
+
+view 7094548015129706498 PGL2d1FQNoweL0xZbi0cWeG2nYc Card
+
+image 7094548015129706498 IShibB0iFoBuzBx2x9HcshSzn1b image/png 9mR87NKj.png
+
+text 7094548015129706498 author *0+27 4.电商带货：适合的作者范围十分广泛，但是作者最好具有较强的粉丝粘性，或者内容具备一定的种草能力，再根据自身的内容和账号定位，选择不同的电商带货渠道进行变现。
+
+text 7094548015129706498 author *0+18 第一，用户观看时长必须大于等于5秒，刷到立刻划走，停留不足5秒的播放，全部不是获利播放。
+
+text 7094548015129706498 author *0+k 通过这种方式加入的门槛目前是要求比较高：
+
+quote_container 7094548015129706498 SZRedmecgoyc5uxYh9hcoBOunC7 JRPCdry9qoqCSAxFHDOcxGAXnhf GRmcdQo1AooVCMxKiuKcA6cFnwB WaTydIqtaoedObxU0ZRcF3oVnJh KFymdErK1ornOaxTLYLcgZLZncd TeFjdLL1CoDQV9xKVTOcFKMKnEd CmSbdyFM4oxqxhxMemAc0kBtntb Z6RpdWb0yopKZLxhkWIcZSfqnlg FRAddiI9BoHTOAxBvKucmYCbndh PfdndOFqCoqoM0xBM5ccMYxYnlc
+
+text 7094548015129706498 author inline-component link-id 4384e14a-ead8-4c57-84ab-c8ae48da1a4f *0+b*0*1*2+1 具体可以参考这个文档：
+
+file 7094548015129706498 KfZXbWPmron6JDxEcjNcCy1Fntc video/mp4 【电脑】基础剪辑02-音频控制.mp4
+
+grid 7094548015129706498 XQG6d3WmLoSm4NxR9FUcmADFnZb HFdmdFhVooZcVfxDMkKct1w1nXf JLhid9GXWoK0oxxVu0HcmYvJnOe
+
+heading2 7094548015129706498 author *0+1
+
+text 7094548015129706498 author *0+1s 今天我想分享一下这两年的破局历程，说说我是如何调整情绪从失败中走出来，以及给还在找项目或者还没有从0到1跑通项目的朋友一点启发。
+
+text 7094548015129706498 author *0+s 第二，自己反复回看，人工刷量的虚假播放，通通不计入收益。
+
+text 7094548015129706498
+
+grid_column 7094548015129706498 UDiVdXwdxoOJRlx2HqhcEOydnUd
+
+callout 7094548015129706498 YOPFdGGdpoYlqAxj3EOce5vMnyo rgb(255,245,235) rgb(254,212,164) left sunrise 1f305
+
+text 7094548015129706498 author bold true *0*1+a*0+1g 基础收益计算很简单。只用看两个核心数据：获利播放量与千次播放单价。那这里可能有大家最疑惑的问题：我的千次播放单价到底是多少。
+
+view 7094548015129706498 KxzQdzdJyoVQROxXheZcqfBJnQe Card
+
+text 7094548015129706498 author inline-component link-id 4e930481-1670-468f-8cbd-0777152b0e7e *0+b*0*1*2+1 抖音官方精选账号推荐：
+
+text 7094548015129706498 author bold true textHighlightBackground rgba(255,246,122,0.8) *0*1*2+7 什么叫做适合？
+
+bullet 7094548015129706498 author *0+24 其实这个粉丝要求的是近一个月内的有效互动粉丝，互关互助或者购买的粉丝都不算数，只能通过作品来涨粉才可以，概括来说需要大家一个月能涨个七八千粉丝就问题不大 left
+
+image 7094548015129706498 left BlQkb4m5Ro3CdZx2mU2cD4jfngf image/png 640 (2).png
+
+text 7094548015129706498 author *0+l 💡这里的核心在于如何能被标记为精选内容。 |1+1
+
+image 7094548015129706498 center AEXLbvg91opIszxHFracnqRdn2H image/png 81b1c75150890d00bfb4750fa810df5a.png
+
+text 7094548015129706498 author *0+t 一、前期做YouTube的历程与状态（如何从失败中走出来）
+
+text 7094548015129706498 author *0+v 6、广告分成：1万粉丝可以开通，无需专门关注，只作为收益补充。
+
+quote_container 7094548015129706498 QNSqdz7U2oCHV3xJ1hkc0syYn9d
+
+image 7094548015129706498 center ZyLjbrbNVojexnx4q7wcZdw6nHc image/png 2ccd3c2508c9d1cad23c797bb0f859f9.png
+
+text 7094548015129706498 author *0+m 抖音里面的赛道很多。从表现形式上分为两大类。
+
+text 7094548015129706498 author *0+s 一定要避开不要做的赛道，然后从能做的里面选择适合自己的。
+
+text 7094548015129706498 author *0+2m 毕竟愿意分享的人不多。能够免费学到项目实操的地方，除了生财找不到。生财对于一个项目拆解的详细程度如果说是全网第二，那么没人敢冲第一。从对教练的筛选，到志愿者的积极报名，每一个环节都很到位。
+
+heading3 7094548015129706498 author *0+j 第三种——直接购买获得资格的成品账号
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+18 💡过门槛不是目标，目标是赚钱，所以不会做内容，过了这个门槛的意义也不大，切勿本末倒置！
+
+text 7094548015129706498 author bold true *0*1+3*0+c 生活剧：家长里短的，夫妻关系的 left
+
+text 7094548015129706498 author *0+1u 如果还在找项目的，可以关注一下抖音独家计划和伙伴计划。对于内容创作者来说，一个内容可以同时国内国外进行分发，说不定有意想不到的结果。
+
+text 7094548015129706498 author *0+15 大家好，我是小滔，有幸在2024年加入生财这个大集体，是一个生财小透明，比较内向。
+
+text 7094548015129706498 author *0+2a 适合全量原创优质内容创作者，内容质量越高，收益越高！也可以同步到其他平台（今日头条、百家号、视频号、b站、小红书等平台）获取收益，目前单价万次有效播放3到10元不等
+
+file 7094548015129706498 CU53bX8CToppwhxJ5PccM8ponje video/mp4 【电脑】基础剪辑05-字幕处理.mp4
+
+text 7094548015129706498 author *0+4d 影视解说是内容创作的常青树，在国内各大平台都有不小的观众基数。影视解说能一直火下去，首先是大家平时太忙，没工夫完整看剧看电影，靠解说快速了解故事； 其次很多电影里面的隐喻、细节普通人看不明白，解说帮忙拆解解读，相当于免费影评科普； 再者不少老片子早就热度过去了，解说一做等于免费帮作品宣传，吸引不少人去看正版原片。
+
+grid_column 7094548015129706498 FPtTdbUrdo5zcBxoLjecEeRpn2d
+
+text 7094548015129706498 author bold true *0*1+m 1、关于5000粉丝：
+
+text 7094548015129706498 author *0+2s 适合就是跟你的时间的搭配，跟你的个人的能力，以及你是否对这个有兴趣有关。咱们在能做的里面找到适合你自己的啊，这就是可以了，不用总是盯着某些赛道的高收益，那那可能未必适合于你，不适合的话只会白浪费时间！
+
+text 7094548015129706498 author *0+1c 除此之外，长期稳定更新的合集连载作品会有小幅流量和收益加成，长期做系列内容的账号收益也会更稳定。
+
+image 7094548015129706498 G68bbI8MFozFF7xDHBRcUShjnXe image/jpeg lzsdiv3I.jpg
+
+file 7094548015129706498 TkHabZN13odwW6xn82GchP3NnLg video/mp4 【通用】如何找到片段在电视剧第几集？.mp4
+
+text 7094548015129706498 author *0+c 四、踩过的坑以及经验总结
+
+view 7094548015129706498 Tp9MdYEogoNAOlx1HrwckrUdnXc Card
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+1u 之前公式里之所以要除以1000，那是为了算出单次播放的基础收益价格，最后再乘以我们作品的总获利播放量，就能得出这条作品的最终收益了。
+
+text 7094548015129706498 author *0+19 平台每天会更新预估收益，每天可以提现五次，单日总提现金额不能超过1万元，不足一元不能提现。
+
+text 7094548015129706498 author *0+m 这是所有合规原创作品都能拿到的流量基础分成。
+
+text 7094548015129706498 author *0+28 第二大类就是二次剪辑创作类。也是目前我们主要在做的内容，像一些影视解说、人物解说，娱乐，历史、体育、游戏等等，不需要咱们真人出镜，需要找素材进行二次加工创作的。
+
+file 7094548015129706498 DpXPbCQfio6Xc7x60wzcQnYTnkh video/mp4 【电脑】基础剪辑06-用模糊特效处理字幕及打码.mp4
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+2o 记住一句话，抖音没有官方统一固定单价，不存在所有人都是几块钱的标准，每个赛道的单价都有所不同，所以作品单价也是基于你所在的赛道领域的广告价值、受众人群，再结合当前作品的各项数据指标实时浮动的。
+
+callout 7094548015129706498 Gdejdkxowos1r9xRZMLcZnqlnVg rgb(255,245,235) rgb(254,212,164) left cake 1f370
+
+callout 7094548015129706498 JD9kdA5ISo85FHxC2y6cguDInEh rgb(255,245,235) rgb(254,212,164) left bulb 1f4a1
+
+text 7094548015129706498 author bold true *0*1+b 那么什么是获利播放呢？
+
+text 7094548015129706498 author bold true textHighlightBackground rgba(255,246,122,0.8) *0*1*2+y 咱们选择赛道的逻辑就一条：目前平台能做的赛道里面适合自己做的。
+
+text 7094548015129706498
+
+file 7094548015129706498 ZgPVbwg9Eo5stZxNIH1cnbBznou video/mp4 【电脑】基础剪辑07-背景音乐查找方法.mp4
+
+grid_column 7094548015129706498 PXjedlsafopjc5x62MUcLdvmnFc
+
+text 7094548015129706498 author *0+t •一定确定好一个能进精选的赛道，目前精选的赛道是官方确定的
+
+text 7094548015129706498 author *0+m 1.创作者伙伴计划
+
+heading1 7094548015129706498 author *0+t 一、前期做YouTube的历程与状态（如何从失败中走出来）
+
+text 7094548015129706498 author bold true textHighlightBackground rgb(255,233,40) textHighlight rgb(216,57,49) *0*1*2+2*0*1+2*0*1*3+5*0*1+n 选剧以下大方向类型优先选：大家根据你自己的爱好去选（腾讯的别碰）
+
+view 7094548015129706498 KyrYdvoNgoQhjLx2rKWc1rq7n5e Card
+
+text 7094548015129706498 author *0+1r 总的来说，抖音伙伴计划的收益核心是平台广告流量分成，然后叠加官方任务补贴和内容加成收益，算是一个普通人做抖音最稳定的收入渠道。
+
+quote_container 7094548015129706498 RBuHdJI17oKFyQx6SiAcHrLdnSh IVvad9WCToylNqxWPMMc6Ce9nPb
+
+heading2 7094548015129706498 author *0+d 1.前期摸索——花钱买经验
+
+text 7094548015129706498 author *0+1b 签约抖音独家，收益单价更高，入选精选前提的情况下通常单价在：万次有效播放30元到500元不等。
+
+image 7094548015129706498 M9W6baJ01ojOXYxbtQqcUpaIn7b image/jpeg HjAyeJ0C.jpg
+
+text 7094548015129706498 author *0+6 六、写在最后
+
+view 7094548015129706498 VWa2dA3jJoLVpkxrkcicROOgnDd Card
+
+text 7094548015129706498
+
+view 7094548015129706498 IZhAdBgvSoV7wHxA6GZcbxMtnpb Card
+
+text 7094548015129706498 author *0+1i 在这一波清扫中，我的几个Adsense也被株连。也怪我没有做好频道的隔离，还是太年轻，没有早点经历这样的坑。
+
+text 7094548015129706498 author bold true textHighlightBackground rgba(255,246,122,0.8) *0*1*2+9 那什么叫做能做？
+
+text 7094548015129706498 author bold true *0*1+q 2.关于内容符合平台的原创标准
+
+image 7094548015129706498 center T69xbSBdYoDSFyxETaSccNZbnFh image/png 6be362c89a8604b17333c3d42e102378.png
+
+quote_container 7094548015129706498 FIx8di7GlotJ5Kx8LnsccObknte
+
+text 7094548015129706498
+
+file 7094548015129706498 MeA1b8UGcoPhXtxLOEJc8gqHnou video/mp4 【电脑】基础剪辑04-画面处理+超清.mp4
+
+file 7094548015129706498 Iu5fbBvgToSV5wxxX80clYYynIb video/mp4 【电脑】基础剪辑09-封面制作.mp4
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+3e 新号发出去基本没有什么流量，只要不是0播就持续发，虽然只有几十到几百，偶尔爆个几千流量，长视频有个好处——就是积累时长，不会像短视频有3个月的焦虑，心里知道开通YPP是迟早的事情，事实证明我没有错！坚持了两个月左右，成功开通了两个中文故事赛道。
+
+text 7094548015129706498 author bold true textHighlightBackground rgba(255,246,122,0.8) *0+38*0*1*2+8*0+6 除了满足粉丝数主动申请加入以外，还有一种方式更加值得关注，就是被平台邀约加入。这个与作品的播放量点赞量以及粉丝数就没有关系了，只需要有作品被标记精选内容，达到一定的精选数量，就会收到平台的邀约，同时开通九项，这个可以同时开通独家计划（收益是最高的）百分百加入。
+
+text 7094548015129706498 author bold true *0+1f*0*1+j*0+16 YouTube这个项目从做的第一个月我就开始盈利了。因为我是直接花2000+买的开通YPP的长视频频道（通过买频道来分析他们已经跑通的赛道），我买过来先是做的无语言特效类short视频，因为收益低，做了一个月改成了英语解说。
+
+text 7094548015129706498 author *0+13 剖析各个赛道的特点，优缺点的解析，选出适合你的创作方向，适合自己的就是最好的。
+
+text 7094548015129706498 author *0+3l 通过方法迁移，我成功找到了英文睡前故事赛道。一个视频时长通常在1个小时以上，而且里面的视频镜头画面是5秒的动图（缩放+左移右移）叠加，刚开始是即梦生图插件，后面我直接又花钱买了大臣的批量生图工具，再叠加本地的ffmpeg，直接进行图片的动效处理—缩放平移等。
+
+text 7094548015129706498 author *0+e 三、赛道实操——视频创作方法
+
+text 7094548015129706498 author bold true *0*1+q 入选“精选”的基础条件和具体建议
+
+text 7094548015129706498 author *0+2o 在AI时代下，大家都是参考的同样的对标，内容容易同质化；另一个是涉及儿童危害问题，动漫人物在YouTube界限不明确，也容易被认作成小孩。一旦违规，申诉的成功性基本忽略不计，要从源头进行杜绝。
+
+text 7094548015129706498 author *0+z 而千次变现收益也叫 eCPM，指1000次获利播放能产生的总广告收益。
+
+text 7094548015129706498 author *0+2p •寻找最新的精选内容，精选内容的标准也会一直进化，最好是能源源不断的找到最新的精选内容：下载抖音精选，关注内容页面的左下角是否有今日精选内容的角标来判断，日期越新，粉丝越小的越是咱们的参考对象。
+
+text 7094548015129706498 author *0+q 二、抖音独家计划+伙伴计划介绍（赛道选择和创作方法）
+
+text 7094548015129706498 author *0+3r 未加入计划的内测作者，可通过抖音搜索“创作者伙伴计划”或通过“抖音app-我-≡-抖音创作者中心-全部-变现-伙伴计划”访问计划落地页进行计划加入操作，查看是否可申请，再按页面引导满足申请条件后点击落地页下方“加入创作者伙伴计划”发起加入申请，通过计划审核后可成功加入。
+
+text 7094548015129706498 author *0+t 其实它的选题思路，跟咱们其他任何赛道的基本逻辑都是一样的。
+
+callout 7094548015129706498 LZIcd8JMeo4WwnxKqYgclcyfnmh rgb(255,245,235) rgb(254,212,164) left +1 1f44d
+
+heading2 7094548015129706498 author *0+7 1.项目前景：
+
+text 7094548015129706498 author *0+3b 抖音是我目前的重点方向。因为抖音的创作者伙伴计划和独家计划给钱真的太豪了，这样的羊毛不薅白不薅。来钱快，提现秒到账，对比油管的提款简直不要太容易。单价非常可观。万播经常在100-500元，主要是根据你的作品质量去的，完播率越高，单价越高。
+
+text 7094548015129706498 author *0+20 为什么我上来就花钱买经验买频道呢？因为生财教学的内容是shorts，而圈外人做的是长视频，正是我所欠缺的。跟有结果的人学习能够缩短你的时间成本。
+
+view 7094548015129706498 Gbkzd6ajDo8HjUxuUyucfGw6n1f Card
+
+text 7094548015129706498 author *0+1y 第一类是平台定期的话题任务创作活动，比如节日专题、三农、科普、同城等官方活动，只要完成对应的播放更新条数、互动要求，就可以瓜分专属现金奖励。
+
+heading3 7094548015129706498 author bold true *0*1+7 内容变现形式
+
+callout 7094548015129706498 GJDydjedjosszKxyT7dcNUcEnvb rgb(255,245,235) rgb(254,212,164) left musical_keyboard 1f3b9
+
+text 7094548015129706498 author bold true *0*1+x*0+i*0*1+f*0+r 但是想靠播放量获取收益需要先开通创作者伙伴计划这个门槛才会有收益。目前开通创作者伙伴计划的方式有三种：主动申请、被动邀约、直接购买。每个人适合情况不一样，下面会做重点分析，看你适合哪种？
+
+text 7094548015129706498 author bold true textHighlightBackground rgba(255,246,122,0.8) *0*1*2+s 「注意事项」
+
+heading1 7094548015129706498 author *0+e 三、赛道实操——视频创作方法
+
+text 7094548015129706498 author *0+o 它不占用正常播放收益，是可以直接叠加的额外增收。
+
+heading3 7094548015129706498 author bold true textHighlight rgb(143,149,158) textHighlightBackground rgba(255,246,122,0.8) *0*1*2*3+e 第一层收益：基础流量收益
+
+text 7094548015129706498 author *0+1
+
+text 7094548015129706498
+
+heading3 7094548015129706498 author bold true textHighlight rgb(143,149,158) textHighlightBackground rgba(255,246,122,0.8) *0*1*2*3+g 第三层收益：平台额外现金补贴
+
+text 7094548015129706498 author *0+l 1️⃣做那种经典的、有料可挖的经典影视剧；
+
+text 7094548015129706498
+
+image 7094548015129706498 center RbD1bMiDoobX2LxfP93c7IpAnHf image/png image.png
+
+view 7094548015129706498 Vt8IdIlTAoCfwGxiI92chc8Zn6c Card
+
+text 7094548015129706498 author *0+3b •内容质量高：不要做过于普通的“剪辑＋解说”，要有创意亮点、独特视角，实现差异化。但是这个描述大家很难明白他的具体形式，最好的方式就是你要知道哪些作品是精选作品，对标精选作品来打磨自己的是最落地实操的操作。
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+4y 之后参加了24年12月的YouTube航海，生财的第一波出海潮，国外赚钱国内花，在美金的巨大诱惑下，七倍的收入让我着迷。我毅然决然的放弃了小红书，加入了油管，因为我认为我当时入小红书已经有点晚了，打不过他们矩阵化的运营，而YouTube又是在圈内第一次教学，我相信自己的学习能力可以成为第一波吃上螃蟹的人。事实上，证明我确实可以在YouTube上拿到结果。
+
+image 7094548015129706498 center XZsBbta7RokKRXxu1IWcd68on8e image/png image.png
+
+text 7094548015129706498
+
+text 7094548015129706498
+
+grid_column 7094548015129706498 Yu1ZdSVc5okVvKxdYkfcxAp3nSf
+
+file 7094548015129706498 OFrPb2rbxoKSSBxyvqAcGmZCnBC video/mp4 【电脑】基础剪辑10-作品如何导出设置.mp4
+
+image 7094548015129706498 center FVzgbrnOZosuMLxBf8qc6IAmnxd image/png e6becd70a7a138f9a64d82054e251736.png
+
+text 7094548015129706498 author *0+1d 7、种草激励：1000粉丝可以开通，通过好物分享爆款激活搜索词赚钱，也是只作为补充，无需专门关注。
+
+text 7094548015129706498 author bold true *0*1+b 第一种是精选内容加成。
+
+text 7094548015129706498 author *0+1h 我通过买频道发现了中文小说故事赛道可以做，而且方法极其简单，十几分钟的视频画面仅用一张图片+剪印字幕识别。
+
+grid_column 7094548015129706498 SLiadGESpoTvHix4cNPczS08n9e
+
+page 7094548015129706498 GJiydArVKoK9KOxKtsTctPQOnlf VsQsdwoGuoxJDmx2mThce3Hzn7g OPO8dCWz9otp7CxObDDcGQqpnnh OcP8d9ObooA2HwxTsJncRvvPnRg Oy2kdVf1NocDX2xdlbAcYyCTnUc T6IHdu2zAojSy0xw4recQ4gTngg Wz6cdTPYkoe4v1xEne5c6cWJnDb ZFohd4Zo5oar3hxVu9rc8AHynIg Dj8PdE1CAowvr5xUaBbc8lVTnuf StPld1ohTos5rKxLCkEcAuZMn0c XhMednV1BovZY8xvj4IcxQRNnpc FQgVdPBrIoc6UoxjocxcGQ8MnCc Lz7udRJRYoElzVxZfpvcYX6Antc LTKEdtupXoFM6MxvVQuc2V6Pnkc HoCQdeN4uo3zvAxVl9pcc6Msn9c AoAldu87uoI8GSx8Z1qcqc3bnTc KNrgd5TQjoKqkhxpaaZcv0m1n4f PvhddjeCYoUsjoxXWzOcW6gfnHc JgrUdcAQAoiwE6xf9RncTxsZnke KELcdcHQAoIkYLxzEdZcFWRInId LDqLd7DZlooli5x5qYLcgtPjnpf Myl0d4DsQoFNCKxXymucolVrnUd GBR2dgNNBoXsc4xnotHcUGnvnPd XRuZdPMqLo30kXxar4zcl9lMnId UuKXdG574oWqglx4JJrcyJLInHh ZAUQdFYG2oarCQxX1LmcR7L3nWf Pl9KdlAeYoLvDBxor39cjmObnTg L9DZdOHHeoEHZ6x6eJ6cSQifnuN OXyodDVk6ob69exXSERc8wR0nRb YbvxdIkO0oq3GxxCAVgc51btnIh LM43dtck9ooEUvxC5Vmc7QQjnsh ViZkd0XnXomtuhxYbg7cDvFZnKg B7o3d4T6aoJkZOxPBe7cZUB1nUd ZY04dBvfwobfw0xUuLscUHfunzc OiUSdZ7zzogn9wxnOytcFYFZnXd VfyCdhJk2opMGkxGB6JcSixSnje YMnGdF9K9oCbVixx7kWcAeBOnRg ZInqd3pD8oD4PvxwoMAc91osnAg Vq5OdCeK1oYjVqxZCRucY8Qdnzd ZB0Xdby9doPq5Qx1TZFc92QqnTb MOefd4CBgormFhxYe1mcyyNYnIc KiNxdYgytoyoqrxUoY0cIHTonSe UFdbdynBIooPJfxErpoc0eORnOb QheTd9f8zomXbextW4jc1vJOnOh A3mPdrr6moxvL2xTv4Iche3Pn9g MayEdyqaXo0HUExnGnzcT76Tnbd Rai5dCEQmod3tDxeU0DcPmdRnke GJf4dBBl0ogeJKxW5l0cOxFEnof DIm9dNZixoxHtQxe3drco59LnIb R9BQdnLnEodR6XxaxFUcCvnEnWW YUJGdpzf7oPFdyxwTKlcfanXn8c NEdHdYcAYovcbHxNgR0cc8U5nFg Ze2dd2jS9o8QRgxkOFfc65z2nIh E5ixdj1XgohHXDxhIRfcg25pnef OcGVdpjNGoEqalxykihcn9aDnoj CzavdDRfsoRNvsxGCkFc3BPkn8d D2LgdhFYgof3CAxWOs3cWrvEnXg TxCXdOO4goE3kTxJTDRcjOwon4g OHKndI5zaolFg7xiK0XcvGwHnpf FjbMdyHTfo4fNNxWlNpcK8whn3c KXlidF5bgoMgPnx9A87cukd0nAe Qt2zdt3auoyfI3xmh4ecOm35nsg SsYld8eelob9Tjx3BHXcqJyFnkg UH7bd98lKoUwbmxxZPgcynrYnGd M86Md4J3YogS1oxRjo6chlrtn3g XDCtd9IwDoK0kLxwkNHcdA9SnGe VuTpdoqWzooGXdxTn2jcwhyxnYd PzGmdLvqUoeDA0x0NuEc0mfHn6d CXIldizNWofiTexZaIwcbWzLnVe NfLedJ8L6ov3vWxKaeZczen8nnb CrbsdFkJfooouZxou9Ucl0QsntM AKI2dvHVIoCI6WxLq0CcThxvnUc ALMtdp7HroR0BixWfHTcvWwgntc HdWvdsUKNo6i8hxdhQrcGSeVnZd XRfBdPqL5oWhu5xoBKLcq7xunRy F2S5dGdXvo7oimxywZ3c1AtVnGd We4ldMbbsogHhNxTR0fcg6YznNf YZwJdVh3qodoCsxhc79c64handx HkpvdpZP7oydM3x0XVnccXN4nhe KlcQdxf18o9vccxQJTfc0EWWn2d A3sGdaVHtoOPuJxtqagcpXPunMy P0jSdV16YoIwcux4tsGcAoo3nie KJWedRdiDoR4p9xHaygcGTd5nyf Ut7pduE6dojCN3x8bgdcWaWHnyf B3A9djv7hoMqG2x1fyVcgolCn6c YwridmsmwoRtTdxGQ8IcIjlTnRb L9YAdTyyloZoWWxmmHscILa8nue C6i5dkwVWsKGoAbic1nc54PNnSd LV8idsh4loJfUtxEMiecZc5Hn7e JO0AdEQVHoKZQjxtpnscg6tjnqd OatddaqrIooeFxxFCWKcIpzangB LsB1dcxBroW7i8x9lyzcN2H0nqb AOqidMBNboQhOsxkbHOcIkV3nnf DJCIdfnNmov3ZNxsTyncVJOxnyM GF5VdWBFsouBPHxnS75cTmKlnBc KtsNdNrfXor2PlxrsDMcwgnunZb VJ0rdjZJtoNG1DxGRihckDrynFg NK8UdhUmVoh3PPx9ZwSco8lnnyc GGqwdqjYZoiZ7PxPwO0cpReYnrg TCHQdaDEFoR3AuxhRz4ckVOMnhg JHNGdB4zwomdwWxe2bUcOoFWnwh LH2FdN7kOoT1YnxvdvMcg8ZznBf G6EFdRXTQo31Dfxkemqc1ZYkngh HvvvdL20MontFlxogY3cw36unSb K18Kda6CWooyLgxscjocMoTdnzg Iy01dwRuAoBsMSxpzAjcZkX0n2P OXT4dCYhIoS2pTxRFKWcuRKJnVh QYLHdSQyao2EkRxRi8Acq4lfn2b TjSadGRu6o7lybxzszUcROD2nxd WB83dgXiYsyqTobm4A9cYuhun1f Eq9Yd2PK8oaWSAxPnYKcrosSn1d SQj4dmlBhovtTJxY4azcyEMonZf PxW1d2t6poCVCaxsUtRcTk2Gnug VsRndlG8coT2DGxBQ4WceyVdn7b SStodSMTGoMPRYxzGooc9H7SnQx WxeNdcX7CoK962xJgFScPhHZnsc XuqEdWvzfoHqdBxfaHTcmH4qnId BwpXdAQzeovEoxxOoUecXWxOnDg VPP6d6ROMowkcXx1p67cx7NVnUd X4bLdZr3uoaGy5xaO8KcP0FZnVh O9zxdK8wGoxk3px1AgpciixEn6f IAftd5fUVo9r12xFJ8Ec5L1kn8c ED5odyGORo2jQrxc6NzcFJSUn5b IkjpdGaBto2YpyxlrGBcq07cnCf LpwJdqty0ogDFbx2jIrcFgzWnLd I8PJdH5yOoWs9IxBygAcb60Kngf IyRidCJLOo85v6x1H5EcYfQEnMd CobmdIKYIoaYI3xk22scyhtrnLg DkA4dU1bboJz2Gx0lYectOxtnne Ade7dBtkroiVQ1xtTlOcNRGYnZc XJ7jdjTiHoKXAHx72sbcdL6Bnqd Ijl7dWme5oOoBXx5zyjcosKkn1r BqmHd7vfIoyJ6jx0B2YcHjK9nOb Y4eUdveknoa5ylxOeeZclplxndf PiBbdkq8soiKrKx4jOMcgOuzn8c U0zGd34rvoCygwxDSGkcUlRzntf ST6gdMxpCovrE9xU6YyccyrGnXK VdxedrdkqoAGWLxyw11c6whUnqh HjWOd9y1VoRYayxkMb8cG4d2nWc DmOodBKo5o5YSQx3HpYcNqmin2b OQL5dkbdBomTa6xuU7IcbkHOnTe O7XzdmkiAoZlQ8xjegucQXgpntc N9pcdpRhzo5n6Cx4tB6cFPhUnvb ASb7dClwZoxR2HxLYgRcrW96nrf Yy0ndH3eiogCGIxUGGucKdGWnfe Rs2idYp06oprNmxsOuucQTfwnVc I9oPdgspiogKCfxB7Uqczhennuc YsXYdEGxxo0Nz7xNBsbcwdJ2n5L Nh44dB1HJokupvxEXfNcZtLVnXg ZiQjdV6IbomOmNxoyF9cl2r0nEe BOItdY1Qzojtujxz7Z0cq7oZnvw IlwZdGZido3iBmxrEGXcBMMMnr3 V3PzdSd9yoH9Wzxzictc8mj6nFd YpI6dxPF1ohG1AxtiiYcuZannRb WcW7dZEZpohh8JxAoUEclbpNnMI HvMndgaBioTI29xKHtpctYMvnHh SYtudFun5oSzRQxe6zlceABQn7g KWTjdWRRho9hM7x3whUcWCl8nzd EfkcdwOrRoKeUTxNZxkcYIAjnKh N8UGdX58Xo93Fhx37RrcOhjPngb KbdAdLLEXos8YMxDJ46cXApWnte Ur5Dd2SoPoSNzsxSWJbcrSYinBf OaYudQB2LoJ9LMxVdYccQCYqnUc Jr3AdyPoko5POTxiwEvcHUQBnoh CDpCdehS1ojjjbx3TbWcBluGnTh QxijdNtXJoGDz8xALSsceIRinld YNgBdLGyFoGJcKxyijAc1Sjknxh UtWDdE66Roc20yxs5ApcSmDynMg Qsu4dEzMEozTDHxlhmgchDKLnFd MH3edGpuloF6dVxrnyLcq6Uknce QtcRd1of7oKqlyxR6lHcPpeynxg OTZIdBcWbo3EddxqkwRctyTcnYE ZM2Gdt1cMoqCbTxUWrjcCjd3n7c L1U7dzGfkot4YZxsuO1cVtAIneb QCBqdyx5voJhsPxvPMqcGevqnOc Jyecdi6iOogzPLxbwuwcZ09Rn7e HMW1dEPkroRgZJxv4SLc5NcPn5g BjGxdV9KZotCksxwyDwcfiYHnrd OSRYdpJblonY84xifqCcDCdrnNc AMpSda9L1onbFXxokM1ccXcEnjf YLnKd3Waoo1lFXx1ScYcgw8enUf AMPvdBav3oXx8lxy6cpcG5dPnaf BISDdwEj0oPjasxObaOcawPtnyg CluHdxlffoJsHox6yj7cutymnVh Kv3IdyRcFoTW5fxhHjLc6AYTn9c VXUHdBwNEoSWDyxpeB7ckCDcnxb R4xmdcavOoqmp1xk2ddcQAiqnqF B78Td4RbWokloJxlcsVc8Cuenpd D2VzdLe3CoUsjnxcpHocyjc9neh INbHdRy29oJPNVxbKEHclkBanRV MpvFd3VRLoYIPSxBeVWcpx4Lnkg PTbZdXkFtorZTqxwuLHcc0NrnLf F79HdjH6nodDAKx9LKYcjNjanHw DpV4dpmntopjsnxgjEWcXJNRntb W8uwdSUoHo3EoAxGdNqcWqH5ncg Zk3Fdjx9So4bkExTKZecIIlknmg JbfAdbtHSoSnNax9hikczAbqn7K Vk4Zd5dCLoyJTvx1m9GcLKpBn8f KXT3drdMAoaGnMxEMSdc1DQOnbb X4KxdeQzloJOpAxPAq1cEgxMnZd MQHgdZA9ZofuwGxYPgRcMJz7nIh NA9SdutU3o6oTUx5FOlcNYBSnM0 WyRmdlkvToPXaFx1MYkcr9DYnxb HDl5dHCNVoudTtxc3jmc3G6XnPg P6RUdHL4GoFmucx1xoLciMkcnyg LFw1dhR76ondrYxBTTZcvjYfnDh PCjfdBZNXotSNHxXI2cc7iUmnSd TCWvdll20o0qebx6QB3cUlj9nmd UPiudRNw9otVlqxMUb1cw8VrnRe LjRddNuJzoQPakx0s6Wcd8Kxnwk Rg82dlvqWonK7KxFXDCcKKronlg UkxqdNXI9oFacNxILXPcavyknVf Z5uTdWUN3oRedmxYBqvcdxXmnaf BMr5dGsZkoqdFdxNsvCc2eXJnxh AglodUJmUoIOklx6GsfcLsI2nNf LSOGd5CRBoi26GxvcvtcuYVsnlh UobhdNKpHoWS67x8VxdcHskSnSc TSRMdMbuDoDZZAxopg8cLmxCnVb GPa7dVWeboOUoOxxmFpcI0irnCf VBzSdkGdgowJSQxtSFYcRpB3npc ISmwdmx0IoOH5ixyM1YccSewnKc USTwd0CKDoQk4UxPVi8c5gEWnBh OEfydJcRqogCuRxoBOZcT7Hknub QPSPdH3OIohp4fxzR8wcGayQnRe SzkDd7NZKoebTKxSkbDcA6abn2c BERId3kMgoNet6xDGTncXSJ0nTh BtBTdTN6goPghNx4OGccuHPMnDf AqbNdHaUQoY3nYx0l41ck0Zxnyb ELYqdIkd2oe1pFxuguTcCX0HnRb DMJHdY3ZqoLQMVxBs0jcKW6Zn8b CX5Nd54Rmo1IMqxnyBPcyhiKnBe OMMKdkkEfotodDxpZuTchHernze UM1bdpepPoczNSxoHxqcuYPqnke TAMTdckTyokmiGxC08ycjuYInfc CS3vdFElFoExaPxBk0bceKOAnic DHGPdW3gpoJXdbx5rDBcmBXnndg Ga1pdY1Ljof5tBx9cBccFOpQnye LIncdOR1bovYVKxHpy3cHkv4nEc P2n4dirPDoxUK3xNjzbcdIMLn4g WJaod269CosLpbxfhYDcH4Nknpc HznRdmz54o33L8xGbo3cKJycnab KuWfdCUz8ojza3xbnx4c8KWinOd YoRcdf8xjo4iLOxZI9ScTyHMnad IT1TdoJIqoD6NAxXeNBcUGGMn7g JT4rdiAeooSDjLxkyjKcVRKbn8d SsaZdfS47oDb5XxxFAYcINwlnyh LUHDdUdXso3dQcxtW2Tc0EHdnTc QYp3dYUSboKzblxEhOycbPWDndf ZqGud2OzloSIp1xe19zcv68Pnde PBmzdGZ8zorPsuxZ4RWcykWgnWg Uhu8dlOVhotlTFxMzwPcrRa3ngg TUTudbuTioQtEjxJkuKcRG8Xn0c O733dMbXuoy8coxPrgJcX6gTnFd ERvYdatp0oogaQx7YpNcY3M2nHg TBxsdt22loV9EGxh190cmMHon4f DKZndgJqloFCfBxhPfucterAnMc R6uQdTTbpoSSsQxg03gcFjKLn85 Cwe5dZARgok6jFxEVQWcgTE7ndf U7k3dMvYwoxKjsxi0DPc3VcunYg GJzKdchFWobaurxERPkcl3Q7nme CJdQd9JSmoyuCVxDXJjcwTISnJp FwSZdZfDPoryC5xoVykcYIRUncg DGybdwcaKocYgox0tZFc06ftn7b A6wXdQRJ3oTnjKxMhqkcaOQInqd Xto8dywiVoabQHxs5DJc1DRJnTb TUO8dRnKsoCcSrxwp2TcnDkanSf UXkvdupZZotzZox2xjxcdmo7nph RvDpdn37AouIaTxVp1xc7HFbnXc Svj0dMNqeo3czGxOp4vc81rOnEb E07wdzq5joXeomxAiL7c3L6GnBd HTHwdRfj6oVipgxJEdkcRfoYnPh HYCsdEXBio1H9RxS2uycBoNGnGh Y1gsd2tlAomI2IxS5XVcvShUng4 TjzYdJT3loF3Ifx1g5wcZ6QGn7f TQccdYTPqoIlKuxAXS4cKKCYnxe Fz2SdoQTeo54NaxEhXzcej5Jn1g OrHsd7wBdoxntPxSQyecisfvnHc KAEjdOkdVoda03xMR4scKKsVnAd AYKOdFFyUoN3oIxuLIdccDYYnkd ANqRdEccmoeOWBxqqw5ciw88nWg author *0+11 从YouTube创作转向抖音独家伙伴计划，我如何用四个月实现稳定月入10W editors edit_time
+
+text 7094548015129706498
+
+image 7094548015129706498 center ORJ2bEAguoRclVxHLj4cTkk6ngf image/png cf8961f63e24d6acc5ff601d74e677fe.png
+
+text 7094548015129706498 author *0+k 👇🏻进入详情页，计划规则可点击右上角
+
+callout 7094548015129706498 JknkdKsIJonXVEx1OvvcF9mvnOf YtEqdmY77oPf2TxcCMVcGRrjnbh GJWOdjI3ho5995xo4xtcCGCEn3f TPFwd1eG7oyhrDx5v9Bc7HJcnQd JgGGdeiuToBpbFx9P3Zc8gthn8d XDP8dhdIAoAor2xkaylcAL43n0b YTEpdiAeNoySK0xyCX9ceNzanpd ZuXAdOmL2oqOcWxyJSqcfvecnGc MElldtwARo8GDpxlfhncSgoVnYb V2kqdtS5RobQ8Cx6C5JcSQEnnbb GxredfUdYoh1ppxbsjZcj66LnIf rgb(255,245,235) rgb(254,212,164) left star2 1f31f
+
+text 7094548015129706498 author *0+1r 创作者伙伴计划是什么？——简单来说就是，创作者发布优质视频，拿平台现金分成！是平台针对优质和原创内容创作者提供的现金激励计划。
+
+quote_container 7094548015129706498 KjdpdqIPooOOmixxMrHc0Aranth AfNLdiXaToIVp3xG2L5cb0L1nJe F0vud5P11oaXWMxpVC3c0AkpnLd HiTydflFUoo8jGx9p45cJ2X6ngg
+
+callout 7094548015129706498 AEiRdTgr8owgr7xMXEicz81lnrb rgb(255,245,235) rgb(254,212,164) left glass_of_milk 1f95b
+
+image 7094548015129706498 center CVgObhUa4oFg6Kx9GC9cEv2nnah image/png f99b2bd49f41ceb74d470f8bd748cdba_720.png
+
+text 7094548015129706498 author *0+i 做影视剪辑，首先涉及到的这个选题问题
+
+callout 7094548015129706498 NYFudq66voZYE7xQo1HcJAb8nfg rgb(255,245,235) rgb(254,212,164) left bulb 1f4a1
+
+text 7094548015129706498 author *0+12 只不过你在做这个影视幕后解说的时候，你选取的这个影视作品的话，主要分为两类：
+
+grid_column 7094548015129706498 FpEjd48iQoaPA8xfuv9cD943nJb
+
+view 7094548015129706498 V8DrddLaJoTaZNxYcJxcoE8Onpb Card
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+1b 一大类叫做原创实拍类。比如说大家平时看到的口播、记录生活类、搞笑段子、美食探店等等需要自己拍摄
+
+callout 7094548015129706498 Mlk1dCAH2owsE1xsV6Ncv6khnBh rgb(255,245,235) rgb(254,212,164) left musical_score 1f3bc
+
+heading3 7094548015129706498 author bold true textHighlight rgb(143,149,158) textHighlightBackground rgba(255,246,122,0.8) *0*1*2*3+9 结算与提现规则
+
+grid_column 7094548015129706498 Qi8Xdwc4So6SP1xsLBecuC7ZnSN
+
+image 7094548015129706498 center NWFmbgLt1oQk5vxZPWvciwHgnIg image/png 640.png
+
+text 7094548015129706498
+
+text 7094548015129706498
+
+text 7094548015129706498 author bold true *0*1+d 第二种是独家内容高额加成。
+
+view 7094548015129706498 DGM6dEN5SomZAUxA68IcaMbunKg Card
+
+text 7094548015129706498 author *0+15 🔍温馨提示：本文主讲创作者伙伴计划和独家计划的收入，其他的只做了解不做具体讲解。
+
+heading3 7094548015129706498 author *0+f 第一种——主动申请加入计划
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+2y 直到在大学朋友的引导下，运营油管的同时又加入了抖音，又成为了一名国内内容创作者。跟YouTube内容创作有异曲同工之妙。靠抖音的伙伴计划和独家计划，目前成功实现了稳定月入10W，让我在创业这条路上重新拾起了信心。
+
+heading2 7094548015129706498 author *0+c 3.选择适合自己的赛道
+
+text 7094548015129706498 author *0+1j 3.巨量星图商单：适合有一定粉丝量级和稳定播放量，内容策划&创意能力较好，本身内容定位上有商业植入空间的作者。
+
+heading3 7094548015129706498 author *0+b 创作者伙伴计划赛道分类
+
+file 7094548015129706498 MswYbHxNyoxfDmxb75DchI0unFg video/mp4 【电脑】基础剪辑01-素材导入准备.mp4
+
+heading2 7094548015129706498 author *0+b 2.加入伙伴计划的方法
+
+text 7094548015129706498 author *0+1m 如果你的作品原创度高，核心价值清晰、数据达标，就会被系统自动标记为精选，普通精选能小幅增收，爆款精选能大幅提高收益。
+
+image 7094548015129706498 left QQ1DbNN3Zo4xY5xJWx8cNMl4nef image/png a4f31859ef02622f5028897703d9257f_720.png
+
+grid_column 7094548015129706498 FCFqds5ZHoyXC1xE4R1cIDugngb
+
+image 7094548015129706498 center Ll50bUwEZoEVb8xBzL0cOijcncf image/png 0154d757975c8890c40d07d007f1c4a9.png
+
+text 7094548015129706498
+
+view 7094548015129706498 JIfHdeRWwoixWLxeO81ccsUwnLd Card
+
+text 7094548015129706498
+
+heading3 7094548015129706498 author *0+6 第二步：选剧
+
+heading2 7094548015129706498 author *0+8 2.跑通从0到1
+
+text 7094548015129706498 author bold true textHighlightBackground rgba(255,246,122,0.8) *0*1*2+x 接下来，我将手把手教你怎么去剪辑、找素材和选题、以及文案创作方法。
+
+file 7094548015129706498 EfbtbziIsoKWEkxC8EvcNb28nIf video/mp4 【电脑】基础剪辑11-选定某一片段导出.mp4
+
+callout 7094548015129706498 G9CQdyT2FooNaTxsPqvc84UanCg rgb(255,245,235) rgb(254,212,164) left pencil2 270f-fe0f
+
+text 7094548015129706498 author bold true *0+h*0*1+8*0+23 目前市面上有人进行此类账号的售卖，价格在一两千不等（具体看账号内容形式），但是不建议购买，成品账号鱼龙混杂，大多是没有收益的低质账号或者单价很低，一旦不小心购入甚至无法转让，因为实名信息只能修改一次。
+
+text 7094548015129706498 author *0+r 单条作品的基础收益=获利播放量X千次播放单价/1000
+
+file 7094548015129706498 KxTob0fBKobtv6xoDZ5cFHmmnFf video/mp4 【电脑】基础剪辑03-音画同步+画面衔接.mp4
+
+text 7094548015129706498 author *0+36 这个就是我们常说的签约独家，这个功能个人无法主动申请，只能是被动式邀请，或者通过 MCN 来提报，签约的作品仅能在指定平台独家发布。平台会给到更高的流量权重和广告单价加持，优质的独家作品增收优势非常明显，是伙伴计划的收益天花板。
+
+text 7094548015129706498
+
+image 7094548015129706498 center WjWkbDWuKoFrgoxiCXpc8v39ndc image/png image.png
+
+grid 7094548015129706498 UE8adwIZkoLsP8xV0R6cD0Elnbe PlicdvPjTowOfKxuDPdcOLO7nU1
+
+text 7094548015129706498 author *0+26 曾经在小红书、公众号、YouTube等项目拿到过一些结果，做小红书虚拟资料的时候没有放大思维，跑通了从0到1，但是没有坚持下去，当时自己的认知还是太局限了。
+
+heading2 7094548015129706498 author *0+9 4.收益的计算方式
+
+file 7094548015129706498 GxszbsPNFo2fNXxq1HjcHBeqnCe video/mp4 【电脑】基础剪辑08-背景音乐+动态水印.mp4
+
+image 7094548015129706498 Qvzzbd82No5WrhxwU4WcjWO7nhd image/png ocwV6aTv.png
+
+synced_source 7094548015129706498 VBGzdMW6NozDPuxTrQWcUpWQnPb author *0+3 同步块 left
+
+text 7094548015129706498 author *0+t 2、抖音精选独家账号（独家计划）：
+
+view 7094548015129706498 HlWUdOR4To5o94xJePjcwcJqnEd Card
+
+bullet 7094548015129706498 author *0+1a 关于涨粉，尽可能做自己领域的作品，要不然后期涨了粉再切换赛道数据也不好。 left
+
+text 7094548015129706498 author *0+w 抖音创作者伙伴计划的完整收益结构是怎样的呢？新手看完一次性搞懂。
+
+grid 7094548015129706498 DzJhdZkROowKKWxzzJDc8g0tnFd S8E0drRFOoaleYxscmZcUQOSnvp PD3Od36VpoMBEaxwYSCctZkanmd Qua9dKjfEo4IiZxh3pkcjwYtnLg
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+m 抖音APP直接搜索创作者伙伴计划，点击去查看
+
+text 7094548015129706498 author *0+x 为什么自己播放量不低，收益却很低？核心原因就是受这两个因素的影响。
+
+grid_column 7094548015129706498 Kmd3dK3LaoDo2Lxss0mcXS8Tn9c
+
+bullet 7094548015129706498 author *0+29 首先这个数字会变动，从24年刚开始要求5万粉丝到25年4月份降到1万粉丝又到了25年11月份降到5000粉丝，粉丝数未来应该会继续降，最终应该会在1000粉丝左右 left
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+f 我的分享主要包括以下几个方面：
+
+text 7094548015129706498 author *0+c 首先我把收益结构讲清楚。
+
+text 7094548015129706498 author *0+k 这是普通账号和高收益账号拉开差距的关键。
+
+heading2 7094548015129706498 author *0+c 3.同质化和儿童危害的坑
+
+text 7094548015129706498
+
+text 7094548015129706498 author bold true *0+k*0*1+10 在抖音赚钱，最主要的几个内容变现形式是：创作者伙伴计划、巨量星图商单、电商带货、内容付费、广告收入、种草激励等。
+
+text 7094548015129706498 author *0+f 下面我来介绍一下抖音变现方式。
+
+text 7094548015129706498 left
+
+text 7094548015129706498 author *0+23 但是单价没有我预想的高，千播在3—5刀左右，只能通过批量化的发视频来薅流量、薅收益。单账号月收益在1千刀左右。几个月后同质化流量太少了，就直接断更了。
+
+heading3 7094548015129706498 author *0+c 第一步：基础影视剪辑方法
+
+callout 7094548015129706498 K0aWdk9RyowcWJx8nr4cQqGpnVg rgb(255,245,235) rgb(254,212,164) left umbrella_on_ground 26f1-fe0f
+
+text 7094548015129706498 author textHighlight rgb(216,57,49) *0+5*0*1+8*0+1 有些剧其实掺杂了好几个类型。
+
+image 7094548015129706498 center KI9XbGc7PoJqp4xjWPWcwQGWn8f image/png 0cf18cd91f9988fb1a28fc78435e28d9.png
+
+text 7094548015129706498
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+1s 5.内容付费：有深度、优质的内容制作能力，可以就某个课题展开多集深度解读，建议了解和学习以内容付费的形式实现长期主义的变现提升！
+
+text 7094548015129706498 author *0+3o 我是24年12月第一波加入YouTube航海的人，在航海期间学到了账号搭建、赛道选择、内容创作、如何开通Adsense收款等相关基础问题。但是我发现分享的教练全是做short类视频的，这个时候我就去闲鱼、小红书搜索YouTube的相关长视频的知识，包括赛道分析等。
+
+text 7094548015129706498 author *0+1z 这个频道就倒在了12月，好在11月的钱到卡了才被关闭获利，手上的矩阵还是被清扫了不少。这种几个短视频重复拼凑的形式是有风险的、迟早会被淘汰的。
+
+text 7094548015129706498
+
+text 7094548015129706498 author *0+2w 这个频道的内容是做Kpop内容的，基本上也是踩中了风口，发的长视频基本上都是十多万播放。几个跑到了百万播放。内容是多个几分钟短视频拼凑在一起的长视频的，时长在20-30分钟，肯定不少YouTube圈友看到过。
+
+text 7094548015129706498 author *0+k 2️⃣要么就是做当下热播很火的、有流量的
+
+text 7094548015129706498 author *0+16 我还做了其他的英文类赛道，例如战争、金融经济等、还有无语言长视频动画，都拿到了结果。
+
+text 7094548015129706498
+
+text 7094548015129706498

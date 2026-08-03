@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>昆仑设备知识与智能运维系统 (KGOS Industrial Agent)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', system-ui, sans-serif; }
+        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+        .glow-green { box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); }
+    </style>
+</head>
+<body class="p-6">
+    <!-- 头部 Header -->
+    <header class="glass-panel rounded-2xl p-6 mb-6 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <div class="p-3 bg-blue-600/20 rounded-xl border border-blue-500/30 text-blue-400">
+                <i class="fa-solid fa-microchip text-3xl"></i>
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                    昆仑设备知识与智能运维系统 (KGOS Industrial Agent)
+                </h1>
+                <p class="text-sm text-slate-400 mt-1">版本: V1.0.0-Beta | 数据风控网关: <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-shield-halved"></i> 已开启 PII 保护</span></p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-6">
+            <div class="text-right">
+                <div class="text-xs text-slate-400">系统连接状态</div>
+                <div class="text-sm font-semibold text-emerald-400 flex items-center justify-end gap-2 mt-1">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span> API 8088 正常
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主面板 Grid 布局 -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- 左侧：设备指标与实时传感器 -->
+        <div class="lg:col-span-4 space-y-6">
+            <!-- 设备概览卡片 -->
+            <div class="glass-panel rounded-2xl p-6">
+                <h2 class="text-lg font-semibold flex items-center gap-2 mb-4 text-slate-200">
+                    <i class="fa-solid fa-industry text-blue-400"></i> 监控设备档案
+                </h2>
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between border-b border-slate-700/50 pb-2">
+                        <span class="text-slate-400">设备编号</span>
+                        <span class="font-mono text-blue-300 font-bold">DEV-PACK-001</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-700/50 pb-2">
+                        <span class="text-slate-400">设备名称</span>
+                        <span class="font-medium text-slate-200">高速自动吹瓶与包装一体机</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-700/50 pb-2">
+                        <span class="text-slate-400">所属车间</span>
+                        <span>1号车间-3号产线</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">额定标准产速</span>
+                        <span>12,000 瓶/小时</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 传感器状态卡片 -->
+            <div class="glass-panel rounded-2xl p-6 glow-red border-red-500/30">
+                <h2 class="text-lg font-semibold flex items-center gap-2 mb-4 text-red-400">
+                    <i class="fa-solid fa-triangle-exclamation"></i> 实时传感器告警
+                </h2>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-slate-300">主轴承外壳温度</span>
+                            <span class="font-bold text-red-400">88.5 ℃ (偏高 12.5℃)</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-red-500 h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-slate-300">主轴振动加速度</span>
+                            <span class="font-bold text-yellow-400">4.2 mm/s (轻微异常)</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-yellow-500 h-2 rounded-full" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧：AI 智能诊断与自动工单区域 -->
+        <div class="lg:col-span-8 space-y-6">
+            <!-- 诊断提交与诊断结果 -->
+            <div class="glass-panel rounded-2xl p-6">
+                <h2 class="text-lg font-semibold flex items-center gap-2 mb-4 text-emerald-400">
+                    <i class="fa-solid fa-brain"></i> AI 智能故障根因诊断
+                </h2>
+                <div class="mb-4">
+                    <label class="block text-sm text-slate-400 mb-2">输入或选择设备异响/异常描述：</label>
+                    <textarea id="symptomInput" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-500 text-slate-200" rows="3">电机温度偏高12度，伴随主轴承高频异响，产速下降15%</textarea>
+                </div>
+                <div class="flex gap-4">
+                    <button onclick="runDiagnosis()" class="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-medium px-6 py-2.5 rounded-xl transition flex items-center gap-2 shadow-lg">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> 运行 AI 智能根因诊断
+                    </button>
+                    <button onclick="generateWorkOrder()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 font-medium px-6 py-2.5 rounded-xl transition flex items-center gap-2">
+                        <i class="fa-solid fa-file-signature"></i> 一键生成结构化维修工单
+                    </button>
+                </div>
+
+                <!-- 诊断结果展示区 -->
+                <div id="resultArea" class="mt-6 hidden space-y-4 border-t border-slate-700/60 pt-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-slate-300">诊断评估紧急程度：</span>
+                        <span id="urgencyBadge" class="px-3 py-1 bg-red-500/20 text-red-400 border border-red-500/40 rounded-full text-xs font-bold">高</span>
+                    </div>
+
+                    <!-- 概率原因 -->
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-400 mb-2">可能故障原因与概率分布：</h3>
+                        <ul id="causeList" class="list-disc list-inside space-y-1 text-sm text-slate-200 pl-2"></ul>
+                    </div>
+
+                    <!-- 建议排查步骤 -->
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-400 mb-2">建议排查与处理步骤：</h3>
+                        <ol id="stepList" class="list-decimal list-inside space-y-1 text-sm text-blue-300 pl-2"></ol>
+                    </div>
+
+                    <!-- 配件与安全警示 -->
+                    <div class="p-3 bg-red-900/20 border border-red-500/30 rounded-xl text-xs text-red-300" id="safetyBox"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS 逻辑控制 -->
+    <script>
+        const API_BASE = "http://127.0.0.1:8088";
+
+        async function runDiagnosis() {
+            const symptoms = document.getElementById("symptomInput").value;
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/diagnose`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        device_id: "DEV-PACK-001",
+                        device_name: "高速自动吹瓶与包装一体机",
+                        symptoms: symptoms
+                    })
+                });
+                const json = await res.json();
+                if (json.code === 200) {
+                    renderResult(json.data);
+                }
+            } catch (e) {
+                alert("请求失败，请确保 backend API 8088 服务运行中！");
+            }
+        }
+
+        async function generateWorkOrder() {
+            const symptoms = document.getElementById("symptomInput").value;
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/work_order/create`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        device_id: "DEV-PACK-001",
+                        device_name: "高速自动吹瓶与包装一体机",
+                        symptoms: symptoms
+                    })
+                });
+                const json = await res.json();
+                if (json.code === 201) {
+                    alert(`✅ 维修工单生成成功！工单号: ${json.data.order_id}\n已自动推送给维修组！`);
+                }
+            } catch (e) {
+                alert("工单生成失败！");
+            }
+        }
+
+        function renderResult(data) {
+            document.getElementById("resultArea").classList.remove("hidden");
+            document.getElementById("urgencyBadge").innerText = data.urgency_level;
+            
+            const causeList = document.getElementById("causeList");
+            causeList.innerHTML = data.possible_causes.map(c => `<li>${c}</li>`).join("");
+
+            const stepList = document.getElementById("stepList");
+            stepList.innerHTML = data.suggested_steps.map(s => `<li>${s}</li>`).join("");
+
+            document.getElementById("safetyBox").innerText = data.safety_notes;
+        }
+    </script>
+</body>
+</html>

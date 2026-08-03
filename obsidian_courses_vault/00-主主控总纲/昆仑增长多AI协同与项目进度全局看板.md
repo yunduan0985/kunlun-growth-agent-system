@@ -75,8 +75,15 @@ updated_at: 2026-08-02T23:50:00Z
 - [[昆仑增长商业化落地路线图与战术打法]]
 - [[AGENTS.md岗位说明书与行为约束通用规范]]
 
-### 🆕 新增加载项目：课程I-AI商业写作与出版OS
-- 路径：`/Volumes/MOVESPEED/下载/AIcode/Agent/obsidian_courses_vault/01-课程矩阵 (8大垂直方向)/课程I-AI商业写作与出版OS`
+### 🆕 新增加载与研发成功项目：
+- 🟢 **【昆仑设备知识与智能运维 Agent V1.0 (KGOS Industrial Agent)】**
+  - **状态**：🟢 `COMPLETED` (100% 开发完成，已产出生产级 RESTful API 服务与控制大屏)
+  - **路径**：`apps/aria_industrial_agent/`
+  - **包含组件**：
+    1. 前端大屏：[web_console.html](file:///Volumes/MOVESPEED/下载/AIcode/Agent/apps/aria_industrial_agent/web_console.html)
+    2. 后端服务：[api_server.py](file:///Volumes/MOVESPEED/下载/AIcode/Agent/apps/aria_industrial_agent/api_server.py) (8088端口)
+    3. 诊断 Agent：[agent_engine.py](file:///Volumes/MOVESPEED/下载/AIcode/Agent/apps/aria_industrial_agent/agent_engine.py)
+    4. 事故知识库：[chinese_knowledge_base/](file:///Volumes/MOVESPEED/下载/AIcode/Agent/apps/aria_industrial_agent/chinese_knowledge_base/)
 
 ### 🏫 垂直子知识库：上海 K12 教育行业知识库
 - 状态：🟡 `IN_PROGRESS` (已建立挂载节点)

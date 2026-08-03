@@ -1,7 +1,8 @@
-[submodule "apps/aria_industrial_agent/upstream_aria"]
-	path = apps/aria_industrial_agent/upstream_aria
+[submodule "apps/math_wrong_notebook_web/engine/hku_deep_research"]
+	path = apps/math_wrong_notebook_web/engine/hku_deep_research
 	url = https://github.com/yunduan0985/kunlun-growth-agent-system.git
 
-[submodule "apps/math_wrong_notebook_web"]
-	path = apps/math_wrong_notebook_web
+[submodule "apps/math_wrong_notebook_web/engine/hku_deeptutor"]
+	path = apps/math_wrong_notebook_web/engine/hku_deeptutor
 	url = https://github.com/yunduan0985/kunlun-growth-agent-system.git
+

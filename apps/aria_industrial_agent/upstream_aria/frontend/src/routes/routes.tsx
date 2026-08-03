@@ -1,0 +1,50 @@
+import { Navigate, Route, Routes } from "react-router-dom";
+import { AppShell } from "../components/layout";
+import { WorkOrderDetail, WorkOrderList } from "../features/work-orders";
+import {
+    AnomaliesPage,
+    DashboardPage,
+    EquipmentPage,
+    LandingPage,
+    LogbookPage,
+    OnboardingPage,
+    ShiftsPage,
+    WorkspacePage,
+} from "../pages";
+import RequireAuth from "./auth-guards";
+
+export function AppRoutes() {
+    return (
+        <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route
+                path="/workspace"
+                element={
+                    <RequireAuth>
+                        <WorkspacePage />
+                    </RequireAuth>
+                }
+            />
+
+            <Route
+                element={
+                    <RequireAuth>
+                        <AppShell />
+                    </RequireAuth>
+                }
+            >
+                <Route path="/control-room" element={<DashboardPage />} />
+                <Route path="/equipment" element={<EquipmentPage />} />
+                <Route path="/anomalies" element={<AnomaliesPage />} />
+                <Route path="/work-orders" element={<WorkOrderList />} />
+                <Route path="/work-orders/:id" element={<WorkOrderDetail />} />
+                <Route path="/logbook" element={<LogbookPage />} />
+                <Route path="/shifts" element={<ShiftsPage />} />
+                <Route path="/onboarding" element={<OnboardingPage />} />
+                <Route path="/onboarding/:session_id" element={<OnboardingPage />} />
+            </Route>
+
+            <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+    );
+}

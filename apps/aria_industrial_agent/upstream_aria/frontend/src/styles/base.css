@@ -1,0 +1,193 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Base Styles — ARIA
+   Editorial-calm foundation. Sofia Sans (open-source MarkForMC stand-in).
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@import "./light.css";
+@import "./dark.css";
+
+@layer base {
+  /* Theme-independent design tokens (typography stack, motion, atmospheric
+   * shadows). Theme-specific colour tokens live in light.css / dark.css. */
+  :root {
+    --font-sans:
+      "Sofia Sans Variable", "Sofia Sans", "Inter Variable", "Inter",
+      ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-mono:
+      "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, SFMono-Regular,
+      Menlo, monospace;
+
+    --motion-fast: 150ms;
+    --motion-base: 220ms;
+    --motion-slow: 420ms;
+    --ease-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --text-md: 15px;
+
+    --shadow-overlay: 0 24px 48px 0 rgb(0 0 0 / 0.08);
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    min-height: 100vh;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family:
+      "Sofia Sans Variable",
+      "Sofia Sans",
+      "Inter Variable",
+      "Inter",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      sans-serif;
+    /* Mastercard-style half-step body weight (450) — softer than 400,
+     * firmer than 500. Variable-font browsers honour it; static fallbacks
+     * round to 400. */
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.4;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Editorial display: tight negative tracking on every heading. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  /* Avoid the theme-swap flash. */
+  .no-transitions *,
+  .no-transitions *::before,
+  .no-transitions *::after {
+    transition: none !important;
+  }
+
+  ::selection {
+    background-color: var(--accent-soft);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+/* ─── Form Elements ─── */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* ─── Scrollbar — Polished, near-invisible until hover ─── */
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  *:hover,
+  *:focus-within {
+    scrollbar-color: color-mix(
+        in srgb,
+        var(--muted-foreground) 40%,
+        transparent
+      )
+      transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 9999px;
+  }
+
+  *:hover::-webkit-scrollbar-thumb {
+    background-color: color-mix(
+      in srgb,
+      var(--muted-foreground) 40%,
+      transparent
+    );
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(
+      in srgb,
+      var(--muted-foreground) 60%,
+      transparent
+    );
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(
+        in srgb,
+        var(--muted-foreground) 40%,
+        transparent
+      )
+      transparent;
+  }
+
+  /* Subtle press effect — primary buttons "compress" on active. */
+  .active-scale {
+    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .active-scale:active {
+    transform: scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+}

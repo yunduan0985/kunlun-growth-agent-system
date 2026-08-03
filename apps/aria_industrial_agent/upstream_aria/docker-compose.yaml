@@ -1,0 +1,206 @@
+# ============================================
+# ARIA — Docker Compose
+# Services: timescaledb, migrate (one-shot), simulator, backend, frontend
+# ============================================
+
+services:
+  timescaledb:
+    image: timescale/timescaledb:2.21.0-pg16
+    container_name: aria-timescaledb
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - aria_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks: [aria]
+
+  migrate:
+    image: postgres:16-alpine
+    container_name: aria-migrate
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+    environment:
+      POSTGRES_HOST: timescaledb
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./backend/infrastructure/database/migrations:/migrations:ro
+      - ./backend/infrastructure/database/seeds:/seeds:ro
+    entrypoint: ["/bin/sh", "/migrations/apply.sh"]
+    restart: "no"
+    networks: [aria]
+
+  # ── Simulators — one per monitored cell ───────────────────────────
+  # Four containers share the same image but each runs a different
+  # CELL_NAME + SIMULATOR_SCENARIO so live signal data flows on every
+  # tile in the Control Room grid (not just the Bottle Filler).
+  # The Bottle Labeler is intentionally excluded — it's the onboarding-
+  # wizard target and stays signal-less until the operator uploads the
+  # IOM PDF.
+
+  simulator-filler:
+    build:
+      context: ./simulator
+    container_name: aria-sim-filler
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      POSTGRES_HOST: timescaledb
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      SIMULATOR_MODE: ${SIMULATOR_MODE:-realtime}
+      SIMULATOR_SCENARIO: bottle_filler
+      SIMULATOR_TICK_INTERVAL_S: ${SIMULATOR_TICK_INTERVAL_S:-1.0}
+      CELL_NAME: Bottle Filler
+    restart: unless-stopped
+    networks: [aria]
+
+  simulator-source-pump:
+    build:
+      context: ./simulator
+    container_name: aria-sim-source-pump
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      POSTGRES_HOST: timescaledb
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      SIMULATOR_MODE: ${SIMULATOR_MODE:-realtime}
+      SIMULATOR_SCENARIO: source_pump
+      SIMULATOR_TICK_INTERVAL_S: ${SIMULATOR_TICK_INTERVAL_S:-1.0}
+      CELL_NAME: Source Pump
+    restart: unless-stopped
+    networks: [aria]
+
+  simulator-uv:
+    build:
+      context: ./simulator
+    container_name: aria-sim-uv
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      POSTGRES_HOST: timescaledb
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      SIMULATOR_MODE: ${SIMULATOR_MODE:-realtime}
+      SIMULATOR_SCENARIO: uv_sterilizer
+      SIMULATOR_TICK_INTERVAL_S: ${SIMULATOR_TICK_INTERVAL_S:-1.0}
+      CELL_NAME: UV Sterilizer
+    restart: unless-stopped
+    networks: [aria]
+
+  simulator-capper:
+    build:
+      context: ./simulator
+    container_name: aria-sim-capper
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      POSTGRES_HOST: timescaledb
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      SIMULATOR_MODE: ${SIMULATOR_MODE:-realtime}
+      SIMULATOR_SCENARIO: bottle_capper
+      SIMULATOR_TICK_INTERVAL_S: ${SIMULATOR_TICK_INTERVAL_S:-1.0}
+      CELL_NAME: Bottle Capper
+    restart: unless-stopped
+    networks: [aria]
+
+  backend:
+    build:
+      context: ./backend
+    container_name: aria-backend
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      POSTGRES_HOST: timescaledb
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      JWT_ACCESS_TTL_MINUTES: ${JWT_ACCESS_TTL_MINUTES:-15}
+      JWT_REFRESH_TTL_DAYS: ${JWT_REFRESH_TTL_DAYS:-7}
+      MCP_API_KEY: ${MCP_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ARIA_MODEL: ${ARIA_MODEL:-sonnet}
+      INVESTIGATOR_USE_MANAGED: ${INVESTIGATOR_USE_MANAGED:-false}
+      ARIA_DEMO_ENABLED: ${ARIA_DEMO_ENABLED:-false}
+      ARIA_MCP_PATH_SECRET: ${ARIA_MCP_PATH_SECRET}
+      ARIA_MCP_PUBLIC_URL: ${ARIA_MCP_PUBLIC_URL:-}
+      # ARIA_MCP_URL is intentionally omitted: the internal MCP client
+      # derives it from ARIA_MCP_PATH_SECRET at startup. If the secret is
+      # unset or is a placeholder the backend refuses to start with a clear
+      # error message — set it with: openssl rand -hex 32
+      CORS_ORIGINS: '["http://localhost:5173","http://localhost:3000","http://localhost:8000"]'
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    # Dev: mount source so uvicorn --reload picks up edits without rebuilding the image.
+    volumes:
+      - ./backend:/app:ro
+    command:
+      ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    restart: unless-stopped
+    networks: [aria]
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: aria-cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${CF_TUNNEL_TOKEN:-}
+    profiles:
+      - tunnel
+    depends_on:
+      - backend
+    networks: [aria]
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: aria-frontend
+    depends_on:
+      - backend
+    environment:
+      VITE_API_URL: http://backend:8000
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+    # Dev: bind-mount source for hot reload (preserve container node_modules).
+    volumes:
+      - ./frontend:/app
+      - aria_frontend_node_modules:/app/node_modules
+    command: ["sh", "-lc", "npm install --no-audit --no-fund && npm run dev"]
+    restart: unless-stopped
+    networks: [aria]
+
+volumes:
+  aria_pgdata:
+  aria_frontend_node_modules:
+
+networks:
+  aria:
+    driver: bridge

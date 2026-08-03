@@ -19,6 +19,7 @@ updated_at: 2026-08-02T23:59:59Z
 
 | 账号名称 | 账号用途与角色 | 托管仓库数 | Token 授权状态 | 代理路由配置 |
 |---|---|---|---|---|
+| **`shaunlee0561`** | **核心 Agent 技能、专利/软著与舆情中枢** | 20 个顶尖项目 (TrendRadar/SoftwareCopyright等) | ✅ 具备全权限 Token (`github_pat_11BS...`) | 顶级 Agent Skills & IP 库 |
 | **`yunduan0985`** | **当前主业务与知识库全量仓库** | 1+ (kunlun-growth-agent-system) | ✅ 具备全权限 Token (`ghp_l7wM...`) | `origin` 主发布源 |
 | **`Daseanle`** | **全栈网站、SaaS模版、爬虫与工具矩阵** | 40+ 个开源/私有项目 | ✅ 自动关联与知识库索引 | `daseanle_remote` 备用源 |
 

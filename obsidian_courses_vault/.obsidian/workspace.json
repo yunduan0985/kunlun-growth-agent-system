@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c73d5780f5d06028",
+        "id": "c2e72ff8f2f58046",
         "type": "tabs",
         "children": [
           {
-            "id": "213369347b727c6c",
+            "id": "d4a4267e12683b6f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
+                "file": "SCD_品牌SOP与销售闭环库/00-执行手册.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00-全电脑全盘资产大地图"
+              "title": "00-执行手册"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
+                "file": "SCD_品牌SOP与销售闭环库/00-执行手册.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "00-全电脑全盘资产大地图 的反向链接列表"
+              "title": "00-执行手册 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
+                "file": "SCD_品牌SOP与销售闭环库/00-执行手册.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "00-全电脑全盘资产大地图 的出链列表"
+              "title": "00-执行手册 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
+                "file": "SCD_品牌SOP与销售闭环库/00-执行手册.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "00-全电脑全盘资产大地图 的大纲"
+              "title": "00-执行手册 的大纲"
             }
           }
         ]
@@ -183,43 +183,43 @@
       "bases:新建数据库": false
     }
   },
-  "active": "213369347b727c6c",
+  "active": "d4a4267e12683b6f",
   "lastOpenFiles": [
-    "08-企业数字资产与实力展示中枢 (Portfolio & Showcase)/00-企业全量数字资产实力展示中枢.md",
-    "09-GitHub远程资产与1500iOS应用中枢 (GitHub & iOS Apps)/00-GitHub远程资产与1500iOS应用中枢.md",
-    "06-全盘资产与项目盘点中枢 (Master Inventory)/02-公域引流与流量爆破勾子资产清单.md",
-    "09-GitHub远程资产与1500iOS应用中枢 (GitHub & iOS Apps)",
-    "08-企业数字资产与实力展示中枢 (Portfolio & Showcase)",
-    "07-全电脑全盘资产大地图 (System Wide Master Map)/00-全电脑全盘资产大地图.md",
-    "07-全电脑全盘资产大地图 (System Wide Master Map)",
-    "06-全盘资产与项目盘点中枢 (Master Inventory)/01-客户当面与直播Demo展示资产清单.md",
-    "06-全盘资产与项目盘点中枢 (Master Inventory)/00-全盘项目与资产盘点中枢.md",
-    "03-Prompt库与工具链/03-36_Agent军团实操与提示词手册.md",
-    "06-全盘资产与项目盘点中枢 (Master Inventory)",
-    "00-主主控总纲/02-原子拼图乐高系统全集.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/COURSE-H-PUZZLE_生财黑客松亚军 AI 智能排课消课原子块.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/COURSE-D-PUZZLE_GEO Perplexity与ChatGPT 排名优化 Schema 原子块.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/COURSE-B-PUZZLE_Midjourney 商业模特换装 Prompt 原子块.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/COURSE-A-PUZZLE_跨境客服尺码引导换码降退货率原子块.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/SELL-SELF-03_Docker 一键私有化部署交钥匙.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/SELL-SELF-02_现场导入客户真实业务数据测试.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/SELL-SELF-01_当面或直播展示真实运行后台.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/MOMENTS-01_破折叠首句模板 (15字内).md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/TAG-02_意向评分与合伙人标签划分 (0-100分).md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/TAG-01_进群自动化欢迎语与痛点调研.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/MOMENTS-02_评论区第 1 条引流避风控模板.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/MOMENTS-01_破折叠首句模板 (<15字).md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/HOOK-03_免费试用工具勾子.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/HOOK-02_数字强烈对比钩子.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/HOOK-01_痛点反转开场钩子.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/CAMP-DAY4_Day 4 闭营发售与 5:5 签约.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/CAMP-DAY3_Day 3 独家场景 1V1 诊断.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)/CAMP-DAY1_Day 1 破冰与认知颠覆.md",
-    "05-原子拼图乐高库 (Atomic Puzzles)",
-    "01-课程矩阵 (8大垂直方向)/课程G-AI智能办公全员提效营",
-    "01-课程矩阵 (8大垂直方向)/课程F-AI企服通识与数字员工",
-    "01-课程矩阵 (8大垂直方向)/课程E-OPC内容自动化爆破营",
-    "01-课程矩阵 (8大垂直方向)/课程D-AI独立站开发与GEO",
-    "01-课程矩阵 (8大垂直方向)/课程C-AI新媒体全渠道获客营"
+    "00-个人流水线工作台/05-个人档案与人设/03-个人说话口吻与去AI味表达规范.md",
+    "00-主主控总纲/飞书端Agent调用Obsidian知识库与数字大脑指引.md",
+    "00-主主控总纲/昆仑增长B端与G端高客单价商业落地战略总纲.md",
+    "08-企业数字资产与实力展示中枢 (Portfolio & Proofs)/帅老师全栈AI开发者资产全景图谱.md",
+    "08-企业数字资产与实力展示中枢 (Portfolio & Proofs)",
+    "00-主主控总纲/帅老师真实背书与影响力爆破路线图.md",
+    "09-GitHub远程资产与1500iOS应用中枢 (GitHub & iOS Apps)/帅老师全量GitHub开源与网站项目矩阵.md",
+    "00-个人流水线工作台/05-个人档案与人设/02-个人真实经历与核心优势资产盘点.md",
+    "00-个人流水线工作台/05-个人档案与人设/01-个人IP核心定位与商业人设总纲.md",
+    "01-课程矩阵 (8大垂直方向)/课程C-AI新媒体全渠道获客营/01-20课课程内容/第01课-AI新媒体获客革命：低门槛杠杆与流量闭环.md",
+    "00-个人流水线工作台/02-待发布/爆款小红书图文02-企业数字员工真实落地.md",
+    "03-Prompt库与工具链/00-行业场景Prompt精选集（角色分类即插即用版）.md",
+    "00-个人流水线工作台/06-AI多端记忆与对话中枢/07-HermesAgent微信与社群对话库/Hermes_agentmainweixindmo9cq80wu8u94g_sessio.md",
+    "05-原子拼图乐高库 (Atomic Puzzles)/TRAFFIC-06_小红书风控避坑与安全合规引流SOP.md",
+    "00-个人流水线工作台/02-待发布/爆款朋友圈文案03-微信数据库解密与选题杠杆.md",
+    "00-个人流水线工作台/02-待发布/爆款小红书图文01-Obsidian和Agent数字大脑.md",
+    "11-上海K12教育行业垂直知识库/STATE.json",
+    "11-上海K12教育行业垂直知识库/05-上海本地教培机构运营资产",
+    "11-上海K12教育行业垂直知识库/04-AI教案与智能批改Prompt库",
+    "11-上海K12教育行业垂直知识库/03-K12家长沟通与私域转化SOP",
+    "11-上海K12教育行业垂直知识库/02-名校教研与试卷库",
+    "11-上海K12教育行业垂直知识库/01-上海K12政策与升学规划",
+    "11-上海K12教育行业垂直知识库",
+    "00-主主控总纲/跨电脑与跨账号AI工具调用Obsidian知识库方案.md",
+    "00-主主控总纲/全平台AI工具读取Obsidian知识库配置指南.md",
+    "01-课程矩阵 (8大垂直方向)/课程I-AI商业写作与出版OS/STATE.json",
+    "01-课程矩阵 (8大垂直方向)/课程I-AI商业写作与出版OS",
+    "00-主主控总纲/昆仑增长多AI协同与项目进度全局看板.md",
+    "00-主主控总纲/昆仑增长商业化落地路线图与战术打法.md",
+    "00-个人流水线工作台/06-AI多端记忆与对话中枢/04-Codex对话库/Codex_019fb89f-b45f-7011-9d62-6382ef_019fb8.md",
+    "00-个人流水线工作台/06-AI多端记忆与对话中枢/04-Codex对话库/Codex_019cf939-9ba5-70f0-a244-c66146_019cf9.md",
+    "00-个人流水线工作台/06-AI多端记忆与对话中枢/07-HermesAgent微信与社群对话库/Hermes_session_id 20260427_202650_d5f_sessio.md",
+    "00-个人流水线工作台/06-AI多端记忆与对话中枢/07-HermesAgent微信与社群对话库/Hermes_session_id 20260506_080420_54d_sessio.md",
+    "00-个人流水线工作台/06-AI多端记忆与对话中枢/07-HermesAgent微信与社群对话库/Hermes_session_id 20260422_092118_e9e_sessio.md",
+    "00-个人流水线工作台/06-AI多端记忆与对话中枢/07-HermesAgent微信与社群对话库/Hermes_session_id 20260622_000649_741_sessio.md",
+    "00-个人流水线工作台/06-AI多端记忆与对话中枢/07-HermesAgent微信与社群对话库/Hermes_session_id 20260525_175402_721_sessio.md"
   ]
 }

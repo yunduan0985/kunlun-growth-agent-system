@@ -1,0 +1,16 @@
+{
+  "project_name": "课程G-AI智能办公全员提效营",
+  "current_step": "单门攻坚深度重构与 quality 校验",
+  "progress_percentage": 85,
+  "last_updated": "2026-08-02T23:32:55.365Z",
+  "last_executor": "Antigravity",
+  "next_executor": "Claude / Codex",
+  "status": "NEED_REVIEW",
+  "handoff_notes": "已由 Antigravity 完成 20 课框架与实操代码。拟交由 Claude / Codex 进行进一步的深度细节增润与质量核查。",
+  "completed_modules": [
+    "01-20课课程内容",
+    "02-20课讲师逐字稿",
+    "03-Project升级版",
+    "04-配套资料"
+  ]
+}

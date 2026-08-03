@@ -1,46 +1,26 @@
-# 编辑器缓存与操作系统文件
-.DS_Store
-Thumbs.db
-*.swp
-
-# 依赖与虚拟环境
+# 资源避让与防大文件塞爆 Git 策略
 node_modules/
-.npm/
+.next/
 .venv/
-venv/
-__pycache__/
-
-# 打包产物
 dist/
 build/
-*.dmg
-*.exe
-*.AppImage
-
-# 日志
-*.log
-npm-debug.log*
-
-# 运行时敏感信息、密钥与 Token 拦截 (100% 泄露防护)
-.env
-.env.*
-*.env
-*.pem
-*.key
-jwt_secret.txt
-data/jwt_secret.txt
-data/feishu_docs_sync/jwt_secret.txt
-data/feishu_docs_sync/test_rag.txt.txt
-data/token_usage.json
-data/knowledge_providers.json
-data/wx_decrypted.db
-data/uploads_tmp/
-data/knowledge/
-data/*.db
-data/*.db-journal
-data/*.db-wal
-data/*.db-shm
-
-# 大型临时压缩包
 *.tar.gz
 *.zip
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.iso
+*.dmg
+*.pkg
+
+# 临时系统文件
+.DS_Store
+*.tmp
+*.log
+
+# 个人隐私与密钥
+.env
+*.pem
+*.key
+wechat-keys.json

@@ -1,0 +1,14 @@
+{
+  "project_name": "课程I-AI商业写作与出版OS",
+  "category": "01-课程矩阵 (8大垂直方向)",
+  "description": "专为商业写作与出书打造的自动化项目",
+  "current_step": "项目初始化与需求对齐",
+  "progress_percentage": 0,
+  "created_at": "2026-08-02T23:33:58.576Z",
+  "last_updated": "2026-08-02T23:33:58.577Z",
+  "last_executor": "Antigravity",
+  "next_executor": "Claude / Codex / Human",
+  "status": "TODO",
+  "handoff_notes": "新项目已建立。已自动注入 STATE.json 节点与 AGENTS 规范，等待下一步拆解与执行。",
+  "completed_modules": []
+}

@@ -1,0 +1,19 @@
+{
+  "project_name": "11-上海K12教育行业垂直知识库",
+  "category": "垂直行业知识库",
+  "description": "异地上海电脑K12教育行业核心知识库挂载节点",
+  "current_step": "节点建立完成，等待上海电脑数据 Sync/Import",
+  "progress_percentage": 100,
+  "last_updated": "2026-08-02T23:40:33.610Z",
+  "last_executor": "Antigravity",
+  "next_executor": "Human (上海电脑) / Claude / Codex",
+  "status": "IN_PROGRESS",
+  "handoff_notes": "异地上海 K12 知识库专属节点已建立。可通过 Git Push/Pull 或文件复制直接合并入此目录，本台电脑 AI 可秒级调取。",
+  "sub_modules": [
+    "01-上海K12政策与升学规划",
+    "02-名校教研与试卷库",
+    "03-K12家长沟通与私域转化SOP",
+    "04-AI教案与智能批改Prompt库",
+    "05-上海本地教培机构运营资产"
+  ]
+}

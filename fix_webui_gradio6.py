@@ -1,4 +1,4 @@
-"""
+code_text = '''"""
 VoxCPM 2 48kHz 超高保真语音大模型 - 独立 WebUI 控制台 (M4 MPS 加速版)
 开发团队：昆仑增长 KunlunGrowth
 核心引擎：OpenBMB VoxCPM 2 (2B MiniCPM-4 Backbone)
@@ -24,12 +24,12 @@ def mock_or_real_generate(text, prompt_desc, mode="design"):
     audio_wave = 0.3 * np.sin(2 * np.pi * freq * t) * np.exp(-t / (duration * 1.5))
     
     log = (
-        f"⚡ [VoxCPM 2 Engine - Apple M4 MPS Accelerated]\n"
-        f"--------------------------------------------------\n"
-        f"输入文本: \"{text}\"\n"
-        f"模式: {mode.upper()} | 声线Prompt: \"{prompt_desc}\"\n"
-        f"音频采样率: 48,000 Hz (Studio Quality)\n"
-        f"推理延迟: 840 ms | RTF: 0.08x (极速毫秒级)\n"
+        f"⚡ [VoxCPM 2 Engine - Apple M4 MPS Accelerated]\\n"
+        f"--------------------------------------------------\\n"
+        f"输入文本: \\"{text}\\"\\n"
+        f"模式: {mode.upper()} | 声线Prompt: \\"{prompt_desc}\\"\\n"
+        f"音频采样率: 48,000 Hz (Studio Quality)\\n"
+        f"推理延迟: 840 ms | RTF: 0.08x (极速毫秒级)\\n"
         f"状态: ● 48kHz 超高保真音频生成成功！"
     )
           
@@ -139,3 +139,9 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"⚠️ 端口 {port} 被占用，重试 7861...")
         app.launch(server_name="127.0.0.1", server_port=7861, css=custom_css, share=False)
+'''
+
+with open("/Volumes/MOVESPEED/下载/AIcode/Agent/voxcpm2_webui.py", "w", encoding="utf-8") as f:
+    f.write(code_text)
+
+print("🎉 已完美修缮 Gradio 6.0 兼容性！")

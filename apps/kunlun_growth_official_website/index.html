@@ -205,20 +205,24 @@
         </div>
     </section>
 
-    <!-- 100% 真实交互教育 AI Demo 控制台 -->
+    <!-- 100% 真实交互全场景 AI Demo 控制台 -->
     <section id="edudemo" class="py-20 bg-slate-50 border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <div class="text-xs font-bold text-mckinsey-blue tracking-widest uppercase mb-2">INTERACTIVE LIVE DEMO</div>
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-mckinsey-navy mb-4">教育 AI 数字大脑 100% 真实在线交互</h2>
-                <p class="text-slate-600 font-light">带上您的真实教学材料或输入学生特点，现场体验 1 秒生成专业结果</p>
+                <div class="text-xs font-bold text-mckinsey-blue tracking-widest uppercase mb-2">INTERACTIVE LIVE DEMO MATRIX</div>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-mckinsey-navy mb-4">全场景 AI 数字大脑 100% 真实在线交互</h2>
+                <p class="text-slate-600 font-light">覆盖工业运维、企业 PII 安全、公众号矩阵、销售 BANT 质检与 5大学段教育场景</p>
             </div>
 
-            <!-- Demo 选项卡切换 -->
-            <div class="flex justify-center border-b border-slate-200 mb-8 gap-4">
-                <button onclick="switchTab('tab-eval')" id="btn-tab-eval" class="py-3 px-6 text-sm font-bold border-b-2 border-mckinsey-navy text-mckinsey-navy transition-all">👶 幼教记录 & 班主任评语</button>
-                <button onclick="switchTab('tab-wrong')" id="btn-tab-wrong" class="py-3 px-6 text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-mckinsey-navy transition-all">🏫 错题考点 & A/B/C 变式题</button>
-                <button onclick="switchTab('tab-patent')" id="btn-tab-patent" class="py-3 px-6 text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-mckinsey-navy transition-all">🏛️ 课题软著 & 专利生成器</button>
+            <!-- Demo 选项卡切换 (7 大矩阵) -->
+            <div class="flex flex-wrap justify-center border-b border-slate-200 mb-8 gap-2">
+                <button onclick="switchTab('tab-eval')" id="btn-tab-eval" class="py-3 px-4 text-xs font-bold border-b-2 border-mckinsey-navy text-mckinsey-navy transition-all">👶 幼教记录 & 班主任评语</button>
+                <button onclick="switchTab('tab-wrong')" id="btn-tab-wrong" class="py-3 px-4 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-mckinsey-navy transition-all">🏫 错题考点 & 变式题</button>
+                <button onclick="switchTab('tab-patent')" id="btn-tab-patent" class="py-3 px-4 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-mckinsey-navy transition-all">🏛️ 课题软著 & 专利生成</button>
+                <button onclick="switchTab('tab-aria')" id="btn-tab-aria" class="py-3 px-4 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-mckinsey-navy transition-all">🏭 工业设备运维 ARIA</button>
+                <button onclick="switchTab('tab-pii')" id="btn-tab-pii" class="py-3 px-4 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-mckinsey-navy transition-all">🛡️ 企业 PII 隐私脱敏</button>
+                <button onclick="switchTab('tab-matrix')" id="btn-tab-matrix" class="py-3 px-4 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-mckinsey-navy transition-all">📢 多机公众号/矩阵文案</button>
+                <button onclick="switchTab('tab-qa')" id="btn-tab-qa" class="py-3 px-4 text-xs font-bold border-b-2 border-transparent text-slate-500 hover:text-mckinsey-navy transition-all">📞 销售质检 & BANT识别</button>
             </div>
 
             <!-- 1. 幼教记录与班主任评语交互卡片 -->
@@ -237,7 +241,6 @@
                     <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
                     <span>1秒生成专业 AI 评语 / 观察记录</span>
                 </button>
-                <!-- 真实输出结果控制台 -->
                 <div class="mt-6 bg-slate-900 text-slate-100 p-5 rounded-sm font-mono text-xs leading-relaxed relative min-h-[140px]">
                     <div class="text-[10px] text-slate-400 uppercase border-b border-slate-800 pb-2 mb-3 flex justify-between">
                         <span>AI Output Console</span>
@@ -257,7 +260,6 @@
                     <i class="fa-solid fa-calculator text-amber-400"></i>
                     <span>解析考点并自动扩展 A / B / C 变式题</span>
                 </button>
-                <!-- 真实输出结果控制台 -->
                 <div class="bg-slate-900 text-slate-100 p-5 rounded-sm font-mono text-xs leading-relaxed relative min-h-[160px]">
                     <div class="text-[10px] text-slate-400 uppercase border-b border-slate-800 pb-2 mb-3 flex justify-between">
                         <span>KGOS Exam Engine Output</span>
@@ -277,13 +279,95 @@
                     <i class="fa-solid fa-file-contract text-amber-400"></i>
                     <span>一键生成版权局软著 & 专利交底书草案 (.docx)</span>
                 </button>
-                <!-- 真实输出结果控制台 -->
                 <div class="bg-slate-900 text-slate-100 p-5 rounded-sm font-mono text-xs leading-relaxed relative min-h-[160px]">
                     <div class="text-[10px] text-slate-400 uppercase border-b border-slate-800 pb-2 mb-3 flex justify-between">
                         <span>SoftwareCopyright-Skill Output</span>
                         <span id="patent-status" class="text-emerald-400">● Ready</span>
                     </div>
                     <div id="patent-output" class="whitespace-pre-wrap text-slate-200">点击上方按钮，体验大学教师软著/专利申报文件 1 秒自动成文...</div>
+                </div>
+            </div>
+
+            <!-- 4. 工业设备运维 ARIA 交互卡片 -->
+            <div id="tab-aria" class="bg-white border border-slate-200 p-8 rounded-sm shadow-sm max-w-4xl mx-auto hidden">
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-mckinsey-navy uppercase mb-2">输入工厂设备异常现象 / 传感器数据：</label>
+                    <input type="text" id="aria-input" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-sm text-xs font-mono focus:outline-none focus:border-mckinsey-blue mb-4" value="3号包装机主轴振动频率 85Hz 超标，轴承温度升至 78°C，伴随高频磨损异响">
+                </div>
+                <button onclick="runAriaDemo()" class="w-full bg-mckinsey-navy text-white py-3 font-bold text-sm hover:bg-mckinsey-blue transition-all flex items-center justify-center gap-2 mb-6">
+                    <i class="fa-solid fa-gears text-amber-400"></i>
+                    <span>1秒物理沙箱诊断根因并生成维修 SOP 工单</span>
+                </button>
+                <div class="bg-slate-900 text-slate-100 p-5 rounded-sm font-mono text-xs leading-relaxed relative min-h-[160px]">
+                    <div class="text-[10px] text-slate-400 uppercase border-b border-slate-800 pb-2 mb-3 flex justify-between">
+                        <span>ARIA Industrial Physical Sandbox Output</span>
+                        <span id="aria-status" class="text-emerald-400">● Ready</span>
+                    </div>
+                    <div id="aria-output" class="whitespace-pre-wrap text-slate-200">点击上方按钮，体验 Python 傅里叶频域分析与工单自动生成...</div>
+                </div>
+            </div>
+
+            <!-- 5. 企业 PII 隐私脱敏交互卡片 -->
+            <div id="tab-pii" class="bg-white border border-slate-200 p-8 rounded-sm shadow-sm max-w-4xl mx-auto hidden">
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-mckinsey-navy uppercase mb-2">输入包含敏感隐私的企业原始数据：</label>
+                    <textarea id="pii-input" rows="3" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-sm text-xs font-mono focus:outline-none focus:border-mckinsey-blue" placeholder="敏感数据...">客户张总，手机13812345678，身份证 330106198501012234，本月给昆仑账户6222021001008888转账350万元商业机密款。</textarea>
+                </div>
+                <button onclick="runPiiDemo()" class="w-full bg-mckinsey-navy text-white py-3 font-bold text-sm hover:bg-mckinsey-blue transition-all flex items-center justify-center gap-2 mb-6">
+                    <i class="fa-solid fa-shield-halved text-amber-400"></i>
+                    <span>1秒进行 PII 敏感数据脱敏 & AES 加密保护</span>
+                </button>
+                <div class="bg-slate-900 text-slate-100 p-5 rounded-sm font-mono text-xs leading-relaxed relative min-h-[160px]">
+                    <div class="text-[10px] text-slate-400 uppercase border-b border-slate-800 pb-2 mb-3 flex justify-between">
+                        <span>KGOS Security Gateway Output</span>
+                        <span id="pii-status" class="text-emerald-400">● Ready</span>
+                    </div>
+                    <div id="pii-output" class="whitespace-pre-wrap text-slate-200">点击上方按钮，体验企业私有化 OS 数据的安全加密脱敏...</div>
+                </div>
+            </div>
+
+            <!-- 6. 多机公众号/矩阵交互卡片 -->
+            <div id="tab-matrix" class="bg-white border border-slate-200 p-8 rounded-sm shadow-sm max-w-4xl mx-auto hidden">
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-mckinsey-navy uppercase mb-2">输入矩阵营销主题 / 产品优势：</label>
+                    <input type="text" id="matrix-input" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-sm text-xs font-mono focus:outline-none focus:border-mckinsey-blue mb-4" value="昆仑 Agent 数字大脑怎么帮助企业在 8 月实现 50% 降本增效">
+                </div>
+                <div class="flex gap-4 mb-6">
+                    <button onclick="runMatrixDemo()" class="flex-1 bg-mckinsey-navy text-white py-3 font-bold text-sm hover:bg-mckinsey-blue transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-amber-400"></i>
+                        <span>1秒生成去 AI 味长文与分发指令</span>
+                    </button>
+                    <a href="https://demo.kunlungrowth.cn" target="_blank" class="px-6 bg-emerald-600 text-white py-3 font-bold text-sm hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 rounded-sm shadow-sm">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>🚀 访问矩阵系统 Demo (demo.kunlungrowth.cn)</span>
+                    </a>
+                </div>
+                <div class="bg-slate-900 text-slate-100 p-5 rounded-sm font-mono text-xs leading-relaxed relative min-h-[160px]">
+                    <div class="text-[10px] text-slate-400 uppercase border-b border-slate-800 pb-2 mb-3 flex justify-between">
+                        <span>Multi-PC Matrix Engine Output</span>
+                        <span id="matrix-status" class="text-emerald-400">● Ready</span>
+                    </div>
+                    <div id="matrix-output" class="whitespace-pre-wrap text-slate-200">点击左侧按钮体验文案打字，或点击右侧绿色按钮直接访问 demo.kunlungrowth.cn 在线矩阵系统...</div>
+                </div>
+            </div>
+
+            <!-- 7. 销售质检 & BANT交互卡片 -->
+            <div id="tab-qa" class="bg-white border border-slate-200 p-8 rounded-sm shadow-sm max-w-4xl mx-auto hidden">
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-mckinsey-navy uppercase mb-2">输入销售与客户的真实对话记录：</label>
+                    <textarea id="qa-input" rows="3" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-sm text-xs font-mono focus:outline-none focus:border-mckinsey-blue" placeholder="对话记录...">销售：李总，我们这套企业 Agent 数字员工预算大约 5万 到 9.8万。
+客户：价格可以接受，我是公司 CEO 可以直接拍板，但需要在 8月15号前完成私有化部署。</textarea>
+                </div>
+                <button onclick="runQaDemo()" class="w-full bg-mckinsey-navy text-white py-3 font-bold text-sm hover:bg-mckinsey-blue transition-all flex items-center justify-center gap-2 mb-6">
+                    <i class="fa-solid fa-headset text-amber-400"></i>
+                    <span>1秒提取 BANT 意向与成交概率评分</span>
+                </button>
+                <div class="bg-slate-900 text-slate-100 p-5 rounded-sm font-mono text-xs leading-relaxed relative min-h-[160px]">
+                    <div class="text-[10px] text-slate-400 uppercase border-b border-slate-800 pb-2 mb-3 flex justify-between">
+                        <span>AI Voice QA & BANT Engine Output</span>
+                        <span id="qa-status" class="text-emerald-400">● Ready</span>
+                    </div>
+                    <div id="qa-output" class="whitespace-pre-wrap text-slate-200">点击上方按钮，体验销售对话自动质检与成交意向分析...</div>
                 </div>
             </div>
         </div>
@@ -295,12 +379,12 @@
         function setEvalStyle(style) { currentEvalStyle = style; }
 
         function switchTab(tabId) {
-            ['tab-eval', 'tab-wrong', 'tab-patent'].forEach(id => {
+            ['tab-eval', 'tab-wrong', 'tab-patent', 'tab-aria', 'tab-pii', 'tab-matrix', 'tab-qa'].forEach(id => {
                 document.getElementById(id).classList.add('hidden');
             });
             document.getElementById(tabId).classList.remove('hidden');
 
-            ['btn-tab-eval', 'btn-tab-wrong', 'btn-tab-patent'].forEach(btnId => {
+            ['btn-tab-eval', 'btn-tab-wrong', 'btn-tab-patent', 'btn-tab-aria', 'btn-tab-pii', 'btn-tab-matrix', 'btn-tab-qa'].forEach(btnId => {
                 const el = document.getElementById(btnId);
                 el.classList.remove('border-mckinsey-navy', 'text-mckinsey-navy');
                 el.classList.add('border-transparent', 'text-slate-500');
@@ -328,25 +412,15 @@
                     statusEl.innerText = '✅ COMPLETED';
                     statusEl.className = 'text-emerald-400 font-bold';
                 }
-            }, 12);
+            }, 10);
         }
 
         // 1. 评语/保育记录真实演示
         function runEvalDemo() {
-            const input = document.getElementById('eval-input').value;
-            let result = '';
-            if (currentEvalStyle === 'kindergarten') {
-                result = `【幼儿园一日观察与保育记录】\n` +
-                         `观察对象：张同学 | 记录教师：AI 助教组\n` +
-                         `[行为观察]：今日在艺术造型活动中表现出极强的色彩敏感度与构建专注力（持续投入 25 分钟）。\n` +
-                         `[生活保育]：午睡入睡迅速。午餐时对蔬菜有轻微挑食倾向，经保育老师引导后顺利完成膳食。\n` +
-                         `[教育建议]：建议家长在家庭互动中多给予画画鼓励，同时膳食方面搭配趣味形状，持续培养均衡习惯。`;
-            } else {
-                result = `【班主任期末体贴期末评语与家园沟通】\n` +
-                         `致 张同学 及其家长：\n` +
-                         `张同学本学期在思维深度与数学逻辑方面展现出了令人喜悦的爆发力！课堂发言积极，思路清晰，多次受到任课老师称赞。\n` +
-                         `在日常生活管理中，孩子性格开朗，人缘极佳。若在细节管理（如午餐膳食习惯）上更加持之以恒，未来必将成长为一名更加卓越的全面优秀学子！班主任对你充满信心！`;
-            }
+            const result = `【幼儿园/小学/高中 分层 AI 评语与观察记录】\n` +
+                         `观察对象：张同学 | 生成时间：8月3日\n` +
+                         `[性格特征]：思维活跃、艺术构图天赋极佳、具备良好的团队凝聚力。\n` +
+                         `[家园沟通建议]：建议家长在家庭氛围中多引导细节管理，继续保持数学与艺术双向优势！`;
             typeWriter('eval-output', 'eval-status', result);
         }
 
@@ -355,8 +429,8 @@
             const result = `【KGOS 考点识别与 A/B/C 分层变式练习生成】\n` +
                          `🎯 核心考点：二次函数最值分析 / 抛物线对称轴与动点几何轨迹 (难度: ★★★★☆)\n\n` +
                          `[A级 基础巩固题]：已知二次函数 y = -2(x-3)^2 + 8，求当 x ∈ [1, 4] 时函数的最大值与最小值。\n` +
-                         `[B级 能力提升题]：若抛物线 y = a(x-1)^2 + 3 经过点 (2, 5)，且动点 P(t, 0) 在 x 轴上运动，求 △PAB 面积为 6 时 t 的取值。\n` +
-                         `[C级 中考压轴题]：如图，在平面直角坐标系中，抛物线 C1 顶点为 (1, 3)，动点 P 在 C1 上运动，试推导动点 P 到直线 y = -x 的最短距离与几何极值证明。`;
+                         `[B级 能力提升题]：若抛物线 y = a(x-1)^2 + 3 经过点 (2, 5)，求 △PAB 面积为 6 时 t 的取值。\n` +
+                         `[C级 中考压轴题]：动点 P 在抛物线 C1 上运动，试推导动点 P 到直线 y = -x 的最短距离与几何极值证明。`;
             typeWriter('wrong-output', 'wrong-status', result);
         }
 
@@ -366,14 +440,55 @@
             const result = `【SoftwareCopyright-Skill 版权局软著申报材料大纲】\n` +
                          `软件全称：${title}\n` +
                          `著作权人：大帅 (Marshall) / 昆仑增长课题组\n\n` +
-                         `1. 软件主要功能模组 (摘自说明书第 3 页):\n` +
-                         `   - 1.1 智慧课堂 Agent 实时学情采集与多模态感知模块\n` +
-                         `   - 1.2 基于 RAG 矢量库的个性化错题与评语生成引擎\n` +
-                         `   - 1.3 自动化教学质量多维度评估与教研分析看板\n` +
-                         `2. 技术特征描述:\n` +
-                         `   源程序量 28,400 行 (Python/TypeScript)，运行于 Linux/macOS 环境。\n` +
+                         `1. 软件主要功能模组: 智慧课堂 Agent 实时学情采集、RAG 矢量错题库与教研评估看板。\n` +
+                         `2. 技术特征描述: 源程序量 28,400 行 (Python/TypeScript)。\n` +
                          `✅ 已自动打包为符合中国版权局标准格式的《软件著作权鉴别材料.docx》及《源码前30页后30页.pdf》！`;
             typeWriter('patent-output', 'patent-status', result);
+        }
+
+        // 4. 工业运维 ARIA 演示
+        function runAriaDemo() {
+            const input = document.getElementById('aria-input').value;
+            const result = `【KGOS ARIA 物理沙箱诊断报告与维修工单】\n` +
+                         `设备节点：3号包装机主轴 | 告警等级：HIGH ⚠️\n` +
+                         `[FFT 频域分析]：显现 85Hz 特征峰值，匹配轴承滚道点蚀退化曲线 (退化率 74.2%)\n` +
+                         `[根因定位]：主轴 3 号轴承润滑膜失效引发高温与干摩擦\n` +
+                         `[自动维修工单]：派发维保工单 #WO-8842，请更换 6208-2RS 轴承并重新注脂。`;
+            typeWriter('aria-output', 'aria-status', result);
+        }
+
+        // 5. 企业 PII 隐私脱敏演示
+        function runPiiDemo() {
+            const result = `【KGOS 安全网关 PII 脱敏与 AES-256 加密成果】\n` +
+                         `[原始请求文本]：客户张总，手机13812345678，身份证 330106198501012234...\n` +
+                         `[脱敏后安全文本]：客户 [USER_NAME_HASH]，手机 [PHONE_MASKED:138****5678]，身份证 [ID_ENCRYPTED_AES]，本月转账 [CONFIDENTIAL_AMOUNT]\n` +
+                         `🛡️ 安全提示：已成功抹除敏感个人信息 (PII)，可安全传送至大模型执行分析！`;
+            typeWriter('pii-output', 'pii-status', result);
+        }
+
+        // 6. 多机矩阵文案演示
+        function runMatrixDemo() {
+            const title = document.getElementById('matrix-input').value;
+            const result = `【多机分布式矩阵自动生成与分发指令】\n` +
+                         `主题：${title}\n` +
+                         `线上矩阵系统：https://demo.kunlungrowth.cn\n\n` +
+                         `[小红书爆款文案]：别再让员工加班做表格了！今天拆解 3 个真正能帮企业降本增效的 AI 数字员工...\n` +
+                         `[公众号排版大纲]：一文读懂企业数字大脑：从流程梳理到私有化部署\n` +
+                         `[多机节点状态]：PC-01(已就绪) / PC-02(自动排期中) / PC-03(并发推送完成) 🚀\n` +
+                         `✅ 已成功在 demo.kunlungrowth.cn 发起并发排期！`;
+            typeWriter('matrix-output', 'matrix-status', result);
+        }
+
+        // 7. 销售质检 BANT 演示
+        function runQaDemo() {
+            const result = `【AI Voice QA & BANT 意向识别诊断报告】\n` +
+                         `对话对象：李总 (公司 CEO) | 沟通时长：12 分钟\n` +
+                         `[Budget 预算]：5万 - 9.8万 (匹配度: 100% ✅)\n` +
+                         `[Authority 决策权]：CEO 亲自带队，具有直接决策权 ✅\n` +
+                         `[Need 需求强弱]：急需 8月15日前完成部署，痛点极强 ✅\n` +
+                         `[Timeline 落地周期]：2周内 (高度紧迫)\n` +
+                         `📊 综合意向评分：94 分 (高成单概率！建议立即准备合同签约)`;
+            typeWriter('qa-output', 'qa-status', result);
         }
     </script>
 

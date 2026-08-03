@@ -75,6 +75,11 @@ updated_at: 2026-08-02T23:50:00Z
 - [[昆仑增长商业化落地路线图与战术打法]]
 - [[AGENTS.md岗位说明书与行为约束通用规范]]
 
+### 🌐 昆仑增长官方线上门户 (Cloudflare 全球 CDN):
+- 👉 **[https://kunlungrowthai.pages.dev/](https://kunlungrowthai.pages.dev/)**
+  - **视觉风格**：麦肯锡咨询尊贵白蓝色调 (McKinsey Style)
+  - **展示内容**：大帅 (Marshall) 资历、SkillHub TOP 4 战绩、4 大商业矩阵与生财联办预约
+
 ### 🆕 新增加载与研发成功项目：
 - 🟢 **【昆仑设备知识与智能运维 Agent V1.0 (KGOS Industrial Agent)】**
   - **状态**：🟢 `COMPLETED` (100% 开发完成，已产出生产级 RESTful API 服务与控制大屏)

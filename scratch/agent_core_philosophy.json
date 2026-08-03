@@ -1,0 +1,11 @@
+{
+  "philosophy": "AI 的胜利，也就是知识库的胜利。",
+  "key_workflows": [
+    "1. 本地微信聊天记录全量/增量解析与资产沉淀 (yichen-wechat-local-vault)",
+    "2. 网页与飞书云文档全量 HTML/JSON Blocks 无损抓取并存入 Obsidian",
+    "3. 5大学段 (幼/小/初/高/大) 教师差异化 30分钟访谈 SOP",
+    "4. Live Demo 100% 真实交互与 PDF/Word 真实文件导出"
+  ],
+  "feishu_source": "https://my.feishu.cn/wiki/RKfpwHw2QidxgGk9WgvczekMnIa",
+  "updated_at": "2026-08-03"
+}

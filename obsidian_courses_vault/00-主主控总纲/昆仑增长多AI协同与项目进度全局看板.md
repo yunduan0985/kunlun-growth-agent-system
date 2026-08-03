@@ -79,6 +79,10 @@ updated_at: 2026-08-02T23:50:00Z
 - 🟢 **【昆仑设备知识与智能运维 Agent V1.0 (KGOS Industrial Agent)】**
   - **状态**：🟢 `COMPLETED` (100% 开发完成，已产出生产级 RESTful API 服务与控制大屏)
   - **路径**：`apps/aria_industrial_agent/`
+- 🟡 **【公众号多机矩阵自动化工具 (Codex 负责)】**
+  - **责任人**：`[EXECUTOR: Codex]`
+  - **状态**：🟡 `IN_PROGRESS` (单机版本已 100% 跑通，正在进行多台电脑分布式矩阵测试)
+  - **协同说明**：用于公众号/私域多账号矩阵自动化运营与批量分发。
   - **包含组件**：
     1. 前端大屏：[web_console.html](file:///Volumes/MOVESPEED/下载/AIcode/Agent/apps/aria_industrial_agent/web_console.html)
     2. 后端服务：[api_server.py](file:///Volumes/MOVESPEED/下载/AIcode/Agent/apps/aria_industrial_agent/api_server.py) (8088端口)

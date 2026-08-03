@@ -1,0 +1,7 @@
+[submodule "apps/aria_industrial_agent/upstream_aria"]
+	path = apps/aria_industrial_agent/upstream_aria
+	url = https://github.com/yunduan0985/kunlun-growth-agent-system.git
+
+[submodule "apps/math_wrong_notebook_web"]
+	path = apps/math_wrong_notebook_web
+	url = https://github.com/yunduan0985/kunlun-growth-agent-system.git

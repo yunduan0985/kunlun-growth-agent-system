@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大帅 (Marshall) - 麦肯锡尊贵风微信社交海报</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        mckinsey: {
+                            navy: '#051c2c',
+                            blue: '#0066cc',
+                            card: '#ffffff',
+                            border: '#e2e8f0',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- QRCode.js 用于精确渲染二维码 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body { background-color: #f1f5f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; font-family: 'Inter', sans-serif; }
+        .poster-container {
+            width: 540px;
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 25px 60px rgba(5, 28, 44, 0.12);
+            padding: 40px;
+            position: relative;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poster-container" id="poster">
+        <!-- 品牌 Header -->
+        <div class="flex justify-between items-center border-b border-slate-200 pb-4 mb-6">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-mckinsey-navy text-white flex items-center justify-center font-serif font-bold text-lg">K</div>
+                <span class="font-serif font-bold text-lg tracking-tight text-mckinsey-navy">KUNLUN<span class="text-mckinsey-blue font-sans font-normal text-base ml-1">GROWTH</span></span>
+            </div>
+            <div class="text-[10px] font-bold text-mckinsey-blue bg-blue-50 px-2.5 py-1 border border-blue-100 uppercase tracking-wider">
+                SkillHub 全球榜单 TOP 4 团队架构
+            </div>
+        </div>
+
+        <!-- 主标语 Hero -->
+        <div class="mb-6">
+            <h1 class="font-serif text-3xl font-bold tracking-tight leading-snug text-mckinsey-navy mb-2">
+                让 AI 成为企业的<span class="text-mckinsey-blue">数字员工</span><br>驱动可量化的<span class="italic font-normal">商业增长</span>
+            </h1>
+            <p class="text-xs text-slate-500 font-light leading-relaxed">
+                昆仑增长专注于企业级 AI Agent 私有化部署、工业知识 OS 与流程自动化。
+            </p>
+        </div>
+
+        <!-- 4大背书数据墙 (Proof Wall) -->
+        <div class="grid grid-cols-4 gap-2 bg-slate-50 p-4 border border-slate-200 text-center mb-6">
+            <div>
+                <div class="font-serif text-xl font-bold text-mckinsey-navy">TOP 4</div>
+                <div class="text-[9px] text-slate-500 uppercase">SkillHub全球排名</div>
+            </div>
+            <div>
+                <div class="font-serif text-xl font-bold text-mckinsey-blue">1,700+</div>
+                <div class="text-[9px] text-slate-500 uppercase">Agent Skills资产</div>
+            </div>
+            <div>
+                <div class="font-serif text-xl font-bold text-mckinsey-navy">60+</div>
+                <div class="text-[9px] text-slate-500 uppercase">全栈 Web/App交付</div>
+            </div>
+            <div>
+                <div class="font-serif text-xl font-bold text-mckinsey-blue">8 大</div>
+                <div class="text-[9px] text-slate-500 uppercase">出版级AI课程矩阵</div>
+            </div>
+        </div>
+
+        <!-- 创始人模块 -->
+        <div class="flex items-center gap-4 bg-slate-50/80 p-4 border border-slate-200 mb-6">
+            <div class="w-14 h-14 bg-mckinsey-navy text-white flex items-center justify-center font-serif font-bold text-xl shrink-0">
+                Marshall
+            </div>
+            <div>
+                <div class="text-[10px] font-bold text-mckinsey-blue tracking-wider uppercase">FOUNDER & CHIEF ARCHITECT</div>
+                <div class="font-serif text-lg font-bold text-mckinsey-navy">大帅 (Marshall)</div>
+                <div class="text-xs text-slate-600 font-light">高级全栈架构师 & AI 开发者，独立交付数十款 Web/iOS App</div>
+            </div>
+        </div>
+
+        <!-- 核心业务 3 大模块 -->
+        <div class="space-y-3 mb-6">
+            <div class="p-3 border border-slate-200 bg-white">
+                <div class="flex justify-between items-center mb-1">
+                    <span class="font-serif font-bold text-xs text-mckinsey-navy">1. 企业数字员工私有化 OS</span>
+                    <span class="text-[10px] font-semibold text-mckinsey-blue">3.98万 ~ 9.8万元</span>
+                </div>
+                <div class="text-[11px] text-slate-500 font-light">含 PII 敏感数据脱敏网关，保护企业财务与客户隐私。</div>
+            </div>
+            <div class="p-3 border border-slate-200 bg-white">
+                <div class="flex justify-between items-center mb-1">
+                    <span class="font-serif font-bold text-xs text-mckinsey-navy">2. KGOS 工业设备智能运维 (ARIA)</span>
+                    <span class="text-[10px] font-semibold text-mckinsey-blue">20万 ~ 100万元</span>
+                </div>
+                <div class="text-[11px] text-slate-500 font-light">源自 Anthropic 黑客松第一名，带有 Python 物理计算沙箱。</div>
+            </div>
+            <div class="p-3 border border-slate-200 bg-white">
+                <div class="flex justify-between items-center mb-1">
+                    <span class="font-serif font-bold text-xs text-mckinsey-navy">3. 软著专利生成器 & 多机矩阵工具</span>
+                    <span class="text-[10px] font-semibold text-slate-600">高效自动化利器</span>
+                </div>
+                <div class="text-[11px] text-slate-500 font-light">一键生成全套软著材料，公众号多机分布式矩阵自动化。</div>
+            </div>
+        </div>
+
+        <!-- 底部联系与双二维码通道 (Contact & QR) -->
+        <div class="border-t-2 border-mckinsey-navy pt-4 flex justify-between items-center">
+            <div>
+                <div class="font-serif font-bold text-sm text-mckinsey-navy mb-1">杭州EFC，找大帅随时聊项目！</div>
+                <div class="text-xs text-slate-600">微信: <span class="font-mono font-bold text-mckinsey-blue">Dasean-</span></div>
+                <div class="text-xs text-slate-600">电话: <span class="font-mono font-bold text-slate-800">13391116628</span></div>
+            </div>
+            <!-- 二维码区 -->
+            <div class="flex items-center gap-3">
+                <div class="text-center">
+                    <div id="qrcode" class="w-16 h-16 p-1 border border-slate-300 bg-white"></div>
+                    <div class="text-[8px] text-slate-400 mt-1">长按识别开官网</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 生成极度清晰的官网二维码 (指向 https://kunlungrowthai.pages.dev/)
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://kunlungrowthai.pages.dev/",
+            width: 56,
+            height: 56,
+            colorDark: "#051c2c",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>

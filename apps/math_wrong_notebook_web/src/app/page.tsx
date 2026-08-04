@@ -49,7 +49,8 @@ import {
   BookOpen,
   CheckSquare,
   Upload,
-  Plus
+  Plus,
+  Building
 } from 'lucide-react';
 
 // KaTeX 公式解析
@@ -77,7 +78,7 @@ const MathExpr = ({ math }: { math: string }) => {
 
 export default function HKUFullEnterpriseDashboard() {
   // 核心导航 (7 大全功能工作台)
-  const [activeTab, setActiveTab] = useState<'feishu_curriculum' | 'super_ta' | 'deep_tutor' | 'mastery_path' | 'deep_research' | 'knowledge_center' | 'verifier'>('deep_tutor');
+  const [activeTab, setActiveTab] = useState<'founder_matrix' | 'feishu_curriculum' | 'super_ta' | 'deep_tutor' | 'mastery_path' | 'deep_research' | 'knowledge_center' | 'verifier'>('founder_matrix');
 
   // 飞书实时连接状态
   const [feishuStatus, setFeishuStatus] = useState({
@@ -297,6 +298,16 @@ export default function HKUFullEnterpriseDashboard() {
         </div>
 
         <div className="flex items-center space-x-3">
+          <a
+            href="/founder"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white transition flex items-center space-x-1.5 shadow-md"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+            <span>大帅 · 资源对接独立页 ↗</span>
+          </a>
+
           <div className="flex items-center space-x-2 text-xs text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full font-mono border border-emerald-200 font-semibold">
             <Activity className="w-3.5 h-3.5 text-emerald-500 animate-pulse" />
             <span>飞书同步: 《教师AI实战训练营》全 20 课完整大纲</span>
